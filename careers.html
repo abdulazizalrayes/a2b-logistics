@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Careers | a2b Logistics</title>
+<meta name="description" content="Join the a2b Logistics team. Explore career opportunities in logistics, operations, and supply chain across Saudi Arabia.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.a2b.sa/careers">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--red:#E8192C;--dark:#111;--text:#333;--muted:#666;--light:#F5F6F8;--border:#E2E4E8;--white:#fff}
+body{font-family:'Inter',sans-serif;background:var(--white);color:var(--text);line-height:1.7}
+
+nav{background:var(--white);border-bottom:1px solid var(--border);padding:0 48px;height:68px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
+.nav-logo svg{width:68px;height:40px}
+.nav-back{color:var(--red);font-size:13.5px;font-weight:600;text-decoration:none;display:flex;align-items:center;gap:6px}
+
+.hero{background:var(--dark);padding:80px 48px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-60px;right:-60px;width:400px;height:400px;background:var(--red);opacity:.06;border-radius:50%}
+.hero-inner{max-width:960px;margin:0 auto;position:relative;z-index:1}
+.page-label{color:var(--red);font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;margin-bottom:12px;display:block}
+.hero h1{font-size:clamp(32px,5vw,52px);font-weight:800;color:#fff;margin-bottom:16px;letter-spacing:-.8px;line-height:1.1}
+.hero p{color:rgba(255,255,255,.6);font-size:17px;max-width:540px;line-height:1.7}
+
+.form-section{padding:80px 48px;background:var(--light)}
+.form-inner{max-width:560px;margin:0 auto}
+.form-title{font-size:clamp(24px,3vw,32px);font-weight:800;color:var(--dark);margin-bottom:8px;letter-spacing:-.4px}
+.form-sub{color:var(--muted);font-size:15.5px;margin-bottom:40px;line-height:1.7}
+.form-card{background:var(--white);border-radius:16px;padding:40px;border:1px solid var(--border)}
+.form-group{display:flex;flex-direction:column;margin-bottom:22px}
+.form-group label{font-size:13px;font-weight:600;color:var(--dark);margin-bottom:6px}
+.form-group input{border:1.5px solid var(--border);border-radius:8px;padding:12px 14px;font-size:15px;font-family:'Inter',sans-serif;color:var(--text);background:var(--white);transition:border-color .2s}
+.form-group input:focus{outline:none;border-color:var(--red)}
+.file-label{display:flex;align-items:center;gap:10px;border:1.5px dashed var(--border);border-radius:8px;padding:16px;cursor:pointer;font-size:14.5px;color:var(--muted);transition:border-color .2s,background .2s}
+.file-label:hover{border-color:var(--red);background:rgba(232,25,44,.03)}
+.file-label svg{stroke:var(--red);flex-shrink:0;width:20px;height:20px}
+.file-label input{display:none}
+.required{color:var(--red)}
+.privacy-note{font-size:12.5px;color:var(--muted);margin-bottom:20px}
+.privacy-note a{color:var(--red)}
+.btn-submit{background:var(--red);color:#fff;border:none;border-radius:8px;padding:14px 36px;font-size:15px;font-weight:700;font-family:'Inter',sans-serif;cursor:pointer;width:100%;transition:opacity .2s}
+.btn-submit:hover{opacity:.88}
+.success-msg{display:none;background:#f0fdf4;border:1px solid #86efac;border-radius:10px;padding:20px 24px;color:#15803d;font-size:15px;font-weight:500}
+
+footer{background:#F0F1F3;border-top:1px solid var(--border);padding:24px 48px;text-align:center}
+footer p{color:var(--muted);font-size:12.5px}
+footer a{color:var(--red)}
+
+@media(max-width:600px){
+  nav{padding:0 20px}
+  .hero,.form-section{padding:56px 20px}
+  .form-card{padding:24px}
+  footer{padding:20px}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">
+    <img src="images/a2b_logo.png" alt="a2b Logistics" style="height:38px;width:auto;display:block">
+  </a>
+  <a href="index.html" class="nav-back">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+    Back to Home
+  </a>
+</nav>
+
+<section class="hero">
+  <div class="hero-inner">
+    <span class="page-label">Join the Team</span>
+    <h1>Build Your Career<br>in Saudi Logistics</h1>
+    <p>a2b is growing fast. We're looking for driven professionals who want to be part of something that matters, moving Saudi Arabia forward.</p>
+  </div>
+</section>
+
+<section class="form-section">
+  <div class="form-inner">
+    <h2 class="form-title">Apply Now</h2>
+    <p class="form-sub">Send us your details and CV. Our team will review your application and be in touch if there's a fit.</p>
+
+    <div class="form-card">
+      <form id="careerForm" onsubmit="submitForm(event)">
+        <div class="form-group">
+          <label>Full Name <span class="required">*</span></label>
+          <input type="text" name="full_name" placeholder="Your full name" required>
+        </div>
+        <div class="form-group">
+          <label>Email Address <span class="required">*</span></label>
+          <input type="email" name="email" placeholder="your@email.com" required>
+        </div>
+        <div class="form-group">
+          <label>Phone Number <span class="required">*</span></label>
+          <input type="tel" name="phone" placeholder="+966 5X XXX XXXX" required>
+        </div>
+        <div class="form-group">
+          <label>Attach Your CV <span class="required">*</span></label>
+          <label class="file-label">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+            <span id="fileLabel">Upload CV</span>
+            <input type="file" accept=".pdf,.doc,.docx" onchange="updateFileLabel(this)">
+          </label>
+        </div>
+        <p class="privacy-note">By submitting this form, you agree to our <a href="privacy-policy.html">Privacy Policy</a>. Your information will only be used for recruitment purposes.</p>
+        <button type="submit" class="btn-submit">Submit Application</button>
+      </form>
+      <div class="success-msg" id="successMsg">
+        Thank you for applying. We have received your application and will be in touch if there is a suitable opportunity.
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>&#169; 2026 a2b Logistics Company &nbsp;&#183;&nbsp; <a href="privacy-policy.html">Privacy Policy</a> &nbsp;&#183;&nbsp; <a href="terms-and-conditions.html">Terms and Conditions</a></p>
+</footer>
+
+<script>
+function updateFileLabel(input) {
+  const label = document.getElementById('fileLabel');
+  label.textContent = (input.files && input.files[0]) ? input.files[0].name : 'Upload CV';
+}
+
+function submitForm(e) {
+  e.preventDefault();
+  const form = document.getElementById('careerForm');
+  const data = new FormData(form);
+
+  const name  = data.get('full_name') || '';
+  const email = data.get('email') || '';
+  const phone = data.get('phone') || '';
+
+  const body = `Career Application\n\nFull Name: ${name}\nEmail: ${email}\nPhone: ${phone}\n\n---\nPlease attach your CV to this email.`;
+  const mailtoLink = `mailto:info@a2b.sa?subject=careers - ${encodeURIComponent(name)}&body=${encodeURIComponent(body)}`;
+  window.location.href = mailtoLink;
+
+  form.style.display = 'none';
+  document.getElementById('successMsg').style.display = 'block';
+}
+</script>
+</body>
+</html>

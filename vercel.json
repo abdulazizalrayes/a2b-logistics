@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "name": "a2b-logistics",
+  "builds": [
+    { "src": "*.html", "use": "@vercel/static" },
+    { "src": "images/**", "use": "@vercel/static" }
+  ],
+  "routes": [
+    { "src": "/(.*)", "dest": "/$1" }
+  ]
+}

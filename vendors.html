@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vendor Registration | a2b Logistics</title>
+<meta name="description" content="Register as a vendor or subcontractor with a2b Logistics Company. Join our network of trusted partners operating across Saudi Arabia.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.a2b.sa/vendors">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--red:#E8192C;--dark:#111;--text:#333;--muted:#666;--light:#F5F6F8;--border:#E2E4E8;--white:#fff}
+body{font-family:'Inter',sans-serif;background:var(--white);color:var(--text);line-height:1.7}
+
+nav{background:var(--white);border-bottom:1px solid var(--border);padding:0 48px;height:68px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
+.nav-logo svg{width:68px;height:40px}
+.nav-back{color:var(--red);font-size:13.5px;font-weight:600;text-decoration:none;display:flex;align-items:center;gap:6px}
+
+.hero{background:var(--dark);padding:80px 48px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-60px;right:-60px;width:400px;height:400px;background:var(--red);opacity:.06;border-radius:50%}
+.hero-inner{max-width:960px;margin:0 auto;position:relative;z-index:1}
+.page-label{color:var(--red);font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;margin-bottom:12px;display:block}
+.hero h1{font-size:clamp(32px,5vw,52px);font-weight:800;color:#fff;margin-bottom:16px;letter-spacing:-.8px;line-height:1.1}
+.hero p{color:rgba(255,255,255,.6);font-size:17px;max-width:540px;line-height:1.7}
+
+.form-section{padding:80px 48px;background:var(--light)}
+.form-inner{max-width:720px;margin:0 auto}
+.form-title{font-size:clamp(24px,3vw,32px);font-weight:800;color:var(--dark);margin-bottom:8px;letter-spacing:-.4px}
+.form-sub{color:var(--muted);font-size:15.5px;margin-bottom:40px;line-height:1.7}
+.form-card{background:var(--white);border-radius:16px;padding:40px;border:1px solid var(--border)}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:20px}
+.form-group{display:flex;flex-direction:column;margin-bottom:20px}
+.form-group label{font-size:13px;font-weight:600;color:var(--dark);margin-bottom:6px}
+.form-group input,.form-group select,.form-group textarea{border:1.5px solid var(--border);border-radius:8px;padding:11px 14px;font-size:14.5px;font-family:'Inter',sans-serif;color:var(--text);background:var(--white);transition:border-color .2s}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{outline:none;border-color:var(--red)}
+.form-group textarea{resize:vertical;min-height:120px}
+.form-group select{cursor:pointer}
+.required{color:var(--red)}
+.privacy-note{font-size:12.5px;color:var(--muted);margin-top:-12px;margin-bottom:20px}
+.privacy-note a{color:var(--red)}
+.btn-submit{background:var(--red);color:#fff;border:none;border-radius:8px;padding:14px 36px;font-size:15px;font-weight:700;font-family:'Inter',sans-serif;cursor:pointer;width:100%;transition:opacity .2s}
+.btn-submit:hover{opacity:.88}
+.success-msg{display:none;background:#f0fdf4;border:1px solid #86efac;border-radius:10px;padding:20px 24px;color:#15803d;font-size:15px;font-weight:500;margin-top:20px}
+.divider{border:none;border-top:1px solid var(--border);margin:24px 0}
+.section-heading{font-size:15px;font-weight:700;color:var(--dark);margin-bottom:20px;padding-bottom:12px;border-bottom:1px solid var(--border)}
+
+footer{background:#F0F1F3;border-top:1px solid var(--border);padding:24px 48px;text-align:center}
+footer p{color:var(--muted);font-size:12.5px}
+footer a{color:var(--red)}
+
+@media(max-width:768px){
+  .form-row{grid-template-columns:1fr}
+  nav{padding:0 20px}
+  .hero,.form-section{padding:56px 20px}
+  .form-card{padding:24px}
+  footer{padding:20px}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">
+    <img src="images/a2b_logo.png" alt="a2b Logistics" style="height:38px;width:auto;display:block">
+  </a>
+  <a href="index.html" class="nav-back">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+    Back to Home
+  </a>
+</nav>
+
+<section class="hero">
+  <div class="hero-inner">
+    <span class="page-label">Work With Us</span>
+    <h1>Become an a2b<br>Registered Vendor</h1>
+    <p>We work with a select network of high-quality vendors and subcontractors. If your business meets our standards, we want to hear from you.</p>
+  </div>
+</section>
+
+<section class="form-section">
+  <div class="form-inner">
+    <h2 class="form-title">Vendor Registration Form</h2>
+    <p class="form-sub">Submit your company details below. Our procurement team will review your submission and reach out if there is a potential fit for our operations.</p>
+
+    <div class="form-card">
+      <form id="vendorForm" onsubmit="submitForm(event)">
+
+        <h3 class="section-heading">Company Information</h3>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>Company Name <span class="required">*</span></label>
+            <input type="text" name="company_name" placeholder="Registered company name" required>
+          </div>
+          <div class="form-group">
+            <label>Commercial Registration (CR) Number <span class="required">*</span></label>
+            <input type="text" name="cr_number" placeholder="10-digit CR number" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>VAT Registration Number</label>
+            <input type="text" name="vat_number" placeholder="15-digit VAT number">
+          </div>
+          <div class="form-group">
+            <label>Years in Operation <span class="required">*</span></label>
+            <select name="years_operation" required>
+              <option value="" disabled selected>Select range</option>
+              <option>Less than 1 year</option>
+              <option>1 to 2 years</option>
+              <option>2 to 5 years</option>
+              <option>5 to 10 years</option>
+              <option>10+ years</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Vendor Category <span class="required">*</span></label>
+          <select name="vendor_category" required>
+            <option value="" disabled selected>Select primary category</option>
+            <option>Transportation and Trucking</option>
+            <option>Warehousing and Storage</option>
+            <option>Customs and Clearance</option>
+            <option>Freight and Forwarding</option>
+            <option>Maintenance and Repair</option>
+            <option>Technology and Software</option>
+            <option>Fuel and Consumables</option>
+            <option>Other</option>
+          </select>
+        </div>
+
+        <hr class="divider">
+        <h3 class="section-heading">Contact Person</h3>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>Full Name <span class="required">*</span></label>
+            <input type="text" name="contact_name" placeholder="Contact person's name" required>
+          </div>
+          <div class="form-group">
+            <label>Job Title</label>
+            <input type="text" name="contact_title" placeholder="e.g. General Manager, Sales Director">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Email Address <span class="required">*</span></label>
+            <input type="email" name="email" placeholder="company@domain.com" required>
+          </div>
+          <div class="form-group">
+            <label>Phone Number <span class="required">*</span></label>
+            <input type="tel" name="phone" placeholder="+966 5X XXX XXXX" required>
+          </div>
+        </div>
+
+        <hr class="divider">
+        <h3 class="section-heading">Services and Capabilities</h3>
+
+        <div class="form-group">
+          <label>Describe Your Services and Capabilities <span class="required">*</span></label>
+          <textarea name="services" placeholder="Describe what your company does, your fleet or facility details, and any relevant certifications or licenses..." required></textarea>
+        </div>
+
+        <p class="privacy-note">By submitting this form, you agree to our <a href="privacy-policy.html">Privacy Policy</a>. Submission does not guarantee a vendor agreement or any business commitment from a2b Logistics Company.</p>
+        <button type="submit" class="btn-submit">Submit Vendor Application</button>
+      </form>
+      <div class="success-msg" id="successMsg">
+        Thank you for registering your interest. Our procurement team will review your submission and contact you if there is a suitable opportunity. We appreciate your interest in working with a2b Logistics.
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>&#169; 2026 a2b Logistics Company &nbsp;&#183;&nbsp; <a href="privacy-policy.html">Privacy Policy</a> &nbsp;&#183;&nbsp; <a href="terms-and-conditions.html">Terms and Conditions</a></p>
+</footer>
+
+<script>
+function submitForm(e) {
+  e.preventDefault();
+  const form = document.getElementById('vendorForm');
+  const data = new FormData(form);
+
+  const companyName  = data.get('company_name') || '';
+  const crNumber     = data.get('cr_number') || '';
+  const vatNumber    = data.get('vat_number') || 'N/A';
+  const yearsOp      = data.get('years_operation') || '';
+  const category     = data.get('vendor_category') || '';
+  const contactName  = data.get('contact_name') || '';
+  const contactTitle = data.get('contact_title') || 'N/A';
+  const email        = data.get('email') || '';
+  const phone        = data.get('phone') || '';
+  const services     = data.get('services') || '';
+
+  const body = `Vendor Registration Application\n\n--- Company Information ---\nCompany Name: ${companyName}\nCR Number: ${crNumber}\nVAT Number: ${vatNumber}\nYears in Operation: ${yearsOp}\nVendor Category: ${category}\n\n--- Contact Person ---\nFull Name: ${contactName}\nJob Title: ${contactTitle}\nEmail: ${email}\nPhone: ${phone}\n\n--- Services and Capabilities ---\n${services}`;
+
+  const mailtoLink = `mailto:info@a2b.sa?subject=vendors - ${encodeURIComponent(companyName)}&body=${encodeURIComponent(body)}`;
+  window.location.href = mailtoLink;
+
+  form.style.display = 'none';
+  document.getElementById('successMsg').style.display = 'block';
+}
+</script>
+</body>
+</html>
