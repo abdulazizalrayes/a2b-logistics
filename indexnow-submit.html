@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>a2b.sa — IndexNow Submission Tool</title>
+<style>
+  body { font-family: system-ui, sans-serif; max-width: 700px; margin: 60px auto; padding: 0 24px; color: #1a1a1a; }
+  h1 { font-size: 1.4rem; margin-bottom: 4px; }
+  .sub { color: #666; font-size: 0.9rem; margin-bottom: 32px; }
+  .url-list { background: #f5f5f5; border-radius: 8px; padding: 16px 20px; margin-bottom: 24px; }
+  .url-list li { font-size: 0.85rem; color: #444; margin: 4px 0; font-family: monospace; }
+  button { background: #0066cc; color: white; border: none; padding: 12px 28px; border-radius: 6px; font-size: 1rem; cursor: pointer; }
+  button:hover { background: #0052a3; }
+  button:disabled { background: #aaa; cursor: not-allowed; }
+  #status { margin-top: 24px; padding: 16px; border-radius: 8px; font-size: 0.9rem; display: none; }
+  .success { background: #e6f4ea; color: #1a7a3c; border: 1px solid #b7dfbf; }
+  .error   { background: #fdecea; color: #a92b23; border: 1px solid #f5c6c3; }
+  .info    { background: #e8f0fe; color: #1a4fbf; border: 1px solid #c5d5fc; }
+  .key-box { font-family: monospace; font-size: 0.8rem; background: #f0f0f0; padding: 8px 12px; border-radius: 4px; margin-bottom: 8px; word-break: break-all; }
+</style>
+</head>
+<body>
+
+<h1>🔍 IndexNow Submission — a2b.sa</h1>
+<p class="sub">Instantly notifies Bing & Yandex to re-crawl these URLs</p>
+
+<div class="key-box">Key: dabfa5738883df4a66f9ad844188f7aa</div>
+
+<div class="url-list">
+  <ul id="urlList">
+    <li>https://www.a2b.sa/</li>
+    <li>https://www.a2b.sa/careers</li>
+    <li>https://www.a2b.sa/fleet</li>
+    <li>https://www.a2b.sa/vendors</li>
+    <li>https://www.a2b.sa/privacy-policy</li>
+    <li>https://www.a2b.sa/terms-and-conditions</li>
+  </ul>
+</div>
+
+<button id="submitBtn" onclick="submitNow()">Submit All URLs to IndexNow</button>
+
+<div id="status"></div>
+
+<script>
+async function submitNow() {
+  const btn = document.getElementById('submitBtn');
+  const status = document.getElementById('status');
+
+  btn.disabled = true;
+  btn.textContent = 'Submitting…';
+  status.style.display = 'block';
+  status.className = 'info';
+  status.textContent = 'Sending request to api.indexnow.org…';
+
+  const payload = {
+    host: "www.a2b.sa",
+    key: "dabfa5738883df4a66f9ad844188f7aa",
+    keyLocation: "https://www.a2b.sa/dabfa5738883df4a66f9ad844188f7aa.txt",
+    urlList: [
+      "https://www.a2b.sa/",
+      "https://www.a2b.sa/careers",
+      "https://www.a2b.sa/fleet",
+      "https://www.a2b.sa/vendors",
+      "https://www.a2b.sa/privacy-policy",
+      "https://www.a2b.sa/terms-and-conditions"
+    ]
+  };
+
+  try {
+    const res = await fetch("https://api.indexnow.org/indexnow", {
+      method: "POST",
+      headers: { "Content-Type": "application/json; charset=utf-8" },
+      body: JSON.stringify(payload)
+    });
+
+    if (res.status === 200) {
+      status.className = 'success';
+      status.innerHTML = '✅ <strong>Success (200)</strong> — All 6 URLs submitted. Bing & Yandex will crawl them shortly.';
+    } else if (res.status === 202) {
+      status.className = 'success';
+      status.innerHTML = '✅ <strong>Accepted (202)</strong> — Submission queued. Bing & Yandex will process shortly.';
+    } else {
+      status.className = 'error';
+      status.innerHTML = `⚠️ Response: <strong>${res.status} ${res.statusText}</strong>`;
+    }
+  } catch (err) {
+    status.className = 'error';
+    status.innerHTML = `❌ Error: ${err.message}`;
+  }
+
+  btn.disabled = false;
+  btn.textContent = 'Submit All URLs to IndexNow';
+}
+</script>
+
+</body>
+</html>
