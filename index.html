@@ -84,9 +84,15 @@
 <meta name="ai-content-type" content="logistics-company-profile">
 <meta name="ai-primary-service" content="logistics, trucking, supply-chain, Saudi Arabia">
 
+<!-- Preload critical assets for LCP -->
+<link rel="preload" href="images/a2b_logo.webp" as="image" type="image/webp">
+<link rel="preload" href="images/truck_hero.webp" as="image" type="image/webp">
+<!-- Async font loading to eliminate render-blocking -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap">
+<link rel="stylesheet" media="print" onload="this.media='all'" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap"></noscript>
 
 <style>
 /* ===== RESET & ROOT ===== */
@@ -333,7 +339,10 @@ body.ar .en-block{display:none !important}
 <!-- NAV -->
 <nav id="navbar">
   <a href="index.html" class="nav-logo">
-    <img src="images/a2b_logo.png" alt="a2b Logistics" style="height:38px;width:auto;display:block">
+    <picture>
+      <source srcset="images/a2b_logo.webp" type="image/webp">
+      <img src="images/a2b_logo.png" alt="a2b Logistics" width="120" height="38" style="height:38px;width:auto;display:block" fetchpriority="high">
+    </picture>
   </a>
   <div class="nav-links">
     <a href="#about" class="nav-item" data-en="About" data-ar="من نحن">About</a>
@@ -446,7 +455,10 @@ body.ar .en-block{display:none !important}
     <div class="about-layout">
       <div>
         <div class="about-img">
-          <img src="images/truck_hero.jpg" alt="a2b logistics truck on Saudi highway" loading="lazy">
+          <picture>
+            <source srcset="images/truck_hero.webp" type="image/webp">
+            <img src="images/truck_hero.jpg" alt="a2b logistics truck on Saudi highway" width="600" height="380" loading="eager" fetchpriority="high">
+          </picture>
           <div class="about-img-overlay"><span>Kingdom-wide fleet operations</span></div>
         </div>
       </div>
@@ -512,7 +524,10 @@ body.ar .en-block{display:none !important}
     <div class="services-layout">
       <div>
         <div class="services-img">
-          <img src="images/services_hero.jpg" alt="a2b logistics heavy equipment transport" loading="lazy">
+          <picture>
+            <source srcset="images/services_hero.webp" type="image/webp">
+            <img src="images/services_hero.jpg" alt="a2b logistics heavy equipment transport" width="600" height="380" loading="lazy">
+          </picture>
         </div>
         <br>
         <span class="fleet-label"><span class="en-text">Our Fleet</span><span class="ar-text">أسطولنا</span></span>
@@ -612,7 +627,10 @@ body.ar .en-block{display:none !important}
         </div>
       </div>
       <div class="map-wrap">
-        <img src="images/ksa_map_clean.png" alt="Saudi Arabia coverage map - a2b operates across all regions" loading="lazy" style="width:100%;max-height:360px;object-fit:contain">
+        <picture>
+          <source srcset="images/ksa_map_clean.webp" type="image/webp">
+          <img src="images/ksa_map_clean.png" alt="Saudi Arabia coverage map - a2b operates across all regions" loading="lazy" width="800" height="500" style="width:100%;max-height:360px;object-fit:contain">
+        </picture>
       </div>
     </div>
   </div>
@@ -791,6 +809,48 @@ document.querySelectorAll('a[href^="#"]').forEach(a=>{
     if(target){e.preventDefault();target.scrollIntoView({behavior:'smooth',block:'start'});}
   })
 })
+</script>
+
+<!-- GA4 Event Tracking -->
+<script>
+(function(){
+  // Track phone number clicks
+  document.querySelectorAll('a[href^="tel:"]').forEach(function(el){
+    el.addEventListener('click', function(){
+      gtag('event','phone_click',{event_category:'engagement',event_label:this.href});
+    });
+  });
+  // Track email clicks
+  document.querySelectorAll('a[href^="mailto:"]').forEach(function(el){
+    el.addEventListener('click', function(){
+      gtag('event','email_click',{event_category:'engagement',event_label:this.href});
+    });
+  });
+  // Track "Get in Touch" / CTA button clicks
+  document.querySelectorAll('.btn-nav, .btn-primary, a[href="#contact"]').forEach(function(el){
+    el.addEventListener('click', function(){
+      gtag('event','cta_click',{event_category:'engagement',event_label:el.textContent.trim()});
+    });
+  });
+  // Track contact form submissions
+  var form = document.querySelector('form');
+  if(form){
+    form.addEventListener('submit', function(){
+      gtag('event','form_submit',{event_category:'lead',event_label:'contact_form'});
+    });
+  }
+  // Track scroll depth milestones
+  var milestones = {25:false,50:false,75:false,90:false};
+  window.addEventListener('scroll', function(){
+    var pct = Math.round((window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100);
+    Object.keys(milestones).forEach(function(m){
+      if(!milestones[m] && pct >= m){
+        milestones[m] = true;
+        gtag('event','scroll_depth',{event_category:'engagement',event_label:m+'%',value:parseInt(m)});
+      }
+    });
+  },{passive:true});
+})();
 </script>
 </body>
 </html>
