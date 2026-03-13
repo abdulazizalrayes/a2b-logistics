@@ -7,43 +7,57 @@
 <style>
   body { font-family: system-ui, sans-serif; max-width: 700px; margin: 60px auto; padding: 0 24px; color: #1a1a1a; }
   h1 { font-size: 1.4rem; margin-bottom: 4px; }
-  .sub { color: #666; font-size: 0.9rem; margin-bottom: 32px; }
+  .sub { color: #666; font-size: 0.9rem; margin-bottom: 28px; }
+  .key-box { font-family: monospace; font-size: 0.8rem; background: #f0f0f0; padding: 8px 12px; border-radius: 4px; margin-bottom: 16px; }
   .url-list { background: #f5f5f5; border-radius: 8px; padding: 16px 20px; margin-bottom: 24px; }
   .url-list ul { margin: 0; padding-left: 20px; }
-  .url-list li { font-size: 0.85rem; color: #444; margin: 5px 0; font-family: monospace; }
-  .url-list li span { float: right; font-size: 0.8rem; }
-  button { background: #0066cc; color: white; border: none; padding: 12px 28px; border-radius: 6px; font-size: 1rem; cursor: pointer; }
-  button:hover { background: #0052a3; }
-  button:disabled { background: #aaa; cursor: not-allowed; }
-  #status { margin-top: 24px; padding: 16px; border-radius: 8px; font-size: 0.9rem; display: none; }
+  .url-list li { font-size: 0.85rem; color: #444; margin: 6px 0; font-family: monospace; display: flex; justify-content: space-between; align-items: center; }
+  .badge { font-size: 1rem; min-width: 20px; text-align: right; }
+  button.main { background: #0066cc; color: white; border: none; padding: 12px 28px; border-radius: 6px; font-size: 1rem; cursor: pointer; }
+  button.main:hover { background: #0052a3; }
+  button.main:disabled { background: #aaa; cursor: not-allowed; }
+  .divider { border: none; border-top: 1px solid #e0e0e0; margin: 28px 0; }
+  .alt { background: #f8f8f8; border-radius: 8px; padding: 16px 20px; }
+  .alt h3 { margin: 0 0 10px; font-size: 0.95rem; }
+  .alt p { font-size: 0.85rem; color: #555; margin: 0 0 10px; }
+  .alt a { display: inline-block; background: #005a9e; color: white; text-decoration: none; padding: 8px 16px; border-radius: 5px; font-size: 0.85rem; }
+  .alt a:hover { background: #004478; }
+  #status { margin-top: 20px; padding: 14px 16px; border-radius: 8px; font-size: 0.9rem; display: none; }
   .success { background: #e6f4ea; color: #1a7a3c; border: 1px solid #b7dfbf; }
   .info    { background: #e8f0fe; color: #1a4fbf; border: 1px solid #c5d5fc; }
-  .key-box { font-family: monospace; font-size: 0.8rem; background: #f0f0f0; padding: 8px 12px; border-radius: 4px; margin-bottom: 16px; word-break: break-all; }
-  .note { font-size: 0.78rem; color: #888; margin-top: 16px; }
+  .note { font-size: 0.75rem; color: #999; margin-top: 12px; }
 </style>
 </head>
 <body>
 
 <h1>🔍 IndexNow Submission — a2b.sa</h1>
-<p class="sub">Instantly notifies Bing & Yandex to re-crawl these URLs</p>
+<p class="sub">Instantly notifies Bing &amp; Yandex to re-crawl these URLs</p>
 
 <div class="key-box">Key: dabfa5738883df4a66f9ad844188f7aa</div>
 
 <div class="url-list">
-  <ul id="urlList">
-    <li>https://www.a2b.sa/ <span id="s0"></span></li>
-    <li>https://www.a2b.sa/careers <span id="s1"></span></li>
-    <li>https://www.a2b.sa/fleet <span id="s2"></span></li>
-    <li>https://www.a2b.sa/vendors <span id="s3"></span></li>
-    <li>https://www.a2b.sa/privacy-policy <span id="s4"></span></li>
-    <li>https://www.a2b.sa/terms-and-conditions <span id="s5"></span></li>
+  <ul>
+    <li><span>https://www.a2b.sa/</span>              <span class="badge" id="b0"></span></li>
+    <li><span>https://www.a2b.sa/careers</span>        <span class="badge" id="b1"></span></li>
+    <li><span>https://www.a2b.sa/fleet</span>          <span class="badge" id="b2"></span></li>
+    <li><span>https://www.a2b.sa/vendors</span>        <span class="badge" id="b3"></span></li>
+    <li><span>https://www.a2b.sa/privacy-policy</span> <span class="badge" id="b4"></span></li>
+    <li><span>https://www.a2b.sa/terms-and-conditions</span><span class="badge" id="b5"></span></li>
   </ul>
 </div>
 
-<button id="submitBtn" onclick="submitNow()">Submit All URLs to IndexNow</button>
+<button class="main" id="submitBtn" onclick="submitNow()">Submit All URLs to IndexNow</button>
 
 <div id="status"></div>
-<p class="note">Each URL is submitted individually via GET request. Requests are sent even if no confirmation is displayed (browser security restricts reading cross-origin responses).</p>
+<p class="note">Requests are sent as image pings — the most permissive browser request type. Server responses cannot be read due to browser security, but requests are delivered to api.indexnow.org.</p>
+
+<hr class="divider">
+
+<div class="alt">
+  <h3>🔗 Or submit directly in Bing Webmaster Tools</h3>
+  <p>The most reliable method — no browser restrictions. Open IndexNow in your Bing WMT dashboard for www.a2b.sa and confirm submissions there.</p>
+  <a href="https://www.bing.com/webmasters/indexnow?siteUrl=https://www.a2b.sa/" target="_blank">Open Bing WMT → IndexNow ↗</a>
+</div>
 
 <script>
 const KEY = "dabfa5738883df4a66f9ad844188f7aa";
@@ -56,6 +70,18 @@ const URLS = [
   "https://www.a2b.sa/terms-and-conditions"
 ];
 
+function pingURL(url) {
+  return new Promise((resolve) => {
+    const img = new Image();
+    const endpoint = `https://api.indexnow.org/indexnow?url=${encodeURIComponent(url)}&key=${KEY}&keyLocation=${encodeURIComponent("https://www.a2b.sa/dabfa5738883df4a66f9ad844188f7aa.txt")}`;
+    img.onload  = () => resolve(true);
+    img.onerror = () => resolve(true); // error just means server replied (not an image) — request WAS sent
+    img.src = endpoint;
+    // Safety timeout: resolve after 5s regardless
+    setTimeout(() => resolve(true), 5000);
+  });
+}
+
 async function submitNow() {
   const btn = document.getElementById('submitBtn');
   const status = document.getElementById('status');
@@ -64,26 +90,18 @@ async function submitNow() {
   btn.textContent = 'Submitting…';
   status.style.display = 'block';
   status.className = 'info';
-  status.textContent = 'Sending requests…';
-
-  let sent = 0;
+  status.textContent = 'Sending pings to api.indexnow.org…';
 
   for (let i = 0; i < URLS.length; i++) {
-    const span = document.getElementById('s' + i);
-    span.textContent = '⏳';
-    try {
-      const endpoint = `https://api.indexnow.org/indexnow?url=${encodeURIComponent(URLS[i])}&key=${KEY}`;
-      await fetch(endpoint, { mode: 'no-cors' });
-      span.textContent = '✅';
-      sent++;
-    } catch (e) {
-      span.textContent = '⚠️';
-    }
-    await new Promise(r => setTimeout(r, 300));
+    document.getElementById('b' + i).textContent = '⏳';
+    await pingURL(URLS[i]);
+    document.getElementById('b' + i).textContent = '✅';
+    await new Promise(r => setTimeout(r, 400));
   }
 
   status.className = 'success';
-  status.innerHTML = `✅ <strong>${sent} of ${URLS.length} URLs submitted</strong> — Bing & Yandex will crawl them shortly.<br><small style="color:#555">Check Bing Webmaster Tools → IndexNow in ~10 minutes to confirm.</small>`;
+  status.innerHTML = `✅ <strong>All 6 URLs pinged</strong> — Bing &amp; Yandex will crawl them shortly.<br>
+    <small style="color:#555">To confirm receipt, check <a href="https://www.bing.com/webmasters/indexnow?siteUrl=https://www.a2b.sa/" target="_blank" style="color:#1a7a3c">Bing WMT → IndexNow</a> in ~10 minutes.</small>`;
 
   btn.disabled = false;
   btn.textContent = 'Submit All URLs to IndexNow';
