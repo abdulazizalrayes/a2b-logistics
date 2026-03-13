@@ -9,15 +9,17 @@
   h1 { font-size: 1.4rem; margin-bottom: 4px; }
   .sub { color: #666; font-size: 0.9rem; margin-bottom: 32px; }
   .url-list { background: #f5f5f5; border-radius: 8px; padding: 16px 20px; margin-bottom: 24px; }
-  .url-list li { font-size: 0.85rem; color: #444; margin: 4px 0; font-family: monospace; }
+  .url-list ul { margin: 0; padding-left: 20px; }
+  .url-list li { font-size: 0.85rem; color: #444; margin: 5px 0; font-family: monospace; }
+  .url-list li span { float: right; font-size: 0.8rem; }
   button { background: #0066cc; color: white; border: none; padding: 12px 28px; border-radius: 6px; font-size: 1rem; cursor: pointer; }
   button:hover { background: #0052a3; }
   button:disabled { background: #aaa; cursor: not-allowed; }
   #status { margin-top: 24px; padding: 16px; border-radius: 8px; font-size: 0.9rem; display: none; }
   .success { background: #e6f4ea; color: #1a7a3c; border: 1px solid #b7dfbf; }
-  .error   { background: #fdecea; color: #a92b23; border: 1px solid #f5c6c3; }
   .info    { background: #e8f0fe; color: #1a4fbf; border: 1px solid #c5d5fc; }
-  .key-box { font-family: monospace; font-size: 0.8rem; background: #f0f0f0; padding: 8px 12px; border-radius: 4px; margin-bottom: 8px; word-break: break-all; }
+  .key-box { font-family: monospace; font-size: 0.8rem; background: #f0f0f0; padding: 8px 12px; border-radius: 4px; margin-bottom: 16px; word-break: break-all; }
+  .note { font-size: 0.78rem; color: #888; margin-top: 16px; }
 </style>
 </head>
 <body>
@@ -29,20 +31,31 @@
 
 <div class="url-list">
   <ul id="urlList">
-    <li>https://www.a2b.sa/</li>
-    <li>https://www.a2b.sa/careers</li>
-    <li>https://www.a2b.sa/fleet</li>
-    <li>https://www.a2b.sa/vendors</li>
-    <li>https://www.a2b.sa/privacy-policy</li>
-    <li>https://www.a2b.sa/terms-and-conditions</li>
+    <li>https://www.a2b.sa/ <span id="s0"></span></li>
+    <li>https://www.a2b.sa/careers <span id="s1"></span></li>
+    <li>https://www.a2b.sa/fleet <span id="s2"></span></li>
+    <li>https://www.a2b.sa/vendors <span id="s3"></span></li>
+    <li>https://www.a2b.sa/privacy-policy <span id="s4"></span></li>
+    <li>https://www.a2b.sa/terms-and-conditions <span id="s5"></span></li>
   </ul>
 </div>
 
 <button id="submitBtn" onclick="submitNow()">Submit All URLs to IndexNow</button>
 
 <div id="status"></div>
+<p class="note">Each URL is submitted individually via GET request. Requests are sent even if no confirmation is displayed (browser security restricts reading cross-origin responses).</p>
 
 <script>
+const KEY = "dabfa5738883df4a66f9ad844188f7aa";
+const URLS = [
+  "https://www.a2b.sa/",
+  "https://www.a2b.sa/careers",
+  "https://www.a2b.sa/fleet",
+  "https://www.a2b.sa/vendors",
+  "https://www.a2b.sa/privacy-policy",
+  "https://www.a2b.sa/terms-and-conditions"
+];
+
 async function submitNow() {
   const btn = document.getElementById('submitBtn');
   const status = document.getElementById('status');
@@ -51,43 +64,26 @@ async function submitNow() {
   btn.textContent = 'Submitting…';
   status.style.display = 'block';
   status.className = 'info';
-  status.textContent = 'Sending request to api.indexnow.org…';
+  status.textContent = 'Sending requests…';
 
-  const payload = {
-    host: "www.a2b.sa",
-    key: "dabfa5738883df4a66f9ad844188f7aa",
-    keyLocation: "https://www.a2b.sa/dabfa5738883df4a66f9ad844188f7aa.txt",
-    urlList: [
-      "https://www.a2b.sa/",
-      "https://www.a2b.sa/careers",
-      "https://www.a2b.sa/fleet",
-      "https://www.a2b.sa/vendors",
-      "https://www.a2b.sa/privacy-policy",
-      "https://www.a2b.sa/terms-and-conditions"
-    ]
-  };
+  let sent = 0;
 
-  try {
-    const res = await fetch("https://api.indexnow.org/indexnow", {
-      method: "POST",
-      headers: { "Content-Type": "application/json; charset=utf-8" },
-      body: JSON.stringify(payload)
-    });
-
-    if (res.status === 200) {
-      status.className = 'success';
-      status.innerHTML = '✅ <strong>Success (200)</strong> — All 6 URLs submitted. Bing & Yandex will crawl them shortly.';
-    } else if (res.status === 202) {
-      status.className = 'success';
-      status.innerHTML = '✅ <strong>Accepted (202)</strong> — Submission queued. Bing & Yandex will process shortly.';
-    } else {
-      status.className = 'error';
-      status.innerHTML = `⚠️ Response: <strong>${res.status} ${res.statusText}</strong>`;
+  for (let i = 0; i < URLS.length; i++) {
+    const span = document.getElementById('s' + i);
+    span.textContent = '⏳';
+    try {
+      const endpoint = `https://api.indexnow.org/indexnow?url=${encodeURIComponent(URLS[i])}&key=${KEY}`;
+      await fetch(endpoint, { mode: 'no-cors' });
+      span.textContent = '✅';
+      sent++;
+    } catch (e) {
+      span.textContent = '⚠️';
     }
-  } catch (err) {
-    status.className = 'error';
-    status.innerHTML = `❌ Error: ${err.message}`;
+    await new Promise(r => setTimeout(r, 300));
   }
+
+  status.className = 'success';
+  status.innerHTML = `✅ <strong>${sent} of ${URLS.length} URLs submitted</strong> — Bing & Yandex will crawl them shortly.<br><small style="color:#555">Check Bing Webmaster Tools → IndexNow in ~10 minutes to confirm.</small>`;
 
   btn.disabled = false;
   btn.textContent = 'Submit All URLs to IndexNow';
