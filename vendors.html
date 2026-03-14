@@ -6,13 +6,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Vendor Registration | a2b Logistics</title>
 <meta name="description" content="Register as a vendor or subcontractor with a2b Logistics Company. Join our network of trusted partners operating across Saudi Arabia.">
-<meta name="robots" content="index, follow">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
 <link rel="canonical" href="https://www.a2b.sa/vendors">
 <link rel="alternate" hreflang="en" href="https://www.a2b.sa/vendors">
 <link rel="alternate" hreflang="ar" href="https://www.a2b.sa/vendors?lang=ar">
 <link rel="alternate" hreflang="x-default" href="https://www.a2b.sa/vendors">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://www.a2b.sa/vendors">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ar_SA">
 <meta property="og:title" content="Vendor Registration | a2b Logistics">
 <meta property="og:description" content="Register as a vendor or subcontractor with a2b Logistics Company. Join our trusted partner network across Saudi Arabia.">
 <meta property="og:image" content="https://www.a2b.sa/images/truck_hero.jpg">
@@ -56,11 +58,23 @@
 :root{--red:#E8192C;--dark:#111;--text:#333;--muted:#666;--light:#F5F6F8;--border:#E2E4E8;--white:#fff}
 body{font-family:'Inter',sans-serif;background:var(--white);color:var(--text);line-height:1.7}
 
-nav{background:var(--white);border-bottom:1px solid var(--border);padding:0 48px;height:68px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
-.nav-logo svg{width:68px;height:40px}
-.nav-back{color:var(--red);font-size:13.5px;font-weight:600;text-decoration:none;display:flex;align-items:center;gap:6px}
+nav{position:fixed;top:0;width:100%;z-index:1000;background:rgba(255,255,255,.97);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:0 48px;height:68px;display:flex;align-items:center;justify-content:space-between;transition:box-shadow .3s}
+nav.scrolled{box-shadow:0 2px 20px rgba(0,0,0,.08)}
+.nav-logo img{height:38px;width:auto;display:block}
+.nav-links{display:flex;gap:28px;align-items:center}
+.nav-links a.nav-item{color:var(--muted);font-size:13.5px;font-weight:500;letter-spacing:.2px;transition:color .2s}
+.nav-links a.nav-item:hover,.nav-links a.nav-item.active{color:var(--dark)}
+.nav-phone{color:var(--dark);font-size:13px;font-weight:600;display:flex;align-items:center;gap:5px}
+.nav-phone svg{color:var(--red)}
+.btn-nav{background:var(--red);color:#FFFFFF !important;padding:9px 20px;border-radius:5px;font-size:13.5px;font-weight:700;letter-spacing:.2px;transition:background .2s;white-space:nowrap}
+.btn-nav:hover{background:#C01020}
+.hamburger{display:none;background:none;border:none;cursor:pointer;padding:4px}
+.mobile-menu{display:none;position:fixed;top:68px;left:0;right:0;background:#fff;border-bottom:1px solid var(--border);padding:20px;flex-direction:column;gap:16px;z-index:999}
+.mobile-menu.open{display:flex}
+.mobile-menu a{color:var(--dark);font-size:15px;font-weight:600;padding:8px 0;border-bottom:1px solid var(--border)}
+.mobile-menu a:last-child{border:none}
 
-.hero{background:var(--dark);padding:80px 48px;position:relative;overflow:hidden}
+.hero{background:var(--dark);padding:148px 48px 80px;position:relative;overflow:hidden}
 .hero::before{content:'';position:absolute;top:-60px;right:-60px;width:400px;height:400px;background:var(--red);opacity:.06;border-radius:50%}
 .hero-inner{max-width:960px;margin:0 auto;position:relative;z-index:1}
 .page-label{color:var(--red);font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;margin-bottom:12px;display:block}
@@ -92,9 +106,13 @@ footer{background:#F0F1F3;border-top:1px solid var(--border);padding:24px 48px;t
 footer p{color:var(--muted);font-size:12.5px}
 footer a{color:var(--red)}
 
+@media(max-width:900px){
+  nav{padding:0 20px}
+  .nav-links{display:none}
+  .hamburger{display:block}
+}
 @media(max-width:768px){
   .form-row{grid-template-columns:1fr}
-  nav{padding:0 20px}
   .hero,.form-section{padding:56px 20px}
   .form-card{padding:24px}
   footer{padding:20px}
@@ -112,15 +130,43 @@ footer a{color:var(--red)}
 </head>
 <body>
 
-<nav>
+<nav id="navbar">
   <a href="index.html" class="nav-logo">
-    <img src="images/a2b_logo.png" alt="a2b Logistics" style="height:38px;width:auto;display:block">
+    <picture>
+      <source srcset="images/a2b_logo.webp" type="image/webp">
+      <img src="images/a2b_logo.png" alt="a2b Logistics" width="120" height="38">
+    </picture>
   </a>
-  <a href="index.html" class="nav-back">
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
-    Back to Home
-  </a>
+  <div class="nav-links">
+    <a href="index.html#about" class="nav-item">About</a>
+    <a href="index.html#services" class="nav-item">Services</a>
+    <a href="index.html#coverage" class="nav-item">Coverage</a>
+    <a href="index.html#clients" class="nav-item">Clients</a>
+    <a href="fleet.html" class="nav-item">Fleet</a>
+    <a href="careers.html" class="nav-item">Careers</a>
+    <a href="vendors.html" class="nav-item active">Vendors</a>
+    <a href="tel:+966115101861" class="nav-phone">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#E8192C" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 01.22 2.18 2 2 0 012.18 0h3a2 2 0 012 1.72c.127.96.362 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.18 6.18l1.27-.52a2 2 0 012.11.45c.907.338 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+      +966-11-510-1861
+    </a>
+    <a href="index.html#contact" class="btn-nav">Get in Touch</a>
+  </div>
+  <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#333" stroke-width="2.5"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+  </button>
 </nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html#about" onclick="closeMobile()">About</a>
+  <a href="index.html#services" onclick="closeMobile()">Services</a>
+  <a href="index.html#coverage" onclick="closeMobile()">Coverage</a>
+  <a href="index.html#clients" onclick="closeMobile()">Clients</a>
+  <a href="fleet.html">Fleet</a>
+  <a href="careers.html">Careers</a>
+  <a href="vendors.html" style="color:var(--red)">Vendors</a>
+  <a href="tel:+966115101861">+966-11-510-1861</a>
+  <a href="index.html#contact" onclick="closeMobile()" style="color:var(--red);font-weight:700">Get in Touch</a>
+</div>
 
 <section class="hero">
   <div class="hero-inner">
@@ -229,6 +275,13 @@ footer a{color:var(--red)}
 </footer>
 
 <script>
+// NAV
+window.addEventListener('scroll',()=>{
+  document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>20)
+})
+function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('open')}
+function closeMobile(){document.getElementById('mobileMenu').classList.remove('open')}
+
 function submitForm(e) {
   e.preventDefault();
   const form = document.getElementById('vendorForm');
