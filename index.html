@@ -124,7 +124,7 @@
       "name": "What types of trucks does a2b operate?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "a2b operates 11+ truck types in multiple sizes, including closed trucks, flatbeds, refrigerated/freezer trucks, curtainsiders, dump trucks, boom trucks, cranes, tankers, pickups, and lowbeds. All types are available for per-trip, contract, or volume bookings."
+        "text": "a2b operates 11+ truck types in multiple sizes, including closed trucks, flatbeds, refrigerated/freezer trucks, curtainsiders, dump trucks, boom trucks, cranes, tankers, oickups, and lowbeds. All types are available for per-trip, contract, or volume bookings."
       }
     },
     {
@@ -155,7 +155,7 @@
 
 <style>
 /* ===== RESET & ROOT ===== */
-*,+::before,*::after{box-sizing:border-box;margin:0;padding:0}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
   --red:#E8192C;--red-dark:#C01020;--red-light:#FFF0F1;
   --dark:#111111;--dark2:#1C1C1C;
@@ -167,11 +167,11 @@ img{max-width:100%;height:auto;display:block}
 a{text-decoration:none;color:inherit}
 
 /* ===== NAV ===== */
-nav{position:fixed;top:0;width:100%;z-index:1000;background:rgba(255,255,255,.97);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:0 48px;height:68px;display:flex;align-items:center;justify-content:space-between;transition:box-shadow .3s}
+nav{position:fixed;top:0;width:100%;z-index:1000;background:rgba(255,255,255,.97);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:0 32px;height:68px;display:flex;align-items:center;justify-content:space-between;transition:box-shadow .3s;overflow:hidden}
 nav.scrolled{box-shadow:0 2px 20px rgba(0,0,0,.08)}
 .nav-logo svg{width:68px;height:40px}
-.nav-links{display:flex;gap:28px;align-items:center}
-.nav-links a.nav-item{color:var(--muted);font-size:13.5px;font-weight:500;letter-spacing:.2px;transition:color .2s}
+.nav-links{display:flex;gap:18px;align-items:center}
+.nav-links a.nav-item{color:var(--muted);font-size:13px;font-weight:500;letter-spacing:.1px;transition:color .2s}
 .nav-links a.nav-item:hover{color:var(--dark)}
 .nav-phone{color:var(--dark);font-size:13px;font-weight:600;display:flex;align-items:center;gap:5px}
 .nav-phone svg{color:var(--red)}
@@ -283,7 +283,7 @@ nav.scrolled{box-shadow:0 2px 20px rgba(0,0,0,.08)}
 .map-wrap img{width:100%;height:auto;object-fit:contain;max-height:360px}
 
 /* ===== CLIENTS ===== */
-.client-section-tag{display:block;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--red);margin:32px 0 14px}
+.client-section-tag{display:block;bont-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--red);margin:32px 0 14px}
 .clients-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;margin-top:0}
 .client-logo-card{background:var(--white);border:1.5px solid var(--border);border-radius:10px;padding:20px;display:flex;align-items:center;justify-content:center;min-height:80px;transition:all .2s;box-shadow:0 1px 4px rgba(0,0,0,.04)}
 .client-logo-card:hover{border-color:var(--red);box-shadow:0 4px 16px rgba(232,25,44,.09)}
@@ -343,7 +343,7 @@ body.ar .en-block{display:none !important}
 .en-block{display:block}
 
 /* ===== MOBILE ===== */
-@media(max-width:900px){
+@media(max-width:1150px){
   nav{padding:0 20px;height:60px}
   .nav-links{display:none}
   .hamburger{display:block}
@@ -406,13 +406,13 @@ body.ar .en-block{display:none !important}
   <div class="nav-links">
     <a href="#about" class="nav-item" data-en="About" data-ar="من نحن">About</a>
     <a href="#services" class="nav-item" data-en="Services" data-ar="الخدمات">Services</a>
-    <a href="#coverage" class="nav-item" data-en="Coverage" data-ar="التغطية">Coverage</a>
+    <a href="#coverage" class="nav-item" data-en="Coverage" data-ar="التظطية">Coverage</a>
     <a href="#clients" class="nav-item" data-en="Clients" data-ar="عملاؤنا">Clients</a>
     <a href="fleet.html" class="nav-item" data-en="Fleet" data-ar="الأسطول">Fleet</a>
     <a href="careers.html" class="nav-item" data-en="Careers" data-ar="الوظائف">Careers</a>
     <a href="vendors.html" class="nav-item" data-en="Vendors" data-ar="الموردون">Vendors</a>
     <a href="tel:+966115101861" class="nav-phone">
-      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#E8192C" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 2.79-19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 01.22 2.18 2 2 0 012.18 0h.3a2 2 0 012 1.72c.127.96.362 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.18 6.18l1.27-.52a2 2 0 012.11.45c.907.338 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#E8192C" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 01.22 2.18 2 2 0 012.18 0h3a2 2 0 012 1.72c.127.96.362 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.18 6.18l1.27-.52a2 2 0 012.11.45c.907.338 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
       +966-11-510-1861
     </a>
     <button class="lang-toggle" onclick="toggleLang()" id="langBtn">AR</button>
@@ -449,7 +449,7 @@ body.ar .en-block{display:none !important}
     </h1>
     <p class="hero-desc">
       <span class="en-text">a2b connects international companies and factories to the Kingdom's most comprehensive ground logistics network reliably, at scale, and on your terms.</span>
-      <span class="ar-text">a2b تربط الشركات الدولية والمصانع بشبكة الخدمات اللوجستية البرية الأكثر شمولاً في المملكة بشكل موثوق وعمى نطاق واسع.</span>
+      <span class="ar-text">a2b تربط الشركات الدولية والمصانع بشبكة الخدمات اللوجستية البرية الأكثر شمولاً في المملكة بشكل موثوق وعلى نطاق واسع.</span>
     </p>
     <div class="hero-btns">
       <a href="#contact" class="btn-primary">
@@ -475,7 +475,7 @@ body.ar .en-block{display:none !important}
     </div>
     <div class="hero-card">
       <span class="hero-card-n" style="font-size:28px;letter-spacing:-.5px">KSA-Wide</span>
-      <span class="hero-card-l"><span class="en-text">Full Kingdom coverage. All major cities, domestic routes and ports.</span><span class="ar-text">تغطية شاملة للمملكة. جميع المدن الرئيسية والمسارات المحلية والموانئ.</span></span>
+      <span class="hero-card-l"><span class="en-text">Full Kingdom coverage. All major cities, domestic routes and ports.</span><span class="ar-text">تظطية شاملة للمملكة. جميع المدن الرئيسية والمسارات المحلية والموانئ.</span></span>
     </div>
     <div class="hero-stat-row">
       <div class="hero-card">
@@ -509,7 +509,7 @@ body.ar .en-block{display:none !important}
     </div>
     <h2 class="section-title">
       <span class="en-block">Saudi Arabia's Logistics<br>Infrastructure, at Your Service</span>
-      <span class="ar-block">البنية التحتية اللوجستية<br>في المملكة العربية السعودية في خدمتك</span>
+      <span class="ar-block">البنية التحتية اللوجس֪ية<br>في المملكة العربية السعودية في خدمتك</span>
     </h2>
     <div class="about-layout">
       <div>
@@ -522,12 +522,12 @@ body.ar .en-block{display:none !important}
         </div>
       </div>
       <div class="about-text">
-        <p><strong>a2b Logistics Company</strong> <span class="en-text">is a fully independent turnkey logistics company, purpose-built to serve Saudi Arabia's rapidly growing economy and the international businesses entering the Kingdom.</span><span class="ar-text">هي شركة لوجستية متكاملة ومستقلة، مصممة خصيصاً لخدمة الاقتصاد السعودي المتمامي والشركات الدولية الداخلة إلى المملكة.</span></p>
-        <p><span class="en-text">Today, a2b stands as one of the <strong>top logistics service providers in the Kingdom</strong>, operating a diverse fleet of trucks across every type and size, engineered to serve every industry at every scale of operation.</span><span class="ar-text">تعد a2b اليوم من أبرز <strong>مسودي الخدمات اللوجستية في المملكة</strong>، تشغّل أسطولاً متنوعاً من الشاحمات بجميع أنواعها وأحجامها.</span></p>
-        <p><span class="en-text">For strong>international compank�es entering the Saudi market</strong> and factories requiring a reliable logistics partner, a2b provides the on-ground infrastructure, local expertise, and operational continuity you need from day one.</span><span class="ar-text">للشركات الدولية الراغبة في دخول السوق السعودية والمصانع التي تحتاج شريكاً لوجستياً موثوقاً، توفر a2b البنية التحتية الميدانية والخبرة المحلية منذ اليوم الأول.</span></p>
+        <p><strong>a2b Logistics Company</strong> <span class="en-text">is a fully independent turnkey logistics company, purpose-built to serve Saudi Arabia's rapidly growing economy and the international businesses entering the Kingdom.</span><span class="ar-text">هي شركة لوجستية متكاملة ومستقلة، مصممة خصيصاً لخدمة الاقتصاد السعودي المتنامي والشركا֪ الدولية الداخلة إلى المملكة.</span></p>
+        <p><span class="en-text">Today, a2b stands as one of the <strong>top logistics service providers in the Kingdom</strong>, operating a diverse fleet of trucks across every type and size, engineered to serve every industry at every scale of operation.</span><span class="ar-text">تعد a2b اليوم من أبرز <strong>مرافة الخدمات اللوجستية في المملكة</strong>، تشغّل أسطولاً متنوعاً من الشاحنات ذجميع أنواعها وأحجامها.</span></p>
+        <p><span class="en-text">For <strong>international companies entering the Saudi market</strong> and factories requiring a reliable logistics partner, a2b provides the on-ground infrastructure, local expertise, and operational continuity you need from day one.</span><span class="ar-text">للشركات الدولية الراغبة في دخول السوق السعودية والمصانع التي تحتاج شريكاً لوجستياً موثوقاً، توفر a2b البنية التحتية الميدانية والخبرة المحلية منذ اليوم الأول.</span></p>
         <div class="cert-panel">
           <div class="cert-panel-title"><span class="en-text">Certified</span><span class="ar-text">معتمدة</span> <span>ISO</span></div>
-          <div class="cert-row"><div class="cert-num">9001</div><div class="cert-desc"><span class="en-text">Quality Management System</span><span class="ar-text">نظام إدارة الجودة</span></div></div>
+          <div class="cert-row"><div class="cert-num">9001</div><div class="cert-desc"><span class="en-text">Quality Management System</span><span class="ar-text">مظام إدارة الجودة</span></div></div>
           <div class="cert-row"><div class="cert-num">45001</div><div class="cert-desc"><span class="en-text">Occupational Health and Safety Management System</span><span class="ar-text">نظام إدارة الصحة والسلامة المهنية</span></div></div>
           <div class="cert-row"><div class="cert-num">14001</div><div class="cert-desc"><span class="en-text">Environmental Management System</span><span class="ar-text">نظام الإدارة البيئية</span></div></div>
         </div>
@@ -541,7 +541,7 @@ body.ar .en-block{display:none !important}
   <div class="inner">
     <div class="section-label">
       <span class="en-text">Why a2b</span>
-      <span class="ar-text">لماذa2b</span>
+      <span class="ar-text">لماذا a2b</span>
     </div>
     <h2 class="section-title">
       <span class="en-block">9 Reasons International<br>Businesses Choose a2b</span>
@@ -552,11 +552,11 @@ body.ar .en-block{display:none !important}
       <span class="ar-text">كل قدرة مبنية حول المتطلبات الفريدة للعمل في المملكة العربية السعودية.</span>
     </p>
     <div class="why-grid">
-      <div class="why-card"><div class="why-icon">⚡</div><div class="why-title"><span class="en-text">Scalability</span><span class="ar-text">القدرة على التوسع</span></div><div class="why-desc"><span class="en-text">Fast, proven scalability to meet your requirements, from a single trip to a full nationwide rollout.</span><span class="ar-text">قدرة تطوير سريعة ومثبتة لتلبية متطلباتك، من رحل واحدة إلى تشزيل ووطني لامل.</span></div></div>
-      <div class="why-card"><div class="why-icon">🕐</div><div class="why-title"><span class="en-text">24/7 Availability</span><span class="ar-text">متاح 24/7</span></div><div class="why-desc"><span class1ss="en-text">Round-the-clock availability to answer calls and mobilize trucks. No downtime in your supply chain.</span><span class="ar-text">تواجد على مدار الساعة للرد على المكالمات وتحريك الشاحنات. لا توقف في سلسلة التوريد الخاصة بك.</span></div></div>
+      <div class="why-card"><div class="why-icon">⚡</div><div class="why-title"><span class="en-text">Scalability</span><span class="ar-text">القدرة على التوسع</span></div><div class="why-desc"><span class="en-text">Fast, proven scalability to meet your requirements, from a single trip to a full nationwide rollout.</span><span class="ar-text">قدرة تطوير سريعة ومثبتة لتلبية متطلباتك، من رحلة واحدة إلى تشغيل وطني شامل.</span></div></div>
+      <div class="why-card"><div class="why-icon">🕐</div><div class="why-title"><span class="en-text">24/7 Availability</span><span class="ar-text">متاح 24/7</span></div><div class="why-desc"><span class="en-text">Round-the-clock availability to answer calls and mobilize trucks. No downtime in your supply chain.</span><span class="ar-text">تواجد عمى مدار الساعة للرد على المكالمات وتحريك الشاحنات. لا توقف في سلسلة التوريد الخاصة بك.</span></div></div>
       <div class="why-card"><div class="why-icon">🚀</div><div class="why-title"><span class="en-text">Fast Response</span><span class="ar-text">استجابة سريعة</span></div><div class="why-desc"><span class="en-text">We act fast, identifying and allocating the right equipment for your project with minimal lead time.</span><span class="ar-text">نتصرف بسرعة، نحدد ونخصص المعدات المناسبة لمشروعك بأقل وقت ممكن.</span></div></div>
       <div class="why-card"><div class="why-icon">📊</div><div class="why-title"><span class="en-text">Transparency</span><span class="ar-text">الشفافية</span></div><div class="why-desc"><span class="en-text">Full visibility across every request, streamlined tracking and clear communication at all stages.</span><span class="ar-text">رؤية كاملة عبر كل طلب، تتبع مبسط وتواصل واضح في جميع المراحل.</span></div></div>
-      <div class="why-card"><div class="why-icon">📋</div><div class="why-title"><span class="en-text">Planning</span><span class="ar-text">التخطيط</span></div><div class="why-desc"><span class="en-text">We plan ahead for your projects, aligning logistics timelines precisely with your business objectives.</span><span class="ar-text">نخطط مسبقاً لمشاريعك، نوافق جداول اللوجستيات بدقة مع أهدافك التجارية.</span></div></div>
+      <div class="why-card"><div class="why-icon">📋</div><div class="why-title"><span class="en-text">Planning</span><span class="ar-text">التخطيط</span></div><div class="why-desc"><span class="en-text">We plan ahead for your projects, aligning logistics timelines precisely with your business objectives.</span><span class="ar-text">نخطط مسبقاي لمشاريعك، نوافق جداول اللوجس֪يا֪ بدقة مع أهدافك التجارية.</span></div></div>
       <div class="why-card"><div class="why-icon">⏱️</div><div class="why-title"><span class="en-text">Rushed Projects</span><span class="ar-text">المشاريع الطارئة</span></div><div class="why-desc"><span class="en-text">Successfully delivered under the tightest deadlines, including complex, time-critical mega-projects.</span><span class="ar-text">تسليم ناجح تحت أشد المواعيد النهائية ضيقاً، بما في ذلك المشاريع الكبرى الحرجة زمنياً.</span></div></div>
       <div class="why-card"><div class="why-icon">🏆</div><div class="why-title"><span class="en-text">Experience</span><span class="ar-text">الخبرة</span></div><div class="why-desc"><span class="en-text">An impeccable track record in sensitive, high-stakes projects, with a team averaging 20+ years of experience.</span><span class="ar-text">سجل حافل في المشاريع الحساسة عالية المخاطر، مع فريق يتمتع بخبرة تتجاوز 20 عاماً في المتوسط.</span></div></div>
       <div class="why-card"><div class="why-icon">🗺️</div><div class="why-title"><span class="en-text">Full KSA Coverage</span><span class="ar-text">تغطية شاملة</span></div><div class="why-desc"><span class="en-text">Kingdom-wide operations across all major cities, domestic routes, and sea and air port services.</span><span class="ar-text">عمليات على مستوى المملكة تشمل جميع المدن الرئيسية والمسارات البرية وخدمات الموانئ البحرية والجوية.</span></div></div>
@@ -578,7 +578,7 @@ body.ar .en-block{display:none !important}
     </h2>
     <p class="section-sub">
       <span class="en-text">11 truck types in multiple sizes. Flexible booking models. End-to-end support services.</span>
-      <span class="ar-text">11 نوعاً من الشاحنات بأحجام متعددة. نماذج حجز مرنة. خدمات دعم متكاملة.</span>
+      <span class="ar-text">11 نوعاً من الشاحنا֪ بأحجام متعددة. نماذج حجز مرنة. خدما֪ دعم متكاملة.</span>
     </p>
     <div class="services-layout">
       <div>
@@ -591,7 +591,7 @@ body.ar .en-block{display:none !important}
         <br>
         <span class="fleet-label"><span class="en-text">Our Fleet</span><span class="ar-text">أسطولنا</span></span>
         <div class="fleet-grid">
-          <div class="fleet-item"><span class="fleet-dot"></span><span class="en-text">Closed Trucks</span><span class="ar-text">شاحنات مغلقة</span></div>
+          <div class="fleet-item"><span class="fleet-dot"></span><span class="en-text">Closed Trucks</span><span class="ar-text">شاحنا֪ مغلقة</span></div>
           <div class="fleet-item"><span class="fleet-dot"></span><span class="en-text">High Side Trucks</span><span class="ar-text">شاحنات جانب عالٍ</span></div>
           <div class="fleet-item"><span class="fleet-dot"></span><span class="en-text">Shorter Side Trucks</span><span class="ar-text">شاحنات جانب قصير</span></div>
           <div class="fleet-item"><span class="fleet-dot"></span><span class="en-text">Refrigerated / Freezer</span><span class="ar-text">مبردة / متجمدة</span></div>
@@ -610,131 +610,9 @@ body.ar .en-block{display:none !important}
         <div class="booking-card"><div class="booking-tag"><span class="en-text">FLEXIBLE</span><span class="ar-text">مرن</span></div><div class="booking-title"><span class="en-text">Per Trip</span><span class="ar-text">لكل رحلة</span></div><div class="booking-desc"><span class="en-text">On-demand bookings. Scale up or down based on project volume and timing.</span><span class="ar-text">حجوزات عند الطلب. توسع أو تقليص بناءً على حجم المشروع والتوقيت.</span></div></div>
         <div class="booking-card"><div class="booking-tag"><span class="en-text">CONTRACT</span><span class="ar-text">عقد</span></div><div class="booking-title"><span class="en-text">Period Contracts</span><span class="ar-text">عقود دورية</span></div><div class="booking-desc"><span class="en-text">Daily, weekly, monthly, or annual agreements for consistent, predictable operations.</span><span class="ar-text">اتفاقيات يومية أو أسبوعية أو شهرية أو سنوية للعمليات المتسقة والقابلة للتنبؤ.</span></div></div>
         <div class="booking-card"><div class="booking-tag"><span class="en-text">VOLUME</span><span class="ar-text">حجم</span></div><div class="booking-title"><span class="en-text">Unit Rate</span><span class="ar-text">سعر الوحدة</span></div><div class="booking-desc"><span class="en-text">Volume-based pricing for high-frequency logistics and bulk movement requirements.</span><span class="ar-text">تسعير قائم على الحجم لاحتياجات اللوجستيات عالية التكرار والنقل بالجملة.</span></div></div>
-        <span class="fleet-label" style="margin:24px 0 13px;display:block"><span class="en-text">Additional Services</span><span class="ar-text">خدمات إظافية</span></span>
+        <span class="fleet-label" style="margin:24px 0 13px;display:block"><span class="en-text">Additional Services</span><span class="ar-text">خدمات إضافية</span></span>
         <div class="booking-card"><div class="booking-title"><span class="en-text">Cargo Insurance</span><span class="ar-text">تأمين البضائع</span></div><div class="booking-desc"><span class="en-text">Comprehensive protection for every shipment from origin to delivery.</span><span class="ar-text">حماية شاملة لكل شحنة من المصدر إلى التسليم.</span></div></div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- COVERAGE -->
-<div id="coverage" class="section-full bg-light">
-  <div class="inner">
-    <div class="section-label">
-      <span class="en-text">Coverage</span>
-      <span class="ar-text">التغٷية</span>
-    </div>
-    <h2 class="section-title">
-      <span class="en-block">Every Route in the Kingdom.<br>Every Industry, Every Size.</span>
-      <span class="ar-block">كل طريق في المملكة.<br>كل قآاغ وكل حجم.</span>
-    </h2>
-    <p class="section-sub">
-      <span class="en-text">a2b operates a route network across all major cities in Saudi Arabia, with specialized services for sea and air ports.</span>
-      <span class="ar-text">a2b مخدمة شبكة طريد المسارية extends across all major cities in Saudi Arabia, with specialized services for sea and air ports.</span>
-    </p>
-    <div class="coverage-layout">
-      <div>
-        <div class="coverage-img">
-          <picture>
-            <source srcset="images/coverage_map.webp" type="image/webp">
-            <img src="images/coverage_map.jpg" alt="a2b logistics route coverage map Saudi Arabia" width="600" height="400" loading="lazy">
-          </picture>
-        </div>
-      </div>
-      <div>
-        <div class="stats-dark">
-          <div class="stats-dark-inner">
-            <div><span class="stat-n">1.6M</span><span class="stat-l"><span class="en-text">Km route network</span><span class="ar-text">كم طريق المسارات</span></span></div>
-            <div><span class="stat-n">20+z</span><span class="stat-l"><span class="en-text">Cities served</span><span class="ar-text">مدن خدمت الميان</span></span></div>
-            <div><span class="stat-n">4 Regions</span><span class="stat-l"><span class="en-text">Across Saudi Arabia</span><span class="ar-text">طولا المملكة Arabia</span></span></div>
-          </div>
-        </div>
-        <div class="sectors-section">
-          <span class="fleet-label"><span class="en-text">Industries Served</span><span class="ar-text">القطاعات المخدمة</span></span>
-          <div class="sectors-grid">
-            <div class="sector-item"><span class="en-text">Construction</span><span class="ar-text">البنا��7����F�c�      <span class="city-tag">Riyadh</span>
-          <span class="city-tag">Jeddah</span>
-          <span class="city-tag">Dammam</span>
-          <span class="city-tag">Mecca</span>
-          <span class="city-tag">Medina</span>
-          <span class="city-tag">Tabuk</span>
-          <span class="city-tag">Abha</span>
-          <span class="city-tag">Yanbu</span>
-          <span class="city-tag">+ All Major Cities</span>
-        </div>
-      </div>
-      <div class="map-wrap">
-        <picture>
-          <source srcset="images/ksa_map_clean.webp" type="image/webp">
-          <img src="images/ksa_map_clean.png" alt="Saudi Arabia coverage map - a2b operates across all regions" loading="lazy" width="800" height="500" style="width:100%;max-height:360px;object-fit:contain">
-        </pictu-icon">📦</span><span class="en-text">E-Commerce</span><span class="ar-text">التجارة الإلكترونية</span></div>
-      <div class="sector-card"><span class="sector-icon">🏭</span><span class="en-text">Manufacturing</span><span class="ar-text">التصنيع</span></div>
-      <div class="sector-card"><span class="sector-icon">💼</span><span class="en-text">Trading</span><span class="ar-text">التجارة</span></div>
-      <div class="sector-card"><span class="sector-icon">⛽</span><span class="en-text">Oil and Gas</span><span class="ar-text">النفط والغاز</span></div>
-      <div class="sector-card"><span class="sector-icon">🏢</span><span class="en-text">Facility Management</span><span class="ar-text">إدارة المرافق</span></div>
-      <div class="sector-card"><span class="sector-icon">🏛️</span><span class="en-text">Government</span><span class="ar-text">القطاع الحكومي</span></div>
-    </div>
-  </div>
-</div>
-
-<!-- COVERAGE -->
-<div id="coverage">
-  <div class="section">
-    <div class="section-label">
-      <span class="en-text">Coverage</span>
-      <span class="ar-text">التغطية</span>
-    </div>
-    <h2 class="section-title">
-      <span class="en-block">Everywhere in the Kingdom.<br>From Every Entry Point.</span>
-      <span class="ar-block">في كل مكان بالمملكة.<br>من كل نقطة دخول.</span>
-    </h2>
-    <div class="coverage-layout">
-      <div class="coverage-text">
-        <p><span class="en-text">a2b operates fully across Saudi Arabia's major cities, providing domestic logistics and port services for incoming international cargo.</span><span class="ar-text">تعمل a2b بشكل كامل عبر المدن الرئيسية في المملكة العربية السعودية، وتوفر الخدمات اللوجستية المحلية وخدمات الموانئ للبطائع الدولية الواردة.</span></p>
-        <p><span class="en-text">Whether your shipment arrives at an international airport, a commercial seaport, or a land border crossing, a2b ensures it reaches its final destination anywhere in the Kingdom, on time.</span><span class="ar-text">سواء وصلت شحنتك إلى مطار دولي أو ميناء تجاري أو معبر حدودي بري، تضمن a2b وصولها إلى وجهتها النهائية في أي مكان بالمملكة في الوقت المحدد.</span></p>
-        <div class="city-tags">
-          <span class="city-tag">Riyadh</span>
-          <span class="city-tag">Jeddah</span>
-          <span class="city-tag">Dammam</span>
-          <span class="city-tag">Mecca</span>
-          <span class="city-tag">Medina</span>
-          <span class="city-tag">Tabuk</span>
-          <span class="city-tag">Abha</span>
-          <span class="city-tag">Yanbu</span>
-          <span class="city-tag">+ All Major Cities</span>
-        </div>
-      </div>
-      <div class="map-wrap">
-        <picture>
-          <source srcset="images/ksa_map_clean.webp" type="image/webp">
-          <img src="images/ksa_map_clean.png" alt="Saudi Arabia coverage map - a2b operates across all regions" loading="lazy" width="800" height="500" style="width:100%;max-height:360px;object-fit:contain">
-        </picture>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- CLIENTS -->
-<div id="clients" class="section-full bg-light">
-  <div class="inner">
-    <div class="section-label">
-      <span class="en-text">Clients</span>
-      <span class="ar-text">عملاؤنا</span>
-    </div>
-    <h2 class="section-title">
-      <span class="en-block">Trusted by the Kingdom's<br>Most Demanding Organizations</span>
-      <span class="ar-block">موثوق من قبل أكثر<br>المنظمات تطلباً في المملكة</span>
-    </h2>
-    <p class="section-sub">
-      <span class="en-text">From mega projects to global corporations, <strong>a2b is the logistics partner of choice.</strong></span>
-      <span class="ar-text">من المشاريع الكبرى إلى الشركات العالمية، <strong>a2b هي شريك اللوجستيات المفظل.</strong></span>
-    </p>
-    <span class="client-section-tag">
-      <span class="en-text">End-User Clients</span>
-      <span class="ar-text">عملاء المستخدم النهائي</span>
-    </span>
-    <div class="clients-grid">
-      <div class="client-logo-card"><img src="images/logo_1_clean.png" alt="NEOM" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="client-text" style="display:none">NEOM</span></div>
+        <div class="booking-card"><div class="booking-title"><span class="en-one';this.nextElementSibling.style.display='block'"><span class="client-text" style="display:none">NEOM</span></div>
       <div class="client-logo-card"><img src="images/logo_2_clean.png" alt="Ministry of Defense" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="client-text" style="display:none">Ministry of Defense</span></div>
       <div class="client-logo-card"><img src="images/logo_3_clean.png" alt="Royal Commission Riyadh" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="client-text" style="display:none">Royal Commission for Riyadh</span></div>
       <div class="client-logo-card"><img src="images/logo_4_clean.png" alt="Royal Commission Al-Ula" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="client-text" style="display:none">Royal Commission for Al-Ula</span></div>
@@ -751,7 +629,105 @@ body.ar .en-block{display:none !important}
 <div class="cta-banner">
   <h2>
     <span class="en-block">Ready to Establish Your<br>Logistics Presence in Saudi Arabia?</span>
-    <span class="ar-block">هل أنت مستعد لتأسيس حضورك<br>اللوجستي في المملكة العربية السعودية؟</span>
+    <span class="ar-block">هل أنت مستعد لتأسيس حضورك<br>اللوجس֪ي في المملكة العربية السعودية؟</span>
+  </h2>
+  <p>
+    <span class="en-text">Let's build a partnership that supports your entry and growth in the Kingdom.</span>
+    <span class="ar-text">لنبني شراكة تدعم دخولك ونموك في المملكة.</span>
+  </p>
+  <a href="#contact" class="btn-white">
+    <span class="en-text">Get in Touch Today</span>
+    <span class="ar-text">تواصل معنا اليوم</span>
+  </a>
+</div>
+
+<!-- CONTACT -->
+<div id="contact">
+  <div class="section">
+    <div class="section-label">
+      <span class="en-text">Contact</span>
+      <span class="ar-text">اتصل بنا</span>
+    </div>
+    <h2 class="section-title">
+      <span class="en-block">Start a Conversation</span>
+      <span class="ar-block">ابدأ محادثة</span>
+    </h2>
+    <p class="section-sub">
+      <span class="en-text">Reach our team and we'll respond within 24 hours.</span>
+      <span class="ar-text">تواصل مع فريقنا وسنرد خلال 24 ساعة.</span>
+    </p>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <div class="contact-card-title"><span class="en-text">General Inquiries</span><span class="ar-text">الاستفسارات العامة</span></div>
+        <a href="mailto:info@a2b.sa">info@a2b.sa</a>
+        <a href="tel:+966115101861">+966-11-510-1861</a>
+        <div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:6px">
+          <a href="https://www.linkedin.com/company/helloa2bco" target="_blank" rel="noopener" class="red-link" style="display:inline-flex;align-items:center;gap:5px;margin-bottom:0">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="#0A66C2"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            LinkedIn
+          </a>
+          <a href="https://www.instagram.com/a2blogistics_sa" target="_blank" rel="noopener" class="red-link" style="display:inline-flex;align-items:center;gap:5px;margin-bottom:0">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#E1306C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="#E1306C" stroke="none"/></svg>
+            Instagram
+          </a>
+          <a href="https://x.com/a2blogistics_sa" target="_blank" rel="noopener" class="red-link" style="display:inline-flex;align-items:center;gap:5px;margin-bottom:0">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="#000"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.748l7.73-8.835L2.25 2.25H8.08l4.253 5.622L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77z"/></svg>
+            X
+          </a>
+        </div>
+      </div>
+      <div class="contact-card">
+        <div class="contact-card-title"><span class="en-text">Sales Department</span><span class="ar-text">قسم المبيعات</span></div>
+        <a href="mailto:sales@a2b.sa">sales@a2b.sa</a>
+        <a href="tel:+966115101861">+966-11-510-1861</a>
+      </div>
+      <div class="contact-card">
+        <div class="contact-card-title"><span class="en-text">Our Address</span><span class="ar-text">عنواننا</span></div>
+        <p>3168 Tahliyah St., Ground Floor, Offices #2</p>
+        <p>Olaya District</p>
+        <p>Riyadh, Saudi Arabia</p>
+        <a href="https://www.a2b.sa" class="red-link" style="margin-top:8px">www.a2b.sa</a>
+      </div>
+      <div class="contact-card">
+        <div class="contact-card-title">CEO</div>
+        <p style="font-weight:600;color:var(--dark);margin-bottom:6px">Dr. Suhaib Ghunaim</p>
+        <a href="tel:+966553846446">M +966 55 384 6446</a>
+        <a href="mailto:SGhunaim@a2b.sa">SGhunaim@a2b.sa</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div style="display:flex;align-items:center;gap:28px;flex-wrap:wrap">
+    <svg width="52" height="32" viewBox="0 0 160 90" xmlns="http://www.w3.org/2000/svg">
+      <polygon points="82,4 70,24 94,24" fill="#E8192C"/>
+      <polygon points="82,78 70,60 94,60" fill="#E8192C"/>
+      <text x="8" y="70" font-family="Inter,Arial,sans-serif" font-size="60" font-weight="900" fill="#E8192C" letter-spacing="-4">a2b</text>
+    </svg>
+    <p>&#169; 2026 a2b Logistics Company &nbsp;&#183;&nbsp; CR 1009007094 &nbsp;&#183;&nbsp; VAT 310317517800003</p>
+  </div>
+  <div class="footer-links">
+    <a href="privacy-policy.html">Privacy Policy</a>
+    <a hreone';this.nextElementSibling.style.display='block'"><span class="client-text" style="display:none">NEOM</span></div>
+      <div class="client-logo-card"><img src="images/logo_2_clean.png" alt="Ministry of Defense" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="client-text" style="display:none">Ministry of Defense</span></div>
+      <div class="client-logo-card"><img src="images/logo_3_clean.png" alt="Royal Commission Riyadh" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="client-text" style="display:none">Royal Commission for Riyadh</span></div>
+      <div class="client-logo-card"><img src="images/logo_4_clean.png" alt="Royal Commission Al-Ula" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="client-text" style="display:none">Royal Commission for Al-Ula</span></div>
+      <div class="client-logo-card"><img src="images/logo_5_clean.png" alt="Riyadh Airports" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="client-text" style="display:none">Riyadh Airports</span></div>
+      <div class="client-logo-card"><img src="images/logo_6_clean.png" alt="STC" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="client-text" style="display:none">STC</span></div>
+      <div class="client-logo-card"><img src="images/logo_7_clean.png" alt="Saudi Electricity Company" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="client-text" style="display:none">Saudi Electricity Company</span></div>
+      <div class="client-logo-card"><img src="images/logo_0_clean.png" alt="Dream Gate Development Authority" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="client-text" style="display:none">Dream Gate Dev. Authority</span></div>
+      <div class="client-logo-card"><img src="images/logo_8_clean.png" alt="Formula E" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="client-text" style="display:none">Formula E</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- CTA -->
+<div class="cta-banner">
+  <h2>
+    <span class="en-block">Ready to Establish Your<br>Logistics Presence in Saudi Arabia?</span>
+    <span class="ar-block">هل أنت مستعد لتأسيس حضورك<br>اللوجس֪ي في المملكة العربية السعودية؟</span>
   </h2>
   <p>
     <span class="en-text">Let's build a partnership that supports your entry and growth in the Kingdom.</span>
