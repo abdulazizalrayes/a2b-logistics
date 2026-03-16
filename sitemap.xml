@@ -1,55 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+                xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
-  <url>
-    <loc>https://www.a2b.sa/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.a2b.sa/"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://www.a2b.sa/?lang=ar"/>
-    <lastmod>2026-03-14</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
+          <url>
+                      <loc>https://www.a2b.sa/</loc>
+                      <lastmod>2026-03-17</lastmod>
+                      <changefreq>weekly</changefreq>
+                      <priority>1.0</priority>
+          </url>
 
-  <url>
-    <loc>https://www.a2b.sa/fleet</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.a2b.sa/fleet"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://www.a2b.sa/fleet?lang=ar"/>
-    <lastmod>2026-03-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
+          <url>
+                      <loc>https://www.a2b.sa/fleet</loc>
+                      <lastmod>2026-03-17</lastmod>
+                      <changefreq>monthly</changefreq>
+                      <priority>0.8</priority>
+          </url>
 
-  <url>
-    <loc>https://www.a2b.sa/careers</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.a2b.sa/careers"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://www.a2b.sa/careers?lang=ar"/>
-    <lastmod>2026-03-14</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
+          <url>
+                      <loc>https://www.a2b.sa/careers</loc>
+                      <lastmod>2026-03-17</lastmod>
+                      <changefreq>weekly</changefreq>
+                      <priority>0.7</priority>
+          </url>
 
-  <url>
-    <loc>https://www.a2b.sa/vendors</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://www.a2b.sa/vendors"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://www.a2b.sa/vendors?lang=ar"/>
-    <lastmod>2026-03-14</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
+          <url>
+                      <loc>https://www.a2b.sa/vendors</loc>
+                      <lastmod>2026-03-17</lastmod>
+                      <changefreq>monthly</changefreq>
+                      <priority>0.6</priority>
+          </url>
 
-  <url>
-    <loc>https://www.a2b.sa/privacy-policy</loc>
-    <lastmod>2026-03-14</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
+          <url>
+                      <loc>https://www.a2b.sa/privacy-policy</loc>
+                      <lastmod>2026-03-17</lastmod>
+                      <changefreq>yearly</changefreq>
+                      <priority>0.3</priority>
+          </url>
 
-  <url>
-    <loc>https://www.a2b.sa/terms-and-conditions</loc>
-    <lastmod>2026-03-14</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
-  </url>
+          <url>
+                      <loc>https://www.a2b.sa/terms-and-conditions</loc>
+                      <lastmod>2026-03-17</lastmod>
+                      <changefreq>yearly</changefreq>
+                      <priority>0.3</priority>
+          </url>
 
 </urlset>
