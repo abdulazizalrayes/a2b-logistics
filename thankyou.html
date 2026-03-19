@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thank You | a2b Logistics</title>
+<meta name="description" content="Your submission has been received. A member of the a2b Logistics team will be in touch with you shortly.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="canonical" href="https://www.a2b.sa/thankyou">
+
+<!-- Google Analytics GA4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-909SV0D9FM"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-909SV0D9FM');
+</script>
+
+<style>
+  :root {
+    --dark: #0f1923;
+    --red: #e63030;
+    --border: #e5e7eb;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #f8f9fa;
+    color: #1a1a2e;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* HEADER */
+  header {
+    background: var(--dark);
+    padding: 0 40px;
+    height: 68px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+  }
+  .logo-mark {
+    width: 36px;
+    height: 36px;
+    background: var(--red);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    font-weight: 800;
+    color: #fff;
+    letter-spacing: -1px;
+  }
+  .logo-text { color: #fff; font-size: 18px; font-weight: 700; }
+  .logo-text span { color: var(--red); }
+  nav a {
+    color: #a0b8cc;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    margin-left: 24px;
+  }
+  nav a:hover { color: #fff; }
+
+  /* MAIN */
+  main {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 24px;
+  }
+  .card {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+    padding: 60px 48px;
+    max-width: 560px;
+    width: 100%;
+    text-align: center;
+  }
+  .icon-wrap {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: #e8f5e9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 28px;
+  }
+  .icon-wrap svg { width: 40px; height: 40px; }
+  h1 {
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--dark);
+    margin-bottom: 14px;
+    letter-spacing: -0.5px;
+  }
+  .subtitle {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.7;
+    margin-bottom: 32px;
+  }
+  .type-badge {
+    display: inline-block;
+    background: #f0f6ff;
+    color: #1a5fb4;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 4px 14px;
+    border-radius: 20px;
+    margin-bottom: 32px;
+  }
+  .divider {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 32px 0;
+  }
+  .what-next {
+    text-align: left;
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 20px 24px;
+    margin-bottom: 32px;
+  }
+  .what-next h3 {
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: #888;
+    margin-bottom: 14px;
+  }
+  .step {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 12px;
+    font-size: 14px;
+    color: #444;
+    line-height: 1.5;
+  }
+  .step:last-child { margin-bottom: 0; }
+  .step-num {
+    width: 22px;
+    height: 22px;
+    background: var(--dark);
+    color: #fff;
+    border-radius: 50%;
+    font-size: 11px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .btn-group {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .btn-primary {
+    background: var(--red);
+    color: #fff;
+    border: none;
+    padding: 13px 28px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+  .btn-primary:hover { background: #c82020; }
+  .btn-outline {
+    background: transparent;
+    color: var(--dark);
+    border: 2px solid var(--border);
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: border-color 0.2s;
+  }
+  .btn-outline:hover { border-color: var(--dark); }
+  .contact-note {
+    margin-top: 28px;
+    font-size: 13px;
+    color: #888;
+  }
+  .contact-note a { color: var(--red); text-decoration: none; font-weight: 600; }
+
+  /* RTL support */
+  .ar-text { display: none; }
+  html[lang="ar"] .en-text { display: none; }
+  html[lang="ar"] .ar-text { display: inline; }
+  html[lang="ar"] .card { direction: rtl; text-align: right; }
+  html[lang="ar"] .what-next { text-align: right; }
+  html[lang="ar"] .btn-group { direction: ltr; }
+
+  /* FOOTER */
+  footer {
+    background: var(--dark);
+    color: #7090b0;
+    text-align: center;
+    padding: 20px;
+    font-size: 12px;
+  }
+  footer a { color: #a0b8cc; text-decoration: none; }
+
+  @media (max-width: 600px) {
+    .card { padding: 40px 24px; }
+    header { padding: 0 20px; }
+    nav { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <a href="index.html" class="logo">
+    <div class="logo-mark">a2b</div>
+    <span class="logo-text">a2b <span>Logistics</span></span>
+  </a>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="fleet.html">Fleet</a>
+    <a href="vendors.html">Vendors</a>
+    <a href="careers.html">Careers</a>
+  </nav>
+</header>
+
+<main>
+  <div class="card">
+
+    <!-- Success icon -->
+    <div class="icon-wrap">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#2e7d32" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M20 6L9 17l-5-5"/>
+      </svg>
+    </div>
+
+    <!-- Dynamic badge based on source page -->
+    <div class="type-badge" id="sourceBadge">Submission Received</div>
+
+    <h1>
+      <span class="en-text">Thank You!</span>
+      <span class="ar-text">Ø´ÙØ±Ø§Ù ÙÙ!</span>
+    </h1>
+
+    <p class="subtitle" id="mainMessage">
+      <span class="en-text">Your submission has been received. A member of the a2b Logistics team will review your information and be in touch with you shortly.</span>
+      <span class="ar-text">ØªÙ Ø§Ø³ØªÙØ§Ù Ø·ÙØ¨Ù. Ø³ÙÙÙÙ Ø£Ø­Ø¯ Ø£Ø¹Ø¶Ø§Ø¡ ÙØ±ÙÙ Ø´Ø±ÙØ© a2b ÙÙØ®Ø¯ÙØ§Øª Ø§ÙÙÙØ¬Ø³ØªÙØ© Ø¨ÙØ±Ø§Ø¬Ø¹Ø© ÙØ¹ÙÙÙØ§ØªÙ ÙØ§ÙØªÙØ§ØµÙ ÙØ¹Ù ÙØ±ÙØ¨Ø§Ù.</span>
+    </p>
+
+    <div class="what-next" id="nextSteps">
+      <h3>
+        <span class="en-text">What happens next</span>
+        <span class="ar-text">ÙØ§Ø°Ø§ ÙØ­Ø¯Ø« Ø¨Ø¹Ø¯ Ø°ÙÙ</span>
+      </h3>
+      <div class="step">
+        <div class="step-num">1</div>
+        <div>
+          <span class="en-text">Our team reviews your submission within <strong>1â2 business days</strong>.</span>
+          <span class="ar-text">ÙØ±Ø§Ø¬Ø¹ ÙØ±ÙÙÙØ§ Ø·ÙØ¨Ù Ø®ÙØ§Ù <strong>1-2 Ø£ÙØ§Ù Ø¹ÙÙ</strong>.</span>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div>
+          <span class="en-text">You'll receive a confirmation email at the address you provided.</span>
+          <span class="ar-text">Ø³ØªØªÙÙÙ Ø¨Ø±ÙØ¯Ø§Ù Ø¥ÙÙØªØ±ÙÙÙØ§Ù ØªØ£ÙÙØ¯ÙØ§Ù Ø¹ÙÙ Ø§ÙØ¹ÙÙØ§Ù Ø§ÙØ°Ù ÙØ¯ÙØªÙ.</span>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div id="step3text">
+          <span class="en-text">A logistics specialist will contact you to discuss next steps.</span>
+          <span class="ar-text">Ø³ÙØªÙØ§ØµÙ ÙØ¹Ù Ø£Ø­Ø¯ ÙØªØ®ØµØµÙ Ø§ÙÙÙØ¬Ø³ØªÙØ§Øª ÙÙÙØ§ÙØ´Ø© Ø§ÙØ®Ø·ÙØ§Øª Ø§ÙØªØ§ÙÙØ©.</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="btn-group">
+      <a href="index.html" class="btn-primary">
+        â <span class="en-text">Back to Home</span><span class="ar-text">Ø§ÙØ¹ÙØ¯Ø© ÙÙØ±Ø¦ÙØ³ÙØ©</span>
+      </a>
+      <a href="fleet.html" class="btn-outline">
+        <span class="en-text">View Our Fleet</span><span class="ar-text">Ø¹Ø±Ø¶ Ø£Ø³Ø·ÙÙÙØ§</span>
+      </a>
+    </div>
+
+    <p class="contact-note">
+      <span class="en-text">Need urgent assistance? Call us at <a href="tel:+966115101861">+966-11-510-1861</a> or email <a href="mailto:info@a2b.sa">info@a2b.sa</a></span>
+      <span class="ar-text">ÙÙ ØªØ­Ø©Ø§Ø¬ ÙØ³Ø§Ø¹Ø¯Ø© Ø¸Ø§Ø¬ÙØ©Ø Ø§ØªØµÙ Ø¨ÙØ§ Ø¹ÙÙ <a href="tel:+966115101861">+966-11-510-1861</a> Ø£Ù Ø±Ø§Ø³ÙÙØ§ Ø¹ÙÙ <a href="mailto:info@a2b.sa">info@a2b.sa</a></span>
+    </p>
+
+  </div>
+</main>
+
+<footer>
+  &copy; 2025 a2b Logistics Company. All rights reserved. &nbsp;|&nbsp;
+  <a href="privacy-policy.html">Privacy Policy</a> &nbsp;|&nbsp;
+  <a href="terms-and-conditions.html">Terms &amp; Conditions</a>
+</footer>
+
+<script>
+// Detect which form sent the user here via URL param (?from=vendors / ?from=careers / ?from=contact)
+(function(){
+  var params = new URLSearchParams(window.location.search);
+  var from = params.get('from') || '';
+  var badge = document.getElementById('sourceBadge');
+  var step3 = document.getElementById('step3text');
+
+  if (from === 'vendors') {
+    badge.textContent = 'Vendor Registration Received';
+    badge.style.background = '#fff3e0';
+    badge.style.color = '#e65100';
+    if (step3) step3.innerHTML = '<span class="en-text">Our partnerships team will reach out to discuss onboarding as an a2b approved vendor.</span><span class="ar-text">Ø³ÙØªÙØ§ØµÙ ÙØ¹Ù ÙØ±ÙÙ Ø§ÙØ´Ø±Ø§ÙØ§Øª ÙÙÙØ§ÙØ´Ø© Ø§ÙØ¶ÙØ§ÙÙ ÙÙÙØ±Ø¯ ÙØ¹ØªÙØ¯ ÙØ´Ø±ÙØ© a2b.</span>';
+    // GA4 event
+    if (typeof gtag !== 'undefined') gtag('event', 'vendor_registration_complete', {event_category: 'form', event_label: 'vendor'});
+  } else if (from === 'careers') {
+    badge.textContent = 'Application Submitted';
+    badge.style.background = '#e8f5e9';
+    badge.style.color = '#2e7d32';
+    if (step3) step3.innerHTML = '<span class="en-text">Our HR team will review your application and reach out if your profile matches our current openings.</span><span class="ar-text">Ø³ÙØ±Ø§Ø¬Ø¹ ÙØ±ÙÙ Ø§ÙÙÙØ§Ø±Ø¯ Ø§ÙØ¨Ø´Ø±ÙØ© Ø·ÙØ¨Ù ÙÙØªÙØ§ØµÙ ÙØ¹Ù Ù¥Ø°Ø§ ÙØ§Ù ÙÙÙÙ ÙØªÙØ§Ø³Ø¨ ÙØ¹ ÙØ±Øµ Ø§ÙØ¹ÙÙ Ø§ÙÙØªØ§Ø­Ø©.</span>';
+    if (typeof gtag !== 'undefined') gtag('event', 'job_application_complete', {event_category: 'form', event_label: 'careers'});
+  } else if (from === 'contact') {
+    badge.textContent = 'Message Received';
+    if (step3) step3.innerHTML = '<span class="en-text">A member of our team will contact you to discuss your logistics requirements.</span><span class="ar-text">Ø³ÙØªÙØ§ØµÙ ÙØ¹Ù Ø£Ø­Ø¯ Ø£Ø¹Ø¶Ø§Ø¡ ÙØ±ÙÙÙØ§ ÙÙÙØ§ÙØ´Ø© ÙØªØ·ÙØ¨Ø§ØªÙ Ø§ÙÙÙØ¬Ø³ØªÙØ©.</span>';
+    if (typeof gtag !== 'undefined') gtag('event', 'contact_form_complete', {event_category: 'form', event_label: 'contact'});
+  } else {
+    // Generic GA4 event
+    if (typeof gtag !== 'undefined') gtag('event', 'form_submission_complete', {event_category: 'form'});
+  }
+
+  // Language sync with parent page preference
+  var lang = localStorage.getItem('a2b_lang') || 'en';
+  if (lang === 'ar') {
+    document.documentElement.lang = 'ar';
+    document.documentElement.dir = 'rtl';
+  }
+})();
+</script>
+
+</body>
+</html>
