@@ -1,4 +1,10 @@
 User-agent: *
 Allow: /
 
+# Content Signals Policy
+# search: allow indexing for search and answer discovery.
+# ai-input: allow retrieval for real-time AI answers and grounding.
+# ai-train: do not permit model training or fine-tuning on site content.
+Content-Signal: search=yes, ai-input=yes, ai-train=no
+
 Sitemap: https://www.a2b.sa/sitemap.xml

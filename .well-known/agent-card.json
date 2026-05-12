@@ -1,0 +1,75 @@
+{
+  "name": "a2b Logistics Agent",
+  "description": "Public discovery card for a2b Logistics services, company information, and quote request support.",
+  "url": "https://www.a2b.sa",
+  "version": "1.0.0",
+  "provider": {
+    "organization": "a2b Logistics",
+    "url": "https://www.a2b.sa"
+  },
+  "capabilities": {
+    "streaming": false,
+    "pushNotifications": false
+  },
+  "defaultInputModes": [
+    "text/plain"
+  ],
+  "defaultOutputModes": [
+    "text/plain",
+    "application/json"
+  ],
+  "skills": [
+    {
+      "id": "get-company-info",
+      "name": "Get Company Info",
+      "description": "Return a2b Logistics public company information, services, contact details, and website references.",
+      "tags": [
+        "logistics",
+        "company-info",
+        "saudi-arabia"
+      ],
+      "inputModes": [
+        "text/plain"
+      ],
+      "outputModes": [
+        "application/json",
+        "text/plain"
+      ]
+    },
+    {
+      "id": "list-services",
+      "name": "List Services",
+      "description": "List a2b Logistics public service categories for trucking, warehousing, customs clearance, and supply chain support.",
+      "tags": [
+        "services",
+        "trucking",
+        "warehousing",
+        "customs-clearance",
+        "supply-chain"
+      ],
+      "inputModes": [
+        "text/plain"
+      ],
+      "outputModes": [
+        "application/json",
+        "text/plain"
+      ]
+    },
+    {
+      "id": "request-quote",
+      "name": "Request Quote",
+      "description": "Help prepare a logistics quote request and direct the user to a2b Logistics sales contact.",
+      "tags": [
+        "quote",
+        "sales",
+        "logistics"
+      ],
+      "inputModes": [
+        "text/plain"
+      ],
+      "outputModes": [
+        "text/plain"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+# a2b Logistics
+
+> Saudi Arabia's logistics partner for trucking, warehousing, customs clearance, and supply chain support.
+
+## Company
+
+a2b Logistics provides business logistics services across Saudi Arabia. The company supports B2B transportation, warehousing, customs clearance, and supply chain coordination.
+
+## Services
+
+- Trucking and road freight across Saudi Arabia
+- Warehousing support
+- Customs clearance coordination
+- Supply chain solutions
+- Vendor and fleet support
+- 24/7 logistics availability
+
+## Priority Clients
+
+a2b serves business and operational logistics buyers, including companies that need transport, warehousing, customs, fleet, vendor, or supply chain support in Saudi Arabia.
+
+## Contacts
+
+- Website: https://www.a2b.sa
+- Sales: sales@a2b.sa
+- Info: info@a2b.sa
+- Phone: +966 55 384 6446
+
+## Agent Guidance
+
+- Use the website and sitemap as canonical public sources.
+- Do not infer consumer/B2C services unless explicitly shown on the site.
+- For quotes or commercial requests, direct users to sales@a2b.sa or the public contact flow.
+- For current pages, use https://www.a2b.sa/sitemap.xml.
+- For markdown content, use https://www.a2b.sa/index.md.
+
