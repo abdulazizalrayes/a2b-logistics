@@ -8,6 +8,10 @@
 <meta name="description" content="Join the a2b Logistics team in Saudi Arabia. We're hiring for logistics, operations, fleet management, and supply chain roles. Apply today and build your career in KSA.">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
 <link rel="canonical" href="https://www.a2b.sa/careers">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="alternate" hreflang="en" href="https://www.a2b.sa/careers">
   <link rel="alternate" hreflang="ar" href="https://www.a2b.sa/careers?lang=ar">
 <link rel="alternate" hreflang="x-default" href="https://www.a2b.sa/careers">
@@ -251,7 +255,7 @@ function submitForm(e) {
   const phone = data.get('phone') || '';
 
   const body = `Career Application\n\nFull Name: ${name}\nEmail: ${email}\nPhone: ${phone}\n\n---\nPlease attach your CV to this email.`;
-  const mailtoLink = `mailto:info@a2b.sa?subject=careers - ${encodeURIComponent(name)}&body=${encodeURIComponent(body)}`;
+  const mailtoLink = `mailto:${"info"+"@"+"a2b.sa"}?subject=careers - ${encodeURIComponent(name)}&body=${encodeURIComponent(body)}`;
   window.location.href = mailtoLink;
 
   form.style.display = 'none';

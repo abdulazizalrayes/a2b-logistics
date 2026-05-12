@@ -22,15 +22,15 @@ a2b serves business and operational logistics buyers, including companies that n
 ## Contacts
 
 - Website: https://www.a2b.sa
-- Sales: sales@a2b.sa
-- Info: info@a2b.sa
+- Sales: sales&#64;a2b.sa
+- Info: info&#64;a2b.sa
 - Phone: +966 55 384 6446
 
 ## Agent Guidance
 
 - Use the website and sitemap as canonical public sources.
 - Do not infer consumer/B2C services unless explicitly shown on the site.
-- For quotes or commercial requests, direct users to sales@a2b.sa or the public contact flow.
+- For quotes or commercial requests, direct users to sales&#64;a2b.sa or the public contact flow.
 - For current pages, use https://www.a2b.sa/sitemap.xml.
 - For markdown content, use https://www.a2b.sa/index.md.
 

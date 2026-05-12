@@ -8,6 +8,10 @@
 <meta name="description" content="Register as a vendor or subcontractor with a2b Logistics Company. Join our network of trusted partners operating across Saudi Arabia.">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
 <link rel="canonical" href="https://www.a2b.sa/vendors">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="alternate" hreflang="en" href="https://www.a2b.sa/vendors">
   <link rel="alternate" hreflang="ar" href="https://www.a2b.sa/vendors?lang=ar">
 <link rel="alternate" hreflang="x-default" href="https://www.a2b.sa/vendors">
@@ -300,7 +304,7 @@ function submitForm(e) {
 
   const body = `Vendor Registration Application\n\n--- Company Information ---\nCompany Name: ${companyName}\nCR Number: ${crNumber}\nVAT Number: ${vatNumber}\nYears in Operation: ${yearsOp}\nVendor Category: ${category}\n\n--- Contact Person ---\nFull Name: ${contactName}\nJob Title: ${contactTitle}\nEmail: ${email}\nPhone: ${phone}\n\n--- Services and Capabilities ---\n${services}`;
 
-  const mailtoLink = `mailto:info@a2b.sa?subject=vendors - ${encodeURIComponent(companyName)}&body=${encodeURIComponent(body)}`;
+  const mailtoLink = `mailto:${"info"+"@"+"a2b.sa"}?subject=vendors - ${encodeURIComponent(companyName)}&body=${encodeURIComponent(body)}`;
   window.location.href = mailtoLink;
 
   form.style.display = 'none';
