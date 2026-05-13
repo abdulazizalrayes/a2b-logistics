@@ -26,6 +26,8 @@
   .success { background: #e6f4ea; color: #1a7a3c; border: 1px solid #b7dfbf; }
   .info    { background: #e8f0fe; color: #1a4fbf; border: 1px solid #c5d5fc; }
   .note { font-size: 0.75rem; color: #999; margin-top: 12px; }
+  .confirm-note { color: #555; }
+  .confirm-link { color: #1a7a3c; }
 </style>
 </head>
 <body>
@@ -101,7 +103,7 @@ async function submitNow() {
 
   status.className = 'success';
   status.innerHTML = `✅ <strong>All 6 URLs pinged</strong> — Bing &amp; Yandex will crawl them shortly.<br>
-    <small style="color:#555">To confirm receipt, check <a href="https://www.bing.com/webmasters/indexnow?siteUrl=https://www.a2b.sa/" target="_blank" style="color:#1a7a3c">Bing WMT → IndexNow</a> in ~10 minutes.</small>`;
+    <small class="confirm-note">To confirm receipt, check <a href="https://www.bing.com/webmasters/indexnow?siteUrl=https://www.a2b.sa/" target="_blank" class="confirm-link">Bing WMT → IndexNow</a> in ~10 minutes.</small>`;
 
   btn.disabled = false;
   btn.textContent = 'Submit All URLs to IndexNow';

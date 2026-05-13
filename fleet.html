@@ -176,6 +176,9 @@ footer p{color:var(--muted);font-size:13px}
 .footer-social{display:flex;align-items:center;gap:16px}
 .footer-social a{color:var(--muted);transition:color .2s}
 .footer-social a:hover{color:var(--red)}
+.logo-img-inline{height:38px;width:auto;display:block}
+.mobile-current-link{color:var(--red)}
+.footer-brand-row{display:flex;align-items:center;gap:28px;flex-wrap:wrap}
 
 @media(max-width:900px){
   .fleet-hero{padding:110px 20px 60px}
@@ -207,37 +210,37 @@ footer p{color:var(--muted);font-size:13px}
 
 <!-- NAV -->
 <nav id="navbar">
-  <a href="index.html" class="nav-logo">
-    <img src="images/a2b_logo.png" alt="a2b Logistics" style="height:38px;width:auto;display:block">
+  <a href="/" class="nav-logo">
+    <img src="images/a2b_logo.png" alt="a2b Logistics" class="logo-img-inline">
   </a>
   <div class="nav-links">
-    <a href="index.html#about" class="nav-item">About</a>
-    <a href="index.html#services" class="nav-item">Services</a>
-    <a href="fleet.html" class="nav-item">Fleet</a>
-    <a href="index.html#coverage" class="nav-item">Coverage</a>
-    <a href="index.html#clients" class="nav-item">Clients</a>
-    <a href="careers.html" class="nav-item">Careers</a>
-    <a href="vendors.html" class="nav-item">Vendors</a>
+    <a href="/#about" class="nav-item">About</a>
+    <a href="/#services" class="nav-item">Services</a>
+    <a href="/fleet" class="nav-item">Fleet</a>
+    <a href="/#coverage" class="nav-item">Coverage</a>
+    <a href="/#clients" class="nav-item">Clients</a>
+    <a href="/careers" class="nav-item">Careers</a>
+    <a href="/vendors" class="nav-item">Vendors</a>
     <a href="tel:+966553846446" class="nav-phone">
       <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#E8192C" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 01.22 2.18 2 2 0 012.18 0h3a2 2 0 012 1.72c.127.96.362 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.18 6.18l1.27-.52a2 2 0 012.11.45c.907.338 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
       M +966 55 384 6446
     </a>
-    <a href="index.html#contact" class="btn-nav">Get in Touch</a>
+    <a href="/#contact" class="btn-nav">Get in Touch</a>
   </div>
   <button class="hamburger" onclick="document.getElementById('mobileMenu').classList.toggle('open')" aria-label="Menu">
     <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#333" stroke-width="2.5"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
   </button>
 </nav>
 <div class="mobile-menu" id="mobileMenu">
-  <a href="index.html#about">About</a>
-  <a href="index.html#services">Services</a>
-  <a href="fleet.html">Fleet</a>
-  <a href="index.html#coverage">Coverage</a>
-  <a href="index.html#clients">Clients</a>
-  <a href="careers.html">Careers</a>
-  <a href="vendors.html">Vendors</a>
+  <a href="/#about">About</a>
+  <a href="/#services">Services</a>
+  <a href="/fleet">Fleet</a>
+  <a href="/#coverage">Coverage</a>
+  <a href="/#clients">Clients</a>
+  <a href="/careers">Careers</a>
+  <a href="/vendors">Vendors</a>
   <a href="tel:+966553846446">M +966 55 384 6446</a>
-  <a href="index.html#contact" style="color:var(--red)">Get in Touch</a>
+  <a href="/#contact" class="mobile-current-link">Get in Touch</a>
 </div>
 
 <!-- HERO -->
@@ -595,12 +598,12 @@ footer p{color:var(--muted);font-size:13px}
 <div class="cta-fleet">
   <h2>Need a Specific Vehicle or Capacity?</h2>
   <p>Tell us your cargo type, route, and timeline — we'll confirm availability and turn it around fast.</p>
-  <a href="index.html#contact" class="btn-white">Get in Touch</a>
+  <a href="/#contact" class="btn-white">Get in Touch</a>
 </div>
 
 <!-- FOOTER -->
 <footer>
-  <div style="display:flex;align-items:center;gap:28px;flex-wrap:wrap">
+  <div class="footer-brand-row">
     <svg width="52" height="32" viewBox="0 0 160 90" xmlns="http://www.w3.org/2000/svg">
       <polygon points="82,4 70,24 94,24" fill="#E8192C"/>
       <polygon points="82,78 70,60 94,60" fill="#E8192C"/>
@@ -609,11 +612,11 @@ footer p{color:var(--muted);font-size:13px}
     <p>&#169; 2026 a2b Logistics Company &nbsp;&#183;&nbsp; CR 1009007094 &nbsp;&#183;&nbsp; VAT 310317517800003</p>
   </div>
   <div class="footer-links">
-    <a href="privacy-policy.html">Privacy Policy</a>
-    <a href="terms-and-conditions.html">Terms and Conditions</a>
-    <a href="careers.html">Careers</a>
-    <a href="vendors.html">Vendors</a>
-    <a href="fleet.html">Fleet</a>
+    <a href="/privacy-policy">Privacy Policy</a>
+    <a href="/terms-and-conditions">Terms and Conditions</a>
+    <a href="/careers">Careers</a>
+    <a href="/vendors">Vendors</a>
+    <a href="/fleet">Fleet</a>
     <a href="https://www.a2b.sa">a2b.sa</a>
   </div>
   <div class="footer-social">

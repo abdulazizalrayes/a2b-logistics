@@ -347,6 +347,18 @@ body.ar .ar-block{display:block !important}
 body.ar .en-block{display:none !important}
 .ar-block{display:none}
 .en-block{display:block}
+.logo-img-inline{height:38px;width:auto;display:block}
+.mobile-accent-link{color:var(--red);font-weight:700}
+.hero-card-wide{font-size:28px;letter-spacing:-.5px}
+.hero-card-iso{font-size:22px;color:var(--red)}
+.hero-card-years{font-size:26px}
+.fleet-note{color:var(--muted);font-size:12px;margin-top:10px;font-style:italic}
+.additional-services-label{margin:24px 0 13px;display:block}
+.contact-social-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px}
+.contact-social-link{display:inline-flex;align-items:center;gap:5px;margin-bottom:0}
+.address-website-link{margin-top:8px}
+.ceo-name{font-weight:600;color:var(--dark);margin-bottom:6px}
+.footer-brand-row{display:flex;align-items:center;gap:28px;flex-wrap:wrap}
 
 /* ===== MOBILE ===== */
 @media(max-width:1150px){
@@ -404,10 +416,10 @@ body.ar .en-block{display:none !important}
 
 <!-- NAV -->
 <nav id="navbar">
-  <a href="index.html" class="nav-logo">
+  <a href="/" class="nav-logo">
     <picture>
       <source srcset="images/a2b_logo.webp" type="image/webp">
-      <img src="images/a2b_logo.png" alt="a2b Logistics" width="120" height="38" style="height:38px;width:auto;display:block" fetchpriority="high">
+      <img src="images/a2b_logo.png" alt="a2b Logistics" width="120" height="38" class="logo-img-inline" fetchpriority="high">
     </picture>
   </a>
   <div class="nav-links">
@@ -415,9 +427,9 @@ body.ar .en-block{display:none !important}
     <a href="#services" class="nav-item" data-en="Services" data-ar="الخدمات">Services</a>
     <a href="#coverage" class="nav-item" data-en="Coverage" data-ar="التظطية">Coverage</a>
     <a href="#clients" class="nav-item" data-en="Clients" data-ar="عملاؤنا">Clients</a>
-    <a href="fleet.html" class="nav-item" data-en="Fleet" data-ar="الأسطول">Fleet</a>
-    <a href="careers.html" class="nav-item" data-en="Careers" data-ar="الوظائف">Careers</a>
-    <a href="vendors.html" class="nav-item" data-en="Vendors" data-ar="الموردون">Vendors</a>
+    <a href="/fleet" class="nav-item" data-en="Fleet" data-ar="الأسطول">Fleet</a>
+    <a href="/careers" class="nav-item" data-en="Careers" data-ar="الوظائف">Careers</a>
+    <a href="/vendors" class="nav-item" data-en="Vendors" data-ar="الموردون">Vendors</a>
     <a href="tel:+966553846446" class="nav-phone">
       <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#E8192C" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 01.22 2.18 2 2 0 012.18 0h3a2 2 0 012 1.72c.127.96.362 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.18 6.18l1.27-.52a2 2 0 012.11.45c.907.338 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
       M +966 55 384 6446
@@ -436,11 +448,11 @@ body.ar .en-block{display:none !important}
   <a href="#services" onclick="closeMobile()">Services</a>
   <a href="#coverage" onclick="closeMobile()">Coverage</a>
   <a href="#clients" onclick="closeMobile()">Clients</a>
-  <a href="fleet.html">Fleet</a>
-  <a href="careers.html">Careers</a>
-  <a href="vendors.html">Vendors</a>
+  <a href="/fleet">Fleet</a>
+  <a href="/careers">Careers</a>
+  <a href="/vendors">Vendors</a>
   <a href="tel:+966553846446">M +966 55 384 6446</a>
-  <a href="#contact" onclick="closeMobile()" style="color:var(--red);font-weight:700">Get in Touch</a>
+  <a href="#contact" onclick="closeMobile()" class="mobile-accent-link">Get in Touch</a>
 </div>
 
 <!-- HERO -->
@@ -481,16 +493,16 @@ body.ar .en-block{display:none !important}
       </div>
     </div>
     <div class="hero-card">
-      <span class="hero-card-n" style="font-size:28px;letter-spacing:-.5px">KSA-Wide</span>
+      <span class="hero-card-n hero-card-wide">KSA-Wide</span>
       <span class="hero-card-l"><span class="en-text">Full Kingdom coverage. All major cities, domestic routes and ports.</span><span class="ar-text">تظطية شاملة للمملكة. جميع المدن الرئيسية والمسارات المحلية والموانئ.</span></span>
     </div>
     <div class="hero-stat-row">
       <div class="hero-card">
-        <span class="hero-card-n" style="font-size:22px;color:var(--red)">ISO 9001</span>
+        <span class="hero-card-n hero-card-iso">ISO 9001</span>
         <span class="hero-card-l"><span class="en-text">Quality Certified</span><span class="ar-text">معتمد جودة</span></span>
       </div>
       <div class="hero-card">
-        <span class="hero-card-n" style="font-size:26px">20+ Yrs</span>
+        <span class="hero-card-n hero-card-years">20+ Yrs</span>
         <span class="hero-card-l"><span class="en-text">Team Experience</span><span class="ar-text">خبرة الفريق</span></span>
       </div>
     </div>
@@ -611,14 +623,14 @@ body.ar .en-block{display:none !important}
           <div class="fleet-item"><span class="fleet-dot"></span><span class="en-text">Water Tankers</span><span class="ar-text">صهاريج المياه</span></div>
           <div class="fleet-item"><span class="fleet-dot"></span><span class="en-text">Lowbed Trailers</span><span class="ar-text">مقطورات منخفضة</span></div>
         </div>
-        <p style="color:var(--muted);font-size:12px;margin-top:10px;font-style:italic"><span class="en-text">All types available in multiple sizes to accommodate your business requirements.</span><span class="ar-text">جميع الأنواع متوفرة بأحجام متعددة لتلبية متطلبات عملك.</span></p>
+        <p class="fleet-note"><span class="en-text">All types available in multiple sizes to accommodate your business requirements.</span><span class="ar-text">جميع الأنواع متوفرة بأحجام متعددة لتلبية متطلبات عملك.</span></p>
       </div>
       <div>
         <span class="fleet-label"><span class="en-text">Booking Models</span><span class="ar-text">نماذج الحجز</span></span>
         <div class="booking-card"><div class="booking-tag"><span class="en-text">FLEXIBLE</span><span class="ar-text">مرن</span></div><div class="booking-title"><span class="en-text">Per Trip</span><span class="ar-text">لكل رحلة</span></div><div class="booking-desc"><span class="en-text">On-demand bookings. Scale up or down based on project volume and timing.</span><span class="ar-text">حجوزات عند الطلب. توسع أو تقليص بناءً على حجم المشروع والتوقيت.</span></div></div>
         <div class="booking-card"><div class="booking-tag"><span class="en-text">CONTRACT</span><span class="ar-text">عقد</span></div><div class="booking-title"><span class="en-text">Period Contracts</span><span class="ar-text">عقود دورية</span></div><div class="booking-desc"><span class="en-text">Daily, weekly, monthly, or annual agreements for consistent, predictable operations.</span><span class="ar-text">اتفاقيات يومية أو أسبوعية أو شهرية أو سنوية للعمليات المتسقة والقابلة للتنبؤ.</span></div></div>
         <div class="booking-card"><div class="booking-tag"><span class="en-text">VOLUME</span><span class="ar-text">حجم</span></div><div class="booking-title"><span class="en-text">Unit Rate</span><span class="ar-text">سعر الوحدة</span></div><div class="booking-desc"><span class="en-text">Volume-based pricing for high-frequency logistics and bulk movement requirements.</span><span class="ar-text">تسعير قائم على الحجم لاحتياجات اللوجستيات عالية التكرار والنقل بالجملة.</span></div></div>
-        <span class="fleet-label" style="margin:24px 0 13px;display:block"><span class="en-text">Additional Services</span><span class="ar-text">خدمات إضافية</span></span>
+        <span class="fleet-label additional-services-label"><span class="en-text">Additional Services</span><span class="ar-text">خدمات إضافية</span></span>
         <div class="booking-card"><div class="booking-title"><span class="en-text">Cargo Insurance</span><span class="ar-text">تأمين البضائع</span></div><div class="booking-desc"><span class="en-text">Comprehensive protection for every shipment from origin to delivery.</span><span class="ar-text">حماية شاملة لكل شحنة من المصدر إلى التسليم.</span></div></div>
     </div>
   </div>
@@ -684,16 +696,16 @@ body.ar .en-block{display:none !important}
         <div class="contact-card-title"><span class="en-text">General Inquiries</span><span class="ar-text">الاستفسارات العامة</span></div>
         <a href="mailto:info&#64;a2b.sa">info&#64;a2b.sa</a>
         <a href="tel:+966553846446">M +966 55 384 6446</a>
-        <div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:6px">
-          <a href="https://www.linkedin.com/company/helloa2bco" target="_blank" rel="noopener" class="red-link" style="display:inline-flex;align-items:center;gap:5px;margin-bottom:0">
+        <div class="contact-social-row">
+          <a href="https://www.linkedin.com/company/helloa2bco" target="_blank" rel="noopener" class="red-link contact-social-link">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="#0A66C2"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
             LinkedIn
           </a>
-          <a href="https://www.instagram.com/a2blogistics_sa" target="_blank" rel="noopener" class="red-link" style="display:inline-flex;align-items:center;gap:5px;margin-bottom:0">
+          <a href="https://www.instagram.com/a2blogistics_sa" target="_blank" rel="noopener" class="red-link contact-social-link">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#E1306C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="#E1306C" stroke="none"/></svg>
             Instagram
           </a>
-          <a href="https://x.com/a2blogistics_sa" target="_blank" rel="noopener" class="red-link" style="display:inline-flex;align-items:center;gap:5px;margin-bottom:0">
+          <a href="https://x.com/a2blogistics_sa" target="_blank" rel="noopener" class="red-link contact-social-link">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="#000"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.748l7.73-8.835L2.25 2.25H8.08l4.253 5.622L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77z"/></svg>
             X
           </a>
@@ -709,11 +721,11 @@ body.ar .en-block{display:none !important}
         <p>3168 Tahliyah St., Ground Floor, Offices #2</p>
         <p>Olaya District</p>
         <p>Riyadh, Saudi Arabia</p>
-        <a href="https://www.a2b.sa" class="red-link" style="margin-top:8px">www.a2b.sa</a>
+        <a href="https://www.a2b.sa" class="red-link address-website-link">www.a2b.sa</a>
       </div>
       <div class="contact-card">
         <div class="contact-card-title">CEO</div>
-        <p style="font-weight:600;color:var(--dark);margin-bottom:6px">Dr. Suhaib Ghunaim</p>
+        <p class="ceo-name">Dr. Suhaib Ghunaim</p>
         <a href="tel:+966553846446">M +966 55 384 6446</a>
         <a href="mailto:SGhunaim&#64;a2b.sa">SGhunaim&#64;a2b.sa</a>
       </div>
@@ -723,7 +735,7 @@ body.ar .en-block{display:none !important}
 
 <!-- FOOTER -->
 <footer>
-  <div style="display:flex;align-items:center;gap:28px;flex-wrap:wrap">
+  <div class="footer-brand-row">
     <svg width="52" height="32" viewBox="0 0 160 90" xmlns="http://www.w3.org/2000/svg">
       <polygon points="82,4 70,24 94,24" fill="#E8192C"/>
       <polygon points="82,78 70,60 94,60" fill="#E8192C"/>
@@ -732,10 +744,10 @@ body.ar .en-block{display:none !important}
     <p>&#169; 2026 a2b Logistics Company &nbsp;&#183;&nbsp; CR 1009007094 &nbsp;&#183;&nbsp; VAT 310317517800003</p>
   </div>
   <div class="footer-links">
-    <a href="privacy-policy.html">Privacy Policy</a>
-    <a href="terms-and-conditions.html">Terms and Conditions</a>
-    <a href="careers.html">Careers</a>
-    <a href="vendors.html">Vendors</a>
+    <a href="/privacy-policy">Privacy Policy</a>
+    <a href="/terms-and-conditions">Terms and Conditions</a>
+    <a href="/careers">Careers</a>
+    <a href="/vendors">Vendors</a>
     <a href="https://www.a2b.sa">a2b.sa</a>
   </div>
   <div class="footer-social">
