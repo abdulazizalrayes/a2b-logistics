@@ -152,24 +152,16 @@
 <!-- Preload critical assets for LCP -->
 <link rel="preload" href="images/a2b_logo.webp" as="image" type="image/webp">
 <link rel="preload" href="images/truck_hero.webp" as="image" type="image/webp">
-<!-- Async font loading to eliminate render-blocking -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap">
-<link rel="stylesheet" media="print" onload="this.media='all'" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap">
-<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap"></noscript>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap">
 
 <link rel="stylesheet" href="/assets/css/index.css">
 
 <!-- Google Analytics 4 -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-909SV0D9FM"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-909SV0D9FM');
-</script>
-    <script src="/webmcp.js" defer></script>
+<script src="/assets/js/analytics.js"></script>
+<script src="/webmcp.js" defer></script>
 </head>
 <body>
 
@@ -194,25 +186,25 @@
       <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#E8192C" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 01.22 2.18 2 2 0 012.18 0h3a2 2 0 012 1.72c.127.96.362 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.18 6.18l1.27-.52a2 2 0 012.11.45c.907.338 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
       M +966 55 384 6446
     </a>
-    <button class="lang-toggle" onclick="toggleLang()" id="langBtn">AR</button>
+    <button class="lang-toggle" id="langBtn">AR</button>
     <a href="#contact" class="btn-nav" data-en="Get in Touch" data-ar="تواصل معنا">Get in Touch</a>
   </div>
-  <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+  <button class="hamburger" aria-label="Menu">
     <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#333" stroke-width="2.5"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
   </button>
 </nav>
 
 <!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobileMenu">
-  <a href="#about" onclick="closeMobile()">About</a>
-  <a href="#services" onclick="closeMobile()">Services</a>
-  <a href="#coverage" onclick="closeMobile()">Coverage</a>
-  <a href="#clients" onclick="closeMobile()">Clients</a>
+  <a href="#about">About</a>
+  <a href="#services">Services</a>
+  <a href="#coverage">Coverage</a>
+  <a href="#clients">Clients</a>
   <a href="/fleet">Fleet</a>
   <a href="/careers">Careers</a>
   <a href="/vendors">Vendors</a>
   <a href="tel:+966553846446">M +966 55 384 6446</a>
-  <a href="#contact" onclick="closeMobile()" class="mobile-accent-link">Get in Touch</a>
+  <a href="#contact" class="mobile-accent-link">Get in Touch</a>
 </div>
 
 <!-- HERO -->
@@ -523,85 +515,6 @@
   </div>
 </footer>
 
-<script>
-// NAV SCROLL
-window.addEventListener('scroll',()=>{
-  document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>20)
-})
-
-// MOBILE MENU
-function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('open')}
-function closeMobile(){document.getElementById('mobileMenu').classList.remove('open')}
-
-// LANGUAGE TOGGLE
-let isAr = false;
-function toggleLang(){
-  isAr = !isAr;
-  const html = document.documentElement;
-  const body = document.body;
-  const btn = document.getElementById('langBtn');
-  if(isAr){
-    html.setAttribute('lang','ar');
-    html.setAttribute('dir','rtl');
-    body.classList.add('ar');
-    btn.textContent='EN';
-  } else {
-    html.setAttribute('lang','en');
-    html.setAttribute('dir','ltr');
-    body.classList.remove('ar');
-    btn.textContent='AR';
-  }
-}
-
-// SMOOTH NAV LINKS
-document.querySelectorAll('a[href^="#"]').forEach(a=>{
-  a.addEventListener('click',e=>{
-    const target=document.querySelector(a.getAttribute('href'));
-    if(target){e.preventDefault();target.scrollIntoView({behavior:'smooth',block:'start'});}
-  })
-})
-</script>
-
-<!-- GA4 Event Tracking -->
-<script>
-(function(){
-  // Track phone number clicks
-  document.querySelectorAll('a[href^="tel:"]').forEach(function(el){
-    el.addEventListener('click', function(){
-      gtag('event','phone_click',{event_category:'engagement',event_label:this.href});
-    });
-  });
-  // Track email clicks
-  document.querySelectorAll('a[href^="mailto:"]').forEach(function(el){
-    el.addEventListener('click', function(){
-      gtag('event','email_click',{event_category:'engagement',event_label:this.href});
-    });
-  });
-  // Track "Get in Touch" / CTA button clicks
-  document.querySelectorAll('.btn-nav, .btn-primary, a[href="#contact"]').forEach(function(el){
-    el.addEventListener('click', function(){
-      gtag('event','cta_click',{event_category:'engagement',event_label:el.textContent.trim()});
-    });
-  });
-  // Track contact form submissions
-  var form = document.querySelector('form');
-  if(form){
-    form.addEventListener('submit', function(){
-      gtag('event','form_submit',{event_category:'lead',event_label:'contact_form'});
-    });
-  }
-  // Track scroll depth milestones
-  var milestones = {25:false,50:false,75:false,90:false};
-  window.addEventListener('scroll', function(){
-    var pct = Math.round((window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100);
-    Object.keys(milestones).forEach(function(m){
-      if(!milestones[m] && pct >= m){
-        milestones[m] = true;
-        gtag('event','scroll_depth',{event_category:'engagement',event_label:m+'%',value:parseInt(m)});
-      }
-    });
-  },{passive:true});
-})();
-</script>
+<script src="/assets/js/home.js" defer></script>
 </body>
 </html>

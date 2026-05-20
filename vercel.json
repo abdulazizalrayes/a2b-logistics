@@ -21,7 +21,7 @@
       "headers": [
         {
           "key": "X-Frame-Options",
-          "value": "SAMEORIGIN"
+          "value": "DENY"
         },
         {
           "key": "X-Content-Type-Options",
@@ -37,15 +37,31 @@
         },
         {
           "key": "X-XSS-Protection",
-          "value": "1; mode=block"
+          "value": "0"
         },
         {
           "key": "Strict-Transport-Security",
           "value": "max-age=63072000; includeSubDomains; preload"
         },
         {
+          "key": "Cross-Origin-Opener-Policy",
+          "value": "same-origin"
+        },
+        {
+          "key": "Cross-Origin-Resource-Policy",
+          "value": "same-origin"
+        },
+        {
+          "key": "Origin-Agent-Cluster",
+          "value": "?1"
+        },
+        {
+          "key": "X-Permitted-Cross-Domain-Policies",
+          "value": "none"
+        },
+        {
           "key": "Content-Security-Policy",
-          "value": "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://www.google-analytics.com https://analytics.google.com; frame-ancestors 'none'"
+          "value": "default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; frame-src 'none'; form-action 'self' mailto:; script-src 'self' https://www.googletagmanager.com https://www.google-analytics.com 'sha256-A2Da0mNLY9dM2/QMGHJiOeAJCU3HDdtAMyqi/RVg2GE=' 'sha256-QYVYf8vEE3q5J84Qu5fvhZVnKvyW+WGeQ5Q9jcA7SOk=' 'sha256-krGtIBbvbXOf4kEZkPUOiU1LP3vZ3vf1qdVPBYoT1xU=' 'sha256-3sJ3n6gO60QpT7XFkowoNwT6RKFo2jvO4gh78fmCZFs=' 'sha256-VdXEdhuU6aQDgF6Qp/ZxR2V+IE10R1Z5FdzvPHW8Qt0='; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://region1.google-analytics.com; manifest-src 'self'"
         }
       ]
     },

@@ -65,19 +65,12 @@
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap">
-<link rel="stylesheet" media="print" onload="this.media='all'" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap">
-<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap"></noscript>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap">
 <link rel="stylesheet" href="/assets/css/careers.css">
 
 <!-- Google Analytics 4 -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-909SV0D9FM"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-909SV0D9FM');
-</script>
+<script src="/assets/js/analytics.js"></script>
 </head>
 <body>
 
@@ -102,21 +95,21 @@
     </a>
     <a href="/#contact" class="btn-nav">Get in Touch</a>
   </div>
-  <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+  <button class="hamburger" aria-label="Menu">
     <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#333" stroke-width="2.5"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
   </button>
 </nav>
 
 <div class="mobile-menu" id="mobileMenu">
-  <a href="/#about" onclick="closeMobile()">About</a>
-  <a href="/#services" onclick="closeMobile()">Services</a>
-  <a href="/#coverage" onclick="closeMobile()">Coverage</a>
-  <a href="/#clients" onclick="closeMobile()">Clients</a>
+  <a href="/#about">About</a>
+  <a href="/#services">Services</a>
+  <a href="/#coverage">Coverage</a>
+  <a href="/#clients">Clients</a>
   <a href="/fleet">Fleet</a>
   <a href="/careers" class="mobile-current-link">Careers</a>
   <a href="/vendors">Vendors</a>
   <a href="tel:+966553846446">M +966 55 384 6446</a>
-  <a href="/#contact" onclick="closeMobile()" class="mobile-accent-link">Get in Touch</a>
+  <a href="/#contact" class="mobile-accent-link">Get in Touch</a>
 </div>
 
 <section class="hero">
@@ -133,7 +126,7 @@
     <p class="form-sub">Send us your details and CV. Our team will review your application and be in touch if there's a fit.</p>
 
     <div class="form-card">
-      <form id="careerForm" onsubmit="submitForm(event)">
+      <form id="careerForm">
         <div class="form-group">
           <label>Full Name <span class="required">*</span></label>
           <input type="text" name="full_name" placeholder="Your full name" required>
@@ -151,7 +144,7 @@
           <label class="file-label">
             <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
             <span id="fileLabel">Upload CV</span>
-            <input type="file" accept=".pdf,.doc,.docx" onchange="updateFileLabel(this)">
+            <input type="file" accept=".pdf,.doc,.docx">
           </label>
         </div>
         <p class="privacy-note">By submitting this form, you agree to our <a href="/privacy-policy">Privacy Policy</a>. Your information will only be used for recruitment purposes.</p>
@@ -168,36 +161,6 @@
   <p>&#169; 2026 a2b Logistics Company &nbsp;&#183;&nbsp; <a href="/privacy-policy">Privacy Policy</a> &nbsp;&#183;&nbsp; <a href="/terms-and-conditions">Terms and Conditions</a></p>
 </footer>
 
-<script>
-// NAV
-window.addEventListener('scroll',()=>{
-  document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>20)
-})
-function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('open')}
-function closeMobile(){document.getElementById('mobileMenu').classList.remove('open')}
-
-function updateFileLabel(input) {
-  const label = document.getElementById('fileLabel');
-  label.textContent = (input.files && input.files[0]) ? input.files[0].name : 'Upload CV';
-}
-
-function submitForm(e) {
-  e.preventDefault();
-  const form = document.getElementById('careerForm');
-  const data = new FormData(form);
-
-  const name  = data.get('full_name') || '';
-  const email = data.get('email') || '';
-  const phone = data.get('phone') || '';
-
-  const body = `Career Application\n\nFull Name: ${name}\nEmail: ${email}\nPhone: ${phone}\n\n---\nPlease attach your CV to this email.`;
-  const mailtoLink = `mailto:${"info"+"@"+"a2b.sa"}?subject=careers - ${encodeURIComponent(name)}&body=${encodeURIComponent(body)}`;
-  window.location.href = mailtoLink;
-
-  form.style.display = 'none';
-  document.getElementById('successMsg').style.display = 'block';
-  setTimeout(function(){window.location.href='thankyou.html?from=careers';},1500);
-}
-</script>
+<script src="/assets/js/careers.js" defer></script>
 </body>
 </html>

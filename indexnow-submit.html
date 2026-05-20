@@ -24,7 +24,7 @@
   </ul>
 </div>
 
-<button class="main" id="submitBtn" onclick="submitNow()">Submit All URLs to IndexNow</button>
+<button class="main" id="submitBtn">Submit All URLs to IndexNow</button>
 
 <div id="status"></div>
 <p class="note">Requests are sent as image pings — the most permissive browser request type. Server responses cannot be read due to browser security, but requests are delivered to api.indexnow.org.</p>
@@ -34,57 +34,10 @@
 <div class="alt">
   <h3>🔗 Or submit directly in Bing Webmaster Tools</h3>
   <p>The most reliable method — no browser restrictions. Open IndexNow in your Bing WMT dashboard for www.a2b.sa and confirm submissions there.</p>
-  <a href="https://www.bing.com/webmasters/indexnow?siteUrl=https://www.a2b.sa/" target="_blank">Open Bing WMT → IndexNow ↗</a>
+  <a href="https://www.bing.com/webmasters/indexnow?siteUrl=https://www.a2b.sa/" target="_blank" rel="noopener noreferrer">Open Bing WMT → IndexNow ↗</a>
 </div>
 
-<script>
-const KEY = "dabfa5738883df4a66f9ad844188f7aa";
-const URLS = [
-  "https://www.a2b.sa/",
-  "https://www.a2b.sa/careers",
-  "https://www.a2b.sa/fleet",
-  "https://www.a2b.sa/vendors",
-  "https://www.a2b.sa/privacy-policy",
-  "https://www.a2b.sa/terms-and-conditions"
-];
-
-function pingURL(url) {
-  return new Promise((resolve) => {
-    const img = new Image();
-    const endpoint = `https://api.indexnow.org/indexnow?url=${encodeURIComponent(url)}&key=${KEY}&keyLocation=${encodeURIComponent("https://www.a2b.sa/dabfa5738883df4a66f9ad844188f7aa.txt")}`;
-    img.onload  = () => resolve(true);
-    img.onerror = () => resolve(true); // error just means server replied (not an image) — request WAS sent
-    img.src = endpoint;
-    // Safety timeout: resolve after 5s regardless
-    setTimeout(() => resolve(true), 5000);
-  });
-}
-
-async function submitNow() {
-  const btn = document.getElementById('submitBtn');
-  const status = document.getElementById('status');
-
-  btn.disabled = true;
-  btn.textContent = 'Submitting…';
-  status.style.display = 'block';
-  status.className = 'info';
-  status.textContent = 'Sending pings to api.indexnow.org…';
-
-  for (let i = 0; i < URLS.length; i++) {
-    document.getElementById('b' + i).textContent = '⏳';
-    await pingURL(URLS[i]);
-    document.getElementById('b' + i).textContent = '✅';
-    await new Promise(r => setTimeout(r, 400));
-  }
-
-  status.className = 'success';
-  status.innerHTML = `✅ <strong>All 6 URLs pinged</strong> — Bing &amp; Yandex will crawl them shortly.<br>
-    <small class="confirm-note">To confirm receipt, check <a href="https://www.bing.com/webmasters/indexnow?siteUrl=https://www.a2b.sa/" target="_blank" class="confirm-link">Bing WMT → IndexNow</a> in ~10 minutes.</small>`;
-
-  btn.disabled = false;
-  btn.textContent = 'Submit All URLs to IndexNow';
-}
-</script>
+<script src="/assets/js/indexnow-submit.js" defer></script>
 
 </body>
 </html>

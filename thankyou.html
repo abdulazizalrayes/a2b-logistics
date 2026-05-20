@@ -14,12 +14,7 @@
 
 <!-- Google Analytics GA4 -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-909SV0D9FM"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-909SV0D9FM');
-</script>
+<script src="/assets/js/analytics.js"></script>
 
 <link rel="stylesheet" href="/assets/css/thankyou.css">
 </head>
@@ -112,44 +107,7 @@
   <a href="/terms-and-conditions">Terms &amp; Conditions</a>
 </footer>
 
-<script>
-// Detect which form sent the user here via URL param (?from=vendors / ?from=careers / ?from=contact)
-(function(){
-  var params = new URLSearchParams(window.location.search);
-  var from = params.get('from') || '';
-  var badge = document.getElementById('sourceBadge');
-  var step3 = document.getElementById('step3text');
-
-  if (from === 'vendors') {
-    badge.textContent = 'Vendor Registration Received';
-    badge.style.background = '#fff3e0';
-    badge.style.color = '#e65100';
-    if (step3) step3.innerHTML = '<span class="en-text">Our partnerships team will reach out to discuss onboarding as an a2b approved vendor.</span><span class="ar-text">Ø³ÙØªÙØ§ØµÙ ÙØ¹Ù ÙØ±ÙÙ Ø§ÙØ´Ø±Ø§ÙØ§Øª ÙÙÙØ§ÙØ´Ø© Ø§ÙØ¶ÙØ§ÙÙ ÙÙÙØ±Ø¯ ÙØ¹ØªÙØ¯ ÙØ´Ø±ÙØ© a2b.</span>';
-    // GA4 event
-    if (typeof gtag !== 'undefined') gtag('event', 'vendor_registration_complete', {event_category: 'form', event_label: 'vendor'});
-  } else if (from === 'careers') {
-    badge.textContent = 'Application Submitted';
-    badge.style.background = '#e8f5e9';
-    badge.style.color = '#2e7d32';
-    if (step3) step3.innerHTML = '<span class="en-text">Our HR team will review your application and reach out if your profile matches our current openings.</span><span class="ar-text">Ø³ÙØ±Ø§Ø¬Ø¹ ÙØ±ÙÙ Ø§ÙÙÙØ§Ø±Ø¯ Ø§ÙØ¨Ø´Ø±ÙØ© Ø·ÙØ¨Ù ÙÙØªÙØ§ØµÙ ÙØ¹Ù Ù¥Ø°Ø§ ÙØ§Ù ÙÙÙÙ ÙØªÙØ§Ø³Ø¨ ÙØ¹ ÙØ±Øµ Ø§ÙØ¹ÙÙ Ø§ÙÙØªØ§Ø­Ø©.</span>';
-    if (typeof gtag !== 'undefined') gtag('event', 'job_application_complete', {event_category: 'form', event_label: 'careers'});
-  } else if (from === 'contact') {
-    badge.textContent = 'Message Received';
-    if (step3) step3.innerHTML = '<span class="en-text">A member of our team will contact you to discuss your logistics requirements.</span><span class="ar-text">Ø³ÙØªÙØ§ØµÙ ÙØ¹Ù Ø£Ø­Ø¯ Ø£Ø¹Ø¶Ø§Ø¡ ÙØ±ÙÙÙØ§ ÙÙÙØ§ÙØ´Ø© ÙØªØ·ÙØ¨Ø§ØªÙ Ø§ÙÙÙØ¬Ø³ØªÙØ©.</span>';
-    if (typeof gtag !== 'undefined') gtag('event', 'contact_form_complete', {event_category: 'form', event_label: 'contact'});
-  } else {
-    // Generic GA4 event
-    if (typeof gtag !== 'undefined') gtag('event', 'form_submission_complete', {event_category: 'form'});
-  }
-
-  // Language sync with parent page preference
-  var lang = localStorage.getItem('a2b_lang') || 'en';
-  if (lang === 'ar') {
-    document.documentElement.lang = 'ar';
-    document.documentElement.dir = 'rtl';
-  }
-})();
-</script>
+<script src="/assets/js/thankyou.js" defer></script>
 
 </body>
 </html>
