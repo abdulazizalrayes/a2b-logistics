@@ -459,7 +459,7 @@
   function localizedPath(code, key) {
     var path = key === '/' ? '/' : key;
     if (code === 'en') return path;
-    return '/' + code + (path === '/' ? '/' : path);
+    return '/' + code + (path === '/' ? '' : path);
   }
 
   function languageFromUrl() {
