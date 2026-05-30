@@ -1,6 +1,4 @@
 (function () {
-  var isAr = false;
-
   function byId(id) {
     return document.getElementById(id);
   }
@@ -21,25 +19,6 @@
     if (menu) menu.classList.remove('open');
   }
 
-  function toggleLang() {
-    isAr = !isAr;
-    var html = document.documentElement;
-    var body = document.body;
-    var btn = byId('langBtn');
-
-    if (isAr) {
-      html.setAttribute('lang', 'ar');
-      html.setAttribute('dir', 'rtl');
-      body.classList.add('ar');
-      if (btn) btn.textContent = 'EN';
-    } else {
-      html.setAttribute('lang', 'en');
-      html.setAttribute('dir', 'ltr');
-      body.classList.remove('ar');
-      if (btn) btn.textContent = 'AR';
-    }
-  }
-
   function setupNav() {
     var navbar = byId('navbar');
     window.addEventListener('scroll', function () {
@@ -48,9 +27,6 @@
 
     var hamburger = document.querySelector('.hamburger');
     if (hamburger) hamburger.addEventListener('click', toggleMenu);
-
-    var langBtn = byId('langBtn');
-    if (langBtn) langBtn.addEventListener('click', toggleLang);
 
     document.querySelectorAll('#mobileMenu a[href^="#"], #mobileMenu a[href^="/#"]').forEach(function (link) {
       link.addEventListener('click', closeMobile);

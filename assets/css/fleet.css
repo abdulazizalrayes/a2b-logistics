@@ -117,4 +117,5 @@ footer p{color:var(--muted);font-size:13px}
   .fleet-grid{grid-template-columns:1fr}
   .standards-grid{grid-template-columns:1fr}
   .fleet-stat-bar-inner{grid-template-columns:repeat(2,1fr)}
+  .fleet-stat-item{min-width:0;padding:22px 16px}
 }

@@ -1,0 +1,40 @@
+.lang-toggle,
+.mobile-language-select {
+  appearance: none;
+  -webkit-appearance: none;
+  background: transparent;
+  border: 1.5px solid var(--border, #E2E4E8);
+  border-radius: 4px;
+  color: var(--dark, #111);
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  font-size: 12.5px;
+  font-weight: 700;
+  letter-spacing: .3px;
+  line-height: 1;
+  padding: 8px 24px 8px 10px;
+  transition: border-color .2s, color .2s;
+}
+
+.lang-toggle:hover,
+.mobile-language-select:hover {
+  border-color: var(--red, #E8192C);
+  color: var(--red, #E8192C);
+}
+
+.lang-toggle:focus,
+.mobile-language-select:focus {
+  border-color: var(--red, #E8192C);
+  outline: none;
+}
+
+.mobile-language-select {
+  width: 100%;
+  margin-top: 4px;
+  padding: 12px 14px;
+}
+
+html[dir="rtl"] .lang-toggle {
+  padding-left: 24px;
+  padding-right: 10px;
+}
