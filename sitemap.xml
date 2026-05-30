@@ -4,64 +4,408 @@
     <url>
           <loc>https://www.a2b.sa/</loc>
           <xhtml:link rel="alternate" hreflang="en" href="https://www.a2b.sa/"/>
-          <xhtml:link rel="alternate" hreflang="ar" href="https://www.a2b.sa/?lang=ar"/>
-          <xhtml:link rel="alternate" hreflang="de" href="https://www.a2b.sa/?lang=de"/>
-          <xhtml:link rel="alternate" hreflang="it" href="https://www.a2b.sa/?lang=it"/>
-          <xhtml:link rel="alternate" hreflang="es" href="https://www.a2b.sa/?lang=es"/>
-          <xhtml:link rel="alternate" hreflang="fr" href="https://www.a2b.sa/?lang=fr"/>
-          <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.a2b.sa/?lang=zh-Hans"/>
-          <lastmod>2026-03-14</lastmod>
+          <xhtml:link rel="alternate" hreflang="ar" href="https://www.a2b.sa/ar/"/>
+          <xhtml:link rel="alternate" hreflang="de" href="https://www.a2b.sa/de/"/>
+          <xhtml:link rel="alternate" hreflang="it" href="https://www.a2b.sa/it/"/>
+          <xhtml:link rel="alternate" hreflang="es" href="https://www.a2b.sa/es/"/>
+          <xhtml:link rel="alternate" hreflang="fr" href="https://www.a2b.sa/fr/"/>
+          <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.a2b.sa/zh-Hans/"/>
+          <xhtml:link rel="alternate" hreflang="x-default" href="https://www.a2b.sa/"/>
+          <lastmod>2026-05-30</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>1.0</priority>
+    </url>
+    <url>
+          <loc>https://www.a2b.sa/ar/</loc>
+          <xhtml:link rel="alternate" hreflang="en" href="https://www.a2b.sa/"/>
+          <xhtml:link rel="alternate" hreflang="ar" href="https://www.a2b.sa/ar/"/>
+          <xhtml:link rel="alternate" hreflang="de" href="https://www.a2b.sa/de/"/>
+          <xhtml:link rel="alternate" hreflang="it" href="https://www.a2b.sa/it/"/>
+          <xhtml:link rel="alternate" hreflang="es" href="https://www.a2b.sa/es/"/>
+          <xhtml:link rel="alternate" hreflang="fr" href="https://www.a2b.sa/fr/"/>
+          <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.a2b.sa/zh-Hans/"/>
+          <xhtml:link rel="alternate" hreflang="x-default" href="https://www.a2b.sa/"/>
+          <lastmod>2026-05-30</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>1.0</priority>
+    </url>
+    <url>
+          <loc>https://www.a2b.sa/de/</loc>
+          <xhtml:link rel="alternate" hreflang="en" href="https://www.a2b.sa/"/>
+          <xhtml:link rel="alternate" hreflang="ar" href="https://www.a2b.sa/ar/"/>
+          <xhtml:link rel="alternate" hreflang="de" href="https://www.a2b.sa/de/"/>
+          <xhtml:link rel="alternate" hreflang="it" href="https://www.a2b.sa/it/"/>
+          <xhtml:link rel="alternate" hreflang="es" href="https://www.a2b.sa/es/"/>
+          <xhtml:link rel="alternate" hreflang="fr" href="https://www.a2b.sa/fr/"/>
+          <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.a2b.sa/zh-Hans/"/>
+          <xhtml:link rel="alternate" hreflang="x-default" href="https://www.a2b.sa/"/>
+          <lastmod>2026-05-30</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>1.0</priority>
+    </url>
+    <url>
+          <loc>https://www.a2b.sa/it/</loc>
+          <xhtml:link rel="alternate" hreflang="en" href="https://www.a2b.sa/"/>
+          <xhtml:link rel="alternate" hreflang="ar" href="https://www.a2b.sa/ar/"/>
+          <xhtml:link rel="alternate" hreflang="de" href="https://www.a2b.sa/de/"/>
+          <xhtml:link rel="alternate" hreflang="it" href="https://www.a2b.sa/it/"/>
+          <xhtml:link rel="alternate" hreflang="es" href="https://www.a2b.sa/es/"/>
+          <xhtml:link rel="alternate" hreflang="fr" href="https://www.a2b.sa/fr/"/>
+          <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.a2b.sa/zh-Hans/"/>
+          <xhtml:link rel="alternate" hreflang="x-default" href="https://www.a2b.sa/"/>
+          <lastmod>2026-05-30</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>1.0</priority>
+    </url>
+    <url>
+          <loc>https://www.a2b.sa/es/</loc>
+          <xhtml:link rel="alternate" hreflang="en" href="https://www.a2b.sa/"/>
+          <xhtml:link rel="alternate" hreflang="ar" href="https://www.a2b.sa/ar/"/>
+          <xhtml:link rel="alternate" hreflang="de" href="https://www.a2b.sa/de/"/>
+          <xhtml:link rel="alternate" hreflang="it" href="https://www.a2b.sa/it/"/>
+          <xhtml:link rel="alternate" hreflang="es" href="https://www.a2b.sa/es/"/>
+          <xhtml:link rel="alternate" hreflang="fr" href="https://www.a2b.sa/fr/"/>
+          <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.a2b.sa/zh-Hans/"/>
+          <xhtml:link rel="alternate" hreflang="x-default" href="https://www.a2b.sa/"/>
+          <lastmod>2026-05-30</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>1.0</priority>
+    </url>
+    <url>
+          <loc>https://www.a2b.sa/fr/</loc>
+          <xhtml:link rel="alternate" hreflang="en" href="https://www.a2b.sa/"/>
+          <xhtml:link rel="alternate" hreflang="ar" href="https://www.a2b.sa/ar/"/>
+          <xhtml:link rel="alternate" hreflang="de" href="https://www.a2b.sa/de/"/>
+          <xhtml:link rel="alternate" hreflang="it" href="https://www.a2b.sa/it/"/>
+          <xhtml:link rel="alternate" hreflang="es" href="https://www.a2b.sa/es/"/>
+          <xhtml:link rel="alternate" hreflang="fr" href="https://www.a2b.sa/fr/"/>
+          <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.a2b.sa/zh-Hans/"/>
+          <xhtml:link rel="alternate" hreflang="x-default" href="https://www.a2b.sa/"/>
+          <lastmod>2026-05-30</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>1.0</priority>
+    </url>
+    <url>
+          <loc>https://www.a2b.sa/zh-Hans/</loc>
+          <xhtml:link rel="alternate" hreflang="en" href="https://www.a2b.sa/"/>
+          <xhtml:link rel="alternate" hreflang="ar" href="https://www.a2b.sa/ar/"/>
+          <xhtml:link rel="alternate" hreflang="de" href="https://www.a2b.sa/de/"/>
+          <xhtml:link rel="alternate" hreflang="it" href="https://www.a2b.sa/it/"/>
+          <xhtml:link rel="alternate" hreflang="es" href="https://www.a2b.sa/es/"/>
+          <xhtml:link rel="alternate" hreflang="fr" href="https://www.a2b.sa/fr/"/>
+          <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.a2b.sa/zh-Hans/"/>
+          <xhtml:link rel="alternate" hreflang="x-default" href="https://www.a2b.sa/"/>
+          <lastmod>2026-05-30</lastmod>
           <changefreq>weekly</changefreq>
           <priority>1.0</priority>
     </url>
     <url>
           <loc>https://www.a2b.sa/fleet</loc>
           <xhtml:link rel="alternate" hreflang="en" href="https://www.a2b.sa/fleet"/>
-          <xhtml:link rel="alternate" hreflang="ar" href="https://www.a2b.sa/fleet?lang=ar"/>
-          <xhtml:link rel="alternate" hreflang="de" href="https://www.a2b.sa/fleet?lang=de"/>
-          <xhtml:link rel="alternate" hreflang="it" href="https://www.a2b.sa/fleet?lang=it"/>
-          <xhtml:link rel="alternate" hreflang="es" href="https://www.a2b.sa/fleet?lang=es"/>
-          <xhtml:link rel="alternate" hreflang="fr" href="https://www.a2b.sa/fleet?lang=fr"/>
-          <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.a2b.sa/fleet?lang=zh-Hans"/>
-          <lastmod>2026-03-14</lastmod>
+          <xhtml:link rel="alternate" hreflang="ar" href="https://www.a2b.sa/ar/fleet"/>
+          <xhtml:link rel="alternate" hreflang="de" href="https://www.a2b.sa/de/fleet"/>
+          <xhtml:link rel="alternate" hreflang="it" href="https://www.a2b.sa/it/fleet"/>
+          <xhtml:link rel="alternate" hreflang="es" href="https://www.a2b.sa/es/fleet"/>
+          <xhtml:link rel="alternate" hreflang="fr" href="https://www.a2b.sa/fr/fleet"/>
+          <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.a2b.sa/zh-Hans/fleet"/>
+          <xhtml:link rel="alternate" hreflang="x-default" href="https://www.a2b.sa/fleet"/>
+          <lastmod>2026-05-30</lastmod>
+          <changefreq>monthly</changefreq>
+          <priority>0.8</priority>
+    </url>
+    <url>
+          <loc>https://www.a2b.sa/ar/fleet</loc>
+          <xhtml:link rel="alternate" hreflang="en" href="https://www.a2b.sa/fleet"/>
+          <xhtml:link rel="alternate" hreflang="ar" href="https://www.a2b.sa/ar/fleet"/>
+          <xhtml:link rel="alternate" hreflang="de" href="https://www.a2b.sa/de/fleet"/>
+          <xhtml:link rel="alternate" hreflang="it" href="https://www.a2b.sa/it/fleet"/>
+          <xhtml:link rel="alternate" hreflang="es" href="https://www.a2b.sa/es/fleet"/>
+          <xhtml:link rel="alternate" hreflang="fr" href="https://www.a2b.sa/fr/fleet"/>
+          <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.a2b.sa/zh-Hans/fleet"/>
+          <xhtml:link rel="alternate" hreflang="x-default" href="https://www.a2b.sa/fleet"/>
+          <lastmod>2026-05-30</lastmod>
+          <changefreq>monthly</changefreq>
+          <priority>0.8</priority>
+    </url>
+    <url>
+          <loc>https://www.a2b.sa/de/fleet</loc>
+          <xhtml:link rel="alternate" hreflang="en" href="https://www.a2b.sa/fleet"/>
+          <xhtml:link rel="alternate" hreflang="ar" href="https://www.a2b.sa/ar/fleet"/>
+          <xhtml:link rel="alternate" hreflang="de" href="https://www.a2b.sa/de/fleet"/>
+          <xhtml:link rel="alternate" hreflang="it" href="https://www.a2b.sa/it/fleet"/>
+          <xhtml:link rel="alternate" hreflang="es" href="https://www.a2b.sa/es/fleet"/>
+          <xhtml:link rel="alternate" hreflang="fr" href="https://www.a2b.sa/fr/fleet"/>
+          <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.a2b.sa/zh-Hans/fleet"/>
+          <xhtml:link rel="alternate" hreflang="x-default" href="https://www.a2b.sa/fleet"/>
+          <lastmod>2026-05-30</lastmod>
+          <changefreq>monthly</changefreq>
+          <priority>0.8</priority>
+    </url>
+    <url>
+          <loc>https://www.a2b.sa/it/fleet</loc>
+          <xhtml:link rel="alternate" hreflang="en" href="https://www.a2b.sa/fleet"/>
+          <xhtml:link rel="alternate" hreflang="ar" href="https://www.a2b.sa/ar/fleet"/>
+          <xhtml:link rel="alternate" hreflang="de" href="https://www.a2b.sa/de/fleet"/>
+          <xhtml:link rel="alternate" hreflang="it" href="https://www.a2b.sa/it/fleet"/>
+          <xhtml:link rel="alternate" hreflang="es" href="https://www.a2b.sa/es/fleet"/>
+          <xhtml:link rel="alternate" hreflang="fr" href="https://www.a2b.sa/fr/fleet"/>
+          <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.a2b.sa/zh-Hans/fleet"/>
+          <xhtml:link rel="alternate" hreflang="x-default" href="https://www.a2b.sa/fleet"/>
+          <lastmod>2026-05-30</lastmod>
+          <changefreq>monthly</changefreq>
+          <priority>0.8</priority>
+    </url>
+    <url>
+          <loc>https://www.a2b.sa/es/fleet</loc>
+          <xhtml:link rel="alternate" hreflang="en" href="https://www.a2b.sa/fleet"/>
+          <xhtml:link rel="alternate" hreflang="ar" href="https://www.a2b.sa/ar/fleet"/>
+          <xhtml:link rel="alternate" hreflang="de" href="https://www.a2b.sa/de/fleet"/>
+          <xhtml:link rel="alternate" hreflang="it" href="https://www.a2b.sa/it/fleet"/>
+          <xhtml:link rel="alternate" hreflang="es" href="https://www.a2b.sa/es/fleet"/>
+          <xhtml:link rel="alternate" hreflang="fr" href="https://www.a2b.sa/fr/fleet"/>
+          <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.a2b.sa/zh-Hans/fleet"/>
+          <xhtml:link rel="alternate" hreflang="x-default" href="https://www.a2b.sa/fleet"/>
+          <lastmod>2026-05-30</lastmod>
+          <changefreq>monthly</changefreq>
+          <priority>0.8</priority>
+    </url>
+    <url>
+          <loc>https://www.a2b.sa/fr/fleet</loc>
+          <xhtml:link rel="alternate" hreflang="en" href="https://www.a2b.sa/fleet"/>
+          <xhtml:link rel="alternate" hreflang="ar" href="https://www.a2b.sa/ar/fleet"/>
+          <xhtml:link rel="alternate" hreflang="de" href="https://www.a2b.sa/de/fleet"/>
+          <xhtml:link rel="alternate" hreflang="it" href="https://www.a2b.sa/it/fleet"/>
+          <xhtml:link rel="alternate" hreflang="es" href="https://www.a2b.sa/es/fleet"/>
+          <xhtml:link rel="alternate" hreflang="fr" href="https://www.a2b.sa/fr/fleet"/>
+          <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.a2b.sa/zh-Hans/fleet"/>
+          <xhtml:link rel="alternate" hreflang="x-default" href="https://www.a2b.sa/fleet"/>
+          <lastmod>2026-05-30</lastmod>
+          <changefreq>monthly</changefreq>
+          <priority>0.8</priority>
+    </url>
+    <url>
+          <loc>https://www.a2b.sa/zh-Hans/fleet</loc>
+          <xhtml:link rel="alternate" hreflang="en" href="https://www.a2b.sa/fleet"/>
+          <xhtml:link rel="alternate" hreflang="ar" href="https://www.a2b.sa/ar/fleet"/>
+          <xhtml:link rel="alternate" hreflang="de" href="https://www.a2b.sa/de/fleet"/>
+          <xhtml:link rel="alternate" hreflang="it" href="https://www.a2b.sa/it/fleet"/>
+          <xhtml:link rel="alternate" hreflang="es" href="https://www.a2b.sa/es/fleet"/>
+          <xhtml:link rel="alternate" hreflang="fr" href="https://www.a2b.sa/fr/fleet"/>
+          <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.a2b.sa/zh-Hans/fleet"/>
+          <xhtml:link rel="alternate" hreflang="x-default" href="https://www.a2b.sa/fleet"/>
+          <lastmod>2026-05-30</lastmod>
           <changefreq>monthly</changefreq>
           <priority>0.8</priority>
     </url>
     <url>
           <loc>https://www.a2b.sa/careers</loc>
           <xhtml:link rel="alternate" hreflang="en" href="https://www.a2b.sa/careers"/>
-          <xhtml:link rel="alternate" hreflang="ar" href="https://www.a2b.sa/careers?lang=ar"/>
-          <xhtml:link rel="alternate" hreflang="de" href="https://www.a2b.sa/careers?lang=de"/>
-          <xhtml:link rel="alternate" hreflang="it" href="https://www.a2b.sa/careers?lang=it"/>
-          <xhtml:link rel="alternate" hreflang="es" href="https://www.a2b.sa/careers?lang=es"/>
-          <xhtml:link rel="alternate" hreflang="fr" href="https://www.a2b.sa/careers?lang=fr"/>
-          <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.a2b.sa/careers?lang=zh-Hans"/>
-          <lastmod>2026-03-14</lastmod>
+          <xhtml:link rel="alternate" hreflang="ar" href="https://www.a2b.sa/ar/careers"/>
+          <xhtml:link rel="alternate" hreflang="de" href="https://www.a2b.sa/de/careers"/>
+          <xhtml:link rel="alternate" hreflang="it" href="https://www.a2b.sa/it/careers"/>
+          <xhtml:link rel="alternate" hreflang="es" href="https://www.a2b.sa/es/careers"/>
+          <xhtml:link rel="alternate" hreflang="fr" href="https://www.a2b.sa/fr/careers"/>
+          <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.a2b.sa/zh-Hans/careers"/>
+          <xhtml:link rel="alternate" hreflang="x-default" href="https://www.a2b.sa/careers"/>
+          <lastmod>2026-05-30</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.7</priority>
+    </url>
+    <url>
+          <loc>https://www.a2b.sa/ar/careers</loc>
+          <xhtml:link rel="alternate" hreflang="en" href="https://www.a2b.sa/careers"/>
+          <xhtml:link rel="alternate" hreflang="ar" href="https://www.a2b.sa/ar/careers"/>
+          <xhtml:link rel="alternate" hreflang="de" href="https://www.a2b.sa/de/careers"/>
+          <xhtml:link rel="alternate" hreflang="it" href="https://www.a2b.sa/it/careers"/>
+          <xhtml:link rel="alternate" hreflang="es" href="https://www.a2b.sa/es/careers"/>
+          <xhtml:link rel="alternate" hreflang="fr" href="https://www.a2b.sa/fr/careers"/>
+          <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.a2b.sa/zh-Hans/careers"/>
+          <xhtml:link rel="alternate" hreflang="x-default" href="https://www.a2b.sa/careers"/>
+          <lastmod>2026-05-30</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.7</priority>
+    </url>
+    <url>
+          <loc>https://www.a2b.sa/de/careers</loc>
+          <xhtml:link rel="alternate" hreflang="en" href="https://www.a2b.sa/careers"/>
+          <xhtml:link rel="alternate" hreflang="ar" href="https://www.a2b.sa/ar/careers"/>
+          <xhtml:link rel="alternate" hreflang="de" href="https://www.a2b.sa/de/careers"/>
+          <xhtml:link rel="alternate" hreflang="it" href="https://www.a2b.sa/it/careers"/>
+          <xhtml:link rel="alternate" hreflang="es" href="https://www.a2b.sa/es/careers"/>
+          <xhtml:link rel="alternate" hreflang="fr" href="https://www.a2b.sa/fr/careers"/>
+          <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.a2b.sa/zh-Hans/careers"/>
+          <xhtml:link rel="alternate" hreflang="x-default" href="https://www.a2b.sa/careers"/>
+          <lastmod>2026-05-30</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.7</priority>
+    </url>
+    <url>
+          <loc>https://www.a2b.sa/it/careers</loc>
+          <xhtml:link rel="alternate" hreflang="en" href="https://www.a2b.sa/careers"/>
+          <xhtml:link rel="alternate" hreflang="ar" href="https://www.a2b.sa/ar/careers"/>
+          <xhtml:link rel="alternate" hreflang="de" href="https://www.a2b.sa/de/careers"/>
+          <xhtml:link rel="alternate" hreflang="it" href="https://www.a2b.sa/it/careers"/>
+          <xhtml:link rel="alternate" hreflang="es" href="https://www.a2b.sa/es/careers"/>
+          <xhtml:link rel="alternate" hreflang="fr" href="https://www.a2b.sa/fr/careers"/>
+          <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.a2b.sa/zh-Hans/careers"/>
+          <xhtml:link rel="alternate" hreflang="x-default" href="https://www.a2b.sa/careers"/>
+          <lastmod>2026-05-30</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.7</priority>
+    </url>
+    <url>
+          <loc>https://www.a2b.sa/es/careers</loc>
+          <xhtml:link rel="alternate" hreflang="en" href="https://www.a2b.sa/careers"/>
+          <xhtml:link rel="alternate" hreflang="ar" href="https://www.a2b.sa/ar/careers"/>
+          <xhtml:link rel="alternate" hreflang="de" href="https://www.a2b.sa/de/careers"/>
+          <xhtml:link rel="alternate" hreflang="it" href="https://www.a2b.sa/it/careers"/>
+          <xhtml:link rel="alternate" hreflang="es" href="https://www.a2b.sa/es/careers"/>
+          <xhtml:link rel="alternate" hreflang="fr" href="https://www.a2b.sa/fr/careers"/>
+          <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.a2b.sa/zh-Hans/careers"/>
+          <xhtml:link rel="alternate" hreflang="x-default" href="https://www.a2b.sa/careers"/>
+          <lastmod>2026-05-30</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.7</priority>
+    </url>
+    <url>
+          <loc>https://www.a2b.sa/fr/careers</loc>
+          <xhtml:link rel="alternate" hreflang="en" href="https://www.a2b.sa/careers"/>
+          <xhtml:link rel="alternate" hreflang="ar" href="https://www.a2b.sa/ar/careers"/>
+          <xhtml:link rel="alternate" hreflang="de" href="https://www.a2b.sa/de/careers"/>
+          <xhtml:link rel="alternate" hreflang="it" href="https://www.a2b.sa/it/careers"/>
+          <xhtml:link rel="alternate" hreflang="es" href="https://www.a2b.sa/es/careers"/>
+          <xhtml:link rel="alternate" hreflang="fr" href="https://www.a2b.sa/fr/careers"/>
+          <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.a2b.sa/zh-Hans/careers"/>
+          <xhtml:link rel="alternate" hreflang="x-default" href="https://www.a2b.sa/careers"/>
+          <lastmod>2026-05-30</lastmod>
+          <changefreq>weekly</changefreq>
+          <priority>0.7</priority>
+    </url>
+    <url>
+          <loc>https://www.a2b.sa/zh-Hans/careers</loc>
+          <xhtml:link rel="alternate" hreflang="en" href="https://www.a2b.sa/careers"/>
+          <xhtml:link rel="alternate" hreflang="ar" href="https://www.a2b.sa/ar/careers"/>
+          <xhtml:link rel="alternate" hreflang="de" href="https://www.a2b.sa/de/careers"/>
+          <xhtml:link rel="alternate" hreflang="it" href="https://www.a2b.sa/it/careers"/>
+          <xhtml:link rel="alternate" hreflang="es" href="https://www.a2b.sa/es/careers"/>
+          <xhtml:link rel="alternate" hreflang="fr" href="https://www.a2b.sa/fr/careers"/>
+          <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.a2b.sa/zh-Hans/careers"/>
+          <xhtml:link rel="alternate" hreflang="x-default" href="https://www.a2b.sa/careers"/>
+          <lastmod>2026-05-30</lastmod>
           <changefreq>weekly</changefreq>
           <priority>0.7</priority>
     </url>
     <url>
           <loc>https://www.a2b.sa/vendors</loc>
           <xhtml:link rel="alternate" hreflang="en" href="https://www.a2b.sa/vendors"/>
-          <xhtml:link rel="alternate" hreflang="ar" href="https://www.a2b.sa/vendors?lang=ar"/>
-          <xhtml:link rel="alternate" hreflang="de" href="https://www.a2b.sa/vendors?lang=de"/>
-          <xhtml:link rel="alternate" hreflang="it" href="https://www.a2b.sa/vendors?lang=it"/>
-          <xhtml:link rel="alternate" hreflang="es" href="https://www.a2b.sa/vendors?lang=es"/>
-          <xhtml:link rel="alternate" hreflang="fr" href="https://www.a2b.sa/vendors?lang=fr"/>
-          <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.a2b.sa/vendors?lang=zh-Hans"/>
-          <lastmod>2026-03-14</lastmod>
+          <xhtml:link rel="alternate" hreflang="ar" href="https://www.a2b.sa/ar/vendors"/>
+          <xhtml:link rel="alternate" hreflang="de" href="https://www.a2b.sa/de/vendors"/>
+          <xhtml:link rel="alternate" hreflang="it" href="https://www.a2b.sa/it/vendors"/>
+          <xhtml:link rel="alternate" hreflang="es" href="https://www.a2b.sa/es/vendors"/>
+          <xhtml:link rel="alternate" hreflang="fr" href="https://www.a2b.sa/fr/vendors"/>
+          <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.a2b.sa/zh-Hans/vendors"/>
+          <xhtml:link rel="alternate" hreflang="x-default" href="https://www.a2b.sa/vendors"/>
+          <lastmod>2026-05-30</lastmod>
+          <changefreq>monthly</changefreq>
+          <priority>0.7</priority>
+    </url>
+    <url>
+          <loc>https://www.a2b.sa/ar/vendors</loc>
+          <xhtml:link rel="alternate" hreflang="en" href="https://www.a2b.sa/vendors"/>
+          <xhtml:link rel="alternate" hreflang="ar" href="https://www.a2b.sa/ar/vendors"/>
+          <xhtml:link rel="alternate" hreflang="de" href="https://www.a2b.sa/de/vendors"/>
+          <xhtml:link rel="alternate" hreflang="it" href="https://www.a2b.sa/it/vendors"/>
+          <xhtml:link rel="alternate" hreflang="es" href="https://www.a2b.sa/es/vendors"/>
+          <xhtml:link rel="alternate" hreflang="fr" href="https://www.a2b.sa/fr/vendors"/>
+          <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.a2b.sa/zh-Hans/vendors"/>
+          <xhtml:link rel="alternate" hreflang="x-default" href="https://www.a2b.sa/vendors"/>
+          <lastmod>2026-05-30</lastmod>
+          <changefreq>monthly</changefreq>
+          <priority>0.7</priority>
+    </url>
+    <url>
+          <loc>https://www.a2b.sa/de/vendors</loc>
+          <xhtml:link rel="alternate" hreflang="en" href="https://www.a2b.sa/vendors"/>
+          <xhtml:link rel="alternate" hreflang="ar" href="https://www.a2b.sa/ar/vendors"/>
+          <xhtml:link rel="alternate" hreflang="de" href="https://www.a2b.sa/de/vendors"/>
+          <xhtml:link rel="alternate" hreflang="it" href="https://www.a2b.sa/it/vendors"/>
+          <xhtml:link rel="alternate" hreflang="es" href="https://www.a2b.sa/es/vendors"/>
+          <xhtml:link rel="alternate" hreflang="fr" href="https://www.a2b.sa/fr/vendors"/>
+          <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.a2b.sa/zh-Hans/vendors"/>
+          <xhtml:link rel="alternate" hreflang="x-default" href="https://www.a2b.sa/vendors"/>
+          <lastmod>2026-05-30</lastmod>
+          <changefreq>monthly</changefreq>
+          <priority>0.7</priority>
+    </url>
+    <url>
+          <loc>https://www.a2b.sa/it/vendors</loc>
+          <xhtml:link rel="alternate" hreflang="en" href="https://www.a2b.sa/vendors"/>
+          <xhtml:link rel="alternate" hreflang="ar" href="https://www.a2b.sa/ar/vendors"/>
+          <xhtml:link rel="alternate" hreflang="de" href="https://www.a2b.sa/de/vendors"/>
+          <xhtml:link rel="alternate" hreflang="it" href="https://www.a2b.sa/it/vendors"/>
+          <xhtml:link rel="alternate" hreflang="es" href="https://www.a2b.sa/es/vendors"/>
+          <xhtml:link rel="alternate" hreflang="fr" href="https://www.a2b.sa/fr/vendors"/>
+          <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.a2b.sa/zh-Hans/vendors"/>
+          <xhtml:link rel="alternate" hreflang="x-default" href="https://www.a2b.sa/vendors"/>
+          <lastmod>2026-05-30</lastmod>
+          <changefreq>monthly</changefreq>
+          <priority>0.7</priority>
+    </url>
+    <url>
+          <loc>https://www.a2b.sa/es/vendors</loc>
+          <xhtml:link rel="alternate" hreflang="en" href="https://www.a2b.sa/vendors"/>
+          <xhtml:link rel="alternate" hreflang="ar" href="https://www.a2b.sa/ar/vendors"/>
+          <xhtml:link rel="alternate" hreflang="de" href="https://www.a2b.sa/de/vendors"/>
+          <xhtml:link rel="alternate" hreflang="it" href="https://www.a2b.sa/it/vendors"/>
+          <xhtml:link rel="alternate" hreflang="es" href="https://www.a2b.sa/es/vendors"/>
+          <xhtml:link rel="alternate" hreflang="fr" href="https://www.a2b.sa/fr/vendors"/>
+          <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.a2b.sa/zh-Hans/vendors"/>
+          <xhtml:link rel="alternate" hreflang="x-default" href="https://www.a2b.sa/vendors"/>
+          <lastmod>2026-05-30</lastmod>
+          <changefreq>monthly</changefreq>
+          <priority>0.7</priority>
+    </url>
+    <url>
+          <loc>https://www.a2b.sa/fr/vendors</loc>
+          <xhtml:link rel="alternate" hreflang="en" href="https://www.a2b.sa/vendors"/>
+          <xhtml:link rel="alternate" hreflang="ar" href="https://www.a2b.sa/ar/vendors"/>
+          <xhtml:link rel="alternate" hreflang="de" href="https://www.a2b.sa/de/vendors"/>
+          <xhtml:link rel="alternate" hreflang="it" href="https://www.a2b.sa/it/vendors"/>
+          <xhtml:link rel="alternate" hreflang="es" href="https://www.a2b.sa/es/vendors"/>
+          <xhtml:link rel="alternate" hreflang="fr" href="https://www.a2b.sa/fr/vendors"/>
+          <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.a2b.sa/zh-Hans/vendors"/>
+          <xhtml:link rel="alternate" hreflang="x-default" href="https://www.a2b.sa/vendors"/>
+          <lastmod>2026-05-30</lastmod>
+          <changefreq>monthly</changefreq>
+          <priority>0.7</priority>
+    </url>
+    <url>
+          <loc>https://www.a2b.sa/zh-Hans/vendors</loc>
+          <xhtml:link rel="alternate" hreflang="en" href="https://www.a2b.sa/vendors"/>
+          <xhtml:link rel="alternate" hreflang="ar" href="https://www.a2b.sa/ar/vendors"/>
+          <xhtml:link rel="alternate" hreflang="de" href="https://www.a2b.sa/de/vendors"/>
+          <xhtml:link rel="alternate" hreflang="it" href="https://www.a2b.sa/it/vendors"/>
+          <xhtml:link rel="alternate" hreflang="es" href="https://www.a2b.sa/es/vendors"/>
+          <xhtml:link rel="alternate" hreflang="fr" href="https://www.a2b.sa/fr/vendors"/>
+          <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.a2b.sa/zh-Hans/vendors"/>
+          <xhtml:link rel="alternate" hreflang="x-default" href="https://www.a2b.sa/vendors"/>
+          <lastmod>2026-05-30</lastmod>
           <changefreq>monthly</changefreq>
           <priority>0.7</priority>
     </url>
     <url>
           <loc>https://www.a2b.sa/privacy-policy</loc>
-          <lastmod>2026-03-14</lastmod>
+          <xhtml:link rel="alternate" hreflang="en" href="https://www.a2b.sa/privacy-policy"/>
+          <xhtml:link rel="alternate" hreflang="x-default" href="https://www.a2b.sa/privacy-policy"/>
+          <lastmod>2026-05-30</lastmod>
           <changefreq>yearly</changefreq>
           <priority>0.3</priority>
     </url>
     <url>
           <loc>https://www.a2b.sa/terms-and-conditions</loc>
-          <lastmod>2026-03-14</lastmod>
+          <xhtml:link rel="alternate" hreflang="en" href="https://www.a2b.sa/terms-and-conditions"/>
+          <xhtml:link rel="alternate" hreflang="x-default" href="https://www.a2b.sa/terms-and-conditions"/>
+          <lastmod>2026-05-30</lastmod>
           <changefreq>yearly</changefreq>
           <priority>0.3</priority>
     </url>

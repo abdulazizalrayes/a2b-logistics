@@ -451,7 +451,15 @@
 
   function pathKey() {
     var path = window.location.pathname.replace(/\/$/, '') || '/';
+    var prefixMatch = path.match(/^\/(ar|de|it|es|fr|zh-Hans)(\/.*)?$/);
+    if (prefixMatch) path = prefixMatch[2] || '/';
     return path.replace(/\.html$/, '');
+  }
+
+  function localizedPath(code, key) {
+    var path = key === '/' ? '/' : key;
+    if (code === 'en') return path;
+    return '/' + code + (path === '/' ? '/' : path);
   }
 
   function languageFromUrl() {
@@ -461,16 +469,14 @@
   }
 
   function getCurrentLanguage() {
-    return languageFromUrl() || localStorage.getItem('a2b_lang') || 'en';
+    return languageFromUrl() || document.documentElement.getAttribute('data-default-lang') || localStorage.getItem('a2b_lang') || 'en';
   }
 
   function languageUrl(code, hash) {
-    var path = window.location.pathname || '/';
     var params = new URLSearchParams(window.location.search);
-    if (code === 'en') params.delete('lang');
-    else params.set('lang', code);
+    params.delete('lang');
     var query = params.toString();
-    return path + (query ? '?' + query : '') + (hash || '');
+    return localizedPath(code, pathKey()) + (query ? '?' + query : '') + (hash || '');
   }
 
   function ensureSelector() {
@@ -515,7 +521,7 @@
     var head = document.head;
     var canonical = document.querySelector('link[rel="canonical"]');
     if (canonical) {
-      canonical.href = 'https://www.a2b.sa' + (canonicalPath === '/' ? '/' : canonicalPath) + (lang === 'en' ? '' : '?lang=' + encodeURIComponent(lang));
+      canonical.href = 'https://www.a2b.sa' + localizedPath(lang, canonicalPath);
     }
     document.querySelectorAll('link[rel="alternate"][hreflang]').forEach(function (link) {
       link.remove();
@@ -524,7 +530,7 @@
       var link = document.createElement('link');
       link.rel = 'alternate';
       link.hreflang = item.code;
-      link.href = 'https://www.a2b.sa' + (canonicalPath === '/' ? '/' : canonicalPath) + (item.code === 'en' ? '' : '?lang=' + encodeURIComponent(item.code));
+      link.href = 'https://www.a2b.sa' + localizedPath(item.code, canonicalPath);
       head.appendChild(link);
     });
     var x = document.createElement('link');
@@ -591,9 +597,12 @@
       }
       if (raw.startsWith('/')) {
         var url = new URL(raw, window.location.origin);
-        if (lang === 'en') url.searchParams.delete('lang');
-        else url.searchParams.set('lang', lang);
-        a.setAttribute('href', url.pathname + url.search + url.hash);
+        url.searchParams.delete('lang');
+        var targetPath = url.pathname.replace(/\/$/, '') || '/';
+        var prefixMatch = targetPath.match(/^\/(ar|de|it|es|fr|zh-Hans)(\/.*)?$/);
+        if (prefixMatch) targetPath = prefixMatch[2] || '/';
+        targetPath = targetPath.replace(/\.html$/, '');
+        a.setAttribute('href', localizedPath(lang, targetPath) + url.search + url.hash);
       }
     });
   }
@@ -623,6 +632,10 @@
     applyLanguage(lang, Boolean(languageFromUrl()));
     document.querySelectorAll('#languageSelect, #mobileLanguageSelect').forEach(function (select) {
       select.addEventListener('change', function () {
+        if (document.documentElement.getAttribute('data-static-i18n') === 'true') {
+          window.location.href = languageUrl(select.value, window.location.hash);
+          return;
+        }
         applyLanguage(select.value, true);
       });
     });
