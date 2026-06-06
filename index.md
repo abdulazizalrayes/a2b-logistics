@@ -25,6 +25,14 @@ Saudi Arabia's B2B logistics partner for trucking, warehousing support, customs-
 - CEO: Dr. Suhaib Ghunaim
 - LinkedIn: https://www.linkedin.com/company/helloa2bco
 
+## Dedicated Service Pages
+
+- Trucking and road freight: https://www.a2b.sa/services/trucking-road-freight
+- Warehousing support: https://www.a2b.sa/services/warehousing
+- Customs-clearance coordination: https://www.a2b.sa/services/customs-clearance
+- Supply-chain logistics: https://www.a2b.sa/services/supply-chain
+- Fleet types and capacity: https://www.a2b.sa/services/fleet-types
+
 ## Services
 
 ### Trucking and Road Freight

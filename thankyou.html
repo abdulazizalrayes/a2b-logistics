@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en" dir="ltr" data-static-i18n="true">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,12 +12,6 @@
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="alternate" hreflang="en" href="https://www.a2b.sa/thankyou">
-<link rel="alternate" hreflang="ar" href="https://www.a2b.sa/thankyou?lang=ar">
-<link rel="alternate" hreflang="de" href="https://www.a2b.sa/thankyou?lang=de">
-<link rel="alternate" hreflang="it" href="https://www.a2b.sa/thankyou?lang=it">
-<link rel="alternate" hreflang="es" href="https://www.a2b.sa/thankyou?lang=es">
-<link rel="alternate" hreflang="fr" href="https://www.a2b.sa/thankyou?lang=fr">
-<link rel="alternate" hreflang="zh-Hans" href="https://www.a2b.sa/thankyou?lang=zh-Hans">
 <link rel="alternate" hreflang="x-default" href="https://www.a2b.sa/thankyou">
 
 <!-- Google Analytics GA4 -->
@@ -25,7 +19,6 @@
 <script src="/assets/js/analytics.js"></script>
 
 <link rel="stylesheet" href="/assets/css/thankyou.css">
-<link rel="stylesheet" href="/assets/css/i18n.css">
 </head>
 <body>
 
@@ -55,56 +48,37 @@
     <!-- Dynamic badge based on source page -->
     <div class="type-badge" id="sourceBadge">Submission Received</div>
 
-    <h1>
-      <span class="en-text">Thank You!</span>
-      <span class="ar-text">Ø´ÙØ±Ø§Ù ÙÙ!</span>
-    </h1>
+    <h1>Thank You!</h1>
 
-    <p class="subtitle" id="mainMessage">
-      <span class="en-text">Your submission has been received. A member of the a2b Logistics team will review your information and be in touch with you shortly.</span>
-      <span class="ar-text">ØªÙ Ø§Ø³ØªÙØ§Ù Ø·ÙØ¨Ù. Ø³ÙÙÙÙ Ø£Ø­Ø¯ Ø£Ø¹Ø¶Ø§Ø¡ ÙØ±ÙÙ Ø´Ø±ÙØ© a2b ÙÙØ®Ø¯ÙØ§Øª Ø§ÙÙÙØ¬Ø³ØªÙØ© Ø¨ÙØ±Ø§Ø¬Ø¹Ø© ÙØ¹ÙÙÙØ§ØªÙ ÙØ§ÙØªÙØ§ØµÙ ÙØ¹Ù ÙØ±ÙØ¨Ø§Ù.</span>
-    </p>
+    <p class="subtitle" id="mainMessage">Your submission has been received. A member of the a2b Logistics team will review your information and be in touch with you shortly.</p>
 
     <div class="what-next" id="nextSteps">
-      <h3>
-        <span class="en-text">What happens next</span>
-        <span class="ar-text">ÙØ§Ø°Ø§ ÙØ­Ø¯Ø« Ø¨Ø¹Ø¯ Ø°ÙÙ</span>
-      </h3>
+      <h3>What happens next</h3>
       <div class="step">
         <div class="step-num">1</div>
         <div>
-          <span class="en-text">Our team reviews your submission within <strong>1â2 business days</strong>.</span>
-          <span class="ar-text">ÙØ±Ø§Ø¬Ø¹ ÙØ±ÙÙÙØ§ Ø·ÙØ¨Ù Ø®ÙØ§Ù <strong>1-2 Ø£ÙØ§Ù Ø¹ÙÙ</strong>.</span>
+          Our team reviews your submission within <strong>1-2 business days</strong>.
         </div>
       </div>
       <div class="step">
         <div class="step-num">2</div>
         <div>
-          <span class="en-text">You'll receive a confirmation email at the address you provided.</span>
-          <span class="ar-text">Ø³ØªØªÙÙÙ Ø¨Ø±ÙØ¯Ø§Ù Ø¥ÙÙØªØ±ÙÙÙØ§Ù ØªØ£ÙÙØ¯ÙØ§Ù Ø¹ÙÙ Ø§ÙØ¹ÙÙØ§Ù Ø§ÙØ°Ù ÙØ¯ÙØªÙ.</span>
+          You'll receive a confirmation email at the address you provided.
         </div>
       </div>
       <div class="step">
         <div class="step-num">3</div>
-        <div id="step3text">
-          <span class="en-text">A logistics specialist will contact you to discuss next steps.</span>
-          <span class="ar-text">Ø³ÙØªÙØ§ØµÙ ÙØ¹Ù Ø£Ø­Ø¯ ÙØªØ®ØµØµÙ Ø§ÙÙÙØ¬Ø³ØªÙØ§Øª ÙÙÙØ§ÙØ´Ø© Ø§ÙØ®Ø·ÙØ§Øª Ø§ÙØªØ§ÙÙØ©.</span>
-        </div>
+        <div id="step3text">A logistics specialist will contact you to discuss next steps.</div>
       </div>
     </div>
 
     <div class="btn-group">
-      <a href="/" class="btn-primary">
-        â <span class="en-text">Back to Home</span><span class="ar-text">Ø§ÙØ¹ÙØ¯Ø© ÙÙØ±Ø¦ÙØ³ÙØ©</span>
-      </a>
-      <a href="/fleet" class="btn-outline">
-        <span class="en-text">View Our Fleet</span><span class="ar-text">Ø¹Ø±Ø¶ Ø£Ø³Ø·ÙÙÙØ§</span>
-      </a>
+      <a href="/" class="btn-primary">Back to Home</a>
+      <a href="/fleet" class="btn-outline">View Our Fleet</a>
     </div>
 
     <p class="contact-note">
-      <span class="en-text">Need urgent assistance? Call us at <a href="tel:+966553846446">M +966 55 384 6446</a> or email <a href="mailto:info&#64;a2b.sa">info&#64;a2b.sa</a></span>
-      <span class="ar-text">ÙÙ ØªØ­Ø©Ø§Ø¬ ÙØ³Ø§Ø¹Ø¯Ø© Ø¸Ø§Ø¬ÙØ©Ø Ø§ØªØµÙ Ø¨ÙØ§ Ø¹ÙÙ <a href="tel:+966553846446">M +966 55 384 6446</a> Ø£Ù Ø±Ø§Ø³ÙÙØ§ Ø¹ÙÙ <a href="mailto:info&#64;a2b.sa">info&#64;a2b.sa</a></span>
+      Need urgent assistance? Call us at <a href="tel:+966553846446">M +966 55 384 6446</a> or email <a href="mailto:info&#64;a2b.sa">info&#64;a2b.sa</a>
     </p>
 
   </div>
@@ -116,7 +90,6 @@
   <a href="/terms-and-conditions">Terms &amp; Conditions</a>
 </footer>
 
-<script src="/assets/js/i18n.js" defer></script>
 <script src="/assets/js/thankyou.js" defer></script>
 
 </body>

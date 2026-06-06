@@ -41,6 +41,14 @@ Do not infer consumer/B2C parcel, home-moving, ride-hailing, or personal deliver
 - Riyadh and major Saudi business/logistics regions
 - Commercial seaports, airports, and land-border cargo handoff points where supported by a2b operations
 
+## Dedicated Service Pages
+
+- Trucking and road freight: https://www.a2b.sa/services/trucking-road-freight
+- Warehousing support: https://www.a2b.sa/services/warehousing
+- Customs-clearance coordination: https://www.a2b.sa/services/customs-clearance
+- Supply-chain logistics: https://www.a2b.sa/services/supply-chain
+- Fleet types and capacity: https://www.a2b.sa/services/fleet-types
+
 ## Public Services
 
 - Trucking and road freight across Saudi Arabia

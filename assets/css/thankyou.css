@@ -105,6 +105,14 @@
     border-radius: 20px;
     margin-bottom: 32px;
   }
+  .type-badge-vendor {
+    background: #fff3e0;
+    color: #e65100;
+  }
+  .type-badge-careers {
+    background: #e8f5e9;
+    color: #2e7d32;
+  }
   .divider {
     border: none;
     border-top: 1px solid var(--border);
@@ -192,14 +200,6 @@
     color: #888;
   }
   .contact-note a { color: var(--red); text-decoration: none; font-weight: 600; }
-
-  /* RTL support */
-  .ar-text { display: none; }
-  html[lang="ar"] .en-text { display: none; }
-  html[lang="ar"] .ar-text { display: inline; }
-  html[lang="ar"] .card { direction: rtl; text-align: right; }
-  html[lang="ar"] .what-next { text-align: right; }
-  html[lang="ar"] .btn-group { direction: ltr; }
 
   /* FOOTER */
   footer {
