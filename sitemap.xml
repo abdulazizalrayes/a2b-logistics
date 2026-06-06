@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
           xmlns:xhtml="http://www.w3.org/1999/xhtml">
-    <url>
+<url>
           <loc>https://www.a2b.sa/</loc>
           <xhtml:link rel="alternate" hreflang="en" href="https://www.a2b.sa/"/>
           <xhtml:link rel="alternate" hreflang="ar" href="https://www.a2b.sa/ar"/>
@@ -15,7 +15,7 @@
           <changefreq>weekly</changefreq>
           <priority>1.0</priority>
     </url>
-    <url>
+<url>
           <loc>https://www.a2b.sa/ar</loc>
           <xhtml:link rel="alternate" hreflang="en" href="https://www.a2b.sa/"/>
           <xhtml:link rel="alternate" hreflang="ar" href="https://www.a2b.sa/ar"/>
@@ -29,7 +29,7 @@
           <changefreq>weekly</changefreq>
           <priority>1.0</priority>
     </url>
-    <url>
+<url>
           <loc>https://www.a2b.sa/de</loc>
           <xhtml:link rel="alternate" hreflang="en" href="https://www.a2b.sa/"/>
           <xhtml:link rel="alternate" hreflang="ar" href="https://www.a2b.sa/ar"/>
@@ -43,7 +43,7 @@
           <changefreq>weekly</changefreq>
           <priority>1.0</priority>
     </url>
-    <url>
+<url>
           <loc>https://www.a2b.sa/it</loc>
           <xhtml:link rel="alternate" hreflang="en" href="https://www.a2b.sa/"/>
           <xhtml:link rel="alternate" hreflang="ar" href="https://www.a2b.sa/ar"/>
@@ -57,7 +57,7 @@
           <changefreq>weekly</changefreq>
           <priority>1.0</priority>
     </url>
-    <url>
+<url>
           <loc>https://www.a2b.sa/es</loc>
           <xhtml:link rel="alternate" hreflang="en" href="https://www.a2b.sa/"/>
           <xhtml:link rel="alternate" hreflang="ar" href="https://www.a2b.sa/ar"/>
@@ -71,7 +71,7 @@
           <changefreq>weekly</changefreq>
           <priority>1.0</priority>
     </url>
-    <url>
+<url>
           <loc>https://www.a2b.sa/fr</loc>
           <xhtml:link rel="alternate" hreflang="en" href="https://www.a2b.sa/"/>
           <xhtml:link rel="alternate" hreflang="ar" href="https://www.a2b.sa/ar"/>
@@ -85,7 +85,7 @@
           <changefreq>weekly</changefreq>
           <priority>1.0</priority>
     </url>
-    <url>
+<url>
           <loc>https://www.a2b.sa/zh-Hans</loc>
           <xhtml:link rel="alternate" hreflang="en" href="https://www.a2b.sa/"/>
           <xhtml:link rel="alternate" hreflang="ar" href="https://www.a2b.sa/ar"/>
@@ -99,7 +99,7 @@
           <changefreq>weekly</changefreq>
           <priority>1.0</priority>
     </url>
-    <url>
+<url>
           <loc>https://www.a2b.sa/fleet</loc>
           <xhtml:link rel="alternate" hreflang="en" href="https://www.a2b.sa/fleet"/>
           <xhtml:link rel="alternate" hreflang="ar" href="https://www.a2b.sa/ar/fleet"/>
@@ -113,7 +113,7 @@
           <changefreq>monthly</changefreq>
           <priority>0.8</priority>
     </url>
-    <url>
+<url>
           <loc>https://www.a2b.sa/ar/fleet</loc>
           <xhtml:link rel="alternate" hreflang="en" href="https://www.a2b.sa/fleet"/>
           <xhtml:link rel="alternate" hreflang="ar" href="https://www.a2b.sa/ar/fleet"/>
@@ -127,7 +127,7 @@
           <changefreq>monthly</changefreq>
           <priority>0.8</priority>
     </url>
-    <url>
+<url>
           <loc>https://www.a2b.sa/de/fleet</loc>
           <xhtml:link rel="alternate" hreflang="en" href="https://www.a2b.sa/fleet"/>
           <xhtml:link rel="alternate" hreflang="ar" href="https://www.a2b.sa/ar/fleet"/>
@@ -141,7 +141,7 @@
           <changefreq>monthly</changefreq>
           <priority>0.8</priority>
     </url>
-    <url>
+<url>
           <loc>https://www.a2b.sa/it/fleet</loc>
           <xhtml:link rel="alternate" hreflang="en" href="https://www.a2b.sa/fleet"/>
           <xhtml:link rel="alternate" hreflang="ar" href="https://www.a2b.sa/ar/fleet"/>
@@ -155,7 +155,7 @@
           <changefreq>monthly</changefreq>
           <priority>0.8</priority>
     </url>
-    <url>
+<url>
           <loc>https://www.a2b.sa/es/fleet</loc>
           <xhtml:link rel="alternate" hreflang="en" href="https://www.a2b.sa/fleet"/>
           <xhtml:link rel="alternate" hreflang="ar" href="https://www.a2b.sa/ar/fleet"/>
@@ -169,7 +169,7 @@
           <changefreq>monthly</changefreq>
           <priority>0.8</priority>
     </url>
-    <url>
+<url>
           <loc>https://www.a2b.sa/fr/fleet</loc>
           <xhtml:link rel="alternate" hreflang="en" href="https://www.a2b.sa/fleet"/>
           <xhtml:link rel="alternate" hreflang="ar" href="https://www.a2b.sa/ar/fleet"/>
@@ -183,7 +183,7 @@
           <changefreq>monthly</changefreq>
           <priority>0.8</priority>
     </url>
-    <url>
+<url>
           <loc>https://www.a2b.sa/zh-Hans/fleet</loc>
           <xhtml:link rel="alternate" hreflang="en" href="https://www.a2b.sa/fleet"/>
           <xhtml:link rel="alternate" hreflang="ar" href="https://www.a2b.sa/ar/fleet"/>
@@ -197,7 +197,7 @@
           <changefreq>monthly</changefreq>
           <priority>0.8</priority>
     </url>
-    <url>
+<url>
           <loc>https://www.a2b.sa/careers</loc>
           <xhtml:link rel="alternate" hreflang="en" href="https://www.a2b.sa/careers"/>
           <xhtml:link rel="alternate" hreflang="ar" href="https://www.a2b.sa/ar/careers"/>
@@ -211,7 +211,7 @@
           <changefreq>weekly</changefreq>
           <priority>0.7</priority>
     </url>
-    <url>
+<url>
           <loc>https://www.a2b.sa/ar/careers</loc>
           <xhtml:link rel="alternate" hreflang="en" href="https://www.a2b.sa/careers"/>
           <xhtml:link rel="alternate" hreflang="ar" href="https://www.a2b.sa/ar/careers"/>
@@ -225,7 +225,7 @@
           <changefreq>weekly</changefreq>
           <priority>0.7</priority>
     </url>
-    <url>
+<url>
           <loc>https://www.a2b.sa/de/careers</loc>
           <xhtml:link rel="alternate" hreflang="en" href="https://www.a2b.sa/careers"/>
           <xhtml:link rel="alternate" hreflang="ar" href="https://www.a2b.sa/ar/careers"/>
@@ -239,7 +239,7 @@
           <changefreq>weekly</changefreq>
           <priority>0.7</priority>
     </url>
-    <url>
+<url>
           <loc>https://www.a2b.sa/it/careers</loc>
           <xhtml:link rel="alternate" hreflang="en" href="https://www.a2b.sa/careers"/>
           <xhtml:link rel="alternate" hreflang="ar" href="https://www.a2b.sa/ar/careers"/>
@@ -253,7 +253,7 @@
           <changefreq>weekly</changefreq>
           <priority>0.7</priority>
     </url>
-    <url>
+<url>
           <loc>https://www.a2b.sa/es/careers</loc>
           <xhtml:link rel="alternate" hreflang="en" href="https://www.a2b.sa/careers"/>
           <xhtml:link rel="alternate" hreflang="ar" href="https://www.a2b.sa/ar/careers"/>
@@ -267,7 +267,7 @@
           <changefreq>weekly</changefreq>
           <priority>0.7</priority>
     </url>
-    <url>
+<url>
           <loc>https://www.a2b.sa/fr/careers</loc>
           <xhtml:link rel="alternate" hreflang="en" href="https://www.a2b.sa/careers"/>
           <xhtml:link rel="alternate" hreflang="ar" href="https://www.a2b.sa/ar/careers"/>
@@ -281,7 +281,7 @@
           <changefreq>weekly</changefreq>
           <priority>0.7</priority>
     </url>
-    <url>
+<url>
           <loc>https://www.a2b.sa/zh-Hans/careers</loc>
           <xhtml:link rel="alternate" hreflang="en" href="https://www.a2b.sa/careers"/>
           <xhtml:link rel="alternate" hreflang="ar" href="https://www.a2b.sa/ar/careers"/>
@@ -295,7 +295,7 @@
           <changefreq>weekly</changefreq>
           <priority>0.7</priority>
     </url>
-    <url>
+<url>
           <loc>https://www.a2b.sa/vendors</loc>
           <xhtml:link rel="alternate" hreflang="en" href="https://www.a2b.sa/vendors"/>
           <xhtml:link rel="alternate" hreflang="ar" href="https://www.a2b.sa/ar/vendors"/>
@@ -309,7 +309,7 @@
           <changefreq>monthly</changefreq>
           <priority>0.7</priority>
     </url>
-    <url>
+<url>
           <loc>https://www.a2b.sa/ar/vendors</loc>
           <xhtml:link rel="alternate" hreflang="en" href="https://www.a2b.sa/vendors"/>
           <xhtml:link rel="alternate" hreflang="ar" href="https://www.a2b.sa/ar/vendors"/>
@@ -323,7 +323,7 @@
           <changefreq>monthly</changefreq>
           <priority>0.7</priority>
     </url>
-    <url>
+<url>
           <loc>https://www.a2b.sa/de/vendors</loc>
           <xhtml:link rel="alternate" hreflang="en" href="https://www.a2b.sa/vendors"/>
           <xhtml:link rel="alternate" hreflang="ar" href="https://www.a2b.sa/ar/vendors"/>
@@ -337,7 +337,7 @@
           <changefreq>monthly</changefreq>
           <priority>0.7</priority>
     </url>
-    <url>
+<url>
           <loc>https://www.a2b.sa/it/vendors</loc>
           <xhtml:link rel="alternate" hreflang="en" href="https://www.a2b.sa/vendors"/>
           <xhtml:link rel="alternate" hreflang="ar" href="https://www.a2b.sa/ar/vendors"/>
@@ -351,7 +351,7 @@
           <changefreq>monthly</changefreq>
           <priority>0.7</priority>
     </url>
-    <url>
+<url>
           <loc>https://www.a2b.sa/es/vendors</loc>
           <xhtml:link rel="alternate" hreflang="en" href="https://www.a2b.sa/vendors"/>
           <xhtml:link rel="alternate" hreflang="ar" href="https://www.a2b.sa/ar/vendors"/>
@@ -365,7 +365,7 @@
           <changefreq>monthly</changefreq>
           <priority>0.7</priority>
     </url>
-    <url>
+<url>
           <loc>https://www.a2b.sa/fr/vendors</loc>
           <xhtml:link rel="alternate" hreflang="en" href="https://www.a2b.sa/vendors"/>
           <xhtml:link rel="alternate" hreflang="ar" href="https://www.a2b.sa/ar/vendors"/>
@@ -379,7 +379,7 @@
           <changefreq>monthly</changefreq>
           <priority>0.7</priority>
     </url>
-    <url>
+<url>
           <loc>https://www.a2b.sa/zh-Hans/vendors</loc>
           <xhtml:link rel="alternate" hreflang="en" href="https://www.a2b.sa/vendors"/>
           <xhtml:link rel="alternate" hreflang="ar" href="https://www.a2b.sa/ar/vendors"/>
@@ -393,7 +393,7 @@
           <changefreq>monthly</changefreq>
           <priority>0.7</priority>
     </url>
-    <url>
+<url>
           <loc>https://www.a2b.sa/privacy-policy</loc>
           <xhtml:link rel="alternate" hreflang="en" href="https://www.a2b.sa/privacy-policy"/>
           <xhtml:link rel="alternate" hreflang="x-default" href="https://www.a2b.sa/privacy-policy"/>
@@ -401,7 +401,7 @@
           <changefreq>yearly</changefreq>
           <priority>0.3</priority>
     </url>
-    <url>
+<url>
           <loc>https://www.a2b.sa/terms-and-conditions</loc>
           <xhtml:link rel="alternate" hreflang="en" href="https://www.a2b.sa/terms-and-conditions"/>
           <xhtml:link rel="alternate" hreflang="x-default" href="https://www.a2b.sa/terms-and-conditions"/>
@@ -412,41 +412,491 @@
     <url>
           <loc>https://www.a2b.sa/services/trucking-road-freight</loc>
           <xhtml:link rel="alternate" hreflang="en" href="https://www.a2b.sa/services/trucking-road-freight"/>
+          <xhtml:link rel="alternate" hreflang="ar" href="https://www.a2b.sa/ar/services/trucking-road-freight"/>
+          <xhtml:link rel="alternate" hreflang="de" href="https://www.a2b.sa/de/services/trucking-road-freight"/>
+          <xhtml:link rel="alternate" hreflang="it" href="https://www.a2b.sa/it/services/trucking-road-freight"/>
+          <xhtml:link rel="alternate" hreflang="es" href="https://www.a2b.sa/es/services/trucking-road-freight"/>
+          <xhtml:link rel="alternate" hreflang="fr" href="https://www.a2b.sa/fr/services/trucking-road-freight"/>
+          <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.a2b.sa/zh-Hans/services/trucking-road-freight"/>
           <xhtml:link rel="alternate" hreflang="x-default" href="https://www.a2b.sa/services/trucking-road-freight"/>
           <lastmod>2026-06-06</lastmod>
           <changefreq>monthly</changefreq>
-          <priority>0.8</priority>
+          <priority>0.75</priority>
+    </url>
+    <url>
+          <loc>https://www.a2b.sa/ar/services/trucking-road-freight</loc>
+          <xhtml:link rel="alternate" hreflang="en" href="https://www.a2b.sa/services/trucking-road-freight"/>
+          <xhtml:link rel="alternate" hreflang="ar" href="https://www.a2b.sa/ar/services/trucking-road-freight"/>
+          <xhtml:link rel="alternate" hreflang="de" href="https://www.a2b.sa/de/services/trucking-road-freight"/>
+          <xhtml:link rel="alternate" hreflang="it" href="https://www.a2b.sa/it/services/trucking-road-freight"/>
+          <xhtml:link rel="alternate" hreflang="es" href="https://www.a2b.sa/es/services/trucking-road-freight"/>
+          <xhtml:link rel="alternate" hreflang="fr" href="https://www.a2b.sa/fr/services/trucking-road-freight"/>
+          <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.a2b.sa/zh-Hans/services/trucking-road-freight"/>
+          <xhtml:link rel="alternate" hreflang="x-default" href="https://www.a2b.sa/services/trucking-road-freight"/>
+          <lastmod>2026-06-06</lastmod>
+          <changefreq>monthly</changefreq>
+          <priority>0.75</priority>
+    </url>
+    <url>
+          <loc>https://www.a2b.sa/de/services/trucking-road-freight</loc>
+          <xhtml:link rel="alternate" hreflang="en" href="https://www.a2b.sa/services/trucking-road-freight"/>
+          <xhtml:link rel="alternate" hreflang="ar" href="https://www.a2b.sa/ar/services/trucking-road-freight"/>
+          <xhtml:link rel="alternate" hreflang="de" href="https://www.a2b.sa/de/services/trucking-road-freight"/>
+          <xhtml:link rel="alternate" hreflang="it" href="https://www.a2b.sa/it/services/trucking-road-freight"/>
+          <xhtml:link rel="alternate" hreflang="es" href="https://www.a2b.sa/es/services/trucking-road-freight"/>
+          <xhtml:link rel="alternate" hreflang="fr" href="https://www.a2b.sa/fr/services/trucking-road-freight"/>
+          <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.a2b.sa/zh-Hans/services/trucking-road-freight"/>
+          <xhtml:link rel="alternate" hreflang="x-default" href="https://www.a2b.sa/services/trucking-road-freight"/>
+          <lastmod>2026-06-06</lastmod>
+          <changefreq>monthly</changefreq>
+          <priority>0.75</priority>
+    </url>
+    <url>
+          <loc>https://www.a2b.sa/it/services/trucking-road-freight</loc>
+          <xhtml:link rel="alternate" hreflang="en" href="https://www.a2b.sa/services/trucking-road-freight"/>
+          <xhtml:link rel="alternate" hreflang="ar" href="https://www.a2b.sa/ar/services/trucking-road-freight"/>
+          <xhtml:link rel="alternate" hreflang="de" href="https://www.a2b.sa/de/services/trucking-road-freight"/>
+          <xhtml:link rel="alternate" hreflang="it" href="https://www.a2b.sa/it/services/trucking-road-freight"/>
+          <xhtml:link rel="alternate" hreflang="es" href="https://www.a2b.sa/es/services/trucking-road-freight"/>
+          <xhtml:link rel="alternate" hreflang="fr" href="https://www.a2b.sa/fr/services/trucking-road-freight"/>
+          <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.a2b.sa/zh-Hans/services/trucking-road-freight"/>
+          <xhtml:link rel="alternate" hreflang="x-default" href="https://www.a2b.sa/services/trucking-road-freight"/>
+          <lastmod>2026-06-06</lastmod>
+          <changefreq>monthly</changefreq>
+          <priority>0.75</priority>
+    </url>
+    <url>
+          <loc>https://www.a2b.sa/es/services/trucking-road-freight</loc>
+          <xhtml:link rel="alternate" hreflang="en" href="https://www.a2b.sa/services/trucking-road-freight"/>
+          <xhtml:link rel="alternate" hreflang="ar" href="https://www.a2b.sa/ar/services/trucking-road-freight"/>
+          <xhtml:link rel="alternate" hreflang="de" href="https://www.a2b.sa/de/services/trucking-road-freight"/>
+          <xhtml:link rel="alternate" hreflang="it" href="https://www.a2b.sa/it/services/trucking-road-freight"/>
+          <xhtml:link rel="alternate" hreflang="es" href="https://www.a2b.sa/es/services/trucking-road-freight"/>
+          <xhtml:link rel="alternate" hreflang="fr" href="https://www.a2b.sa/fr/services/trucking-road-freight"/>
+          <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.a2b.sa/zh-Hans/services/trucking-road-freight"/>
+          <xhtml:link rel="alternate" hreflang="x-default" href="https://www.a2b.sa/services/trucking-road-freight"/>
+          <lastmod>2026-06-06</lastmod>
+          <changefreq>monthly</changefreq>
+          <priority>0.75</priority>
+    </url>
+    <url>
+          <loc>https://www.a2b.sa/fr/services/trucking-road-freight</loc>
+          <xhtml:link rel="alternate" hreflang="en" href="https://www.a2b.sa/services/trucking-road-freight"/>
+          <xhtml:link rel="alternate" hreflang="ar" href="https://www.a2b.sa/ar/services/trucking-road-freight"/>
+          <xhtml:link rel="alternate" hreflang="de" href="https://www.a2b.sa/de/services/trucking-road-freight"/>
+          <xhtml:link rel="alternate" hreflang="it" href="https://www.a2b.sa/it/services/trucking-road-freight"/>
+          <xhtml:link rel="alternate" hreflang="es" href="https://www.a2b.sa/es/services/trucking-road-freight"/>
+          <xhtml:link rel="alternate" hreflang="fr" href="https://www.a2b.sa/fr/services/trucking-road-freight"/>
+          <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.a2b.sa/zh-Hans/services/trucking-road-freight"/>
+          <xhtml:link rel="alternate" hreflang="x-default" href="https://www.a2b.sa/services/trucking-road-freight"/>
+          <lastmod>2026-06-06</lastmod>
+          <changefreq>monthly</changefreq>
+          <priority>0.75</priority>
+    </url>
+    <url>
+          <loc>https://www.a2b.sa/zh-Hans/services/trucking-road-freight</loc>
+          <xhtml:link rel="alternate" hreflang="en" href="https://www.a2b.sa/services/trucking-road-freight"/>
+          <xhtml:link rel="alternate" hreflang="ar" href="https://www.a2b.sa/ar/services/trucking-road-freight"/>
+          <xhtml:link rel="alternate" hreflang="de" href="https://www.a2b.sa/de/services/trucking-road-freight"/>
+          <xhtml:link rel="alternate" hreflang="it" href="https://www.a2b.sa/it/services/trucking-road-freight"/>
+          <xhtml:link rel="alternate" hreflang="es" href="https://www.a2b.sa/es/services/trucking-road-freight"/>
+          <xhtml:link rel="alternate" hreflang="fr" href="https://www.a2b.sa/fr/services/trucking-road-freight"/>
+          <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.a2b.sa/zh-Hans/services/trucking-road-freight"/>
+          <xhtml:link rel="alternate" hreflang="x-default" href="https://www.a2b.sa/services/trucking-road-freight"/>
+          <lastmod>2026-06-06</lastmod>
+          <changefreq>monthly</changefreq>
+          <priority>0.75</priority>
     </url>
     <url>
           <loc>https://www.a2b.sa/services/warehousing</loc>
           <xhtml:link rel="alternate" hreflang="en" href="https://www.a2b.sa/services/warehousing"/>
+          <xhtml:link rel="alternate" hreflang="ar" href="https://www.a2b.sa/ar/services/warehousing"/>
+          <xhtml:link rel="alternate" hreflang="de" href="https://www.a2b.sa/de/services/warehousing"/>
+          <xhtml:link rel="alternate" hreflang="it" href="https://www.a2b.sa/it/services/warehousing"/>
+          <xhtml:link rel="alternate" hreflang="es" href="https://www.a2b.sa/es/services/warehousing"/>
+          <xhtml:link rel="alternate" hreflang="fr" href="https://www.a2b.sa/fr/services/warehousing"/>
+          <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.a2b.sa/zh-Hans/services/warehousing"/>
           <xhtml:link rel="alternate" hreflang="x-default" href="https://www.a2b.sa/services/warehousing"/>
           <lastmod>2026-06-06</lastmod>
           <changefreq>monthly</changefreq>
-          <priority>0.8</priority>
+          <priority>0.75</priority>
+    </url>
+    <url>
+          <loc>https://www.a2b.sa/ar/services/warehousing</loc>
+          <xhtml:link rel="alternate" hreflang="en" href="https://www.a2b.sa/services/warehousing"/>
+          <xhtml:link rel="alternate" hreflang="ar" href="https://www.a2b.sa/ar/services/warehousing"/>
+          <xhtml:link rel="alternate" hreflang="de" href="https://www.a2b.sa/de/services/warehousing"/>
+          <xhtml:link rel="alternate" hreflang="it" href="https://www.a2b.sa/it/services/warehousing"/>
+          <xhtml:link rel="alternate" hreflang="es" href="https://www.a2b.sa/es/services/warehousing"/>
+          <xhtml:link rel="alternate" hreflang="fr" href="https://www.a2b.sa/fr/services/warehousing"/>
+          <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.a2b.sa/zh-Hans/services/warehousing"/>
+          <xhtml:link rel="alternate" hreflang="x-default" href="https://www.a2b.sa/services/warehousing"/>
+          <lastmod>2026-06-06</lastmod>
+          <changefreq>monthly</changefreq>
+          <priority>0.75</priority>
+    </url>
+    <url>
+          <loc>https://www.a2b.sa/de/services/warehousing</loc>
+          <xhtml:link rel="alternate" hreflang="en" href="https://www.a2b.sa/services/warehousing"/>
+          <xhtml:link rel="alternate" hreflang="ar" href="https://www.a2b.sa/ar/services/warehousing"/>
+          <xhtml:link rel="alternate" hreflang="de" href="https://www.a2b.sa/de/services/warehousing"/>
+          <xhtml:link rel="alternate" hreflang="it" href="https://www.a2b.sa/it/services/warehousing"/>
+          <xhtml:link rel="alternate" hreflang="es" href="https://www.a2b.sa/es/services/warehousing"/>
+          <xhtml:link rel="alternate" hreflang="fr" href="https://www.a2b.sa/fr/services/warehousing"/>
+          <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.a2b.sa/zh-Hans/services/warehousing"/>
+          <xhtml:link rel="alternate" hreflang="x-default" href="https://www.a2b.sa/services/warehousing"/>
+          <lastmod>2026-06-06</lastmod>
+          <changefreq>monthly</changefreq>
+          <priority>0.75</priority>
+    </url>
+    <url>
+          <loc>https://www.a2b.sa/it/services/warehousing</loc>
+          <xhtml:link rel="alternate" hreflang="en" href="https://www.a2b.sa/services/warehousing"/>
+          <xhtml:link rel="alternate" hreflang="ar" href="https://www.a2b.sa/ar/services/warehousing"/>
+          <xhtml:link rel="alternate" hreflang="de" href="https://www.a2b.sa/de/services/warehousing"/>
+          <xhtml:link rel="alternate" hreflang="it" href="https://www.a2b.sa/it/services/warehousing"/>
+          <xhtml:link rel="alternate" hreflang="es" href="https://www.a2b.sa/es/services/warehousing"/>
+          <xhtml:link rel="alternate" hreflang="fr" href="https://www.a2b.sa/fr/services/warehousing"/>
+          <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.a2b.sa/zh-Hans/services/warehousing"/>
+          <xhtml:link rel="alternate" hreflang="x-default" href="https://www.a2b.sa/services/warehousing"/>
+          <lastmod>2026-06-06</lastmod>
+          <changefreq>monthly</changefreq>
+          <priority>0.75</priority>
+    </url>
+    <url>
+          <loc>https://www.a2b.sa/es/services/warehousing</loc>
+          <xhtml:link rel="alternate" hreflang="en" href="https://www.a2b.sa/services/warehousing"/>
+          <xhtml:link rel="alternate" hreflang="ar" href="https://www.a2b.sa/ar/services/warehousing"/>
+          <xhtml:link rel="alternate" hreflang="de" href="https://www.a2b.sa/de/services/warehousing"/>
+          <xhtml:link rel="alternate" hreflang="it" href="https://www.a2b.sa/it/services/warehousing"/>
+          <xhtml:link rel="alternate" hreflang="es" href="https://www.a2b.sa/es/services/warehousing"/>
+          <xhtml:link rel="alternate" hreflang="fr" href="https://www.a2b.sa/fr/services/warehousing"/>
+          <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.a2b.sa/zh-Hans/services/warehousing"/>
+          <xhtml:link rel="alternate" hreflang="x-default" href="https://www.a2b.sa/services/warehousing"/>
+          <lastmod>2026-06-06</lastmod>
+          <changefreq>monthly</changefreq>
+          <priority>0.75</priority>
+    </url>
+    <url>
+          <loc>https://www.a2b.sa/fr/services/warehousing</loc>
+          <xhtml:link rel="alternate" hreflang="en" href="https://www.a2b.sa/services/warehousing"/>
+          <xhtml:link rel="alternate" hreflang="ar" href="https://www.a2b.sa/ar/services/warehousing"/>
+          <xhtml:link rel="alternate" hreflang="de" href="https://www.a2b.sa/de/services/warehousing"/>
+          <xhtml:link rel="alternate" hreflang="it" href="https://www.a2b.sa/it/services/warehousing"/>
+          <xhtml:link rel="alternate" hreflang="es" href="https://www.a2b.sa/es/services/warehousing"/>
+          <xhtml:link rel="alternate" hreflang="fr" href="https://www.a2b.sa/fr/services/warehousing"/>
+          <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.a2b.sa/zh-Hans/services/warehousing"/>
+          <xhtml:link rel="alternate" hreflang="x-default" href="https://www.a2b.sa/services/warehousing"/>
+          <lastmod>2026-06-06</lastmod>
+          <changefreq>monthly</changefreq>
+          <priority>0.75</priority>
+    </url>
+    <url>
+          <loc>https://www.a2b.sa/zh-Hans/services/warehousing</loc>
+          <xhtml:link rel="alternate" hreflang="en" href="https://www.a2b.sa/services/warehousing"/>
+          <xhtml:link rel="alternate" hreflang="ar" href="https://www.a2b.sa/ar/services/warehousing"/>
+          <xhtml:link rel="alternate" hreflang="de" href="https://www.a2b.sa/de/services/warehousing"/>
+          <xhtml:link rel="alternate" hreflang="it" href="https://www.a2b.sa/it/services/warehousing"/>
+          <xhtml:link rel="alternate" hreflang="es" href="https://www.a2b.sa/es/services/warehousing"/>
+          <xhtml:link rel="alternate" hreflang="fr" href="https://www.a2b.sa/fr/services/warehousing"/>
+          <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.a2b.sa/zh-Hans/services/warehousing"/>
+          <xhtml:link rel="alternate" hreflang="x-default" href="https://www.a2b.sa/services/warehousing"/>
+          <lastmod>2026-06-06</lastmod>
+          <changefreq>monthly</changefreq>
+          <priority>0.75</priority>
     </url>
     <url>
           <loc>https://www.a2b.sa/services/customs-clearance</loc>
           <xhtml:link rel="alternate" hreflang="en" href="https://www.a2b.sa/services/customs-clearance"/>
+          <xhtml:link rel="alternate" hreflang="ar" href="https://www.a2b.sa/ar/services/customs-clearance"/>
+          <xhtml:link rel="alternate" hreflang="de" href="https://www.a2b.sa/de/services/customs-clearance"/>
+          <xhtml:link rel="alternate" hreflang="it" href="https://www.a2b.sa/it/services/customs-clearance"/>
+          <xhtml:link rel="alternate" hreflang="es" href="https://www.a2b.sa/es/services/customs-clearance"/>
+          <xhtml:link rel="alternate" hreflang="fr" href="https://www.a2b.sa/fr/services/customs-clearance"/>
+          <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.a2b.sa/zh-Hans/services/customs-clearance"/>
           <xhtml:link rel="alternate" hreflang="x-default" href="https://www.a2b.sa/services/customs-clearance"/>
           <lastmod>2026-06-06</lastmod>
           <changefreq>monthly</changefreq>
-          <priority>0.8</priority>
+          <priority>0.75</priority>
+    </url>
+    <url>
+          <loc>https://www.a2b.sa/ar/services/customs-clearance</loc>
+          <xhtml:link rel="alternate" hreflang="en" href="https://www.a2b.sa/services/customs-clearance"/>
+          <xhtml:link rel="alternate" hreflang="ar" href="https://www.a2b.sa/ar/services/customs-clearance"/>
+          <xhtml:link rel="alternate" hreflang="de" href="https://www.a2b.sa/de/services/customs-clearance"/>
+          <xhtml:link rel="alternate" hreflang="it" href="https://www.a2b.sa/it/services/customs-clearance"/>
+          <xhtml:link rel="alternate" hreflang="es" href="https://www.a2b.sa/es/services/customs-clearance"/>
+          <xhtml:link rel="alternate" hreflang="fr" href="https://www.a2b.sa/fr/services/customs-clearance"/>
+          <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.a2b.sa/zh-Hans/services/customs-clearance"/>
+          <xhtml:link rel="alternate" hreflang="x-default" href="https://www.a2b.sa/services/customs-clearance"/>
+          <lastmod>2026-06-06</lastmod>
+          <changefreq>monthly</changefreq>
+          <priority>0.75</priority>
+    </url>
+    <url>
+          <loc>https://www.a2b.sa/de/services/customs-clearance</loc>
+          <xhtml:link rel="alternate" hreflang="en" href="https://www.a2b.sa/services/customs-clearance"/>
+          <xhtml:link rel="alternate" hreflang="ar" href="https://www.a2b.sa/ar/services/customs-clearance"/>
+          <xhtml:link rel="alternate" hreflang="de" href="https://www.a2b.sa/de/services/customs-clearance"/>
+          <xhtml:link rel="alternate" hreflang="it" href="https://www.a2b.sa/it/services/customs-clearance"/>
+          <xhtml:link rel="alternate" hreflang="es" href="https://www.a2b.sa/es/services/customs-clearance"/>
+          <xhtml:link rel="alternate" hreflang="fr" href="https://www.a2b.sa/fr/services/customs-clearance"/>
+          <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.a2b.sa/zh-Hans/services/customs-clearance"/>
+          <xhtml:link rel="alternate" hreflang="x-default" href="https://www.a2b.sa/services/customs-clearance"/>
+          <lastmod>2026-06-06</lastmod>
+          <changefreq>monthly</changefreq>
+          <priority>0.75</priority>
+    </url>
+    <url>
+          <loc>https://www.a2b.sa/it/services/customs-clearance</loc>
+          <xhtml:link rel="alternate" hreflang="en" href="https://www.a2b.sa/services/customs-clearance"/>
+          <xhtml:link rel="alternate" hreflang="ar" href="https://www.a2b.sa/ar/services/customs-clearance"/>
+          <xhtml:link rel="alternate" hreflang="de" href="https://www.a2b.sa/de/services/customs-clearance"/>
+          <xhtml:link rel="alternate" hreflang="it" href="https://www.a2b.sa/it/services/customs-clearance"/>
+          <xhtml:link rel="alternate" hreflang="es" href="https://www.a2b.sa/es/services/customs-clearance"/>
+          <xhtml:link rel="alternate" hreflang="fr" href="https://www.a2b.sa/fr/services/customs-clearance"/>
+          <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.a2b.sa/zh-Hans/services/customs-clearance"/>
+          <xhtml:link rel="alternate" hreflang="x-default" href="https://www.a2b.sa/services/customs-clearance"/>
+          <lastmod>2026-06-06</lastmod>
+          <changefreq>monthly</changefreq>
+          <priority>0.75</priority>
+    </url>
+    <url>
+          <loc>https://www.a2b.sa/es/services/customs-clearance</loc>
+          <xhtml:link rel="alternate" hreflang="en" href="https://www.a2b.sa/services/customs-clearance"/>
+          <xhtml:link rel="alternate" hreflang="ar" href="https://www.a2b.sa/ar/services/customs-clearance"/>
+          <xhtml:link rel="alternate" hreflang="de" href="https://www.a2b.sa/de/services/customs-clearance"/>
+          <xhtml:link rel="alternate" hreflang="it" href="https://www.a2b.sa/it/services/customs-clearance"/>
+          <xhtml:link rel="alternate" hreflang="es" href="https://www.a2b.sa/es/services/customs-clearance"/>
+          <xhtml:link rel="alternate" hreflang="fr" href="https://www.a2b.sa/fr/services/customs-clearance"/>
+          <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.a2b.sa/zh-Hans/services/customs-clearance"/>
+          <xhtml:link rel="alternate" hreflang="x-default" href="https://www.a2b.sa/services/customs-clearance"/>
+          <lastmod>2026-06-06</lastmod>
+          <changefreq>monthly</changefreq>
+          <priority>0.75</priority>
+    </url>
+    <url>
+          <loc>https://www.a2b.sa/fr/services/customs-clearance</loc>
+          <xhtml:link rel="alternate" hreflang="en" href="https://www.a2b.sa/services/customs-clearance"/>
+          <xhtml:link rel="alternate" hreflang="ar" href="https://www.a2b.sa/ar/services/customs-clearance"/>
+          <xhtml:link rel="alternate" hreflang="de" href="https://www.a2b.sa/de/services/customs-clearance"/>
+          <xhtml:link rel="alternate" hreflang="it" href="https://www.a2b.sa/it/services/customs-clearance"/>
+          <xhtml:link rel="alternate" hreflang="es" href="https://www.a2b.sa/es/services/customs-clearance"/>
+          <xhtml:link rel="alternate" hreflang="fr" href="https://www.a2b.sa/fr/services/customs-clearance"/>
+          <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.a2b.sa/zh-Hans/services/customs-clearance"/>
+          <xhtml:link rel="alternate" hreflang="x-default" href="https://www.a2b.sa/services/customs-clearance"/>
+          <lastmod>2026-06-06</lastmod>
+          <changefreq>monthly</changefreq>
+          <priority>0.75</priority>
+    </url>
+    <url>
+          <loc>https://www.a2b.sa/zh-Hans/services/customs-clearance</loc>
+          <xhtml:link rel="alternate" hreflang="en" href="https://www.a2b.sa/services/customs-clearance"/>
+          <xhtml:link rel="alternate" hreflang="ar" href="https://www.a2b.sa/ar/services/customs-clearance"/>
+          <xhtml:link rel="alternate" hreflang="de" href="https://www.a2b.sa/de/services/customs-clearance"/>
+          <xhtml:link rel="alternate" hreflang="it" href="https://www.a2b.sa/it/services/customs-clearance"/>
+          <xhtml:link rel="alternate" hreflang="es" href="https://www.a2b.sa/es/services/customs-clearance"/>
+          <xhtml:link rel="alternate" hreflang="fr" href="https://www.a2b.sa/fr/services/customs-clearance"/>
+          <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.a2b.sa/zh-Hans/services/customs-clearance"/>
+          <xhtml:link rel="alternate" hreflang="x-default" href="https://www.a2b.sa/services/customs-clearance"/>
+          <lastmod>2026-06-06</lastmod>
+          <changefreq>monthly</changefreq>
+          <priority>0.75</priority>
     </url>
     <url>
           <loc>https://www.a2b.sa/services/supply-chain</loc>
           <xhtml:link rel="alternate" hreflang="en" href="https://www.a2b.sa/services/supply-chain"/>
+          <xhtml:link rel="alternate" hreflang="ar" href="https://www.a2b.sa/ar/services/supply-chain"/>
+          <xhtml:link rel="alternate" hreflang="de" href="https://www.a2b.sa/de/services/supply-chain"/>
+          <xhtml:link rel="alternate" hreflang="it" href="https://www.a2b.sa/it/services/supply-chain"/>
+          <xhtml:link rel="alternate" hreflang="es" href="https://www.a2b.sa/es/services/supply-chain"/>
+          <xhtml:link rel="alternate" hreflang="fr" href="https://www.a2b.sa/fr/services/supply-chain"/>
+          <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.a2b.sa/zh-Hans/services/supply-chain"/>
           <xhtml:link rel="alternate" hreflang="x-default" href="https://www.a2b.sa/services/supply-chain"/>
           <lastmod>2026-06-06</lastmod>
           <changefreq>monthly</changefreq>
-          <priority>0.8</priority>
+          <priority>0.75</priority>
+    </url>
+    <url>
+          <loc>https://www.a2b.sa/ar/services/supply-chain</loc>
+          <xhtml:link rel="alternate" hreflang="en" href="https://www.a2b.sa/services/supply-chain"/>
+          <xhtml:link rel="alternate" hreflang="ar" href="https://www.a2b.sa/ar/services/supply-chain"/>
+          <xhtml:link rel="alternate" hreflang="de" href="https://www.a2b.sa/de/services/supply-chain"/>
+          <xhtml:link rel="alternate" hreflang="it" href="https://www.a2b.sa/it/services/supply-chain"/>
+          <xhtml:link rel="alternate" hreflang="es" href="https://www.a2b.sa/es/services/supply-chain"/>
+          <xhtml:link rel="alternate" hreflang="fr" href="https://www.a2b.sa/fr/services/supply-chain"/>
+          <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.a2b.sa/zh-Hans/services/supply-chain"/>
+          <xhtml:link rel="alternate" hreflang="x-default" href="https://www.a2b.sa/services/supply-chain"/>
+          <lastmod>2026-06-06</lastmod>
+          <changefreq>monthly</changefreq>
+          <priority>0.75</priority>
+    </url>
+    <url>
+          <loc>https://www.a2b.sa/de/services/supply-chain</loc>
+          <xhtml:link rel="alternate" hreflang="en" href="https://www.a2b.sa/services/supply-chain"/>
+          <xhtml:link rel="alternate" hreflang="ar" href="https://www.a2b.sa/ar/services/supply-chain"/>
+          <xhtml:link rel="alternate" hreflang="de" href="https://www.a2b.sa/de/services/supply-chain"/>
+          <xhtml:link rel="alternate" hreflang="it" href="https://www.a2b.sa/it/services/supply-chain"/>
+          <xhtml:link rel="alternate" hreflang="es" href="https://www.a2b.sa/es/services/supply-chain"/>
+          <xhtml:link rel="alternate" hreflang="fr" href="https://www.a2b.sa/fr/services/supply-chain"/>
+          <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.a2b.sa/zh-Hans/services/supply-chain"/>
+          <xhtml:link rel="alternate" hreflang="x-default" href="https://www.a2b.sa/services/supply-chain"/>
+          <lastmod>2026-06-06</lastmod>
+          <changefreq>monthly</changefreq>
+          <priority>0.75</priority>
+    </url>
+    <url>
+          <loc>https://www.a2b.sa/it/services/supply-chain</loc>
+          <xhtml:link rel="alternate" hreflang="en" href="https://www.a2b.sa/services/supply-chain"/>
+          <xhtml:link rel="alternate" hreflang="ar" href="https://www.a2b.sa/ar/services/supply-chain"/>
+          <xhtml:link rel="alternate" hreflang="de" href="https://www.a2b.sa/de/services/supply-chain"/>
+          <xhtml:link rel="alternate" hreflang="it" href="https://www.a2b.sa/it/services/supply-chain"/>
+          <xhtml:link rel="alternate" hreflang="es" href="https://www.a2b.sa/es/services/supply-chain"/>
+          <xhtml:link rel="alternate" hreflang="fr" href="https://www.a2b.sa/fr/services/supply-chain"/>
+          <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.a2b.sa/zh-Hans/services/supply-chain"/>
+          <xhtml:link rel="alternate" hreflang="x-default" href="https://www.a2b.sa/services/supply-chain"/>
+          <lastmod>2026-06-06</lastmod>
+          <changefreq>monthly</changefreq>
+          <priority>0.75</priority>
+    </url>
+    <url>
+          <loc>https://www.a2b.sa/es/services/supply-chain</loc>
+          <xhtml:link rel="alternate" hreflang="en" href="https://www.a2b.sa/services/supply-chain"/>
+          <xhtml:link rel="alternate" hreflang="ar" href="https://www.a2b.sa/ar/services/supply-chain"/>
+          <xhtml:link rel="alternate" hreflang="de" href="https://www.a2b.sa/de/services/supply-chain"/>
+          <xhtml:link rel="alternate" hreflang="it" href="https://www.a2b.sa/it/services/supply-chain"/>
+          <xhtml:link rel="alternate" hreflang="es" href="https://www.a2b.sa/es/services/supply-chain"/>
+          <xhtml:link rel="alternate" hreflang="fr" href="https://www.a2b.sa/fr/services/supply-chain"/>
+          <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.a2b.sa/zh-Hans/services/supply-chain"/>
+          <xhtml:link rel="alternate" hreflang="x-default" href="https://www.a2b.sa/services/supply-chain"/>
+          <lastmod>2026-06-06</lastmod>
+          <changefreq>monthly</changefreq>
+          <priority>0.75</priority>
+    </url>
+    <url>
+          <loc>https://www.a2b.sa/fr/services/supply-chain</loc>
+          <xhtml:link rel="alternate" hreflang="en" href="https://www.a2b.sa/services/supply-chain"/>
+          <xhtml:link rel="alternate" hreflang="ar" href="https://www.a2b.sa/ar/services/supply-chain"/>
+          <xhtml:link rel="alternate" hreflang="de" href="https://www.a2b.sa/de/services/supply-chain"/>
+          <xhtml:link rel="alternate" hreflang="it" href="https://www.a2b.sa/it/services/supply-chain"/>
+          <xhtml:link rel="alternate" hreflang="es" href="https://www.a2b.sa/es/services/supply-chain"/>
+          <xhtml:link rel="alternate" hreflang="fr" href="https://www.a2b.sa/fr/services/supply-chain"/>
+          <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.a2b.sa/zh-Hans/services/supply-chain"/>
+          <xhtml:link rel="alternate" hreflang="x-default" href="https://www.a2b.sa/services/supply-chain"/>
+          <lastmod>2026-06-06</lastmod>
+          <changefreq>monthly</changefreq>
+          <priority>0.75</priority>
+    </url>
+    <url>
+          <loc>https://www.a2b.sa/zh-Hans/services/supply-chain</loc>
+          <xhtml:link rel="alternate" hreflang="en" href="https://www.a2b.sa/services/supply-chain"/>
+          <xhtml:link rel="alternate" hreflang="ar" href="https://www.a2b.sa/ar/services/supply-chain"/>
+          <xhtml:link rel="alternate" hreflang="de" href="https://www.a2b.sa/de/services/supply-chain"/>
+          <xhtml:link rel="alternate" hreflang="it" href="https://www.a2b.sa/it/services/supply-chain"/>
+          <xhtml:link rel="alternate" hreflang="es" href="https://www.a2b.sa/es/services/supply-chain"/>
+          <xhtml:link rel="alternate" hreflang="fr" href="https://www.a2b.sa/fr/services/supply-chain"/>
+          <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.a2b.sa/zh-Hans/services/supply-chain"/>
+          <xhtml:link rel="alternate" hreflang="x-default" href="https://www.a2b.sa/services/supply-chain"/>
+          <lastmod>2026-06-06</lastmod>
+          <changefreq>monthly</changefreq>
+          <priority>0.75</priority>
     </url>
     <url>
           <loc>https://www.a2b.sa/services/fleet-types</loc>
           <xhtml:link rel="alternate" hreflang="en" href="https://www.a2b.sa/services/fleet-types"/>
+          <xhtml:link rel="alternate" hreflang="ar" href="https://www.a2b.sa/ar/services/fleet-types"/>
+          <xhtml:link rel="alternate" hreflang="de" href="https://www.a2b.sa/de/services/fleet-types"/>
+          <xhtml:link rel="alternate" hreflang="it" href="https://www.a2b.sa/it/services/fleet-types"/>
+          <xhtml:link rel="alternate" hreflang="es" href="https://www.a2b.sa/es/services/fleet-types"/>
+          <xhtml:link rel="alternate" hreflang="fr" href="https://www.a2b.sa/fr/services/fleet-types"/>
+          <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.a2b.sa/zh-Hans/services/fleet-types"/>
           <xhtml:link rel="alternate" hreflang="x-default" href="https://www.a2b.sa/services/fleet-types"/>
           <lastmod>2026-06-06</lastmod>
           <changefreq>monthly</changefreq>
-          <priority>0.8</priority>
+          <priority>0.75</priority>
+    </url>
+    <url>
+          <loc>https://www.a2b.sa/ar/services/fleet-types</loc>
+          <xhtml:link rel="alternate" hreflang="en" href="https://www.a2b.sa/services/fleet-types"/>
+          <xhtml:link rel="alternate" hreflang="ar" href="https://www.a2b.sa/ar/services/fleet-types"/>
+          <xhtml:link rel="alternate" hreflang="de" href="https://www.a2b.sa/de/services/fleet-types"/>
+          <xhtml:link rel="alternate" hreflang="it" href="https://www.a2b.sa/it/services/fleet-types"/>
+          <xhtml:link rel="alternate" hreflang="es" href="https://www.a2b.sa/es/services/fleet-types"/>
+          <xhtml:link rel="alternate" hreflang="fr" href="https://www.a2b.sa/fr/services/fleet-types"/>
+          <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.a2b.sa/zh-Hans/services/fleet-types"/>
+          <xhtml:link rel="alternate" hreflang="x-default" href="https://www.a2b.sa/services/fleet-types"/>
+          <lastmod>2026-06-06</lastmod>
+          <changefreq>monthly</changefreq>
+          <priority>0.75</priority>
+    </url>
+    <url>
+          <loc>https://www.a2b.sa/de/services/fleet-types</loc>
+          <xhtml:link rel="alternate" hreflang="en" href="https://www.a2b.sa/services/fleet-types"/>
+          <xhtml:link rel="alternate" hreflang="ar" href="https://www.a2b.sa/ar/services/fleet-types"/>
+          <xhtml:link rel="alternate" hreflang="de" href="https://www.a2b.sa/de/services/fleet-types"/>
+          <xhtml:link rel="alternate" hreflang="it" href="https://www.a2b.sa/it/services/fleet-types"/>
+          <xhtml:link rel="alternate" hreflang="es" href="https://www.a2b.sa/es/services/fleet-types"/>
+          <xhtml:link rel="alternate" hreflang="fr" href="https://www.a2b.sa/fr/services/fleet-types"/>
+          <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.a2b.sa/zh-Hans/services/fleet-types"/>
+          <xhtml:link rel="alternate" hreflang="x-default" href="https://www.a2b.sa/services/fleet-types"/>
+          <lastmod>2026-06-06</lastmod>
+          <changefreq>monthly</changefreq>
+          <priority>0.75</priority>
+    </url>
+    <url>
+          <loc>https://www.a2b.sa/it/services/fleet-types</loc>
+          <xhtml:link rel="alternate" hreflang="en" href="https://www.a2b.sa/services/fleet-types"/>
+          <xhtml:link rel="alternate" hreflang="ar" href="https://www.a2b.sa/ar/services/fleet-types"/>
+          <xhtml:link rel="alternate" hreflang="de" href="https://www.a2b.sa/de/services/fleet-types"/>
+          <xhtml:link rel="alternate" hreflang="it" href="https://www.a2b.sa/it/services/fleet-types"/>
+          <xhtml:link rel="alternate" hreflang="es" href="https://www.a2b.sa/es/services/fleet-types"/>
+          <xhtml:link rel="alternate" hreflang="fr" href="https://www.a2b.sa/fr/services/fleet-types"/>
+          <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.a2b.sa/zh-Hans/services/fleet-types"/>
+          <xhtml:link rel="alternate" hreflang="x-default" href="https://www.a2b.sa/services/fleet-types"/>
+          <lastmod>2026-06-06</lastmod>
+          <changefreq>monthly</changefreq>
+          <priority>0.75</priority>
+    </url>
+    <url>
+          <loc>https://www.a2b.sa/es/services/fleet-types</loc>
+          <xhtml:link rel="alternate" hreflang="en" href="https://www.a2b.sa/services/fleet-types"/>
+          <xhtml:link rel="alternate" hreflang="ar" href="https://www.a2b.sa/ar/services/fleet-types"/>
+          <xhtml:link rel="alternate" hreflang="de" href="https://www.a2b.sa/de/services/fleet-types"/>
+          <xhtml:link rel="alternate" hreflang="it" href="https://www.a2b.sa/it/services/fleet-types"/>
+          <xhtml:link rel="alternate" hreflang="es" href="https://www.a2b.sa/es/services/fleet-types"/>
+          <xhtml:link rel="alternate" hreflang="fr" href="https://www.a2b.sa/fr/services/fleet-types"/>
+          <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.a2b.sa/zh-Hans/services/fleet-types"/>
+          <xhtml:link rel="alternate" hreflang="x-default" href="https://www.a2b.sa/services/fleet-types"/>
+          <lastmod>2026-06-06</lastmod>
+          <changefreq>monthly</changefreq>
+          <priority>0.75</priority>
+    </url>
+    <url>
+          <loc>https://www.a2b.sa/fr/services/fleet-types</loc>
+          <xhtml:link rel="alternate" hreflang="en" href="https://www.a2b.sa/services/fleet-types"/>
+          <xhtml:link rel="alternate" hreflang="ar" href="https://www.a2b.sa/ar/services/fleet-types"/>
+          <xhtml:link rel="alternate" hreflang="de" href="https://www.a2b.sa/de/services/fleet-types"/>
+          <xhtml:link rel="alternate" hreflang="it" href="https://www.a2b.sa/it/services/fleet-types"/>
+          <xhtml:link rel="alternate" hreflang="es" href="https://www.a2b.sa/es/services/fleet-types"/>
+          <xhtml:link rel="alternate" hreflang="fr" href="https://www.a2b.sa/fr/services/fleet-types"/>
+          <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.a2b.sa/zh-Hans/services/fleet-types"/>
+          <xhtml:link rel="alternate" hreflang="x-default" href="https://www.a2b.sa/services/fleet-types"/>
+          <lastmod>2026-06-06</lastmod>
+          <changefreq>monthly</changefreq>
+          <priority>0.75</priority>
+    </url>
+    <url>
+          <loc>https://www.a2b.sa/zh-Hans/services/fleet-types</loc>
+          <xhtml:link rel="alternate" hreflang="en" href="https://www.a2b.sa/services/fleet-types"/>
+          <xhtml:link rel="alternate" hreflang="ar" href="https://www.a2b.sa/ar/services/fleet-types"/>
+          <xhtml:link rel="alternate" hreflang="de" href="https://www.a2b.sa/de/services/fleet-types"/>
+          <xhtml:link rel="alternate" hreflang="it" href="https://www.a2b.sa/it/services/fleet-types"/>
+          <xhtml:link rel="alternate" hreflang="es" href="https://www.a2b.sa/es/services/fleet-types"/>
+          <xhtml:link rel="alternate" hreflang="fr" href="https://www.a2b.sa/fr/services/fleet-types"/>
+          <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://www.a2b.sa/zh-Hans/services/fleet-types"/>
+          <xhtml:link rel="alternate" hreflang="x-default" href="https://www.a2b.sa/services/fleet-types"/>
+          <lastmod>2026-06-06</lastmod>
+          <changefreq>monthly</changefreq>
+          <priority>0.75</priority>
     </url>
 </urlset>

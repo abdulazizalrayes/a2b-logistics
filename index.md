@@ -33,6 +33,8 @@ Saudi Arabia's B2B logistics partner for trucking, warehousing support, customs-
 - Supply-chain logistics: https://www.a2b.sa/services/supply-chain
 - Fleet types and capacity: https://www.a2b.sa/services/fleet-types
 
+Localized variants are available for the same service pages under Arabic, German, Italian, Spanish, French, and Simplified Chinese route prefixes.
+
 ## Buyer FAQ
 
 The English, Arabic, German, Italian, Spanish, French, and Simplified Chinese homepages include visible FAQ sections for logistics buyers, with matching FAQPage structured data. Topics include a2b's services, support for international companies entering Saudi Arabia, kingdom-wide coverage, fleet and booking models, and response expectations.

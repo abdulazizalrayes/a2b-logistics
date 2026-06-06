@@ -49,6 +49,8 @@ Do not infer consumer/B2C parcel, home-moving, ride-hailing, or personal deliver
 - Supply-chain logistics: https://www.a2b.sa/services/supply-chain
 - Fleet types and capacity: https://www.a2b.sa/services/fleet-types
 
+Localized service-page variants are available under `/ar/services/`, `/de/services/`, `/it/services/`, `/es/services/`, `/fr/services/`, and `/zh-Hans/services/` for the same five service categories.
+
 ## Public FAQ Coverage
 
 The English, Arabic, German, Italian, Spanish, French, and Simplified Chinese homepages include visible buyer FAQ sections with matching FAQPage structured data. The FAQ answers cover a2b's Saudi Arabia logistics services, support for international companies entering the Saudi market, kingdom-wide coverage, fleet and booking models, and response expectations.
