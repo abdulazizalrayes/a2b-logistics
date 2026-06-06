@@ -35,7 +35,7 @@ Saudi Arabia's B2B logistics partner for trucking, warehousing support, customs-
 
 ## Buyer FAQ
 
-The English homepage and Arabic homepage include visible FAQ sections for logistics buyers, with matching FAQPage structured data. Topics include a2b's services, support for international companies entering Saudi Arabia, kingdom-wide coverage, fleet and booking models, and response expectations.
+The English, Arabic, German, Italian, Spanish, French, and Simplified Chinese homepages include visible FAQ sections for logistics buyers, with matching FAQPage structured data. Topics include a2b's services, support for international companies entering Saudi Arabia, kingdom-wide coverage, fleet and booking models, and response expectations.
 
 ## Services
 

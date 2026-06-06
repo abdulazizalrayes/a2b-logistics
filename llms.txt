@@ -51,7 +51,7 @@ Do not infer consumer/B2C parcel, home-moving, ride-hailing, or personal deliver
 
 ## Public FAQ Coverage
 
-The English homepage and Arabic homepage include visible buyer FAQ sections with matching FAQPage structured data. The FAQ answers cover a2b's Saudi Arabia logistics services, support for international companies entering the Saudi market, kingdom-wide coverage, fleet and booking models, and response expectations.
+The English, Arabic, German, Italian, Spanish, French, and Simplified Chinese homepages include visible buyer FAQ sections with matching FAQPage structured data. The FAQ answers cover a2b's Saudi Arabia logistics services, support for international companies entering the Saudi market, kingdom-wide coverage, fleet and booking models, and response expectations.
 
 ## Public Services
 
