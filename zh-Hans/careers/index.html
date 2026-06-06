@@ -49,21 +49,30 @@
     ]
   },
   "about": {
-    "@type": "JobPosting",
-    "hiringOrganization": {
       "@type": "Organization",
+      "@id": "https://www.a2b.sa/#organization",
       "name": "a2b Logistics Company",
       "url": "https://www.a2b.sa",
-      "logo": "https://www.a2b.sa/images/a2b_logo.png"
-    },
-    "jobLocation": {
-      "@type": "Place",
+      "logo": "https://www.a2b.sa/images/a2b_logo.png",
+      "contactPoint": {
+          "@type": "ContactPoint",
+          "contactType": "careers",
+          "url": "https://www.a2b.sa/zh-Hans/careers",
+          "availableLanguage": [
+              "en",
+              "ar",
+              "de",
+              "it",
+              "es",
+              "fr",
+              "zh-Hans"
+          ]
+      },
       "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Riyadh",
-        "addressCountry": "SA"
+          "@type": "PostalAddress",
+          "addressLocality": "Riyadh",
+          "addressCountry": "SA"
       }
-    }
   }
 }
 </script>

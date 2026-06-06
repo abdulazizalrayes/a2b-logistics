@@ -58,6 +58,7 @@
 {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
+  "@id": "https://www.a2b.sa/#organization",
   "name": "a2b Logistics Company",
   "url": "https://www.a2b.sa",
   "logo": "https://www.a2b.sa/images/a2b_logo.png",
@@ -83,69 +84,165 @@
   ],
   "openingHours": "Mo-Su 00:00-23:59",
   "hasCredential": [
-    {"@type": "EducationalOccupationalCredential", "name": "ISO 9001"},
-    {"@type": "EducationalOccupationalCredential", "name": "ISO 45001"},
-    {"@type": "EducationalOccupationalCredential", "name": "ISO 14001"}
+    {
+      "@type": "EducationalOccupationalCredential",
+      "name": "ISO 9001"
+    },
+    {
+      "@type": "EducationalOccupationalCredential",
+      "name": "ISO 45001"
+    },
+    {
+      "@type": "EducationalOccupationalCredential",
+      "name": "ISO 14001"
+    }
   ],
-  "priceRange": "$"
+  "priceRange": "$",
+  "legalName": "a2b Logistics Company",
+  "alternateName": [
+    "a2b",
+    "A2B Logistics",
+    "a2b Logistics"
+  ],
+  "identifier": [
+    {
+      "@type": "PropertyValue",
+      "name": "Commercial Registration",
+      "propertyID": "CR",
+      "value": "1009007094"
+    },
+    {
+      "@type": "PropertyValue",
+      "name": "VAT Registration",
+      "propertyID": "VAT",
+      "value": "310317517800003"
+    }
+  ],
+  "vatID": "310317517800003",
+  "contactPoint": [
+    {
+      "@type": "ContactPoint",
+      "contactType": "customer service",
+      "email": "info@a2b.sa",
+      "telephone": "+966553846446",
+      "availableLanguage": [
+        "en",
+        "ar",
+        "de",
+        "it",
+        "es",
+        "fr",
+        "zh-Hans"
+      ]
+    },
+    {
+      "@type": "ContactPoint",
+      "contactType": "sales",
+      "email": "sales@a2b.sa",
+      "telephone": "+966553846446",
+      "availableLanguage": [
+        "en",
+        "ar"
+      ]
+    }
+  ],
+  "employee": {
+    "@type": "Person",
+    "name": "Dr. Suhaib Ghunaim",
+    "jobTitle": "CEO",
+    "email": "SGhunaim@a2b.sa"
+  }
 }
 </script>
 
-<!-- FAQ SCHEMA  -  rich snippets in Google Search -->
+
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "What logistics services does a2b provide?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "a2b provides comprehensive ground logistics services across Saudi Arabia including trucking (11+ vehicle types), cargo insurance, forklift and loading support, and manpower services. Booking models include per-trip, period contracts, and volume-based unit rate pricing."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Which areas of Saudi Arabia does a2b Logistics cover?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "a2b operates Kingdom-wide, covering all major cities including Riyadh, Jeddah, Dammam, Mecca, Medina, Tabuk, Abha, and Yanbu, as well as all major seaports, airports, and land border crossings across Saudi Arabia."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Is a2b Logistics ISO certified?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. a2b Logistics holds three ISO certifications: ISO 9001 (Quality Management), ISO 45001 (Occupational Health and Safety), and ISO 14001 (Environmental Management)."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Can a2b handle international cargo arriving in Saudi Arabia?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. a2b specializes in connecting international companies and factories to Saudi Arabia's ground logistics network. We provide port pickup and last-mile delivery from all international airports, commercial seaports, and land border crossings to any destination in the Kingdom."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "What types of trucks does a2b operate?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "a2b operates 11+ truck types in multiple sizes, including closed trucks, flatbeds, refrigerated/freezer trucks, curtainsiders, dump trucks, boom trucks, cranes, tankers, pickups, and lowbeds. All types are available for per-trip, contract, or volume bookings."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How can I contact a2b Logistics?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "You can reach a2b Logistics at M +966 55 384 6446 (24/7), use the website contact flow, or visit our office at 3168 Tahliyah St., Ground Floor, Offices #2, Olaya District, Riyadh, Saudi Arabia."
-      }
+  "@type": "Service",
+  "@id": "https://www.a2b.sa/#b2b-logistics-services",
+  "name": "B2B logistics services across Saudi Arabia",
+  "url": "https://www.a2b.sa/ar",
+  "inLanguage": "ar",
+  "serviceType": [
+    "Trucking",
+    "Road freight",
+    "Warehousing support",
+    "Customs clearance coordination",
+    "Supply chain solutions",
+    "Vendor and fleet support"
+  ],
+  "provider": {
+    "@type": "LocalBusiness",
+    "@id": "https://www.a2b.sa/#organization",
+    "name": "a2b Logistics Company",
+    "url": "https://www.a2b.sa",
+    "telephone": "M +966 55 384 6446",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Riyadh",
+      "addressCountry": "SA"
     }
-  ]
+  },
+  "areaServed": {
+    "@type": "Country",
+    "name": "Saudi Arabia"
+  },
+  "audience": {
+    "@type": "BusinessAudience",
+    "audienceType": "B2B logistics buyers, international companies, factories, procurement teams, operations teams, and supply chain teams"
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "a2b Logistics Service Catalog",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Trucking and road freight",
+          "description": "Kingdom-wide B2B cargo transport and ground freight support across Saudi Arabia.",
+          "url": "https://www.a2b.sa/fleet"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Warehousing support",
+          "description": "Warehousing and logistics support for business supply chains in Saudi Arabia.",
+          "url": "https://www.a2b.sa/"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Customs-clearance coordination",
+          "description": "Customs-clearance coordination for international cargo entering Saudi Arabia.",
+          "url": "https://www.a2b.sa/"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Supply-chain solutions",
+          "description": "Operational supply-chain support for B2B logistics buyers across Saudi Arabia.",
+          "url": "https://www.a2b.sa/"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Vendor and fleet support",
+          "description": "Vendor registration and subcontractor network support for logistics operations.",
+          "url": "https://www.a2b.sa/vendors"
+        }
+      }
+    ]
+  }
 }
 </script>
 
@@ -412,7 +509,7 @@
       <div class="client-logo-card"><img src="/images/logo_5_clean.png" alt="Riyadh Airports" loading="lazy"></div>
       <div class="client-logo-card"><img src="/images/logo_6_clean.png" alt="STC - Saudi Telecommunications Company" loading="lazy"></div>
       <div class="client-logo-card"><img src="/images/logo_7_clean.png" alt="Saudi Electricity Company" loading="lazy"></div>
-      <div class="client-logo-card"><img src="/images/logo_0_clean.png" alt="Dream Gate Development Authority" loading="lazy"></div>
+      <div class="client-logo-card"><img src="/images/logo_0_clean.png" alt="Diriyah Gate Development Authority (DGDA)" loading="lazy"></div>
       <div class="client-logo-card"><img src="/images/logo_8_clean.png" alt="Formula E" loading="lazy"></div>
     </div>
   </div>
