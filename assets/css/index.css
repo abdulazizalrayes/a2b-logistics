@@ -136,6 +136,15 @@ nav.scrolled{box-shadow:0 2px 20px rgba(0,0,0,.08)}
 .client-logo-card .client-text{font-weight:700;font-size:14px;color:var(--muted);text-align:center;letter-spacing:.5px}
 .client-logo-card:hover .client-text{color:var(--dark)}
 
+/* ===== FAQ ===== */
+.faq-list{display:grid;gap:12px;margin-top:44px;max-width:920px}
+.faq-item{background:var(--white);border:1.5px solid var(--border);border-radius:10px;padding:0;box-shadow:0 1px 4px rgba(0,0,0,.04);overflow:hidden}
+.faq-item summary{cursor:pointer;list-style:none;padding:20px 24px;font-size:15px;font-weight:700;color:var(--dark);display:flex;align-items:center;justify-content:space-between;gap:18px}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary::after{content:'+';color:var(--red);font-size:22px;font-weight:700;line-height:1;flex-shrink:0}
+.faq-item[open] summary::after{content:'-'}
+.faq-item p{color:var(--muted);font-size:14.5px;line-height:1.75;padding:0 24px 22px;max-width:820px}
+
 /* ===== CTA BANNER ===== */
 .cta-banner{background:var(--red);padding:88px 48px;text-align:center}
 .cta-banner h2{font-size:clamp(34px,4.5vw,56px);font-weight:800;color:#fff;margin-bottom:14px;line-height:1.08;letter-spacing:-.8px}
@@ -177,14 +186,6 @@ footer p{color:var(--muted);font-size:12px}
 [dir="rtl"] .hero::after{right:auto;left:0;clip-path:polygon(0 0,90% 0,100% 100%,0% 100%)}
 [dir="rtl"] footer{flex-direction:row-reverse}
 [dir="rtl"] .contact-card a,[dir="rtl"] .contact-card p{text-align:right}
-.ar-text{display:none}
-.en-text{display:inline}
-body.ar .ar-text{display:inline}
-body.ar .en-text{display:none}
-body.ar .ar-block{display:block !important}
-body.ar .en-block{display:none !important}
-.ar-block{display:none}
-.en-block{display:block}
 .logo-img-inline{height:38px;width:auto;display:block}
 .mobile-accent-link{color:var(--red);font-weight:700}
 .hero-card-wide{font-size:28px;letter-spacing:-.5px}
