@@ -1,0 +1,16 @@
+{
+  "resource": "https://www.a2b.sa",
+  "authorization_servers": [
+    "https://www.a2b.sa"
+  ],
+  "scopes_supported": [
+    "public.read",
+    "quote.prepare"
+  ],
+  "bearer_methods_supported": [
+    "header"
+  ],
+  "resource_documentation": "https://www.a2b.sa/auth.md",
+  "service_documentation": "https://www.a2b.sa/llms.txt",
+  "note": "Public website resource metadata for AI agents. Protected API access is not currently self-service; contact info@a2b.sa for approved integrations."
+}

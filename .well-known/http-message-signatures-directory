@@ -1,0 +1,15 @@
+{
+  "keys": [
+    {
+      "crv": "Ed25519",
+      "x": "npU3p1eq4716IbCzFATm3dRkI7OpPn29GswCD91M27A",
+      "kty": "OKP",
+      "kid": "a2b-web-bot-auth-2026-06-12",
+      "use": "sig",
+      "alg": "EdDSA"
+    }
+  ],
+  "issuer": "https://www.a2b.sa",
+  "documentation": "https://www.a2b.sa/auth.md",
+  "note": "Public Web Bot Auth verification key directory for a2b Logistics agent discovery. Private signing keys are not published."
+}

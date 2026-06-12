@@ -1,1 +1,34 @@
-{"$schema":"https://raw.githubusercontent.com/cloudflare/agent-skills-discovery-rfc/main/schema/v0.2.0.json","version":"0.2.0","skills":[{"name":"a2b-company-brief","type":"documentation","description":"a2b Logistics overview, services, and contact details for AI agents.","url":"https://www.a2b.sa/llms.txt","sha256":"e3c6d5df6ddffe6c7e38fdc545eb777864a1a30302f0ac2c2bc92cbf02054c7f"},{"name":"a2b-homepage-markdown","type":"documentation","description":"a2b Logistics homepage in markdown for content negotiation.","url":"https://www.a2b.sa/index.md","sha256":"d300f35278424fc6661bb5a1d5340df87706349bc47f4143c32b03226dd43f18"},{"name":"a2b-sitemap","type":"discovery","description":"XML sitemap of all a2b.sa pages.","url":"https://www.a2b.sa/sitemap.xml","sha256":"d54704fd490eb95cd19c639c50b789673325596cc847607808f0eceff60afc13"},{"name":"a2b-agent-card","type":"discovery","description":"A2A agent card for a2b Logistics public capabilities.","url":"https://www.a2b.sa/.well-known/agent-card.json","sha256":"89819e27fad2894ab0abf9b743b789dbf5140736144a0e33bb433290a622c5a5"}]}
+{
+  "$schema": "https://raw.githubusercontent.com/cloudflare/agent-skills-discovery-rfc/main/schema/v0.2.0.json",
+  "version": "0.2.0",
+  "skills": [
+    {
+      "name": "a2b-company-brief",
+      "type": "documentation",
+      "description": "a2b Logistics overview, services, and contact details for AI agents.",
+      "url": "https://www.a2b.sa/llms.txt",
+      "sha256": "e3c6d5df6ddffe6c7e38fdc545eb777864a1a30302f0ac2c2bc92cbf02054c7f"
+    },
+    {
+      "name": "a2b-homepage-markdown",
+      "type": "documentation",
+      "description": "a2b Logistics homepage in markdown for content negotiation.",
+      "url": "https://www.a2b.sa/index.md",
+      "sha256": "d300f35278424fc6661bb5a1d5340df87706349bc47f4143c32b03226dd43f18"
+    },
+    {
+      "name": "a2b-sitemap",
+      "type": "discovery",
+      "description": "XML sitemap of all a2b.sa pages.",
+      "url": "https://www.a2b.sa/sitemap.xml",
+      "sha256": "f2ff5b9d67938a9cf849a3ea106363bc091b26ab947b75db77adffb5b19fb0c0"
+    },
+    {
+      "name": "a2b-agent-card",
+      "type": "discovery",
+      "description": "A2A agent card for a2b Logistics public capabilities.",
+      "url": "https://www.a2b.sa/.well-known/agent-card.json",
+      "sha256": "31fec70d230e57ba84fc162d16108b73f2601a1c7aad593e0af24681f964b22a"
+    }
+  ]
+}

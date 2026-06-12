@@ -71,5 +71,19 @@
         "text/plain"
       ]
     }
-  ]
+  ],
+  "supportedInterfaces": [
+    {
+      "url": "https://www.a2b.sa/",
+      "protocolBinding": "https://webmcp.org/spec/imperative-api",
+      "protocolVersion": "0.1"
+    }
+  ],
+  "documentationUrl": "https://www.a2b.sa/llms.txt",
+  "authentication": {
+    "schemes": [
+      "none"
+    ],
+    "description": "Public discovery and quote-preparation tools do not require authentication. Approved protected integrations require manual onboarding through info@a2b.sa."
+  }
 }

@@ -1,0 +1,47 @@
+{
+  "issuer": "https://www.a2b.sa",
+  "authorization_endpoint": "https://www.a2b.sa/auth.md#authorization-endpoint",
+  "token_endpoint": "https://www.a2b.sa/auth.md#token-endpoint",
+  "jwks_uri": "https://www.a2b.sa/.well-known/http-message-signatures-directory",
+  "response_types_supported": [
+    "none"
+  ],
+  "grant_types_supported": [
+    "urn:ietf:params:oauth:grant-type:token-exchange"
+  ],
+  "token_endpoint_auth_methods_supported": [
+    "private_key_jwt"
+  ],
+  "scopes_supported": [
+    "public.read",
+    "quote.prepare"
+  ],
+  "service_documentation": "https://www.a2b.sa/auth.md",
+  "agent_auth": {
+    "skill": "https://www.a2b.sa/auth.md",
+    "register_uri": "https://www.a2b.sa/agent-auth/register",
+    "identity_types_supported": [
+      "identity_assertion"
+    ],
+    "identity_assertion": {
+      "assertion_types_supported": [
+        "verified_email"
+      ],
+      "credential_types_supported": [
+        "private_key_jwt"
+      ],
+      "claim_uri": "https://www.a2b.sa/agent-auth/claim"
+    },
+    "claim_uri": "https://www.a2b.sa/agent-auth/claim",
+    "credential_types_supported": [
+      "private_key_jwt"
+    ],
+    "assertion_types_supported": [
+      "verified_email"
+    ],
+    "events_supported": [
+      "agent.access.requested"
+    ]
+  },
+  "note": "a2b.sa is a public content and lead-generation website. Automated bearer-token issuance is not enabled; agent onboarding is reviewed through info@a2b.sa."
+}
