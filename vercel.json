@@ -66,6 +66,24 @@
       ]
     },
     {
+      "source": "/ar",
+      "headers": [
+        {
+          "key": "Content-Language",
+          "value": "ar-SA"
+        }
+      ]
+    },
+    {
+      "source": "/ar/(.*)",
+      "headers": [
+        {
+          "key": "Content-Language",
+          "value": "ar-SA"
+        }
+      ]
+    },
+    {
       "source": "/",
       "headers": [
         {
