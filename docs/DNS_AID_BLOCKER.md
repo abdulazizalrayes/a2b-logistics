@@ -22,6 +22,12 @@ agents=a2b-logistics:webmcp,a2b-a2a:a2a,a2b-mcp:mcp
 
 DNET's DNS editor exposes `A`, `AAAA`, `CNAME`, `TXT`, `MX`, `NS`, `PTR`, and `SRV`. It does not expose `SVCB` or `HTTPS` record types.
 
+## 2026-06-20 Recheck
+
+- TXT records still resolve for `_index._agents.a2b.sa` and `_index._agents.www.a2b.sa`.
+- `SVCB` and `HTTPS` queries for the DNS-AID agent service names still return no records.
+- DNET access is currently stopped at the login page with reCAPTCHA, so no DNS change was made.
+
 ## Fix Paths
 
 1. Ask DNET support to add the required `SVCB` or `HTTPS` DNS-AID records manually.

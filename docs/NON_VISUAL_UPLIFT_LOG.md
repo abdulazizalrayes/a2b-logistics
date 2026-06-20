@@ -37,3 +37,12 @@ The verifier checks:
 - More dedicated high-intent pages.
 - Visual/design/UX uplift.
 - Visual conversion-rate optimization changes.
+
+## 2026-06-20 Follow-Up
+
+- Confirmed `npm run verify` still passes: 7 homepages, 35 service pages, 65 sitemap URLs.
+- Confirmed live production serves GA4 `G-909SV0D9FM`, `contact_click`, and `form_submit_attempt`.
+- Confirmed live sitemap contains 65 URLs.
+- Ran Lighthouse against `https://www.a2b.sa/`: Performance 92, Accessibility 92, Best Practices 100, SEO 100, CLS 0.
+- Committed and pushed the non-visual uplift to GitHub commit `2e28fb2`.
+- Paperclip online recording was attempted, but `https://ai.eijarat.com/NAJ/dashboard` returned Cloudflare 502 at 2026-06-20 08:49 UTC.
