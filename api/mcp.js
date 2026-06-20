@@ -22,7 +22,13 @@ async function readText(resourceId) {
     error.code = 'UNKNOWN_RESOURCE';
     throw error;
   }
-  return readFile(join(root, file), 'utf8');
+  try {
+    return await readFile(join(root, file), 'utf8');
+  } catch (error) {
+    const response = await fetch(`https://www.a2b.sa/${file}`);
+    if (!response.ok) throw error;
+    return response.text();
+  }
 }
 
 async function readJson(resourceId) {
