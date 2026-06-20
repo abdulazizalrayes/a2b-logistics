@@ -26,7 +26,15 @@ DNET's DNS editor exposes `A`, `AAAA`, `CNAME`, `TXT`, `MX`, `NS`, `PTR`, and `S
 
 - TXT records still resolve for `_index._agents.a2b.sa` and `_index._agents.www.a2b.sa`.
 - `SVCB` and `HTTPS` queries for the DNS-AID agent service names still return no records.
-- DNET access is currently stopped at the login page with reCAPTCHA, so no DNS change was made.
+- Initial DNET access was stopped at login/reCAPTCHA; after owner login, the DNS editor was audited and confirmed not to expose `SVCB` or `HTTPS`.
+
+## 2026-06-20 DNET Ticket
+
+- Confirmed DNET account context: Abdulaziz Khalid Alrayes, customer `#24411935833`.
+- Confirmed DNET DNS management context: `a2b.sa`.
+- Confirmed DNET DNS editor only exposes `A`, `AAAA`, `CNAME`, `TXT`, `MX`, `NS`, `PTR`, and `SRV`.
+- Created DNET support ticket `44115` at `2026-06-20 11:53:10` with title `a2b.sa DNS-AID SVCB/HTTPS records request`.
+- Requested manual addition of the required DNS-AID `SVCB` records, or equivalent `HTTPS` type 65 records, without changing nameservers, MX, A, CNAME, or existing website/email routing.
 
 ## Fix Paths
 
