@@ -14,7 +14,7 @@
   ],
   "scopes_supported": [
     "public.read",
-    "quote.prepare"
+    "inquiry.prepare"
   ],
   "service_documentation": "https://www.a2b.sa/auth.md",
   "agent_auth": {

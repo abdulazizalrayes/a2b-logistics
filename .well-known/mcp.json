@@ -1,0 +1,23 @@
+{
+  "name": "a2b-logistics-mcp",
+  "title": "a2b Logistics Public Read-Only MCP",
+  "description": "Public read-only MCP-style endpoint for a2b Logistics company overview, services, capabilities, service areas, routing, and inquiry preparation.",
+  "version": "1.0.0",
+  "endpoint": "https://www.a2b.sa/api/mcp",
+  "serverCard": "https://www.a2b.sa/.well-known/mcp/server-card.json",
+  "serverCards": "https://www.a2b.sa/.well-known/mcp/server-cards.json",
+  "openapi": "https://www.a2b.sa/openapi.json",
+  "authentication": {
+    "type": "none",
+    "note": "Public read-only tools do not require authentication. Write actions and protected integrations are not enabled."
+  },
+  "approvalPolicy": "Tools may prepare and route inquiries but must not submit forms, send email, call phone numbers, or contact a2b unless the user explicitly approves the exact action.",
+  "tools": [
+    "get_company_overview",
+    "list_services",
+    "match_project_scope",
+    "prepare_project_inquiry",
+    "list_service_areas",
+    "read_public_resource"
+  ]
+}

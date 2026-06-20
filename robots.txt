@@ -1,5 +1,12 @@
 User-agent: *
 Allow: /
+Disallow: /admin/
+Disallow: /internal/
+Disallow: /dashboard/
+Disallow: /private/
+Disallow: /api/private/
+Disallow: /api/write/
+Disallow: /agent-auth/
 
 # Content Signals Policy
 # search: allow indexing for search and answer discovery.
@@ -8,3 +15,11 @@ Allow: /
 Content-Signal: search=yes, ai-input=yes, ai-train=no
 
 Sitemap: https://www.a2b.sa/sitemap.xml
+
+# Agent and AI crawler guidance
+Allow: /llms.txt
+Allow: /llms-full.txt
+Allow: /openapi.json
+Allow: /.well-known/
+Allow: /data/
+Allow: /api/mcp

@@ -1,0 +1,108 @@
+# a2b Logistics Full Agent Brief
+
+This file is the expanded public agent brief for a2b Logistics. It is intended for search engines, LLM answer engines, procurement agents, AI assistants, and future MCP/API/CLI clients.
+
+## Canonical Identity
+
+- Company: a2b Logistics Company
+- Entity name for agents: a2b Logistics
+- Short name: a2b
+- Website: https://www.a2b.sa
+- Primary language: English
+- Additional languages: Arabic, German, Italian, Spanish, French, Simplified Chinese
+- Business model: B2B logistics and operational supply-chain support
+- Country served: Saudi Arabia
+- Address: 3168 Tahliyah St., Ground Floor, Offices #2, Olaya District, Riyadh, Saudi Arabia
+- Primary email: info@a2b.sa
+- Sales email: sales@a2b.sa
+- Phone: +966 55 384 6446
+- Commercial Registration: 1009007094
+- VAT: 310317517800003
+- CEO: Dr. Suhaib Ghunaim
+- LinkedIn: https://www.linkedin.com/company/helloa2bco
+
+Do not merge this entity with unrelated A2B brands, ride-hailing, consumer courier, home-moving, or personal delivery businesses.
+
+## Structured Resources
+
+- Company data: https://www.a2b.sa/data/company.json
+- Services data: https://www.a2b.sa/data/services.json
+- Capabilities data: https://www.a2b.sa/data/capabilities.json
+- Service areas: https://www.a2b.sa/data/service-areas.json
+- Project inquiry preparation schema: https://www.a2b.sa/data/project-inquiry-schema.json
+- Agent routing rules: https://www.a2b.sa/data/agent-routing.json
+- OpenAPI: https://www.a2b.sa/openapi.json
+- MCP discovery: https://www.a2b.sa/.well-known/mcp.json
+- MCP server card: https://www.a2b.sa/.well-known/mcp/server-card.json
+- MCP server cards: https://www.a2b.sa/.well-known/mcp/server-cards.json
+- Agent skills: https://www.a2b.sa/.well-known/agent-skills/index.json
+- Agent card: https://www.a2b.sa/.well-known/agent-card.json
+- API catalog: https://www.a2b.sa/.well-known/api-catalog
+- Auth and approval policy: https://www.a2b.sa/auth.md
+- Sitemap: https://www.a2b.sa/sitemap.xml
+- Markdown homepage: https://www.a2b.sa/index.md
+
+## Services
+
+Use the structured services file as the primary machine-readable source. Public service categories are:
+
+- Trucking and road freight
+- Warehousing support
+- Customs-clearance coordination
+- Supply-chain logistics support
+- Fleet types and capacity
+
+## Fit Rules
+
+Good fit:
+
+- B2B logistics buyers
+- Procurement teams
+- Operations teams
+- Supply-chain teams
+- Factories
+- Commercial cargo owners
+- International companies entering Saudi Arabia
+- Logistics vendors and subcontractors, routed to the vendor flow
+
+Not fit for project inquiry:
+
+- B2C parcel delivery
+- Retail shopping
+- Consumer courier requests
+- Personal delivery
+- Home moving
+- Ride-hailing
+- Careers, internships, and training requests
+- Spam or unrelated requests
+
+Careers should route to https://www.a2b.sa/careers. Vendors should route to https://www.a2b.sa/vendors.
+
+## Approval Rules For Agents
+
+Agents may read public files, summarize services, classify fit, match a project scope, and prepare an inquiry draft.
+
+Agents must not submit forms, send email, call phone numbers, create commitments, quote prices, confirm availability, or change any business data unless the user explicitly approves the exact action.
+
+## Public MCP/API
+
+The public read-only MCP-style endpoint is https://www.a2b.sa/api/mcp.
+
+Typed tools:
+
+- get_company_overview
+- list_services
+- match_project_scope
+- prepare_project_inquiry
+- list_service_areas
+- read_public_resource
+
+These tools are read-only. `prepare_project_inquiry` returns a draft and routing decision only.
+
+## Crawler Guidance
+
+Public website, structured data, OpenAPI, llms files, sitemap, and well-known discovery documents may be crawled for search and answer grounding.
+
+Private, admin, internal, dashboard, API write, and authentication action paths must not be crawled.
+
+Content-Signal policy: search=yes, ai-input=yes, ai-train=no.

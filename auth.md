@@ -75,7 +75,7 @@ agent_auth:
     - verified_email
   scopes_supported:
     - public.read
-    - quote.prepare
+    - inquiry.prepare
   bearer_methods_supported:
     - header
 ```

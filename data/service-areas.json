@@ -1,0 +1,47 @@
+{
+  "$schema": "https://www.a2b.sa/data/service-areas.schema.json",
+  "company": "a2b Logistics",
+  "primaryCountry": "Saudi Arabia",
+  "areas": [
+    {
+      "id": "saudi-arabia",
+      "name": "Saudi Arabia",
+      "type": "country",
+      "description": "Public website messaging describes Saudi Arabia and kingdom-wide B2B logistics coverage."
+    },
+    {
+      "id": "riyadh",
+      "name": "Riyadh",
+      "type": "city",
+      "description": "a2b's published address and core Saudi logistics positioning reference Riyadh."
+    },
+    {
+      "id": "major-saudi-ports",
+      "name": "Major Saudi seaports",
+      "type": "logistics-node-group",
+      "description": "The fleet page mentions integrated drayage from major Saudi seaports.",
+      "publiclyMentionedNodes": [
+        "Jeddah Islamic Port",
+        "King Abdulaziz Port (Dammam)",
+        "Jubail"
+      ]
+    },
+    {
+      "id": "gcc-cross-border",
+      "name": "Selected GCC and neighboring cross-border routes",
+      "type": "cross-border-region",
+      "description": "The fleet page mentions established routes and documentation expertise for cross-border freight into nearby markets.",
+      "publiclyMentionedDestinations": [
+        "UAE",
+        "Jordan",
+        "Bahrain",
+        "Kuwait"
+      ]
+    }
+  ],
+  "notesForAgents": [
+    "Treat current availability, route feasibility, capacity, and pricing as confirmation-required.",
+    "Do not invent service in cities, countries, or lanes not published by a2b."
+  ],
+  "lastReviewed": "2026-06-20"
+}

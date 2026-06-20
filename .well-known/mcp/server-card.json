@@ -1,1 +1,43 @@
-{"$schema":"https://raw.githubusercontent.com/modelcontextprotocol/modelcontextprotocol/main/schema/server-card.json","serverInfo":{"name":"a2b-logistics","version":"1.0.0","title":"a2b Logistics","description":"Saudi Arabia premier logistics partner. Trucking, warehousing, customs clearance, supply chain.","homepage":"https://www.a2b.sa","vendor":{"name":"a2b Logistics","url":"https://www.a2b.sa"}},"transport":{"type":"webmcp","url":"https://www.a2b.sa/"},"capabilities":{"tools":{"listChanged":false},"resources":{"subscribe":false,"listChanged":false}},"documentation":{"service-doc":"https://www.a2b.sa/llms.txt","agent-skills":"https://www.a2b.sa/.well-known/agent-skills/index.json","agent-card":"https://www.a2b.sa/.well-known/agent-card.json"}}
+{
+  "$schema": "https://raw.githubusercontent.com/modelcontextprotocol/modelcontextprotocol/main/schema/server-card.json",
+  "serverInfo": {
+    "name": "a2b-logistics",
+    "version": "1.0.0",
+    "title": "a2b Logistics",
+    "description": "Public read-only MCP-style endpoint for a2b Logistics company facts, services, capabilities, service areas, routing, and inquiry preparation.",
+    "homepage": "https://www.a2b.sa",
+    "vendor": {
+      "name": "a2b Logistics",
+      "url": "https://www.a2b.sa"
+    }
+  },
+  "transport": {
+    "type": "https",
+    "url": "https://www.a2b.sa/api/mcp"
+  },
+  "capabilities": {
+    "tools": {
+      "listChanged": false
+    },
+    "resources": {
+      "subscribe": false,
+      "listChanged": false
+    }
+  },
+  "tools": [
+    "get_company_overview",
+    "list_services",
+    "match_project_scope",
+    "prepare_project_inquiry",
+    "list_service_areas",
+    "read_public_resource"
+  ],
+  "approvalPolicy": "Read-only. Tools must not submit forms, send email, call phone numbers, or contact a2b unless the user explicitly approves the exact action.",
+  "documentation": {
+    "service-doc": "https://www.a2b.sa/llms.txt",
+    "full-agent-brief": "https://www.a2b.sa/llms-full.txt",
+    "openapi": "https://www.a2b.sa/openapi.json",
+    "agent-skills": "https://www.a2b.sa/.well-known/agent-skills/index.json",
+    "agent-card": "https://www.a2b.sa/.well-known/agent-card.json"
+  }
+}

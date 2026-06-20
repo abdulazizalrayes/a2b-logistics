@@ -1,0 +1,8 @@
+{
+  "servers": [
+    {
+      "name": "a2b-logistics",
+      "url": "https://www.a2b.sa/.well-known/mcp/server-card.json"
+    }
+  ]
+}

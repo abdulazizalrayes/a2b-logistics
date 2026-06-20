@@ -1,0 +1,83 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://www.a2b.sa/data/project-inquiry-schema.json",
+  "title": "a2b Logistics project inquiry preparation schema",
+  "description": "Read-only schema for preparing a B2B logistics inquiry. This schema does not submit a form, send an email, or create a commercial commitment.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "requestType",
+    "companyName",
+    "contactPerson",
+    "contactEmail",
+    "serviceNeeds",
+    "projectSummary"
+  ],
+  "properties": {
+    "requestType": {
+      "type": "string",
+      "enum": [
+        "project_inquiry",
+        "vendor_registration",
+        "career",
+        "internship_or_training",
+        "retail_or_consumer",
+        "spam_or_unrelated",
+        "unknown"
+      ]
+    },
+    "companyName": {
+      "type": "string",
+      "minLength": 1
+    },
+    "contactPerson": {
+      "type": "string",
+      "minLength": 1
+    },
+    "contactEmail": {
+      "type": "string",
+      "format": "email"
+    },
+    "contactPhone": {
+      "type": "string"
+    },
+    "serviceNeeds": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "trucking-road-freight",
+          "warehousing",
+          "customs-clearance",
+          "supply-chain",
+          "fleet-types",
+          "not-sure"
+        ]
+      },
+      "minItems": 1
+    },
+    "origin": {
+      "type": "string"
+    },
+    "destination": {
+      "type": "string"
+    },
+    "cargoDescription": {
+      "type": "string"
+    },
+    "timeline": {
+      "type": "string"
+    },
+    "frequency": {
+      "type": "string"
+    },
+    "projectSummary": {
+      "type": "string",
+      "minLength": 1
+    },
+    "approvalToContact": {
+      "type": "boolean",
+      "description": "Must be true before any agent sends email, submits a form, or contacts a2b."
+    }
+  }
+}

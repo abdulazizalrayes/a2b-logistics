@@ -1,0 +1,68 @@
+{
+  "$schema": "https://www.a2b.sa/data/agent-routing.schema.json",
+  "company": "a2b Logistics",
+  "defaultPolicy": "Prepare and route only. Do not submit forms, send email, or contact a2b unless the user explicitly approves the specific action.",
+  "routes": [
+    {
+      "id": "project-inquiry",
+      "match": [
+        "B2B logistics",
+        "trucking",
+        "road freight",
+        "warehousing",
+        "customs clearance",
+        "supply chain",
+        "fleet capacity",
+        "commercial cargo",
+        "factory logistics",
+        "Saudi Arabia logistics"
+      ],
+      "routeTo": "prepare_project_inquiry",
+      "fit": "good",
+      "approvalRequiredBeforeContact": true
+    },
+    {
+      "id": "vendor",
+      "match": [
+        "vendor",
+        "subcontractor",
+        "supplier",
+        "partner registration"
+      ],
+      "routeTo": "https://www.a2b.sa/vendors",
+      "fit": "separate_flow",
+      "doNotRouteToProjectInquiry": true
+    },
+    {
+      "id": "careers",
+      "match": [
+        "career",
+        "job",
+        "employment",
+        "hiring",
+        "internship",
+        "training"
+      ],
+      "routeTo": "https://www.a2b.sa/careers",
+      "fit": "separate_flow",
+      "doNotRouteToProjectInquiry": true
+    },
+    {
+      "id": "non-fit",
+      "match": [
+        "retail shopping",
+        "consumer courier",
+        "personal parcel",
+        "home moving",
+        "ride hailing",
+        "spam",
+        "unrelated"
+      ],
+      "routeTo": "non_fit_response",
+      "fit": "not_fit",
+      "doNotRouteToProjectInquiry": true
+    }
+  ],
+  "nonFitResponse": "a2b Logistics is positioned as a B2B logistics company. For careers use /careers, for vendors use /vendors, and for unrelated or consumer requests do not submit a project inquiry.",
+  "lastReviewed": "2026-06-20"
+}

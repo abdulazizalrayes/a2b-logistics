@@ -1,6 +1,6 @@
 {
   "name": "a2b Logistics Agent",
-  "description": "Public discovery card for a2b Logistics services, company information, and quote request support.",
+  "description": "Public discovery card for a2b Logistics services, company information, routing, and read-only inquiry preparation.",
   "url": "https://www.a2b.sa",
   "version": "1.0.0",
   "provider": {
@@ -20,8 +20,8 @@
   ],
   "skills": [
     {
-      "id": "get-company-info",
-      "name": "Get Company Info",
+      "id": "get_company_overview",
+      "name": "Get Company Overview",
       "description": "Return a2b Logistics public company information, services, contact details, and website references.",
       "tags": [
         "logistics",
@@ -37,7 +37,7 @@
       ]
     },
     {
-      "id": "list-services",
+      "id": "list_services",
       "name": "List Services",
       "description": "List a2b Logistics public service categories for trucking, warehousing, customs clearance, and supply chain support.",
       "tags": [
@@ -56,34 +56,88 @@
       ]
     },
     {
-      "id": "request-quote",
-      "name": "Request Quote",
-      "description": "Help prepare a logistics quote request and direct the user to a2b Logistics sales contact.",
+      "id": "prepare_project_inquiry",
+      "name": "Prepare Project Inquiry",
+      "description": "Prepare a logistics project inquiry draft without submitting forms or contacting a2b. Careers, vendors, internships, training, retail, consumer, spam, and unrelated requests are routed away from project inquiry.",
       "tags": [
-        "quote",
-        "sales",
+        "inquiry",
+        "procurement",
         "logistics"
       ],
       "inputModes": [
         "text/plain"
       ],
       "outputModes": [
+        "application/json",
+        "text/plain"
+      ]
+    },
+    {
+      "id": "match_project_scope",
+      "name": "Match Project Scope",
+      "description": "Classify whether a request is a fit for B2B logistics project inquiry, vendor flow, careers flow, or non-fit routing.",
+      "tags": [
+        "routing",
+        "fit-classification",
+        "procurement"
+      ],
+      "inputModes": [
+        "text/plain",
+        "application/json"
+      ],
+      "outputModes": [
+        "application/json",
+        "text/plain"
+      ]
+    },
+    {
+      "id": "list_service_areas",
+      "name": "List Service Areas",
+      "description": "List public a2b service areas, logistics nodes, and route-availability cautions.",
+      "tags": [
+        "service-areas",
+        "saudi-arabia",
+        "logistics"
+      ],
+      "inputModes": [
+        "text/plain"
+      ],
+      "outputModes": [
+        "application/json",
+        "text/plain"
+      ]
+    },
+    {
+      "id": "read_public_resource",
+      "name": "Read Public Resource",
+      "description": "Read public structured resources such as company, services, capabilities, service areas, project inquiry schema, and routing rules.",
+      "tags": [
+        "structured-data",
+        "resources",
+        "read-only"
+      ],
+      "inputModes": [
+        "application/json",
+        "text/plain"
+      ],
+      "outputModes": [
+        "application/json",
         "text/plain"
       ]
     }
   ],
   "supportedInterfaces": [
     {
-      "url": "https://www.a2b.sa/",
-      "protocolBinding": "https://webmcp.org/spec/imperative-api",
-      "protocolVersion": "0.1"
+      "url": "https://www.a2b.sa/api/mcp",
+      "protocolBinding": "https://modelcontextprotocol.io",
+      "protocolVersion": "2024-11-05"
     }
   ],
-  "documentationUrl": "https://www.a2b.sa/llms.txt",
+  "documentationUrl": "https://www.a2b.sa/llms-full.txt",
   "authentication": {
     "schemes": [
       "none"
     ],
-    "description": "Public discovery and quote-preparation tools do not require authentication. Approved protected integrations require manual onboarding through info@a2b.sa."
+    "description": "Public discovery and inquiry-preparation tools do not require authentication. Approved protected integrations require manual onboarding through info@a2b.sa."
   }
 }

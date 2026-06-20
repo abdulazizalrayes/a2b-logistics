@@ -1,8 +1,20 @@
-// WebMCP - expose a2b Logistics site tools to AI agents.
+// WebMCP bridge - expose read-only a2b Logistics tools to browser-aware agents.
 (function () {
   'use strict';
 
   if (typeof navigator === 'undefined') return;
+
+  var publicResources = {
+    company: '/data/company.json',
+    services: '/data/services.json',
+    capabilities: '/data/capabilities.json',
+    'service-areas': '/data/service-areas.json',
+    'project-inquiry-schema': '/data/project-inquiry-schema.json',
+    'agent-routing': '/data/agent-routing.json',
+    llms: '/llms.txt',
+    'llms-full': '/llms-full.txt',
+    openapi: '/openapi.json'
+  };
 
   function safeText(value, maxLength) {
     return String(value || '')
@@ -11,8 +23,8 @@
       .slice(0, maxLength);
   }
 
-  if (!navigator.modelContext) {
-    try {
+  function setupModelContext() {
+    if (!navigator.modelContext) {
       navigator.modelContext = {
         _registeredTools: [],
         registerTool: function (tool) {
@@ -20,90 +32,172 @@
           return (typeof AbortController === 'function') ? new AbortController() : { signal: { aborted: false } };
         }
       };
-    } catch (error) {
-      return;
+      return true;
     }
-  } else if (typeof navigator.modelContext.registerTool !== 'function') {
-    navigator.modelContext._registeredTools = navigator.modelContext._registeredTools || [];
-    navigator.modelContext.registerTool = function (tool) {
-      this._registeredTools.push(tool);
-      return (typeof AbortController === 'function') ? new AbortController() : { signal: {} };
+
+    if (typeof navigator.modelContext.registerTool !== 'function') {
+      navigator.modelContext._registeredTools = navigator.modelContext._registeredTools || [];
+      navigator.modelContext.registerTool = function (tool) {
+        this._registeredTools.push(tool);
+        return (typeof AbortController === 'function') ? new AbortController() : { signal: {} };
+      };
+    }
+    return true;
+  }
+
+  function track(name, params) {
+    if (typeof window.gtag !== 'function') return;
+    window.gtag('event', name, params || {});
+  }
+
+  function readJson(path) {
+    return fetch(path, { credentials: 'same-origin' }).then(function (response) {
+      if (!response.ok) throw new Error('Unable to read ' + path);
+      return response.json();
+    });
+  }
+
+  function readText(path) {
+    return fetch(path, { credentials: 'same-origin' }).then(function (response) {
+      if (!response.ok) throw new Error('Unable to read ' + path);
+      return response.text();
+    });
+  }
+
+  function classify(input, services, routing) {
+    var query = [
+      input && input.query,
+      input && input.projectSummary,
+      input && input.service,
+      input && input.cargoDescription,
+      input && Array.isArray(input.serviceNeeds) ? input.serviceNeeds.join(' ') : ''
+    ].join(' ').toLowerCase();
+
+    function hasMatch(route) {
+      return route.match.some(function (term) {
+        return query.indexOf(term.toLowerCase()) !== -1;
+      });
+    }
+
+    var nonFit = routing.routes.filter(function (route) { return route.id === 'non-fit'; })[0];
+    if (nonFit && hasMatch(nonFit)) {
+      return { fit: 'not_fit', route: nonFit.routeTo, reason: routing.nonFitResponse, matchedServices: [] };
+    }
+
+    var careers = routing.routes.filter(function (route) { return route.id === 'careers'; })[0];
+    if (careers && hasMatch(careers)) {
+      return { fit: 'separate_flow', route: careers.routeTo, reason: 'Use the careers page, not project inquiry.', matchedServices: [] };
+    }
+
+    var vendors = routing.routes.filter(function (route) { return route.id === 'vendor'; })[0];
+    if (vendors && hasMatch(vendors)) {
+      return { fit: 'separate_flow', route: vendors.routeTo, reason: 'Use the vendor page, not project inquiry.', matchedServices: [] };
+    }
+
+    var matched = services.services.filter(function (service) {
+      return query && [
+        service.id,
+        service.name,
+        service.description,
+        service.bestFit.join(' ')
+      ].join(' ').toLowerCase().split(/[^a-z0-9]+/).some(function (token) {
+        return token.length > 3 && query.indexOf(token) !== -1;
+      });
+    });
+
+    return {
+      fit: matched.length ? 'good_fit' : 'needs_clarification',
+      route: 'prepare_project_inquiry',
+      reason: matched.length ? 'The request appears aligned with published B2B logistics services.' : 'Ask for service type, origin, destination, cargo, timeline, and company details before routing.',
+      matchedServices: matched.map(function (service) {
+        return { id: service.id, name: service.name, url: service.url };
+      })
     };
   }
 
+  if (!setupModelContext()) return;
+
   var tools = [
     {
-      name: 'request_quote',
-      description: 'Request a logistics quote from a2b Logistics for trucking, warehousing, customs clearance, or supply chain services in Saudi Arabia.',
-      inputSchema: {
-        type: 'object',
-        properties: {
-          service_type: { type: 'string', description: 'Trucking, warehousing, customs clearance, or full supply chain.' },
-          origin: { type: 'string' },
-          destination: { type: 'string' },
-          cargo_type: { type: 'string' },
-          contact_name: { type: 'string' },
-          contact_email: { type: 'string' },
-          notes: { type: 'string' }
-        },
-        required: ['service_type']
-      },
-      execute: function (input) {
-        input = input || {};
-        var serviceType = safeText(input.service_type, 120);
-        var origin = safeText(input.origin, 160);
-        var destination = safeText(input.destination, 160);
-        var cargoType = safeText(input.cargo_type, 160);
-        var contactName = safeText(input.contact_name, 160);
-        var contactEmail = safeText(input.contact_email, 160);
-        var notes = safeText(input.notes, 1200);
-        var nl = String.fromCharCode(10);
-        var lines = [
-          'Service: ' + serviceType,
-          'Origin: ' + origin,
-          'Destination: ' + destination,
-          'Cargo: ' + cargoType,
-          '',
-          'Contact: ' + contactName + ' (' + contactEmail + ')',
-          '',
-          'Notes: ' + notes
-        ];
-
-        window.location.href = 'mailto:sales@a2b.sa?subject=' + encodeURIComponent('Logistics quote - ' + (serviceType || 'Service')) + '&body=' + encodeURIComponent(lines.join(nl));
-        return { ok: true };
+      name: 'get_company_overview',
+      description: 'Return a2b Logistics public company overview and approval boundaries.',
+      inputSchema: { type: 'object', properties: {} },
+      execute: function () {
+        track('mcp_tool_call', { tool_name: 'get_company_overview' });
+        return Promise.all([readJson('/data/company.json'), readJson('/data/capabilities.json')]).then(function (items) {
+          return { company: items[0], approvalBoundaries: items[1].approvalBoundaries };
+        });
       }
     },
     {
       name: 'list_services',
-      description: 'List a2b Logistics services.',
+      description: 'List a2b Logistics public B2B logistics service categories.',
       inputSchema: { type: 'object', properties: {} },
       execute: function () {
-        return {
-          services: [
-            'Trucking - Kingdom-wide',
-            'Warehousing',
-            'Customs clearance',
-            'Supply chain solutions',
-            '24/7 availability'
-          ]
-        };
+        track('mcp_tool_call', { tool_name: 'list_services' });
+        return readJson('/data/services.json');
       }
     },
     {
-      name: 'get_company_info',
-      description: 'Return a2b Logistics company info.',
+      name: 'match_project_scope',
+      description: 'Classify whether a request fits project inquiry, vendor, careers, or non-fit routing.',
+      inputSchema: { type: 'object', properties: { query: { type: 'string' } } },
+      execute: function (input) {
+        track('mcp_tool_call', { tool_name: 'match_project_scope' });
+        return Promise.all([readJson('/data/services.json'), readJson('/data/agent-routing.json')]).then(function (items) {
+          return classify(input || {}, items[0], items[1]);
+        });
+      }
+    },
+    {
+      name: 'prepare_project_inquiry',
+      description: 'Prepare a B2B logistics inquiry draft without submitting forms or contacting a2b.',
+      inputSchema: { type: 'object', properties: { companyName: { type: 'string' }, serviceNeeds: { type: 'array', items: { type: 'string' } }, projectSummary: { type: 'string' } } },
+      execute: function (input) {
+        input = input || {};
+        track('inquiry_preparation', { approval_to_contact: input.approvalToContact === true });
+        return Promise.all([readJson('/data/services.json'), readJson('/data/agent-routing.json')]).then(function (items) {
+          return {
+            route: classify(input, items[0], items[1]),
+            draft: {
+              companyName: safeText(input.companyName, 160),
+              contactPerson: safeText(input.contactPerson, 160),
+              contactEmail: safeText(input.contactEmail, 180),
+              contactPhone: safeText(input.contactPhone, 80),
+              serviceNeeds: Array.isArray(input.serviceNeeds) ? input.serviceNeeds.map(function (item) { return safeText(item, 80); }).slice(0, 8) : [],
+              origin: safeText(input.origin, 160),
+              destination: safeText(input.destination, 160),
+              cargoDescription: safeText(input.cargoDescription, 600),
+              timeline: safeText(input.timeline, 200),
+              projectSummary: safeText(input.projectSummary, 1200)
+            },
+            approvalRequiredBeforeContact: true,
+            nextStep: 'Do not submit this draft automatically. Ask the user for explicit approval before contacting a2b.'
+          };
+        });
+      }
+    },
+    {
+      name: 'list_service_areas',
+      description: 'List public service areas and routing notes.',
       inputSchema: { type: 'object', properties: {} },
       execute: function () {
-        return {
-          name: 'a2b Logistics',
-          tagline: 'Saudi Arabia premier logistics partner',
-          contact: {
-            phone: '+966 55 384 6446',
-            sales: 'sales@a2b.sa',
-            info: 'info@a2b.sa',
-            website: 'https://a2b.sa'
-          }
-        };
+        track('mcp_tool_call', { tool_name: 'list_service_areas' });
+        return readJson('/data/service-areas.json');
+      }
+    },
+    {
+      name: 'read_public_resource',
+      description: 'Read one public structured resource by id.',
+      inputSchema: { type: 'object', properties: { resourceId: { type: 'string' } }, required: ['resourceId'] },
+      execute: function (input) {
+        var resourceId = input && input.resourceId;
+        var path = publicResources[resourceId];
+        if (!path) return Promise.reject(new Error('Unknown public resource'));
+        track('mcp_resource_read', { resource_id: resourceId });
+        return (path.indexOf('.json') !== -1 ? readJson(path) : readText(path)).then(function (content) {
+          return { resourceId: resourceId, content: content };
+        });
       }
     }
   ];

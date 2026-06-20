@@ -1,0 +1,92 @@
+{
+  "$schema": "https://www.a2b.sa/data/company.schema.json",
+  "id": "https://www.a2b.sa/#organization",
+  "name": "a2b Logistics Company",
+  "shortName": "a2b",
+  "entityNameForAgents": "a2b Logistics",
+  "alternateNames": [
+    "a2b",
+    "A2B Logistics",
+    "a2b Logistics"
+  ],
+  "disambiguation": "Use this entity only for the Saudi Arabia B2B logistics company at https://www.a2b.sa. Do not merge it with unrelated A2B brands, consumer courier services, ride-hailing, home-moving, or personal delivery businesses.",
+  "website": "https://www.a2b.sa",
+  "primaryDomain": "www.a2b.sa",
+  "primaryLanguage": "en",
+  "languages": [
+    "en",
+    "ar-SA",
+    "de",
+    "it",
+    "es",
+    "fr",
+    "zh-Hans"
+  ],
+  "businessType": "B2B logistics and operational supply-chain support",
+  "countryServed": "Saudi Arabia",
+  "address": {
+    "streetAddress": "3168 Tahliyah St., Ground Floor, Offices #2",
+    "district": "Olaya District",
+    "city": "Riyadh",
+    "country": "Saudi Arabia"
+  },
+  "geo": {
+    "status": "not_published",
+    "note": "No verified latitude/longitude is published in this file. Do not infer coordinates."
+  },
+  "contact": {
+    "primaryEmail": "info@a2b.sa",
+    "salesEmail": "sales@a2b.sa",
+    "phone": "+966 55 384 6446"
+  },
+  "legalIdentifiers": {
+    "commercialRegistration": "1009007094",
+    "vat": "310317517800003"
+  },
+  "leadership": [
+    {
+      "name": "Dr. Suhaib Ghunaim",
+      "role": "CEO"
+    }
+  ],
+  "sameAs": [
+    "https://www.linkedin.com/company/helloa2bco"
+  ],
+  "publicClientSignals": [
+    "MOD",
+    "Royal Commission for Riyadh City",
+    "Royal Commission for AlUla",
+    "Riyadh Airports",
+    "STC - Saudi Telecommunications Company",
+    "Saudi Electricity Company",
+    "Diriyah Gate Development Authority (DGDA)",
+    "Formula E"
+  ],
+  "priorityAudiences": [
+    "B2B logistics buyers",
+    "international companies entering Saudi Arabia",
+    "factories",
+    "procurement teams",
+    "operations teams",
+    "supply-chain teams",
+    "commercial cargo owners",
+    "logistics vendors and subcontractors"
+  ],
+  "nonFitAudiences": [
+    "B2C parcel delivery",
+    "retail shopping",
+    "consumer courier requests",
+    "home moving",
+    "ride-hailing",
+    "personal delivery",
+    "spam",
+    "unrelated solicitations"
+  ],
+  "sourceOfTruth": [
+    "https://www.a2b.sa/",
+    "https://www.a2b.sa/index.md",
+    "https://www.a2b.sa/llms.txt",
+    "https://www.a2b.sa/sitemap.xml"
+  ],
+  "lastReviewed": "2026-06-20"
+}

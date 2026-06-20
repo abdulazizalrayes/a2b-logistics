@@ -1,0 +1,62 @@
+{
+  "$schema": "https://www.a2b.sa/data/capabilities.schema.json",
+  "company": "a2b Logistics",
+  "capabilities": [
+    {
+      "id": "kingdom-wide-b2b-logistics",
+      "name": "Kingdom-wide B2B logistics support",
+      "description": "Public website messaging describes logistics support across Saudi Arabia for companies, factories, procurement teams, operations teams, and supply-chain teams.",
+      "evidenceUrls": [
+        "https://www.a2b.sa/",
+        "https://www.a2b.sa/services/trucking-road-freight"
+      ]
+    },
+    {
+      "id": "trucking-and-fleet",
+      "name": "Trucking and fleet capability",
+      "description": "The public fleet page describes heavy transport and specialized vehicle categories for Saudi logistics needs.",
+      "vehicleTypesMentioned": [
+        "flatbeds",
+        "lowbeds",
+        "reefers",
+        "tankers",
+        "crane trucks",
+        "box trucks",
+        "side-lifter trailers",
+        "car carrier trucks",
+        "skip loader trucks",
+        "water tanker trucks",
+        "curtain-sider trailers",
+        "tilt-bed trailers"
+      ],
+      "evidenceUrls": [
+        "https://www.a2b.sa/fleet",
+        "https://www.a2b.sa/services/fleet-types"
+      ]
+    },
+    {
+      "id": "customs-port-and-supply-chain-coordination",
+      "name": "Customs, port, and supply-chain coordination",
+      "description": "a2b supports customs-clearance coordination, port logistics handoff, warehousing support, and supply-chain execution workflows.",
+      "evidenceUrls": [
+        "https://www.a2b.sa/services/customs-clearance",
+        "https://www.a2b.sa/services/warehousing",
+        "https://www.a2b.sa/services/supply-chain"
+      ]
+    },
+    {
+      "id": "vendor-network",
+      "name": "Vendor and subcontractor intake",
+      "description": "The public vendor page supports logistics vendors and subcontractors applying to work with a2b's partner network.",
+      "evidenceUrls": [
+        "https://www.a2b.sa/vendors"
+      ]
+    }
+  ],
+  "approvalBoundaries": [
+    "Do not submit forms or send email without explicit user approval.",
+    "Do not quote prices, capacity, availability, or contractual terms without company confirmation.",
+    "Do not route careers, vendors, internships, training, spam, retail shopping, consumer courier, or unrelated requests into project inquiry."
+  ],
+  "lastReviewed": "2026-06-20"
+}

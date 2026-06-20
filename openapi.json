@@ -1,0 +1,102 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "a2b Logistics Public Agent Readiness API",
+    "version": "1.0.0",
+    "description": "Read-only public data and MCP-style inquiry-preparation API for a2b Logistics. No endpoint submits forms, sends email, or creates commercial commitments."
+  },
+  "servers": [
+    {
+      "url": "https://www.a2b.sa"
+    }
+  ],
+  "paths": {
+    "/data/company.json": {
+      "get": {
+        "summary": "Get public company profile",
+        "responses": {
+          "200": {
+            "description": "Company profile"
+          }
+        }
+      }
+    },
+    "/data/services.json": {
+      "get": {
+        "summary": "List public service data",
+        "responses": {
+          "200": {
+            "description": "Services data"
+          }
+        }
+      }
+    },
+    "/data/capabilities.json": {
+      "get": {
+        "summary": "List public capabilities",
+        "responses": {
+          "200": {
+            "description": "Capabilities data"
+          }
+        }
+      }
+    },
+    "/data/service-areas.json": {
+      "get": {
+        "summary": "List public service areas",
+        "responses": {
+          "200": {
+            "description": "Service areas data"
+          }
+        }
+      }
+    },
+    "/data/project-inquiry-schema.json": {
+      "get": {
+        "summary": "Get project inquiry preparation schema",
+        "description": "Schema for preparing an inquiry draft. It does not submit or contact a2b.",
+        "responses": {
+          "200": {
+            "description": "Project inquiry schema"
+          }
+        }
+      }
+    },
+    "/data/agent-routing.json": {
+      "get": {
+        "summary": "Get agent routing rules",
+        "responses": {
+          "200": {
+            "description": "Routing rules"
+          }
+        }
+      }
+    },
+    "/api/mcp": {
+      "post": {
+        "summary": "Call public read-only MCP-style tools",
+        "description": "Supports initialize, tools/list, tools/call, resources/list, and resources/read JSON-RPC-style requests. Tools are read-only and require explicit user approval before any external contact outside this API.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Tool result"
+          }
+        }
+      }
+    }
+  },
+  "x-a2b-approval-requirements": [
+    "No public endpoint sends email, submits forms, calls phone numbers, or creates commitments.",
+    "Agents must ask for explicit user approval before contacting a2b.",
+    "Careers, vendors, internships, training, spam, retail shopping, consumer courier, and unrelated requests must not be routed to project inquiry."
+  ]
+}

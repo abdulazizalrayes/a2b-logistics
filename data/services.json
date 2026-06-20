@@ -1,0 +1,156 @@
+{
+  "$schema": "https://www.a2b.sa/data/services.schema.json",
+  "company": "a2b Logistics",
+  "services": [
+    {
+      "id": "trucking-road-freight",
+      "name": "Trucking and road freight",
+      "url": "https://www.a2b.sa/services/trucking-road-freight",
+      "description": "B2B trucking and road freight support for commercial cargo movement across Saudi Arabia.",
+      "bestFit": [
+        "kingdom-wide trucking",
+        "factory cargo movement",
+        "procurement logistics",
+        "commercial freight",
+        "international company market-entry logistics"
+      ],
+      "notFit": [
+        "consumer parcel delivery",
+        "personal courier requests",
+        "ride-hailing"
+      ],
+      "inquiryFields": [
+        "origin",
+        "destination",
+        "cargoType",
+        "loadDescription",
+        "timeline",
+        "frequency",
+        "companyName",
+        "contactPerson",
+        "contactEmail",
+        "contactPhone"
+      ]
+    },
+    {
+      "id": "warehousing",
+      "name": "Warehousing support",
+      "url": "https://www.a2b.sa/services/warehousing",
+      "description": "B2B warehousing coordination for storage, staging, and logistics workflows connected to road freight operations in Saudi Arabia.",
+      "bestFit": [
+        "storage coordination",
+        "staging",
+        "inbound and outbound logistics",
+        "supply-chain support"
+      ],
+      "notFit": [
+        "consumer self-storage",
+        "retail shopping",
+        "home storage"
+      ],
+      "inquiryFields": [
+        "location",
+        "storageType",
+        "volume",
+        "handlingNeeds",
+        "duration",
+        "transportConnection",
+        "companyName",
+        "contactPerson",
+        "contactEmail"
+      ]
+    },
+    {
+      "id": "customs-clearance",
+      "name": "Customs-clearance coordination",
+      "url": "https://www.a2b.sa/services/customs-clearance",
+      "description": "Coordination support for international cargo entering Saudi Arabia, aligned with trucking, port, and supply-chain operations.",
+      "bestFit": [
+        "import logistics",
+        "cargo entering Saudi Arabia",
+        "port coordination",
+        "documentation handoff",
+        "customs-clearance coordination"
+      ],
+      "notFit": [
+        "personal package customs questions",
+        "travel visas",
+        "unrelated government services"
+      ],
+      "inquiryFields": [
+        "originCountry",
+        "portOrAirport",
+        "cargoDescription",
+        "hsCodeIfKnown",
+        "documentsAvailable",
+        "requiredDeliveryLocation",
+        "companyName",
+        "contactPerson",
+        "contactEmail"
+      ]
+    },
+    {
+      "id": "supply-chain",
+      "name": "Supply-chain logistics support",
+      "url": "https://www.a2b.sa/services/supply-chain",
+      "description": "Operational supply-chain support for companies, factories, procurement teams, and logistics buyers working across Saudi Arabia.",
+      "bestFit": [
+        "multi-step logistics planning",
+        "procurement operations",
+        "factory logistics",
+        "recurring B2B logistics",
+        "market-entry logistics"
+      ],
+      "notFit": [
+        "personal errands",
+        "retail delivery",
+        "unrelated consulting"
+      ],
+      "inquiryFields": [
+        "businessGoal",
+        "locations",
+        "servicesNeeded",
+        "expectedVolume",
+        "timeline",
+        "constraints",
+        "companyName",
+        "contactPerson",
+        "contactEmail"
+      ]
+    },
+    {
+      "id": "fleet-types",
+      "name": "Fleet types and capacity",
+      "url": "https://www.a2b.sa/services/fleet-types",
+      "description": "Fleet-capability information for heavy transport and specialized vehicle categories shown on the public fleet page.",
+      "bestFit": [
+        "flatbed requirements",
+        "lowbed requirements",
+        "reefer requirements",
+        "tanker requirements",
+        "crane truck requirements",
+        "box truck requirements",
+        "side-lifter trailer requirements",
+        "curtain-sider trailer requirements",
+        "tilt-bed trailer requirements"
+      ],
+      "notFit": [
+        "car rental",
+        "personal transport",
+        "taxi or ride-hailing"
+      ],
+      "inquiryFields": [
+        "vehicleType",
+        "loadDimensions",
+        "loadWeight",
+        "origin",
+        "destination",
+        "timeline",
+        "companyName",
+        "contactPerson",
+        "contactEmail"
+      ]
+    }
+  ],
+  "lastReviewed": "2026-06-20"
+}
