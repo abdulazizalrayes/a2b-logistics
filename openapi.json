@@ -72,10 +72,81 @@
         }
       }
     },
+    "/data/procurement-profile.json": {
+      "get": {
+        "summary": "Get public procurement profile",
+        "responses": {
+          "200": {
+            "description": "Procurement fit, buyer inputs, and commercial boundaries"
+          }
+        }
+      }
+    },
+    "/data/vendor-onboarding-requirements.json": {
+      "get": {
+        "summary": "Get vendor onboarding preparation guide",
+        "responses": {
+          "200": {
+            "description": "Vendor routing and preparation requirements"
+          }
+        }
+      }
+    },
+    "/data/compliance-profile.json": {
+      "get": {
+        "summary": "Get public compliance profile",
+        "responses": {
+          "200": {
+            "description": "Verified identifiers and non-invented compliance boundaries"
+          }
+        }
+      }
+    },
+    "/data/rfq-preparation.json": {
+      "get": {
+        "summary": "Get RFQ preparation guide",
+        "responses": {
+          "200": {
+            "description": "Read-only RFQ preparation fields and approval policy"
+          }
+        }
+      }
+    },
+    "/data/ai-visibility-queries.json": {
+      "get": {
+        "summary": "Get AI visibility benchmark queries",
+        "responses": {
+          "200": {
+            "description": "Monthly AI/search visibility benchmark query set"
+          }
+        }
+      }
+    },
+    "/data/analytics-events.json": {
+      "get": {
+        "summary": "Get privacy-safe analytics event catalog",
+        "responses": {
+          "200": {
+            "description": "Agent, crawler, and inquiry-preparation analytics events"
+          }
+        }
+      }
+    },
+    "/data/high-intent-content-plan.json": {
+      "get": {
+        "summary": "Get high-intent content plan awaiting owner approval",
+        "description": "Draft page plan only. These pages are not published or added to sitemap until owner approves the visual/template review.",
+        "responses": {
+          "200": {
+            "description": "High-intent content plan"
+          }
+        }
+      }
+    },
     "/api/mcp": {
       "post": {
         "summary": "Call public read-only MCP-style tools",
-        "description": "Supports initialize, tools/list, tools/call, resources/list, and resources/read JSON-RPC-style requests. Tools are read-only and require explicit user approval before any external contact outside this API.",
+        "description": "Supports initialize, tools/list, tools/call, resources/list, and resources/read JSON-RPC-style requests. Tools are read-only and require explicit user approval before any external contact outside this API. Current tools include get_company_overview, list_services, match_project_scope, prepare_project_inquiry, prepare_rfq_brief, list_service_areas, get_procurement_profile, and read_public_resource.",
         "requestBody": {
           "required": true,
           "content": {
@@ -97,6 +168,7 @@
   "x-a2b-approval-requirements": [
     "No public endpoint sends email, submits forms, calls phone numbers, or creates commitments.",
     "Agents must ask for explicit user approval before contacting a2b.",
-    "Careers, vendors, internships, training, spam, retail shopping, consumer courier, and unrelated requests must not be routed to project inquiry."
+    "Careers, vendors, internships, training, spam, retail shopping, consumer courier, and unrelated requests must not be routed to project inquiry.",
+    "High-intent page plan resources are drafts only and must not be treated as published service pages until owner approval."
   ]
 }

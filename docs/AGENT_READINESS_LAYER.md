@@ -20,6 +20,13 @@ It is read-only by default. It can prepare project inquiries, but it does not su
 - `/data/service-areas.json` - published service areas and logistics nodes without invented coordinates.
 - `/data/project-inquiry-schema.json` - JSON Schema for preparing, not submitting, a project inquiry.
 - `/data/agent-routing.json` - fit routing for project inquiries, vendors, careers, internships/training, retail/consumer, spam, and unrelated requests.
+- `/data/procurement-profile.json` - procurement-agent fit profile, buyer inputs, public evidence, and commercial boundaries.
+- `/data/vendor-onboarding-requirements.json` - vendor/subcontractor routing and preparation guidance.
+- `/data/compliance-profile.json` - verified public identifiers, contact details, address, and unverified claim boundaries.
+- `/data/rfq-preparation.json` - RFQ preparation inputs by logistics service type.
+- `/data/ai-visibility-queries.json` - recurring query set for search and AI answer visibility benchmarks.
+- `/data/analytics-events.json` - privacy-safe event catalog for agent and crawler reporting.
+- `/data/high-intent-content-plan.json` - approval-only plan for future visible service pages. These pages are drafts and must not be cited as live URLs until owner approval.
 
 ## Discovery Files
 
@@ -52,8 +59,12 @@ Typed tools:
 - `list_services`
 - `match_project_scope`
 - `prepare_project_inquiry`
+- `prepare_rfq_brief`
 - `list_service_areas`
+- `get_procurement_profile`
 - `read_public_resource`
+
+MCP v1.1 adds request IDs, resource SHA-256 hashes, and ETag headers for resource reads so agent clients can audit exactly which public data version they consumed.
 
 The endpoint logs privacy-safe operational events to server logs:
 
@@ -61,6 +72,7 @@ The endpoint logs privacy-safe operational events to server logs:
 - `mcp_resource_read`
 
 It does not store personal information. Inquiry preparation returns a draft and routing decision only.
+RFQ preparation is also draft-only. It helps procurement agents collect missing inputs, but it does not submit a quote request, send email, call a phone number, or commit a2b to price, capacity, schedule, or terms.
 
 ## Routing Rules
 
@@ -148,6 +160,15 @@ curl -s https://www.a2b.sa/api/mcp \
   -d '{"jsonrpc":"2.0","id":2,"method":"tools/call","params":{"name":"match_project_scope","arguments":{"query":"factory trucking from Riyadh to Dammam"}}}'
 ```
 
+MCP RFQ preparation after deployment:
+
+```sh
+curl -s https://www.a2b.sa/api/mcp \
+  -H 'content-type: application/json' \
+  -H 'x-request-id: manual-rfq-check' \
+  -d '{"jsonrpc":"2.0","id":3,"method":"tools/call","params":{"name":"prepare_rfq_brief","arguments":{"companyName":"Example Buyer","serviceNeeds":["trucking-road-freight"],"origin":"Riyadh","destination":"Dammam","cargoDescription":"Commercial cargo","timeline":"Next month"}}}'
+```
+
 Public endpoint checks after deployment:
 
 ```sh
@@ -156,7 +177,18 @@ curl -I https://www.a2b.sa/llms-full.txt
 curl -I https://www.a2b.sa/openapi.json
 curl -I https://www.a2b.sa/.well-known/mcp.json
 curl -I https://www.a2b.sa/data/company.json
+curl -I https://www.a2b.sa/data/procurement-profile.json
+curl -I https://www.a2b.sa/data/rfq-preparation.json
 ```
+
+Generate local AI visibility and analytics reporting templates:
+
+```sh
+npm run ai:benchmark
+npm run agent:report
+```
+
+These commands create review templates under `/reports`. They do not use paid tools and do not publish website content.
 
 ## What To Copy To Other Companies
 
@@ -173,6 +205,8 @@ Reusable structure:
 - `/api/mcp`
 - `scripts/verify-site.mjs` agent-readiness checks
 - `docs/AGENT_READINESS_LAYER.md` format
+- `docs/AI_VISIBILITY_BENCHMARK.md` format
+- `docs/ANALYTICS_AI_REPORTING.md` format
 
 Must be changed per company:
 
@@ -183,9 +217,12 @@ Must be changed per company:
 - analytics IDs
 - Paperclip company prefix and account ownership
 - repository and Vercel project
+- visual-freeze and owner-approval rules for any visible page expansion
 
 Do not copy a2b credentials, accounts, DNS, analytics, Paperclip tasks, or social accounts into another company.
 
 ## Rollback
 
 This layer is non-visual. Rollback is to revert the commit that added these files and deploy the prior commit. No production DNS, email, or visual layout changes are part of this layer.
+
+Future high-intent service pages remain postponed until owner visual/content approval. Do not add them to navigation, sitemap, hreflang clusters, or production HTML until approved.

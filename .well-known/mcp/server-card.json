@@ -2,7 +2,7 @@
   "$schema": "https://raw.githubusercontent.com/modelcontextprotocol/modelcontextprotocol/main/schema/server-card.json",
   "serverInfo": {
     "name": "a2b-logistics",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "title": "a2b Logistics",
     "description": "Public read-only MCP-style endpoint for a2b Logistics company facts, services, capabilities, service areas, routing, and inquiry preparation.",
     "homepage": "https://www.a2b.sa",
@@ -29,7 +29,9 @@
     "list_services",
     "match_project_scope",
     "prepare_project_inquiry",
+    "prepare_rfq_brief",
     "list_service_areas",
+    "get_procurement_profile",
     "read_public_resource"
   ],
   "approvalPolicy": "Read-only. Tools must not submit forms, send email, call phone numbers, or contact a2b unless the user explicitly approves the exact action.",

@@ -1,0 +1,31 @@
+{
+  "$schema": "https://www.a2b.sa/data/vendor-onboarding-requirements.schema.json",
+  "company": "a2b Logistics",
+  "purpose": "Public machine-readable routing and preparation guide for logistics vendors and subcontractors.",
+  "routing": {
+    "vendorRegistrationUrl": "https://www.a2b.sa/vendors",
+    "doNotUseProjectInquiry": true,
+    "note": "Vendor, supplier, subcontractor, and partner-registration requests should be routed to the vendor page instead of project inquiry."
+  },
+  "publicFormSignals": [
+    "commercial registration number",
+    "VAT registration number",
+    "company details",
+    "service or capability details",
+    "contact details"
+  ],
+  "agentGuidance": [
+    "Help vendors prepare information before using the vendor page.",
+    "Do not submit vendor forms without explicit user approval.",
+    "Do not invent registrations, licenses, certifications, fleet counts, insurance coverage, or safety claims.",
+    "If information is missing, mark it as unknown rather than guessing."
+  ],
+  "notFor": [
+    "job applications",
+    "internships",
+    "training requests",
+    "retail shopping",
+    "consumer delivery requests"
+  ],
+  "lastReviewed": "2026-06-29"
+}

@@ -1,0 +1,70 @@
+{
+  "$schema": "https://www.a2b.sa/data/ai-visibility-queries.schema.json",
+  "company": "a2b Logistics",
+  "purpose": "Benchmark query set for monthly AI/search visibility and answer-share reviews.",
+  "cadence": "monthly",
+  "measurementTargets": [
+    "Google Search",
+    "Bing",
+    "ChatGPT browsing or retrieval-enabled answer",
+    "Perplexity",
+    "Gemini",
+    "Copilot",
+    "other owner-approved AI answer engines"
+  ],
+  "querySets": [
+    {
+      "category": "brand entity",
+      "queries": [
+        "a2b Logistics Saudi Arabia",
+        "a2b.sa logistics",
+        "a2b Logistics Riyadh",
+        "a2b Logistics Company CR 1009007094"
+      ]
+    },
+    {
+      "category": "high-intent B2B logistics",
+      "queries": [
+        "trucking company Saudi Arabia for factories",
+        "B2B logistics company Riyadh",
+        "road freight company Saudi Arabia",
+        "customs clearance coordination Saudi Arabia",
+        "warehousing support Riyadh logistics",
+        "supply chain logistics Saudi Arabia",
+        "project logistics Saudi Arabia"
+      ]
+    },
+    {
+      "category": "market entry",
+      "queries": [
+        "logistics support for international companies entering Saudi Arabia",
+        "Saudi Arabia market entry logistics partner",
+        "cargo transport for international companies in KSA",
+        "procurement logistics support Saudi Arabia"
+      ]
+    },
+    {
+      "category": "non-fit guardrails",
+      "queries": [
+        "does a2b Logistics do consumer parcel delivery",
+        "a2b Logistics jobs",
+        "a2b Logistics vendor registration",
+        "a2b Logistics internships"
+      ]
+    }
+  ],
+  "scorecardFields": [
+    "engine",
+    "query",
+    "date",
+    "a2bMentioned",
+    "a2bRankOrPosition",
+    "citedUrls",
+    "factsCorrect",
+    "incorrectClaims",
+    "competitorsMentioned",
+    "recommendedContentFix",
+    "ownerActionNeeded"
+  ],
+  "lastReviewed": "2026-06-29"
+}

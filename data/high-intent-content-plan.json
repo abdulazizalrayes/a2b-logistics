@@ -1,0 +1,101 @@
+{
+  "$schema": "https://www.a2b.sa/data/high-intent-content-plan.schema.json",
+  "company": "a2b Logistics",
+  "status": "approval_required_before_publishing_visible_pages",
+  "visualChangePolicy": "No new visible pages, navigation changes, layout changes, or sitemap additions may be published until owner approves the page template/review.",
+  "draftPages": [
+    {
+      "slug": "flatbed-trucking-riyadh",
+      "targetUrl": "https://www.a2b.sa/services/flatbed-trucking-riyadh",
+      "intent": "commercial flatbed trucking support in Riyadh and Saudi Arabia",
+      "primaryKeyword": "flatbed trucking Riyadh",
+      "supportingKeywords": [
+        "flatbed transport Saudi Arabia",
+        "commercial cargo trucking Riyadh",
+        "B2B flatbed logistics KSA"
+      ],
+      "fit": "B2B logistics buyers only",
+      "approvalStatus": "draft_not_published"
+    },
+    {
+      "slug": "lowbed-transport-saudi-arabia",
+      "targetUrl": "https://www.a2b.sa/services/lowbed-transport-saudi-arabia",
+      "intent": "heavy and lowbed transport support across Saudi Arabia",
+      "primaryKeyword": "lowbed transport Saudi Arabia",
+      "supportingKeywords": [
+        "heavy equipment transport KSA",
+        "lowbed trucking Riyadh",
+        "project logistics Saudi Arabia"
+      ],
+      "fit": "B2B and project logistics only",
+      "approvalStatus": "draft_not_published"
+    },
+    {
+      "slug": "customs-clearance-riyadh",
+      "targetUrl": "https://www.a2b.sa/services/customs-clearance-riyadh",
+      "intent": "customs-clearance coordination for cargo entering Saudi Arabia",
+      "primaryKeyword": "customs clearance Riyadh",
+      "supportingKeywords": [
+        "customs clearance Saudi Arabia",
+        "import logistics KSA",
+        "cargo clearance coordination Saudi Arabia"
+      ],
+      "fit": "B2B import logistics",
+      "approvalStatus": "draft_not_published"
+    },
+    {
+      "slug": "warehousing-riyadh",
+      "targetUrl": "https://www.a2b.sa/services/warehousing-riyadh",
+      "intent": "warehousing coordination connected to transport workflows",
+      "primaryKeyword": "warehousing Riyadh",
+      "supportingKeywords": [
+        "B2B warehousing Saudi Arabia",
+        "storage and logistics Riyadh",
+        "warehouse coordination KSA"
+      ],
+      "fit": "B2B storage and staging support",
+      "approvalStatus": "draft_not_published"
+    },
+    {
+      "slug": "port-to-site-logistics-saudi-arabia",
+      "targetUrl": "https://www.a2b.sa/services/port-to-site-logistics-saudi-arabia",
+      "intent": "port to site logistics and inland transport coordination",
+      "primaryKeyword": "port to site logistics Saudi Arabia",
+      "supportingKeywords": [
+        "drayage Saudi Arabia",
+        "port logistics KSA",
+        "inland freight from Saudi ports"
+      ],
+      "fit": "B2B cargo owners and procurement teams",
+      "approvalStatus": "draft_not_published"
+    },
+    {
+      "slug": "gcc-cross-border-freight",
+      "targetUrl": "https://www.a2b.sa/services/gcc-cross-border-freight",
+      "intent": "cross-border freight coordination for selected nearby markets",
+      "primaryKeyword": "GCC cross-border freight",
+      "supportingKeywords": [
+        "Saudi Arabia to UAE freight",
+        "Saudi Arabia to Bahrain freight",
+        "Saudi Arabia to Kuwait freight",
+        "Saudi Arabia to Jordan freight"
+      ],
+      "fit": "B2B freight only; route feasibility requires confirmation",
+      "approvalStatus": "draft_not_published"
+    },
+    {
+      "slug": "project-logistics-saudi-arabia",
+      "targetUrl": "https://www.a2b.sa/services/project-logistics-saudi-arabia",
+      "intent": "project logistics support for commercial and industrial operations",
+      "primaryKeyword": "project logistics Saudi Arabia",
+      "supportingKeywords": [
+        "industrial logistics KSA",
+        "construction logistics Saudi Arabia",
+        "logistics for giga projects Saudi Arabia"
+      ],
+      "fit": "B2B project logistics only",
+      "approvalStatus": "draft_not_published"
+    }
+  ],
+  "lastReviewed": "2026-06-29"
+}

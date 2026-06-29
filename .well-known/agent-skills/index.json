@@ -7,14 +7,14 @@
       "type": "documentation",
       "description": "a2b Logistics concise overview, services, and contact details for AI agents.",
       "url": "https://www.a2b.sa/llms.txt",
-      "sha256": "5c3b257449431ca95f46b2620d943f45435aba4c1f41fa2abd48dcbddb413bcd"
+      "sha256": "cc76a69f2f13238291680cdb91bf6e32990ecd57e753548f528916a3967a26f9"
     },
     {
       "name": "a2b-full-agent-brief",
       "type": "documentation",
       "description": "Expanded a2b Logistics agent brief with structured resources, MCP/API, crawler guidance, and routing rules.",
       "url": "https://www.a2b.sa/llms-full.txt",
-      "sha256": "d3629aecf9c91e7f754655f3c4905a2a1ac05c0b1db6a54a60a5db31bf2fc9ef"
+      "sha256": "ca01c34df4b4d054bb0d5a9c1e2ac4a1c96ad801ec1224c8220b299cd4d0f4bc"
     },
     {
       "name": "a2b-company-data",
@@ -38,32 +38,74 @@
       "sha256": "11cc15f760242ba2d8536087a73b56d745abe90c73a514a1c8885a777674e668"
     },
     {
+      "name": "a2b-procurement-profile",
+      "type": "data",
+      "description": "Procurement-agent fit profile, buyer inputs, evidence, and commercial boundaries.",
+      "url": "https://www.a2b.sa/data/procurement-profile.json",
+      "sha256": "4eb8c8347fec966ef335f19f7f722680ce1ec9824ab0860c6152b54735231d43"
+    },
+    {
+      "name": "a2b-rfq-preparation",
+      "type": "data",
+      "description": "RFQ preparation fields by logistics service type.",
+      "url": "https://www.a2b.sa/data/rfq-preparation.json",
+      "sha256": "9ff7218c8f4b0e24fb6a68fc760549f11ba6220a8d668ec6018b118c845fa356"
+    },
+    {
+      "name": "a2b-compliance-profile",
+      "type": "data",
+      "description": "Verified public identifiers and boundaries for unverified claims.",
+      "url": "https://www.a2b.sa/data/compliance-profile.json",
+      "sha256": "bb7705ea2934178085c6591e7184f8b5282cb3989ef79fc498f03410c7164515"
+    },
+    {
+      "name": "a2b-ai-visibility-queries",
+      "type": "data",
+      "description": "Monthly search and AI answer visibility benchmark query set.",
+      "url": "https://www.a2b.sa/data/ai-visibility-queries.json",
+      "sha256": "aec9cfccacbb03da637ddb4fde40ac2677e29ef0de6fdb167d29b4d6dd9926b4"
+    },
+    {
+      "name": "a2b-analytics-events",
+      "type": "data",
+      "description": "Privacy-safe analytics event catalog for agent and crawler reporting.",
+      "url": "https://www.a2b.sa/data/analytics-events.json",
+      "sha256": "95f74444451f7fc355f34b132f710af3e09aee20d43ad0df837e5b351887294f"
+    },
+    {
+      "name": "a2b-high-intent-content-plan",
+      "type": "data",
+      "description": "Approval-only high-intent content plan; planned URLs are not live pages.",
+      "url": "https://www.a2b.sa/data/high-intent-content-plan.json",
+      "sha256": "9bb4b7d5219b617bbd99a38754e166884be1c478be2d300aac023a737f2eb66f"
+    },
+    {
       "name": "a2b-openapi",
       "type": "discovery",
       "description": "OpenAPI description for public data and read-only MCP-style tools.",
       "url": "https://www.a2b.sa/openapi.json",
-      "sha256": "83ee68e53cae49fc9bc6490c35f55aa5fa7395d4aec52471eb8b909c01ff68fb"
+      "sha256": "b13ff6fd385775173eaf5bf0a72ad0e8ccb8cb3f6b0e1a8f5c841893200e0bf0"
     },
     {
       "name": "a2b-mcp-discovery",
       "type": "discovery",
       "description": "MCP discovery document for the public read-only a2b endpoint.",
       "url": "https://www.a2b.sa/.well-known/mcp.json",
-      "sha256": "46cdb5bb42fc57fd518ae1b029ae3348a280aaf4dc7040fce9ca560085356a5f"
+      "sha256": "f77fc9709f1632eb62bd238eee2d3d403fe890a1a63e6075b6798f960020fcfe"
     },
     {
       "name": "a2b-mcp-server-card",
       "type": "discovery",
       "description": "MCP server card for a2b public read-only tools.",
       "url": "https://www.a2b.sa/.well-known/mcp/server-card.json",
-      "sha256": "30235059e5937e1e4edd426e3072476775bc2eddb6e9588e347ff30eb118f7d9"
+      "sha256": "343ef706b053e2b49852a55d89ff07bd20acaab681d5f717da80d5ef972c064b"
     },
     {
       "name": "a2b-agent-card",
       "type": "discovery",
       "description": "A2A-style agent card for a2b Logistics public capabilities.",
       "url": "https://www.a2b.sa/.well-known/agent-card.json",
-      "sha256": "53320b822da240a9026fe9c1fe67ace306fe3393be4170cb8db11100580cc597"
+      "sha256": "d395ba3928f5eb0680cee58bce395b55351e0be19037d261e78e37b40028debf"
     },
     {
       "name": "a2b-sitemap",

@@ -3,6 +3,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "verify": "node scripts/verify-site.mjs"
+    "verify": "node scripts/verify-site.mjs",
+    "ai:benchmark": "node scripts/ai-visibility-benchmark.mjs",
+    "agent:report": "node scripts/agent-analytics-report.mjs"
   }
 }

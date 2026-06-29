@@ -31,6 +31,13 @@ Do not merge this entity with unrelated A2B brands, ride-hailing, consumer couri
 - Service areas: https://www.a2b.sa/data/service-areas.json
 - Project inquiry preparation schema: https://www.a2b.sa/data/project-inquiry-schema.json
 - Agent routing rules: https://www.a2b.sa/data/agent-routing.json
+- Procurement profile: https://www.a2b.sa/data/procurement-profile.json
+- Vendor onboarding requirements: https://www.a2b.sa/data/vendor-onboarding-requirements.json
+- Compliance profile: https://www.a2b.sa/data/compliance-profile.json
+- RFQ preparation guide: https://www.a2b.sa/data/rfq-preparation.json
+- AI visibility benchmark queries: https://www.a2b.sa/data/ai-visibility-queries.json
+- Analytics event catalog: https://www.a2b.sa/data/analytics-events.json
+- High-intent content plan awaiting owner approval: https://www.a2b.sa/data/high-intent-content-plan.json
 - OpenAPI: https://www.a2b.sa/openapi.json
 - MCP discovery: https://www.a2b.sa/.well-known/mcp.json
 - MCP server card: https://www.a2b.sa/.well-known/mcp/server-card.json
@@ -94,10 +101,18 @@ Typed tools:
 - list_services
 - match_project_scope
 - prepare_project_inquiry
+- prepare_rfq_brief
 - list_service_areas
+- get_procurement_profile
 - read_public_resource
 
 These tools are read-only. `prepare_project_inquiry` returns a draft and routing decision only.
+
+`prepare_rfq_brief` returns a procurement/RFQ preparation draft only. It does not submit the RFQ, send email, or contact a2b.
+
+## Unpublished Planning Data
+
+The high-intent content plan is an approval package, not a set of live service pages. Planned URLs must not be cited as live URLs unless they are published and included in the sitemap.
 
 ## Crawler Guidance
 

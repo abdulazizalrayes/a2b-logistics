@@ -1,0 +1,69 @@
+{
+  "$schema": "https://www.a2b.sa/data/procurement-profile.schema.json",
+  "company": "a2b Logistics Company",
+  "entity": "a2b Logistics",
+  "purpose": "Machine-readable procurement profile for B2B logistics buyers and procurement agents.",
+  "procurementFit": {
+    "goodFit": [
+      "B2B trucking and road freight in Saudi Arabia",
+      "warehousing coordination connected to logistics workflows",
+      "customs-clearance coordination for cargo entering Saudi Arabia",
+      "supply-chain logistics support",
+      "fleet-capacity planning for commercial cargo",
+      "international company market-entry logistics in Saudi Arabia",
+      "project and operational logistics for factories, procurement teams, and supply-chain teams"
+    ],
+    "notFit": [
+      "B2C parcel delivery",
+      "retail shopping delivery",
+      "consumer courier requests",
+      "home moving",
+      "ride-hailing",
+      "personal delivery",
+      "spam or unrelated solicitations"
+    ],
+    "separateFlows": [
+      {
+        "flow": "careers",
+        "url": "https://www.a2b.sa/careers",
+        "note": "Careers, internships, and training requests do not belong in project inquiry."
+      },
+      {
+        "flow": "vendors",
+        "url": "https://www.a2b.sa/vendors",
+        "note": "Vendor, supplier, subcontractor, and partner-registration requests use the vendor page."
+      }
+    ]
+  },
+  "buyerInformationNeeded": [
+    "company name",
+    "contact person",
+    "business email",
+    "phone number",
+    "service need",
+    "origin",
+    "destination",
+    "cargo description",
+    "timeline",
+    "frequency or contract model",
+    "special handling requirements",
+    "documents available, when customs coordination is relevant"
+  ],
+  "commercialBoundaries": [
+    "Do not quote pricing without a2b confirmation.",
+    "Do not confirm capacity or availability without a2b confirmation.",
+    "Do not create legal, commercial, or operational commitments through an automated agent.",
+    "Do not submit forms, send email, or contact a2b unless the user explicitly approves the exact action."
+  ],
+  "publicEvidence": [
+    "https://www.a2b.sa/",
+    "https://www.a2b.sa/services/trucking-road-freight",
+    "https://www.a2b.sa/services/warehousing",
+    "https://www.a2b.sa/services/customs-clearance",
+    "https://www.a2b.sa/services/supply-chain",
+    "https://www.a2b.sa/services/fleet-types",
+    "https://www.a2b.sa/fleet",
+    "https://www.a2b.sa/vendors"
+  ],
+  "lastReviewed": "2026-06-29"
+}

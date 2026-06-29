@@ -46,3 +46,12 @@ The verifier checks:
 - Ran Lighthouse against `https://www.a2b.sa/`: Performance 92, Accessibility 92, Best Practices 100, SEO 100, CLS 0.
 - Committed and pushed the non-visual uplift to GitHub commit `2e28fb2`.
 - Paperclip online recording was attempted, but `https://ai.eijarat.com/NAJ/dashboard` returned Cloudflare 502 at 2026-06-20 08:49 UTC.
+
+## 2026-06-29 Advanced Non-Visual Uplift
+
+- Added machine-readable procurement, vendor, compliance, RFQ, AI visibility, analytics, and high-intent content planning resources under `/data/`.
+- Upgraded the public read-only MCP endpoint to v1.1 with request IDs, resource SHA-256 hashes, resource ETags, `prepare_rfq_brief`, and `get_procurement_profile`.
+- Updated discovery surfaces: `/llms.txt`, `/llms-full.txt`, `/openapi.json`, `/.well-known/agent-card.json`, `/.well-known/mcp.json`, `/.well-known/mcp/server-card.json`, `/.well-known/api-catalog`, and `Link` headers in `vercel.json`.
+- Added repeatable reporting templates for AI visibility benchmarking and agent analytics.
+- Kept high-intent service expansion as a non-published approval package only. No new visible pages, navigation links, sitemap URLs, hreflang clusters, or layout changes were added.
+- DNS-AID/SVCB/HTTPS record completion remains excluded by owner instruction for this work package.

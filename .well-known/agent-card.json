@@ -2,7 +2,7 @@
   "name": "a2b Logistics Agent",
   "description": "Public discovery card for a2b Logistics services, company information, routing, and read-only inquiry preparation.",
   "url": "https://www.a2b.sa",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "provider": {
     "organization": "a2b Logistics",
     "url": "https://www.a2b.sa"
@@ -91,6 +91,25 @@
       ]
     },
     {
+      "id": "prepare_rfq_brief",
+      "name": "Prepare RFQ Brief",
+      "description": "Prepare a procurement/RFQ brief for a B2B logistics buyer without submitting forms, sending email, or contacting a2b.",
+      "tags": [
+        "rfq",
+        "procurement",
+        "read-only",
+        "logistics"
+      ],
+      "inputModes": [
+        "application/json",
+        "text/plain"
+      ],
+      "outputModes": [
+        "application/json",
+        "text/plain"
+      ]
+    },
+    {
       "id": "list_service_areas",
       "name": "List Service Areas",
       "description": "List public a2b service areas, logistics nodes, and route-availability cautions.",
@@ -98,6 +117,24 @@
         "service-areas",
         "saudi-arabia",
         "logistics"
+      ],
+      "inputModes": [
+        "text/plain"
+      ],
+      "outputModes": [
+        "application/json",
+        "text/plain"
+      ]
+    },
+    {
+      "id": "get_procurement_profile",
+      "name": "Get Procurement Profile",
+      "description": "Return public procurement fit, buyer inputs, compliance boundaries, and vendor routing for a2b Logistics.",
+      "tags": [
+        "procurement",
+        "rfq",
+        "compliance",
+        "read-only"
       ],
       "inputModes": [
         "text/plain"

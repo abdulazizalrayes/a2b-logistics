@@ -13,6 +13,13 @@ const requiredAgentFiles = [
   'data/service-areas.json',
   'data/project-inquiry-schema.json',
   'data/agent-routing.json',
+  'data/procurement-profile.json',
+  'data/vendor-onboarding-requirements.json',
+  'data/compliance-profile.json',
+  'data/rfq-preparation.json',
+  'data/ai-visibility-queries.json',
+  'data/analytics-events.json',
+  'data/high-intent-content-plan.json',
   'llms.txt',
   'llms-full.txt',
   '.well-known/agent-card.json',
@@ -23,7 +30,12 @@ const requiredAgentFiles = [
   '.well-known/agent-skills/index.json',
   'openapi.json',
   'auth.md',
+  'docs/AI_VISIBILITY_BENCHMARK.md',
+  'docs/ANALYTICS_AI_REPORTING.md',
+  'docs/HIGH_INTENT_PAGE_APPROVAL_BRIEF.md',
   'api/mcp.js',
+  'scripts/ai-visibility-benchmark.mjs',
+  'scripts/agent-analytics-report.mjs',
   'webmcp.js',
   'robots.txt'
 ];
@@ -140,6 +152,13 @@ const capabilities = await parseRequiredJson('data/capabilities.json');
 const serviceAreas = await parseRequiredJson('data/service-areas.json');
 const inquirySchema = await parseRequiredJson('data/project-inquiry-schema.json');
 const routing = await parseRequiredJson('data/agent-routing.json');
+const procurementProfile = await parseRequiredJson('data/procurement-profile.json');
+const vendorRequirements = await parseRequiredJson('data/vendor-onboarding-requirements.json');
+const complianceProfile = await parseRequiredJson('data/compliance-profile.json');
+const rfqPreparation = await parseRequiredJson('data/rfq-preparation.json');
+const aiVisibilityQueries = await parseRequiredJson('data/ai-visibility-queries.json');
+const analyticsEvents = await parseRequiredJson('data/analytics-events.json');
+const highIntentContentPlan = await parseRequiredJson('data/high-intent-content-plan.json');
 const agentCard = await parseRequiredJson('.well-known/agent-card.json');
 const mcp = await parseRequiredJson('.well-known/mcp.json');
 const mcpServerCard = await parseRequiredJson('.well-known/mcp/server-card.json');
@@ -157,8 +176,17 @@ if (!Array.isArray(capabilities.approvalBoundaries) || !capabilities.approvalBou
 if (!Array.isArray(serviceAreas.areas) || !serviceAreas.areas.some((area) => area.id === 'saudi-arabia')) fail('data/service-areas.json: missing Saudi Arabia');
 if (!inquirySchema.properties?.approvalToContact) fail('data/project-inquiry-schema.json: missing approvalToContact');
 if (!routing.routes?.some((route) => route.id === 'non-fit' && route.doNotRouteToProjectInquiry)) fail('data/agent-routing.json: missing non-fit routing');
+if (!procurementProfile.procurementFit?.goodFit?.length) fail('data/procurement-profile.json: missing goodFit procurement profile');
+if (!procurementProfile.commercialBoundaries?.join(' ').includes('Do not quote pricing')) fail('data/procurement-profile.json: missing commercial boundary');
+if (vendorRequirements.routing?.vendorRegistrationUrl !== 'https://www.a2b.sa/vendors') fail('data/vendor-onboarding-requirements.json: vendors must route to /vendors');
+if (!complianceProfile.unverifiedOrNotPublished?.includes('latitude and longitude')) fail('data/compliance-profile.json: missing unverified coordinates boundary');
+if (!Array.isArray(rfqPreparation.rfqTypes) || rfqPreparation.rfqTypes.length < 4) fail('data/rfq-preparation.json: expected RFQ preparation types');
+if (!Array.isArray(aiVisibilityQueries.querySets) || aiVisibilityQueries.querySets.length < 4) fail('data/ai-visibility-queries.json: expected query sets');
+if (!analyticsEvents.events?.some((event) => event.name === 'mcp_tool_call')) fail('data/analytics-events.json: missing mcp_tool_call event');
+if (highIntentContentPlan.status !== 'approval_required_before_publishing_visible_pages') fail('data/high-intent-content-plan.json: high-intent pages must remain approval-gated');
+if (!highIntentContentPlan.draftPages?.every((page) => page.approvalStatus === 'draft_not_published')) fail('data/high-intent-content-plan.json: draft pages must not be marked published');
 
-const requiredTools = ['get_company_overview', 'list_services', 'match_project_scope', 'prepare_project_inquiry', 'list_service_areas', 'read_public_resource'];
+const requiredTools = ['get_company_overview', 'list_services', 'match_project_scope', 'prepare_project_inquiry', 'prepare_rfq_brief', 'list_service_areas', 'get_procurement_profile', 'read_public_resource'];
 for (const tool of requiredTools) {
   if (!JSON.stringify(agentCard).includes(tool)) fail(`.well-known/agent-card.json: missing ${tool}`);
   if (!JSON.stringify(mcp).includes(tool)) fail(`.well-known/mcp.json: missing ${tool}`);
@@ -169,7 +197,22 @@ if (!mcp.endpoint?.endsWith('/api/mcp')) fail('.well-known/mcp.json: endpoint mu
 if (!mcpServerCards.servers?.some((server) => server.url?.endsWith('/.well-known/mcp/server-card.json'))) fail('.well-known/mcp/server-cards.json: missing server card URL');
 if (!agentSkills.skills?.length) fail('.well-known/agent-skills/index.json: missing skills');
 if (openapi.openapi !== '3.1.0') fail('openapi.json: expected OpenAPI 3.1.0');
-for (const path of ['/data/company.json', '/data/services.json', '/data/capabilities.json', '/data/service-areas.json', '/data/project-inquiry-schema.json', '/data/agent-routing.json', '/api/mcp']) {
+for (const path of [
+  '/data/company.json',
+  '/data/services.json',
+  '/data/capabilities.json',
+  '/data/service-areas.json',
+  '/data/project-inquiry-schema.json',
+  '/data/agent-routing.json',
+  '/data/procurement-profile.json',
+  '/data/vendor-onboarding-requirements.json',
+  '/data/compliance-profile.json',
+  '/data/rfq-preparation.json',
+  '/data/ai-visibility-queries.json',
+  '/data/analytics-events.json',
+  '/data/high-intent-content-plan.json',
+  '/api/mcp'
+]) {
   if (!openapi.paths?.[path]) fail(`openapi.json: missing ${path}`);
 }
 
@@ -178,15 +221,31 @@ const llmsFull = await readRequired('llms-full.txt');
 const robots = await readRequired('robots.txt');
 const webmcp = await readRequired('webmcp.js');
 const mcpApi = await readRequired('api/mcp.js');
-for (const needle of ['/data/company.json', '/data/services.json', '/data/agent-routing.json', '/api/mcp', 'prepare_project_inquiry']) {
+for (const needle of [
+  '/data/company.json',
+  '/data/services.json',
+  '/data/agent-routing.json',
+  '/data/procurement-profile.json',
+  '/data/rfq-preparation.json',
+  '/api/mcp',
+  'prepare_project_inquiry',
+  'prepare_rfq_brief',
+  'get_procurement_profile'
+]) {
   requireIncludes(llms, 'llms.txt', needle, needle);
   requireIncludes(llmsFull, 'llms-full.txt', needle, needle);
 }
+requireIncludes(llms, 'llms.txt', 'must not be cited as live URLs', 'unpublished high-intent page warning');
+requireIncludes(llmsFull, 'llms-full.txt', 'must not be cited as live URLs', 'unpublished high-intent page warning');
 requireIncludes(robots, 'robots.txt', 'Disallow: /admin/', 'admin block');
 requireIncludes(robots, 'robots.txt', 'Allow: /data/', 'data allow');
 requireIncludes(webmcp, 'webmcp.js', 'prepare_project_inquiry', 'safe inquiry tool');
 requireIncludes(webmcp, 'webmcp.js', 'approvalRequiredBeforeContact', 'contact approval guard');
 requireIncludes(mcpApi, 'api/mcp.js', 'prepare_project_inquiry', 'MCP inquiry tool');
+requireIncludes(mcpApi, 'api/mcp.js', 'prepare_rfq_brief', 'MCP RFQ tool');
+requireIncludes(mcpApi, 'api/mcp.js', 'get_procurement_profile', 'MCP procurement tool');
+requireIncludes(mcpApi, 'api/mcp.js', 'X-Request-Id', 'request ID header');
+requireIncludes(mcpApi, 'api/mcp.js', 'ETag', 'resource ETag header');
 requireIncludes(mcpApi, 'api/mcp.js', 'mcp_tool_call', 'MCP analytics log');
 if (webmcp.includes('request_quote')) fail('webmcp.js: request_quote should not be exposed');
 if (JSON.stringify(agentCard).includes('request_quote')) fail('.well-known/agent-card.json: request_quote should not be exposed');

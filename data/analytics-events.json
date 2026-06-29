@@ -1,0 +1,55 @@
+{
+  "$schema": "https://www.a2b.sa/data/analytics-events.schema.json",
+  "company": "a2b Logistics",
+  "purpose": "Privacy-safe analytics event catalog for agent-readiness and AI-discoverability monitoring.",
+  "events": [
+    {
+      "name": "contact_click",
+      "source": "client",
+      "purpose": "Track public contact-link engagement.",
+      "privacy": "Does not collect personal message content."
+    },
+    {
+      "name": "form_submit_attempt",
+      "source": "client",
+      "purpose": "Track form submit attempts by form id.",
+      "privacy": "Does not collect form field values."
+    },
+    {
+      "name": "mcp_tool_call",
+      "source": "client_and_server",
+      "purpose": "Track public MCP tool usage.",
+      "privacy": "Logs tool name, route, request id, and timestamp only."
+    },
+    {
+      "name": "mcp_resource_read",
+      "source": "client_and_server",
+      "purpose": "Track public structured resource reads.",
+      "privacy": "Logs resource id and timestamp only."
+    },
+    {
+      "name": "inquiry_preparation",
+      "source": "client",
+      "purpose": "Track read-only inquiry draft preparation.",
+      "privacy": "Does not collect RFQ content or personal fields."
+    },
+    {
+      "name": "public_discovery_read",
+      "source": "server_logs",
+      "purpose": "Track reads of llms, OpenAPI, data, and well-known discovery files via Vercel/CDN logs.",
+      "privacy": "Use aggregate path and user-agent analysis. Do not store personal data."
+    }
+  ],
+  "reportingDimensions": [
+    "path",
+    "event_name",
+    "tool_name",
+    "resource_id",
+    "route",
+    "referrer",
+    "user_agent_family",
+    "country",
+    "date"
+  ],
+  "lastReviewed": "2026-06-29"
+}

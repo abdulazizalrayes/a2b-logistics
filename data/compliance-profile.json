@@ -1,0 +1,39 @@
+{
+  "$schema": "https://www.a2b.sa/data/compliance-profile.schema.json",
+  "company": "a2b Logistics Company",
+  "purpose": "Public compliance and trust profile for procurement and AI agents. This file avoids unverified claims.",
+  "verifiedPublicIdentifiers": {
+    "commercialRegistration": "1009007094",
+    "vat": "310317517800003",
+    "website": "https://www.a2b.sa",
+    "linkedin": "https://www.linkedin.com/company/helloa2bco"
+  },
+  "publishedContact": {
+    "primaryEmail": "info@a2b.sa",
+    "salesEmail": "sales@a2b.sa",
+    "phone": "+966 55 384 6446"
+  },
+  "publishedAddress": {
+    "streetAddress": "3168 Tahliyah St., Ground Floor, Offices #2",
+    "district": "Olaya District",
+    "city": "Riyadh",
+    "country": "Saudi Arabia"
+  },
+  "unverifiedOrNotPublished": [
+    "latitude and longitude",
+    "certifications",
+    "insurance details",
+    "fleet counts",
+    "pricing",
+    "availability",
+    "service-level guarantees",
+    "legal contract terms"
+  ],
+  "agentRules": [
+    "Do not invent certifications or compliance claims.",
+    "Do not infer coordinates from the address.",
+    "Do not treat public client-logo signals as active contractual references.",
+    "For procurement due diligence, request official documents directly from a2b through approved channels."
+  ],
+  "lastReviewed": "2026-06-29"
+}

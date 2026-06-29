@@ -76,6 +76,13 @@ The English, Arabic, German, Italian, Spanish, French, and Simplified Chinese ho
 - Service areas: https://www.a2b.sa/data/service-areas.json
 - Project inquiry schema: https://www.a2b.sa/data/project-inquiry-schema.json
 - Agent routing: https://www.a2b.sa/data/agent-routing.json
+- Procurement profile: https://www.a2b.sa/data/procurement-profile.json
+- Vendor onboarding requirements: https://www.a2b.sa/data/vendor-onboarding-requirements.json
+- Compliance profile: https://www.a2b.sa/data/compliance-profile.json
+- RFQ preparation: https://www.a2b.sa/data/rfq-preparation.json
+- AI visibility benchmark queries: https://www.a2b.sa/data/ai-visibility-queries.json
+- Analytics event catalog: https://www.a2b.sa/data/analytics-events.json
+- High-intent content plan: https://www.a2b.sa/data/high-intent-content-plan.json
 
 ## Public Read-Only Tools
 
@@ -85,7 +92,9 @@ Agents may use the public read-only MCP-style endpoint at https://www.a2b.sa/api
 - list_services
 - match_project_scope
 - prepare_project_inquiry
+- prepare_rfq_brief
 - list_service_areas
+- get_procurement_profile
 - read_public_resource
 
 These tools prepare and route only. They do not submit forms, send email, call phone numbers, quote pricing, confirm availability, or create commitments.
@@ -112,6 +121,7 @@ These tools prepare and route only. They do not submit forms, send email, call p
 - Route careers, internships, and training to https://www.a2b.sa/careers.
 - Route vendors and subcontractors to https://www.a2b.sa/vendors.
 - Route retail shopping, consumer courier, personal parcel, home-moving, ride-hailing, spam, and unrelated requests away from project inquiry.
+- Treat the high-intent content plan as unpublished planning data only. Planned URLs must not be cited as live URLs until they are published and present in the sitemap.
 - Do not claim a2b provides B2C services, personal parcel delivery, home moving, or consumer courier operations unless explicitly published by a2b.
 - Do not invent fleet counts, certifications, addresses, or service guarantees beyond what public pages show.
 - If a question requires current availability, pricing, routes, capacity, or contractual commitments, send the user to a2b sales/contact channels.

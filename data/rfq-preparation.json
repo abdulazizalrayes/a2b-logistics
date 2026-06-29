@@ -1,0 +1,67 @@
+{
+  "$schema": "https://www.a2b.sa/data/rfq-preparation.schema.json",
+  "company": "a2b Logistics",
+  "purpose": "Read-only RFQ preparation guide for B2B logistics buyers and procurement agents.",
+  "rfqTypes": [
+    {
+      "id": "trucking-road-freight",
+      "name": "Trucking and road freight RFQ",
+      "requiredInputs": [
+        "origin",
+        "destination",
+        "cargo description",
+        "load dimensions or weight if available",
+        "pickup and delivery timeline",
+        "one-time or recurring frequency",
+        "special handling requirements",
+        "company and contact details"
+      ]
+    },
+    {
+      "id": "warehousing",
+      "name": "Warehousing support RFQ",
+      "requiredInputs": [
+        "preferred location",
+        "storage type",
+        "estimated volume",
+        "duration",
+        "handling requirements",
+        "inbound and outbound transport needs",
+        "company and contact details"
+      ]
+    },
+    {
+      "id": "customs-clearance",
+      "name": "Customs-clearance coordination RFQ",
+      "requiredInputs": [
+        "origin country",
+        "arrival port or airport",
+        "cargo description",
+        "HS code if known",
+        "documents available",
+        "required delivery location",
+        "timeline",
+        "company and contact details"
+      ]
+    },
+    {
+      "id": "supply-chain",
+      "name": "Supply-chain logistics RFQ",
+      "requiredInputs": [
+        "business goal",
+        "locations involved",
+        "services needed",
+        "expected volume",
+        "timeline",
+        "constraints",
+        "company and contact details"
+      ]
+    }
+  ],
+  "approvalPolicy": [
+    "Preparing an RFQ draft is allowed.",
+    "Submitting an RFQ, sending email, or contacting a2b requires explicit user approval.",
+    "Agents must not promise price, capacity, lead time, legal terms, or commercial acceptance."
+  ],
+  "lastReviewed": "2026-06-29"
+}
