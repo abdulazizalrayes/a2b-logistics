@@ -55,3 +55,10 @@ The verifier checks:
 - Added repeatable reporting templates for AI visibility benchmarking and agent analytics.
 - Kept high-intent service expansion as a non-published approval package only. No new visible pages, navigation links, sitemap URLs, hreflang clusters, or layout changes were added.
 - DNS-AID/SVCB/HTTPS record completion remains excluded by owner instruction for this work package.
+
+## 2026-06-30 High-Intent Page Cancellation
+
+- Owner rejected the proposed high-intent service-page visual direction.
+- Removed the local approval preview artifact.
+- Updated `/data/high-intent-content-plan.json` from pending approval to `cancelled_by_owner` with no draft page targets.
+- Updated agent guidance so cancelled slugs must not be cited as live, planned, approved, pending, or future service pages.

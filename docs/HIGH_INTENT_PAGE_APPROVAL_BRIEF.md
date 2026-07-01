@@ -1,19 +1,22 @@
-# High-Intent Page Approval Brief
+# High-Intent Page Cancellation Record
 
-Date: 2026-06-29
+Date: 2026-06-30
 Company: a2b only
 
-## Purpose
+## Decision
 
-Prepare advanced SEO/AEO/GEO expansion pages without publishing visible website changes before owner approval.
+Cancelled by owner after reviewing the proposed approval preview.
 
-The draft page list is in `/data/high-intent-content-plan.json`.
+Reason: the proposed high-intent service page direction looked bad and should not proceed.
 
-## No-Visual-Change Rule
+## Current Status
 
-No new visible page, navigation change, sitemap addition, internal-link change, layout change, or visual template change should be published until the owner approves the page template and content direction.
+- No high-intent service pages are approved.
+- No high-intent service pages should be published from this plan.
+- No planned target URLs should be added to sitemap, navigation, hreflang, internal links, or production HTML.
+- `/data/high-intent-content-plan.json` now records the cancellation instead of a pending page list.
 
-## Draft Pages Awaiting Approval
+## Cancelled Page Slugs
 
 - `/services/flatbed-trucking-riyadh`
 - `/services/lowbed-transport-saudi-arabia`
@@ -23,42 +26,20 @@ No new visible page, navigation change, sitemap addition, internal-link change, 
 - `/services/gcc-cross-border-freight`
 - `/services/project-logistics-saudi-arabia`
 
-## Recommended Template Direction
+## Source Of Truth
 
-Use the existing service-page layout with no redesign:
+Use only the currently published service pages:
 
-- same header
-- same typography
-- same footer
-- same CTA style
-- same section style
-- same responsive behavior
+- `/services/trucking-road-freight`
+- `/services/warehousing`
+- `/services/customs-clearance`
+- `/services/supply-chain`
+- `/services/fleet-types`
 
-Only page-specific copy, title, meta description, canonical URL, JSON-LD, and FAQ content should change.
+## Future Rule
 
-## Approval Review Checklist
+Do not reopen high-intent visible page expansion unless the owner explicitly asks for a new concept. If reopened, create a new approval preview first and do not publish until owner approves the exact visual/content direction.
 
-Before publishing, owner should review:
+## Rollback If Needed
 
-- exact page list
-- page titles and descriptions
-- whether each service is genuinely offered or should be framed as coordination/support
-- no invented fleet counts, certifications, guarantees, or prices
-- no new visual design
-- no navigation addition unless approved
-- sitemap addition timing
-
-## Rollout Sequence After Approval
-
-1. Create pages from existing service-page template.
-2. Add canonical and hreflang if localized later.
-3. Add Service + FAQPage + BreadcrumbList JSON-LD.
-4. Add to sitemap.
-5. Run `npm run verify`.
-6. Deploy to Vercel.
-7. Request indexing in Search Console.
-8. Record rollout and rollback in Paperclip.
-
-## Rollback
-
-Revert the page-addition commit and redeploy previous production deployment.
+Restore the prior approval brief only if the owner asks to revisit this initiative.

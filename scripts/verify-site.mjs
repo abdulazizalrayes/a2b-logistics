@@ -105,6 +105,8 @@ for (const file of homePages) {
   const html = await readFile(join(root, file), 'utf8');
   requireHreflangs(html, file, requiredHomeHreflangs);
   requireIncludes(html, file, 'application/ld+json', 'JSON-LD');
+  requireIncludes(html, file, '"Organization"', 'Organization schema type');
+  requireIncludes(html, file, '"LocalBusiness"', 'LocalBusiness schema type');
   requireIncludes(html, file, 'FAQPage', 'FAQPage schema');
   requireIncludes(html, file, 'G-909SV0D9FM', 'GA4 measurement ID');
   extractJsonLd(html, file);
@@ -119,6 +121,8 @@ for (const prefix of servicePrefixes) {
     const file = prefix ? `${prefix}/services/${slug}/index.html` : `services/${slug}/index.html`;
     const html = await readFile(join(root, file), 'utf8');
     requireHreflangs(html, file, requiredHomeHreflangs);
+    requireIncludes(html, file, '"Organization"', 'Organization schema type');
+    requireIncludes(html, file, '"LocalBusiness"', 'LocalBusiness schema type');
     requireIncludes(html, file, 'Service', 'Service schema');
     requireIncludes(html, file, 'BreadcrumbList', 'BreadcrumbList schema');
     requireIncludes(html, file, 'G-909SV0D9FM', 'GA4 measurement ID');
@@ -137,6 +141,17 @@ for (const full of textFiles) {
 const sitemap = await readFile(join(root, 'sitemap.xml'), 'utf8');
 const sitemapUrlCount = (sitemap.match(/<loc>/g) || []).length;
 if (sitemapUrlCount < 65) fail(`sitemap.xml: expected at least 65 URLs, found ${sitemapUrlCount}`);
+for (const cancelledSlug of [
+  'flatbed-trucking-riyadh',
+  'lowbed-transport-saudi-arabia',
+  'customs-clearance-riyadh',
+  'warehousing-riyadh',
+  'port-to-site-logistics-saudi-arabia',
+  'gcc-cross-border-freight',
+  'project-logistics-saudi-arabia'
+]) {
+  if (sitemap.includes(cancelledSlug)) fail(`sitemap.xml: cancelled high-intent slug is present: ${cancelledSlug}`);
+}
 
 const analytics = await readFile(join(root, 'assets/js/analytics.js'), 'utf8');
 requireIncludes(analytics, 'assets/js/analytics.js', 'contact_click', 'contact click analytics event');
@@ -183,8 +198,8 @@ if (!complianceProfile.unverifiedOrNotPublished?.includes('latitude and longitud
 if (!Array.isArray(rfqPreparation.rfqTypes) || rfqPreparation.rfqTypes.length < 4) fail('data/rfq-preparation.json: expected RFQ preparation types');
 if (!Array.isArray(aiVisibilityQueries.querySets) || aiVisibilityQueries.querySets.length < 4) fail('data/ai-visibility-queries.json: expected query sets');
 if (!analyticsEvents.events?.some((event) => event.name === 'mcp_tool_call')) fail('data/analytics-events.json: missing mcp_tool_call event');
-if (highIntentContentPlan.status !== 'approval_required_before_publishing_visible_pages') fail('data/high-intent-content-plan.json: high-intent pages must remain approval-gated');
-if (!highIntentContentPlan.draftPages?.every((page) => page.approvalStatus === 'draft_not_published')) fail('data/high-intent-content-plan.json: draft pages must not be marked published');
+if (highIntentContentPlan.status !== 'cancelled_by_owner') fail('data/high-intent-content-plan.json: high-intent plan must remain cancelled');
+if (highIntentContentPlan.draftPages?.length) fail('data/high-intent-content-plan.json: cancelled high-intent plan must not contain draft pages');
 
 const requiredTools = ['get_company_overview', 'list_services', 'match_project_scope', 'prepare_project_inquiry', 'prepare_rfq_brief', 'list_service_areas', 'get_procurement_profile', 'read_public_resource'];
 for (const tool of requiredTools) {
@@ -235,8 +250,8 @@ for (const needle of [
   requireIncludes(llms, 'llms.txt', needle, needle);
   requireIncludes(llmsFull, 'llms-full.txt', needle, needle);
 }
-requireIncludes(llms, 'llms.txt', 'must not be cited as live URLs', 'unpublished high-intent page warning');
-requireIncludes(llmsFull, 'llms-full.txt', 'must not be cited as live URLs', 'unpublished high-intent page warning');
+requireIncludes(llms, 'llms.txt', 'cancelled', 'cancelled high-intent page warning');
+requireIncludes(llmsFull, 'llms-full.txt', 'cancelled', 'cancelled high-intent page warning');
 requireIncludes(robots, 'robots.txt', 'Disallow: /admin/', 'admin block');
 requireIncludes(robots, 'robots.txt', 'Allow: /data/', 'data allow');
 requireIncludes(webmcp, 'webmcp.js', 'prepare_project_inquiry', 'safe inquiry tool');

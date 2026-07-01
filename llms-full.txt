@@ -37,7 +37,7 @@ Do not merge this entity with unrelated A2B brands, ride-hailing, consumer couri
 - RFQ preparation guide: https://www.a2b.sa/data/rfq-preparation.json
 - AI visibility benchmark queries: https://www.a2b.sa/data/ai-visibility-queries.json
 - Analytics event catalog: https://www.a2b.sa/data/analytics-events.json
-- High-intent content plan awaiting owner approval: https://www.a2b.sa/data/high-intent-content-plan.json
+- Cancelled high-intent content plan: https://www.a2b.sa/data/high-intent-content-plan.json
 - OpenAPI: https://www.a2b.sa/openapi.json
 - MCP discovery: https://www.a2b.sa/.well-known/mcp.json
 - MCP server card: https://www.a2b.sa/.well-known/mcp/server-card.json
@@ -112,7 +112,7 @@ These tools are read-only. `prepare_project_inquiry` returns a draft and routing
 
 ## Unpublished Planning Data
 
-The high-intent content plan is an approval package, not a set of live service pages. Planned URLs must not be cited as live URLs unless they are published and included in the sitemap.
+The high-intent content plan was cancelled by owner decision on 2026-06-30. Do not cite the cancelled slugs as live, planned, approved, pending, or future service pages.
 
 ## Crawler Guidance
 

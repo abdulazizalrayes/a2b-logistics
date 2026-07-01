@@ -26,7 +26,7 @@ It is read-only by default. It can prepare project inquiries, but it does not su
 - `/data/rfq-preparation.json` - RFQ preparation inputs by logistics service type.
 - `/data/ai-visibility-queries.json` - recurring query set for search and AI answer visibility benchmarks.
 - `/data/analytics-events.json` - privacy-safe event catalog for agent and crawler reporting.
-- `/data/high-intent-content-plan.json` - approval-only plan for future visible service pages. These pages are drafts and must not be cited as live URLs until owner approval.
+- `/data/high-intent-content-plan.json` - cancellation record for rejected high-intent visible service-page expansion. Cancelled slugs must not be cited as live, planned, approved, pending, or future service pages.
 
 ## Discovery Files
 
@@ -225,4 +225,4 @@ Do not copy a2b credentials, accounts, DNS, analytics, Paperclip tasks, or socia
 
 This layer is non-visual. Rollback is to revert the commit that added these files and deploy the prior commit. No production DNS, email, or visual layout changes are part of this layer.
 
-Future high-intent service pages remain postponed until owner visual/content approval. Do not add them to navigation, sitemap, hreflang clusters, or production HTML until approved.
+The prior high-intent visible service-page expansion is cancelled by owner decision. Do not add those slugs to navigation, sitemap, hreflang clusters, internal links, or production HTML unless the owner explicitly reopens the initiative with a new approved preview.

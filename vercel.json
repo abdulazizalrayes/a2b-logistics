@@ -13,6 +13,31 @@
       ],
       "destination": "https://www.a2b.sa/$1",
       "permanent": true
+    },
+    {
+      "source": "/about-us",
+      "destination": "/#about",
+      "permanent": true
+    },
+    {
+      "source": "/cold-storage-logistics-in-saudi-arabia",
+      "destination": "/services/warehousing",
+      "permanent": true
+    },
+    {
+      "source": "/customs-clearance-services-in-saudi-arabia",
+      "destination": "/services/customs-clearance",
+      "permanent": true
+    },
+    {
+      "source": "/contract-logistics-solutions-in-saudi-arabia",
+      "destination": "/services/supply-chain",
+      "permanent": true
+    },
+    {
+      "source": "/types-of-cargo-shipments",
+      "destination": "/services/fleet-types",
+      "permanent": true
     }
   ],
   "headers": [

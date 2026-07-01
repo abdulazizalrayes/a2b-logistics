@@ -7,14 +7,14 @@
       "type": "documentation",
       "description": "a2b Logistics concise overview, services, and contact details for AI agents.",
       "url": "https://www.a2b.sa/llms.txt",
-      "sha256": "cc76a69f2f13238291680cdb91bf6e32990ecd57e753548f528916a3967a26f9"
+      "sha256": "44d21adada93cf35656a0b74857549182ae7794f4b5f901576f7b36f366e77ad"
     },
     {
       "name": "a2b-full-agent-brief",
       "type": "documentation",
       "description": "Expanded a2b Logistics agent brief with structured resources, MCP/API, crawler guidance, and routing rules.",
       "url": "https://www.a2b.sa/llms-full.txt",
-      "sha256": "ca01c34df4b4d054bb0d5a9c1e2ac4a1c96ad801ec1224c8220b299cd4d0f4bc"
+      "sha256": "68221be0a820ee7415af8a38ab03a9d768a487b6743210690b32b34033850308"
     },
     {
       "name": "a2b-company-data",
@@ -75,16 +75,16 @@
     {
       "name": "a2b-high-intent-content-plan",
       "type": "data",
-      "description": "Approval-only high-intent content plan; planned URLs are not live pages.",
+      "description": "Cancellation record for the rejected high-intent service-page expansion.",
       "url": "https://www.a2b.sa/data/high-intent-content-plan.json",
-      "sha256": "9bb4b7d5219b617bbd99a38754e166884be1c478be2d300aac023a737f2eb66f"
+      "sha256": "e49976ed30e4dca802e078edc588c6311a1dde5a9842de28528c20f1f3e31fb0"
     },
     {
       "name": "a2b-openapi",
       "type": "discovery",
       "description": "OpenAPI description for public data and read-only MCP-style tools.",
       "url": "https://www.a2b.sa/openapi.json",
-      "sha256": "b13ff6fd385775173eaf5bf0a72ad0e8ccb8cb3f6b0e1a8f5c841893200e0bf0"
+      "sha256": "79c9a267fa0bb678202894a19cffc68493bbdebbde47684d0c653df9f95639a5"
     },
     {
       "name": "a2b-mcp-discovery",

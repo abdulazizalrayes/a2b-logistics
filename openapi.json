@@ -134,8 +134,8 @@
     },
     "/data/high-intent-content-plan.json": {
       "get": {
-        "summary": "Get high-intent content plan awaiting owner approval",
-        "description": "Draft page plan only. These pages are not published or added to sitemap until owner approves the visual/template review.",
+        "summary": "Get cancelled high-intent content plan",
+        "description": "Cancellation record only. The rejected page slugs are not approved, not published, not pending, and must not be cited as live or future service pages.",
         "responses": {
           "200": {
             "description": "High-intent content plan"
