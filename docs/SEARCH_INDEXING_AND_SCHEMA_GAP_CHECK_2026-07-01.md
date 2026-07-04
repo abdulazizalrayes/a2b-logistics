@@ -55,6 +55,16 @@ Company: a2b only
 - Recheck Brave after redirects are live and crawled.
 - Recheck Google snippets after recrawl to confirm the stale old-phone snippet has disappeared.
 
+## 2026-07-04 Crawl-Lag Recheck
+
+- Public search recheck still found stale old landline text in search-result snippets/cache, especially Brave entity/FAQ surfaces.
+- Live source verification passed: `https://www.a2b.sa/` and `https://www.a2b.sa/careers` contain `M +966 55 384 6446` and do not contain the retired landline string.
+- Repository verification passed: `npm run verify` confirmed 7 homepages, 35 service pages, and 65 sitemap URLs; the old landline guard remains active in `scripts/verify-site.mjs`.
+- Legacy indexed URLs such as `https://a2b.sa/about-us/` and `https://a2b.sa/customs-clearance-services-in-saudi-arabia/` redirect through `www.a2b.sa` to current canonical destinations.
+- The live sitemap lists current canonical URLs only and does not list legacy WordPress-era slugs.
+- Submitted all 65 sitemap URLs to IndexNow again on 2026-07-04; API response was HTTP 200.
+- Conclusion: no live site/code fix is needed for the phone number. Remaining issue is external search-index cache freshness.
+
 ## Owner Decision
 
 - Owner confirmed the ISO certification claim is valid and publishable. No visible ISO cleanup is needed.
