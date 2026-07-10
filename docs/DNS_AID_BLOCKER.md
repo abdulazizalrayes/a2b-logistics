@@ -36,6 +36,38 @@ DNET's DNS editor exposes `A`, `AAAA`, `CNAME`, `TXT`, `MX`, `NS`, `PTR`, and `S
 - Created DNET support ticket `44115` at `2026-06-20 11:53:10` with title `a2b.sa DNS-AID SVCB/HTTPS records request`.
 - Requested manual addition of the required DNS-AID `SVCB` records, or equivalent `HTTPS` type 65 records, without changing nameservers, MX, A, CNAME, or existing website/email routing.
 
+## 2026-07-10 IsItAgentReady Recheck
+
+- IsItAgentReady URL checked: `https://isitagentready.com/www.a2b.sa`.
+- Overall score: `93`, Level 5 `Agent-Native`.
+- Passing categories:
+  - Discoverability: `3/4`
+  - Content: `1/1`
+  - Bot Access Control: `3/3`
+  - API, Auth, MCP & Skill Discovery: `7/7`
+- The only failed check is `DNS for AI Discovery (DNS-AID)`.
+- Checker issue text: DNS-AID TXT index found, but no valid `SVCB` / `HTTPS` discovery records were found.
+- Direct DNS verification:
+  - `TXT _index._agents.a2b.sa` resolves.
+  - `TXT _index._agents.www.a2b.sa` resolves.
+  - `SVCB`, `HTTPS`, and `TYPE65` queries for `a2b-logistics._webmcp._agents.www.a2b.sa` return no records.
+  - Authoritative nameservers remain DNET: `ns1.dnetns.com`, `ns2.dnetns.com`, `ns3.dnetns.com`.
+
+## Required DNS-AID Records
+
+Preferred record type: `SVCB`.
+
+```dns
+a2b-logistics._webmcp._agents.www.a2b.sa. 3600 IN SVCB 1 www.a2b.sa. alpn="h2" port=443 mandatory="alpn,port"
+a2b-a2a._a2a._agents.www.a2b.sa. 3600 IN SVCB 1 www.a2b.sa. alpn="a2a" port=443 mandatory="alpn,port"
+a2b-mcp._mcp._agents.www.a2b.sa. 3600 IN SVCB 1 www.a2b.sa. alpn="mcp" port=443 mandatory="alpn,port"
+a2b-logistics._webmcp._agents.a2b.sa. 3600 IN SVCB 1 www.a2b.sa. alpn="h2" port=443 mandatory="alpn,port"
+a2b-a2a._a2a._agents.a2b.sa. 3600 IN SVCB 1 www.a2b.sa. alpn="a2a" port=443 mandatory="alpn,port"
+a2b-mcp._mcp._agents.a2b.sa. 3600 IN SVCB 1 www.a2b.sa. alpn="mcp" port=443 mandatory="alpn,port"
+```
+
+If the DNS provider only exposes the HTTPS/SVCB numeric type as `TYPE65`, request equivalent type-65 records with the same owner names, priority `1`, target `www.a2b.sa.`, and parameters `alpn`, `port=443`, and `mandatory=alpn,port`.
+
 ## Fix Paths
 
 1. Ask DNET support to add the required `SVCB` or `HTTPS` DNS-AID records manually.
