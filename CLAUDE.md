@@ -94,3 +94,14 @@ If verification cannot be run, explain why and state the remaining risk.
 - Push back if the requested approach seems risky or overcomplicated.
 - Do not hide uncertainty.
 - Do not claim success without verification.
+
+## Cloud Paperclip Operations
+
+- The source of truth is the online Paperclip instance at `https://ai.eijarat.com`. There is no local Paperclip instance for this project.
+- Before acting through Paperclip, verify `/api/health` or the running version label, confirm the app is active, and review a2b agent errors and blocked work. Do not assume behavior from an older release.
+- Verified baseline on 2026-07-13: `v2026.707.0+0.git.390627b46.dirty`. Recheck the live version and official release notes after every upgrade instead of treating this baseline as permanent.
+- Confirm the live OpenCode model catalog before creating or amending agents. Use `opencode/big-pickle` for important/main work, strategy, critical engineering, deployment, recovery-sensitive work, and final review. Use `opencode/deepseek-v4-flash-free` for cheaper/helper work, routine research, summaries, formatting, administration, and repetitive execution. Do not use Claude.
+- After each Paperclip upgrade, audit existing a2b agents for stale adapters, obsolete or duplicated configuration keys, wrong primary/cheap model assignments, disabled skills, broken environment bindings, and stale error states. Diagnose before changing; test affected adapters after cleanup.
+- Use release capabilities when they improve execution: Work Timeline for handoffs and overlap, read-only diagnostics for blockers and branch ancestry, live heartbeat progress, dependency wake reconciliation, isolated re-issue for diverged work, task watchdogs, ask mode, company skill audits, document locks/revisions, user-scoped runtime secrets, instance-scoped environments, and heartbeat budget caps.
+- Never put plaintext secrets in instructions, prompts, logs, repositories, or task comments. Use Paperclip secret references and user-specific runtime secrets where available.
+- Keep all activity company-scoped to a2b. Do not inspect or modify another company's agents, tasks, models, credentials, environments, or instructions except read-only host-level health evidence when required.
