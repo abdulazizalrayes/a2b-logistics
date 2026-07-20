@@ -1,4 +1,4 @@
-import { readdir, readFile, stat } from 'node:fs/promises';
+import { access, readdir, readFile, stat } from 'node:fs/promises';
 import { join, relative } from 'node:path';
 
 const root = process.cwd();
@@ -39,6 +39,7 @@ const requiredAgentFiles = [
   'scripts/agent-analytics-report.mjs',
   'scripts/generate-markdown-companions.mjs',
   'scripts/validate-markdown-layer.mjs',
+  'scripts/submit-indexnow.mjs',
   'markdown-routes.mjs',
   'webmcp.js',
   'robots.txt'
@@ -84,6 +85,19 @@ function requireHreflangs(html, file, expected) {
 
 function requireIncludes(html, file, needle, label) {
   if (!html.includes(needle)) fail(`${file}: missing ${label}`);
+}
+
+async function htmlPathForUrl(url) {
+  const pathname = new URL(url).pathname;
+  if (pathname === '/') return 'index.html';
+  const clean = pathname.replace(/^\//, '').replace(/\/$/, '');
+  const candidates = clean.includes('.')
+    ? [clean]
+    : [`${clean}.html`, `${clean}/index.html`];
+  for (const candidate of candidates) {
+    if (await access(join(root, candidate)).then(() => true).catch(() => false)) return candidate;
+  }
+  return candidates[0];
 }
 
 async function readRequired(file) {
@@ -144,7 +158,15 @@ for (const full of textFiles) {
 
 const sitemap = await readFile(join(root, 'sitemap.xml'), 'utf8');
 const sitemapUrlCount = (sitemap.match(/<loc>/g) || []).length;
+const sitemapUrls = [...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map((match) => match[1]);
 if (sitemapUrlCount < 65) fail(`sitemap.xml: expected at least 65 URLs, found ${sitemapUrlCount}`);
+if (new Set(sitemapUrls).size !== sitemapUrls.length) fail('sitemap.xml: duplicate URLs are present');
+for (const url of sitemapUrls) {
+  const parsed = new URL(url);
+  if (parsed.protocol !== 'https:') fail(`sitemap.xml: non-HTTPS URL present: ${url}`);
+  if (parsed.host !== 'www.a2b.sa') fail(`sitemap.xml: non-canonical host present: ${url}`);
+  if (parsed.pathname.endsWith('.md')) fail(`sitemap.xml: Markdown sidecar must not be submitted/indexed: ${url}`);
+}
 for (const cancelledSlug of [
   'flatbed-trucking-riyadh',
   'lowbed-transport-saudi-arabia',
@@ -160,6 +182,24 @@ for (const cancelledSlug of [
 const analytics = await readFile(join(root, 'assets/js/analytics.js'), 'utf8');
 requireIncludes(analytics, 'assets/js/analytics.js', 'contact_click', 'contact click analytics event');
 requireIncludes(analytics, 'assets/js/analytics.js', 'form_submit_attempt', 'form submit analytics event');
+
+const indexNowKeyFile = 'dabfa5738883df4a66f9ad844188f7aa.txt';
+const indexNowKey = (await readRequired(indexNowKeyFile)).trim();
+if (indexNowKey !== 'dabfa5738883df4a66f9ad844188f7aa') fail(`${indexNowKeyFile}: unexpected IndexNow key`);
+for (const url of sitemapUrls) {
+  const htmlFile = await htmlPathForUrl(url);
+  const html = await readFile(join(root, htmlFile), 'utf8').catch(() => {
+    fail(`${htmlFile}: missing sitemap HTML file for ${url}`);
+    return '';
+  });
+  requireIncludes(html, htmlFile, `<meta name="indexnow-key" content="${indexNowKey}`, 'IndexNow key meta');
+}
+const vercelConfig = await parseRequiredJson('vercel.json');
+const indexNowHeaderRoutes = new Map((vercelConfig.headers || []).map((entry) => [entry.source, entry.headers || []]));
+for (const route of ['/indexnow-submit', '/indexnow-submit.html']) {
+  const header = indexNowHeaderRoutes.get(route)?.find((entry) => entry.key === 'X-Robots-Tag');
+  if (header?.value !== 'noindex, nofollow') fail(`vercel.json: ${route} must return X-Robots-Tag noindex, nofollow`);
+}
 
 for (const file of requiredAgentFiles) {
   await stat(join(root, file)).catch(() => fail(`${file}: required file is missing`));

@@ -65,6 +65,22 @@ Company: a2b only
 - Submitted all 65 sitemap URLs to IndexNow again on 2026-07-04; API response was HTTP 200.
 - Conclusion: no live site/code fix is needed for the phone number. Remaining issue is external search-index cache freshness.
 
+## 2026-07-20 IndexNow / Bing Recheck
+
+- Live IndexNow key file is reachable at `https://www.a2b.sa/dabfa5738883df4a66f9ad844188f7aa.txt`.
+- All 65 canonical sitemap HTML pages include the IndexNow key meta.
+- The current 65 canonical sitemap URLs were submitted to IndexNow using the batch API; API response was HTTP 200.
+- Bing Webmaster Tools was checked after switching to the `www.a2b.sa` property:
+  - Sitemap: `https://www.a2b.sa/sitemap.xml`
+  - Status: Success
+  - Submitted: 2026-03-13
+  - Last crawl: 2026-07-18
+  - URLs discovered: 65
+  - IndexNow list showed the 2026-07-20 14:32 self-submitted canonical URL batch.
+- Added `X-Robots-Tag: noindex, nofollow` for `/indexnow-submit` and `/indexnow-submit.html` so the operational helper page does not enter the search index.
+- Added repeatable command: `npm run indexnow:submit`.
+- Use `npm run indexnow:submit -- --dry-run` before real submissions to confirm host, key location, and sitemap URL count.
+
 ## Owner Decision
 
 - Owner confirmed the ISO certification claim is valid and publishable. No visible ISO cleanup is needed.
