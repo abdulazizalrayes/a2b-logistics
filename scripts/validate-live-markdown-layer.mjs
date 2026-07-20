@@ -22,12 +22,24 @@ function hasCanonicalLink(headers, canonical) {
 }
 
 async function request(pathname, options = {}) {
-  const response = await fetch(`${origin}${pathname}`, {
-    redirect: 'manual',
-    headers: options.headers || {},
-  });
-  const body = options.readBody ? await response.arrayBuffer() : null;
-  return { response, body };
+  let lastError;
+  for (let attempt = 1; attempt <= 3; attempt += 1) {
+    try {
+      const response = await fetch(`${origin}${pathname}`, {
+        redirect: 'manual',
+        headers: {
+          connection: 'close',
+          ...(options.headers || {}),
+        },
+      });
+      const body = options.readBody ? await response.arrayBuffer() : null;
+      return { response, body };
+    } catch (error) {
+      lastError = error;
+      if (attempt < 3) await new Promise((resolve) => setTimeout(resolve, attempt * 500));
+    }
+  }
+  throw lastError;
 }
 
 async function validateRoute(pathname, route) {
