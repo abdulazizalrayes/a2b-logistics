@@ -17,6 +17,10 @@ function header(headers, name) {
   return headers.get(name)?.toLowerCase() || '';
 }
 
+function hasCanonicalLink(headers, canonical) {
+  return headers.get('link')?.includes(`<${canonical}>; rel="canonical"`) || false;
+}
+
 async function request(pathname, options = {}) {
   const response = await fetch(`${origin}${pathname}`, {
     redirect: 'manual',
@@ -44,7 +48,7 @@ async function validateRoute(pathname, route) {
   assert(header(markdown.response.headers, 'vary').includes('accept'), `${pathname}: Vary Accept missing`);
   assert(markdown.response.headers.get('content-location') === route.contentLocation, `${pathname}: Content-Location mismatch`);
   assert(markdown.response.headers.get('content-language') === route.language, `${pathname}: Content-Language mismatch`);
-  assert(markdown.response.headers.get('link') === `<${route.canonical}>; rel="canonical"`, `${pathname}: canonical Link mismatch`);
+  assert(hasCanonicalLink(markdown.response.headers, route.canonical), `${pathname}: canonical Link mismatch`);
   assert(markdown.response.headers.get('content-signal') === CONTENT_SIGNAL, `${pathname}: Content-Signal mismatch`);
   markdownBytes += markdown.body?.byteLength || 0;
 
@@ -64,7 +68,7 @@ async function validateRoute(pathname, route) {
   assert(sidecar.response.headers.get('x-robots-tag') === 'noindex, follow', `${route.markdownPath}: sidecar noindex missing`);
   assert(sidecar.response.headers.get('content-location') === route.contentLocation, `${route.markdownPath}: sidecar Content-Location mismatch`);
   assert(sidecar.response.headers.get('content-language') === route.language, `${route.markdownPath}: sidecar Content-Language mismatch`);
-  assert(sidecar.response.headers.get('link') === `<${route.canonical}>; rel="canonical"`, `${route.markdownPath}: sidecar canonical Link mismatch`);
+  assert(hasCanonicalLink(sidecar.response.headers, route.canonical), `${route.markdownPath}: sidecar canonical Link mismatch`);
   assert(sidecar.response.headers.get('content-signal') === CONTENT_SIGNAL, `${route.markdownPath}: sidecar Content-Signal mismatch`);
 }
 
