@@ -3,8 +3,15 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "markdown:generate": "node scripts/generate-markdown-companions.mjs",
+    "markdown:check": "node scripts/generate-markdown-companions.mjs --check",
+    "markdown:validate": "node scripts/validate-markdown-layer.mjs",
+    "markdown:validate:live": "node scripts/validate-live-markdown-layer.mjs",
     "verify": "node scripts/verify-site.mjs",
     "ai:benchmark": "node scripts/ai-visibility-benchmark.mjs",
     "agent:report": "node scripts/agent-analytics-report.mjs"
+  },
+  "devDependencies": {
+    "parse5": "^8.0.1"
   }
 }

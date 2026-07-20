@@ -20,6 +20,7 @@ const requiredAgentFiles = [
   'data/ai-visibility-queries.json',
   'data/analytics-events.json',
   'data/high-intent-content-plan.json',
+  'data/markdown-companions.json',
   'llms.txt',
   'llms-full.txt',
   '.well-known/agent-card.json',
@@ -36,6 +37,9 @@ const requiredAgentFiles = [
   'api/mcp.js',
   'scripts/ai-visibility-benchmark.mjs',
   'scripts/agent-analytics-report.mjs',
+  'scripts/generate-markdown-companions.mjs',
+  'scripts/validate-markdown-layer.mjs',
+  'markdown-routes.mjs',
   'webmcp.js',
   'robots.txt'
 ];
@@ -174,6 +178,7 @@ const rfqPreparation = await parseRequiredJson('data/rfq-preparation.json');
 const aiVisibilityQueries = await parseRequiredJson('data/ai-visibility-queries.json');
 const analyticsEvents = await parseRequiredJson('data/analytics-events.json');
 const highIntentContentPlan = await parseRequiredJson('data/high-intent-content-plan.json');
+const markdownCompanions = await parseRequiredJson('data/markdown-companions.json');
 const agentCard = await parseRequiredJson('.well-known/agent-card.json');
 const mcp = await parseRequiredJson('.well-known/mcp.json');
 const mcpServerCard = await parseRequiredJson('.well-known/mcp/server-card.json');
@@ -200,6 +205,8 @@ if (!Array.isArray(aiVisibilityQueries.querySets) || aiVisibilityQueries.querySe
 if (!analyticsEvents.events?.some((event) => event.name === 'mcp_tool_call')) fail('data/analytics-events.json: missing mcp_tool_call event');
 if (highIntentContentPlan.status !== 'cancelled_by_owner') fail('data/high-intent-content-plan.json: high-intent plan must remain cancelled');
 if (highIntentContentPlan.draftPages?.length) fail('data/high-intent-content-plan.json: cancelled high-intent plan must not contain draft pages');
+if (markdownCompanions.routes?.length !== sitemapUrlCount) fail('data/markdown-companions.json: route count must match sitemap URL count');
+if (markdownCompanions.contentSignal !== 'search=yes, ai-input=yes, ai-train=no') fail('data/markdown-companions.json: wrong Content-Signal policy');
 
 const requiredTools = ['get_company_overview', 'list_services', 'match_project_scope', 'prepare_project_inquiry', 'prepare_rfq_brief', 'list_service_areas', 'get_procurement_profile', 'read_public_resource'];
 for (const tool of requiredTools) {
@@ -226,6 +233,7 @@ for (const path of [
   '/data/ai-visibility-queries.json',
   '/data/analytics-events.json',
   '/data/high-intent-content-plan.json',
+  '/data/markdown-companions.json',
   '/api/mcp'
 ]) {
   if (!openapi.paths?.[path]) fail(`openapi.json: missing ${path}`);
@@ -242,6 +250,7 @@ for (const needle of [
   '/data/agent-routing.json',
   '/data/procurement-profile.json',
   '/data/rfq-preparation.json',
+  '/data/markdown-companions.json',
   '/api/mcp',
   'prepare_project_inquiry',
   'prepare_rfq_brief',
@@ -262,6 +271,8 @@ requireIncludes(mcpApi, 'api/mcp.js', 'get_procurement_profile', 'MCP procuremen
 requireIncludes(mcpApi, 'api/mcp.js', 'X-Request-Id', 'request ID header');
 requireIncludes(mcpApi, 'api/mcp.js', 'ETag', 'resource ETag header');
 requireIncludes(mcpApi, 'api/mcp.js', 'mcp_tool_call', 'MCP analytics log');
+requireIncludes(mcpApi, 'api/mcp.js', 'markdown-companions', 'MCP Markdown companion resource');
+requireIncludes(webmcp, 'webmcp.js', 'markdown-companions', 'WebMCP Markdown companion resource');
 if (webmcp.includes('request_quote')) fail('webmcp.js: request_quote should not be exposed');
 if (JSON.stringify(agentCard).includes('request_quote')) fail('.well-known/agent-card.json: request_quote should not be exposed');
 

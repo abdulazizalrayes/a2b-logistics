@@ -147,7 +147,7 @@
     {
       "id": "read_public_resource",
       "name": "Read Public Resource",
-      "description": "Read public structured resources such as company, services, capabilities, service areas, project inquiry schema, and routing rules.",
+      "description": "Read public structured resources such as company, services, capabilities, service areas, project inquiry schema, routing rules, and the Markdown companion manifest.",
       "tags": [
         "structured-data",
         "resources",

@@ -179,7 +179,12 @@ curl -I https://www.a2b.sa/.well-known/mcp.json
 curl -I https://www.a2b.sa/data/company.json
 curl -I https://www.a2b.sa/data/procurement-profile.json
 curl -I https://www.a2b.sa/data/rfq-preparation.json
+curl -I https://www.a2b.sa/data/markdown-companions.json
+curl -I -H 'Accept: text/markdown' https://www.a2b.sa/services/warehousing
+curl -I https://www.a2b.sa/services/warehousing.md
 ```
+
+Markdown-for-agents implementation details are recorded in `docs/MARKDOWN_FOR_AGENTS_LAYER.md`.
 
 Generate local AI visibility and analytics reporting templates:
 
@@ -203,7 +208,11 @@ Reusable structure:
 - `/.well-known/api-catalog`
 - `/openapi.json`
 - `/api/mcp`
+- Markdown companions via `Accept: text/markdown`
+- `/data/markdown-companions.json`
 - `scripts/verify-site.mjs` agent-readiness checks
+- `scripts/generate-markdown-companions.mjs`
+- `scripts/validate-markdown-layer.mjs`
 - `docs/AGENT_READINESS_LAYER.md` format
 - `docs/AI_VISIBILITY_BENCHMARK.md` format
 - `docs/ANALYTICS_AI_REPORTING.md` format

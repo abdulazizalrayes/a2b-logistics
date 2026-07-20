@@ -11,6 +11,7 @@
     'service-areas': '/data/service-areas.json',
     'project-inquiry-schema': '/data/project-inquiry-schema.json',
     'agent-routing': '/data/agent-routing.json',
+    'markdown-companions': '/data/markdown-companions.json',
     llms: '/llms.txt',
     'llms-full': '/llms-full.txt',
     openapi: '/openapi.json'

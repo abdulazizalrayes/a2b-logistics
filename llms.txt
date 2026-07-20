@@ -11,6 +11,7 @@
 - OpenAPI: https://www.a2b.sa/openapi.json
 - MCP discovery: https://www.a2b.sa/.well-known/mcp.json
 - Public MCP endpoint: https://www.a2b.sa/api/mcp
+- Markdown companion manifest: https://www.a2b.sa/data/markdown-companions.json
 - Company name: a2b Logistics Company
 - Short name: a2b
 - Primary email: info@a2b.sa
@@ -111,6 +112,18 @@ These tools prepare and route only. They do not submit forms, send email, call p
 - Spanish: https://www.a2b.sa/es
 - French: https://www.a2b.sa/fr
 - Simplified Chinese: https://www.a2b.sa/zh-Hans
+
+## Markdown Representations For Agents
+
+Canonical sitemap pages support content negotiation. Send `Accept: text/markdown` to the normal canonical URL to receive the deterministic Markdown representation. Ordinary browser requests continue to receive HTML. If Markdown is unavailable or `text/markdown` has `q=0`, the site safely falls back to HTML.
+
+Direct `.md` sidecars are also available for canonical sitemap pages, for example:
+
+- https://www.a2b.sa/index.md
+- https://www.a2b.sa/fleet.md
+- https://www.a2b.sa/services/warehousing.md
+
+Direct Markdown sidecars are served for agent access with `X-Robots-Tag: noindex, follow` to avoid duplicate search indexing. Coverage is listed at https://www.a2b.sa/data/markdown-companions.json.
 
 ## AI Agent Guidance
 

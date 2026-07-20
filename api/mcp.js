@@ -18,6 +18,7 @@ const publicResources = {
   'ai-visibility-queries': 'data/ai-visibility-queries.json',
   'analytics-events': 'data/analytics-events.json',
   'high-intent-content-plan': 'data/high-intent-content-plan.json',
+  'markdown-companions': 'data/markdown-companions.json',
   'llms': 'llms.txt',
   'llms-full': 'llms-full.txt',
   'openapi': 'openapi.json'

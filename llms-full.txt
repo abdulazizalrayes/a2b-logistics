@@ -38,6 +38,7 @@ Do not merge this entity with unrelated A2B brands, ride-hailing, consumer couri
 - AI visibility benchmark queries: https://www.a2b.sa/data/ai-visibility-queries.json
 - Analytics event catalog: https://www.a2b.sa/data/analytics-events.json
 - Cancelled high-intent content plan: https://www.a2b.sa/data/high-intent-content-plan.json
+- Markdown companion manifest: https://www.a2b.sa/data/markdown-companions.json
 - OpenAPI: https://www.a2b.sa/openapi.json
 - MCP discovery: https://www.a2b.sa/.well-known/mcp.json
 - MCP server card: https://www.a2b.sa/.well-known/mcp/server-card.json
@@ -48,6 +49,20 @@ Do not merge this entity with unrelated A2B brands, ride-hailing, consumer couri
 - Auth and approval policy: https://www.a2b.sa/auth.md
 - Sitemap: https://www.a2b.sa/sitemap.xml
 - Markdown homepage: https://www.a2b.sa/index.md
+
+## Markdown Representations
+
+Every canonical, indexable sitemap page has a deterministic Markdown companion generated from the public HTML with a structured HTML parser. Agents should request Markdown by sending `Accept: text/markdown` to the normal canonical URL, for example:
+
+```http
+GET /services/warehousing HTTP/2
+Host: www.a2b.sa
+Accept: text/markdown
+```
+
+Normal browsers and clients that prefer HTML continue receiving HTML. Requests with `Accept: text/markdown;q=0` fall back to HTML. Direct `.md` sidecars are published for agent access and return `X-Robots-Tag: noindex, follow`.
+
+The route manifest is https://www.a2b.sa/data/markdown-companions.json. Markdown responses use the a2b-approved content policy: `Content-Signal: search=yes, ai-input=yes, ai-train=no`.
 
 ## Services
 

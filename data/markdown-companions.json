@@ -1,0 +1,469 @@
+{
+  "schemaVersion": "1.0.0",
+  "company": "a2b Logistics Company",
+  "canonicalDomain": "https://www.a2b.sa",
+  "contentSignal": "search=yes, ai-input=yes, ai-train=no",
+  "negotiation": {
+    "requestHeader": "Accept: text/markdown",
+    "fallback": "HTML is served when Markdown is unavailable or text/markdown has q=0.",
+    "directSidecars": "Direct .md sidecars are noindex, follow."
+  },
+  "generatedAtPolicy": "deterministic-build-time",
+  "routes": [
+    {
+      "canonical": "https://www.a2b.sa/",
+      "route": "/",
+      "markdownPath": "/index.md",
+      "contentLocation": "https://www.a2b.sa/index.md",
+      "language": "en"
+    },
+    {
+      "canonical": "https://www.a2b.sa/ar",
+      "route": "/ar",
+      "markdownPath": "/ar.md",
+      "contentLocation": "https://www.a2b.sa/ar.md",
+      "language": "ar-SA"
+    },
+    {
+      "canonical": "https://www.a2b.sa/de",
+      "route": "/de",
+      "markdownPath": "/de.md",
+      "contentLocation": "https://www.a2b.sa/de.md",
+      "language": "de"
+    },
+    {
+      "canonical": "https://www.a2b.sa/it",
+      "route": "/it",
+      "markdownPath": "/it.md",
+      "contentLocation": "https://www.a2b.sa/it.md",
+      "language": "it"
+    },
+    {
+      "canonical": "https://www.a2b.sa/es",
+      "route": "/es",
+      "markdownPath": "/es.md",
+      "contentLocation": "https://www.a2b.sa/es.md",
+      "language": "es"
+    },
+    {
+      "canonical": "https://www.a2b.sa/fr",
+      "route": "/fr",
+      "markdownPath": "/fr.md",
+      "contentLocation": "https://www.a2b.sa/fr.md",
+      "language": "fr"
+    },
+    {
+      "canonical": "https://www.a2b.sa/zh-Hans",
+      "route": "/zh-Hans",
+      "markdownPath": "/zh-Hans.md",
+      "contentLocation": "https://www.a2b.sa/zh-Hans.md",
+      "language": "zh-Hans"
+    },
+    {
+      "canonical": "https://www.a2b.sa/fleet",
+      "route": "/fleet",
+      "markdownPath": "/fleet.md",
+      "contentLocation": "https://www.a2b.sa/fleet.md",
+      "language": "en"
+    },
+    {
+      "canonical": "https://www.a2b.sa/ar/fleet",
+      "route": "/ar/fleet",
+      "markdownPath": "/ar/fleet.md",
+      "contentLocation": "https://www.a2b.sa/ar/fleet.md",
+      "language": "ar-SA"
+    },
+    {
+      "canonical": "https://www.a2b.sa/de/fleet",
+      "route": "/de/fleet",
+      "markdownPath": "/de/fleet.md",
+      "contentLocation": "https://www.a2b.sa/de/fleet.md",
+      "language": "de"
+    },
+    {
+      "canonical": "https://www.a2b.sa/it/fleet",
+      "route": "/it/fleet",
+      "markdownPath": "/it/fleet.md",
+      "contentLocation": "https://www.a2b.sa/it/fleet.md",
+      "language": "it"
+    },
+    {
+      "canonical": "https://www.a2b.sa/es/fleet",
+      "route": "/es/fleet",
+      "markdownPath": "/es/fleet.md",
+      "contentLocation": "https://www.a2b.sa/es/fleet.md",
+      "language": "es"
+    },
+    {
+      "canonical": "https://www.a2b.sa/fr/fleet",
+      "route": "/fr/fleet",
+      "markdownPath": "/fr/fleet.md",
+      "contentLocation": "https://www.a2b.sa/fr/fleet.md",
+      "language": "fr"
+    },
+    {
+      "canonical": "https://www.a2b.sa/zh-Hans/fleet",
+      "route": "/zh-Hans/fleet",
+      "markdownPath": "/zh-Hans/fleet.md",
+      "contentLocation": "https://www.a2b.sa/zh-Hans/fleet.md",
+      "language": "zh-Hans"
+    },
+    {
+      "canonical": "https://www.a2b.sa/careers",
+      "route": "/careers",
+      "markdownPath": "/careers.md",
+      "contentLocation": "https://www.a2b.sa/careers.md",
+      "language": "en"
+    },
+    {
+      "canonical": "https://www.a2b.sa/ar/careers",
+      "route": "/ar/careers",
+      "markdownPath": "/ar/careers.md",
+      "contentLocation": "https://www.a2b.sa/ar/careers.md",
+      "language": "ar-SA"
+    },
+    {
+      "canonical": "https://www.a2b.sa/de/careers",
+      "route": "/de/careers",
+      "markdownPath": "/de/careers.md",
+      "contentLocation": "https://www.a2b.sa/de/careers.md",
+      "language": "de"
+    },
+    {
+      "canonical": "https://www.a2b.sa/it/careers",
+      "route": "/it/careers",
+      "markdownPath": "/it/careers.md",
+      "contentLocation": "https://www.a2b.sa/it/careers.md",
+      "language": "it"
+    },
+    {
+      "canonical": "https://www.a2b.sa/es/careers",
+      "route": "/es/careers",
+      "markdownPath": "/es/careers.md",
+      "contentLocation": "https://www.a2b.sa/es/careers.md",
+      "language": "es"
+    },
+    {
+      "canonical": "https://www.a2b.sa/fr/careers",
+      "route": "/fr/careers",
+      "markdownPath": "/fr/careers.md",
+      "contentLocation": "https://www.a2b.sa/fr/careers.md",
+      "language": "fr"
+    },
+    {
+      "canonical": "https://www.a2b.sa/zh-Hans/careers",
+      "route": "/zh-Hans/careers",
+      "markdownPath": "/zh-Hans/careers.md",
+      "contentLocation": "https://www.a2b.sa/zh-Hans/careers.md",
+      "language": "zh-Hans"
+    },
+    {
+      "canonical": "https://www.a2b.sa/vendors",
+      "route": "/vendors",
+      "markdownPath": "/vendors.md",
+      "contentLocation": "https://www.a2b.sa/vendors.md",
+      "language": "en"
+    },
+    {
+      "canonical": "https://www.a2b.sa/ar/vendors",
+      "route": "/ar/vendors",
+      "markdownPath": "/ar/vendors.md",
+      "contentLocation": "https://www.a2b.sa/ar/vendors.md",
+      "language": "ar-SA"
+    },
+    {
+      "canonical": "https://www.a2b.sa/de/vendors",
+      "route": "/de/vendors",
+      "markdownPath": "/de/vendors.md",
+      "contentLocation": "https://www.a2b.sa/de/vendors.md",
+      "language": "de"
+    },
+    {
+      "canonical": "https://www.a2b.sa/it/vendors",
+      "route": "/it/vendors",
+      "markdownPath": "/it/vendors.md",
+      "contentLocation": "https://www.a2b.sa/it/vendors.md",
+      "language": "it"
+    },
+    {
+      "canonical": "https://www.a2b.sa/es/vendors",
+      "route": "/es/vendors",
+      "markdownPath": "/es/vendors.md",
+      "contentLocation": "https://www.a2b.sa/es/vendors.md",
+      "language": "es"
+    },
+    {
+      "canonical": "https://www.a2b.sa/fr/vendors",
+      "route": "/fr/vendors",
+      "markdownPath": "/fr/vendors.md",
+      "contentLocation": "https://www.a2b.sa/fr/vendors.md",
+      "language": "fr"
+    },
+    {
+      "canonical": "https://www.a2b.sa/zh-Hans/vendors",
+      "route": "/zh-Hans/vendors",
+      "markdownPath": "/zh-Hans/vendors.md",
+      "contentLocation": "https://www.a2b.sa/zh-Hans/vendors.md",
+      "language": "zh-Hans"
+    },
+    {
+      "canonical": "https://www.a2b.sa/privacy-policy",
+      "route": "/privacy-policy",
+      "markdownPath": "/privacy-policy.md",
+      "contentLocation": "https://www.a2b.sa/privacy-policy.md",
+      "language": "en"
+    },
+    {
+      "canonical": "https://www.a2b.sa/terms-and-conditions",
+      "route": "/terms-and-conditions",
+      "markdownPath": "/terms-and-conditions.md",
+      "contentLocation": "https://www.a2b.sa/terms-and-conditions.md",
+      "language": "en"
+    },
+    {
+      "canonical": "https://www.a2b.sa/services/trucking-road-freight",
+      "route": "/services/trucking-road-freight",
+      "markdownPath": "/services/trucking-road-freight.md",
+      "contentLocation": "https://www.a2b.sa/services/trucking-road-freight.md",
+      "language": "en"
+    },
+    {
+      "canonical": "https://www.a2b.sa/ar/services/trucking-road-freight",
+      "route": "/ar/services/trucking-road-freight",
+      "markdownPath": "/ar/services/trucking-road-freight.md",
+      "contentLocation": "https://www.a2b.sa/ar/services/trucking-road-freight.md",
+      "language": "ar-SA"
+    },
+    {
+      "canonical": "https://www.a2b.sa/de/services/trucking-road-freight",
+      "route": "/de/services/trucking-road-freight",
+      "markdownPath": "/de/services/trucking-road-freight.md",
+      "contentLocation": "https://www.a2b.sa/de/services/trucking-road-freight.md",
+      "language": "de"
+    },
+    {
+      "canonical": "https://www.a2b.sa/it/services/trucking-road-freight",
+      "route": "/it/services/trucking-road-freight",
+      "markdownPath": "/it/services/trucking-road-freight.md",
+      "contentLocation": "https://www.a2b.sa/it/services/trucking-road-freight.md",
+      "language": "it"
+    },
+    {
+      "canonical": "https://www.a2b.sa/es/services/trucking-road-freight",
+      "route": "/es/services/trucking-road-freight",
+      "markdownPath": "/es/services/trucking-road-freight.md",
+      "contentLocation": "https://www.a2b.sa/es/services/trucking-road-freight.md",
+      "language": "es"
+    },
+    {
+      "canonical": "https://www.a2b.sa/fr/services/trucking-road-freight",
+      "route": "/fr/services/trucking-road-freight",
+      "markdownPath": "/fr/services/trucking-road-freight.md",
+      "contentLocation": "https://www.a2b.sa/fr/services/trucking-road-freight.md",
+      "language": "fr"
+    },
+    {
+      "canonical": "https://www.a2b.sa/zh-Hans/services/trucking-road-freight",
+      "route": "/zh-Hans/services/trucking-road-freight",
+      "markdownPath": "/zh-Hans/services/trucking-road-freight.md",
+      "contentLocation": "https://www.a2b.sa/zh-Hans/services/trucking-road-freight.md",
+      "language": "zh-Hans"
+    },
+    {
+      "canonical": "https://www.a2b.sa/services/warehousing",
+      "route": "/services/warehousing",
+      "markdownPath": "/services/warehousing.md",
+      "contentLocation": "https://www.a2b.sa/services/warehousing.md",
+      "language": "en"
+    },
+    {
+      "canonical": "https://www.a2b.sa/ar/services/warehousing",
+      "route": "/ar/services/warehousing",
+      "markdownPath": "/ar/services/warehousing.md",
+      "contentLocation": "https://www.a2b.sa/ar/services/warehousing.md",
+      "language": "ar-SA"
+    },
+    {
+      "canonical": "https://www.a2b.sa/de/services/warehousing",
+      "route": "/de/services/warehousing",
+      "markdownPath": "/de/services/warehousing.md",
+      "contentLocation": "https://www.a2b.sa/de/services/warehousing.md",
+      "language": "de"
+    },
+    {
+      "canonical": "https://www.a2b.sa/it/services/warehousing",
+      "route": "/it/services/warehousing",
+      "markdownPath": "/it/services/warehousing.md",
+      "contentLocation": "https://www.a2b.sa/it/services/warehousing.md",
+      "language": "it"
+    },
+    {
+      "canonical": "https://www.a2b.sa/es/services/warehousing",
+      "route": "/es/services/warehousing",
+      "markdownPath": "/es/services/warehousing.md",
+      "contentLocation": "https://www.a2b.sa/es/services/warehousing.md",
+      "language": "es"
+    },
+    {
+      "canonical": "https://www.a2b.sa/fr/services/warehousing",
+      "route": "/fr/services/warehousing",
+      "markdownPath": "/fr/services/warehousing.md",
+      "contentLocation": "https://www.a2b.sa/fr/services/warehousing.md",
+      "language": "fr"
+    },
+    {
+      "canonical": "https://www.a2b.sa/zh-Hans/services/warehousing",
+      "route": "/zh-Hans/services/warehousing",
+      "markdownPath": "/zh-Hans/services/warehousing.md",
+      "contentLocation": "https://www.a2b.sa/zh-Hans/services/warehousing.md",
+      "language": "zh-Hans"
+    },
+    {
+      "canonical": "https://www.a2b.sa/services/customs-clearance",
+      "route": "/services/customs-clearance",
+      "markdownPath": "/services/customs-clearance.md",
+      "contentLocation": "https://www.a2b.sa/services/customs-clearance.md",
+      "language": "en"
+    },
+    {
+      "canonical": "https://www.a2b.sa/ar/services/customs-clearance",
+      "route": "/ar/services/customs-clearance",
+      "markdownPath": "/ar/services/customs-clearance.md",
+      "contentLocation": "https://www.a2b.sa/ar/services/customs-clearance.md",
+      "language": "ar-SA"
+    },
+    {
+      "canonical": "https://www.a2b.sa/de/services/customs-clearance",
+      "route": "/de/services/customs-clearance",
+      "markdownPath": "/de/services/customs-clearance.md",
+      "contentLocation": "https://www.a2b.sa/de/services/customs-clearance.md",
+      "language": "de"
+    },
+    {
+      "canonical": "https://www.a2b.sa/it/services/customs-clearance",
+      "route": "/it/services/customs-clearance",
+      "markdownPath": "/it/services/customs-clearance.md",
+      "contentLocation": "https://www.a2b.sa/it/services/customs-clearance.md",
+      "language": "it"
+    },
+    {
+      "canonical": "https://www.a2b.sa/es/services/customs-clearance",
+      "route": "/es/services/customs-clearance",
+      "markdownPath": "/es/services/customs-clearance.md",
+      "contentLocation": "https://www.a2b.sa/es/services/customs-clearance.md",
+      "language": "es"
+    },
+    {
+      "canonical": "https://www.a2b.sa/fr/services/customs-clearance",
+      "route": "/fr/services/customs-clearance",
+      "markdownPath": "/fr/services/customs-clearance.md",
+      "contentLocation": "https://www.a2b.sa/fr/services/customs-clearance.md",
+      "language": "fr"
+    },
+    {
+      "canonical": "https://www.a2b.sa/zh-Hans/services/customs-clearance",
+      "route": "/zh-Hans/services/customs-clearance",
+      "markdownPath": "/zh-Hans/services/customs-clearance.md",
+      "contentLocation": "https://www.a2b.sa/zh-Hans/services/customs-clearance.md",
+      "language": "zh-Hans"
+    },
+    {
+      "canonical": "https://www.a2b.sa/services/supply-chain",
+      "route": "/services/supply-chain",
+      "markdownPath": "/services/supply-chain.md",
+      "contentLocation": "https://www.a2b.sa/services/supply-chain.md",
+      "language": "en"
+    },
+    {
+      "canonical": "https://www.a2b.sa/ar/services/supply-chain",
+      "route": "/ar/services/supply-chain",
+      "markdownPath": "/ar/services/supply-chain.md",
+      "contentLocation": "https://www.a2b.sa/ar/services/supply-chain.md",
+      "language": "ar-SA"
+    },
+    {
+      "canonical": "https://www.a2b.sa/de/services/supply-chain",
+      "route": "/de/services/supply-chain",
+      "markdownPath": "/de/services/supply-chain.md",
+      "contentLocation": "https://www.a2b.sa/de/services/supply-chain.md",
+      "language": "de"
+    },
+    {
+      "canonical": "https://www.a2b.sa/it/services/supply-chain",
+      "route": "/it/services/supply-chain",
+      "markdownPath": "/it/services/supply-chain.md",
+      "contentLocation": "https://www.a2b.sa/it/services/supply-chain.md",
+      "language": "it"
+    },
+    {
+      "canonical": "https://www.a2b.sa/es/services/supply-chain",
+      "route": "/es/services/supply-chain",
+      "markdownPath": "/es/services/supply-chain.md",
+      "contentLocation": "https://www.a2b.sa/es/services/supply-chain.md",
+      "language": "es"
+    },
+    {
+      "canonical": "https://www.a2b.sa/fr/services/supply-chain",
+      "route": "/fr/services/supply-chain",
+      "markdownPath": "/fr/services/supply-chain.md",
+      "contentLocation": "https://www.a2b.sa/fr/services/supply-chain.md",
+      "language": "fr"
+    },
+    {
+      "canonical": "https://www.a2b.sa/zh-Hans/services/supply-chain",
+      "route": "/zh-Hans/services/supply-chain",
+      "markdownPath": "/zh-Hans/services/supply-chain.md",
+      "contentLocation": "https://www.a2b.sa/zh-Hans/services/supply-chain.md",
+      "language": "zh-Hans"
+    },
+    {
+      "canonical": "https://www.a2b.sa/services/fleet-types",
+      "route": "/services/fleet-types",
+      "markdownPath": "/services/fleet-types.md",
+      "contentLocation": "https://www.a2b.sa/services/fleet-types.md",
+      "language": "en"
+    },
+    {
+      "canonical": "https://www.a2b.sa/ar/services/fleet-types",
+      "route": "/ar/services/fleet-types",
+      "markdownPath": "/ar/services/fleet-types.md",
+      "contentLocation": "https://www.a2b.sa/ar/services/fleet-types.md",
+      "language": "ar-SA"
+    },
+    {
+      "canonical": "https://www.a2b.sa/de/services/fleet-types",
+      "route": "/de/services/fleet-types",
+      "markdownPath": "/de/services/fleet-types.md",
+      "contentLocation": "https://www.a2b.sa/de/services/fleet-types.md",
+      "language": "de"
+    },
+    {
+      "canonical": "https://www.a2b.sa/it/services/fleet-types",
+      "route": "/it/services/fleet-types",
+      "markdownPath": "/it/services/fleet-types.md",
+      "contentLocation": "https://www.a2b.sa/it/services/fleet-types.md",
+      "language": "it"
+    },
+    {
+      "canonical": "https://www.a2b.sa/es/services/fleet-types",
+      "route": "/es/services/fleet-types",
+      "markdownPath": "/es/services/fleet-types.md",
+      "contentLocation": "https://www.a2b.sa/es/services/fleet-types.md",
+      "language": "es"
+    },
+    {
+      "canonical": "https://www.a2b.sa/fr/services/fleet-types",
+      "route": "/fr/services/fleet-types",
+      "markdownPath": "/fr/services/fleet-types.md",
+      "contentLocation": "https://www.a2b.sa/fr/services/fleet-types.md",
+      "language": "fr"
+    },
+    {
+      "canonical": "https://www.a2b.sa/zh-Hans/services/fleet-types",
+      "route": "/zh-Hans/services/fleet-types",
+      "markdownPath": "/zh-Hans/services/fleet-types.md",
+      "contentLocation": "https://www.a2b.sa/zh-Hans/services/fleet-types.md",
+      "language": "zh-Hans"
+    }
+  ]
+}

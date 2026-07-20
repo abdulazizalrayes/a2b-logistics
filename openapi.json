@@ -143,6 +143,17 @@
         }
       }
     },
+    "/data/markdown-companions.json": {
+      "get": {
+        "summary": "Get Markdown companion coverage manifest",
+        "description": "Lists canonical sitemap pages that support Accept: text/markdown negotiation and direct noindex Markdown sidecars.",
+        "responses": {
+          "200": {
+            "description": "Markdown companion route manifest"
+          }
+        }
+      }
+    },
     "/api/mcp": {
       "post": {
         "summary": "Call public read-only MCP-style tools",

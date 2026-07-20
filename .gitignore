@@ -1,1 +1,4 @@
 .vercel
+node_modules/
+.markdown/
+reports/markdown-layer-*.png
