@@ -208,6 +208,24 @@
       ]
     },
     {
+      "source": "/indexnow-submit",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        }
+      ]
+    },
+    {
+      "source": "/indexnow-submit.html",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        }
+      ]
+    },
+    {
       "source": "/.well-known/http-message-signatures-directory",
       "headers": [
         {
