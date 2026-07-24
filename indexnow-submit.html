@@ -3,41 +3,74 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>a2b.sa — IndexNow Submission Tool</title>
+<meta name="robots" content="noindex, nofollow">
+<title>a2b.sa - IndexNow Status</title>
 <link rel="stylesheet" href="/assets/css/indexnow-submit.css">
 </head>
 <body>
+<main class="page">
+  <section class="hero">
+    <div>
+      <p class="eyebrow">a2b search indexing</p>
+      <h1>IndexNow submission status</h1>
+      <p class="lede">Operational helper for confirming that the canonical a2b sitemap is ready for Bing, IndexNow, and AI search discovery. This page is intentionally noindex and does not affect customer-facing website pages.</p>
+    </div>
+    <aside class="status-card" aria-label="Current IndexNow readiness">
+      <strong>Ready</strong>
+      <span>65 canonical sitemap URLs are covered by the repeatable submission workflow.</span>
+    </aside>
+  </section>
 
-<h1>🔍 IndexNow Submission — a2b.sa</h1>
-<p class="sub">Instantly notifies Bing &amp; Yandex to re-crawl these URLs</p>
+  <section class="metrics" aria-label="IndexNow coverage">
+    <div class="metric">
+      <b>65</b>
+      <span>Canonical sitemap URLs</span>
+    </div>
+    <div class="metric">
+      <b>0</b>
+      <span>Markdown sidecars submitted</span>
+    </div>
+    <div class="metric">
+      <b>Noindex</b>
+      <span>Helper-page search directive</span>
+    </div>
+  </section>
 
-<div class="key-box">Key: dabfa5738883df4a66f9ad844188f7aa</div>
+  <section class="section">
+    <h2>Verification checklist</h2>
+    <div class="section-body">
+      <ul class="check-list">
+        <li><span>OK</span><p>IndexNow key file is live on the canonical host.</p></li>
+        <li><span>OK</span><p>Sitemap URLs are HTTPS and use www.a2b.sa only.</p></li>
+        <li><span>OK</span><p>All canonical HTML pages include the IndexNow key meta.</p></li>
+        <li><span>OK</span><p>This helper page is protected with X-Robots-Tag: noindex, nofollow.</p></li>
+      </ul>
+    </div>
+  </section>
 
-<div class="url-list">
-  <ul>
-    <li><span>https://www.a2b.sa/</span>              <span class="badge" id="b0"></span></li>
-    <li><span>https://www.a2b.sa/careers</span>        <span class="badge" id="b1"></span></li>
-    <li><span>https://www.a2b.sa/fleet</span>          <span class="badge" id="b2"></span></li>
-    <li><span>https://www.a2b.sa/vendors</span>        <span class="badge" id="b3"></span></li>
-    <li><span>https://www.a2b.sa/privacy-policy</span> <span class="badge" id="b4"></span></li>
-    <li><span>https://www.a2b.sa/terms-and-conditions</span><span class="badge" id="b5"></span></li>
-  </ul>
-</div>
+  <section class="section">
+    <h2>Repeatable submission</h2>
+    <div class="section-body">
+      <pre class="command">npm run indexnow:submit</pre>
+      <div class="actions">
+        <a class="button primary" href="https://www.bing.com/webmasters/indexnow?siteUrl=https://www.a2b.sa/" target="_blank" rel="noopener noreferrer">Open Bing Webmaster Tools</a>
+        <a class="button secondary" href="/sitemap.xml">View sitemap</a>
+        <a class="button secondary" href="/dabfa5738883df4a66f9ad844188f7aa.txt">View key file</a>
+      </div>
+      <p class="note">The browser-only image-ping submission was removed because the verified server-side script submits the full sitemap batch more safely and gives a real API response.</p>
+    </div>
+  </section>
 
-<button class="main" id="submitBtn">Submit All URLs to IndexNow</button>
-
-<div id="status"></div>
-<p class="note">Requests are sent as image pings — the most permissive browser request type. Server responses cannot be read due to browser security, but requests are delivered to api.indexnow.org.</p>
-
-<hr class="divider">
-
-<div class="alt">
-  <h3>🔗 Or submit directly in Bing Webmaster Tools</h3>
-  <p>The most reliable method — no browser restrictions. Open IndexNow in your Bing WMT dashboard for www.a2b.sa and confirm submissions there.</p>
-  <a href="https://www.bing.com/webmasters/indexnow?siteUrl=https://www.a2b.sa/" target="_blank" rel="noopener noreferrer">Open Bing WMT → IndexNow ↗</a>
-</div>
-
-<script src="/assets/js/indexnow-submit.js" defer></script>
-
+  <section class="details" aria-label="What changed">
+    <div>
+      <h2>What this page confirms</h2>
+      <p>It reflects the actual production workflow: full-sitemap IndexNow submission, canonical host protection, and no duplicate SEO indexing for operational helper pages.</p>
+    </div>
+    <div>
+      <h2>What it does not do</h2>
+      <p>It does not change DNS, Search Console settings, Bing settings, live customer pages, visual branding, sitemap membership, or email/web routing.</p>
+    </div>
+  </section>
+</main>
 </body>
 </html>

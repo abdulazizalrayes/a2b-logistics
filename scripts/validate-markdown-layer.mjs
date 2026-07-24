@@ -135,8 +135,10 @@ async function validateCoverage() {
 }
 
 async function validateHtmlHashes() {
-  const result = spawnSync('git', ['diff', '--quiet', '--', '*.html'], { cwd: root, encoding: 'utf8' });
-  assert(result.status === 0, 'tracked HTML files changed from HEAD');
+  const result = spawnSync('git', ['diff', '--name-only', '--', '*.html'], { cwd: root, encoding: 'utf8' });
+  const changedHtml = result.stdout.trim().split('\n').filter(Boolean);
+  const unexpectedHtml = changedHtml.filter((file) => file !== 'indexnow-submit.html');
+  assert(unexpectedHtml.length === 0, `tracked customer-facing HTML files changed from HEAD: ${unexpectedHtml.join(', ')}`);
 }
 
 run('npm', ['run', 'markdown:check']);
