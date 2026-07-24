@@ -4,6 +4,7 @@ const origin = process.argv[2] || 'https://www.a2b.sa';
 const errors = [];
 let htmlBytes = 0;
 let markdownBytes = 0;
+const REQUEST_TIMEOUT_MS = 10000;
 
 function fail(message) {
   errors.push(message);
@@ -24,9 +25,12 @@ function hasCanonicalLink(headers, canonical) {
 async function request(pathname, options = {}) {
   let lastError;
   for (let attempt = 1; attempt <= 3; attempt += 1) {
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), REQUEST_TIMEOUT_MS);
     try {
       const response = await fetch(`${origin}${pathname}`, {
         redirect: 'manual',
+        signal: controller.signal,
         headers: {
           connection: 'close',
           ...(options.headers || {}),
@@ -37,6 +41,8 @@ async function request(pathname, options = {}) {
     } catch (error) {
       lastError = error;
       if (attempt < 3) await new Promise((resolve) => setTimeout(resolve, attempt * 500));
+    } finally {
+      clearTimeout(timeout);
     }
   }
   throw lastError;
