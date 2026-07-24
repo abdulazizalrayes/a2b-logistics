@@ -3,7 +3,9 @@ title: "أسطول النقل الثقيل والشاحنات والمقطورا
 description: "تشغل a2b Logistics أكثر من 948 مركبة في السعودية، تشمل السطحات واللوبد والشاحنات المبردة والصهاريج وشاحنات الرافعة، مع تغطية كاملة منذ 1994."
 canonical: "https://www.a2b.sa/ar/fleet"
 language: "ar-SA"
+page_type: "fleet"
 source_html: "ar/fleet/index.html"
+markdown_profile_version: "1.1.0"
 content_signal: "search=yes, ai-input=yes, ai-train=no"
 robots: "noindex, follow"
 ---
@@ -12,9 +14,28 @@ robots: "noindex, follow"
 
 > تشغل a2b Logistics أكثر من 948 مركبة في السعودية، تشمل السطحات واللوبد والشاحنات المبردة والصهاريج وشاحنات الرافعة، مع تغطية كاملة منذ 1994.
 
-Canonical: https://www.a2b.sa/ar/fleet
+## Agent Metadata
 
-Language: ar-SA
+- Canonical URL: https://www.a2b.sa/ar/fleet
+- Language: ar-SA
+- Page type: fleet
+- Source HTML: ar/fleet/index.html
+- Markdown profile: 1.1.0
+- Content-Signal: search=yes, ai-input=yes, ai-train=no
+- Search indexing: canonical HTML is indexable; direct Markdown sidecar is noindex, follow.
+- Preferred agent access: send `Accept: text/markdown` to the canonical URL.
+
+## Alternate Language Pages
+
+- en: https://www.a2b.sa/fleet
+- ar: https://www.a2b.sa/ar/fleet
+- ar-SA: https://www.a2b.sa/ar/fleet
+- de: https://www.a2b.sa/de/fleet
+- it: https://www.a2b.sa/it/fleet
+- es: https://www.a2b.sa/es/fleet
+- fr: https://www.a2b.sa/fr/fleet
+- zh-Hans: https://www.a2b.sa/zh-Hans/fleet
+- x-default: https://www.a2b.sa/fleet
 
 ## Main Content
 
@@ -131,6 +152,10 @@ Language: ar-SA
 أخبرنا بنوع الشحنة والمسار والجدول الزمني، وسنؤكد التوفر بسرعة.
 
 [تواصل معنا](https://www.a2b.sa/ar#contact)
+
+## Extracted Public Links
+
+- [تواصل معنا](https://www.a2b.sa/ar#contact)
 
 ## Public Structured Data
 

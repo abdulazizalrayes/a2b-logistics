@@ -3,7 +3,9 @@ title: "Warehousing Support Saudi Arabia | a2b Logistics"
 description: "B2B warehousing coordination for companies that need storage, staging, and logistics support connected to road freight operations in Saudi Arabia."
 canonical: "https://www.a2b.sa/services/warehousing"
 language: "en"
+page_type: "service"
 source_html: "services/warehousing/index.html"
+markdown_profile_version: "1.1.0"
 content_signal: "search=yes, ai-input=yes, ai-train=no"
 robots: "noindex, follow"
 ---
@@ -12,9 +14,28 @@ robots: "noindex, follow"
 
 > B2B warehousing coordination for companies that need storage, staging, and logistics support connected to road freight operations in Saudi Arabia.
 
-Canonical: https://www.a2b.sa/services/warehousing
+## Agent Metadata
 
-Language: en
+- Canonical URL: https://www.a2b.sa/services/warehousing
+- Language: en
+- Page type: service
+- Source HTML: services/warehousing/index.html
+- Markdown profile: 1.1.0
+- Content-Signal: search=yes, ai-input=yes, ai-train=no
+- Search indexing: canonical HTML is indexable; direct Markdown sidecar is noindex, follow.
+- Preferred agent access: send `Accept: text/markdown` to the canonical URL.
+
+## Alternate Language Pages
+
+- en: https://www.a2b.sa/services/warehousing
+- ar: https://www.a2b.sa/ar/services/warehousing
+- ar-SA: https://www.a2b.sa/ar/services/warehousing
+- de: https://www.a2b.sa/de/services/warehousing
+- it: https://www.a2b.sa/it/services/warehousing
+- es: https://www.a2b.sa/es/services/warehousing
+- fr: https://www.a2b.sa/fr/services/warehousing
+- zh-Hans: https://www.a2b.sa/zh-Hans/services/warehousing
+- x-default: https://www.a2b.sa/services/warehousing
 
 ## Main Content
 
@@ -74,6 +95,17 @@ Related Services
 Share your storage, staging, dispatch, and route requirements. The a2b team will route your request to the right contact.
 
 [Get in Touch](https://www.a2b.sa/#contact)
+
+## Extracted Public Links
+
+- [Request Support](https://www.a2b.sa/#contact)
+- [View Fleet](https://www.a2b.sa/fleet)
+- [Trucking and road freight](https://www.a2b.sa/services/trucking-road-freight)
+- [Warehousing support](https://www.a2b.sa/services/warehousing)
+- [Customs-clearance coordination](https://www.a2b.sa/services/customs-clearance)
+- [Supply-chain logistics support](https://www.a2b.sa/services/supply-chain)
+- [Fleet types and capacity](https://www.a2b.sa/services/fleet-types)
+- [Get in Touch](https://www.a2b.sa/#contact)
 
 ## Public Structured Data
 

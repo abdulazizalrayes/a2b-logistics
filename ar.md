@@ -3,7 +3,9 @@ title: "a2b Logistics | شريكك اللوجستي في المملكة العر
 description: "توفر a2b Logistics خدمات النقل بالشاحنات، ودعم التخزين، وتنسيق التخليص الجمركي، وحلول سلسلة الإمداد في جميع أنحاء المملكة العربية السعودية."
 canonical: "https://www.a2b.sa/ar"
 language: "ar-SA"
+page_type: "localized_homepage"
 source_html: "ar/index.html"
+markdown_profile_version: "1.1.0"
 content_signal: "search=yes, ai-input=yes, ai-train=no"
 robots: "noindex, follow"
 ---
@@ -12,9 +14,28 @@ robots: "noindex, follow"
 
 > توفر a2b Logistics خدمات النقل بالشاحنات، ودعم التخزين، وتنسيق التخليص الجمركي، وحلول سلسلة الإمداد في جميع أنحاء المملكة العربية السعودية.
 
-Canonical: https://www.a2b.sa/ar
+## Agent Metadata
 
-Language: ar-SA
+- Canonical URL: https://www.a2b.sa/ar
+- Language: ar-SA
+- Page type: localized_homepage
+- Source HTML: ar/index.html
+- Markdown profile: 1.1.0
+- Content-Signal: search=yes, ai-input=yes, ai-train=no
+- Search indexing: canonical HTML is indexable; direct Markdown sidecar is noindex, follow.
+- Preferred agent access: send `Accept: text/markdown` to the canonical URL.
+
+## Alternate Language Pages
+
+- en: https://www.a2b.sa/
+- ar: https://www.a2b.sa/ar
+- ar-SA: https://www.a2b.sa/ar
+- de: https://www.a2b.sa/de
+- it: https://www.a2b.sa/it
+- es: https://www.a2b.sa/es
+- fr: https://www.a2b.sa/fr
+- zh-Hans: https://www.a2b.sa/zh-Hans
+- x-default: https://www.a2b.sa/
 
 ## Main Content
 
@@ -70,55 +91,37 @@ STC
 
 كل قدرة مبنية حول المتطلبات الفريدة للعمل في المملكة العربية السعودية.
 
-⚡
-
 ### القدرة على التوسع
 
 قدرة تطوير سريعة ومثبتة لتلبية متطلباتك، من رحلة واحدة إلى تشغيل وطني شامل.
-
-🕐
 
 ### متاح 24/7
 
 تواجد على مدار الساعة للرد على المكالمات وتحريك الشاحنات. لا توقف في سلسلة التوريد الخاصة بك.
 
-🚀
-
 ### استجابة سريعة
 
 نتصرف بسرعة، نحدد ونخصص المعدات المناسبة لمشروعك بأقل وقت ممكن.
-
-📊
 
 ### الشفافية
 
 رؤية كاملة عبر كل طلب، تتبع مبسط وتواصل واضح في جميع المراحل.
 
-📋
-
 ### التخطيط
 
 نخطط مسبقاً لمشاريعك، نوافق جداول اللوجستيات بدقة مع أهدافك التجارية.
-
-⏱
 
 ### المشاريع الطارئة
 
 تسليم ناجح تحت أشد المواعيد النهائية ضيقاً، بما في ذلك المشاريع الكبرى الحرجة زمنياً.
 
-🏆
-
 ### الخبرة
 
 سجل حافل في المشاريع الحساسة عالية المخاطر، مع فريق يتمتع بخبرة تتجاوز 20 عاماً في المتوسط.
 
-🗺
-
 ### تغطية شاملة
 
 عمليات على مستوى المملكة تشمل جميع المدن الرئيسية والمسارات البرية وخدمات الموانئ البحرية والجوية.
-
-🤖
 
 ### التشغيل الآلي
 
@@ -281,6 +284,38 @@ Dr. Suhaib Ghunaim
 [M +966 55 384 6446](tel:+966553846446)
 
 [SGhunaim@a2b.sa](mailto:SGhunaim@a2b.sa)
+
+## Extracted Public Links
+
+- [تواصل معنا](https://www.a2b.sa/ar#contact)
+- [استكشف الخدمات](https://www.a2b.sa/ar#about)
+- [النقل البري بالشاحنات](https://www.a2b.sa/ar/services/trucking-road-freight)
+- [دعم التخزين](https://www.a2b.sa/ar/services/warehousing)
+- [تنسيق التخليص الجمركي](https://www.a2b.sa/ar/services/customs-clearance)
+- [لوجستيات سلسلة الإمداد](https://www.a2b.sa/ar/services/supply-chain)
+- [أنواع الأسطول والدعم التشغيلي](https://www.a2b.sa/ar/services/fleet-types)
+- [تواصل معنا اليوم](https://www.a2b.sa/ar#contact)
+- [info@a2b.sa](mailto:info@a2b.sa)
+- [M +966 55 384 6446](tel:+966553846446)
+- [LinkedIn](https://www.linkedin.com/company/helloa2bco)
+- [Instagram](https://www.instagram.com/a2blogistics_sa)
+- [X](https://x.com/a2blogistics_sa)
+- [sales@a2b.sa](mailto:sales@a2b.sa)
+- [www.a2b.sa](https://www.a2b.sa/)
+- [SGhunaim@a2b.sa](mailto:SGhunaim@a2b.sa)
+
+## Extracted Public Images
+
+- ![شاحنة a2b Logistics على طريق سعودي](https://www.a2b.sa/images/truck_hero.jpg)
+- ![نقل معدات ثقيلة بواسطة a2b Logistics](https://www.a2b.sa/images/services_hero.jpg)
+- ![وزارة الدفاع](https://www.a2b.sa/images/logo_2_clean.png)
+- ![الهيئة الملكية لمدينة الرياض City](https://www.a2b.sa/images/logo_3_clean.png)
+- ![الهيئة الملكية لمحافظة العلا](https://www.a2b.sa/images/logo_4_clean.png)
+- ![مطارات الرياض](https://www.a2b.sa/images/logo_5_clean.png)
+- ![STC - شركة الاتصالات السعودية](https://www.a2b.sa/images/logo_6_clean.png)
+- ![الشركة السعودية للكهرباء](https://www.a2b.sa/images/logo_7_clean.png)
+- ![هيئة تطوير بوابة الدرعية](https://www.a2b.sa/images/logo_0_clean.png)
+- ![فورمولا إي](https://www.a2b.sa/images/logo_8_clean.png)
 
 ## Public Structured Data
 

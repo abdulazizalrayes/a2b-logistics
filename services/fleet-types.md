@@ -3,7 +3,9 @@ title: "Fleet Types and Trucking Capacity | a2b Logistics Saudi Arabia"
 description: "Overview of a2b fleet types and vehicle capacity for B2B logistics requirements across Saudi Arabia."
 canonical: "https://www.a2b.sa/services/fleet-types"
 language: "en"
+page_type: "service"
 source_html: "services/fleet-types/index.html"
+markdown_profile_version: "1.1.0"
 content_signal: "search=yes, ai-input=yes, ai-train=no"
 robots: "noindex, follow"
 ---
@@ -12,9 +14,28 @@ robots: "noindex, follow"
 
 > Overview of a2b fleet types and vehicle capacity for B2B logistics requirements across Saudi Arabia.
 
-Canonical: https://www.a2b.sa/services/fleet-types
+## Agent Metadata
 
-Language: en
+- Canonical URL: https://www.a2b.sa/services/fleet-types
+- Language: en
+- Page type: service
+- Source HTML: services/fleet-types/index.html
+- Markdown profile: 1.1.0
+- Content-Signal: search=yes, ai-input=yes, ai-train=no
+- Search indexing: canonical HTML is indexable; direct Markdown sidecar is noindex, follow.
+- Preferred agent access: send `Accept: text/markdown` to the canonical URL.
+
+## Alternate Language Pages
+
+- en: https://www.a2b.sa/services/fleet-types
+- ar: https://www.a2b.sa/ar/services/fleet-types
+- ar-SA: https://www.a2b.sa/ar/services/fleet-types
+- de: https://www.a2b.sa/de/services/fleet-types
+- it: https://www.a2b.sa/it/services/fleet-types
+- es: https://www.a2b.sa/es/services/fleet-types
+- fr: https://www.a2b.sa/fr/services/fleet-types
+- zh-Hans: https://www.a2b.sa/zh-Hans/services/fleet-types
+- x-default: https://www.a2b.sa/services/fleet-types
 
 ## Main Content
 
@@ -74,6 +95,17 @@ Related Services
 Share cargo dimensions, weight, route, and handling needs.
 
 [Get in Touch](https://www.a2b.sa/#contact)
+
+## Extracted Public Links
+
+- [Request Support](https://www.a2b.sa/#contact)
+- [View Fleet](https://www.a2b.sa/fleet)
+- [Trucking and road freight](https://www.a2b.sa/services/trucking-road-freight)
+- [Warehousing support](https://www.a2b.sa/services/warehousing)
+- [Customs-clearance coordination](https://www.a2b.sa/services/customs-clearance)
+- [Supply-chain logistics support](https://www.a2b.sa/services/supply-chain)
+- [Fleet types and capacity](https://www.a2b.sa/services/fleet-types)
+- [Get in Touch](https://www.a2b.sa/#contact)
 
 ## Public Structured Data
 

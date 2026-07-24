@@ -5,6 +5,7 @@ import * as parse5 from 'parse5';
 const root = process.cwd();
 const ORIGIN = 'https://www.a2b.sa';
 const CONTENT_SIGNAL = 'search=yes, ai-input=yes, ai-train=no';
+const MARKDOWN_PROFILE_VERSION = '1.1.0';
 const MARKDOWN_DIR = '.markdown';
 const ROUTES_FILE = 'markdown-routes.mjs';
 const MANIFEST_FILE = 'data/markdown-companions.json';
@@ -39,6 +40,12 @@ function textContent(node) {
 
 function normalizeText(value) {
   return value.replace(/\s+/g, ' ').trim();
+}
+
+function isDecorativeText(value) {
+  const text = normalizeText(value);
+  if (!text) return true;
+  return text.length <= 3 && !/[\p{L}\p{N}]/u.test(text);
 }
 
 function findNode(node, predicate) {
@@ -102,7 +109,7 @@ function absoluteUrl(href, canonicalUrl) {
 
 function block(lines, value = '') {
   const trimmed = value.trim();
-  if (!trimmed) return;
+  if (!trimmed || isDecorativeText(trimmed)) return;
   if (lines.length && lines[lines.length - 1] !== '') lines.push('');
   lines.push(trimmed);
 }
@@ -145,6 +152,68 @@ function renderTable(node, lines, canonicalUrl) {
   lines.push(`| ${normalized[0].join(' | ')} |`);
   lines.push(`| ${Array(width).fill('---').join(' | ')} |`);
   for (const row of normalized.slice(1)) lines.push(`| ${row.join(' | ')} |`);
+}
+
+function traversePublicContent(node, callback) {
+  if (!node || shouldSkip(node)) return;
+  callback(node);
+  for (const child of children(node)) traversePublicContent(child, callback);
+}
+
+function uniqueBy(items, keyForItem) {
+  const seen = new Set();
+  const output = [];
+  for (const item of items) {
+    const key = keyForItem(item);
+    if (seen.has(key)) continue;
+    seen.add(key);
+    output.push(item);
+  }
+  return output;
+}
+
+function extractPublicLinks(rootNode, canonicalUrl) {
+  const links = [];
+  traversePublicContent(rootNode, (node) => {
+    if (node.tagName !== 'a') return;
+    const rawHref = attr(node, 'href');
+    if (!rawHref || rawHref.startsWith('#') || rawHref.startsWith('javascript:')) return;
+    const label = normalizeText(textContent(node));
+    const href = absoluteUrl(rawHref, canonicalUrl);
+    if (!href || !label) return;
+    links.push({ label, href });
+  });
+  return uniqueBy(links, (link) => `${link.label}\u0000${link.href}`);
+}
+
+function extractPublicImages(rootNode, canonicalUrl) {
+  const images = [];
+  traversePublicContent(rootNode, (node) => {
+    if (node.tagName !== 'img') return;
+    const alt = normalizeText(attr(node, 'alt'));
+    if (!alt) return;
+    const src = absoluteUrl(attr(node, 'src'), canonicalUrl);
+    if (!src) return;
+    images.push({ alt, src });
+  });
+  return uniqueBy(images, (image) => `${image.alt}\u0000${image.src}`);
+}
+
+function extractAlternates(document) {
+  return findAll(document, (node) => node.tagName === 'link' && attr(node, 'rel') === 'alternate' && attr(node, 'hreflang') && attr(node, 'href'))
+    .map((node) => ({ hreflang: attr(node, 'hreflang'), href: attr(node, 'href') }));
+}
+
+function classifyPage(meta) {
+  const pathname = new URL(meta.canonical).pathname;
+  if (pathname === '/') return 'homepage';
+  if (/^\/(?:ar|de|it|es|fr|zh-Hans)$/.test(pathname)) return 'localized_homepage';
+  if (pathname.includes('/services/')) return 'service';
+  if (pathname.endsWith('/fleet') || pathname === '/fleet') return 'fleet';
+  if (pathname.endsWith('/careers') || pathname === '/careers') return 'careers';
+  if (pathname.endsWith('/vendors') || pathname === '/vendors') return 'vendors';
+  if (pathname.includes('privacy') || pathname.includes('terms')) return 'policy';
+  return 'page';
 }
 
 function renderNode(node, lines, canonicalUrl, listDepth = 0) {
@@ -280,7 +349,9 @@ function frontMatter({ title, description, canonical, language, sourceFile }) {
     `description: ${JSON.stringify(description)}`,
     `canonical: ${JSON.stringify(canonical)}`,
     `language: ${JSON.stringify(language)}`,
+    `page_type: ${JSON.stringify(classifyPage({ canonical }))}`,
     `source_html: ${JSON.stringify(sourceFile)}`,
+    `markdown_profile_version: ${JSON.stringify(MARKDOWN_PROFILE_VERSION)}`,
     `content_signal: ${JSON.stringify(CONTENT_SIGNAL)}`,
     'robots: "noindex, follow"',
     '---',
@@ -294,16 +365,48 @@ function markdownForHtml(html, sourceFile) {
   const canonicalUrl = meta.canonical;
   const body = findNode(document, (node) => node.tagName === 'body');
   const lines = frontMatter({ ...meta, sourceFile });
+  const alternates = extractAlternates(document);
 
   lines.push(`# ${meta.title}`, '');
   lines.push(`> ${meta.description}`, '');
-  lines.push(`Canonical: ${meta.canonical}`, '');
-  lines.push(`Language: ${meta.language}`, '');
-  lines.push('## Main Content', '');
+  lines.push('## Agent Metadata', '');
+  lines.push(`- Canonical URL: ${meta.canonical}`);
+  lines.push(`- Language: ${meta.language}`);
+  lines.push(`- Page type: ${classifyPage(meta)}`);
+  lines.push(`- Source HTML: ${sourceFile}`);
+  lines.push(`- Markdown profile: ${MARKDOWN_PROFILE_VERSION}`);
+  lines.push(`- Content-Signal: ${CONTENT_SIGNAL}`);
+  lines.push('- Search indexing: canonical HTML is indexable; direct Markdown sidecar is noindex, follow.');
+  lines.push('- Preferred agent access: send `Accept: text/markdown` to the canonical URL.');
+
+  if (alternates.length) {
+    lines.push('', '## Alternate Language Pages', '');
+    for (const alternate of alternates) {
+      lines.push(`- ${alternate.hreflang}: ${alternate.href}`);
+    }
+  }
+
+  lines.push('', '## Main Content', '');
 
   const contentLines = [];
   renderNode(body, contentLines, canonicalUrl);
   lines.push(...dedupeBlankLines(contentLines));
+
+  const publicLinks = extractPublicLinks(body, canonicalUrl);
+  if (publicLinks.length) {
+    lines.push('', '## Extracted Public Links', '');
+    for (const link of publicLinks) {
+      lines.push(`- [${escapeMarkdown(link.label)}](${link.href})`);
+    }
+  }
+
+  const publicImages = extractPublicImages(body, canonicalUrl);
+  if (publicImages.length) {
+    lines.push('', '## Extracted Public Images', '');
+    for (const image of publicImages) {
+      lines.push(`- ![${escapeMarkdown(image.alt)}](${image.src})`);
+    }
+  }
 
   const jsonLd = extractJsonLd(document, sourceFile);
   if (jsonLd.length) {
@@ -393,10 +496,19 @@ function routeMapContent(routes) {
 
 function manifestContent(routes) {
   return `${JSON.stringify({
-    schemaVersion: '1.0.0',
+    schemaVersion: '1.1.0',
     company: 'a2b Logistics Company',
     canonicalDomain: ORIGIN,
     contentSignal: CONTENT_SIGNAL,
+    markdownProfileVersion: MARKDOWN_PROFILE_VERSION,
+    companionEnhancements: [
+      'agent metadata block',
+      'alternate language page inventory',
+      'deduplicated public link inventory',
+      'deduplicated meaningful-image inventory',
+      'public JSON-LD preservation',
+      'decorative icon-only text suppression',
+    ],
     negotiation: {
       requestHeader: 'Accept: text/markdown',
       fallback: 'HTML is served when Markdown is unavailable or text/markdown has q=0.',

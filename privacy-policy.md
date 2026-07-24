@@ -3,7 +3,9 @@ title: "Privacy Policy | a2b Logistics"
 description: "a2b Logistics Company Privacy Policy - How we collect, use and protect your personal information."
 canonical: "https://www.a2b.sa/privacy-policy"
 language: "en"
+page_type: "policy"
 source_html: "privacy-policy.html"
+markdown_profile_version: "1.1.0"
 content_signal: "search=yes, ai-input=yes, ai-train=no"
 robots: "noindex, follow"
 ---
@@ -12,9 +14,21 @@ robots: "noindex, follow"
 
 > a2b Logistics Company Privacy Policy - How we collect, use and protect your personal information.
 
-Canonical: https://www.a2b.sa/privacy-policy
+## Agent Metadata
 
-Language: en
+- Canonical URL: https://www.a2b.sa/privacy-policy
+- Language: en
+- Page type: policy
+- Source HTML: privacy-policy.html
+- Markdown profile: 1.1.0
+- Content-Signal: search=yes, ai-input=yes, ai-train=no
+- Search indexing: canonical HTML is indexable; direct Markdown sidecar is noindex, follow.
+- Preferred agent access: send `Accept: text/markdown` to the canonical URL.
+
+## Alternate Language Pages
+
+- en: https://www.a2b.sa/privacy-policy
+- x-default: https://www.a2b.sa/privacy-policy
 
 ## Main Content
 
@@ -136,3 +150,8 @@ If you have any questions, concerns, or complaints about this Privacy Policy or 
 - Email: [info@a2b.sa](mailto:info@a2b.sa)
 - Phone: [M +966 55 384 6446](tel:+966553846446)
 - Address: 3168 Tahliyah St., Ground Floor, Offices #2, Olaya District, Riyadh, Saudi Arabia
+
+## Extracted Public Links
+
+- [info@a2b.sa](mailto:info@a2b.sa)
+- [M +966 55 384 6446](tel:+966553846446)

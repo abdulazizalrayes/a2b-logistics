@@ -3,7 +3,9 @@ title: "Transporte por carretera Arabia Saudita | a2b Logistics"
 description: "Carga terrestre B2B en todo el Reino para fábricas, importadores, equipos de compras y operadores de proyectos en Arabia Saudita."
 canonical: "https://www.a2b.sa/es/services/trucking-road-freight"
 language: "es"
+page_type: "service"
 source_html: "es/services/trucking-road-freight/index.html"
+markdown_profile_version: "1.1.0"
 content_signal: "search=yes, ai-input=yes, ai-train=no"
 robots: "noindex, follow"
 ---
@@ -12,9 +14,28 @@ robots: "noindex, follow"
 
 > Carga terrestre B2B en todo el Reino para fábricas, importadores, equipos de compras y operadores de proyectos en Arabia Saudita.
 
-Canonical: https://www.a2b.sa/es/services/trucking-road-freight
+## Agent Metadata
 
-Language: es
+- Canonical URL: https://www.a2b.sa/es/services/trucking-road-freight
+- Language: es
+- Page type: service
+- Source HTML: es/services/trucking-road-freight/index.html
+- Markdown profile: 1.1.0
+- Content-Signal: search=yes, ai-input=yes, ai-train=no
+- Search indexing: canonical HTML is indexable; direct Markdown sidecar is noindex, follow.
+- Preferred agent access: send `Accept: text/markdown` to the canonical URL.
+
+## Alternate Language Pages
+
+- en: https://www.a2b.sa/services/trucking-road-freight
+- ar: https://www.a2b.sa/ar/services/trucking-road-freight
+- ar-SA: https://www.a2b.sa/ar/services/trucking-road-freight
+- de: https://www.a2b.sa/de/services/trucking-road-freight
+- it: https://www.a2b.sa/it/services/trucking-road-freight
+- es: https://www.a2b.sa/es/services/trucking-road-freight
+- fr: https://www.a2b.sa/fr/services/trucking-road-freight
+- zh-Hans: https://www.a2b.sa/zh-Hans/services/trucking-road-freight
+- x-default: https://www.a2b.sa/services/trucking-road-freight
 
 ## Main Content
 
@@ -74,6 +95,17 @@ Servicios relacionados
 Comparta tipo de carga, ruta, tiempos y requisitos operativos. El equipo de a2b dirigirá su solicitud al contacto adecuado.
 
 [Contáctanos](https://www.a2b.sa/es#contact)
+
+## Extracted Public Links
+
+- [Solicitar soporte](https://www.a2b.sa/es#contact)
+- [Ver flota](https://www.a2b.sa/es/fleet)
+- [Transporte por carretera](https://www.a2b.sa/es/services/trucking-road-freight)
+- [Apoyo de almacenamiento](https://www.a2b.sa/es/services/warehousing)
+- [Coordinación de despacho aduanero](https://www.a2b.sa/es/services/customs-clearance)
+- [Logística de cadena de suministro](https://www.a2b.sa/es/services/supply-chain)
+- [Tipos de flota y capacidad](https://www.a2b.sa/es/services/fleet-types)
+- [Contáctanos](https://www.a2b.sa/es#contact)
 
 ## Public Structured Data
 

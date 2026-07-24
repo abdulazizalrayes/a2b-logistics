@@ -3,7 +3,9 @@ title: "Customs Clearance Coordination Saudi Arabia | a2b Logistics"
 description: "Coordination support for international cargo entering Saudi Arabia, aligned with trucking, port, and supply-chain operations."
 canonical: "https://www.a2b.sa/services/customs-clearance"
 language: "en"
+page_type: "service"
 source_html: "services/customs-clearance/index.html"
+markdown_profile_version: "1.1.0"
 content_signal: "search=yes, ai-input=yes, ai-train=no"
 robots: "noindex, follow"
 ---
@@ -12,9 +14,28 @@ robots: "noindex, follow"
 
 > Coordination support for international cargo entering Saudi Arabia, aligned with trucking, port, and supply-chain operations.
 
-Canonical: https://www.a2b.sa/services/customs-clearance
+## Agent Metadata
 
-Language: en
+- Canonical URL: https://www.a2b.sa/services/customs-clearance
+- Language: en
+- Page type: service
+- Source HTML: services/customs-clearance/index.html
+- Markdown profile: 1.1.0
+- Content-Signal: search=yes, ai-input=yes, ai-train=no
+- Search indexing: canonical HTML is indexable; direct Markdown sidecar is noindex, follow.
+- Preferred agent access: send `Accept: text/markdown` to the canonical URL.
+
+## Alternate Language Pages
+
+- en: https://www.a2b.sa/services/customs-clearance
+- ar: https://www.a2b.sa/ar/services/customs-clearance
+- ar-SA: https://www.a2b.sa/ar/services/customs-clearance
+- de: https://www.a2b.sa/de/services/customs-clearance
+- it: https://www.a2b.sa/it/services/customs-clearance
+- es: https://www.a2b.sa/es/services/customs-clearance
+- fr: https://www.a2b.sa/fr/services/customs-clearance
+- zh-Hans: https://www.a2b.sa/zh-Hans/services/customs-clearance
+- x-default: https://www.a2b.sa/services/customs-clearance
 
 ## Main Content
 
@@ -74,6 +95,17 @@ Related Services
 Share cargo details, entry point, timing, and transport requirements. The a2b team will route your request.
 
 [Get in Touch](https://www.a2b.sa/#contact)
+
+## Extracted Public Links
+
+- [Request Support](https://www.a2b.sa/#contact)
+- [View Fleet](https://www.a2b.sa/fleet)
+- [Trucking and road freight](https://www.a2b.sa/services/trucking-road-freight)
+- [Warehousing support](https://www.a2b.sa/services/warehousing)
+- [Customs-clearance coordination](https://www.a2b.sa/services/customs-clearance)
+- [Supply-chain logistics support](https://www.a2b.sa/services/supply-chain)
+- [Fleet types and capacity](https://www.a2b.sa/services/fleet-types)
+- [Get in Touch](https://www.a2b.sa/#contact)
 
 ## Public Structured Data
 

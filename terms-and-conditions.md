@@ -3,7 +3,9 @@ title: "Terms and Conditions | a2b Logistics"
 description: "a2b Logistics Company Terms and Conditions - Rules and guidelines governing use of our website and services."
 canonical: "https://www.a2b.sa/terms-and-conditions"
 language: "en"
+page_type: "policy"
 source_html: "terms-and-conditions.html"
+markdown_profile_version: "1.1.0"
 content_signal: "search=yes, ai-input=yes, ai-train=no"
 robots: "noindex, follow"
 ---
@@ -12,9 +14,21 @@ robots: "noindex, follow"
 
 > a2b Logistics Company Terms and Conditions - Rules and guidelines governing use of our website and services.
 
-Canonical: https://www.a2b.sa/terms-and-conditions
+## Agent Metadata
 
-Language: en
+- Canonical URL: https://www.a2b.sa/terms-and-conditions
+- Language: en
+- Page type: policy
+- Source HTML: terms-and-conditions.html
+- Markdown profile: 1.1.0
+- Content-Signal: search=yes, ai-input=yes, ai-train=no
+- Search indexing: canonical HTML is indexable; direct Markdown sidecar is noindex, follow.
+- Preferred agent access: send `Accept: text/markdown` to the canonical URL.
+
+## Alternate Language Pages
+
+- en: https://www.a2b.sa/terms-and-conditions
+- x-default: https://www.a2b.sa/terms-and-conditions
 
 ## Main Content
 
@@ -128,3 +142,9 @@ If you have any questions about these Terms and Conditions, please contact us:
 - Email: [info@a2b.sa](mailto:info@a2b.sa)
 - Phone: [M +966 55 384 6446](tel:+966553846446)
 - Address: 3168 Tahliyah St., Ground Floor, Offices #2, Olaya District, Riyadh, Saudi Arabia
+
+## Extracted Public Links
+
+- [Privacy Policy](https://www.a2b.sa/privacy-policy)
+- [info@a2b.sa](mailto:info@a2b.sa)
+- [M +966 55 384 6446](tel:+966553846446)

@@ -3,7 +3,9 @@ title: "Support entreposage Arabie saoudite | a2b Logistics"
 description: "Coordination B2B d'entreposage pour entreprises ayant besoin de stockage, préparation et support logistique en Arabie saoudite."
 canonical: "https://www.a2b.sa/fr/services/warehousing"
 language: "fr"
+page_type: "service"
 source_html: "fr/services/warehousing/index.html"
+markdown_profile_version: "1.1.0"
 content_signal: "search=yes, ai-input=yes, ai-train=no"
 robots: "noindex, follow"
 ---
@@ -12,9 +14,28 @@ robots: "noindex, follow"
 
 > Coordination B2B d'entreposage pour entreprises ayant besoin de stockage, préparation et support logistique en Arabie saoudite.
 
-Canonical: https://www.a2b.sa/fr/services/warehousing
+## Agent Metadata
 
-Language: fr
+- Canonical URL: https://www.a2b.sa/fr/services/warehousing
+- Language: fr
+- Page type: service
+- Source HTML: fr/services/warehousing/index.html
+- Markdown profile: 1.1.0
+- Content-Signal: search=yes, ai-input=yes, ai-train=no
+- Search indexing: canonical HTML is indexable; direct Markdown sidecar is noindex, follow.
+- Preferred agent access: send `Accept: text/markdown` to the canonical URL.
+
+## Alternate Language Pages
+
+- en: https://www.a2b.sa/services/warehousing
+- ar: https://www.a2b.sa/ar/services/warehousing
+- ar-SA: https://www.a2b.sa/ar/services/warehousing
+- de: https://www.a2b.sa/de/services/warehousing
+- it: https://www.a2b.sa/it/services/warehousing
+- es: https://www.a2b.sa/es/services/warehousing
+- fr: https://www.a2b.sa/fr/services/warehousing
+- zh-Hans: https://www.a2b.sa/zh-Hans/services/warehousing
+- x-default: https://www.a2b.sa/services/warehousing
 
 ## Main Content
 
@@ -74,6 +95,17 @@ Services associés
 Partagez vos besoins de stockage, préparation, expédition et itinéraire. L'équipe a2b orientera la demande.
 
 [Nous contacter](https://www.a2b.sa/fr#contact)
+
+## Extracted Public Links
+
+- [Demander un support](https://www.a2b.sa/fr#contact)
+- [Voir la flotte](https://www.a2b.sa/fr/fleet)
+- [Transport routier de marchandises](https://www.a2b.sa/fr/services/trucking-road-freight)
+- [Support d'entreposage](https://www.a2b.sa/fr/services/warehousing)
+- [Coordination du dédouanement](https://www.a2b.sa/fr/services/customs-clearance)
+- [Logistique supply chain](https://www.a2b.sa/fr/services/supply-chain)
+- [Types de flotte et capacité](https://www.a2b.sa/fr/services/fleet-types)
+- [Nous contacter](https://www.a2b.sa/fr#contact)
 
 ## Public Structured Data
 

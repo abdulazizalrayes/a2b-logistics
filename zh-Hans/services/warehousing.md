@@ -3,7 +3,9 @@ title: "沙特阿拉伯仓储支持 | a2b Logistics"
 description: "为需要仓储、备货和与公路运输连接的物流支持的企业提供 B2B 仓储协调。"
 canonical: "https://www.a2b.sa/zh-Hans/services/warehousing"
 language: "zh-Hans"
+page_type: "service"
 source_html: "zh-Hans/services/warehousing/index.html"
+markdown_profile_version: "1.1.0"
 content_signal: "search=yes, ai-input=yes, ai-train=no"
 robots: "noindex, follow"
 ---
@@ -12,9 +14,28 @@ robots: "noindex, follow"
 
 > 为需要仓储、备货和与公路运输连接的物流支持的企业提供 B2B 仓储协调。
 
-Canonical: https://www.a2b.sa/zh-Hans/services/warehousing
+## Agent Metadata
 
-Language: zh-Hans
+- Canonical URL: https://www.a2b.sa/zh-Hans/services/warehousing
+- Language: zh-Hans
+- Page type: service
+- Source HTML: zh-Hans/services/warehousing/index.html
+- Markdown profile: 1.1.0
+- Content-Signal: search=yes, ai-input=yes, ai-train=no
+- Search indexing: canonical HTML is indexable; direct Markdown sidecar is noindex, follow.
+- Preferred agent access: send `Accept: text/markdown` to the canonical URL.
+
+## Alternate Language Pages
+
+- en: https://www.a2b.sa/services/warehousing
+- ar: https://www.a2b.sa/ar/services/warehousing
+- ar-SA: https://www.a2b.sa/ar/services/warehousing
+- de: https://www.a2b.sa/de/services/warehousing
+- it: https://www.a2b.sa/it/services/warehousing
+- es: https://www.a2b.sa/es/services/warehousing
+- fr: https://www.a2b.sa/fr/services/warehousing
+- zh-Hans: https://www.a2b.sa/zh-Hans/services/warehousing
+- x-default: https://www.a2b.sa/services/warehousing
 
 ## Main Content
 
@@ -74,6 +95,17 @@ a2b 将仓储需求纳入更广泛的沙特物流运营中。
 请提供仓储、备货、发运和路线要求，a2b 团队会将需求转给合适联系人。
 
 [联系我们](https://www.a2b.sa/zh-Hans#contact)
+
+## Extracted Public Links
+
+- [请求支持](https://www.a2b.sa/zh-Hans#contact)
+- [查看车队](https://www.a2b.sa/zh-Hans/fleet)
+- [公路货运](https://www.a2b.sa/zh-Hans/services/trucking-road-freight)
+- [仓储支持](https://www.a2b.sa/zh-Hans/services/warehousing)
+- [清关协调](https://www.a2b.sa/zh-Hans/services/customs-clearance)
+- [供应链物流](https://www.a2b.sa/zh-Hans/services/supply-chain)
+- [车队类型和能力](https://www.a2b.sa/zh-Hans/services/fleet-types)
+- [联系我们](https://www.a2b.sa/zh-Hans#contact)
 
 ## Public Structured Data
 

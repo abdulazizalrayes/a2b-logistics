@@ -23,6 +23,8 @@ Do not copy these account, domain, analytics, or Paperclip details to another co
 - It maps each sitemap URL to its local canonical HTML file.
 - It parses HTML with `parse5`, not regex conversion.
 - It extracts public main content while skipping navigation, footer, forms, scripts, styles, hidden content, and controls.
+- Markdown profile `1.1.0` adds an agent metadata block, reciprocal language alternates, deduplicated public link inventory, meaningful-image inventory, and preserved public JSON-LD.
+- Decorative icon-only text is suppressed so agent readers get cleaner semantic content without losing public copy, links, images, tables, lists, headings, or structured data.
 - It writes direct `.md` sidecars, `.markdown/` mirrored audit files, `data/markdown-companions.json`, and `markdown-routes.mjs`.
 - `middleware.js` serves Markdown from canonical URLs only when `Accept: text/markdown` has `q > 0`.
 - Direct `.md` sidecars are served with `X-Robots-Tag: noindex, follow`.
@@ -56,6 +58,15 @@ Coverage manifest:
 ```text
 https://www.a2b.sa/data/markdown-companions.json
 ```
+
+Each Markdown companion includes:
+
+- front matter with title, description, canonical URL, language, page type, source HTML, profile version, robots policy, and Content-Signal policy;
+- `Agent Metadata` for agent access rules and indexing boundaries;
+- `Alternate Language Pages` when the HTML publishes hreflang alternates;
+- `Main Content` extracted from public rendered HTML;
+- `Extracted Public Links` and `Extracted Public Images` inventories;
+- `Public Structured Data` blocks copied from valid JSON-LD.
 
 ## Validation Commands
 

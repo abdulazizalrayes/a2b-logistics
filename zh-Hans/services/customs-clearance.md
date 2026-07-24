@@ -3,7 +3,9 @@ title: "沙特阿拉伯清关协调 | a2b Logistics"
 description: "为进入沙特阿拉伯的国际货物提供清关协调支持，并衔接运输、港口和供应链运营。"
 canonical: "https://www.a2b.sa/zh-Hans/services/customs-clearance"
 language: "zh-Hans"
+page_type: "service"
 source_html: "zh-Hans/services/customs-clearance/index.html"
+markdown_profile_version: "1.1.0"
 content_signal: "search=yes, ai-input=yes, ai-train=no"
 robots: "noindex, follow"
 ---
@@ -12,9 +14,28 @@ robots: "noindex, follow"
 
 > 为进入沙特阿拉伯的国际货物提供清关协调支持，并衔接运输、港口和供应链运营。
 
-Canonical: https://www.a2b.sa/zh-Hans/services/customs-clearance
+## Agent Metadata
 
-Language: zh-Hans
+- Canonical URL: https://www.a2b.sa/zh-Hans/services/customs-clearance
+- Language: zh-Hans
+- Page type: service
+- Source HTML: zh-Hans/services/customs-clearance/index.html
+- Markdown profile: 1.1.0
+- Content-Signal: search=yes, ai-input=yes, ai-train=no
+- Search indexing: canonical HTML is indexable; direct Markdown sidecar is noindex, follow.
+- Preferred agent access: send `Accept: text/markdown` to the canonical URL.
+
+## Alternate Language Pages
+
+- en: https://www.a2b.sa/services/customs-clearance
+- ar: https://www.a2b.sa/ar/services/customs-clearance
+- ar-SA: https://www.a2b.sa/ar/services/customs-clearance
+- de: https://www.a2b.sa/de/services/customs-clearance
+- it: https://www.a2b.sa/it/services/customs-clearance
+- es: https://www.a2b.sa/es/services/customs-clearance
+- fr: https://www.a2b.sa/fr/services/customs-clearance
+- zh-Hans: https://www.a2b.sa/zh-Hans/services/customs-clearance
+- x-default: https://www.a2b.sa/services/customs-clearance
 
 ## Main Content
 
@@ -74,6 +95,17 @@ a2b 支持需要将清关协调纳入货物入境流程的物流采购方。
 请提供货物信息、入境点、时间和运输要求。
 
 [联系我们](https://www.a2b.sa/zh-Hans#contact)
+
+## Extracted Public Links
+
+- [请求支持](https://www.a2b.sa/zh-Hans#contact)
+- [查看车队](https://www.a2b.sa/zh-Hans/fleet)
+- [公路货运](https://www.a2b.sa/zh-Hans/services/trucking-road-freight)
+- [仓储支持](https://www.a2b.sa/zh-Hans/services/warehousing)
+- [清关协调](https://www.a2b.sa/zh-Hans/services/customs-clearance)
+- [供应链物流](https://www.a2b.sa/zh-Hans/services/supply-chain)
+- [车队类型和能力](https://www.a2b.sa/zh-Hans/services/fleet-types)
+- [联系我们](https://www.a2b.sa/zh-Hans#contact)
 
 ## Public Structured Data
 

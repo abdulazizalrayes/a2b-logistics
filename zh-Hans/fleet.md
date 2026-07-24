@@ -3,7 +3,9 @@ title: "重型运输车队、吊车和挂车 | a2b Logistics 沙特阿拉伯"
 description: "a2b Logistics 在沙特阿拉伯运营 948 多辆车辆，包括平板车、低平板、冷藏车、罐车、吊车等。"
 canonical: "https://www.a2b.sa/zh-Hans/fleet"
 language: "zh-Hans"
+page_type: "fleet"
 source_html: "zh-Hans/fleet/index.html"
+markdown_profile_version: "1.1.0"
 content_signal: "search=yes, ai-input=yes, ai-train=no"
 robots: "noindex, follow"
 ---
@@ -12,9 +14,27 @@ robots: "noindex, follow"
 
 > a2b Logistics 在沙特阿拉伯运营 948 多辆车辆，包括平板车、低平板、冷藏车、罐车、吊车等。
 
-Canonical: https://www.a2b.sa/zh-Hans/fleet
+## Agent Metadata
 
-Language: zh-Hans
+- Canonical URL: https://www.a2b.sa/zh-Hans/fleet
+- Language: zh-Hans
+- Page type: fleet
+- Source HTML: zh-Hans/fleet/index.html
+- Markdown profile: 1.1.0
+- Content-Signal: search=yes, ai-input=yes, ai-train=no
+- Search indexing: canonical HTML is indexable; direct Markdown sidecar is noindex, follow.
+- Preferred agent access: send `Accept: text/markdown` to the canonical URL.
+
+## Alternate Language Pages
+
+- en: https://www.a2b.sa/fleet
+- ar: https://www.a2b.sa/ar/fleet
+- de: https://www.a2b.sa/de/fleet
+- it: https://www.a2b.sa/it/fleet
+- es: https://www.a2b.sa/es/fleet
+- fr: https://www.a2b.sa/fr/fleet
+- zh-Hans: https://www.a2b.sa/zh-Hans/fleet
+- x-default: https://www.a2b.sa/fleet
 
 ## Main Content
 
@@ -131,6 +151,10 @@ Professional, licensed, and trained drivers averaging 20+ years of experience in
 Tell us your cargo type, route, and timeline — we'll confirm availability and turn it around fast.
 
 [联系我们](https://www.a2b.sa/zh-Hans#contact)
+
+## Extracted Public Links
+
+- [联系我们](https://www.a2b.sa/zh-Hans#contact)
 
 ## Public Structured Data
 

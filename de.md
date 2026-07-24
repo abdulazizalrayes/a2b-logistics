@@ -3,7 +3,9 @@ title: "a2b Logistics | Saudi-Arabiens führender Logistikpartner"
 description: "a2b Logistics bietet Lkw-Transport, Lagerhaltung, Zollabfertigung und Supply-Chain-Lösungen in ganz Saudi-Arabien mit landesweiter Abdeckung und 24/7-Support."
 canonical: "https://www.a2b.sa/de"
 language: "de"
+page_type: "localized_homepage"
 source_html: "de/index.html"
+markdown_profile_version: "1.1.0"
 content_signal: "search=yes, ai-input=yes, ai-train=no"
 robots: "noindex, follow"
 ---
@@ -12,9 +14,28 @@ robots: "noindex, follow"
 
 > a2b Logistics bietet Lkw-Transport, Lagerhaltung, Zollabfertigung und Supply-Chain-Lösungen in ganz Saudi-Arabien mit landesweiter Abdeckung und 24/7-Support.
 
-Canonical: https://www.a2b.sa/de
+## Agent Metadata
 
-Language: de
+- Canonical URL: https://www.a2b.sa/de
+- Language: de
+- Page type: localized_homepage
+- Source HTML: de/index.html
+- Markdown profile: 1.1.0
+- Content-Signal: search=yes, ai-input=yes, ai-train=no
+- Search indexing: canonical HTML is indexable; direct Markdown sidecar is noindex, follow.
+- Preferred agent access: send `Accept: text/markdown` to the canonical URL.
+
+## Alternate Language Pages
+
+- en: https://www.a2b.sa/
+- ar: https://www.a2b.sa/ar
+- ar-SA: https://www.a2b.sa/ar
+- de: https://www.a2b.sa/de
+- it: https://www.a2b.sa/it
+- es: https://www.a2b.sa/es
+- fr: https://www.a2b.sa/fr
+- zh-Hans: https://www.a2b.sa/zh-Hans
+- x-default: https://www.a2b.sa/
 
 ## Main Content
 
@@ -70,55 +91,37 @@ Warum a2b
 
 Jede Fähigkeit ist auf die besonderen Anforderungen des Betriebs in Saudi-Arabien ausgelegt.
 
-⚡
-
 ### Skalierbarkeit
 
 Schnelle, bewährte Skalierbarkeit für Ihre Anforderungen, von einer Einzelfahrt bis zum landesweiten Rollout.
-
-🕐
 
 ### 24/7 Verfügbarkeit
 
 Rund um die Uhr erreichbar, um Anfragen zu beantworten und Lkw zu mobilisieren. Keine Ausfallzeit in Ihrer Lieferkette.
 
-🚀
-
 ### Schnelle Reaktion
 
 Wir handeln schnell und stellen die passende Ausrüstung für Ihr Projekt mit minimaler Vorlaufzeit bereit.
-
-📊
 
 ### Transparenz
 
 Volle Transparenz über jede Anfrage, schlankes Tracking und klare Kommunikation in allen Phasen.
 
-📋
-
 ### Planung
 
 Wir planen Ihre Projekte voraus und stimmen Logistikzeitpläne präzise auf Ihre Geschäftsziele ab.
-
-⏱
 
 ### Eilige Projekte
 
 Erfolgreiche Lieferung unter engsten Fristen, auch bei komplexen, zeitkritischen Megaprojekten.
 
-🏆
-
 ### Erfahrung
 
 Ein makelloser Leistungsnachweis in sensiblen, anspruchsvollen Projekten mit einem Team von durchschnittlich über 20 Jahren Erfahrung.
 
-🗺
-
 ### Vollständige KSA-Abdeckung
 
 Landesweite Einsätze in allen wichtigen Städten, Inlandsrouten sowie See- und Flughafendiensten.
-
-🤖
 
 ### Automatisierung
 
@@ -281,6 +284,38 @@ Dr. Suhaib Ghunaim
 [M +966 55 384 6446](tel:+966553846446)
 
 [SGhunaim@a2b.sa](mailto:SGhunaim@a2b.sa)
+
+## Extracted Public Links
+
+- [Kontakt aufnehmen](https://www.a2b.sa/de#contact)
+- [Dienstleistungen ansehen](https://www.a2b.sa/de#about)
+- [Straßengüterverkehr](https://www.a2b.sa/de/services/trucking-road-freight)
+- [Lagerunterstützung](https://www.a2b.sa/de/services/warehousing)
+- [Zollabfertigungskoordination](https://www.a2b.sa/de/services/customs-clearance)
+- [Supply-Chain-Logistik](https://www.a2b.sa/de/services/supply-chain)
+- [Flottentypen und Kapazität](https://www.a2b.sa/de/services/fleet-types)
+- [Heute Kontakt aufnehmen](https://www.a2b.sa/de#contact)
+- [info@a2b.sa](mailto:info@a2b.sa)
+- [M +966 55 384 6446](tel:+966553846446)
+- [LinkedIn](https://www.linkedin.com/company/helloa2bco)
+- [Instagram](https://www.instagram.com/a2blogistics_sa)
+- [X](https://x.com/a2blogistics_sa)
+- [sales@a2b.sa](mailto:sales@a2b.sa)
+- [www.a2b.sa](https://www.a2b.sa/)
+- [SGhunaim@a2b.sa](mailto:SGhunaim@a2b.sa)
+
+## Extracted Public Images
+
+- ![a2b logistics truck on Saudi highway](https://www.a2b.sa/images/truck_hero.jpg)
+- ![a2b logistics heavy equipment transport](https://www.a2b.sa/images/services_hero.jpg)
+- ![Ministry of Defense](https://www.a2b.sa/images/logo_2_clean.png)
+- ![Royal Commission for Riyadh City](https://www.a2b.sa/images/logo_3_clean.png)
+- ![Royal Commission for AlUla](https://www.a2b.sa/images/logo_4_clean.png)
+- ![Riyadh Airports](https://www.a2b.sa/images/logo_5_clean.png)
+- ![STC - Saudi Telecommunications Company](https://www.a2b.sa/images/logo_6_clean.png)
+- ![Saudi Electricity Company](https://www.a2b.sa/images/logo_7_clean.png)
+- ![Diriyah Gate Development Authority (DGDA)](https://www.a2b.sa/images/logo_0_clean.png)
+- ![Formula E](https://www.a2b.sa/images/logo_8_clean.png)
 
 ## Public Structured Data
 

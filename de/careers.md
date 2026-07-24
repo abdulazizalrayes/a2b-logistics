@@ -3,7 +3,9 @@ title: "Karriere bei a2b Logistics | Arbeiten in Saudi-Arabiens Logistik"
 description: "Werden Sie Teil von a2b Logistics in Saudi-Arabien. Bewerben Sie sich für Rollen in Logistik, Betrieb, Flottenmanagement und Supply Chain."
 canonical: "https://www.a2b.sa/de/careers"
 language: "de"
+page_type: "careers"
 source_html: "de/careers/index.html"
+markdown_profile_version: "1.1.0"
 content_signal: "search=yes, ai-input=yes, ai-train=no"
 robots: "noindex, follow"
 ---
@@ -12,9 +14,27 @@ robots: "noindex, follow"
 
 > Werden Sie Teil von a2b Logistics in Saudi-Arabien. Bewerben Sie sich für Rollen in Logistik, Betrieb, Flottenmanagement und Supply Chain.
 
-Canonical: https://www.a2b.sa/de/careers
+## Agent Metadata
 
-Language: de
+- Canonical URL: https://www.a2b.sa/de/careers
+- Language: de
+- Page type: careers
+- Source HTML: de/careers/index.html
+- Markdown profile: 1.1.0
+- Content-Signal: search=yes, ai-input=yes, ai-train=no
+- Search indexing: canonical HTML is indexable; direct Markdown sidecar is noindex, follow.
+- Preferred agent access: send `Accept: text/markdown` to the canonical URL.
+
+## Alternate Language Pages
+
+- en: https://www.a2b.sa/careers
+- ar: https://www.a2b.sa/ar/careers
+- de: https://www.a2b.sa/de/careers
+- it: https://www.a2b.sa/it/careers
+- es: https://www.a2b.sa/es/careers
+- fr: https://www.a2b.sa/fr/careers
+- zh-Hans: https://www.a2b.sa/zh-Hans/careers
+- x-default: https://www.a2b.sa/careers
 
 ## Main Content
 

@@ -64,6 +64,8 @@ Normal browsers and clients that prefer HTML continue receiving HTML. Requests w
 
 The route manifest is https://www.a2b.sa/data/markdown-companions.json. Markdown responses use the a2b-approved content policy: `Content-Signal: search=yes, ai-input=yes, ai-train=no`.
 
+Markdown profile `1.1.0` includes an `Agent Metadata` block, alternate language pages, extracted public links, extracted meaningful public images, and preserved public JSON-LD. Decorative icon-only text is intentionally suppressed so assistants can parse the page without visual ornament noise.
+
 ## Services
 
 Use the structured services file as the primary machine-readable source. Public service categories are:

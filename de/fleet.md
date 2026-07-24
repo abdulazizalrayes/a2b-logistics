@@ -3,7 +3,9 @@ title: "Schwertransport-Flotte, Krane und Trailer | a2b Logistics Saudi-Arabien"
 description: "a2b Logistics betreibt 948+ Fahrzeuge in Saudi-Arabien: Tieflader, Kühlfahrzeuge, Tankwagen, Kran-Lkw und mehr."
 canonical: "https://www.a2b.sa/de/fleet"
 language: "de"
+page_type: "fleet"
 source_html: "de/fleet/index.html"
+markdown_profile_version: "1.1.0"
 content_signal: "search=yes, ai-input=yes, ai-train=no"
 robots: "noindex, follow"
 ---
@@ -12,9 +14,27 @@ robots: "noindex, follow"
 
 > a2b Logistics betreibt 948+ Fahrzeuge in Saudi-Arabien: Tieflader, Kühlfahrzeuge, Tankwagen, Kran-Lkw und mehr.
 
-Canonical: https://www.a2b.sa/de/fleet
+## Agent Metadata
 
-Language: de
+- Canonical URL: https://www.a2b.sa/de/fleet
+- Language: de
+- Page type: fleet
+- Source HTML: de/fleet/index.html
+- Markdown profile: 1.1.0
+- Content-Signal: search=yes, ai-input=yes, ai-train=no
+- Search indexing: canonical HTML is indexable; direct Markdown sidecar is noindex, follow.
+- Preferred agent access: send `Accept: text/markdown` to the canonical URL.
+
+## Alternate Language Pages
+
+- en: https://www.a2b.sa/fleet
+- ar: https://www.a2b.sa/ar/fleet
+- de: https://www.a2b.sa/de/fleet
+- it: https://www.a2b.sa/it/fleet
+- es: https://www.a2b.sa/es/fleet
+- fr: https://www.a2b.sa/fr/fleet
+- zh-Hans: https://www.a2b.sa/zh-Hans/fleet
+- x-default: https://www.a2b.sa/fleet
 
 ## Main Content
 
@@ -131,6 +151,10 @@ Professional, licensed, and trained drivers averaging 20+ years of experience in
 Nennen Sie uns Frachtart, Route und Zeitplan - wir bestätigen die Verfügbarkeit schnell.
 
 [Kontakt aufnehmen](https://www.a2b.sa/de#contact)
+
+## Extracted Public Links
+
+- [Kontakt aufnehmen](https://www.a2b.sa/de#contact)
 
 ## Public Structured Data
 

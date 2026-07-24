@@ -117,6 +117,8 @@ These tools prepare and route only. They do not submit forms, send email, call p
 
 Canonical sitemap pages support content negotiation. Send `Accept: text/markdown` to the normal canonical URL to receive the deterministic Markdown representation. Ordinary browser requests continue to receive HTML. If Markdown is unavailable or `text/markdown` has `q=0`, the site safely falls back to HTML.
 
+Markdown companions use profile `1.1.0` and include agent metadata, reciprocal language alternates, extracted public links, meaningful public images, and public JSON-LD structured data. Decorative icon-only text is suppressed to keep the representation cleaner for machine readers.
+
 Direct `.md` sidecars are also available for canonical sitemap pages, for example:
 
 - https://www.a2b.sa/index.md

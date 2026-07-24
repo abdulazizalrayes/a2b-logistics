@@ -3,7 +3,9 @@ title: "Logística cadena de suministro Arabia Saudita | a2b Logistics"
 description: "Soporte operativo de cadena de suministro para empresas, fábricas, equipos de compras y compradores logísticos en Arabia Saudita."
 canonical: "https://www.a2b.sa/es/services/supply-chain"
 language: "es"
+page_type: "service"
 source_html: "es/services/supply-chain/index.html"
+markdown_profile_version: "1.1.0"
 content_signal: "search=yes, ai-input=yes, ai-train=no"
 robots: "noindex, follow"
 ---
@@ -12,9 +14,28 @@ robots: "noindex, follow"
 
 > Soporte operativo de cadena de suministro para empresas, fábricas, equipos de compras y compradores logísticos en Arabia Saudita.
 
-Canonical: https://www.a2b.sa/es/services/supply-chain
+## Agent Metadata
 
-Language: es
+- Canonical URL: https://www.a2b.sa/es/services/supply-chain
+- Language: es
+- Page type: service
+- Source HTML: es/services/supply-chain/index.html
+- Markdown profile: 1.1.0
+- Content-Signal: search=yes, ai-input=yes, ai-train=no
+- Search indexing: canonical HTML is indexable; direct Markdown sidecar is noindex, follow.
+- Preferred agent access: send `Accept: text/markdown` to the canonical URL.
+
+## Alternate Language Pages
+
+- en: https://www.a2b.sa/services/supply-chain
+- ar: https://www.a2b.sa/ar/services/supply-chain
+- ar-SA: https://www.a2b.sa/ar/services/supply-chain
+- de: https://www.a2b.sa/de/services/supply-chain
+- it: https://www.a2b.sa/it/services/supply-chain
+- es: https://www.a2b.sa/es/services/supply-chain
+- fr: https://www.a2b.sa/fr/services/supply-chain
+- zh-Hans: https://www.a2b.sa/zh-Hans/services/supply-chain
+- x-default: https://www.a2b.sa/services/supply-chain
 
 ## Main Content
 
@@ -74,6 +95,17 @@ Servicios relacionados
 Comparta flujo operativo, tiempos, ruta y requisitos de capacidad.
 
 [Contáctanos](https://www.a2b.sa/es#contact)
+
+## Extracted Public Links
+
+- [Solicitar soporte](https://www.a2b.sa/es#contact)
+- [Ver flota](https://www.a2b.sa/es/fleet)
+- [Transporte por carretera](https://www.a2b.sa/es/services/trucking-road-freight)
+- [Apoyo de almacenamiento](https://www.a2b.sa/es/services/warehousing)
+- [Coordinación de despacho aduanero](https://www.a2b.sa/es/services/customs-clearance)
+- [Logística de cadena de suministro](https://www.a2b.sa/es/services/supply-chain)
+- [Tipos de flota y capacidad](https://www.a2b.sa/es/services/fleet-types)
+- [Contáctanos](https://www.a2b.sa/es#contact)
 
 ## Public Structured Data
 

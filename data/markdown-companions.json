@@ -1,8 +1,17 @@
 {
-  "schemaVersion": "1.0.0",
+  "schemaVersion": "1.1.0",
   "company": "a2b Logistics Company",
   "canonicalDomain": "https://www.a2b.sa",
   "contentSignal": "search=yes, ai-input=yes, ai-train=no",
+  "markdownProfileVersion": "1.1.0",
+  "companionEnhancements": [
+    "agent metadata block",
+    "alternate language page inventory",
+    "deduplicated public link inventory",
+    "deduplicated meaningful-image inventory",
+    "public JSON-LD preservation",
+    "decorative icon-only text suppression"
+  ],
   "negotiation": {
     "requestHeader": "Accept: text/markdown",
     "fallback": "HTML is served when Markdown is unavailable or text/markdown has q=0.",

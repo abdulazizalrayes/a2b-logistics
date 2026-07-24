@@ -3,7 +3,9 @@ title: "أنواع الأسطول وقدرة النقل | a2b Logistics السع
 description: "نظرة عامة على أنواع أسطول a2b وقدرات المركبات لمتطلبات B2B اللوجستية في السعودية."
 canonical: "https://www.a2b.sa/ar/services/fleet-types"
 language: "ar-SA"
+page_type: "service"
 source_html: "ar/services/fleet-types/index.html"
+markdown_profile_version: "1.1.0"
 content_signal: "search=yes, ai-input=yes, ai-train=no"
 robots: "noindex, follow"
 ---
@@ -12,9 +14,28 @@ robots: "noindex, follow"
 
 > نظرة عامة على أنواع أسطول a2b وقدرات المركبات لمتطلبات B2B اللوجستية في السعودية.
 
-Canonical: https://www.a2b.sa/ar/services/fleet-types
+## Agent Metadata
 
-Language: ar-SA
+- Canonical URL: https://www.a2b.sa/ar/services/fleet-types
+- Language: ar-SA
+- Page type: service
+- Source HTML: ar/services/fleet-types/index.html
+- Markdown profile: 1.1.0
+- Content-Signal: search=yes, ai-input=yes, ai-train=no
+- Search indexing: canonical HTML is indexable; direct Markdown sidecar is noindex, follow.
+- Preferred agent access: send `Accept: text/markdown` to the canonical URL.
+
+## Alternate Language Pages
+
+- en: https://www.a2b.sa/services/fleet-types
+- ar: https://www.a2b.sa/ar/services/fleet-types
+- ar-SA: https://www.a2b.sa/ar/services/fleet-types
+- de: https://www.a2b.sa/de/services/fleet-types
+- it: https://www.a2b.sa/it/services/fleet-types
+- es: https://www.a2b.sa/es/services/fleet-types
+- fr: https://www.a2b.sa/fr/services/fleet-types
+- zh-Hans: https://www.a2b.sa/zh-Hans/services/fleet-types
+- x-default: https://www.a2b.sa/services/fleet-types
 
 ## Main Content
 
@@ -74,6 +95,17 @@ Language: ar-SA
 شارك أبعاد الشحنة ووزنها ومسارها ومتطلبات المناولة.
 
 [تواصل معنا](https://www.a2b.sa/ar#contact)
+
+## Extracted Public Links
+
+- [اطلب الدعم](https://www.a2b.sa/ar#contact)
+- [عرض الأسطول](https://www.a2b.sa/ar/fleet)
+- [النقل البري بالشاحنات](https://www.a2b.sa/ar/services/trucking-road-freight)
+- [دعم التخزين](https://www.a2b.sa/ar/services/warehousing)
+- [تنسيق التخليص الجمركي](https://www.a2b.sa/ar/services/customs-clearance)
+- [لوجستيات سلسلة الإمداد](https://www.a2b.sa/ar/services/supply-chain)
+- [أنواع الأسطول والقدرة](https://www.a2b.sa/ar/services/fleet-types)
+- [تواصل معنا](https://www.a2b.sa/ar#contact)
 
 ## Public Structured Data
 

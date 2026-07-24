@@ -3,7 +3,9 @@ title: "Tipi di flotta e capacità camionistica | a2b Logistics Arabia Saudita"
 description: "Panoramica dei tipi di flotta a2b e della capacità veicoli per esigenze logistiche B2B in Arabia Saudita."
 canonical: "https://www.a2b.sa/it/services/fleet-types"
 language: "it"
+page_type: "service"
 source_html: "it/services/fleet-types/index.html"
+markdown_profile_version: "1.1.0"
 content_signal: "search=yes, ai-input=yes, ai-train=no"
 robots: "noindex, follow"
 ---
@@ -12,9 +14,28 @@ robots: "noindex, follow"
 
 > Panoramica dei tipi di flotta a2b e della capacità veicoli per esigenze logistiche B2B in Arabia Saudita.
 
-Canonical: https://www.a2b.sa/it/services/fleet-types
+## Agent Metadata
 
-Language: it
+- Canonical URL: https://www.a2b.sa/it/services/fleet-types
+- Language: it
+- Page type: service
+- Source HTML: it/services/fleet-types/index.html
+- Markdown profile: 1.1.0
+- Content-Signal: search=yes, ai-input=yes, ai-train=no
+- Search indexing: canonical HTML is indexable; direct Markdown sidecar is noindex, follow.
+- Preferred agent access: send `Accept: text/markdown` to the canonical URL.
+
+## Alternate Language Pages
+
+- en: https://www.a2b.sa/services/fleet-types
+- ar: https://www.a2b.sa/ar/services/fleet-types
+- ar-SA: https://www.a2b.sa/ar/services/fleet-types
+- de: https://www.a2b.sa/de/services/fleet-types
+- it: https://www.a2b.sa/it/services/fleet-types
+- es: https://www.a2b.sa/es/services/fleet-types
+- fr: https://www.a2b.sa/fr/services/fleet-types
+- zh-Hans: https://www.a2b.sa/zh-Hans/services/fleet-types
+- x-default: https://www.a2b.sa/services/fleet-types
 
 ## Main Content
 
@@ -74,6 +95,17 @@ Servizi correlati
 Condividi dimensioni, peso, rotta e necessità di movimentazione.
 
 [Contattaci](https://www.a2b.sa/it#contact)
+
+## Extracted Public Links
+
+- [Richiedi supporto](https://www.a2b.sa/it#contact)
+- [Vedi flotta](https://www.a2b.sa/it/fleet)
+- [Trasporto stradale merci](https://www.a2b.sa/it/services/trucking-road-freight)
+- [Supporto al magazzinaggio](https://www.a2b.sa/it/services/warehousing)
+- [Coordinamento sdoganamento](https://www.a2b.sa/it/services/customs-clearance)
+- [Logistica supply chain](https://www.a2b.sa/it/services/supply-chain)
+- [Tipi di flotta e capacità](https://www.a2b.sa/it/services/fleet-types)
+- [Contattaci](https://www.a2b.sa/it#contact)
 
 ## Public Structured Data
 

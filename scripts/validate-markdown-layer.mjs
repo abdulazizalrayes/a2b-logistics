@@ -124,7 +124,12 @@ async function validateCoverage() {
     assert(Boolean(meta.title), `${sidecar}: missing title`);
     assert(Boolean(meta.description), `${sidecar}: missing description`);
     assert(Boolean(meta.language), `${sidecar}: missing language`);
+    assert(Boolean(meta.page_type), `${sidecar}: missing page_type`);
+    assert(meta.markdown_profile_version === manifest.markdownProfileVersion, `${sidecar}: markdown profile version mismatch`);
+    assert(markdown.includes('## Agent Metadata'), `${sidecar}: missing agent metadata section`);
+    assert(markdown.includes('- Preferred agent access: send `Accept: text/markdown` to the canonical URL.'), `${sidecar}: missing agent access guidance`);
     assert(markdown.includes('## Main Content'), `${sidecar}: missing main content section`);
+    assert(markdown.includes('## Alternate Language Pages') || ['privacy-policy.md', 'terms-and-conditions.md'].includes(sidecar), `${sidecar}: missing alternate language section`);
     assert(!/<script|<style|<nav|<footer|<form/i.test(markdown), `${sidecar}: forbidden HTML/control content leaked`);
   }
 }

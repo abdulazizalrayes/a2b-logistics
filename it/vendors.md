@@ -3,7 +3,9 @@ title: "Registrazione fornitori | a2b Logistics"
 description: "Registrati come fornitore o subappaltatore con a2b Logistics ed entra nella nostra rete di partner in Arabia Saudita."
 canonical: "https://www.a2b.sa/it/vendors"
 language: "it"
+page_type: "vendors"
 source_html: "it/vendors/index.html"
+markdown_profile_version: "1.1.0"
 content_signal: "search=yes, ai-input=yes, ai-train=no"
 robots: "noindex, follow"
 ---
@@ -12,9 +14,27 @@ robots: "noindex, follow"
 
 > Registrati come fornitore o subappaltatore con a2b Logistics ed entra nella nostra rete di partner in Arabia Saudita.
 
-Canonical: https://www.a2b.sa/it/vendors
+## Agent Metadata
 
-Language: it
+- Canonical URL: https://www.a2b.sa/it/vendors
+- Language: it
+- Page type: vendors
+- Source HTML: it/vendors/index.html
+- Markdown profile: 1.1.0
+- Content-Signal: search=yes, ai-input=yes, ai-train=no
+- Search indexing: canonical HTML is indexable; direct Markdown sidecar is noindex, follow.
+- Preferred agent access: send `Accept: text/markdown` to the canonical URL.
+
+## Alternate Language Pages
+
+- en: https://www.a2b.sa/vendors
+- ar: https://www.a2b.sa/ar/vendors
+- de: https://www.a2b.sa/de/vendors
+- it: https://www.a2b.sa/it/vendors
+- es: https://www.a2b.sa/es/vendors
+- fr: https://www.a2b.sa/fr/vendors
+- zh-Hans: https://www.a2b.sa/zh-Hans/vendors
+- x-default: https://www.a2b.sa/vendors
 
 ## Main Content
 

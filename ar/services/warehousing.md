@@ -3,7 +3,9 @@ title: "دعم التخزين في السعودية | a2b Logistics"
 description: "تنسيق تخزين B2B للشركات التي تحتاج إلى تخزين وتجهيز ودعم لوجستي مرتبط بعمليات النقل البري في السعودية."
 canonical: "https://www.a2b.sa/ar/services/warehousing"
 language: "ar-SA"
+page_type: "service"
 source_html: "ar/services/warehousing/index.html"
+markdown_profile_version: "1.1.0"
 content_signal: "search=yes, ai-input=yes, ai-train=no"
 robots: "noindex, follow"
 ---
@@ -12,9 +14,28 @@ robots: "noindex, follow"
 
 > تنسيق تخزين B2B للشركات التي تحتاج إلى تخزين وتجهيز ودعم لوجستي مرتبط بعمليات النقل البري في السعودية.
 
-Canonical: https://www.a2b.sa/ar/services/warehousing
+## Agent Metadata
 
-Language: ar-SA
+- Canonical URL: https://www.a2b.sa/ar/services/warehousing
+- Language: ar-SA
+- Page type: service
+- Source HTML: ar/services/warehousing/index.html
+- Markdown profile: 1.1.0
+- Content-Signal: search=yes, ai-input=yes, ai-train=no
+- Search indexing: canonical HTML is indexable; direct Markdown sidecar is noindex, follow.
+- Preferred agent access: send `Accept: text/markdown` to the canonical URL.
+
+## Alternate Language Pages
+
+- en: https://www.a2b.sa/services/warehousing
+- ar: https://www.a2b.sa/ar/services/warehousing
+- ar-SA: https://www.a2b.sa/ar/services/warehousing
+- de: https://www.a2b.sa/de/services/warehousing
+- it: https://www.a2b.sa/it/services/warehousing
+- es: https://www.a2b.sa/es/services/warehousing
+- fr: https://www.a2b.sa/fr/services/warehousing
+- zh-Hans: https://www.a2b.sa/zh-Hans/services/warehousing
+- x-default: https://www.a2b.sa/services/warehousing
 
 ## Main Content
 
@@ -74,6 +95,17 @@ Language: ar-SA
 شارك متطلبات التخزين والتجهيز والإرسال والمسارات، وسيتم توجيه طلبك إلى الجهة المناسبة.
 
 [تواصل معنا](https://www.a2b.sa/ar#contact)
+
+## Extracted Public Links
+
+- [اطلب الدعم](https://www.a2b.sa/ar#contact)
+- [عرض الأسطول](https://www.a2b.sa/ar/fleet)
+- [النقل البري بالشاحنات](https://www.a2b.sa/ar/services/trucking-road-freight)
+- [دعم التخزين](https://www.a2b.sa/ar/services/warehousing)
+- [تنسيق التخليص الجمركي](https://www.a2b.sa/ar/services/customs-clearance)
+- [لوجستيات سلسلة الإمداد](https://www.a2b.sa/ar/services/supply-chain)
+- [أنواع الأسطول والقدرة](https://www.a2b.sa/ar/services/fleet-types)
+- [تواصل معنا](https://www.a2b.sa/ar#contact)
 
 ## Public Structured Data
 

@@ -3,7 +3,9 @@ title: "a2b Logistics | Saudi Arabia's Premier Logistics Partner"
 description: "a2b Logistics provides trucking, warehousing, customs clearance, and supply chain solutions across Saudi Arabia with KSA-wide coverage and 24/7 support."
 canonical: "https://www.a2b.sa/"
 language: "en"
+page_type: "homepage"
 source_html: "index.html"
+markdown_profile_version: "1.1.0"
 content_signal: "search=yes, ai-input=yes, ai-train=no"
 robots: "noindex, follow"
 ---
@@ -12,9 +14,28 @@ robots: "noindex, follow"
 
 > a2b Logistics provides trucking, warehousing, customs clearance, and supply chain solutions across Saudi Arabia with KSA-wide coverage and 24/7 support.
 
-Canonical: https://www.a2b.sa/
+## Agent Metadata
 
-Language: en
+- Canonical URL: https://www.a2b.sa/
+- Language: en
+- Page type: homepage
+- Source HTML: index.html
+- Markdown profile: 1.1.0
+- Content-Signal: search=yes, ai-input=yes, ai-train=no
+- Search indexing: canonical HTML is indexable; direct Markdown sidecar is noindex, follow.
+- Preferred agent access: send `Accept: text/markdown` to the canonical URL.
+
+## Alternate Language Pages
+
+- en: https://www.a2b.sa/
+- ar: https://www.a2b.sa/ar
+- ar-SA: https://www.a2b.sa/ar
+- de: https://www.a2b.sa/de
+- it: https://www.a2b.sa/it
+- es: https://www.a2b.sa/es
+- fr: https://www.a2b.sa/fr
+- zh-Hans: https://www.a2b.sa/zh-Hans
+- x-default: https://www.a2b.sa/
 
 ## Main Content
 
@@ -70,55 +91,37 @@ Why a2b
 
 Every capability built around the unique demands of operating in Saudi Arabia.
 
-⚡
-
 ### Scalability
 
 Fast, proven scalability to meet your requirements, from a single trip to a full nationwide rollout.
-
-🕐
 
 ### 24/7 Availability
 
 Round-the-clock availability to answer calls and mobilize trucks. No downtime in your supply chain.
 
-🚀
-
 ### Fast Response
 
 We act fast, identifying and allocating the right equipment for your project with minimal lead time.
-
-📊
 
 ### Transparency
 
 Full visibility across every request, streamlined tracking and clear communication at all stages.
 
-📋
-
 ### Planning
 
 We plan ahead for your projects, aligning logistics timelines precisely with your business objectives.
-
-⏱
 
 ### Rushed Projects
 
 Successfully delivered under the tightest deadlines, including complex, time-critical mega-projects.
 
-🏆
-
 ### Experience
 
 An impeccable track record in sensitive, high-stakes projects, with a team averaging 20+ years of experience.
 
-🗺
-
 ### Full KSA Coverage
 
 Kingdom-wide operations across all major cities, domestic routes, and sea and air port services.
-
-🤖
 
 ### Automation
 
@@ -281,6 +284,35 @@ Dr. Suhaib Ghunaim
 [M +966 55 384 6446](tel:+966553846446)
 
 [SGhunaim@a2b.sa](mailto:SGhunaim@a2b.sa)
+
+## Extracted Public Links
+
+- [Trucking and road freight](https://www.a2b.sa/services/trucking-road-freight)
+- [Warehousing support](https://www.a2b.sa/services/warehousing)
+- [Customs-clearance coordination](https://www.a2b.sa/services/customs-clearance)
+- [Supply-chain logistics support](https://www.a2b.sa/services/supply-chain)
+- [Fleet and vehicle support](https://www.a2b.sa/services/fleet-types)
+- [info@a2b.sa](mailto:info@a2b.sa)
+- [M +966 55 384 6446](tel:+966553846446)
+- [LinkedIn](https://www.linkedin.com/company/helloa2bco)
+- [Instagram](https://www.instagram.com/a2blogistics_sa)
+- [X](https://x.com/a2blogistics_sa)
+- [sales@a2b.sa](mailto:sales@a2b.sa)
+- [www.a2b.sa](https://www.a2b.sa/)
+- [SGhunaim@a2b.sa](mailto:SGhunaim@a2b.sa)
+
+## Extracted Public Images
+
+- ![a2b logistics truck on Saudi highway](https://www.a2b.sa/images/truck_hero.jpg)
+- ![a2b logistics heavy equipment transport](https://www.a2b.sa/images/services_hero.jpg)
+- ![Ministry of Defense](https://www.a2b.sa/images/logo_2_clean.png)
+- ![Royal Commission for Riyadh City](https://www.a2b.sa/images/logo_3_clean.png)
+- ![Royal Commission for AlUla](https://www.a2b.sa/images/logo_4_clean.png)
+- ![Riyadh Airports](https://www.a2b.sa/images/logo_5_clean.png)
+- ![STC - Saudi Telecommunications Company](https://www.a2b.sa/images/logo_6_clean.png)
+- ![Saudi Electricity Company](https://www.a2b.sa/images/logo_7_clean.png)
+- ![Diriyah Gate Development Authority (DGDA)](https://www.a2b.sa/images/logo_0_clean.png)
+- ![Formula E](https://www.a2b.sa/images/logo_8_clean.png)
 
 ## Public Structured Data
 

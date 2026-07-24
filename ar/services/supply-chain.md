@@ -3,7 +3,9 @@ title: "لوجستيات سلسلة الإمداد في السعودية | a2b L
 description: "دعم تشغيلي لسلاسل الإمداد للشركات والمصانع وفرق المشتريات ومشتري الخدمات اللوجستية في السعودية."
 canonical: "https://www.a2b.sa/ar/services/supply-chain"
 language: "ar-SA"
+page_type: "service"
 source_html: "ar/services/supply-chain/index.html"
+markdown_profile_version: "1.1.0"
 content_signal: "search=yes, ai-input=yes, ai-train=no"
 robots: "noindex, follow"
 ---
@@ -12,9 +14,28 @@ robots: "noindex, follow"
 
 > دعم تشغيلي لسلاسل الإمداد للشركات والمصانع وفرق المشتريات ومشتري الخدمات اللوجستية في السعودية.
 
-Canonical: https://www.a2b.sa/ar/services/supply-chain
+## Agent Metadata
 
-Language: ar-SA
+- Canonical URL: https://www.a2b.sa/ar/services/supply-chain
+- Language: ar-SA
+- Page type: service
+- Source HTML: ar/services/supply-chain/index.html
+- Markdown profile: 1.1.0
+- Content-Signal: search=yes, ai-input=yes, ai-train=no
+- Search indexing: canonical HTML is indexable; direct Markdown sidecar is noindex, follow.
+- Preferred agent access: send `Accept: text/markdown` to the canonical URL.
+
+## Alternate Language Pages
+
+- en: https://www.a2b.sa/services/supply-chain
+- ar: https://www.a2b.sa/ar/services/supply-chain
+- ar-SA: https://www.a2b.sa/ar/services/supply-chain
+- de: https://www.a2b.sa/de/services/supply-chain
+- it: https://www.a2b.sa/it/services/supply-chain
+- es: https://www.a2b.sa/es/services/supply-chain
+- fr: https://www.a2b.sa/fr/services/supply-chain
+- zh-Hans: https://www.a2b.sa/zh-Hans/services/supply-chain
+- x-default: https://www.a2b.sa/services/supply-chain
 
 ## Main Content
 
@@ -74,6 +95,17 @@ Language: ar-SA
 شارك تدفق العمليات والتوقيت والمسار ومتطلبات القدرة.
 
 [تواصل معنا](https://www.a2b.sa/ar#contact)
+
+## Extracted Public Links
+
+- [اطلب الدعم](https://www.a2b.sa/ar#contact)
+- [عرض الأسطول](https://www.a2b.sa/ar/fleet)
+- [النقل البري بالشاحنات](https://www.a2b.sa/ar/services/trucking-road-freight)
+- [دعم التخزين](https://www.a2b.sa/ar/services/warehousing)
+- [تنسيق التخليص الجمركي](https://www.a2b.sa/ar/services/customs-clearance)
+- [لوجستيات سلسلة الإمداد](https://www.a2b.sa/ar/services/supply-chain)
+- [أنواع الأسطول والقدرة](https://www.a2b.sa/ar/services/fleet-types)
+- [تواصل معنا](https://www.a2b.sa/ar#contact)
 
 ## Public Structured Data
 

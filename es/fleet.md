@@ -3,7 +3,9 @@ title: "Flota de transporte pesado, grúas y remolques | a2b Logistics Arabia Sa
 description: "a2b Logistics opera más de 948 vehículos en Arabia Saudita: plataformas, lowbeds, reefers, cisternas, camiones grúa y más."
 canonical: "https://www.a2b.sa/es/fleet"
 language: "es"
+page_type: "fleet"
 source_html: "es/fleet/index.html"
+markdown_profile_version: "1.1.0"
 content_signal: "search=yes, ai-input=yes, ai-train=no"
 robots: "noindex, follow"
 ---
@@ -12,9 +14,27 @@ robots: "noindex, follow"
 
 > a2b Logistics opera más de 948 vehículos en Arabia Saudita: plataformas, lowbeds, reefers, cisternas, camiones grúa y más.
 
-Canonical: https://www.a2b.sa/es/fleet
+## Agent Metadata
 
-Language: es
+- Canonical URL: https://www.a2b.sa/es/fleet
+- Language: es
+- Page type: fleet
+- Source HTML: es/fleet/index.html
+- Markdown profile: 1.1.0
+- Content-Signal: search=yes, ai-input=yes, ai-train=no
+- Search indexing: canonical HTML is indexable; direct Markdown sidecar is noindex, follow.
+- Preferred agent access: send `Accept: text/markdown` to the canonical URL.
+
+## Alternate Language Pages
+
+- en: https://www.a2b.sa/fleet
+- ar: https://www.a2b.sa/ar/fleet
+- de: https://www.a2b.sa/de/fleet
+- it: https://www.a2b.sa/it/fleet
+- es: https://www.a2b.sa/es/fleet
+- fr: https://www.a2b.sa/fr/fleet
+- zh-Hans: https://www.a2b.sa/zh-Hans/fleet
+- x-default: https://www.a2b.sa/fleet
 
 ## Main Content
 
@@ -131,6 +151,10 @@ Professional, licensed, and trained drivers averaging 20+ years of experience in
 Tell us your cargo type, route, and timeline — we'll confirm availability and turn it around fast.
 
 [Contáctanos](https://www.a2b.sa/es#contact)
+
+## Extracted Public Links
+
+- [Contáctanos](https://www.a2b.sa/es#contact)
 
 ## Public Structured Data
 
