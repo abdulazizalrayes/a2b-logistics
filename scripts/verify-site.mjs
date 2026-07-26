@@ -149,9 +149,11 @@ for (const prefix of servicePrefixes) {
 }
 
 const textFiles = (await walk(root)).filter((file) => /\.(html|xml|txt|md|json|js|css)$/i.test(file));
+const accidentalArtifactPattern = /(^|\/)[^/]+(?: 2| copy)\.(?:html|xml|txt|md|json|js|css)$|(^|\/)[^/]+\.(?:bak|tmp)$/i;
 for (const full of textFiles) {
   const file = relative(root, full);
   const text = await readFile(full, 'utf8');
+  if (accidentalArtifactPattern.test(file)) fail(`${file}: accidental duplicate/copy/temp artifact is present`);
   if (text.includes('+966-11-510-1861')) fail(`${file}: old landline is still present`);
   if (text.includes('\u05aa')) fail(`${file}: stray U+05AA mark is present`);
 }
