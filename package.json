@@ -3,6 +3,8 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "architecture:generate": "node scripts/generate-architecture-map.mjs",
+    "architecture:check": "node scripts/generate-architecture-map.mjs --check",
     "markdown:generate": "node scripts/generate-markdown-companions.mjs",
     "markdown:check": "node scripts/generate-markdown-companions.mjs --check",
     "markdown:validate": "node scripts/validate-markdown-layer.mjs",

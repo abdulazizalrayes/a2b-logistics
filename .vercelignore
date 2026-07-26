@@ -1,3 +1,4 @@
 .markdown/
+docs/architecture/
 node_modules/
 reports/markdown-layer-*.png

@@ -104,4 +104,11 @@ If verification cannot be run, explain why and state the remaining risk.
 - After each Paperclip upgrade, audit existing a2b agents for stale adapters, obsolete or duplicated configuration keys, wrong primary/cheap model assignments, disabled skills, broken environment bindings, and stale error states. Diagnose before changing; test affected adapters after cleanup.
 - Use release capabilities when they improve execution: Work Timeline for handoffs and overlap, read-only diagnostics for blockers and branch ancestry, live heartbeat progress, dependency wake reconciliation, isolated re-issue for diverged work, task watchdogs, ask mode, company skill audits, document locks/revisions, user-scoped runtime secrets, instance-scoped environments, and heartbeat budget caps.
 - Never put plaintext secrets in instructions, prompts, logs, repositories, or task comments. Use Paperclip secret references and user-specific runtime secrets where available.
+
+## Architecture Map
+
+- Read `docs/architecture/a2b-architecture.json` before changing routes, runtime boundaries, public agent interfaces, deployment behavior, ownership, or external integrations.
+- The JSON is the machine-readable architecture source of truth. `docs/architecture/a2b-architecture-map.html` is the generated standalone human view.
+- After an architecture-affecting change, update the JSON, run `npm run architecture:generate`, then run `npm run architecture:check`.
+- Keep `docs/architecture/` excluded from Vercel deployment. It is repository-internal and must not become a public website route.
 - Keep all activity company-scoped to a2b. Do not inspect or modify another company's agents, tasks, models, credentials, environments, or instructions except read-only host-level health evidence when required.

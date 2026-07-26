@@ -1,0 +1,703 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>a2b Logistics Website Architecture</title>
+<style>
+:root {
+  color-scheme: dark;
+  --bg: #080a0f;
+  --surface: #0e121a;
+  --surface-2: #141925;
+  --surface-3: #1a202d;
+  --line: #2a3242;
+  --text: #f3f6fb;
+  --muted: #96a1b2;
+  --dim: #5f6b7c;
+  --focus: #ffffff;
+  --danger: #ff6b7d;
+}
+* { box-sizing: border-box; }
+html, body { min-height: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 14px;
+  letter-spacing: 0;
+}
+button, input { font: inherit; letter-spacing: 0; }
+button { color: inherit; }
+.shell {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr;
+}
+.topbar {
+  border-bottom: 1px solid var(--line);
+  background: #0b0e15;
+  padding: 20px 24px 18px;
+}
+.topline {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+}
+.eyebrow {
+  color: #53dc91;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 7px;
+}
+h1 {
+  font-size: clamp(22px, 3vw, 34px);
+  line-height: 1.15;
+  margin: 0;
+  font-weight: 720;
+}
+.dek {
+  color: var(--muted);
+  max-width: 840px;
+  margin: 8px 0 0;
+  line-height: 1.5;
+}
+.meta {
+  text-align: right;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.6;
+  white-space: nowrap;
+}
+.meta strong { color: var(--text); font-weight: 650; }
+.summary {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+}
+.stat {
+  min-width: 116px;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  border-radius: 6px;
+  padding: 9px 11px;
+}
+.stat b { display: block; font-size: 17px; line-height: 1.1; }
+.stat span { color: var(--muted); font-size: 11px; }
+.app {
+  min-height: 0;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 360px;
+}
+.main {
+  min-width: 0;
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
+}
+.toolbar {
+  min-height: 54px;
+  border-bottom: 1px solid var(--line);
+  background: #0b0e15;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 10px 16px;
+  overflow-x: auto;
+}
+.search-wrap { position: relative; flex: 0 1 300px; min-width: 210px; }
+.search {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--surface);
+  color: var(--text);
+  padding: 8px 10px;
+  outline: none;
+}
+.search:focus { border-color: #49d6ff; box-shadow: 0 0 0 2px #49d6ff22; }
+.legend {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  white-space: nowrap;
+}
+.legend-item { display: inline-flex; align-items: center; gap: 5px; color: var(--muted); font-size: 11px; }
+.swatch { width: 8px; height: 8px; border-radius: 2px; }
+.reset {
+  margin-left: auto;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--surface);
+  padding: 8px 10px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.reset:hover, .reset:focus-visible { border-color: var(--focus); outline: none; }
+.viewport {
+  min-width: 0;
+  min-height: 0;
+  overflow: auto;
+  position: relative;
+  background-color: #0a0d13;
+  background-image:
+    linear-gradient(#242b370d 1px, transparent 1px),
+    linear-gradient(90deg, #242b370d 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+.map {
+  position: relative;
+  min-width: 1460px;
+  min-height: 790px;
+  padding: 18px;
+}
+.edges {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+  overflow: visible;
+}
+.edge {
+  fill: none;
+  stroke: #657286;
+  stroke-width: 1.2;
+  opacity: .2;
+  transition: opacity .16s ease, stroke-width .16s ease, stroke .16s ease;
+}
+.edge.active { opacity: .94; stroke-width: 2.2; }
+.edge.dim { opacity: .045; }
+.lanes {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: repeat(6, minmax(220px, 1fr));
+  gap: 10px;
+  min-height: 750px;
+}
+.lane {
+  border-left: 1px solid #252c39;
+  padding: 0 9px;
+  min-width: 0;
+}
+.lane:first-child { border-left: 0; }
+.lane-head {
+  min-height: 52px;
+  border-bottom: 2px solid var(--lane-color);
+  margin-bottom: 12px;
+  padding: 4px 2px 9px;
+}
+.lane-title { font-size: 11px; font-weight: 750; text-transform: uppercase; }
+.lane-description { color: var(--muted); font-size: 10px; line-height: 1.35; margin-top: 4px; }
+.node-list { display: grid; gap: 9px; }
+.node {
+  width: 100%;
+  min-height: 70px;
+  text-align: left;
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--node-color);
+  border-radius: 6px;
+  background: #111620;
+  padding: 10px 10px 9px;
+  cursor: pointer;
+  transition: border-color .14s ease, background .14s ease, opacity .14s ease, transform .14s ease;
+}
+.node:hover { border-color: var(--node-color); background: #171d28; transform: translateY(-1px); }
+.node:focus-visible { outline: 2px solid var(--focus); outline-offset: 2px; }
+.node.selected, .node.in-flow {
+  border-color: var(--node-color);
+  box-shadow: inset 0 0 0 1px var(--node-color);
+  background: #1a202c;
+}
+.node.dim { opacity: .22; }
+.node-title { font-size: 12px; font-weight: 700; line-height: 1.3; }
+.node-subtitle { color: var(--muted); font-size: 10px; line-height: 1.35; margin-top: 3px; }
+.node-footer { display: flex; justify-content: space-between; gap: 8px; margin-top: 9px; }
+.node-type, .node-status {
+  color: var(--dim);
+  font-size: 9px;
+  text-transform: uppercase;
+}
+.node-status { color: var(--node-color); text-align: right; }
+.side {
+  min-height: 0;
+  overflow-y: auto;
+  border-left: 1px solid var(--line);
+  background: #0d1118;
+  padding: 14px;
+}
+.panel {
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  background: var(--surface);
+  margin-bottom: 12px;
+}
+.panel-head {
+  padding: 11px 12px 9px;
+  border-bottom: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 10px;
+  font-weight: 750;
+  text-transform: uppercase;
+}
+.flow-list { padding: 6px; display: grid; gap: 4px; }
+.flow {
+  border: 1px solid transparent;
+  border-radius: 5px;
+  background: transparent;
+  text-align: left;
+  padding: 8px;
+  cursor: pointer;
+}
+.flow:hover, .flow:focus-visible { background: var(--surface-2); border-color: var(--line); outline: none; }
+.flow.active { background: #241f0d; border-color: #ffc928; }
+.flow-title { display: block; font-size: 11px; font-weight: 700; }
+.flow-desc { display: block; color: var(--muted); font-size: 9px; line-height: 1.35; margin-top: 2px; }
+.detail { padding: 13px; }
+.detail h2 { font-size: 17px; line-height: 1.25; margin: 0; }
+.detail .sub { color: var(--muted); margin: 4px 0 0; font-size: 11px; }
+.detail .responsibility { line-height: 1.55; color: #c7cfdb; margin: 13px 0; }
+.section-title { color: var(--muted); font-size: 9px; font-weight: 750; text-transform: uppercase; margin: 13px 0 6px; }
+.pill-list { display: flex; flex-wrap: wrap; gap: 5px; }
+.pill {
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  background: var(--surface-2);
+  color: #c8d0dd;
+  font-size: 9px;
+  line-height: 1.3;
+  padding: 4px 6px;
+  overflow-wrap: anywhere;
+}
+.file-list, .step-list, .note-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 5px; }
+.file-list li, .note-list li {
+  color: #c6cfdb;
+  font-size: 10px;
+  line-height: 1.4;
+  padding-left: 11px;
+  position: relative;
+  overflow-wrap: anywhere;
+}
+.file-list li::before, .note-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: .52em;
+  width: 4px;
+  height: 4px;
+  border-radius: 1px;
+  background: #53dc91;
+}
+.step-list { counter-reset: flow-step; }
+.step-list li {
+  counter-increment: flow-step;
+  display: grid;
+  grid-template-columns: 22px 1fr;
+  gap: 7px;
+  align-items: start;
+  color: #c6cfdb;
+  font-size: 10px;
+  line-height: 1.4;
+}
+.step-list li::before {
+  content: counter(flow-step);
+  display: grid;
+  place-items: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #ffc928;
+  color: #121212;
+  font-weight: 800;
+  font-size: 9px;
+}
+.boundary {
+  border-left: 3px solid #ff6b7d;
+  background: #24141a;
+  color: #ffd9de;
+  padding: 8px 9px;
+  font-size: 10px;
+  line-height: 1.45;
+  margin-top: 12px;
+}
+.empty { color: var(--muted); line-height: 1.55; }
+.internal {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 10px 12px;
+}
+.internal a { color: #49d6ff; text-decoration: none; font-size: 11px; }
+.internal a:hover { text-decoration: underline; }
+.internal small { color: var(--muted); }
+@media (max-width: 1050px) {
+  .app { grid-template-columns: 1fr; }
+  .side { border-left: 0; border-top: 1px solid var(--line); max-height: none; }
+}
+@media (max-width: 720px) {
+  .topbar { padding: 16px; }
+  .topline { display: block; }
+  .meta { text-align: left; margin-top: 12px; white-space: normal; }
+  .toolbar { align-items: stretch; flex-wrap: wrap; }
+  .search-wrap { flex-basis: 100%; }
+  .reset { margin-left: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition: none !important; scroll-behavior: auto !important; }
+}
+</style>
+</head>
+<body>
+<div class="shell">
+  <header class="topbar">
+    <div class="topline">
+      <div>
+        <div class="eyebrow">Repository-internal · a2b only</div>
+        <h1>a2b Logistics Website Architecture</h1>
+        <p class="dek">Every production path, public agent interface, source boundary, external dependency, and release control mapped from the repository. Select a node or flow to inspect its evidence and change contract.</p>
+      </div>
+      <div class="meta">
+        <div>Audited commit <strong>2bd0f3a</strong></div>
+        <div>Generated <strong>2026-07-26</strong></div>
+        <div>Production <strong>www.a2b.sa</strong></div>
+      </div>
+    </div>
+    <div class="summary" id="summary"></div>
+  </header>
+  <div class="app">
+    <main class="main">
+      <div class="toolbar">
+        <div class="search-wrap"><input class="search" id="search" type="search" placeholder="Filter nodes, files, interfaces…" aria-label="Filter architecture nodes"></div>
+        <div class="legend" id="legend" aria-label="Architecture legend"></div>
+        <button class="reset" id="reset" type="button">Clear selection</button>
+      </div>
+      <div class="viewport" id="viewport">
+        <div class="map" id="map">
+          <svg class="edges" id="edges" aria-hidden="true"></svg>
+          <div class="lanes" id="lanes"></div>
+        </div>
+      </div>
+    </main>
+    <aside class="side">
+      <section class="panel">
+        <div class="panel-head">System flows</div>
+        <div class="flow-list" id="flows"></div>
+      </section>
+      <section class="panel">
+        <div class="panel-head">Inspector</div>
+        <div class="detail" id="detail"></div>
+      </section>
+      <section class="panel internal">
+        <small>Machine-readable source</small>
+        <a href="./a2b-architecture.json">Open JSON</a>
+      </section>
+    </aside>
+  </div>
+</div>
+<script type="application/json" id="architecture-data">{"$schema":"https://json-schema.org/draft/2020-12/schema","schemaVersion":"1.0.0","document":{"id":"a2b-logistics-architecture","title":"a2b Logistics Website Architecture","purpose":"Human and agent-readable map of the a2b website, its public agent interfaces, deployment path, external dependencies, controls, and change procedures.","generatedAt":"2026-07-26T11:18:08Z","sourceCommitAudited":"2bd0f3a59d191508a35edb4f21022b4ae4e95dad","scope":"a2b only","confidentiality":"Repository-internal. Excluded from Vercel deployment.","updateRule":"Update this JSON when routes, runtime boundaries, public interfaces, external systems, ownership, or deployment behavior change; then run npm run architecture:generate and npm run architecture:check."},"identityLock":{"company":{"legalName":"a2b Logistics Company","shortName":"a2b","paperclipPrefix":"AB","primaryDomain":"www.a2b.sa"},"accounts":{"companyEmail":"info@a2b.sa","googleOperatorEmail":"abdulaziz.alrayes@gmail.com","githubOwner":"abdulazizalrayes","vercelTeamId":"team_AnOdxEeUwCwUtPdqTk5I1Dkt"},"resources":{"repositoryPath":"/Users/abdulazizalrayes/Documents/New project/a2b-logistics","githubRepository":"abdulazizalrayes/a2b-logistics","productionDomain":"https://www.a2b.sa","vercelProject":"a2b-logistics","vercelProjectId":"prj_rmDHwzUxoJjVwZOXaK1HPR1M9k7N","ga4MeasurementId":"G-909SV0D9FM","paperclipHost":"https://ai.eijarat.com","paperclipWorkspace":"AB","paperclipPrimaryIssue":"AB-249"},"excludedCompanies":["JFCO","every company other than a2b"],"approvalPolicy":"No visual changes, production DNS changes, destructive actions, email-sending changes, spend, credential decisions, legal commitments, or irreversible actions without owner approval.","verification":{"repositoryRemote":"https://github.com/abdulazizalrayes/a2b-logistics.git","repositoryRemoteVerifiedAt":"2026-07-26T11:18:08Z","source":[".git/config",".vercel/project.json","CLAUDE.md","data/company.json"]}},"system":{"type":"Static multilingual B2B company website with Vercel edge middleware and one read-only serverless MCP endpoint","runtime":{"staticHosting":"Vercel","edgeMiddleware":"middleware.js","serverlessFunctions":["api/mcp.js"],"framework":"none","nodeVersion":"24.x","buildCommand":null,"outputDirectory":null},"contentPolicy":{"visualFreeze":true,"primaryLanguage":"en","languages":["en","ar-SA","de","it","es","fr","zh-Hans"],"contentSignal":"search=yes, ai-input=yes, ai-train=no","canonicalHost":"www.a2b.sa","businessFit":"B2B logistics and operational supply-chain support","nonFit":["B2C parcel delivery","retail shopping","consumer courier requests","home moving","ride-hailing","personal delivery","spam","unrelated solicitations"]}},"inventory":{"repositoryFilesExcludingGeneratedAndDependencies":325,"htmlFiles":71,"canonicalSitemapRoutes":65,"routeFamilies":[{"id":"home","count":7,"languages":7,"patterns":["/","/{locale}"]},{"id":"fleet","count":7,"languages":7,"patterns":["/fleet","/{locale}/fleet"]},{"id":"careers","count":7,"languages":7,"patterns":["/careers","/{locale}/careers"]},{"id":"vendors","count":7,"languages":7,"patterns":["/vendors","/{locale}/vendors"]},{"id":"services","count":35,"languages":7,"serviceSlugs":["trucking-road-freight","warehousing","customs-clearance","supply-chain","fleet-types"]},{"id":"legal","count":2,"languages":1,"patterns":["/privacy-policy","/terms-and-conditions"]}],"nonSitemapUtilitySurfaces":["/thankyou","/indexnow-submit","/agent-auth/register/","/agent-auth/claim/","/googlec344506d98b81e41.html"],"markdownCompanions":65,"structuredDataFiles":14,"wellKnownDiscoveryFiles":10,"serverMcpTools":8,"browserWebMcpTools":6,"cssFiles":10,"javascriptAndModuleFiles":19,"imageFiles":112,"verificationScripts":8},"layers":[{"id":"actors","title":"Actors & Entry","color":"#49d6ff","description":"Human users, crawlers, and AI or procurement agents entering through public URLs."},{"id":"delivery","title":"DNS, Edge & Delivery","color":"#ffc928","description":"Domain resolution, Vercel routing, redirects, headers, caching, and content negotiation."},{"id":"content","title":"Pages & Content","color":"#ff5ca8","description":"Canonical HTML pages, assets, multilingual variants, forms, and JSON-LD."},{"id":"agents","title":"Agent Interfaces","color":"#8e7cff","description":"Markdown, structured data, discovery, WebMCP, and server-side MCP."},{"id":"operations","title":"Source & Operations","color":"#53dc91","description":"Repository, validation, deployment, rollback, governance, and reporting."},{"id":"external","title":"External Systems","color":"#9aa6b7","description":"Owned or third-party systems outside the repository boundary."}],"nodes":[{"id":"human-visitors","layer":"actors","type":"actor","title":"Human visitors","subtitle":"B2B buyers, vendors, applicants","responsibility":"Browse public pages, use contact links, or begin vendor and careers flows.","interfaces":["HTTPS","HTML","mailto","tel"],"dependencies":["dnet-dns","vercel-edge"],"status":"active"},{"id":"search-ai-crawlers","layer":"actors","type":"actor","title":"Search & AI crawlers","subtitle":"Google, Bing and public AI retrieval","responsibility":"Discover canonical pages and public machine-readable resources under the published crawler policy.","interfaces":["robots.txt","sitemap.xml","llms.txt","HTML","JSON-LD","Markdown"],"dependencies":["dnet-dns","vercel-edge"],"status":"active"},{"id":"procurement-agents","layer":"actors","type":"actor","title":"Procurement & AI agents","subtitle":"Read, match scope, prepare inquiries","responsibility":"Read public facts, classify project fit, and prepare non-submitting inquiry or RFQ drafts.","interfaces":["Accept: text/markdown","OpenAPI","MCP JSON-RPC","WebMCP"],"dependencies":["agent-discovery","markdown-layer","mcp-api","browser-webmcp"],"status":"active"},{"id":"dnet-dns","layer":"delivery","type":"infrastructure","title":"DNET authoritative DNS","subtitle":"a2b.sa zone and nameservers","responsibility":"Resolve a2b.sa and www.a2b.sa to the production web host while preserving web and email routing.","interfaces":["DNS","A/AAAA/CNAME/TXT/MX"],"dependencies":["vercel-edge"],"evidence":["docs/DNS_AID_BLOCKER.md"],"status":"active","notes":["SVCB/HTTPS DNS-AID record support remains optional and provider-limited.","Production DNS changes require owner approval."]},{"id":"vercel-edge","layer":"delivery","type":"platform","title":"Vercel project","subtitle":"a2b-logistics / production CDN","responsibility":"Serve static files, execute middleware and api/mcp.js, enforce redirects and response headers, and provide deployment/log evidence.","files":["vercel.json",".vercel/project.json",".vercelignore"],"interfaces":["HTTPS","CDN","serverless function","edge middleware"],"dependencies":["edge-middleware","static-pages","mcp-api","security-headers"],"status":"active"},{"id":"edge-middleware","layer":"delivery","type":"runtime","title":"Edge middleware","subtitle":"Language redirects and Markdown negotiation","responsibility":"Normalize legacy language queries, serve direct Markdown sidecars with noindex headers, and rewrite canonical requests to Markdown when Accept permits it.","files":["middleware.js","markdown-routes.mjs"],"interfaces":["HTTP Accept","308 redirect","x-middleware-rewrite"],"dependencies":["static-pages","markdown-layer"],"status":"active"},{"id":"security-headers","layer":"delivery","type":"control","title":"Security & representation headers","subtitle":"CSP, HSTS, canonical and Content-Signal","responsibility":"Apply global browser security controls and route-specific content types, language, canonical, noindex, and agent-policy headers.","files":["vercel.json","middleware.js"],"interfaces":["CSP","HSTS","X-Robots-Tag","Content-Language","Content-Signal"],"dependencies":[],"status":"active"},{"id":"static-pages","layer":"content","type":"content","title":"Canonical multilingual pages","subtitle":"65 sitemap URLs across 7 languages","responsibility":"Deliver the public website and its dedicated service, fleet, careers, vendor, and legal content.","files":["index.html","{locale}/index.html","fleet.html","careers.html","vendors.html","services/*/index.html","{locale}/services/*/index.html","privacy-policy.html","terms-and-conditions.html"],"interfaces":["HTML","canonical","hreflang","JSON-LD"],"dependencies":["static-assets","analytics-client","browser-webmcp"],"status":"active"},{"id":"static-assets","layer":"content","type":"content","title":"Static assets","subtitle":"CSS, JavaScript, images and icons","responsibility":"Provide presentation, interaction, localization support, analytics hooks, and owned visual media.","files":["assets/css/*.css","assets/js/*.js","images/*","favicon*","apple-touch-icon.png"],"interfaces":["CSS","JavaScript","PNG","WebP","JPEG"],"dependencies":["google-fonts","ga4"],"status":"active"},{"id":"jsonld-schema","layer":"content","type":"metadata","title":"Page-level JSON-LD","subtitle":"Organization, LocalBusiness, FAQ and Service","responsibility":"Expose entity, service, breadcrumb, and FAQ meaning inside canonical HTML.","files":["index.html","{locale}/index.html","services/*/index.html","{locale}/services/*/index.html"],"interfaces":["application/ld+json","schema.org"],"dependencies":["static-pages"],"status":"active"},{"id":"forms-contact","layer":"content","type":"workflow","title":"Contact, vendor & careers flows","subtitle":"Direct contact links plus mail-client handoff","responsibility":"Expose phone/email contact paths and prepare vendor or careers email drafts in the visitor's local mail client.","files":["index.html","careers.html","vendors.html","assets/js/careers.js","assets/js/vendors.js","thankyou.html","assets/js/thankyou.js"],"interfaces":["mailto","tel","FormData","local mail client"],"dependencies":["company-mailbox","analytics-client"],"status":"active","notes":["No backend form-submission endpoint exists.","The public MCP endpoint never sends these messages."]},{"id":"crawler-discovery","layer":"content","type":"discovery","title":"Search crawler discovery","subtitle":"Robots, sitemap, IndexNow and verification","responsibility":"Declare crawl policy, enumerate canonical URLs, expose the IndexNow key, and support search ownership verification.","files":["robots.txt","sitemap.xml","dabfa5738883df4a66f9ad844188f7aa.txt","googlec344506d98b81e41.html","indexnow-submit.html"],"interfaces":["robots.txt","XML sitemap","IndexNow","search verification"],"dependencies":["search-platforms","indexnow-api"],"status":"active"},{"id":"structured-data","layer":"agents","type":"data","title":"Public structured company data","subtitle":"14 JSON resources","responsibility":"Provide canonical public company, services, capabilities, service areas, procurement, routing, compliance, analytics, and Markdown coverage facts.","files":["data/*.json"],"interfaces":["application/json","public read-only resources"],"dependencies":["static-pages"],"status":"active"},{"id":"agent-discovery","layer":"agents","type":"discovery","title":"AI & agent discovery","subtitle":"llms, OpenAPI, well-known cards and auth policy","responsibility":"Tell agents what the company is, which public resources and tools exist, how to call them, and where approval boundaries apply.","files":["llms.txt","llms-full.txt","openapi.json","auth.md",".well-known/*"],"interfaces":["llms.txt","OpenAPI 3.1","MCP discovery","A2A-style agent card","OAuth metadata"],"dependencies":["structured-data","mcp-api","markdown-layer"],"status":"active","notes":["Public content requires no OAuth.","Automated credential issuance is not enabled."]},{"id":"markdown-layer","layer":"agents","type":"representation","title":"Markdown-for-agents layer","subtitle":"65 deterministic companions","responsibility":"Generate main-content Markdown from canonical HTML and serve it through content negotiation or direct noindex sidecars.","files":["*.md","{locale}/**/*.md","scripts/generate-markdown-companions.mjs","data/markdown-companions.json","markdown-routes.mjs","middleware.js"],"interfaces":["Accept: text/markdown","text/markdown","X-Robots-Tag: noindex, follow"],"dependencies":["static-pages","edge-middleware"],"status":"active"},{"id":"browser-webmcp","layer":"agents","type":"runtime","title":"Browser WebMCP bridge","subtitle":"6 in-page read-only tools","responsibility":"Register browser-aware tools on homepages, fetch same-origin public resources, classify requests, and emit privacy-safe GA4 events.","files":["webmcp.js","index.html","{locale}/index.html"],"interfaces":["navigator.modelContext","same-origin fetch","GA4 events"],"dependencies":["structured-data","analytics-client"],"status":"active"},{"id":"mcp-api","layer":"agents","type":"runtime","title":"Server-side MCP endpoint","subtitle":"8 read-only tools + 17 resources","responsibility":"Serve JSON-RPC-style initialize, tools, and resources operations; classify scope and prepare inquiries/RFQs without contacting a2b.","files":["api/mcp.js","openapi.json",".well-known/mcp.json",".well-known/mcp/server-card.json"],"routes":["POST /api/mcp","OPTIONS /api/mcp"],"interfaces":["JSON-RPC 2.0-style","MCP 2024-11-05","CORS","X-Request-Id"],"dependencies":["structured-data","vercel-logs"],"status":"active","notes":["Reads repository files first and falls back to the production URL if local reads fail.","Returns no-store responses and never sends email, submits forms, quotes prices, or creates commitments."]},{"id":"source-repository","layer":"operations","type":"source","title":"Canonical source repository","subtitle":"abdulazizalrayes/a2b-logistics","responsibility":"Hold the checked-in static site, runtime code, public agent resources, documentation, and verification scripts.","files":[".git","CLAUDE.md","package.json","package-lock.json"],"interfaces":["Git","GitHub"],"dependencies":["github","validation-suite"],"status":"active"},{"id":"validation-suite","layer":"operations","type":"control","title":"Repository validation suite","subtitle":"Content, SEO, Markdown, live and architecture checks","responsibility":"Detect route, schema, canonical, identity, IndexNow, Markdown, copy-artifact, and live production regressions.","files":["scripts/verify-site.mjs","scripts/generate-markdown-companions.mjs","scripts/validate-markdown-layer.mjs","scripts/validate-live-markdown-layer.mjs","scripts/submit-indexnow.mjs","scripts/ai-visibility-benchmark.mjs","scripts/agent-analytics-report.mjs","scripts/generate-architecture-map.mjs"],"interfaces":["npm scripts","exit codes","JSON/Markdown reports"],"dependencies":["static-pages","markdown-layer","structured-data","agent-discovery"],"status":"active"},{"id":"deployment-pipeline","layer":"operations","type":"workflow","title":"GitHub to Vercel deployment","subtitle":"main branch to a2b-logistics production","responsibility":"Publish approved repository commits to the Vercel project, then verify production routes and preserve rollback to the previous deployment or commit.","files":["vercel.json",".vercel/project.json"],"interfaces":["Git push","Vercel deployment","deployment rollback"],"dependencies":["github","vercel-edge","validation-suite"],"status":"active"},{"id":"governance-memory","layer":"operations","type":"governance","title":"Governance & operating memory","subtitle":"Repository instructions plus Paperclip AB","responsibility":"Preserve company isolation, visual freeze, approvals, model policy, decisions, findings, tasks, verification, and rollback evidence.","files":["CLAUDE.md","docs/*.md"],"interfaces":["repository documentation","Paperclip AB-249"],"dependencies":["paperclip"],"status":"active"},{"id":"architecture-map","layer":"operations","type":"documentation","title":"Self-explaining architecture map","subtitle":"JSON source + single generated HTML page","responsibility":"Give humans an interactive system view and future agents a precise machine-readable change map.","files":["docs/architecture/a2b-architecture.json","docs/architecture/a2b-architecture-map.html","scripts/generate-architecture-map.mjs"],"interfaces":["JSON","standalone HTML","npm run architecture:check"],"dependencies":["source-repository","validation-suite"],"status":"active"},{"id":"github","layer":"external","type":"external","title":"GitHub","subtitle":"Source remote and deployment trigger","responsibility":"Host the canonical remote repository and main branch used by the Vercel project.","interfaces":["Git HTTPS","repository webhooks"],"dependencies":["vercel-edge"],"status":"active"},{"id":"ga4","layer":"external","type":"external","title":"Google Analytics 4","subtitle":"G-909SV0D9FM","responsibility":"Receive client-side page and engagement events, including contact, form-attempt, and browser WebMCP events.","interfaces":["gtag.js","GA4 events"],"dependencies":[],"status":"active"},{"id":"analytics-client","layer":"external","type":"integration","title":"Client analytics integration","subtitle":"gtag loader and privacy-safe events","responsibility":"Initialize GA4 and emit contact_click, form_submit_attempt, MCP, and inquiry-preparation events without sending form field contents.","files":["assets/js/analytics.js","assets/js/thankyou.js","webmcp.js","data/analytics-events.json"],"interfaces":["window.gtag","dataLayer"],"dependencies":["ga4"],"status":"active"},{"id":"vercel-logs","layer":"external","type":"observability","title":"Vercel logs & deployment telemetry","subtitle":"Server MCP calls and public discovery reads","responsibility":"Provide server-side request, function, deployment, and rollback evidence not visible in GA4.","interfaces":["Vercel logs","console JSON events"],"dependencies":[],"status":"active"},{"id":"search-platforms","layer":"external","type":"external","title":"Google & Bing search systems","subtitle":"Search Console and Bing Webmaster Tools","responsibility":"Crawl and index canonical pages; expose submitted sitemap and indexing diagnostics under owner-controlled accounts.","interfaces":["sitemap submission","URL inspection","crawl reports"],"dependencies":[],"status":"active"},{"id":"indexnow-api","layer":"external","type":"external","title":"IndexNow API","subtitle":"65 canonical URL submissions","responsibility":"Accept explicit canonical URL notifications generated from sitemap.xml.","interfaces":["https://api.indexnow.org/indexnow"],"dependencies":[],"status":"active"},{"id":"company-mailbox","layer":"external","type":"external","title":"a2b company email","subtitle":"info@a2b.sa and sales@a2b.sa","responsibility":"Receive direct contact email and visitor-composed vendor or careers messages after the visitor confirms them in a mail client.","interfaces":["email"],"dependencies":[],"status":"external-unverified-in-repository"},{"id":"google-fonts","layer":"external","type":"external","title":"Google Fonts","subtitle":"Allowed by production CSP","responsibility":"Serve font styles and files referenced by public pages.","interfaces":["fonts.googleapis.com","fonts.gstatic.com"],"dependencies":[],"status":"active"},{"id":"paperclip","layer":"external","type":"system-of-record","title":"Online Paperclip","subtitle":"ai.eijarat.com / workspace AB","responsibility":"Act as the durable company source of truth for decisions, findings, tasks, agents, blockers, verification, rollout, and rollback notes.","interfaces":["Paperclip web application","AB-249"],"dependencies":[],"status":"external-requires-live-session-verification"}],"flows":[{"id":"html-page-request","title":"Human HTML page request","description":"A browser resolves the domain, reaches Vercel, passes through middleware without a Markdown request, and receives canonical HTML plus static assets.","trigger":"GET canonical URL with normal browser Accept headers","steps":["human-visitors","dnet-dns","vercel-edge","edge-middleware","security-headers","static-pages","static-assets","analytics-client","ga4"],"verification":["npm run verify","curl -I https://www.a2b.sa/","visual regression screenshots when page HTML/CSS changes"],"approvalBoundary":"Visual output changes require owner approval."},{"id":"markdown-negotiation","title":"Canonical URL to Markdown","description":"An agent asks the normal canonical URL for Markdown. Middleware rewrites to the generated sidecar and applies canonical, language, content-signal, and representation headers.","trigger":"GET canonical URL with Accept: text/markdown and q > 0","steps":["procurement-agents","dnet-dns","vercel-edge","edge-middleware","markdown-layer"],"verification":["npm run markdown:check","npm run markdown:validate","npm run markdown:validate:live"],"approvalBoundary":"No contact action occurs."},{"id":"agent-discovery-flow","title":"Agent discovery","description":"A crawler or agent reads crawler policy, llms guidance, well-known cards, OpenAPI, structured resources, and Markdown coverage before choosing a read-only interface.","trigger":"Discovery request","steps":["search-ai-crawlers","vercel-edge","crawler-discovery","agent-discovery","structured-data","markdown-layer"],"verification":["npm run verify","live GET checks for llms.txt, openapi.json, .well-known files and data resources"],"approvalBoundary":"Public reads only."},{"id":"server-mcp-flow","title":"Server MCP tool or resource call","description":"An agent discovers the endpoint, sends a JSON-RPC-style request, the function reads public repository data, and returns a read-only result with a request ID.","trigger":"POST /api/mcp","steps":["procurement-agents","agent-discovery","vercel-edge","mcp-api","structured-data","vercel-logs"],"verification":["tools/list","resources/list","representative fit, non-fit, careers and vendor routing calls"],"approvalBoundary":"The API cannot submit forms, send email, quote pricing, confirm availability, or create commitments."},{"id":"browser-webmcp-flow","title":"Browser WebMCP call","description":"A browser-aware agent loads a homepage, the bridge registers six read-only tools, reads same-origin JSON resources, and emits only event metadata to GA4.","trigger":"navigator.modelContext tool execution","steps":["procurement-agents","static-pages","browser-webmcp","structured-data","analytics-client","ga4"],"verification":["inspect navigator.modelContext registrations","execute representative tool calls","confirm GA4 event names contain no submitted business fields"],"approvalBoundary":"The browser tools prepare and classify only."},{"id":"vendor-career-flow","title":"Vendor or careers handoff","description":"The visitor completes a local form; JavaScript sanitizes and places the public fields in a mailto draft, the user's mail client controls sending, and the page records only form-attempt/completion events.","trigger":"Vendor or careers form submit","steps":["human-visitors","static-pages","forms-contact","company-mailbox","analytics-client","ga4"],"verification":["manual mailto draft check without sending","thank-you route check","GA4 event-name inspection"],"approvalBoundary":"Changing email-sending behavior requires owner approval."},{"id":"search-indexing-flow","title":"Search discovery and indexing","description":"Search crawlers consume robots, sitemap, canonical HTML, hreflang, JSON-LD, and optional IndexNow notifications.","trigger":"Crawler visit, sitemap fetch, or IndexNow submission","steps":["search-ai-crawlers","crawler-discovery","static-pages","jsonld-schema","search-platforms","indexnow-api"],"verification":["npm run verify","npm run indexnow:submit -- --dry-run","logged-in Google Search Console and Bing Webmaster Tools checks"],"approvalBoundary":"No paid tools or backlinks without approval."},{"id":"source-deploy-flow","title":"Source to production","description":"Approved source changes pass repository checks, are committed and pushed to GitHub, deploy through the bound Vercel project, and are verified live with rollback retained.","trigger":"Approved repository change","steps":["source-repository","validation-suite","github","deployment-pipeline","vercel-edge"],"verification":["git diff --check","npm run verify","npm run markdown:check","npm run markdown:validate","production endpoint checks"],"approvalBoundary":"Production DNS/cutover and visible changes require owner approval."},{"id":"architecture-maintenance-flow","title":"Architecture map maintenance","description":"A future architecture-affecting change updates the JSON source, regenerates the standalone HTML, and runs consistency checks before commit.","trigger":"Route, interface, runtime, deployment, ownership or external-system change","steps":["source-repository","architecture-map","validation-suite","governance-memory"],"verification":["npm run architecture:generate","npm run architecture:check"],"approvalBoundary":"Documentation may proceed autonomously when it records verified facts and does not change production behavior."}],"publicTools":{"serverMcp":["get_company_overview","list_services","match_project_scope","prepare_project_inquiry","prepare_rfq_brief","list_service_areas","get_procurement_profile","read_public_resource"],"browserWebMcp":["get_company_overview","list_services","match_project_scope","prepare_project_inquiry","list_service_areas","read_public_resource"],"publicResourceIds":["company","services","capabilities","service-areas","project-inquiry-schema","agent-routing","procurement-profile","vendor-onboarding-requirements","compliance-profile","rfq-preparation","ai-visibility-queries","analytics-events","high-intent-content-plan","markdown-companions","llms","llms-full","openapi"]},"dataContracts":[{"id":"company-identity","source":"data/company.json","consumers":["api/mcp.js","webmcp.js","llms-full.txt","future agents"],"invariants":["name is a2b Logistics Company","primaryDomain is www.a2b.sa","geo remains not_published until verified","only the verified LinkedIn URL is in sameAs"]},{"id":"services-and-routing","source":["data/services.json","data/agent-routing.json","data/project-inquiry-schema.json"],"consumers":["api/mcp.js","webmcp.js","procurement agents"],"invariants":["careers, internships and training route to /careers","vendors and subcontractors route to /vendors","B2C, retail, personal and unrelated requests do not enter project inquiry","contact always requires explicit user approval"]},{"id":"markdown-coverage","source":["sitemap.xml","canonical HTML"],"generated":["data/markdown-companions.json","markdown-routes.mjs","65 Markdown sidecars",".markdown mirror"],"consumer":"middleware.js","invariants":["one companion for every canonical sitemap URL","HTML hash remains unchanged during generation","direct sidecars are noindex, follow","q=0 falls back to HTML"]},{"id":"discovery-integrity","source":["llms.txt","llms-full.txt","openapi.json",".well-known/agent-card.json",".well-known/mcp.json",".well-known/mcp/server-card.json",".well-known/agent-skills/index.json"],"consumers":["AI agents","search crawlers","api/mcp.js"],"invariants":["tool names remain synchronized","resource hashes remain current","endpoint remains https://www.a2b.sa/api/mcp","approval policy remains read-only and preparation-only"]}],"securityBoundaries":[{"id":"public-only-agent-surface","rule":"MCP and WebMCP expose only public resources and preparation tools.","enforcedBy":["api/mcp.js publicResources allowlist","webmcp.js publicResources allowlist","data/agent-routing.json"]},{"id":"no-automated-contact","rule":"No public agent endpoint sends email, submits forms, calls phone numbers, quotes prices, confirms availability, or creates commitments.","enforcedBy":["api/mcp.js","webmcp.js","openapi.json","auth.md"]},{"id":"browser-security","rule":"Vercel applies CSP, HSTS, frame denial, nosniff, referrer, permissions and cross-origin policies.","enforcedBy":["vercel.json"]},{"id":"crawler-boundary","rule":"Public content is crawlable; admin, internal, dashboard, private, write API, and agent-auth paths are blocked in robots.","enforcedBy":["robots.txt"]},{"id":"secret-hygiene","rule":"No plaintext secrets belong in prompts, docs, source, logs, or repository history.","enforcedBy":["CLAUDE.md","owner governance"]},{"id":"company-isolation","rule":"All accounts, repositories, analytics, hosting, DNS, Paperclip and social resources must match a2b before any write.","enforcedBy":["identityLock","CLAUDE.md","Paperclip workspace AB"]}],"decisions":[{"id":"visual-freeze","status":"active","decision":"No visible website change without owner review and approval.","impact":"Architecture work must remain in internal documentation unless separately approved."},{"id":"content-signal-policy","status":"active","decision":"Allow search and real-time AI input while disallowing AI training.","value":"search=yes, ai-input=yes, ai-train=no"},{"id":"read-only-agent-tools","status":"active","decision":"Public agent tools may read, classify, and prepare but never contact or commit."},{"id":"high-intent-pages","status":"cancelled_by_owner","decision":"Rejected high-intent visual page expansion must not be treated as live, planned, or pending.","evidence":["data/high-intent-content-plan.json","docs/HIGH_INTENT_PAGE_APPROVAL_BRIEF.md"]},{"id":"dns-aid","status":"optional-provider-blocked","decision":"SVCB/HTTPS DNS-AID discovery is not required for current site functionality and must not trigger DNS migration without approval.","evidence":["docs/DNS_AID_BLOCKER.md"]},{"id":"public-cli","status":"not-justified","decision":"No public CLI or npm package is maintained because current workflows are repository-local and adequately served by HTTPS, MCP, OpenAPI, and npm validation scripts."}],"changeGuide":[{"change":"Add or change a canonical page","touch":["HTML source","sitemap.xml","hreflang and canonical metadata","JSON-LD","Markdown generator outputs"],"checks":["npm run verify","npm run markdown:generate","npm run markdown:check","npm run markdown:validate","npm run architecture:check"],"approval":"Owner approval if the visible output changes."},{"change":"Change public company, service or routing facts","touch":["relevant data/*.json","llms-full.txt","OpenAPI or discovery cards when interface meaning changes"],"checks":["npm run verify","representative MCP and WebMCP calls","npm run architecture:check"],"approval":"Verify the fact source; commercial, legal or contact-behavior changes may require owner approval."},{"change":"Add or change an MCP tool","touch":["api/mcp.js","webmcp.js if browser parity is intended","openapi.json",".well-known MCP and agent cards","llms files","data/analytics-events.json"],"checks":["tools/list","representative tools/call","non-fit routing","resource allowlist","npm run verify","npm run architecture:check"],"approval":"Required if the tool can write, contact, spend, disclose private data, or create commitments."},{"change":"Add a language","touch":["all relevant HTML route families","hreflang","sitemap.xml","Markdown companions","Content-Language rules","data/company.json"],"checks":["native-language review","canonical and hreflang validation","Markdown multilingual headers","visual regression","npm run verify"],"approval":"Owner approval for the visible localized pages."},{"change":"Deploy production code","touch":["main branch","GitHub remote","Vercel project a2b-logistics"],"checks":["identity lock","clean scoped diff","all relevant repository checks","live production checks","rollback deployment identified"],"approval":"Owner approval for visual changes or DNS/cutover; routine approved non-visual deployment may proceed under standing governance."}],"operations":{"commands":[{"command":"npm run verify","purpose":"Validate company identity, routes, structured data, sitemap, analytics, IndexNow, discovery, tool consistency, and accidental artifacts."},{"command":"npm run markdown:check","purpose":"Prove generated Markdown companions match canonical HTML."},{"command":"npm run markdown:validate","purpose":"Validate local negotiation, sidecar headers, metadata, and sitemap coverage."},{"command":"npm run markdown:validate:live","purpose":"Test every canonical production HTML/Markdown representation and direct sidecar."},{"command":"npm run indexnow:submit -- --dry-run","purpose":"Validate the canonical IndexNow payload without submitting."},{"command":"npm run architecture:generate","purpose":"Regenerate the standalone HTML map from this JSON."},{"command":"npm run architecture:check","purpose":"Validate JSON references, identity, inventory, flows, file evidence, and generated HTML synchronization."}],"deployment":{"sourceBranch":"main","remote":"origin","githubRepository":"abdulazizalrayes/a2b-logistics","vercelProject":"a2b-logistics","productionDomain":"https://www.a2b.sa","architectureArtifactsDeployed":false},"rollback":{"code":"Revert the scoped commit or redeploy the prior Vercel production deployment.","dns":"No DNS change is required for repository-only releases.","architectureMap":"Remove or revert the three architecture-map files and their instruction/package references; production is unaffected because docs/architecture is excluded from deployment."},"paperclipRecording":{"workspace":"AB","issue":"AB-249","required":true,"rule":"Record the architecture artifact, verification evidence, commit, deployment impact, risks, and rollback in online Paperclip when an authenticated a2b session is available."}},"knownRisks":[{"id":"external-state-drift","severity":"medium","risk":"Google, Bing, DNS, Vercel and Paperclip state can change independently of the repository.","control":"Verify the live selected account, project, domain, property and version before external writes."},{"id":"mailto-delivery","severity":"medium","risk":"Vendor and careers forms depend on the visitor's configured mail client and do not guarantee delivery or CV attachment.","control":"Preserve the current behavior under visual and email approval rules; verify manually without sending before changes."},{"id":"browser-server-tool-parity","severity":"low","risk":"Server MCP exposes eight tools while browser WebMCP exposes six by design; future edits could create undocumented drift.","control":"Treat the tool sets in this map as explicit contracts and update discovery plus tests with any change."},{"id":"generated-discovery-hashes","severity":"low","risk":"Agent-skill SHA-256 values can become stale when public source files change.","control":"Run npm run verify after public discovery or structured-data changes."},{"id":"architecture-staleness","severity":"low","risk":"A manually edited system can outgrow its map.","control":"Run architecture:check in every architecture-affecting change and update sourceCommitAudited after a full re-audit."}],"agentInstructions":["Apply this architecture only to a2b.","Read identityLock before operating an external system.","Treat data/company.json and verified public pages as the public fact source; treat online Paperclip workspace AB as the operating system of record.","Do not make visual changes without owner approval.","Do not expose repository-internal architecture artifacts publicly.","Do not invent services, certifications, coordinates, pricing, capacity, availability, legal facts, accounts, or credentials.","Do not route careers, vendors, internships, training, B2C, retail, personal delivery, spam, or unrelated requests into project inquiry.","Do not add a public CLI or npm package unless a recurring workflow clearly justifies its maintenance.","Update this JSON and regenerate the HTML when architecture changes.","Run the checks listed in operations.commands before claiming completion."]}</script>
+<script>
+(function () {
+  'use strict';
+
+  var model = JSON.parse(document.getElementById('architecture-data').textContent);
+  window.__A2B_ARCHITECTURE__ = model;
+
+  var state = { selectedNode: null, selectedFlow: null, query: '' };
+  var layerById = Object.fromEntries(model.layers.map(function (layer) { return [layer.id, layer]; }));
+  var nodeById = Object.fromEntries(model.nodes.map(function (node) { return [node.id, node]; }));
+  var nodeElements = new Map();
+  var edges = [];
+
+  var summary = [
+    [model.inventory.canonicalSitemapRoutes, 'canonical routes'],
+    [model.system.contentPolicy.languages.length, 'languages'],
+    [model.inventory.markdownCompanions, 'Markdown companions'],
+    [model.inventory.serverMcpTools, 'server MCP tools'],
+    [model.inventory.structuredDataFiles, 'structured JSON files'],
+    [model.inventory.wellKnownDiscoveryFiles, 'well-known files']
+  ];
+
+  function element(tag, className, text) {
+    var item = document.createElement(tag);
+    if (className) item.className = className;
+    if (text !== undefined) item.textContent = text;
+    return item;
+  }
+
+  function appendList(parent, title, values, className) {
+    if (!values || !values.length) return;
+    parent.appendChild(element('div', 'section-title', title));
+    var list = element('ul', className || 'file-list');
+    values.forEach(function (value) { list.appendChild(element('li', '', value)); });
+    parent.appendChild(list);
+  }
+
+  function appendPills(parent, title, values) {
+    if (!values || !values.length) return;
+    parent.appendChild(element('div', 'section-title', title));
+    var list = element('div', 'pill-list');
+    values.forEach(function (value) { list.appendChild(element('span', 'pill', value)); });
+    parent.appendChild(list);
+  }
+
+  function renderSummary() {
+    var holder = document.getElementById('summary');
+    summary.forEach(function (item) {
+      var stat = element('div', 'stat');
+      stat.appendChild(element('b', '', String(item[0])));
+      stat.appendChild(element('span', '', item[1]));
+      holder.appendChild(stat);
+    });
+  }
+
+  function renderLegend() {
+    var holder = document.getElementById('legend');
+    model.layers.forEach(function (layer) {
+      var item = element('span', 'legend-item');
+      var swatch = element('span', 'swatch');
+      swatch.style.background = layer.color;
+      item.appendChild(swatch);
+      item.appendChild(document.createTextNode(layer.title.replace(/ & .*/, '')));
+      holder.appendChild(item);
+    });
+  }
+
+  function renderNodes() {
+    var lanes = document.getElementById('lanes');
+    model.layers.forEach(function (layer) {
+      var lane = element('section', 'lane');
+      lane.style.setProperty('--lane-color', layer.color);
+      var head = element('div', 'lane-head');
+      head.appendChild(element('div', 'lane-title', layer.title));
+      head.appendChild(element('div', 'lane-description', layer.description));
+      lane.appendChild(head);
+
+      var list = element('div', 'node-list');
+      model.nodes.filter(function (node) { return node.layer === layer.id; }).forEach(function (node) {
+        var card = element('button', 'node');
+        card.type = 'button';
+        card.dataset.nodeId = node.id;
+        card.style.setProperty('--node-color', layer.color);
+        card.setAttribute('aria-label', 'Inspect ' + node.title);
+        card.appendChild(element('div', 'node-title', node.title));
+        card.appendChild(element('div', 'node-subtitle', node.subtitle || node.responsibility));
+        var footer = element('div', 'node-footer');
+        footer.appendChild(element('span', 'node-type', node.type));
+        footer.appendChild(element('span', 'node-status', node.status));
+        card.appendChild(footer);
+        card.addEventListener('click', function () {
+          state.selectedFlow = null;
+          state.selectedNode = node.id;
+          renderState();
+        });
+        list.appendChild(card);
+        nodeElements.set(node.id, card);
+      });
+      lane.appendChild(list);
+      lanes.appendChild(lane);
+    });
+  }
+
+  function renderFlows() {
+    var holder = document.getElementById('flows');
+    model.flows.forEach(function (flow) {
+      var button = element('button', 'flow');
+      button.type = 'button';
+      button.dataset.flowId = flow.id;
+      button.appendChild(element('span', 'flow-title', flow.title));
+      button.appendChild(element('span', 'flow-desc', flow.description));
+      button.addEventListener('click', function () {
+        state.selectedNode = null;
+        state.selectedFlow = flow.id;
+        renderState();
+      });
+      holder.appendChild(button);
+    });
+  }
+
+  function pathBetween(from, to) {
+    var map = document.getElementById('map').getBoundingClientRect();
+    var a = from.getBoundingClientRect();
+    var b = to.getBoundingClientRect();
+    var ax = a.left - map.left + a.width / 2;
+    var ay = a.top - map.top + a.height / 2;
+    var bx = b.left - map.left + b.width / 2;
+    var by = b.top - map.top + b.height / 2;
+    var offset = Math.max(46, Math.abs(bx - ax) * .42);
+    var direction = bx >= ax ? 1 : -1;
+    return 'M ' + ax + ' ' + ay + ' C ' + (ax + offset * direction) + ' ' + ay + ', ' + (bx - offset * direction) + ' ' + by + ', ' + bx + ' ' + by;
+  }
+
+  function drawEdges() {
+    var svg = document.getElementById('edges');
+    svg.replaceChildren();
+    edges = [];
+
+    var activePairs = new Set();
+    var activeNodes = new Set();
+    if (state.selectedFlow) {
+      var flow = model.flows.find(function (item) { return item.id === state.selectedFlow; });
+      flow.steps.forEach(function (id) { activeNodes.add(id); });
+      for (var index = 0; index < flow.steps.length - 1; index += 1) {
+        activePairs.add(flow.steps[index] + '>' + flow.steps[index + 1]);
+      }
+    } else if (state.selectedNode) {
+      activeNodes.add(state.selectedNode);
+      var selected = nodeById[state.selectedNode];
+      (selected.dependencies || []).forEach(function (id) { activeNodes.add(id); });
+      model.nodes.forEach(function (node) {
+        if ((node.dependencies || []).includes(state.selectedNode)) activeNodes.add(node.id);
+      });
+    }
+
+    var pairs = [];
+    model.nodes.forEach(function (node) {
+      (node.dependencies || []).forEach(function (dependency) {
+        pairs.push([node.id, dependency]);
+      });
+    });
+    if (state.selectedFlow) {
+      activePairs.forEach(function (pair) {
+        var parts = pair.split('>');
+        if (!pairs.some(function (item) { return item[0] === parts[0] && item[1] === parts[1]; })) pairs.push(parts);
+      });
+    }
+
+    pairs.forEach(function (pair) {
+      var from = nodeElements.get(pair[0]);
+      var to = nodeElements.get(pair[1]);
+      if (!from || !to) return;
+      var path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+      path.setAttribute('d', pathBetween(from, to));
+      path.setAttribute('class', 'edge');
+      path.style.stroke = layerById[nodeById[pair[0]].layer].color;
+      var pairKey = pair[0] + '>' + pair[1];
+      if (state.selectedFlow) {
+        path.classList.toggle('active', activePairs.has(pairKey));
+        path.classList.toggle('dim', !activePairs.has(pairKey));
+      } else if (state.selectedNode) {
+        var connected = pair[0] === state.selectedNode || pair[1] === state.selectedNode;
+        path.classList.toggle('active', connected);
+        path.classList.toggle('dim', !connected);
+      }
+      svg.appendChild(path);
+      edges.push(path);
+    });
+  }
+
+  function renderNodeDetail(node) {
+    var detail = document.getElementById('detail');
+    detail.replaceChildren();
+    detail.appendChild(element('h2', '', node.title));
+    detail.appendChild(element('p', 'sub', layerById[node.layer].title + ' · ' + node.type + ' · ' + node.status));
+    detail.appendChild(element('p', 'responsibility', node.responsibility));
+    appendPills(detail, 'Interfaces', node.interfaces);
+    appendList(detail, 'Files and routes', (node.files || []).concat(node.routes || []));
+    appendPills(detail, 'Dependencies', node.dependencies);
+    appendList(detail, 'Evidence', node.evidence);
+    appendList(detail, 'Notes', node.notes, 'note-list');
+  }
+
+  function renderFlowDetail(flow) {
+    var detail = document.getElementById('detail');
+    detail.replaceChildren();
+    detail.appendChild(element('h2', '', flow.title));
+    detail.appendChild(element('p', 'sub', flow.trigger));
+    detail.appendChild(element('p', 'responsibility', flow.description));
+    detail.appendChild(element('div', 'section-title', 'Execution path'));
+    var steps = element('ol', 'step-list');
+    flow.steps.forEach(function (id) {
+      var node = nodeById[id];
+      steps.appendChild(element('li', '', node.title + ' — ' + (node.subtitle || node.responsibility)));
+    });
+    detail.appendChild(steps);
+    appendList(detail, 'Verification', flow.verification);
+    var boundary = element('div', 'boundary', flow.approvalBoundary);
+    detail.appendChild(boundary);
+  }
+
+  function renderDefaultDetail() {
+    var detail = document.getElementById('detail');
+    detail.replaceChildren();
+    detail.appendChild(element('h2', '', 'How to read this map'));
+    detail.appendChild(element('p', 'empty', 'Select a system node to inspect its responsibilities, files, interfaces, dependencies, and evidence. Select a flow to trace an end-to-end production path and its approval boundary.'));
+    appendPills(detail, 'Permanent rules', [
+      'a2b only',
+      'visual freeze',
+      'public agent tools are read-only',
+      'Paperclip workspace AB',
+      'no plaintext secrets'
+    ]);
+  }
+
+  function renderState() {
+    var flow = state.selectedFlow ? model.flows.find(function (item) { return item.id === state.selectedFlow; }) : null;
+    var flowNodes = new Set(flow ? flow.steps : []);
+    var query = state.query.toLowerCase();
+
+    model.nodes.forEach(function (node) {
+      var card = nodeElements.get(node.id);
+      var searchable = [
+        node.id,
+        node.title,
+        node.subtitle,
+        node.responsibility,
+        (node.files || []).join(' '),
+        (node.interfaces || []).join(' ')
+      ].join(' ').toLowerCase();
+      var queryMatch = !query || searchable.includes(query);
+      var inFlow = flowNodes.has(node.id);
+      var related = !state.selectedNode || node.id === state.selectedNode ||
+        (node.dependencies || []).includes(state.selectedNode) ||
+        ((nodeById[state.selectedNode]?.dependencies || []).includes(node.id));
+      card.classList.toggle('selected', state.selectedNode === node.id);
+      card.classList.toggle('in-flow', inFlow);
+      card.classList.toggle('dim', !queryMatch || (flow && !inFlow) || (state.selectedNode && !related));
+    });
+
+    document.querySelectorAll('.flow').forEach(function (button) {
+      button.classList.toggle('active', button.dataset.flowId === state.selectedFlow);
+    });
+
+    if (flow) renderFlowDetail(flow);
+    else if (state.selectedNode) renderNodeDetail(nodeById[state.selectedNode]);
+    else renderDefaultDetail();
+    requestAnimationFrame(drawEdges);
+  }
+
+  document.getElementById('search').addEventListener('input', function (event) {
+    state.query = event.target.value.trim();
+    if (state.query) {
+      state.selectedNode = null;
+      state.selectedFlow = null;
+    }
+    renderState();
+  });
+
+  document.getElementById('reset').addEventListener('click', function () {
+    state.selectedNode = null;
+    state.selectedFlow = null;
+    state.query = '';
+    document.getElementById('search').value = '';
+    renderState();
+  });
+
+  window.addEventListener('resize', function () { requestAnimationFrame(drawEdges); }, { passive: true });
+  document.getElementById('viewport').addEventListener('scroll', function () { requestAnimationFrame(drawEdges); }, { passive: true });
+
+  renderSummary();
+  renderLegend();
+  renderNodes();
+  renderFlows();
+  renderState();
+})();
+</script>
+</body>
+</html>
