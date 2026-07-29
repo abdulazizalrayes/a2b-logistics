@@ -53,9 +53,12 @@ Company: a2b only
 
 ## Search Console Observations
 
-- GA4 showed that the verified Search Console property
-  `https://www.a2b.sa/` is not linked to the a2b GA4 property.
-- No account link was created during this read-only review.
+- The verified Search Console property `https://www.a2b.sa/` was linked to the
+  confirmed a2b GA4 property on 2026-07-29.
+- Linked web stream: `a2b Logistics`, stream ID `13897550552`,
+  `https://a2b.sa`.
+- GA4 displayed `LINK CREATED` and the Search Console links table showed the
+  property, stream, linking account, and date.
 - No indexing conclusion is claimed from GA4 or Vercel request logs.
 
 ## Findings
@@ -87,9 +90,8 @@ Company: a2b only
 - Add a privacy-safe monthly aggregation of Vercel events by event name, tool,
   resource, route, status, and day. Keep request bodies and personal information
   out of logs.
-- Link the verified `https://www.a2b.sa/` Search Console property to the a2b
-  GA4 property after owner approval so search landing-page performance can be
-  reviewed beside AI referrals.
+- Allow Google time to populate Search Console dimensions in GA4, then include
+  organic query and landing-page performance in the next monthly review.
 - Continue using privacy-safe aggregate counts. Do not log prompt bodies,
   inquiry content, email addresses, or other personal information.
 - No paid log drain or managed Markdown provider is justified by current usage.
@@ -98,7 +100,6 @@ Company: a2b only
 
 ## Owner Decisions Needed
 
-- Approve or decline linking the verified a2b Search Console property to GA4.
 - Approve implementation of a persistent, privacy-safe server-side MCP aggregate
   only if the existing Vercel log-retention window proves insufficient. This may
   require a new analytics binding or credential and must not be enabled silently.
