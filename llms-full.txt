@@ -60,7 +60,7 @@ Host: www.a2b.sa
 Accept: text/markdown
 ```
 
-Normal browsers and clients that prefer HTML continue receiving HTML. Requests with `Accept: text/markdown;q=0` fall back to HTML. Direct `.md` sidecars are published for agent access and return `X-Robots-Tag: noindex, follow`.
+Normal browsers and clients that prefer HTML continue receiving HTML. Higher q-values win, equal q-values use the more specific matching media range, and equal explicit HTML and Markdown preferences default to HTML. Missing, unsupported, wildcard-only, and otherwise ambiguous Accept headers default to HTML. A representation with `q=0` is not selected; explicitly assigning both HTML and Markdown `q=0` returns `406 Not Acceptable`. HTML and HTML `HEAD` responses advertise the absolute page-specific Markdown companion. Direct `.md` sidecars are published for agent access and return `X-Robots-Tag: noindex, follow`.
 
 The route manifest is https://www.a2b.sa/data/markdown-companions.json. Markdown responses use the a2b-approved content policy: `Content-Signal: search=yes, ai-input=yes, ai-train=no`.
 

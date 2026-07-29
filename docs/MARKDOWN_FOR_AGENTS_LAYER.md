@@ -26,7 +26,13 @@ Do not copy these account, domain, analytics, or Paperclip details to another co
 - Markdown profile `1.1.0` adds an agent metadata block, reciprocal language alternates, deduplicated public link inventory, meaningful-image inventory, and preserved public JSON-LD.
 - Decorative icon-only text is suppressed so agent readers get cleaner semantic content without losing public copy, links, images, tables, lists, headings, or structured data.
 - It writes direct `.md` sidecars, `.markdown/` mirrored audit files, `data/markdown-companions.json`, and `markdown-routes.mjs`.
-- `middleware.js` serves Markdown from canonical URLs only when `Accept: text/markdown` has `q > 0`.
+- `middleware.js` parses supported media ranges and q-values, then serves Markdown only when Markdown wins negotiation.
+- Higher q-values win. Equal q-values use the more specific matching media range.
+- Equal explicit HTML and Markdown preferences default to HTML.
+- If both HTML and Markdown are explicitly assigned `q=0`, the response is `406 Not Acceptable`.
+- Missing, unsupported, wildcard-only, and otherwise ambiguous Accept headers default to HTML.
+- HTML and HTML `HEAD` responses advertise the absolute page-specific Markdown companion with `rel="alternate"` and `type="text/markdown"`.
+- Canonical HTML and Markdown responses include `Vary: Accept`.
 - Direct `.md` sidecars are served with `X-Robots-Tag: noindex, follow`.
 
 The approved content signal is:
@@ -45,7 +51,7 @@ Host: www.a2b.sa
 Accept: text/markdown
 ```
 
-Ordinary browser requests continue receiving HTML. Requests with `Accept: text/markdown;q=0` fall back to HTML.
+Ordinary browser requests continue receiving HTML. A representation with `q=0` is not selected. Equal explicit HTML and Markdown preferences, wildcard-only headers, and missing Accept headers default to HTML. If both HTML and Markdown are explicitly assigned `q=0`, the server returns `406 Not Acceptable`.
 
 Direct sidecars are also available:
 
@@ -83,6 +89,13 @@ Live checks after deployment:
 ```bash
 curl -sS -I -H 'Accept: text/markdown' https://www.a2b.sa/services/warehousing
 curl -sS -I -H 'Accept: text/markdown;q=0, text/html' https://www.a2b.sa/services/warehousing
+curl -sS -I -H 'Accept: text/markdown;q=0.4, text/html;q=0.9' https://www.a2b.sa/services/warehousing
+curl -sS -I -H 'Accept: text/markdown;q=0.9, text/html;q=0.4' https://www.a2b.sa/services/warehousing
+curl -sS -I -H 'Accept: text/markdown;q=0.8, text/html;q=0.8' https://www.a2b.sa/services/warehousing
+curl -sS -I -H 'Accept: text/markdown;q=0, text/html;q=0' https://www.a2b.sa/services/warehousing
+curl -sS -I -H 'Accept: text/*' https://www.a2b.sa/services/warehousing
+curl -sS -I -H 'Accept: */*' https://www.a2b.sa/services/warehousing
+curl -sS -I -H 'Accept: text/html' https://www.a2b.sa/services/warehousing
 curl -sS -I https://www.a2b.sa/services/warehousing.md
 curl -sS https://www.a2b.sa/data/markdown-companions.json
 ```

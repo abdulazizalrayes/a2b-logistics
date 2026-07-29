@@ -115,7 +115,7 @@ These tools prepare and route only. They do not submit forms, send email, call p
 
 ## Markdown Representations For Agents
 
-Canonical sitemap pages support content negotiation. Send `Accept: text/markdown` to the normal canonical URL to receive the deterministic Markdown representation. Ordinary browser requests continue to receive HTML. If Markdown is unavailable or `text/markdown` has `q=0`, the site safely falls back to HTML.
+Canonical sitemap pages support content negotiation. Send `Accept: text/markdown` to the normal canonical URL to receive the deterministic Markdown representation. Higher q-values win, equal q-values use the more specific matching media range, and equal explicit HTML and Markdown preferences default to HTML. Missing, unsupported, wildcard-only, and otherwise ambiguous Accept headers default to HTML. A representation with `q=0` is not selected; explicitly assigning both HTML and Markdown `q=0` returns `406 Not Acceptable`. HTML and HTML `HEAD` responses advertise the absolute page-specific Markdown companion.
 
 Markdown companions use profile `1.1.0` and include agent metadata, reciprocal language alternates, extracted public links, meaningful public images, and public JSON-LD structured data. Decorative icon-only text is suppressed to keep the representation cleaner for machine readers.
 

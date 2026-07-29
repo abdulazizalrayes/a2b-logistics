@@ -22,6 +22,10 @@ function hasCanonicalLink(headers, canonical) {
   return headers.get('link')?.includes(`<${canonical}>; rel="canonical"`) || false;
 }
 
+function hasMarkdownAlternate(headers, contentLocation) {
+  return headers.get('link')?.includes(`<${contentLocation}>; rel="alternate"; type="text/markdown"`) || false;
+}
+
 async function request(pathname, options = {}) {
   let lastError;
   for (let attempt = 1; attempt <= 3; attempt += 1) {
@@ -29,6 +33,7 @@ async function request(pathname, options = {}) {
     const timeout = setTimeout(() => controller.abort(), REQUEST_TIMEOUT_MS);
     try {
       const response = await fetch(`${origin}${pathname}`, {
+        method: options.method || 'GET',
         redirect: 'manual',
         signal: controller.signal,
         headers: {
@@ -55,6 +60,9 @@ async function validateRoute(pathname, route) {
   });
   assert(html.response.status === 200, `${pathname}: HTML status ${html.response.status}`);
   assert(header(html.response.headers, 'content-type').includes('text/html'), `${pathname}: HTML content-type missing`);
+  assert(header(html.response.headers, 'vary').includes('accept'), `${pathname}: HTML Vary Accept missing`);
+  assert(hasMarkdownAlternate(html.response.headers, route.contentLocation), `${pathname}: HTML Markdown alternate Link missing`);
+  assert(html.response.headers.get('content-signal') === CONTENT_SIGNAL, `${pathname}: HTML Content-Signal mismatch`);
   htmlBytes += html.body?.byteLength || 0;
 
   const markdown = await request(pathname, {
@@ -77,6 +85,16 @@ async function validateRoute(pathname, route) {
   assert(qZero.response.status === 200, `${pathname}: q=0 status ${qZero.response.status}`);
   assert(header(qZero.response.headers, 'content-type').includes('text/html'), `${pathname}: q=0 should return HTML`);
 
+  const htmlHead = await request(pathname, {
+    method: 'HEAD',
+    headers: { accept: 'text/html' },
+  });
+  assert(htmlHead.response.status === 200, `${pathname}: HTML HEAD status ${htmlHead.response.status}`);
+  assert(header(htmlHead.response.headers, 'content-type').includes('text/html'), `${pathname}: HTML HEAD content-type missing`);
+  assert(header(htmlHead.response.headers, 'vary').includes('accept'), `${pathname}: HTML HEAD Vary Accept missing`);
+  assert(hasMarkdownAlternate(htmlHead.response.headers, route.contentLocation), `${pathname}: HTML HEAD Markdown alternate Link missing`);
+  assert(htmlHead.response.headers.get('content-signal') === CONTENT_SIGNAL, `${pathname}: HTML HEAD Content-Signal mismatch`);
+
   const sidecar = await request(route.markdownPath, {
     readBody: true,
     headers: { accept: 'text/html,application/xhtml+xml' },
@@ -90,8 +108,53 @@ async function validateRoute(pathname, route) {
   assert(sidecar.response.headers.get('content-signal') === CONTENT_SIGNAL, `${route.markdownPath}: sidecar Content-Signal mismatch`);
 }
 
+async function validateNegotiationMatrix(pathname, route) {
+  const cases = [
+    ['exact Markdown', 'text/markdown', 'markdown'],
+    ['exact HTML', 'text/html', 'html'],
+    ['stronger HTML', 'text/markdown;q=0.4, text/html;q=0.9', 'html'],
+    ['stronger Markdown', 'text/markdown;q=0.9, text/html;q=0.4', 'markdown'],
+    ['equal explicit preference', 'text/markdown;q=0.8, text/html;q=0.8', 'html'],
+    ['Markdown q=0 exclusion', 'text/markdown;q=0, text/html', 'html'],
+    ['HTML q=0 exclusion', 'text/html;q=0, text/markdown;q=0.4', 'markdown'],
+    ['text wildcard', 'text/*', 'html'],
+    ['global wildcard', '*/*', 'html'],
+    ['more-specific Markdown tie', 'text/*;q=0.8, text/markdown;q=0.8', 'markdown'],
+    ['more-specific HTML tie', 'text/*;q=0.8, text/html;q=0.8', 'html'],
+  ];
+
+  for (const [label, accept, expected] of cases) {
+    const result = await request(pathname, { headers: { accept } });
+    const contentType = header(result.response.headers, 'content-type');
+    assert(result.response.status === 200, `${pathname}: ${label} status ${result.response.status}`);
+    assert(contentType.includes(`text/${expected}`), `${pathname}: ${label} should return ${expected}`);
+    if (expected === 'html') {
+      assert(hasMarkdownAlternate(result.response.headers, route.contentLocation), `${pathname}: ${label} alternate Link missing`);
+    }
+  }
+
+  const notAcceptable = await request(pathname, {
+    headers: { accept: 'text/markdown;q=0, text/html;q=0' },
+  });
+  assert(notAcceptable.response.status === 406, `${pathname}: all q=0 should return 406`);
+  assert(header(notAcceptable.response.headers, 'vary').includes('accept'), `${pathname}: all q=0 Vary Accept missing`);
+  assert(notAcceptable.response.headers.get('content-signal') === CONTENT_SIGNAL, `${pathname}: all q=0 Content-Signal mismatch`);
+
+  const markdownHead = await request(pathname, {
+    method: 'HEAD',
+    headers: { accept: 'text/markdown' },
+  });
+  assert(markdownHead.response.status === 200, `${pathname}: Markdown HEAD status ${markdownHead.response.status}`);
+  assert(header(markdownHead.response.headers, 'content-type').includes('text/markdown'), `${pathname}: Markdown HEAD content-type missing`);
+  assert(hasCanonicalLink(markdownHead.response.headers, route.canonical), `${pathname}: Markdown HEAD canonical Link missing`);
+}
+
 for (const [pathname, route] of Object.entries(MARKDOWN_ROUTES)) {
   await validateRoute(pathname, route);
+}
+
+for (const pathname of ['/services/trucking-road-freight', '/ar/services/trucking-road-freight']) {
+  await validateNegotiationMatrix(pathname, MARKDOWN_ROUTES[pathname]);
 }
 
 const reduction = htmlBytes > 0 ? Math.round((1 - markdownBytes / htmlBytes) * 1000) / 10 : 0;

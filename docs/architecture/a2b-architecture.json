@@ -5,8 +5,8 @@
     "id": "a2b-logistics-architecture",
     "title": "a2b Logistics Website Architecture",
     "purpose": "Human and agent-readable map of the a2b website, its public agent interfaces, deployment path, external dependencies, controls, and change procedures.",
-    "generatedAt": "2026-07-26T11:18:08Z",
-    "sourceCommitAudited": "2bd0f3a59d191508a35edb4f21022b4ae4e95dad",
+    "generatedAt": "2026-07-29T16:30:00Z",
+    "sourceCommitAudited": "2437a402403a4ba5594e60c5d114ecb00ed6cf1a",
     "scope": "a2b only",
     "confidentiality": "Repository-internal. Excluded from Vercel deployment.",
     "updateRule": "Update this JSON when routes, runtime boundaries, public interfaces, external systems, ownership, or deployment behavior change; then run npm run architecture:generate and npm run architecture:check."
@@ -42,7 +42,7 @@
     "approvalPolicy": "No visual changes, production DNS changes, destructive actions, email-sending changes, spend, credential decisions, legal commitments, or irreversible actions without owner approval.",
     "verification": {
       "repositoryRemote": "https://github.com/abdulazizalrayes/a2b-logistics.git",
-      "repositoryRemoteVerifiedAt": "2026-07-26T11:18:08Z",
+      "repositoryRemoteVerifiedAt": "2026-07-29T16:30:00Z",
       "source": [
         ".git/config",
         ".vercel/project.json",
@@ -326,7 +326,7 @@
       "type": "runtime",
       "title": "Edge middleware",
       "subtitle": "Language redirects and Markdown negotiation",
-      "responsibility": "Normalize legacy language queries, serve direct Markdown sidecars with noindex headers, and rewrite canonical requests to Markdown when Accept permits it.",
+      "responsibility": "Normalize legacy language queries, parse Accept media ranges and q-values, serve direct Markdown sidecars with noindex headers, rewrite canonical requests when Markdown wins, and advertise page-specific Markdown alternates on HTML and HEAD responses.",
       "files": [
         "middleware.js",
         "markdown-routes.mjs"
@@ -334,7 +334,9 @@
       "interfaces": [
         "HTTP Accept",
         "308 redirect",
-        "x-middleware-rewrite"
+        "x-middleware-rewrite",
+        "Vary: Accept",
+        "Link: rel=alternate"
       ],
       "dependencies": [
         "static-pages",
@@ -348,7 +350,7 @@
       "type": "control",
       "title": "Security & representation headers",
       "subtitle": "CSP, HSTS, canonical and Content-Signal",
-      "responsibility": "Apply global browser security controls and route-specific content types, language, canonical, noindex, and agent-policy headers.",
+      "responsibility": "Apply global browser security controls and route-specific content types, language, canonical, alternate representation, cache variation, noindex, and agent-policy headers.",
       "files": [
         "vercel.json",
         "middleware.js"
@@ -358,7 +360,9 @@
         "HSTS",
         "X-Robots-Tag",
         "Content-Language",
-        "Content-Signal"
+        "Content-Signal",
+        "Vary",
+        "Link"
       ],
       "dependencies": [],
       "status": "active"
@@ -570,7 +574,10 @@
       "interfaces": [
         "Accept: text/markdown",
         "text/markdown",
-        "X-Robots-Tag: noindex, follow"
+        "X-Robots-Tag: noindex, follow",
+        "Vary: Accept",
+        "Link: rel=alternate",
+        "Content-Signal: search=yes, ai-input=yes, ai-train=no"
       ],
       "dependencies": [
         "static-pages",
@@ -916,8 +923,8 @@
     {
       "id": "markdown-negotiation",
       "title": "Canonical URL to Markdown",
-      "description": "An agent asks the normal canonical URL for Markdown. Middleware rewrites to the generated sidecar and applies canonical, language, content-signal, and representation headers.",
-      "trigger": "GET canonical URL with Accept: text/markdown and q > 0",
+      "description": "An agent asks the normal canonical URL for Markdown. Middleware compares supported HTML and Markdown media ranges using q-values and specificity, defaults equal explicit preferences and ambiguous requests to HTML, returns 406 when both representations are explicitly unacceptable, and applies canonical, alternate, language, content-signal, and cache-variation headers.",
+      "trigger": "GET or HEAD canonical URL where text/markdown wins standards-correct Accept negotiation",
       "steps": [
         "procurement-agents",
         "dnet-dns",
@@ -1162,7 +1169,14 @@
         "one companion for every canonical sitemap URL",
         "HTML hash remains unchanged during generation",
         "direct sidecars are noindex, follow",
-        "q=0 falls back to HTML"
+        "higher q-value wins",
+        "equal q-value uses the more specific matching media range",
+        "equal explicit HTML and Markdown preference defaults to HTML",
+        "missing and ambiguous Accept headers default to HTML",
+        "a q=0 representation is not selected",
+        "explicit q=0 for both HTML and Markdown returns 406 Not Acceptable",
+        "HTML and HEAD advertise an absolute page-specific Markdown alternate",
+        "canonical HTML and Markdown responses include Vary: Accept"
       ]
     },
     {
@@ -1383,11 +1397,11 @@
       },
       {
         "command": "npm run markdown:validate",
-        "purpose": "Validate local negotiation, sidecar headers, metadata, and sitemap coverage."
+        "purpose": "Validate local q-value negotiation, specificity, ties, wildcards, HEAD, alternate links, sidecar headers, metadata, and sitemap coverage."
       },
       {
         "command": "npm run markdown:validate:live",
-        "purpose": "Test every canonical production HTML/Markdown representation and direct sidecar."
+        "purpose": "Test every canonical production HTML/Markdown representation, HTML HEAD alternate, direct sidecar, and representative live negotiation matrix."
       },
       {
         "command": "npm run indexnow:submit -- --dry-run",

@@ -7,14 +7,14 @@
       "type": "documentation",
       "description": "a2b Logistics concise overview, services, and contact details for AI agents.",
       "url": "https://www.a2b.sa/llms.txt",
-      "sha256": "e6a3a3ca23e6c54dd0927eb19583865acc2f7e8df1ad0b414daed0ef591892cb"
+      "sha256": "e9414a673c446674a937263bda9620bf8ace8b389574f47477d8eb51a6d129f5"
     },
     {
       "name": "a2b-full-agent-brief",
       "type": "documentation",
       "description": "Expanded a2b Logistics agent brief with structured resources, MCP/API, crawler guidance, and routing rules.",
       "url": "https://www.a2b.sa/llms-full.txt",
-      "sha256": "7d5c5ab65f0016b55ebb83fbeae20fbc07cbd0cfab5a41499f5259c118ba06c8"
+      "sha256": "a2387f4142103aebf19dc8fb0e2ffb3b12170f52270cddf515e963ba1fceb7cb"
     },
     {
       "name": "a2b-company-data",
@@ -119,7 +119,7 @@
       "type": "data",
       "description": "Manifest of canonical sitemap pages with Accept: text/markdown companions and noindex .md sidecars.",
       "url": "https://www.a2b.sa/data/markdown-companions.json",
-      "sha256": "d06e719f8c309f91d6ef66a62d767491594f1043bf1be628954921e37e8f27ef"
+      "sha256": "bcb0e8d0e8cc81184e0d71c19e18f93187a22796ed4749248e03264211c312f8"
     }
   ]
 }
