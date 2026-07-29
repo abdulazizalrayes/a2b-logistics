@@ -14,18 +14,25 @@ Company: a2b only
 
 ## GA4 Observations
 
-- GA4 was not opened during this operational follow-up, so no event or referral
-  counts are claimed in this report.
-- mcp_tool_call: Not measured in this run.
-- mcp_resource_read: Not measured in this run.
-- inquiry_preparation: Not measured in this run.
-- contact_click: Not measured in this run.
-- form_submit_attempt: Not measured in this run.
-- AI/referral traffic: Not measured in this run.
+- Authenticated property confirmed: account `a2b Logistics`, property `a2b.sa`,
+  account/property IDs `a387477572 / p528263495`.
+- Last 7 days: 65 sessions. Channel totals were Direct 39, AI Assistant 11,
+  Organic Search 9, Referral 3, and Unassigned 0.
+- Last 7 days source/medium: `chatgpt.com / ai-assistant` generated 11 sessions
+  and `chatgpt.com / referral` generated 2 sessions. Combined ChatGPT-sourced
+  sessions were 13 of 65, or 20.0%.
+- Last 28 days, Jul 1-28: 1,685 events from 282 users across 14 event names.
+- `contact_click`: 19 events from 13 users.
+- `form_submit_attempt`: 8 events from 6 users.
+- `mcp_tool_call`, `mcp_resource_read`, and `inquiry_preparation` were absent
+  from the 14 recorded GA4 event names.
+- Browser-side WebMCP calls emit the custom GA4 events only when `gtag` is
+  available. Calls to the public `/api/mcp` endpoint instead emit structured,
+  privacy-safe server logs and are not expected to appear in GA4.
 
 ## Vercel/CDN Observations
 
-- Production deployment: dpl_GcTYQYKyYaVdEUdvv74WpmYYweH7
+- Production deployment: dpl_7yDLDZUiu8XC81y32KNoMso7YtRu
 - Deployment state: Ready, with www.a2b.sa, a2b.sa, and the Vercel production
   aliases attached.
 - Recent production error query: No error-level records returned.
@@ -46,8 +53,10 @@ Company: a2b only
 
 ## Search Console Observations
 
-- Search Console was not opened during this operational follow-up.
-- No indexing conclusion is claimed from Vercel request logs.
+- GA4 showed that the verified Search Console property
+  `https://www.a2b.sa/` is not linked to the a2b GA4 property.
+- No account link was created during this read-only review.
+- No indexing conclusion is claimed from GA4 or Vercel request logs.
 
 ## Findings
 
@@ -56,8 +65,14 @@ Company: a2b only
 - HTML bytes: 950467. Markdown bytes: 444449. Reduction: 53.2%.
 - No deployment, serverless, or middleware error requiring remediation was
   found.
-- Organic AI-agent usage cannot be separated reliably from synthetic validation
-  traffic in the current Vercel sample.
+- ChatGPT is already a material acquisition source: 13 of 65 sessions in the
+  observed seven-day period, including 11 classified in the AI Assistant
+  channel.
+- GA4 is suitable for AI referral and browser-side WebMCP measurement, but it
+  does not measure direct server-to-server MCP calls. Vercel function logs are
+  the authoritative source for those calls.
+- Organic server-side AI-agent usage cannot be separated reliably from
+  synthetic validation traffic in the current Vercel sample.
 - Internal monitoring reports are repository evidence, not public agent
   resources. The Vercel exclusion was broadened to omit the entire reports
   directory; an isolated dry build confirmed both old and new reports are absent
@@ -67,8 +82,14 @@ Company: a2b only
 
 - Keep the validation sweep timestamp in future reports and exclude that window
   from adoption analysis.
-- Review GA4 AI referral and custom MCP event data separately when an
-  authenticated a2b analytics session is intentionally opened.
+- Review GA4 AI referrals and Vercel MCP logs as separate datasets. Do not add
+  them together as if they measured the same interaction.
+- Add a privacy-safe monthly aggregation of Vercel events by event name, tool,
+  resource, route, status, and day. Keep request bodies and personal information
+  out of logs.
+- Link the verified `https://www.a2b.sa/` Search Console property to the a2b
+  GA4 property after owner approval so search landing-page performance can be
+  reviewed beside AI referrals.
 - Continue using privacy-safe aggregate counts. Do not log prompt bodies,
   inquiry content, email addresses, or other personal information.
 - No paid log drain or managed Markdown provider is justified by current usage.
@@ -77,4 +98,7 @@ Company: a2b only
 
 ## Owner Decisions Needed
 
-- None.
+- Approve or decline linking the verified a2b Search Console property to GA4.
+- Approve implementation of a persistent, privacy-safe server-side MCP aggregate
+  only if the existing Vercel log-retention window proves insufficient. This may
+  require a new analytics binding or credential and must not be enabled silently.
