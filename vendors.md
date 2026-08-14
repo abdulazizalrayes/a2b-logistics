@@ -56,7 +56,7 @@ Thank you for registering your interest. Our procurement team will review your s
 {
   "@context": "https://schema.org",
   "@type": "WebPage",
-  "name": "Vendor Registration — a2b Logistics",
+  "name": "Vendor Registration  -  a2b Logistics",
   "url": "https://www.a2b.sa/vendors",
   "description": "Register as a vendor or subcontractor with a2b Logistics Company. Join our network of trusted partners operating across Saudi Arabia.",
   "isPartOf": {

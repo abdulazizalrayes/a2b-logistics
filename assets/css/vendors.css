@@ -18,12 +18,12 @@ nav.scrolled{box-shadow:0 2px 20px rgba(0,0,0,.08)}
 .mobile-menu a{color:var(--dark);font-size:15px;font-weight:600;padding:8px 0;border-bottom:1px solid var(--border)}
 .mobile-menu a:last-child{border:none}
 
-.hero{background:var(--dark);padding:148px 48px 80px;position:relative;overflow:hidden}
+.hero{background:var(--light);border-bottom:1px solid var(--border);padding:148px 48px 80px;position:relative;overflow:hidden}
 .hero::before{content:'';position:absolute;top:-60px;right:-60px;width:400px;height:400px;background:var(--red);opacity:.06;border-radius:50%}
 .hero-inner{max-width:960px;margin:0 auto;position:relative;z-index:1}
 .page-label{color:var(--red);font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;margin-bottom:12px;display:block}
-.hero h1{font-size:clamp(32px,5vw,52px);font-weight:800;color:#fff;margin-bottom:16px;letter-spacing:-.8px;line-height:1.1}
-.hero p{color:rgba(255,255,255,.6);font-size:17px;max-width:540px;line-height:1.7}
+.hero h1{font-size:clamp(32px,5vw,52px);font-weight:800;color:var(--dark);margin-bottom:16px;letter-spacing:-.8px;line-height:1.1}
+.hero p{color:var(--muted);font-size:17px;max-width:540px;line-height:1.7}
 
 .form-section{padding:80px 48px;background:var(--light)}
 .form-inner{max-width:720px;margin:0 auto}

@@ -32,13 +32,13 @@ nav.scrolled{box-shadow:0 2px 20px rgba(0,0,0,.08)}
 .mobile-menu a:last-child{border:none}
 
 /* HERO */
-.fleet-hero{background:var(--dark);padding:130px 48px 80px;position:relative;overflow:hidden}
+.fleet-hero{background:var(--bg);border-bottom:1px solid var(--border);padding:130px 48px 80px;position:relative;overflow:hidden}
 .fleet-hero::after{content:'';position:absolute;top:0;right:0;bottom:0;width:45%;background:linear-gradient(135deg,transparent 0%,rgba(232,25,44,.08) 100%);pointer-events:none}
 .fleet-hero-inner{max-width:1200px;margin:0 auto;position:relative;z-index:1}
 .fleet-hero-eyebrow{color:var(--red);font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;margin-bottom:16px}
-.fleet-hero h1{font-size:clamp(36px,5vw,60px);font-weight:900;color:#fff;line-height:1.1;margin-bottom:20px}
+.fleet-hero h1{font-size:clamp(36px,5vw,60px);font-weight:900;color:var(--dark);line-height:1.1;margin-bottom:20px}
 .fleet-hero h1 span{color:var(--red)}
-.fleet-hero p{font-size:17px;color:rgba(255,255,255,.65);max-width:520px;line-height:1.7}
+.fleet-hero p{font-size:17px;color:var(--muted);max-width:520px;line-height:1.7}
 
 /* STAT BAR */
 .fleet-stat-bar{background:#fff;border-bottom:1px solid var(--border);padding:0 48px}

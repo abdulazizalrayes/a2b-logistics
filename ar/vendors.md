@@ -57,7 +57,7 @@ robots: "noindex, follow"
 {
   "@context": "https://schema.org",
   "@type": "WebPage",
-  "name": "تسجيل الموردين — a2b Logistics",
+  "name": "تسجيل الموردين  -  a2b Logistics",
   "url": "https://www.a2b.sa/ar/vendors",
   "description": "سجل كمورد أو مقاول من الباطن لدى a2b Logistics وانضم إلى شبكة شركائنا الموثوقين في السعودية.",
   "isPartOf": {

@@ -42,7 +42,7 @@ Flota y capacidades
 
 # 948+ Units. Every Load. Every City.
 
-One of Saudi Arabia's largest privately operated logistics fleets — purpose-built, GPS-tracked, and fuel-monitored across the entire Kingdom since 1994.
+One of Saudi Arabia's largest privately operated logistics fleets - purpose-built, GPS-tracked, and fuel-monitored across the entire Kingdom since 1994.
 
 948
 
@@ -64,7 +64,7 @@ Nuestra flota
 
 ## Preparada para todo tipo de carga
 
-From standard freight to oversized project loads — our fleet covers every requirement across Saudi Arabia's road network.
+From standard freight to oversized project loads - our fleet covers every requirement across Saudi Arabia's road network.
 
 ### Remolque plataforma estándar
 
@@ -100,39 +100,39 @@ Rapid-response light vehicles for field operations, small freight, urgent delive
 
 ### Remolque extensible
 
-For extra-long project cargo — structural steel, wind turbine components, bridge sections, and oversized loads that exceed standard trailer lengths.
+For extra-long project cargo - structural steel, wind turbine components, bridge sections, and oversized loads that exceed standard trailer lengths.
 
 Capacidades especializadas
 
 ## Más allá del transporte estándar
 
-Operational depth built over three decades — handling Saudi Arabia's most complex, time-critical, and large-scale logistics requirements.
+Operational depth built over three decades - handling Saudi Arabia's most complex, time-critical, and large-scale logistics requirements.
 
 ### Logística de megaproyectos
 
-Proven experience supporting Vision 2030 giga-projects including NEOM, Red Sea Project, and Qiddiya — high-volume, complex, time-bound supply chains in remote and active construction environments.
+Proven experience supporting Vision 2030 giga-projects including NEOM, Red Sea Project, and Qiddiya - high-volume, complex, time-bound supply chains in remote and active construction environments.
 
 ### Puerto y despacho aduanero
 
-Integrated drayage from all major Saudi seaports — Jeddah Islamic Port, King Abdulaziz Port (Dammam), and Jubail. Coordinated customs handling and documentation for seamless import logistics.
+Integrated drayage from all major Saudi seaports - Jeddah Islamic Port, King Abdulaziz Port (Dammam), and Jubail. Coordinated customs handling and documentation for seamless import logistics.
 
 ### Corredores transfronterizos
 
-Established routes and documentation expertise for cross-border freight into the UAE, Jordan, Bahrain, and Kuwait — connecting Saudi operations to the wider GCC supply chain network.
+Established routes and documentation expertise for cross-border freight into the UAE, Jordan, Bahrain, and Kuwait - connecting Saudi operations to the wider GCC supply chain network.
 
 ### 24/7 Rapid Mobilization
 
-Our operations center runs around the clock. Fleet can be dispatched within hours for urgent, unplanned, or time-critical loads — no downtime in your supply chain, no matter the hour.
+Our operations center runs around the clock. Fleet can be dispatched within hours for urgent, unplanned, or time-critical loads - no downtime in your supply chain, no matter the hour.
 
 Estándares de flota
 
 ## Technology-Backed. Compliance-Ready.
 
-Every vehicle in the a2b fleet is held to the same operational standard — giving clients full confidence in reliability, visibility, and accountability.
+Every vehicle in the a2b fleet is held to the same operational standard - giving clients full confidence in reliability, visibility, and accountability.
 
 #### Seguimiento GPS
 
-Real-time GPS tracking on every unit in the fleet — full shipment visibility from dispatch to delivery for you and your team.
+Real-time GPS tracking on every unit in the fleet - full shipment visibility from dispatch to delivery for you and your team.
 
 #### Monitoreo de combustible
 
@@ -140,7 +140,7 @@ Fuel chips installed fleet-wide for consumption tracking, efficiency reporting, 
 
 #### Mantenimiento preventivo
 
-Structured maintenance schedules across the entire fleet — reducing breakdowns, extending vehicle life, and maintaining service reliability.
+Structured maintenance schedules across the entire fleet - reducing breakdowns, extending vehicle life, and maintaining service reliability.
 
 #### Conductores certificados
 
@@ -148,7 +148,7 @@ Professional, licensed, and trained drivers averaging 20+ years of experience in
 
 ## Need a Specific Vehicle or Capacity?
 
-Tell us your cargo type, route, and timeline — we'll confirm availability and turn it around fast.
+Tell us your cargo type, route, and timeline - we'll confirm availability and turn it around fast.
 
 [Contáctanos](https://www.a2b.sa/es#contact)
 
@@ -166,7 +166,7 @@ Tell us your cargo type, route, and timeline — we'll confirm availability and 
   "@type": "WebPage",
   "name": "Fleet & Capabilities",
   "url": "https://www.a2b.sa/fleet",
-  "description": "a2b Logistics operates 948+ vehicles across Saudi Arabia — flatbeds, lowbeds, reefers, tankers, crane trucks and more.",
+  "description": "a2b Logistics operates 948+ vehicles across Saudi Arabia  -  flatbeds, lowbeds, reefers, tankers, crane trucks and more.",
   "isPartOf": {
     "@type": "WebSite",
     "name": "a2b Logistics",

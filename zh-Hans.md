@@ -283,8 +283,6 @@ Dr. Suhaib Ghunaim
 
 [M +966 55 384 6446](tel:+966553846446)
 
-[SGhunaim@a2b.sa](mailto:SGhunaim@a2b.sa)
-
 ## Extracted Public Links
 
 - [联系我们](https://www.a2b.sa/zh-Hans#contact)
@@ -302,12 +300,11 @@ Dr. Suhaib Ghunaim
 - [X](https://x.com/a2blogistics_sa)
 - [sales@a2b.sa](mailto:sales@a2b.sa)
 - [www.a2b.sa](https://www.a2b.sa/)
-- [SGhunaim@a2b.sa](mailto:SGhunaim@a2b.sa)
 
 ## Extracted Public Images
 
 - ![a2b logistics truck on Saudi highway](https://www.a2b.sa/images/truck_hero.jpg)
-- ![a2b logistics heavy equipment transport](https://www.a2b.sa/images/services_hero.jpg)
+- ![a2b logistics truck operating in Saudi Arabia](https://www.a2b.sa/images/truck_hero.jpg)
 - ![Ministry of Defense](https://www.a2b.sa/images/logo_2_clean.png)
 - ![Royal Commission for Riyadh City](https://www.a2b.sa/images/logo_3_clean.png)
 - ![Royal Commission for AlUla](https://www.a2b.sa/images/logo_4_clean.png)
@@ -419,8 +416,7 @@ Dr. Suhaib Ghunaim
   "employee": {
     "@type": "Person",
     "name": "Dr. Suhaib Ghunaim",
-    "jobTitle": "CEO",
-    "email": "SGhunaim@a2b.sa"
+    "jobTitle": "CEO"
   }
 }
 ```

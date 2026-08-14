@@ -100,39 +100,39 @@ Rapid-response light vehicles for field operations, small freight, urgent delive
 
 ### Ausziehbarer Trailer
 
-For extra-long project cargo — structural steel, wind turbine components, bridge sections, and oversized loads that exceed standard trailer lengths.
+For extra-long project cargo - structural steel, wind turbine components, bridge sections, and oversized loads that exceed standard trailer lengths.
 
 Spezialisierte Fähigkeiten
 
 ## Mehr als Standardtransport
 
-Operational depth built over three decades — handling Saudi Arabia's most complex, time-critical, and large-scale logistics requirements.
+Operational depth built over three decades - handling Saudi Arabia's most complex, time-critical, and large-scale logistics requirements.
 
 ### Megaprojekt-Logistik
 
-Proven experience supporting Vision 2030 giga-projects including NEOM, Red Sea Project, and Qiddiya — high-volume, complex, time-bound supply chains in remote and active construction environments.
+Proven experience supporting Vision 2030 giga-projects including NEOM, Red Sea Project, and Qiddiya - high-volume, complex, time-bound supply chains in remote and active construction environments.
 
 ### Hafen- und Zollabfertigung
 
-Integrated drayage from all major Saudi seaports — Jeddah Islamic Port, King Abdulaziz Port (Dammam), and Jubail. Coordinated customs handling and documentation for seamless import logistics.
+Integrated drayage from all major Saudi seaports - Jeddah Islamic Port, King Abdulaziz Port (Dammam), and Jubail. Coordinated customs handling and documentation for seamless import logistics.
 
 ### Grenzüberschreitende Korridore
 
-Established routes and documentation expertise for cross-border freight into the UAE, Jordan, Bahrain, and Kuwait — connecting Saudi operations to the wider GCC supply chain network.
+Established routes and documentation expertise for cross-border freight into the UAE, Jordan, Bahrain, and Kuwait - connecting Saudi operations to the wider GCC supply chain network.
 
 ### 24/7 schnelle Mobilisierung
 
-Our operations center runs around the clock. Fleet can be dispatched within hours for urgent, unplanned, or time-critical loads — no downtime in your supply chain, no matter the hour.
+Our operations center runs around the clock. Fleet can be dispatched within hours for urgent, unplanned, or time-critical loads - no downtime in your supply chain, no matter the hour.
 
 Flottenstandards
 
 ## Technologiegestützt. Compliance-bereit.
 
-Every vehicle in the a2b fleet is held to the same operational standard — giving clients full confidence in reliability, visibility, and accountability.
+Every vehicle in the a2b fleet is held to the same operational standard - giving clients full confidence in reliability, visibility, and accountability.
 
 #### GPS-verfolgt
 
-Real-time GPS tracking on every unit in the fleet — full shipment visibility from dispatch to delivery for you and your team.
+Real-time GPS tracking on every unit in the fleet - full shipment visibility from dispatch to delivery for you and your team.
 
 #### Kraftstoffüberwachung
 
@@ -140,7 +140,7 @@ Fuel chips installed fleet-wide for consumption tracking, efficiency reporting, 
 
 #### Vorbeugende Wartung
 
-Structured maintenance schedules across the entire fleet — reducing breakdowns, extending vehicle life, and maintaining service reliability.
+Structured maintenance schedules across the entire fleet - reducing breakdowns, extending vehicle life, and maintaining service reliability.
 
 #### Zertifizierte Fahrer
 
@@ -166,7 +166,7 @@ Nennen Sie uns Frachtart, Route und Zeitplan - wir bestätigen die Verfügbarkei
   "@type": "WebPage",
   "name": "Fleet & Capabilities",
   "url": "https://www.a2b.sa/fleet",
-  "description": "a2b Logistics operates 948+ vehicles across Saudi Arabia — flatbeds, lowbeds, reefers, tankers, crane trucks and more.",
+  "description": "a2b Logistics operates 948+ vehicles across Saudi Arabia  -  flatbeds, lowbeds, reefers, tankers, crane trucks and more.",
   "isPartOf": {
     "@type": "WebSite",
     "name": "a2b Logistics",
