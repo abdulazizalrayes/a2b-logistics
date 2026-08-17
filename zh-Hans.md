@@ -304,7 +304,7 @@ Dr. Suhaib Ghunaim
 ## Extracted Public Images
 
 - ![a2b logistics truck on Saudi highway](https://www.a2b.sa/images/truck_hero.jpg)
-- ![a2b logistics truck operating in Saudi Arabia](https://www.a2b.sa/images/truck_hero.jpg)
+- ![a2b Logistics 的 MAN 卡车停靠在利雅得仓库](https://www.a2b.sa/images/a2b_man_warehouse_banner.jpg)
 - ![Ministry of Defense](https://www.a2b.sa/images/logo_2_clean.png)
 - ![Royal Commission for Riyadh City](https://www.a2b.sa/images/logo_3_clean.png)
 - ![Royal Commission for AlUla](https://www.a2b.sa/images/logo_4_clean.png)

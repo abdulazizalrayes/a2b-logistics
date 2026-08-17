@@ -304,7 +304,7 @@ Dr. Suhaib Ghunaim
 ## Extracted Public Images
 
 - ![شاحنة a2b Logistics على طريق سعودي](https://www.a2b.sa/images/truck_hero.jpg)
-- ![شاحنة a2b Logistics تعمل في المملكة العربية السعودية](https://www.a2b.sa/images/truck_hero.jpg)
+- ![شاحنة مان تابعة لشركة a2b Logistics في مستودع بالرياض](https://www.a2b.sa/images/a2b_man_warehouse_banner.jpg)
 - ![وزارة الدفاع](https://www.a2b.sa/images/logo_2_clean.png)
 - ![الهيئة الملكية لمدينة الرياض City](https://www.a2b.sa/images/logo_3_clean.png)
 - ![الهيئة الملكية لمحافظة العلا](https://www.a2b.sa/images/logo_4_clean.png)
