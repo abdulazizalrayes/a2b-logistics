@@ -24,6 +24,7 @@ const requiredAgentFiles = [
   'llms.txt',
   'llms-full.txt',
   '.well-known/agent-card.json',
+  '.well-known/ai-catalog.json',
   '.well-known/api-catalog',
   '.well-known/mcp.json',
   '.well-known/mcp/server-card.json',
@@ -222,6 +223,7 @@ const analyticsEvents = await parseRequiredJson('data/analytics-events.json');
 const highIntentContentPlan = await parseRequiredJson('data/high-intent-content-plan.json');
 const markdownCompanions = await parseRequiredJson('data/markdown-companions.json');
 const agentCard = await parseRequiredJson('.well-known/agent-card.json');
+const ardCatalog = await parseRequiredJson('.well-known/ai-catalog.json');
 const mcp = await parseRequiredJson('.well-known/mcp.json');
 const mcpServerCard = await parseRequiredJson('.well-known/mcp/server-card.json');
 const mcpServerCards = await parseRequiredJson('.well-known/mcp/server-cards.json');
@@ -249,6 +251,16 @@ if (highIntentContentPlan.status !== 'cancelled_by_owner') fail('data/high-inten
 if (highIntentContentPlan.draftPages?.length) fail('data/high-intent-content-plan.json: cancelled high-intent plan must not contain draft pages');
 if (markdownCompanions.routes?.length !== sitemapUrlCount) fail('data/markdown-companions.json: route count must match sitemap URL count');
 if (markdownCompanions.contentSignal !== 'search=yes, ai-input=yes, ai-train=no') fail('data/markdown-companions.json: wrong Content-Signal policy');
+if (ardCatalog.specVersion !== '1.0') fail('.well-known/ai-catalog.json: expected ARD specVersion 1.0');
+if (ardCatalog.host?.identifier !== 'did:web:a2b.sa') fail('.well-known/ai-catalog.json: wrong host identifier');
+if (!Array.isArray(ardCatalog.entries) || ardCatalog.entries.length < 2) fail('.well-known/ai-catalog.json: expected MCP and OpenAPI entries');
+for (const entry of ardCatalog.entries || []) {
+  if (!entry.identifier?.startsWith('urn:air:a2b.sa:')) fail('.well-known/ai-catalog.json: entry identifier must use the a2b.sa AIR namespace');
+  if (!entry.url?.startsWith('https://www.a2b.sa/')) fail('.well-known/ai-catalog.json: entry URL must stay on www.a2b.sa');
+  if (!Array.isArray(entry.representativeQueries) || entry.representativeQueries.length < 2) fail('.well-known/ai-catalog.json: each entry needs representative queries');
+}
+if (!ardCatalog.entries?.some((entry) => entry.url?.endsWith('/.well-known/mcp/server-card.json'))) fail('.well-known/ai-catalog.json: missing MCP server card');
+if (!ardCatalog.entries?.some((entry) => entry.url?.endsWith('/openapi.json'))) fail('.well-known/ai-catalog.json: missing OpenAPI description');
 
 const requiredTools = ['get_company_overview', 'list_services', 'match_project_scope', 'prepare_project_inquiry', 'prepare_rfq_brief', 'list_service_areas', 'get_procurement_profile', 'read_public_resource'];
 for (const tool of requiredTools) {

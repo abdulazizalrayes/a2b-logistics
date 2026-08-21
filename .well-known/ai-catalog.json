@@ -1,0 +1,47 @@
+{
+  "specVersion": "1.0",
+  "host": {
+    "displayName": "a2b Logistics",
+    "identifier": "did:web:a2b.sa"
+  },
+  "entries": [
+    {
+      "identifier": "urn:air:a2b.sa:server:public-logistics-mcp",
+      "displayName": "a2b Logistics Public MCP Server",
+      "type": "application/mcp-server+json",
+      "url": "https://www.a2b.sa/.well-known/mcp/server-card.json",
+      "capabilities": [
+        "get_company_overview",
+        "list_services",
+        "match_project_scope",
+        "prepare_project_inquiry",
+        "prepare_rfq_brief",
+        "list_service_areas",
+        "get_procurement_profile",
+        "read_public_resource"
+      ],
+      "description": "Read-only public logistics discovery and inquiry-preparation tools for a2b Logistics. Tools do not contact a2b or submit forms without explicit user approval.",
+      "representativeQueries": [
+        "What logistics services does a2b provide in Saudi Arabia?",
+        "Can a2b support a road freight project in Riyadh?",
+        "Prepare a B2B logistics inquiry for a Saudi Arabia project without submitting it."
+      ]
+    },
+    {
+      "identifier": "urn:air:a2b.sa:api:public-logistics-api",
+      "displayName": "a2b Logistics Public API",
+      "type": "application/vnd.oai.openapi+json",
+      "url": "https://www.a2b.sa/openapi.json",
+      "capabilities": [
+        "public-company-data",
+        "public-service-data",
+        "read-only-mcp"
+      ],
+      "description": "OpenAPI description for a2b Logistics public structured resources and read-only MCP endpoint.",
+      "representativeQueries": [
+        "List the public a2b logistics data endpoints.",
+        "Read a2b service areas in machine-readable form."
+      ]
+    }
+  ]
+}
