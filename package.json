@@ -10,6 +10,7 @@
     "markdown:validate": "node scripts/validate-markdown-layer.mjs",
     "markdown:validate:live": "node scripts/validate-live-markdown-layer.mjs",
     "indexnow:submit": "node scripts/submit-indexnow.mjs",
+    "test:whatsapp": "node scripts/test-whatsapp-analytics.mjs",
     "verify": "node scripts/verify-site.mjs",
     "ai:benchmark": "node scripts/ai-visibility-benchmark.mjs",
     "agent:report": "node scripts/agent-analytics-report.mjs"
