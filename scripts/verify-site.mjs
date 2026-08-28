@@ -185,6 +185,7 @@ for (const cancelledSlug of [
 const analytics = await readFile(join(root, 'assets/js/analytics.js'), 'utf8');
 requireIncludes(analytics, 'assets/js/analytics.js', 'contact_click', 'contact click analytics event');
 requireIncludes(analytics, 'assets/js/analytics.js', 'form_submit_attempt', 'form submit analytics event');
+requireIncludes(analytics, 'assets/js/analytics.js', 'generate_lead', 'qualified contact lead analytics event');
 
 const indexNowKeyFile = 'dabfa5738883df4a66f9ad844188f7aa.txt';
 const indexNowKey = (await readRequired(indexNowKeyFile)).trim();

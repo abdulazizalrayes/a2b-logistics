@@ -46,6 +46,14 @@
       link_url: link.getAttribute('href'),
       page_location: window.location.href
     });
+
+    if (contactType === 'email' || contactType === 'phone' || contactType === 'whatsapp') {
+      sendEvent('generate_lead', {
+        contact_method: contactType,
+        lead_source: 'website_contact',
+        page_location: window.location.href
+      });
+    }
   }, { passive: true });
 
   document.addEventListener('DOMContentLoaded', function () {
