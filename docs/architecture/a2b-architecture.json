@@ -92,7 +92,7 @@
     }
   },
   "inventory": {
-    "repositoryFilesExcludingGeneratedAndDependencies": 325,
+    "repositoryFilesExcludingGeneratedAndDependencies": 324,
     "htmlFiles": 71,
     "canonicalSitemapRoutes": 65,
     "routeFamilies": [
@@ -158,8 +158,7 @@
       "/thankyou",
       "/indexnow-submit",
       "/agent-auth/register/",
-      "/agent-auth/claim/",
-      "/googlec344506d98b81e41.html"
+      "/agent-auth/claim/"
     ],
     "markdownCompanions": 65,
     "structuredDataFiles": 14,
@@ -490,7 +489,6 @@
         "robots.txt",
         "sitemap.xml",
         "dabfa5738883df4a66f9ad844188f7aa.txt",
-        "googlec344506d98b81e41.html",
         "indexnow-submit.html"
       ],
       "interfaces": [
