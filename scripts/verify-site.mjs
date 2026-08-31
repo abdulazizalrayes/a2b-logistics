@@ -20,6 +20,7 @@ const requiredAgentFiles = [
   'data/ai-visibility-queries.json',
   'data/analytics-events.json',
   'data/high-intent-content-plan.json',
+  'data/agent-concierge.json',
   'data/markdown-companions.json',
   'llms.txt',
   'llms-full.txt',
@@ -36,8 +37,11 @@ const requiredAgentFiles = [
   'docs/ANALYTICS_AI_REPORTING.md',
   'docs/HIGH_INTENT_PAGE_APPROVAL_BRIEF.md',
   'api/mcp.js',
+  'api/agent-concierge.js',
   'scripts/ai-visibility-benchmark.mjs',
   'scripts/agent-analytics-report.mjs',
+  'scripts/agent-concierge-report.mjs',
+  'scripts/validate-agent-concierge.mjs',
   'scripts/generate-markdown-companions.mjs',
   'scripts/validate-markdown-layer.mjs',
   'scripts/submit-indexnow.mjs',
@@ -51,8 +55,9 @@ const errors = [];
 async function walk(dir) {
   const entries = await readdir(dir, { withFileTypes: true });
   const files = [];
+  const generatedDirectories = new Set(['.markdown', '.vercel', 'node_modules', 'output', 'reports', 'screenshots', 'tmp']);
   for (const entry of entries) {
-    if (entry.name === 'node_modules' || entry.name === '.git' || entry.name === '.vercel') continue;
+    if (generatedDirectories.has(entry.name) || entry.name === '.git' || entry.name.startsWith('.git ')) continue;
     const full = join(dir, entry.name);
     if (entry.isDirectory()) files.push(...await walk(full));
     if (entry.isFile()) files.push(full);
@@ -222,6 +227,7 @@ const rfqPreparation = await parseRequiredJson('data/rfq-preparation.json');
 const aiVisibilityQueries = await parseRequiredJson('data/ai-visibility-queries.json');
 const analyticsEvents = await parseRequiredJson('data/analytics-events.json');
 const highIntentContentPlan = await parseRequiredJson('data/high-intent-content-plan.json');
+const agentConcierge = await parseRequiredJson('data/agent-concierge.json');
 const markdownCompanions = await parseRequiredJson('data/markdown-companions.json');
 const agentCard = await parseRequiredJson('.well-known/agent-card.json');
 const ardCatalog = await parseRequiredJson('.well-known/ai-catalog.json');
@@ -250,6 +256,11 @@ if (!Array.isArray(aiVisibilityQueries.querySets) || aiVisibilityQueries.querySe
 if (!analyticsEvents.events?.some((event) => event.name === 'mcp_tool_call')) fail('data/analytics-events.json: missing mcp_tool_call event');
 if (highIntentContentPlan.status !== 'cancelled_by_owner') fail('data/high-intent-content-plan.json: high-intent plan must remain cancelled');
 if (highIntentContentPlan.draftPages?.length) fail('data/high-intent-content-plan.json: cancelled high-intent plan must not contain draft pages');
+if (agentConcierge.company !== 'a2b Logistics Company') fail('data/agent-concierge.json: wrong company');
+if (agentConcierge.endpoint !== 'https://www.a2b.sa/api/agent-concierge') fail('data/agent-concierge.json: wrong endpoint');
+if (agentConcierge.mode !== 'deterministic_public_facts_only') fail('data/agent-concierge.json: concierge must remain deterministic and public-facts-only');
+if (agentConcierge.requestPolicy?.personalDataAccepted !== false || agentConcierge.requestPolicy?.credentialsAccepted !== false) fail('data/agent-concierge.json: personal data and credentials must be rejected');
+if (agentConcierge.requestPolicy?.maximumBodyBytes !== 32768) fail('data/agent-concierge.json: expected 32 KB request limit');
 if (markdownCompanions.routes?.length !== sitemapUrlCount) fail('data/markdown-companions.json: route count must match sitemap URL count');
 if (markdownCompanions.contentSignal !== 'search=yes, ai-input=yes, ai-train=no') fail('data/markdown-companions.json: wrong Content-Signal policy');
 if (ardCatalog.specVersion !== '1.0') fail('.well-known/ai-catalog.json: expected ARD specVersion 1.0');
@@ -263,7 +274,7 @@ for (const entry of ardCatalog.entries || []) {
 if (!ardCatalog.entries?.some((entry) => entry.url?.endsWith('/.well-known/mcp/server-card.json'))) fail('.well-known/ai-catalog.json: missing MCP server card');
 if (!ardCatalog.entries?.some((entry) => entry.url?.endsWith('/openapi.json'))) fail('.well-known/ai-catalog.json: missing OpenAPI description');
 
-const requiredTools = ['get_company_overview', 'list_services', 'match_project_scope', 'prepare_project_inquiry', 'prepare_rfq_brief', 'list_service_areas', 'get_procurement_profile', 'read_public_resource'];
+const requiredTools = ['get_company_overview', 'list_services', 'match_project_scope', 'prepare_project_inquiry', 'prepare_rfq_brief', 'list_service_areas', 'get_procurement_profile', 'ask_agent_concierge', 'read_public_resource'];
 for (const tool of requiredTools) {
   if (!JSON.stringify(agentCard).includes(tool)) fail(`.well-known/agent-card.json: missing ${tool}`);
   if (!JSON.stringify(mcp).includes(tool)) fail(`.well-known/mcp.json: missing ${tool}`);
@@ -288,7 +299,9 @@ for (const path of [
   '/data/ai-visibility-queries.json',
   '/data/analytics-events.json',
   '/data/high-intent-content-plan.json',
+  '/data/agent-concierge.json',
   '/data/markdown-companions.json',
+  '/api/agent-concierge',
   '/api/mcp'
 ]) {
   if (!openapi.paths?.[path]) fail(`openapi.json: missing ${path}`);
@@ -299,14 +312,18 @@ const llmsFull = await readRequired('llms-full.txt');
 const robots = await readRequired('robots.txt');
 const webmcp = await readRequired('webmcp.js');
 const mcpApi = await readRequired('api/mcp.js');
+const conciergeApi = await readRequired('api/agent-concierge.js');
+const publicApiGuard = await readRequired('api/_lib/public-api-guard.js');
 for (const needle of [
   '/data/company.json',
   '/data/services.json',
   '/data/agent-routing.json',
   '/data/procurement-profile.json',
   '/data/rfq-preparation.json',
+  '/data/agent-concierge.json',
   '/data/markdown-companions.json',
   '/api/mcp',
+  '/api/agent-concierge',
   'prepare_project_inquiry',
   'prepare_rfq_brief',
   'get_procurement_profile'
@@ -323,11 +340,18 @@ requireIncludes(webmcp, 'webmcp.js', 'approvalRequiredBeforeContact', 'contact a
 requireIncludes(mcpApi, 'api/mcp.js', 'prepare_project_inquiry', 'MCP inquiry tool');
 requireIncludes(mcpApi, 'api/mcp.js', 'prepare_rfq_brief', 'MCP RFQ tool');
 requireIncludes(mcpApi, 'api/mcp.js', 'get_procurement_profile', 'MCP procurement tool');
-requireIncludes(mcpApi, 'api/mcp.js', 'X-Request-Id', 'request ID header');
+requireIncludes(publicApiGuard, 'api/_lib/public-api-guard.js', 'X-Request-Id', 'request ID header');
 requireIncludes(mcpApi, 'api/mcp.js', 'ETag', 'resource ETag header');
 requireIncludes(mcpApi, 'api/mcp.js', 'mcp_tool_call', 'MCP analytics log');
 requireIncludes(mcpApi, 'api/mcp.js', 'markdown-companions', 'MCP Markdown companion resource');
 requireIncludes(webmcp, 'webmcp.js', 'markdown-companions', 'WebMCP Markdown companion resource');
+requireIncludes(webmcp, 'webmcp.js', 'ask_agent_concierge', 'browser agent concierge tool');
+requireIncludes(mcpApi, 'api/mcp.js', 'ask_agent_concierge', 'MCP agent concierge tool');
+requireIncludes(mcpApi, 'api/mcp.js', 'requestBodySize', 'MCP request body limit');
+requireIncludes(conciergeApi, 'api/agent-concierge.js', 'MAX_BODY_BYTES', 'concierge request body limit');
+requireIncludes(conciergeApi, 'api/agent-concierge.js', 'containsSensitiveInput', 'concierge sensitive-input rejection');
+requireIncludes(conciergeApi, 'api/agent-concierge.js', 'isPromptInjection', 'concierge prompt-injection rejection');
+requireIncludes(conciergeApi, 'api/agent-concierge.js', 'agent_concierge_question', 'concierge question telemetry');
 if (webmcp.includes('request_quote')) fail('webmcp.js: request_quote should not be exposed');
 if (JSON.stringify(agentCard).includes('request_quote')) fail('.well-known/agent-card.json: request_quote should not be exposed');
 

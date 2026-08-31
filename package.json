@@ -13,7 +13,9 @@
     "test:whatsapp": "node scripts/test-whatsapp-analytics.mjs",
     "verify": "node scripts/verify-site.mjs",
     "ai:benchmark": "node scripts/ai-visibility-benchmark.mjs",
-    "agent:report": "node scripts/agent-analytics-report.mjs"
+    "agent:report": "node scripts/agent-analytics-report.mjs",
+    "agent:concierge:test": "node scripts/validate-agent-concierge.mjs",
+    "agent:concierge:report": "node scripts/agent-concierge-report.mjs"
   },
   "devDependencies": {
     "parse5": "^8.0.1"

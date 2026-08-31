@@ -1,8 +1,8 @@
 {
   "name": "a2b Logistics Agent",
-  "description": "Public discovery card for a2b Logistics services, company information, routing, and read-only inquiry preparation.",
+  "description": "Public discovery card for a2b Logistics services, company information, deterministic agent concierge, routing, and read-only inquiry preparation.",
   "url": "https://www.a2b.sa",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "provider": {
     "organization": "a2b Logistics",
     "url": "https://www.a2b.sa"
@@ -145,6 +145,25 @@
       ]
     },
     {
+      "id": "ask_agent_concierge",
+      "name": "Ask Agent Concierge",
+      "description": "Ask a deterministic, public-facts-only question about a2b services, fit, procurement, service areas, compliance, or next steps. Personal data, credentials, and secrets are not accepted.",
+      "tags": [
+        "agent-concierge",
+        "procurement",
+        "public-facts",
+        "read-only"
+      ],
+      "inputModes": [
+        "application/json",
+        "text/plain"
+      ],
+      "outputModes": [
+        "application/json",
+        "text/plain"
+      ]
+    },
+    {
       "id": "read_public_resource",
       "name": "Read Public Resource",
       "description": "Read public structured resources such as company, services, capabilities, service areas, project inquiry schema, routing rules, and the Markdown companion manifest.",
@@ -168,6 +187,11 @@
       "url": "https://www.a2b.sa/api/mcp",
       "protocolBinding": "https://modelcontextprotocol.io",
       "protocolVersion": "2024-11-05"
+    },
+    {
+      "url": "https://www.a2b.sa/api/agent-concierge",
+      "protocolBinding": "https",
+      "protocolVersion": "1.0"
     }
   ],
   "documentationUrl": "https://www.a2b.sa/llms-full.txt",

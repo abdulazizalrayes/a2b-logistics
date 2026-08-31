@@ -1,6 +1,17 @@
 import { readFile } from 'node:fs/promises';
 import { createHash, randomUUID } from 'node:crypto';
 import { join } from 'node:path';
+import { answerAgentQuestion } from './_lib/agent-concierge-engine.js';
+import {
+  applyPublicApiHeaders,
+  containsSensitiveInput,
+  isCanonicalProductionHost,
+  isJsonRequest,
+  isPromptInjection,
+  registerAbuse,
+  requestBodySize,
+  takeRateLimit
+} from './_lib/public-api-guard.js';
 
 const root = process.cwd();
 
@@ -18,6 +29,7 @@ const publicResources = {
   'ai-visibility-queries': 'data/ai-visibility-queries.json',
   'analytics-events': 'data/analytics-events.json',
   'high-intent-content-plan': 'data/high-intent-content-plan.json',
+  'agent-concierge': 'data/agent-concierge.json',
   'markdown-companions': 'data/markdown-companions.json',
   'llms': 'llms.txt',
   'llms-full': 'llms-full.txt',
@@ -32,6 +44,7 @@ const toolNames = new Set([
   'prepare_rfq_brief',
   'list_service_areas',
   'get_procurement_profile',
+  'ask_agent_concierge',
   'read_public_resource'
 ]);
 
@@ -221,6 +234,18 @@ const tools = [
     inputSchema: { type: 'object', properties: {}, additionalProperties: false }
   },
   {
+    name: 'ask_agent_concierge',
+    description: 'Ask a public-facts-only question about a2b services, fit, procurement, service areas, compliance, or next steps. No personal data or secrets are accepted.',
+    inputSchema: {
+      type: 'object',
+      properties: {
+        question: { type: 'string', minLength: 1, maxLength: 2000 }
+      },
+      required: ['question'],
+      additionalProperties: false
+    }
+  },
+  {
     name: 'read_public_resource',
     description: 'Read one public structured resource by id.',
     inputSchema: {
@@ -264,6 +289,13 @@ async function callTool(name, args = {}) {
   if (name === 'get_procurement_profile') {
     return { procurementProfile, rfqPreparation, complianceProfile };
   }
+  if (name === 'ask_agent_concierge') {
+    const question = text(args.question, 2000);
+    if (!question) throw new Error('question is required');
+    if (containsSensitiveInput(question)) throw new Error('Do not send personal data, credentials, or secrets');
+    if (isPromptInjection(question)) throw new Error('Unsafe instruction rejected');
+    return answerAgentQuestion(question);
+  }
   if (name === 'match_project_scope') {
     return classifyScope(args, services, routing);
   }
@@ -303,19 +335,42 @@ async function callTool(name, args = {}) {
 
 export default async function handler(req, res) {
   const requestId = req.headers?.['x-request-id'] || randomUUID();
-  res.setHeader('Access-Control-Allow-Origin', '*');
-  res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
-  res.setHeader('Access-Control-Allow-Headers', 'content-type,x-request-id');
-  res.setHeader('X-Request-Id', requestId);
-  res.setHeader('Cache-Control', 'no-store');
+  applyPublicApiHeaders(res, requestId);
 
   if (req.method === 'OPTIONS') {
     res.status(204).end();
     return;
   }
 
+  if (!isCanonicalProductionHost(req)) {
+    res.status(421).json(err(null, -32021, 'Use the canonical a2b endpoint at https://www.a2b.sa/api/mcp', requestId));
+    return;
+  }
+
   if (req.method !== 'POST') {
+    res.setHeader('Allow', 'POST, OPTIONS');
     res.status(405).json(err(null, -32005, 'Method not allowed', requestId));
+    return;
+  }
+
+  if (!isJsonRequest(req)) {
+    registerAbuse(req, { namespace: 'mcp-abuse' });
+    res.status(415).json(err(null, -32015, 'Content-Type must be application/json', requestId));
+    return;
+  }
+
+  if (requestBodySize(req) > 32 * 1024) {
+    registerAbuse(req, { namespace: 'mcp-abuse' });
+    res.status(413).json(err(null, -32013, 'Request body exceeds the 32 KB limit', requestId));
+    return;
+  }
+
+  const rate = takeRateLimit(req, { namespace: 'mcp', limit: 60, windowMs: 60_000 });
+  res.setHeader('RateLimit-Limit', '60');
+  res.setHeader('RateLimit-Remaining', String(rate.remaining));
+  if (!rate.allowed) {
+    res.setHeader('Retry-After', String(rate.retryAfter));
+    res.status(429).json(err(null, -32029, 'Rate limit exceeded', requestId));
     return;
   }
 
@@ -331,7 +386,7 @@ export default async function handler(req, res) {
     if (body.method === 'initialize') {
       res.status(200).json(ok(id, {
         protocolVersion: '2024-11-05',
-        serverInfo: { name: 'a2b-logistics', version: '1.1.0' },
+        serverInfo: { name: 'a2b-logistics', version: '1.2.0' },
         capabilities: { tools: {}, resources: {} },
         approvalPolicy: 'Read-only. No endpoint submits forms, sends email, calls phone numbers, quotes pricing, confirms availability, or creates commitments.'
       }, requestId));

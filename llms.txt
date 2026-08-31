@@ -11,6 +11,8 @@
 - OpenAPI: https://www.a2b.sa/openapi.json
 - MCP discovery: https://www.a2b.sa/.well-known/mcp.json
 - Public MCP endpoint: https://www.a2b.sa/api/mcp
+- Agent concierge endpoint: https://www.a2b.sa/api/agent-concierge
+- Agent concierge contract: https://www.a2b.sa/data/agent-concierge.json
 - Markdown companion manifest: https://www.a2b.sa/data/markdown-companions.json
 - Company name: a2b Logistics Company
 - Short name: a2b
@@ -84,6 +86,7 @@ The English, Arabic, German, Italian, Spanish, French, and Simplified Chinese ho
 - AI visibility benchmark queries: https://www.a2b.sa/data/ai-visibility-queries.json
 - Analytics event catalog: https://www.a2b.sa/data/analytics-events.json
 - Cancelled high-intent content plan: https://www.a2b.sa/data/high-intent-content-plan.json
+- Agent concierge contract: https://www.a2b.sa/data/agent-concierge.json
 
 ## Public Read-Only Tools
 
@@ -96,9 +99,16 @@ Agents may use the public read-only MCP-style endpoint at https://www.a2b.sa/api
 - prepare_rfq_brief
 - list_service_areas
 - get_procurement_profile
+- ask_agent_concierge
 - read_public_resource
 
 These tools prepare and route only. They do not submit forms, send email, call phone numbers, quote pricing, confirm availability, or create commitments.
+
+## Agent-Only Concierge
+
+Agents may POST a public question to https://www.a2b.sa/api/agent-concierge using `Content-Type: application/json` and a body such as `{"question":"Can a2b support commercial road freight in Saudi Arabia?","language":"en"}`.
+
+The concierge is deterministic and uses approved public a2b facts only. It has no model call, database, customer records, credentials, private-system access, outbound messaging, or commercial authority. Do not send personal data, passwords, API keys, tokens, or secrets. New unanswered questions may be retained only after redaction for owner knowledge review; answered question content is not logged.
 
 ## Public Pages
 

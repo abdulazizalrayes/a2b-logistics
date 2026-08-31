@@ -5,8 +5,8 @@
     "id": "a2b-logistics-architecture",
     "title": "a2b Logistics Website Architecture",
     "purpose": "Human and agent-readable map of the a2b website, its public agent interfaces, deployment path, external dependencies, controls, and change procedures.",
-    "generatedAt": "2026-07-29T16:30:00Z",
-    "sourceCommitAudited": "2437a402403a4ba5594e60c5d114ecb00ed6cf1a",
+    "generatedAt": "2026-08-31T12:38:30Z",
+    "sourceCommitAudited": "51fb2ea865c560b3272791a6e510056e3b9ae036",
     "scope": "a2b only",
     "confidentiality": "Repository-internal. Excluded from Vercel deployment.",
     "updateRule": "Update this JSON when routes, runtime boundaries, public interfaces, external systems, ownership, or deployment behavior change; then run npm run architecture:generate and npm run architecture:check."
@@ -52,12 +52,13 @@
     }
   },
   "system": {
-    "type": "Static multilingual B2B company website with Vercel edge middleware and one read-only serverless MCP endpoint",
+    "type": "Static multilingual B2B company website behind Cloudflare with Vercel edge middleware, a deterministic agent concierge, and a read-only MCP endpoint",
     "runtime": {
       "staticHosting": "Vercel",
       "edgeMiddleware": "middleware.js",
       "serverlessFunctions": [
-        "api/mcp.js"
+        "api/mcp.js",
+        "api/agent-concierge.js"
       ],
       "framework": "none",
       "nodeVersion": "24.x",
@@ -92,7 +93,7 @@
     }
   },
   "inventory": {
-    "repositoryFilesExcludingGeneratedAndDependencies": 324,
+    "repositoryFilesExcludingGeneratedAndDependencies": 331,
     "htmlFiles": 71,
     "canonicalSitemapRoutes": 65,
     "routeFamilies": [
@@ -161,14 +162,14 @@
       "/agent-auth/claim/"
     ],
     "markdownCompanions": 65,
-    "structuredDataFiles": 14,
+    "structuredDataFiles": 15,
     "wellKnownDiscoveryFiles": 10,
-    "serverMcpTools": 8,
-    "browserWebMcpTools": 6,
+    "serverMcpTools": 9,
+    "browserWebMcpTools": 7,
     "cssFiles": 10,
-    "javascriptAndModuleFiles": 19,
+    "javascriptAndModuleFiles": 24,
     "imageFiles": 112,
-    "verificationScripts": 8
+    "verificationScripts": 10
   },
   "layers": [
     {
@@ -223,7 +224,7 @@
         "tel"
       ],
       "dependencies": [
-        "dnet-dns",
+        "cloudflare-edge-dns",
         "vercel-edge"
       ],
       "status": "active"
@@ -244,7 +245,7 @@
         "Markdown"
       ],
       "dependencies": [
-        "dnet-dns",
+        "cloudflare-edge-dns",
         "vercel-edge"
       ],
       "status": "active"
@@ -260,36 +261,44 @@
         "Accept: text/markdown",
         "OpenAPI",
         "MCP JSON-RPC",
-        "WebMCP"
+        "WebMCP",
+        "Agent concierge JSON"
       ],
       "dependencies": [
         "agent-discovery",
         "markdown-layer",
         "mcp-api",
+        "agent-concierge-api",
         "browser-webmcp"
       ],
       "status": "active"
     },
     {
-      "id": "dnet-dns",
+      "id": "cloudflare-edge-dns",
       "layer": "delivery",
       "type": "infrastructure",
-      "title": "DNET authoritative DNS",
-      "subtitle": "a2b.sa zone and nameservers",
-      "responsibility": "Resolve a2b.sa and www.a2b.sa to the production web host while preserving web and email routing.",
+      "title": "Cloudflare DNS and edge security",
+      "subtitle": "a2b.sa authoritative DNS, proxy, DNSSEC and WAF",
+      "responsibility": "Resolve and proxy the canonical a2b web hosts, preserve Google Workspace records, validate DNSSEC, and apply narrowly scoped edge security controls before Vercel.",
       "interfaces": [
         "DNS",
-        "A/AAAA/CNAME/TXT/MX"
+        "A/AAAA/CNAME/TXT/MX",
+        "HTTPS proxy",
+        "DNSSEC",
+        "WAF rate limiting"
       ],
       "dependencies": [
         "vercel-edge"
       ],
       "evidence": [
-        "docs/DNS_AID_BLOCKER.md"
+        "Cloudflare zone f925008d8d878681a262fa5da5aa393d",
+        "johnny.ns.cloudflare.com",
+        "tara.ns.cloudflare.com"
       ],
       "status": "active",
       "notes": [
-        "SVCB/HTTPS DNS-AID record support remains optional and provider-limited.",
+        "The canonical site is proxied through Cloudflare before Vercel.",
+        "The free-plan rate-limit quota is reserved for the two public agent API paths in one path expression, but activation is pending a2b WAF-management permission.",
         "Production DNS changes require owner approval."
       ]
     },
@@ -299,7 +308,7 @@
       "type": "platform",
       "title": "Vercel project",
       "subtitle": "a2b-logistics / production CDN",
-      "responsibility": "Serve static files, execute middleware and api/mcp.js, enforce redirects and response headers, and provide deployment/log evidence.",
+      "responsibility": "Serve static files, execute middleware and both public agent APIs, enforce redirects and response headers, and provide deployment/log evidence.",
       "files": [
         "vercel.json",
         ".vercel/project.json",
@@ -315,6 +324,7 @@
         "edge-middleware",
         "static-pages",
         "mcp-api",
+        "agent-concierge-api",
         "security-headers"
       ],
       "status": "active"
@@ -588,8 +598,8 @@
       "layer": "agents",
       "type": "runtime",
       "title": "Browser WebMCP bridge",
-      "subtitle": "6 in-page read-only tools",
-      "responsibility": "Register browser-aware tools on homepages, fetch same-origin public resources, classify requests, and emit privacy-safe GA4 events.",
+      "subtitle": "7 in-page read-only tools",
+      "responsibility": "Register browser-aware tools only when navigator.modelContext is available, fetch same-origin public resources, call the agent concierge, classify requests, and emit privacy-safe GA4 events.",
       "files": [
         "webmcp.js",
         "index.html",
@@ -611,7 +621,7 @@
       "layer": "agents",
       "type": "runtime",
       "title": "Server-side MCP endpoint",
-      "subtitle": "8 read-only tools + 17 resources",
+      "subtitle": "9 read-only tools + 18 resources",
       "responsibility": "Serve JSON-RPC-style initialize, tools, and resources operations; classify scope and prepare inquiries/RFQs without contacting a2b.",
       "files": [
         "api/mcp.js",
@@ -636,7 +646,46 @@
       "status": "active",
       "notes": [
         "Reads repository files first and falls back to the production URL if local reads fail.",
+        "Rejects non-JSON and oversized bodies, rate limits per transient client key, and accepts only canonical production hosts.",
         "Returns no-store responses and never sends email, submits forms, quotes prices, or creates commitments."
+      ]
+    },
+    {
+      "id": "agent-concierge-api",
+      "layer": "agents",
+      "type": "runtime",
+      "title": "Deterministic agent concierge",
+      "subtitle": "Public facts only, no model or database",
+      "responsibility": "Answer agent and procurement questions from allowlisted public a2b facts, classify fit, explain safe next steps, and flag new unanswered questions after redaction.",
+      "files": [
+        "api/agent-concierge.js",
+        "api/_lib/agent-concierge-engine.js",
+        "api/_lib/public-api-guard.js",
+        "data/agent-concierge.json",
+        "scripts/validate-agent-concierge.mjs",
+        "scripts/agent-concierge-report.mjs"
+      ],
+      "routes": [
+        "POST /api/agent-concierge",
+        "OPTIONS /api/agent-concierge"
+      ],
+      "interfaces": [
+        "strict application/json",
+        "32 KB body limit",
+        "English agent response",
+        "CORS",
+        "X-Request-Id",
+        "Retry-After"
+      ],
+      "dependencies": [
+        "structured-data",
+        "vercel-logs"
+      ],
+      "status": "active",
+      "notes": [
+        "No paid AI call, database, private tools, environment-secret read, outbound message, or commercial authority.",
+        "Answered question content is not logged. New unanswered questions are logged once after redaction.",
+        "Application controls remain effective on the origin; the shared Cloudflare path-level counter is planned but remains pending a2b WAF-management permission."
       ]
     },
     {
@@ -677,6 +726,8 @@
         "scripts/submit-indexnow.mjs",
         "scripts/ai-visibility-benchmark.mjs",
         "scripts/agent-analytics-report.mjs",
+        "scripts/agent-concierge-report.mjs",
+        "scripts/validate-agent-concierge.mjs",
         "scripts/generate-architecture-map.mjs"
       ],
       "interfaces": [
@@ -902,7 +953,7 @@
       "trigger": "GET canonical URL with normal browser Accept headers",
       "steps": [
         "human-visitors",
-        "dnet-dns",
+        "cloudflare-edge-dns",
         "vercel-edge",
         "edge-middleware",
         "security-headers",
@@ -925,7 +976,7 @@
       "trigger": "GET or HEAD canonical URL where text/markdown wins standards-correct Accept negotiation",
       "steps": [
         "procurement-agents",
-        "dnet-dns",
+        "cloudflare-edge-dns",
         "vercel-edge",
         "edge-middleware",
         "markdown-layer"
@@ -944,6 +995,7 @@
       "trigger": "Discovery request",
       "steps": [
         "search-ai-crawlers",
+        "cloudflare-edge-dns",
         "vercel-edge",
         "crawler-discovery",
         "agent-discovery",
@@ -964,6 +1016,7 @@
       "steps": [
         "procurement-agents",
         "agent-discovery",
+        "cloudflare-edge-dns",
         "vercel-edge",
         "mcp-api",
         "structured-data",
@@ -977,9 +1030,30 @@
       "approvalBoundary": "The API cannot submit forms, send email, quote pricing, confirm availability, or create commitments."
     },
     {
+      "id": "agent-concierge-flow",
+      "title": "Agent concierge question",
+      "description": "An external agent discovers the concierge, sends a small JSON question through Cloudflare, and receives a deterministic answer grounded in approved public a2b facts. New unanswered questions are redacted and marked for owner knowledge review.",
+      "trigger": "POST /api/agent-concierge",
+      "steps": [
+        "procurement-agents",
+        "agent-discovery",
+        "cloudflare-edge-dns",
+        "vercel-edge",
+        "agent-concierge-api",
+        "structured-data",
+        "vercel-logs"
+      ],
+      "verification": [
+        "npm run agent:concierge:test",
+        "live answered, unanswered, invalid-content-type, oversized-body and rate-limit checks",
+        "confirm application logs contain no answered question text or source IP"
+      ],
+      "approvalBoundary": "The concierge cannot access private systems, accept personal data or secrets, contact a2b, quote pricing, confirm availability, or create commitments."
+    },
+    {
       "id": "browser-webmcp-flow",
       "title": "Browser WebMCP call",
-      "description": "A browser-aware agent loads a homepage, the bridge registers six read-only tools, reads same-origin JSON resources, and emits only event metadata to GA4.",
+      "description": "A browser-aware agent loads a homepage, the bridge registers seven read-only tools when navigator.modelContext is supported, reads same-origin JSON resources, and emits only event metadata to GA4.",
       "trigger": "navigator.modelContext tool execution",
       "steps": [
         "procurement-agents",
@@ -1084,6 +1158,7 @@
       "prepare_rfq_brief",
       "list_service_areas",
       "get_procurement_profile",
+      "ask_agent_concierge",
       "read_public_resource"
     ],
     "browserWebMcp": [
@@ -1092,6 +1167,7 @@
       "match_project_scope",
       "prepare_project_inquiry",
       "list_service_areas",
+      "ask_agent_concierge",
       "read_public_resource"
     ],
     "publicResourceIds": [
@@ -1108,6 +1184,7 @@
       "ai-visibility-queries",
       "analytics-events",
       "high-intent-content-plan",
+      "agent-concierge",
       "markdown-companions",
       "llms",
       "llms-full",
@@ -1197,16 +1274,44 @@
         "tool names remain synchronized",
         "resource hashes remain current",
         "endpoint remains https://www.a2b.sa/api/mcp",
+        "concierge endpoint remains https://www.a2b.sa/api/agent-concierge",
         "approval policy remains read-only and preparation-only"
+      ]
+    },
+    {
+      "id": "agent-concierge-contract",
+      "source": [
+        "data/agent-concierge.json",
+        "data/services.json",
+        "data/agent-routing.json",
+        "data/procurement-profile.json",
+        "data/compliance-profile.json"
+      ],
+      "consumers": [
+        "api/agent-concierge.js",
+        "api/mcp.js",
+        "webmcp.js",
+        "external procurement agents"
+      ],
+      "invariants": [
+        "deterministic public facts only",
+        "no model call or database",
+        "no personal data, credentials, tokens, or secrets accepted",
+        "no private-system or arbitrary-tool access",
+        "answered question content is not logged",
+        "new unanswered questions are redacted and duplicate-suppressed",
+        "pricing, capacity, availability, lead time, and contracts require a2b confirmation"
       ]
     }
   ],
   "securityBoundaries": [
     {
       "id": "public-only-agent-surface",
-      "rule": "MCP and WebMCP expose only public resources and preparation tools.",
+      "rule": "MCP, WebMCP, and the agent concierge expose only allowlisted public facts and preparation tools.",
       "enforcedBy": [
         "api/mcp.js publicResources allowlist",
+        "api/agent-concierge.js strict request schema",
+        "api/_lib/agent-concierge-engine.js allowlisted public files",
         "webmcp.js publicResources allowlist",
         "data/agent-routing.json"
       ]
@@ -1216,9 +1321,20 @@
       "rule": "No public agent endpoint sends email, submits forms, calls phone numbers, quotes prices, confirms availability, or creates commitments.",
       "enforcedBy": [
         "api/mcp.js",
+        "api/agent-concierge.js",
         "webmcp.js",
         "openapi.json",
         "auth.md"
+      ]
+    },
+    {
+      "id": "agent-api-abuse-boundary",
+      "rule": "Public agent APIs accept only canonical-host JSON requests, reject bodies above 32 KB, use transient per-client limits without logging source IPs, and reject sensitive or prompt-injection input on the concierge path.",
+      "enforcedBy": [
+        "api/_lib/public-api-guard.js",
+        "api/agent-concierge.js",
+        "api/mcp.js",
+        "Cloudflare free path-level rate limiting, pending a2b WAF-management permission"
       ]
     },
     {
@@ -1270,6 +1386,16 @@
       "id": "read-only-agent-tools",
       "status": "active",
       "decision": "Public agent tools may read, classify, and prepare but never contact or commit."
+    },
+    {
+      "id": "agent-only-concierge-pilot",
+      "status": "active",
+      "decision": "Start with a deterministic concierge for external agents only. Use approved public a2b facts, no paid model, no database, no private access, and no visible human chat interface.",
+      "evidence": [
+        "data/agent-concierge.json",
+        "api/agent-concierge.js",
+        "scripts/validate-agent-concierge.mjs"
+      ]
     },
     {
       "id": "high-intent-pages",
@@ -1406,6 +1532,10 @@
         "purpose": "Validate the canonical IndexNow payload without submitting."
       },
       {
+        "command": "npm run agent:concierge:test",
+        "purpose": "Validate concierge methods, schema, size limits, privacy, injection rejection, grounding, logging, duplicate suppression, rate limiting, and MCP exposure."
+      },
+      {
         "command": "npm run architecture:generate",
         "purpose": "Regenerate the standalone HTML map from this JSON."
       },
@@ -1450,8 +1580,14 @@
     {
       "id": "browser-server-tool-parity",
       "severity": "low",
-      "risk": "Server MCP exposes eight tools while browser WebMCP exposes six by design; future edits could create undocumented drift.",
-      "control": "Treat the tool sets in this map as explicit contracts and update discovery plus tests with any change."
+      "risk": "Server MCP exposes nine tools while browser WebMCP exposes seven by design; future edits could create undocumented drift.",
+      "control": "Treat the tool sets in this map as explicit contracts and update discovery plus concierge tests with any change."
+    },
+    {
+      "id": "concierge-observability-retention",
+      "severity": "medium",
+      "risk": "Vercel log retention and serverless process-local duplicate or abuse counters are not durable global stores.",
+      "control": "Keep application limits active, add the canonical Cloudflare shared edge counter only after a2b WAF-management permission is verified, and export only redacted unanswered-question events into the a2b review report."
     },
     {
       "id": "generated-discovery-hashes",

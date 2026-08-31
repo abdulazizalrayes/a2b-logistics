@@ -38,6 +38,7 @@ Do not merge this entity with unrelated A2B brands, ride-hailing, consumer couri
 - AI visibility benchmark queries: https://www.a2b.sa/data/ai-visibility-queries.json
 - Analytics event catalog: https://www.a2b.sa/data/analytics-events.json
 - Cancelled high-intent content plan: https://www.a2b.sa/data/high-intent-content-plan.json
+- Agent concierge contract: https://www.a2b.sa/data/agent-concierge.json
 - Markdown companion manifest: https://www.a2b.sa/data/markdown-companions.json
 - OpenAPI: https://www.a2b.sa/openapi.json
 - MCP discovery: https://www.a2b.sa/.well-known/mcp.json
@@ -121,11 +122,20 @@ Typed tools:
 - prepare_rfq_brief
 - list_service_areas
 - get_procurement_profile
+- ask_agent_concierge
 - read_public_resource
 
 These tools are read-only. `prepare_project_inquiry` returns a draft and routing decision only.
 
 `prepare_rfq_brief` returns a procurement/RFQ preparation draft only. It does not submit the RFQ, send email, or contact a2b.
+
+## Agent-Only Concierge
+
+The deterministic public concierge endpoint is https://www.a2b.sa/api/agent-concierge. It is intended for AI agents and procurement assistants that need a grounded explanation of a2b services, fit, service areas, procurement inputs, public compliance identifiers, or safe next steps.
+
+The concierge has no paid model call, database, customer record access, environment-secret access, arbitrary tools, outbound messaging, or authority to create commitments. The canonical endpoint accepts strict JSON POST requests no larger than 32 KB. Personal data, credentials, tokens, passwords, prompt-injection instructions, and unsupported fields are rejected.
+
+Answered question content is not logged. Event metadata and a normalized question fingerprint are retained for measurement. A new unanswered question may be written to server logs once after redaction so a2b can improve the approved public knowledge base. Repeated malformed or unsafe requests can trigger a temporary application-level block, and the canonical agent API paths are protected by Cloudflare rate limiting.
 
 ## Unpublished Planning Data
 

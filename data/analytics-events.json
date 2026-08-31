@@ -34,6 +34,12 @@
       "privacy": "Does not collect RFQ content or personal fields."
     },
     {
+      "name": "agent_concierge_question",
+      "source": "server_logs",
+      "purpose": "Measure deterministic agent-concierge use and identify unanswered public questions for owner knowledge review.",
+      "privacy": "Answered questions log metadata and a normalized fingerprint only. A new unanswered question is logged once after email, phone, credential, token, and control-character redaction. Source IP addresses are not written to application logs."
+    },
+    {
       "name": "public_discovery_read",
       "source": "server_logs",
       "purpose": "Track reads of llms, OpenAPI, data, and well-known discovery files via Vercel/CDN logs.",
@@ -45,11 +51,14 @@
     "event_name",
     "tool_name",
     "resource_id",
+    "intent",
+    "answered",
+    "requires_review",
     "route",
     "referrer",
     "user_agent_family",
     "country",
     "date"
   ],
-  "lastReviewed": "2026-06-29"
+  "lastReviewed": "2026-08-31"
 }

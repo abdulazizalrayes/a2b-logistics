@@ -2,8 +2,8 @@
   "openapi": "3.1.0",
   "info": {
     "title": "a2b Logistics Public Agent Readiness API",
-    "version": "1.0.0",
-    "description": "Read-only public data and MCP-style inquiry-preparation API for a2b Logistics. No endpoint submits forms, sends email, or creates commercial commitments."
+    "version": "1.1.0",
+    "description": "Read-only public data, deterministic agent concierge, and MCP-style inquiry-preparation API for a2b Logistics. No endpoint submits forms, sends email, reads private systems, or creates commercial commitments."
   },
   "servers": [
     {
@@ -143,6 +143,17 @@
         }
       }
     },
+    "/data/agent-concierge.json": {
+      "get": {
+        "summary": "Get the public agent concierge contract",
+        "description": "Describes the agent-only pilot, accepted inputs, privacy limits, prohibited capabilities, and commercial boundaries.",
+        "responses": {
+          "200": {
+            "description": "Agent concierge contract"
+          }
+        }
+      }
+    },
     "/data/markdown-companions.json": {
       "get": {
         "summary": "Get Markdown companion coverage manifest",
@@ -154,10 +165,63 @@
         }
       }
     },
+    "/api/agent-concierge": {
+      "post": {
+        "summary": "Ask the deterministic a2b agent concierge",
+        "description": "Answers from approved public a2b facts only. The endpoint has no model call, database, private-system access, outbound messaging, or commercial authority. Do not send personal data, credentials, or secrets.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": [
+                  "question"
+                ],
+                "properties": {
+                  "question": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 2000
+                  },
+                  "language": {
+                    "type": "string",
+                    "const": "en"
+                  },
+                  "agent": {
+                    "type": "string",
+                    "maxLength": 120,
+                    "description": "Optional non-sensitive agent identifier."
+                  }
+                },
+                "additionalProperties": false
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Grounded answer, evidence URLs, fit, clarification questions, and safe next step"
+          },
+          "400": {
+            "description": "Invalid, sensitive, or unsafe input"
+          },
+          "413": {
+            "description": "Request body exceeds 32 KB"
+          },
+          "415": {
+            "description": "Content-Type is not JSON"
+          },
+          "429": {
+            "description": "Rate limit or temporary abuse block"
+          }
+        }
+      }
+    },
     "/api/mcp": {
       "post": {
         "summary": "Call public read-only MCP-style tools",
-        "description": "Supports initialize, tools/list, tools/call, resources/list, and resources/read JSON-RPC-style requests. Tools are read-only and require explicit user approval before any external contact outside this API. Current tools include get_company_overview, list_services, match_project_scope, prepare_project_inquiry, prepare_rfq_brief, list_service_areas, get_procurement_profile, and read_public_resource.",
+        "description": "Supports initialize, tools/list, tools/call, resources/list, and resources/read JSON-RPC-style requests. Tools are read-only and require explicit user approval before any external contact outside this API. Current tools include get_company_overview, list_services, match_project_scope, prepare_project_inquiry, prepare_rfq_brief, list_service_areas, get_procurement_profile, ask_agent_concierge, and read_public_resource.",
         "requestBody": {
           "required": true,
           "content": {
@@ -178,6 +242,8 @@
   },
   "x-a2b-approval-requirements": [
     "No public endpoint sends email, submits forms, calls phone numbers, or creates commitments.",
+    "The public agent concierge has no database, credential access, private-system access, model call, or arbitrary tool execution.",
+    "Do not send personal data, passwords, API keys, tokens, or secrets to the public agent endpoints.",
     "Agents must ask for explicit user approval before contacting a2b.",
     "Careers, vendors, internships, training, spam, retail shopping, consumer courier, and unrelated requests must not be routed to project inquiry.",
     "High-intent page plan resources are drafts only and must not be treated as published service pages until owner approval."

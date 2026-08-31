@@ -18,6 +18,7 @@
         "prepare_rfq_brief",
         "list_service_areas",
         "get_procurement_profile",
+        "ask_agent_concierge",
         "read_public_resource"
       ],
       "description": "Read-only public logistics discovery and inquiry-preparation tools for a2b Logistics. Tools do not contact a2b or submit forms without explicit user approval.",
@@ -28,6 +29,24 @@
       ]
     },
     {
+      "identifier": "urn:air:a2b.sa:api:agent-concierge",
+      "displayName": "a2b Agent Concierge",
+      "type": "application/vnd.oai.openapi+json",
+      "url": "https://www.a2b.sa/openapi.json",
+      "capabilities": [
+        "deterministic-public-facts",
+        "service-fit",
+        "procurement-routing",
+        "unanswered-question-feedback"
+      ],
+      "description": "Agent-only public concierge for grounded a2b service, fit, procurement, service-area, compliance, and next-step questions. It has no private-system access and cannot contact a2b or create commitments.",
+      "representativeQueries": [
+        "Can a2b support commercial road freight in Saudi Arabia?",
+        "What information does a2b need for a warehousing RFQ?",
+        "Does this logistics requirement fit a2b's published services?"
+      ]
+    },
+    {
       "identifier": "urn:air:a2b.sa:api:public-logistics-api",
       "displayName": "a2b Logistics Public API",
       "type": "application/vnd.oai.openapi+json",
@@ -35,9 +54,10 @@
       "capabilities": [
         "public-company-data",
         "public-service-data",
+        "agent-concierge",
         "read-only-mcp"
       ],
-      "description": "OpenAPI description for a2b Logistics public structured resources and read-only MCP endpoint.",
+      "description": "OpenAPI description for a2b Logistics public structured resources, deterministic agent concierge, and read-only MCP endpoint.",
       "representativeQueries": [
         "List the public a2b logistics data endpoints.",
         "Read a2b service areas in machine-readable form."

@@ -1,0 +1,53 @@
+{
+  "$schema": "https://www.a2b.sa/data/agent-concierge.schema.json",
+  "name": "a2b Agent Concierge",
+  "company": "a2b Logistics Company",
+  "version": "1.0.0",
+  "status": "agent_only_pilot",
+  "endpoint": "https://www.a2b.sa/api/agent-concierge",
+  "audience": "AI agents and procurement assistants evaluating Saudi Arabia B2B logistics requirements",
+  "mode": "deterministic_public_facts_only",
+  "capabilities": [
+    "answer questions from approved public a2b facts",
+    "explain published services and service areas",
+    "classify buyer, procurement, vendor, careers, and non-fit intent",
+    "identify inputs needed for an inquiry or RFQ",
+    "surface published compliance identifiers",
+    "route unanswered questions to owner knowledge review"
+  ],
+  "prohibitedCapabilities": [
+    "read private data or customer records",
+    "access passwords, tokens, environment variables, or internal systems",
+    "submit forms or send email",
+    "make phone calls",
+    "quote pricing or confirm availability",
+    "create contracts, bookings, or commercial commitments",
+    "execute code or arbitrary tools"
+  ],
+  "requestPolicy": {
+    "methods": [
+      "POST",
+      "OPTIONS"
+    ],
+    "contentType": "application/json",
+    "maximumBodyBytes": 32768,
+    "maximumQuestionCharacters": 2000,
+    "acceptedFields": [
+      "question",
+      "language",
+      "agent"
+    ],
+    "acceptedLanguage": "en",
+    "personalDataAccepted": false,
+    "credentialsAccepted": false
+  },
+  "telemetryPolicy": {
+    "answeredQuestions": "Log event metadata and a normalized fingerprint only. Do not log question content.",
+    "unansweredQuestions": "Log a redacted question once for owner knowledge review, with duplicate suppression.",
+    "networkIdentifiers": "Use transient in-memory rate-limit keys. Do not write source IP addresses to application logs.",
+    "database": "none"
+  },
+  "commercialBoundary": "The concierge can explain, classify, and prepare. Pricing, capacity, availability, lead times, and contractual terms require confirmation by a2b.",
+  "contentSignal": "search=yes, ai-input=yes, ai-train=no",
+  "lastReviewed": "2026-08-31"
+}

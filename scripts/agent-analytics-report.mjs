@@ -23,6 +23,7 @@ ${eventList}
 - mcp_tool_call:
 - mcp_resource_read:
 - inquiry_preparation:
+- agent_concierge_question:
 - contact_click:
 - form_submit_attempt:
 - AI/referral traffic:
@@ -32,6 +33,7 @@ ${eventList}
 Paths:
 
 - /api/mcp:
+- /api/agent-concierge:
 - /llms.txt:
 - /llms-full.txt:
 - /openapi.json:

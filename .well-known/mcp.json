@@ -1,8 +1,8 @@
 {
   "name": "a2b-logistics-mcp",
   "title": "a2b Logistics Public Read-Only MCP",
-  "description": "Public read-only MCP-style endpoint for a2b Logistics company overview, services, capabilities, procurement profile, service areas, routing, RFQ preparation, and inquiry preparation.",
-  "version": "1.1.0",
+  "description": "Public read-only MCP-style endpoint for a2b Logistics company overview, services, deterministic agent concierge, capabilities, procurement profile, service areas, routing, RFQ preparation, and inquiry preparation.",
+  "version": "1.2.0",
   "endpoint": "https://www.a2b.sa/api/mcp",
   "serverCard": "https://www.a2b.sa/.well-known/mcp/server-card.json",
   "serverCards": "https://www.a2b.sa/.well-known/mcp/server-cards.json",
@@ -20,6 +20,7 @@
     "prepare_rfq_brief",
     "list_service_areas",
     "get_procurement_profile",
+    "ask_agent_concierge",
     "read_public_resource"
   ],
   "resources": [
@@ -36,6 +37,7 @@
     "ai-visibility-queries",
     "analytics-events",
     "high-intent-content-plan",
+    "agent-concierge",
     "markdown-companions",
     "llms",
     "llms-full",
