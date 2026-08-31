@@ -50,9 +50,9 @@ The concierge has no provider API key because it makes no AI model call. It has 
 - Duplicate-question suppression
 - Temporary local block after repeated malformed or prompt-injection requests
 - `429` response with `Retry-After`
-- Planned Cloudflare free-plan path-level rate rule for `/api/agent-concierge` and `/api/mcp`, pending a2b WAF-management permission
+- Active Cloudflare free-plan path-level rate rule for `/api/agent-concierge` and `/api/mcp`
 
-Cloudflare documents that its Free plan supports one rate-limiting rule, a path-based expression, IP counting, a 10-second counting period, and a 10-second mitigation period. The planned rule must avoid challenges because legitimate agents may not execute JavaScript. The recommended edge action is a normal block with a JSON-safe `429` response where the plan permits it. The current signed-in a2b account can see the zone but is denied WAF management, so this layer must not be marked active until the owner role applies and verifies it. Source: https://developers.cloudflare.com/waf/rate-limiting-rules/
+Cloudflare documents that its Free plan supports one rate-limiting rule, a path-based expression, IP counting, a 10-second counting period, and a 10-second mitigation period. The active a2b rule counts POST requests to the two public agent API paths by source IP, blocks after 30 requests in 10 seconds, and releases the block after 10 seconds. It uses a normal block instead of a challenge because legitimate agents may not execute JavaScript. A controlled production burst returned Cloudflare-generated `429` responses with `Retry-After`, while the homepage stayed available and both APIs recovered after the mitigation period. Source: https://developers.cloudflare.com/waf/rate-limiting-rules/
 
 ### Logging And Question Review
 
@@ -109,7 +109,7 @@ Consider a visible human concierge only after the agent pilot proves common ques
 
 ## Rollback
 
-1. If activated later, disable the Cloudflare path-level rate rule if it blocks legitimate agents.
+1. Disable the Cloudflare path-level rate rule if it blocks legitimate agents.
 2. Remove the concierge links from discovery files.
 3. Remove `api/agent-concierge.js` and its shared engine.
 4. Remove `ask_agent_concierge` from MCP and WebMCP.

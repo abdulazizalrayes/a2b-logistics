@@ -5,8 +5,8 @@
     "id": "a2b-logistics-architecture",
     "title": "a2b Logistics Website Architecture",
     "purpose": "Human and agent-readable map of the a2b website, its public agent interfaces, deployment path, external dependencies, controls, and change procedures.",
-    "generatedAt": "2026-08-31T12:38:30Z",
-    "sourceCommitAudited": "51fb2ea865c560b3272791a6e510056e3b9ae036",
+    "generatedAt": "2026-08-31T14:41:17Z",
+    "sourceCommitAudited": "f9b3e7df1e0889b9c404c0605ad06b380ce34055",
     "scope": "a2b only",
     "confidentiality": "Repository-internal. Excluded from Vercel deployment.",
     "updateRule": "Update this JSON when routes, runtime boundaries, public interfaces, external systems, ownership, or deployment behavior change; then run npm run architecture:generate and npm run architecture:check."
@@ -93,7 +93,7 @@
     }
   },
   "inventory": {
-    "repositoryFilesExcludingGeneratedAndDependencies": 331,
+    "repositoryFilesExcludingGeneratedAndDependencies": 325,
     "htmlFiles": 71,
     "canonicalSitemapRoutes": 65,
     "routeFamilies": [
@@ -159,7 +159,8 @@
       "/thankyou",
       "/indexnow-submit",
       "/agent-auth/register/",
-      "/agent-auth/claim/"
+      "/agent-auth/claim/",
+      "/googlec344506d98b81e41.html"
     ],
     "markdownCompanions": 65,
     "structuredDataFiles": 15,
@@ -293,12 +294,13 @@
       "evidence": [
         "Cloudflare zone f925008d8d878681a262fa5da5aa393d",
         "johnny.ns.cloudflare.com",
-        "tara.ns.cloudflare.com"
+        "tara.ns.cloudflare.com",
+        "Active rate-limit rule dba1a6f0543342f1bd77fe5279d3b077"
       ],
       "status": "active",
       "notes": [
         "The canonical site is proxied through Cloudflare before Vercel.",
-        "The free-plan rate-limit quota is reserved for the two public agent API paths in one path expression, but activation is pending a2b WAF-management permission.",
+        "The active free-plan rate-limit rule covers POST requests to /api/agent-concierge and /api/mcp, counts by source IP, blocks after 30 requests in 10 seconds, and mitigates for 10 seconds.",
         "Production DNS changes require owner approval."
       ]
     },
@@ -499,6 +501,7 @@
         "robots.txt",
         "sitemap.xml",
         "dabfa5738883df4a66f9ad844188f7aa.txt",
+        "googlec344506d98b81e41.html",
         "indexnow-submit.html"
       ],
       "interfaces": [
@@ -685,7 +688,7 @@
       "notes": [
         "No paid AI call, database, private tools, environment-secret read, outbound message, or commercial authority.",
         "Answered question content is not logged. New unanswered questions are logged once after redaction.",
-        "Application controls remain effective on the origin; the shared Cloudflare path-level counter is planned but remains pending a2b WAF-management permission."
+        "Application controls remain effective on the origin, with a verified Cloudflare shared edge counter protecting both public agent API paths."
       ]
     },
     {
@@ -1334,7 +1337,7 @@
         "api/_lib/public-api-guard.js",
         "api/agent-concierge.js",
         "api/mcp.js",
-        "Cloudflare free path-level rate limiting, pending a2b WAF-management permission"
+        "Cloudflare active free path-level rate rule dba1a6f0543342f1bd77fe5279d3b077"
       ]
     },
     {
@@ -1587,7 +1590,7 @@
       "id": "concierge-observability-retention",
       "severity": "medium",
       "risk": "Vercel log retention and serverless process-local duplicate or abuse counters are not durable global stores.",
-      "control": "Keep application limits active, add the canonical Cloudflare shared edge counter only after a2b WAF-management permission is verified, and export only redacted unanswered-question events into the a2b review report."
+      "control": "Keep application limits and the active Cloudflare shared edge counter in place, review false positives and blocked events, and export only redacted unanswered-question events into the a2b review report."
     },
     {
       "id": "generated-discovery-hashes",
