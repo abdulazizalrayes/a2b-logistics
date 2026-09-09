@@ -91,20 +91,32 @@ function shouldSkip(node) {
 }
 
 function escapeMarkdown(value) {
-  return value.replace(/\\/g, '\\\\').replace(/\[/g, '\\[').replace(/\]/g, '\\]');
+  const escapes = { '\\': '\\\\', '[': '\\[', ']': '\\]' };
+  return value.replace(/[\\\[\]]/g, (character) => escapes[character]);
 }
 
 function escapeTable(value) {
-  return normalizeText(value).replace(/\|/g, '\\|');
+  const escapes = { '\\': '\\\\', '|': '\\|' };
+  return normalizeText(value).replace(/[\\|]/g, (character) => escapes[character]);
 }
 
 function absoluteUrl(href, canonicalUrl) {
-  if (!href || href.startsWith('#') || href.startsWith('javascript:') || href.startsWith('mailto:') || href.startsWith('tel:')) return href;
+  if (!href) return '';
+  if (/^#[A-Za-z0-9][A-Za-z0-9_.:-]*$/.test(href)) return href;
   try {
-    return new URL(href, canonicalUrl).toString();
+    const url = new URL(href, canonicalUrl);
+    if (!['https:', 'http:', 'mailto:', 'tel:'].includes(url.protocol)) return '';
+    return url.toString();
   } catch {
-    return href;
+    return '';
   }
+}
+
+function inlineCode(value) {
+  const longestRun = Math.max(0, ...[...value.matchAll(/`+/g)].map((match) => match[0].length));
+  const delimiter = '`'.repeat(longestRun + 1);
+  const padding = value.startsWith('`') || value.endsWith('`') || value.startsWith(' ') || value.endsWith(' ') ? ' ' : '';
+  return `${delimiter}${padding}${value}${padding}${delimiter}`;
 }
 
 function block(lines, value = '') {
@@ -137,7 +149,7 @@ function inlineMarkdown(node, canonicalUrl) {
   }
   if (['strong', 'b'].includes(name)) return `**${inner}**`;
   if (['em', 'i'].includes(name)) return `_${inner}_`;
-  if (name === 'code') return `\`${inner.replace(/`/g, '\\`')}\``;
+  if (name === 'code') return inlineCode(inner);
   return inner;
 }
 
@@ -177,7 +189,7 @@ function extractPublicLinks(rootNode, canonicalUrl) {
   traversePublicContent(rootNode, (node) => {
     if (node.tagName !== 'a') return;
     const rawHref = attr(node, 'href');
-    if (!rawHref || rawHref.startsWith('#') || rawHref.startsWith('javascript:')) return;
+    if (!rawHref || rawHref.startsWith('#')) return;
     const label = normalizeText(textContent(node));
     const href = absoluteUrl(rawHref, canonicalUrl);
     if (!href || !label) return;

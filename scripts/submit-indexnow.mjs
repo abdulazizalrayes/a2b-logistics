@@ -1,4 +1,4 @@
-import { readFile, writeFile } from 'node:fs/promises';
+import { readFile } from 'node:fs/promises';
 
 const INDEXNOW_ENDPOINT = 'https://api.indexnow.org/indexnow';
 const KEY_FILE = 'dabfa5738883df4a66f9ad844188f7aa.txt';
@@ -58,8 +58,6 @@ const evidence = {
   status: response.status,
   statusText: response.statusText,
 };
-
-await writeFile('/tmp/a2b-indexnow-last-submission.json', JSON.stringify(evidence, null, 2));
 
 if (!response.ok) {
   console.error(JSON.stringify(evidence, null, 2));

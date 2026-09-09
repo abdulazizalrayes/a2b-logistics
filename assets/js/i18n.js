@@ -8,6 +8,18 @@
     { code: 'fr', label: 'FR', dir: 'ltr' },
     { code: 'zh-Hans', label: '中文', dir: 'ltr' }
   ];
+  var LANGUAGE_CODES = LANGS.map(function (item) { return item.code; });
+  var PUBLIC_ROUTES = [
+    '/',
+    '/fleet',
+    '/careers',
+    '/vendors',
+    '/services/trucking-road-freight',
+    '/services/fleet-types',
+    '/services/supply-chain',
+    '/services/warehousing',
+    '/services/customs-clearance'
+  ];
 
   var LABELS = {
     en: 'English',
@@ -453,13 +465,15 @@
     var path = window.location.pathname.replace(/\/$/, '') || '/';
     var prefixMatch = path.match(/^\/(ar|de|it|es|fr|zh-Hans)(\/.*)?$/);
     if (prefixMatch) path = prefixMatch[2] || '/';
-    return path.replace(/\.html$/, '');
+    path = path.replace(/\.html$/, '');
+    return PUBLIC_ROUTES.includes(path) ? path : '/';
   }
 
   function localizedPath(code, key) {
-    var path = key === '/' ? '/' : key;
-    if (code === 'en') return path;
-    return '/' + code + (path === '/' ? '' : path);
+    var safeCode = LANGUAGE_CODES.includes(code) ? code : 'en';
+    var safePath = PUBLIC_ROUTES.includes(key) ? key : '/';
+    if (safeCode === 'en') return safePath;
+    return '/' + safeCode + (safePath === '/' ? '' : safePath);
   }
 
   function languageFromUrl() {
@@ -476,7 +490,10 @@
     var params = new URLSearchParams(window.location.search);
     params.delete('lang');
     var query = params.toString();
-    return localizedPath(code, pathKey()) + (query ? '?' + query : '') + (hash || '');
+    var safeHash = /^#[A-Za-z0-9][A-Za-z0-9_.:-]*$/.test(hash || '') ? hash : '';
+    var relative = localizedPath(code, pathKey()) + (query ? '?' + query : '') + safeHash;
+    var url = new URL(relative, window.location.origin);
+    return url.pathname + url.search + url.hash;
   }
 
   function ensureSelector() {
@@ -592,7 +609,7 @@
       var raw = a.getAttribute('href');
       if (!raw || raw.startsWith('tel:') || raw.startsWith('mailto:') || raw.startsWith('http') || raw.startsWith('#') && pathKey() !== '/') return;
       if (raw.startsWith('#')) {
-        a.setAttribute('href', languageUrl(lang, raw));
+        a.href = new URL(languageUrl(lang, raw), window.location.origin).href;
         return;
       }
       if (raw.startsWith('/')) {
@@ -602,7 +619,8 @@
         var prefixMatch = targetPath.match(/^\/(ar|de|it|es|fr|zh-Hans)(\/.*)?$/);
         if (prefixMatch) targetPath = prefixMatch[2] || '/';
         targetPath = targetPath.replace(/\.html$/, '');
-        a.setAttribute('href', localizedPath(lang, targetPath) + url.search + url.hash);
+        if (!PUBLIC_ROUTES.includes(targetPath)) return;
+        a.href = new URL(localizedPath(lang, targetPath) + url.search + url.hash, window.location.origin).href;
       }
     });
   }
@@ -632,11 +650,12 @@
     applyLanguage(lang, Boolean(languageFromUrl()));
     document.querySelectorAll('#languageSelect, #mobileLanguageSelect').forEach(function (select) {
       select.addEventListener('change', function () {
+        var selectedLanguage = LANGUAGE_CODES.includes(select.value) ? select.value : 'en';
         if (document.documentElement.getAttribute('data-static-i18n') === 'true') {
-          window.location.href = languageUrl(select.value, window.location.hash);
+          window.location.assign(new URL(languageUrl(selectedLanguage, window.location.hash), window.location.origin).href);
           return;
         }
-        applyLanguage(select.value, true);
+        applyLanguage(selectedLanguage, true);
       });
     });
   }

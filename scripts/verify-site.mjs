@@ -240,7 +240,7 @@ JSON.parse(await readRequired('.well-known/api-catalog'));
 
 if (company.name !== 'a2b Logistics Company') fail('data/company.json: wrong company name');
 if (company.primaryDomain !== 'www.a2b.sa') fail('data/company.json: wrong primary domain');
-if (!Array.isArray(company.sameAs) || !company.sameAs.includes('https://www.linkedin.com/company/helloa2bco')) fail('data/company.json: missing verified LinkedIn sameAs');
+if (!Array.isArray(company.sameAs) || !company.sameAs.some((url) => url === 'https://www.linkedin.com/company/helloa2bco')) fail('data/company.json: missing verified LinkedIn sameAs');
 if (company.geo?.status !== 'not_published') fail('data/company.json: do not publish unverified coordinates');
 if (!Array.isArray(services.services) || services.services.length < 5) fail('data/services.json: expected at least five services');
 if (!Array.isArray(capabilities.approvalBoundaries) || !capabilities.approvalBoundaries.join(' ').includes('Do not submit forms')) fail('data/capabilities.json: missing approval boundary');

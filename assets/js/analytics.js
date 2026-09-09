@@ -16,13 +16,25 @@
   }
 
   function classifyContactLink(link) {
-    var href = link.getAttribute('href') || '';
-    if (href.indexOf('wa.me/') !== -1 || href.indexOf('whatsapp.com/') !== -1) return 'whatsapp';
-    if (href.indexOf('mailto:') === 0) return 'email';
-    if (href.indexOf('tel:') === 0) return 'phone';
-    if (href.indexOf('linkedin.com') !== -1) return 'linkedin';
-    if (href.indexOf('instagram.com') !== -1) return 'instagram';
-    if (href.indexOf('x.com') !== -1 || href.indexOf('twitter.com') !== -1) return 'x';
+    var href = link.getAttribute('href');
+    if (!href) return '';
+
+    var url;
+    try {
+      url = new URL(href, window.location.origin);
+    } catch (error) {
+      return '';
+    }
+
+    if (url.protocol === 'mailto:') return 'email';
+    if (url.protocol === 'tel:') return 'phone';
+    if (url.protocol !== 'https:') return '';
+
+    var hostname = url.hostname.toLowerCase();
+    if (hostname === 'wa.me' || hostname === 'www.wa.me' || hostname === 'whatsapp.com' || hostname.endsWith('.whatsapp.com')) return 'whatsapp';
+    if (hostname === 'linkedin.com' || hostname.endsWith('.linkedin.com')) return 'linkedin';
+    if (hostname === 'instagram.com' || hostname.endsWith('.instagram.com')) return 'instagram';
+    if (hostname === 'x.com' || hostname.endsWith('.x.com') || hostname === 'twitter.com' || hostname.endsWith('.twitter.com')) return 'x';
     return '';
   }
 
