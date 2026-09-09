@@ -2,3 +2,8 @@
 node_modules/
 .markdown/
 reports/markdown-layer-*.png
+.DS_Store
+*.log
+.env
+.env.*
+!.env.example

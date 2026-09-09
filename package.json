@@ -2,6 +2,9 @@
   "name": "a2b-logistics",
   "private": true,
   "type": "module",
+  "engines": {
+    "node": "24.x"
+  },
   "scripts": {
     "architecture:generate": "node scripts/generate-architecture-map.mjs",
     "architecture:check": "node scripts/generate-architecture-map.mjs --check",
@@ -11,7 +14,8 @@
     "markdown:validate:live": "node scripts/validate-live-markdown-layer.mjs",
     "indexnow:submit": "node scripts/submit-indexnow.mjs",
     "test:whatsapp": "node scripts/test-whatsapp-analytics.mjs",
-    "verify": "node scripts/verify-site.mjs",
+    "security:check": "node scripts/verify-security-baseline.mjs",
+    "verify": "node scripts/verify-site.mjs && npm run security:check",
     "ai:benchmark": "node scripts/ai-visibility-benchmark.mjs",
     "agent:report": "node scripts/agent-analytics-report.mjs",
     "agent:concierge:test": "node scripts/validate-agent-concierge.mjs",

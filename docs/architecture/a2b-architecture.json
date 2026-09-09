@@ -5,8 +5,8 @@
     "id": "a2b-logistics-architecture",
     "title": "a2b Logistics Website Architecture",
     "purpose": "Human and agent-readable map of the a2b website, its public agent interfaces, deployment path, external dependencies, controls, and change procedures.",
-    "generatedAt": "2026-08-31T14:41:17Z",
-    "sourceCommitAudited": "f9b3e7df1e0889b9c404c0605ad06b380ce34055",
+    "generatedAt": "2026-09-09T08:40:00Z",
+    "sourceCommitAudited": "1214d0b59f9ba734cf9ea79134e548690d620dc7",
     "scope": "a2b only",
     "confidentiality": "Repository-internal. Excluded from Vercel deployment.",
     "updateRule": "Update this JSON when routes, runtime boundaries, public interfaces, external systems, ownership, or deployment behavior change; then run npm run architecture:generate and npm run architecture:check."
@@ -93,7 +93,7 @@
     }
   },
   "inventory": {
-    "repositoryFilesExcludingGeneratedAndDependencies": 325,
+    "repositoryFilesExcludingGeneratedAndDependencies": 331,
     "htmlFiles": 71,
     "canonicalSitemapRoutes": 65,
     "routeFamilies": [
@@ -164,13 +164,13 @@
     ],
     "markdownCompanions": 65,
     "structuredDataFiles": 15,
-    "wellKnownDiscoveryFiles": 10,
+    "wellKnownDiscoveryFiles": 11,
     "serverMcpTools": 9,
     "browserWebMcpTools": 7,
     "cssFiles": 10,
     "javascriptAndModuleFiles": 24,
     "imageFiles": 112,
-    "verificationScripts": 10
+    "verificationScripts": 11
   },
   "layers": [
     {
@@ -359,12 +359,13 @@
       "id": "security-headers",
       "layer": "delivery",
       "type": "control",
-      "title": "Security & representation headers",
-      "subtitle": "CSP, HSTS, canonical and Content-Signal",
-      "responsibility": "Apply global browser security controls and route-specific content types, language, canonical, alternate representation, cache variation, noindex, and agent-policy headers.",
+      "title": "Security & representation controls",
+      "subtitle": "CSP, HSTS, security.txt, canonical and Content-Signal",
+      "responsibility": "Apply global browser security controls, publish the vulnerability-reporting contact, and set route-specific content types, language, canonical, alternate representation, cache variation, noindex, and agent-policy headers.",
       "files": [
         "vercel.json",
-        "middleware.js"
+        "middleware.js",
+        ".well-known/security.txt"
       ],
       "interfaces": [
         "CSP",
@@ -373,7 +374,8 @@
         "Content-Language",
         "Content-Signal",
         "Vary",
-        "Link"
+        "Link",
+        "RFC 9116 security.txt"
       ],
       "dependencies": [],
       "status": "active"
@@ -700,6 +702,9 @@
       "responsibility": "Hold the checked-in static site, runtime code, public agent resources, documentation, and verification scripts.",
       "files": [
         ".git",
+        ".github/dependabot.yml",
+        ".github/workflows/*.yml",
+        ".nvmrc",
         "CLAUDE.md",
         "package.json",
         "package-lock.json"
@@ -719,10 +724,11 @@
       "layer": "operations",
       "type": "control",
       "title": "Repository validation suite",
-      "subtitle": "Content, SEO, Markdown, live and architecture checks",
-      "responsibility": "Detect route, schema, canonical, identity, IndexNow, Markdown, copy-artifact, and live production regressions.",
+      "subtitle": "Content, security, SEO, Markdown, live and architecture checks",
+      "responsibility": "Detect route, schema, canonical, identity, runtime, security-header, vulnerability-contact, IndexNow, Markdown, copy-artifact, and live production regressions.",
       "files": [
         "scripts/verify-site.mjs",
+        "scripts/verify-security-baseline.mjs",
         "scripts/generate-markdown-companions.mjs",
         "scripts/validate-markdown-layer.mjs",
         "scripts/validate-live-markdown-layer.mjs",
@@ -755,7 +761,8 @@
       "responsibility": "Publish approved repository commits to the Vercel project, then verify production routes and preserve rollback to the previous deployment or commit.",
       "files": [
         "vercel.json",
-        ".vercel/project.json"
+        ".vercel/project.json",
+        ".github/workflows/verify.yml"
       ],
       "interfaces": [
         "Git push",
@@ -818,10 +825,13 @@
       "type": "external",
       "title": "GitHub",
       "subtitle": "Source remote and deployment trigger",
-      "responsibility": "Host the canonical remote repository and main branch used by the Vercel project.",
+      "responsibility": "Host the canonical remote repository and main branch used by the Vercel project, run read-only verification and CodeQL checks, and monitor dependency updates.",
       "interfaces": [
         "Git HTTPS",
-        "repository webhooks"
+        "repository webhooks",
+        "GitHub Actions",
+        "CodeQL",
+        "Dependabot"
       ],
       "dependencies": [
         "vercel-edge"
@@ -1342,9 +1352,11 @@
     },
     {
       "id": "browser-security",
-      "rule": "Vercel applies CSP, HSTS, frame denial, nosniff, referrer, permissions and cross-origin policies.",
+      "rule": "Vercel applies CSP, HSTS, frame denial, nosniff, referrer, permissions and cross-origin policies, and publishes an RFC 9116 security contact.",
       "enforcedBy": [
-        "vercel.json"
+        "vercel.json",
+        ".well-known/security.txt",
+        "scripts/verify-security-baseline.mjs"
       ]
     },
     {
@@ -1359,7 +1371,17 @@
       "rule": "No plaintext secrets belong in prompts, docs, source, logs, or repository history.",
       "enforcedBy": [
         "CLAUDE.md",
+        ".gitignore",
         "owner governance"
+      ]
+    },
+    {
+      "id": "repository-security-automation",
+      "rule": "Every main-branch change and pull request must pass the a2b verification suite; current dependencies and JavaScript security findings are monitored without granting deployment or secret access.",
+      "enforcedBy": [
+        ".github/workflows/verify.yml",
+        ".github/workflows/codeql.yml",
+        ".github/dependabot.yml"
       ]
     },
     {
@@ -1516,7 +1538,11 @@
     "commands": [
       {
         "command": "npm run verify",
-        "purpose": "Validate company identity, routes, structured data, sitemap, analytics, IndexNow, discovery, tool consistency, and accidental artifacts."
+        "purpose": "Validate company identity, routes, structured data, sitemap, analytics, IndexNow, discovery, tool consistency, security baseline, and accidental artifacts."
+      },
+      {
+        "command": "npm run security:check",
+        "purpose": "Validate the supported Node.js major, RFC 9116 security contact, and required production security-header declarations."
       },
       {
         "command": "npm run markdown:check",
