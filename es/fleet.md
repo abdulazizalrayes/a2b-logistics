@@ -38,11 +38,13 @@ robots: "noindex, follow"
 
 ## Main Content
 
+[Saltar al contenido](#main-content)
+
 Flota y capacidades
 
-# 948+ Units. Every Load. Every City.
+# Más de 948 vehículos. Cada carga. Cada ciudad.
 
-One of Saudi Arabia's largest privately operated logistics fleets - purpose-built, GPS-tracked, and fuel-monitored across the entire Kingdom since 1994.
+Una de las mayores flotas logísticas privadas de Arabia Saudita, operativa desde 1994 con seguimiento GPS y control de combustible.
 
 948
 
@@ -64,91 +66,91 @@ Nuestra flota
 
 ## Preparada para todo tipo de carga
 
-From standard freight to oversized project loads - our fleet covers every requirement across Saudi Arabia's road network.
+Desde carga estándar hasta cargas sobredimensionadas, nuestra flota opera en la red vial saudí.
 
 ### Remolque plataforma estándar
 
-The backbone of our fleet. Handles palletized goods, general cargo, steel, timber, and construction materials across all KSA routes.
+La base de nuestra flota para mercancías paletizadas, carga general, acero, madera y materiales de construcción en rutas saudíes.
 
 ### Lowbed / carga pesada
 
-For oversized industrial machinery, power generators, transformers, and heavy construction equipment. Permit-ready for KSA roads.
+Para maquinaria industrial sobredimensionada, generadores, transformadores y equipos pesados de construcción, con preparación de permisos para las vías saudíes.
 
-### Curtainsider / Tautliner
+### Semirremolque de lona corredera
 
-Side-access loading for fast turnaround. Ideal for retail distribution, FMCG, and operations where forklift access from the side is required.
+Carga lateral rápida, adecuada para distribución minorista, bienes de consumo y acceso lateral de carretillas elevadoras.
 
 ### Refrigerado (reefer)
 
-Temperature-controlled transport for food products, pharmaceuticals, chemicals, and any cargo requiring a maintained cold chain across KSA.
+Transporte con temperatura controlada para alimentos, medicamentos, productos químicos y mercancías que requieren cadena de frío en Arabia Saudita.
 
 ### Cisterna
 
-Liquid bulk transport for industrial chemicals, lubricants, edible oils, and non-hazardous fluids. Stainless and carbon-lined options available.
+Transporte de líquidos a granel para productos químicos industriales, lubricantes, aceites comestibles y fluidos no peligrosos, con opciones de acero inoxidable y revestimiento de carbono.
 
 ### Camión grúa (HIAB)
 
-Self-loading capability for deliveries to remote sites, off-dock locations, and installations where no external crane or loading dock is available.
+Autocarga para entregas en ubicaciones remotas o instalaciones sin grúa externa ni muelle de carga.
 
 ### Camión cerrado
 
-Fully enclosed and secure cargo transport for sensitive goods, electronics, documents, and urban last-mile distribution across city centers.
+Transporte cerrado y protegido para mercancías sensibles, electrónica, documentos y distribución urbana.
 
 ### Pickup / comercial ligero
 
-Rapid-response light vehicles for field operations, small freight, urgent deliveries, and site-level logistics support across the Kingdom.
+Vehículos ligeros de respuesta rápida para operaciones de campo, cargas pequeñas, entregas urgentes y logística en instalaciones del Reino.
 
 ### Remolque extensible
 
-For extra-long project cargo - structural steel, wind turbine components, bridge sections, and oversized loads that exceed standard trailer lengths.
+Para cargas de proyecto extralargas, como estructuras de acero, componentes eólicos y secciones de puentes que superan la longitud de remolques estándar.
 
 Capacidades especializadas
 
 ## Más allá del transporte estándar
 
-Operational depth built over three decades - handling Saudi Arabia's most complex, time-critical, and large-scale logistics requirements.
+Tres décadas de experiencia operativa en necesidades logísticas complejas, urgentes y de gran escala en Arabia Saudita.
 
 ### Logística de megaproyectos
 
-Proven experience supporting Vision 2030 giga-projects including NEOM, Red Sea Project, and Qiddiya - high-volume, complex, time-bound supply chains in remote and active construction environments.
+Experiencia en grandes proyectos de Visión 2030, incluidos NEOM, Red Sea Project y Qiddiya, con cadenas de suministro complejas en obras remotas y activas.
 
 ### Puerto y despacho aduanero
 
-Integrated drayage from all major Saudi seaports - Jeddah Islamic Port, King Abdulaziz Port (Dammam), and Jubail. Coordinated customs handling and documentation for seamless import logistics.
+Transporte desde Jeddah Islamic Port, King Abdulaziz Port en Dammam y Jubail, con coordinación aduanera y documentación de importación.
 
 ### Corredores transfronterizos
 
-Established routes and documentation expertise for cross-border freight into the UAE, Jordan, Bahrain, and Kuwait - connecting Saudi operations to the wider GCC supply chain network.
+Rutas establecidas y experiencia documental para transporte hacia Emiratos Árabes Unidos, Jordania, Bahréin y Kuwait, conectado con operaciones saudíes.
 
-### 24/7 Rapid Mobilization
+### Movilización rápida 24/7
 
-Our operations center runs around the clock. Fleet can be dispatched within hours for urgent, unplanned, or time-critical loads - no downtime in your supply chain, no matter the hour.
+El centro de operaciones funciona las 24 horas y puede movilizar la flota en pocas horas para cargas urgentes o imprevistas.
 
 Estándares de flota
 
-## Technology-Backed. Compliance-Ready.
+## Respaldada por tecnología. Preparada para el cumplimiento.
 
-Every vehicle in the a2b fleet is held to the same operational standard - giving clients full confidence in reliability, visibility, and accountability.
+Cada vehículo de la flota a2b cumple los mismos estándares operativos de fiabilidad, visibilidad y responsabilidad.
 
 #### Seguimiento GPS
 
-Real-time GPS tracking on every unit in the fleet - full shipment visibility from dispatch to delivery for you and your team.
+Seguimiento GPS en tiempo real en cada vehículo, desde la salida hasta la entrega.
 
 #### Monitoreo de combustible
 
-Fuel chips installed fleet-wide for consumption tracking, efficiency reporting, and driver accountability across all 948+ vehicles.
+Chips de combustible en toda la flota para controlar consumo, eficiencia y responsabilidad de los conductores en más de 948 vehículos.
 
 #### Mantenimiento preventivo
 
-Structured maintenance schedules across the entire fleet - reducing breakdowns, extending vehicle life, and maintaining service reliability.
+Mantenimiento programado en toda la flota para reducir averías, prolongar la vida útil y mantener la fiabilidad.
 
 #### Conductores certificados
 
-Professional, licensed, and trained drivers averaging 20+ years of experience in Saudi Arabia's roads, regulations, and demanding project environments.
+Conductores profesionales, habilitados y capacitados, con una media de más de 20 años de experiencia en carreteras saudíes y proyectos exigentes.
 
-## Need a Specific Vehicle or Capacity?
+## ¿Necesitas un vehículo o una capacidad específica?
 
-Tell us your cargo type, route, and timeline - we'll confirm availability and turn it around fast.
+Indícanos el tipo de carga, la ruta y los plazos para confirmar la disponibilidad.
 
 [Contáctanos](https://www.a2b.sa/es#contact)
 

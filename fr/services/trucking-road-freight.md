@@ -39,6 +39,8 @@ robots: "noindex, follow"
 
 ## Main Content
 
+[Aller au contenu](#main-content)
+
 Services a2b Logistics
 
 # Transport routier dans toute l'Arabie saoudite

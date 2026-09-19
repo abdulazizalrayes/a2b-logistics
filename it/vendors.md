@@ -38,7 +38,9 @@ robots: "noindex, follow"
 
 ## Main Content
 
-# Become an a2b fornitore registrato
+[Vai al contenuto](#main-content)
+
+# Diventa un fornitore registrato di a2b
 
 Collaboriamo con una rete selezionata di fornitori e subappaltatori di alta qualità. Se la tua azienda soddisfa i nostri standard, vogliamo conoscerti.
 
@@ -46,7 +48,7 @@ Collaboriamo con una rete selezionata di fornitori e subappaltatori di alta qual
 
 Invia qui sotto i dati della tua azienda. Il nostro team procurement li esaminerà e ti contatterà se ci sarà una possibile opportunità.
 
-Thank you for registering your interest. Our procurement team will review your submission and contact you if there is a suitable opportunity. We appreciate your interest in working with a2b Logistics.
+Il programma di posta dovrebbe aprire una bozza. Controllala e inviala da lì: il sito non ha inoltrato la domanda. Se la bozza non si apre, scrivi direttamente a info@a2b.sa. Per le candidature, allega manualmente il CV.
 
 ## Public Structured Data
 

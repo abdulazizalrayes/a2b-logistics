@@ -39,6 +39,8 @@ robots: "noindex, follow"
 
 ## Main Content
 
+[Vai al contenuto](#main-content)
+
 Servizi a2b Logistics
 
 # Supporto logistico supply chain in Arabia Saudita

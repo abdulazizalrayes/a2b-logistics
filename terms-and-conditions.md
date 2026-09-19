@@ -32,6 +32,8 @@ robots: "noindex, follow"
 
 ## Main Content
 
+[Skip to content](#main-content)
+
 # Terms and Conditions
 
 Last updated: March 2026

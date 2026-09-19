@@ -38,6 +38,8 @@ robots: "noindex, follow"
 
 ## Main Content
 
+[Skip to content](#main-content)
+
 # Build Your Career in Saudi Logistics
 
 a2b is growing fast. We're looking for driven professionals who want to be part of something that matters, moving Saudi Arabia forward.
@@ -46,7 +48,7 @@ a2b is growing fast. We're looking for driven professionals who want to be part 
 
 Send us your details and CV. Our team will review your application and be in touch if there's a fit.
 
-Thank you for applying. We have received your application and will be in touch if there is a suitable opportunity.
+Your email app should open a draft. Review it and press Send there; this website has not submitted your application. If no draft opens, email info@a2b.sa directly. For careers, attach your CV manually.
 
 ## Public Structured Data
 

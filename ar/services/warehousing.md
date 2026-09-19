@@ -39,6 +39,8 @@ robots: "noindex, follow"
 
 ## Main Content
 
+[انتقل إلى المحتوى](#main-content)
+
 خدمات a2b Logistics
 
 # دعم التخزين لسلاسل الإمداد في السعودية

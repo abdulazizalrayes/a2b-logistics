@@ -38,15 +38,17 @@ robots: "noindex, follow"
 
 ## Main Content
 
-# Werden Sie ein bei a2b registrierter Lieferant
+[Zum Inhalt springen](#main-content)
 
-We work with a select network of high-quality vendors and subcontractors. If your business meets our standards, we want to hear from you.
+# Werden Sie registrierter Lieferant von a2b
+
+Wir arbeiten mit einem ausgewählten Netzwerk qualifizierter Lieferanten und Subunternehmer. Wenn Ihr Unternehmen unsere Anforderungen erfüllt, freuen wir uns auf Ihre Kontaktaufnahme.
 
 ## Lieferantenregistrierungsformular
 
-Submit your company details below. Our procurement team will review your submission and reach out if there is a potential fit for our operations.
+Tragen Sie unten Ihre Unternehmensdaten ein. Unser Einkaufsteam prüft Ihre Angaben und meldet sich bei einer passenden Zusammenarbeit.
 
-Thank you for registering your interest. Our procurement team will review your submission and contact you if there is a suitable opportunity. We appreciate your interest in working with a2b Logistics.
+Ihr E-Mail-Programm sollte einen Entwurf öffnen. Prüfen und senden Sie ihn dort; diese Website hat Ihre Bewerbung nicht übermittelt. Öffnet sich kein Entwurf, schreiben Sie direkt an info@a2b.sa. Fügen Sie bei Bewerbungen Ihren Lebenslauf manuell hinzu.
 
 ## Public Structured Data
 

@@ -32,6 +32,8 @@ robots: "noindex, follow"
 
 ## Main Content
 
+[Skip to content](#main-content)
+
 # Privacy Policy
 
 Last updated: January 2026

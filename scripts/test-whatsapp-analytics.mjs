@@ -55,6 +55,7 @@ vm.runInNewContext(fs.readFileSync('assets/js/analytics.js', 'utf8'), {
   document,
   window,
   Array,
+  URL,
   encodeURIComponent
 });
 
@@ -79,8 +80,9 @@ listeners.click({ target: { closest: () => whatsappLink } });
 
 const eventEntries = window.dataLayer.filter((entry) => entry[0] === 'event');
 const events = eventEntries.map((entry) => entry[1]);
-assert.deepEqual(events, ['whatsapp_click', 'contact_click']);
+assert.deepEqual(events, ['whatsapp_click', 'contact_click', 'generate_lead']);
 assert.equal(eventEntries[0][2].page_location, 'https://www.a2b.sa/');
 assert.equal(eventEntries[1][2].contact_type, 'whatsapp');
 
-console.log('WhatsApp analytics tests passed.');
+assert.equal(eventEntries[2][2].contact_method, 'whatsapp');
+console.log('WhatsApp contact-click analytics tests passed; generate_lead remains a click signal.');

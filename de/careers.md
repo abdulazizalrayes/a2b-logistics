@@ -38,6 +38,8 @@ robots: "noindex, follow"
 
 ## Main Content
 
+[Zum Inhalt springen](#main-content)
+
 # Bauen Sie Ihre Karriere auf in der saudischen Logistik
 
 a2b wächst schnell. Wir suchen engagierte Fachkräfte, die Teil von etwas Bedeutendem sein wollen und Saudi-Arabien voranbringen.
@@ -46,7 +48,7 @@ a2b wächst schnell. Wir suchen engagierte Fachkräfte, die Teil von etwas Bedeu
 
 Senden Sie uns Ihre Daten und Ihren Lebenslauf. Unser Team prüft Ihre Bewerbung und meldet sich, wenn es passt.
 
-Thank you for applying. We have received your application and will be in touch if there is a suitable opportunity.
+Ihr E-Mail-Programm sollte einen Entwurf öffnen. Prüfen und senden Sie ihn dort; diese Website hat Ihre Bewerbung nicht übermittelt. Öffnet sich kein Entwurf, schreiben Sie direkt an info@a2b.sa. Fügen Sie bei Bewerbungen Ihren Lebenslauf manuell hinzu.
 
 ## Public Structured Data
 

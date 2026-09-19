@@ -23,7 +23,8 @@
     "health:check": "node scripts/check-production-health.mjs",
     "health:test": "node scripts/validate-production-health.mjs",
     "agent:metrics:retain": "node scripts/retain-concierge-metrics.mjs",
-    "agent:metrics:test": "node scripts/validate-concierge-metrics.mjs"
+    "agent:metrics:test": "node scripts/validate-concierge-metrics.mjs",
+    "quality:check": "node scripts/verify-experience-quality.mjs && node scripts/test-form-drafts.mjs"
   },
   "devDependencies": {
     "parse5": "^8.0.1"

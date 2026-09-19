@@ -38,6 +38,8 @@ robots: "noindex, follow"
 
 ## Main Content
 
+[Zum Inhalt springen](#main-content)
+
 Flotte und Fähigkeiten
 
 # 948+ Einheiten. Jede Ladung. Jede Stadt.
@@ -74,77 +76,77 @@ Das Rückgrat unserer Flotte. Transportiert palettierte Waren, Stückgut, Stahl,
 
 Für übergroße Industriemaschinen, Generatoren, Transformatoren und schwere Baumaschinen. Genehmigungsbereit für KSA-Straßen.
 
-### Curtainsider / Tautliner
+### Schiebeplanen-Auflieger
 
-Side-access loading for fast turnaround. Ideal for retail distribution, FMCG, and operations where forklift access from the side is required.
+Seitliche Beladung für schnelle Abläufe, geeignet für Einzelhandel, Konsumgüter und seitlichen Staplerzugang.
 
 ### Kühlfahrzeug (Reefer)
 
-Temperature-controlled transport for food products, pharmaceuticals, chemicals, and any cargo requiring a maintained cold chain across KSA.
+Temperaturgeführter Transport von Lebensmitteln, Arzneimitteln, Chemikalien und anderer kühlkettenpflichtiger Fracht in Saudi-Arabien.
 
 ### Tankwagen
 
-Liquid bulk transport for industrial chemicals, lubricants, edible oils, and non-hazardous fluids. Stainless and carbon-lined options available.
+Flüssigtransport für Industriechemikalien, Schmierstoffe, Speiseöle und ungefährliche Flüssigkeiten, mit Edelstahl- und kohlenstoffbeschichteten Optionen.
 
 ### Kran-Lkw (HIAB)
 
-Self-loading capability for deliveries to remote sites, off-dock locations, and installations where no external crane or loading dock is available.
+Selbstverladung für Lieferungen an abgelegene Standorte oder Anlagen ohne externen Kran oder Laderampe.
 
 ### Koffer-Lkw / geschlossener Transporter
 
-Fully enclosed and secure cargo transport for sensitive goods, electronics, documents, and urban last-mile distribution across city centers.
+Geschlossener, geschützter Transport empfindlicher Waren, Elektronik und Dokumente sowie städtische Verteilung.
 
 ### Pickup / leichtes Nutzfahrzeug
 
-Rapid-response light vehicles for field operations, small freight, urgent deliveries, and site-level logistics support across the Kingdom.
+Schnell verfügbare leichte Fahrzeuge für Außeneinsätze, kleine Fracht, Eillieferungen und Baustellenlogistik im Königreich.
 
 ### Ausziehbarer Trailer
 
-For extra-long project cargo - structural steel, wind turbine components, bridge sections, and oversized loads that exceed standard trailer lengths.
+Für überlange Projektladungen wie Stahlbauteile, Windkraftkomponenten und Brückenteile, die Standardaufliegerlängen überschreiten.
 
 Spezialisierte Fähigkeiten
 
 ## Mehr als Standardtransport
 
-Operational depth built over three decades - handling Saudi Arabia's most complex, time-critical, and large-scale logistics requirements.
+Drei Jahrzehnte operative Erfahrung mit komplexen, zeitkritischen und umfangreichen Logistikanforderungen in Saudi-Arabien.
 
 ### Megaprojekt-Logistik
 
-Proven experience supporting Vision 2030 giga-projects including NEOM, Red Sea Project, and Qiddiya - high-volume, complex, time-bound supply chains in remote and active construction environments.
+Erfahrung mit Vision-2030-Großprojekten wie NEOM, Red Sea Project und Qiddiya sowie komplexen Lieferketten in abgelegenen und aktiven Baugebieten.
 
 ### Hafen- und Zollabfertigung
 
-Integrated drayage from all major Saudi seaports - Jeddah Islamic Port, King Abdulaziz Port (Dammam), and Jubail. Coordinated customs handling and documentation for seamless import logistics.
+Hafentransporte von Jeddah Islamic Port, King Abdulaziz Port in Dammam und Jubail mit koordinierter Zollabfertigung und Importdokumentation.
 
 ### Grenzüberschreitende Korridore
 
-Established routes and documentation expertise for cross-border freight into the UAE, Jordan, Bahrain, and Kuwait - connecting Saudi operations to the wider GCC supply chain network.
+Erprobte Routen und Dokumentation für Transporte in die VAE, nach Jordanien, Bahrain und Kuwait, angebunden an saudische Lieferketten.
 
 ### 24/7 schnelle Mobilisierung
 
-Our operations center runs around the clock. Fleet can be dispatched within hours for urgent, unplanned, or time-critical loads - no downtime in your supply chain, no matter the hour.
+Unsere Einsatzzentrale arbeitet rund um die Uhr und kann bei dringenden oder ungeplanten Ladungen Fahrzeuge innerhalb weniger Stunden disponieren.
 
 Flottenstandards
 
 ## Technologiegestützt. Compliance-bereit.
 
-Every vehicle in the a2b fleet is held to the same operational standard - giving clients full confidence in reliability, visibility, and accountability.
+Jedes Fahrzeug der a2b-Flotte unterliegt denselben Betriebsstandards für Zuverlässigkeit, Transparenz und Verantwortlichkeit.
 
 #### GPS-verfolgt
 
-Real-time GPS tracking on every unit in the fleet - full shipment visibility from dispatch to delivery for you and your team.
+GPS-Ortung in Echtzeit auf jedem Fahrzeug für Sendungstransparenz von der Abfahrt bis zur Lieferung.
 
 #### Kraftstoffüberwachung
 
-Fuel chips installed fleet-wide for consumption tracking, efficiency reporting, and driver accountability across all 948+ vehicles.
+Kraftstoffchips in der gesamten Flotte unterstützen Verbrauchskontrolle, Effizienzberichte und Fahrerverantwortung bei über 948 Fahrzeugen.
 
 #### Vorbeugende Wartung
 
-Structured maintenance schedules across the entire fleet - reducing breakdowns, extending vehicle life, and maintaining service reliability.
+Geplante Wartung in der gesamten Flotte reduziert Ausfälle, verlängert die Lebensdauer und unterstützt zuverlässigen Betrieb.
 
 #### Zertifizierte Fahrer
 
-Professional, licensed, and trained drivers averaging 20+ years of experience in Saudi Arabia's roads, regulations, and demanding project environments.
+Professionelle, lizenzierte und geschulte Fahrer mit durchschnittlich über 20 Jahren Erfahrung auf saudischen Straßen und in anspruchsvollen Projekten.
 
 ## Benötigen Sie ein bestimmtes Fahrzeug oder eine Kapazität?
 

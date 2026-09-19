@@ -38,11 +38,13 @@ robots: "noindex, follow"
 
 ## Main Content
 
+[跳至正文](#main-content)
+
 车队与能力
 
-# 948+ Units. Every Load. Every City.
+# 948 多辆车辆。 各种货物。 每座城市。
 
-One of Saudi Arabia's largest privately operated logistics fleets - purpose-built, GPS-tracked, and fuel-monitored across the entire Kingdom since 1994.
+沙特阿拉伯规模领先的私营物流车队之一，自 1994 年起运营，配备 GPS 跟踪和燃油监控。
 
 948
 
@@ -64,91 +66,91 @@ One of Saudi Arabia's largest privately operated logistics fleets - purpose-buil
 
 ## 适用于各种货物类型
 
-From standard freight to oversized project loads - our fleet covers every requirement across Saudi Arabia's road network.
+从普通货运到超限项目货物，我们的车队服务于沙特公路网络。
 
 ### 标准平板挂车
 
-The backbone of our fleet. Handles palletized goods, general cargo, steel, timber, and construction materials across all KSA routes.
+车队主力车型，适用于沙特境内的托盘货物、普通货物、钢材、木材及建筑材料运输。
 
 ### 低平板 / 重载运输
 
-For oversized industrial machinery, power generators, transformers, and heavy construction equipment. Permit-ready for KSA roads.
+适用于超限工业机械、发电机、变压器和重型施工设备，并支持沙特道路运输许可准备。
 
-### Curtainsider / Tautliner
+### 侧帘式挂车
 
-Side-access loading for fast turnaround. Ideal for retail distribution, FMCG, and operations where forklift access from the side is required.
+支持侧面快速装卸，适用于零售配送、快消品及需要叉车侧向作业的运输。
 
 ### 冷藏车
 
-Temperature-controlled transport for food products, pharmaceuticals, chemicals, and any cargo requiring a maintained cold chain across KSA.
+在沙特境内为食品、药品、化学品及其他需要冷链的货物提供温控运输。
 
 ### 罐车
 
-Liquid bulk transport for industrial chemicals, lubricants, edible oils, and non-hazardous fluids. Stainless and carbon-lined options available.
+运输工业化学品、润滑油、食用油及非危险液体散货，提供不锈钢和碳衬选项。
 
 ### 随车吊 (HIAB)
 
-Self-loading capability for deliveries to remote sites, off-dock locations, and installations where no external crane or loading dock is available.
+具备自主装卸能力，可服务偏远地点及无外部起重机或装卸平台的设施。
 
 ### 厢式货车
 
-Fully enclosed and secure cargo transport for sensitive goods, electronics, documents, and urban last-mile distribution across city centers.
+为敏感货物、电子产品、文件及城市配送提供封闭式安全运输。
 
 ### 皮卡 / 轻型商用车
 
-Rapid-response light vehicles for field operations, small freight, urgent deliveries, and site-level logistics support across the Kingdom.
+快速响应的轻型车辆，支持沙特境内现场作业、小批量货运、紧急配送及现场物流。
 
 ### 可伸缩挂车
 
-For extra-long project cargo - structural steel, wind turbine components, bridge sections, and oversized loads that exceed standard trailer lengths.
+适用于超过标准挂车长度的项目货物，包括钢结构、风机组件和桥梁构件。
 
 专项能力
 
 ## 超越标准运输
 
-Operational depth built over three decades - handling Saudi Arabia's most complex, time-critical, and large-scale logistics requirements.
+积累三十年运营经验，服务沙特复杂、时效严格及大规模物流需求。
 
 ### 大型项目物流
 
-Proven experience supporting Vision 2030 giga-projects including NEOM, Red Sea Project, and Qiddiya - high-volume, complex, time-bound supply chains in remote and active construction environments.
+具备服务 NEOM、红海项目及 Qiddiya 等“2030 愿景”大型项目的经验，支持偏远及在建工地的复杂供应链。
 
 ### 港口与清关
 
-Integrated drayage from all major Saudi seaports - Jeddah Islamic Port, King Abdulaziz Port (Dammam), and Jubail. Coordinated customs handling and documentation for seamless import logistics.
+提供吉达伊斯兰港、达曼阿卜杜勒阿齐兹国王港及朱拜勒港的短驳运输，并协调清关和进口单证。
 
 ### 跨境通道
 
-Established routes and documentation expertise for cross-border freight into the UAE, Jordan, Bahrain, and Kuwait - connecting Saudi operations to the wider GCC supply chain network.
+具备通往阿联酋、约旦、巴林及科威特的运输线路和单证经验，连接沙特运营与区域供应链。
 
-### 24/7 Rapid Mobilization
+### 全天候快速调度
 
-Our operations center runs around the clock. Fleet can be dispatched within hours for urgent, unplanned, or time-critical loads - no downtime in your supply chain, no matter the hour.
+运营中心全天候运行，可在数小时内为紧急或临时货物调度车辆。
 
 车队标准
 
-## Technology-Backed. Compliance-Ready.
+## 技术支持，合规准备。
 
-Every vehicle in the a2b fleet is held to the same operational standard - giving clients full confidence in reliability, visibility, and accountability.
+a2b 车队的每辆车均遵循统一运营标准，保障可靠性、可见性与责任落实。
 
 #### GPS 跟踪
 
-Real-time GPS tracking on every unit in the fleet - full shipment visibility from dispatch to delivery for you and your team.
+每辆车均提供实时 GPS 跟踪，让您掌握从发车到交付的运输进展。
 
 #### 燃油监控
 
-Fuel chips installed fleet-wide for consumption tracking, efficiency reporting, and driver accountability across all 948+ vehicles.
+全车队安装燃油芯片，为 948 多辆车辆提供油耗跟踪、效率报告和驾驶员责任管理。
 
 #### 预防性维护
 
-Structured maintenance schedules across the entire fleet - reducing breakdowns, extending vehicle life, and maintaining service reliability.
+全车队执行定期维护计划，以减少故障、延长车辆寿命并保持服务可靠性。
 
 #### 认证司机
 
-Professional, licensed, and trained drivers averaging 20+ years of experience in Saudi Arabia's roads, regulations, and demanding project environments.
+驾驶员具备专业资质和培训，平均拥有超过 20 年的沙特道路及高要求项目经验。
 
-## Need a Specific Vehicle or Capacity?
+## 需要特定车型或运力？
 
-Tell us your cargo type, route, and timeline - we'll confirm availability and turn it around fast.
+请告知货物类型、路线和时间要求，以便确认运力。
 
 [联系我们](https://www.a2b.sa/zh-Hans#contact)
 

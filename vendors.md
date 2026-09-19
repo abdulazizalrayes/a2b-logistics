@@ -38,6 +38,8 @@ robots: "noindex, follow"
 
 ## Main Content
 
+[Skip to content](#main-content)
+
 # Become an a2b Registered Vendor
 
 We work with a select network of high-quality vendors and subcontractors. If your business meets our standards, we want to hear from you.
@@ -46,7 +48,7 @@ We work with a select network of high-quality vendors and subcontractors. If you
 
 Submit your company details below. Our procurement team will review your submission and reach out if there is a potential fit for our operations.
 
-Thank you for registering your interest. Our procurement team will review your submission and contact you if there is a suitable opportunity. We appreciate your interest in working with a2b Logistics.
+Your email app should open a draft. Review it and press Send there; this website has not submitted your application. If no draft opens, email info@a2b.sa directly. For careers, attach your CV manually.
 
 ## Public Structured Data
 

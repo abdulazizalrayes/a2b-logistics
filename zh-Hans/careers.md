@@ -38,6 +38,8 @@ robots: "noindex, follow"
 
 ## Main Content
 
+[跳至正文](#main-content)
+
 # 发展您的职业 在沙特物流行业
 
 a2b 正在快速发展。我们正在寻找有动力的专业人才，共同参与有意义的事业，推动沙特阿拉伯向前发展。
@@ -46,7 +48,7 @@ a2b 正在快速发展。我们正在寻找有动力的专业人才，共同参�
 
 请发送您的信息和简历。我们的团队会审核申请，如有合适机会将与您联系。
 
-Thank you for applying. We have received your application and will be in touch if there is a suitable opportunity.
+您的邮件应用应打开一封草稿。请核对后在邮件应用中点击发送；本网站尚未提交您的申请。如果草稿未打开，请直接发送邮件至 info@a2b.sa。求职申请请手动附上简历。
 
 ## Public Structured Data
 

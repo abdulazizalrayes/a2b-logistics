@@ -53,3 +53,6 @@ jobs:
 
       - name: Verify monitoring failure, recovery and privacy safeguards
         run: npm run health:test && npm run agent:metrics:test
+
+      - name: Verify multilingual links, controls and browser scripts
+        run: npm run quality:check && npm run test:whatsapp
