@@ -59,3 +59,6 @@ jobs:
 
       - name: Validate owner answer review boundary
         run: npm run agent:answers:check && npm run agent:answers:test
+
+      - name: Verify optional LLM boundaries and fallback
+        run: npm run agent:llm:test

@@ -6,7 +6,7 @@
   "status": "agent_only_pilot",
   "endpoint": "https://www.a2b.sa/api/agent-concierge",
   "audience": "AI agents and procurement assistants evaluating Saudi Arabia B2B logistics requirements",
-  "mode": "deterministic_public_facts_only",
+  "mode": "approved_answers_with_optional_llm_routing",
   "capabilities": [
     "answer questions from approved public a2b facts",
     "explain published services and service areas",
@@ -54,5 +54,12 @@
   "commercialBoundary": "The concierge can explain, classify, and prepare. Pricing, capacity, availability, lead times, and contractual terms require confirmation by a2b.",
   "contentSignal": "search=yes, ai-input=yes, ai-train=no",
   "lastReviewed": "2026-09-19",
-  "approvedAnswers": "https://www.a2b.sa/data/concierge-approved-answers.json"
+  "approvedAnswers": "https://www.a2b.sa/data/concierge-approved-answers.json",
+  "inferencePolicy": {
+    "provider": "Cloudflare Workers AI",
+    "billing": "Workers Free only; fall back to deterministic answers on quota exhaustion or provider failure",
+    "output": "Return owner-approved wording verbatim; never generated commercial claims",
+    "learning": "Owner-approved registry updates only; no automatic publishing or model fine-tuning",
+    "input": "Screened question text and public approved answers may be processed by Cloudflare."
+  }
 }

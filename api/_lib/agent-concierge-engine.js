@@ -1,3 +1,4 @@
+import { selectApprovedAnswer } from './concierge-llm.js';
 import { readFile } from 'node:fs/promises';
 import { join } from 'node:path';
 
@@ -100,12 +101,18 @@ function answerResult({ intent, answer, evidence = [], fit = 'informational', ne
   };
 }
 
-export async function answerAgentQuestion(question) {
+export async function answerAgentQuestion(question, options = {}) {
   const knowledge = await loadKnowledge();
   const query = normalizeQuestion(question);
   const { company, services, capabilities, serviceAreas, routing, procurement, compliance, rfq } = knowledge;
 
-  const approvedId = approvedAnswerId(query, knowledge);
+  const deterministicId = approvedAnswerId(query, knowledge);
+  // Preserve exact approved responses and sensitive commercial/compliance boundaries.
+  const protectedScope = includesAny(query, ['iso', 'certification', 'certificate', 'certified', 'insurance', 'guarantee', 'availability', 'available', 'riyadh', 'dammam', 'dubai']);
+  const selection = !deterministicId && !protectedScope
+    ? await selectApprovedAnswer(question, knowledge.approvedAnswers, options.llm)
+    : null;
+  const approvedId = deterministicId || selection?.answerId;
   if (approvedId) {
     const entry = knowledge.approvedAnswers.items.find(item => item.id === approvedId);
     const separate = ['A07', 'A08'].includes(approvedId);
@@ -119,7 +126,8 @@ export async function answerAgentQuestion(question) {
     return {
       ...answerResult({ intent: entry.intent, answer: entry.answer, fit, nextStep, evidence: [`${PUBLIC_BASE}/data/concierge-approved-answers.json`, ...(approvedId === 'A04' ? [`${PUBLIC_BASE}/data/compliance-profile.json`] : [])] }),
       approvedAnswerId: approvedId,
-      answerVersion: knowledge.approvedAnswers.version
+      answerVersion: knowledge.approvedAnswers.version,
+      ...(selection?.answerId ? { answerMode: 'llm_selected_approved_answer', model: selection.model } : {})
     };
   }
 

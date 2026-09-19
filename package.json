@@ -28,7 +28,9 @@
     "release:verify": "node scripts/verify-live-release.mjs",
     "agent:answers:review": "node scripts/review-concierge-answers.mjs --write",
     "agent:answers:check": "node scripts/review-concierge-answers.mjs",
-    "agent:answers:test": "node scripts/test-approved-concierge-answers.mjs"
+    "agent:answers:test": "node scripts/test-approved-concierge-answers.mjs",
+    "agent:llm:test": "node scripts/test-concierge-llm.mjs",
+    "agent:llm:eval": "node scripts/evaluate-concierge-llm.mjs"
   },
   "devDependencies": {
     "parse5": "^8.0.1"
