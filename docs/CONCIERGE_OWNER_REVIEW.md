@@ -1,125 +1,128 @@
-# A2B concierge — owner answer review
+# A2B concierge — owner-approved answers
 
-The current service is deterministic and available through HTTP/MCP; it is not an LLM and does not learn automatically. These are synthetic review questions, not customer messages. All proposed answers below are unpublished.
+The service is deterministic and available through HTTP/MCP; it is not an LLM and does not learn automatically. These are synthetic regression questions, not customer messages. Owner approval was received on 19 September 2026. Only approved final wording is eligible for release.
 
-Reply using an ID (for example, “A01: use this final answer…”). Approval must be explicit; silence is not approval. Each approved correction will be versioned with your final wording and regression questions, tested through both endpoints, then released. Future LLM use would require a separate model/data/cost decision; changing a knowledge base is not fine-tuning model weights.
+For every future correction: draft an answer, obtain the owner’s explicit final wording, preserve the approval reference, update the public answer version, run paraphrase and boundary tests through both endpoints, then release and verify. No unreviewed feedback is automatically published or used for model training.
 
 ## A01 — How much does trucking from Riyadh to Dammam cost?
 
-**Current response:** Trucking and road freight: B2B trucking and road freight support for commercial cargo movement across Saudi Arabia. This is aligned with a2b's published B2B logistics scope when the requirement concerns commercial operations in Saudi Arabia.
+**Owner-approved final answer:**
 
-**Finding:** Service keywords override commercial intent.
+a2b can review a commercial road-freight requirement from Riyadh to Dammam. Please specify cargo type, weight or dimensions, pickup and delivery locations, timing and shipment frequency. The team must confirm the quotation; I cannot provide or promise a price. please email us at sales@a2b.sa to quote you.
 
-**Proposed answer — pending your review:** a2b can review a commercial road-freight requirement from Riyadh to Dammam. Please specify cargo type, weight or dimensions, pickup and delivery locations, timing and shipment frequency. The team must confirm the quotation; I cannot provide or promise a price.
+**Status:** approved
 
-**Status:** pending_owner_review
+**Approval reference:** Owner message in Codex task 01a095fc-3dc7-7fd2-83db-e599f5751f2c, 2026-09-19: explicit answers A01–A12.
 
 ## A02 — Can you guarantee a reefer tomorrow?
 
-**Current response:** Fleet types and capacity: Fleet-capability information for heavy transport and specialized vehicle categories shown on the public fleet page. This is aligned with a2b's published B2B logistics scope when the requirement concerns commercial operations in Saudi Arabia.
+**Owner-approved final answer:**
 
-**Finding:** Vehicle matching labels an unconfirmed booking as a good fit.
+Refrigerated vehicles are listed among a2b’s published fleet types, but I cannot check live availability or guarantee a vehicle for tomorrow. Please provide the route, cargo, required temperature and loading time for the team to confirm suitability and capacity. please email us at sales@a2b.sa to quote you.
 
-**Proposed answer — pending your review:** Refrigerated vehicles are listed among a2b’s published fleet types, but I cannot check live availability or guarantee a vehicle for tomorrow. Please provide the route, cargo, required temperature and loading time for the team to confirm suitability and capacity.
+**Status:** approved
 
-**Status:** pending_owner_review
+**Approval reference:** Owner message in Codex task 01a095fc-3dc7-7fd2-83db-e599f5751f2c, 2026-09-19: explicit answers A01–A12.
 
 ## A03 — Do you offer warehousing in Dubai only?
 
-**Current response:** Warehousing support: B2B warehousing coordination for storage, staging, and logistics workflows connected to road freight operations in Saudi Arabia. This is aligned with a2b's published B2B logistics scope when the requirement concerns commercial operations in Saudi Arabia.
+**Owner-approved final answer:**
 
-**Finding:** Non-Saudi-only requirement is classified as a good fit.
+a2b’s published warehousing scope is connected to logistics operations in Saudi Arabia. A Dubai-only requirement is not confirmed by the available information. Does this work include cargo moving to or from Saudi Arabia? please email us at sales@a2b.sa to quote you.
 
-**Proposed answer — pending your review:** a2b’s published warehousing scope is connected to logistics operations in Saudi Arabia. A Dubai-only requirement is not confirmed by the available information. Does this work include cargo moving to or from Saudi Arabia?
+**Status:** approved
 
-**Status:** pending_owner_review
+**Approval reference:** Owner message in Codex task 01a095fc-3dc7-7fd2-83db-e599f5751f2c, 2026-09-19: explicit answers A01–A12.
 
 ## A04 — Do you have ISO certification for your fleet?
 
-**Current response:** Fleet types and capacity: Fleet-capability information for heavy transport and specialized vehicle categories shown on the public fleet page. This is aligned with a2b's published B2B logistics scope when the requirement concerns commercial operations in Saudi Arabia.
+**Owner-approved final answer:**
 
-**Finding:** Fleet matching overrides document questions; website certification claims and structured-data restrictions differ.
+yes we do.
 
-**Proposed answer — pending your review:** The website mentions ISO management-system certifications. I cannot verify current certificates, validity dates or the scope covering a particular operation. Please request the current official documents from a2b before relying on them for qualification.
+**Status:** approved
 
-**Status:** pending_owner_review
+**Approval reference:** Owner message in Codex task 01a095fc-3dc7-7fd2-83db-e599f5751f2c, 2026-09-19: explicit answers A01–A12.
 
 ## A05 — Where is my shipment?
 
-**Current response:** The approved public a2b sources do not provide enough information to answer this precisely. I will not invent a service, price, certification, route, capacity, or commitment.
+**Owner-approved final answer:**
 
-**Finding:** Generic fallback does not explain the lack of tracking access.
+I do not have access to live shipment records or tracking systems. Please contact your a2b representative through the established private channel for a shipment update. Avoid sharing personal details or shipment documents in this public concierge.
 
-**Proposed answer — pending your review:** I do not have access to live shipment records or tracking systems. Please contact your a2b representative through the established private channel for a shipment update. Avoid sharing personal details or shipment documents in this public concierge.
+**Status:** approved
 
-**Status:** pending_owner_review
+**Approval reference:** Owner message in Codex task 01a095fc-3dc7-7fd2-83db-e599f5751f2c, 2026-09-19: explicit answers A01–A12.
 
 ## A06 — Can you clear these goods and tell me the customs duty?
 
-**Current response:** Customs-clearance coordination: Coordination support for international cargo entering Saudi Arabia, aligned with trucking, port, and supply-chain operations. This is aligned with a2b's published B2B logistics scope when the requirement concerns commercial operations in Saudi Arabia.
+**Owner-approved final answer:**
 
-**Finding:** Generic customs answer could obscure case-specific requirements.
+a2b publishes customs-clearance coordination as a service. The applicable documents, classification, duties and clearance feasibility need case-specific review. I cannot determine the duty or guarantee clearance. Please describe the goods, origin and intended Saudi entry point without uploading sensitive documents here. please email us at sales@a2b.sa to quote you.
 
-**Proposed answer — pending your review:** a2b publishes customs-clearance coordination as a service. The applicable documents, classification, duties and clearance feasibility need case-specific review. I cannot determine the duty or guarantee clearance. Please describe the goods, origin and intended Saudi entry point without uploading sensitive documents here.
+**Status:** approved
 
-**Status:** pending_owner_review
+**Approval reference:** Owner message in Codex task 01a095fc-3dc7-7fd2-83db-e599f5751f2c, 2026-09-19: explicit answers A01–A12.
 
 ## A07 — Can I apply for a truck driver job?
 
-**Current response:** Career, internship, and training requests are handled through the a2b careers page, not the commercial project-inquiry route.
+**Owner-approved final answer:**
 
-**Finding:** Existing routing works; review the wording and email-draft expectation.
+Please use the a2b careers page at https://www.a2b.sa/careers. It prepares an email draft; review the email, attach your CV and send it from your email application. This concierge cannot submit an application or confirm receipt.
 
-**Proposed answer — pending your review:** Please use the a2b careers page at https://www.a2b.sa/careers. It prepares an email draft; review the email, attach your CV and send it from your email application. This concierge cannot submit an application or confirm receipt.
+**Status:** approved
 
-**Status:** pending_owner_review
+**Approval reference:** Owner message in Codex task 01a095fc-3dc7-7fd2-83db-e599f5751f2c, 2026-09-19: explicit answers A01–A12.
 
 ## A08 — I own trucks and want to work as a subcontractor.
 
-**Current response:** Supplier, subcontractor, and logistics-partner registration uses the dedicated a2b vendor page. It is separate from buyer and project inquiries.
+**Owner-approved final answer:**
 
-**Finding:** Keep vendor registration separate from buyer enquiries.
+Please use the vendor registration page at https://www.a2b.sa/vendors. Include your company details and the services or vehicle capabilities you can offer. Review and send the prepared email from your email application. Registration does not guarantee an agreement or work allocation.
 
-**Proposed answer — pending your review:** Please use the vendor registration page at https://www.a2b.sa/vendors. Include your company details and the services or vehicle capabilities you can offer. Review and send the prepared email from your email application. Registration does not guarantee an agreement or work allocation.
+**Status:** approved
 
-**Status:** pending_owner_review
+**Approval reference:** Owner message in Codex task 01a095fc-3dc7-7fd2-83db-e599f5751f2c, 2026-09-19: explicit answers A01–A12.
 
 ## A09 — ما خدمات النقل التي تقدمونها؟
 
-**Current response:** The approved public a2b sources do not provide enough information to answer this precisely. I will not invent a service, price, certification, route, capacity, or commitment.
+**Owner-approved final answer:**
 
-**Finding:** Arabic service question is currently unanswered.
+a2b خدمات النقل البري للشركات في المملكة العربية السعودية، إلى جانب دعم التخزين وتنسيق التخليص الجمركي وعمليات سلسلة الإمداد. ما نوع الشحنة، ومن أين ستُنقل وإلى أين، وما الموعد المطلوب؟
+sales@a2b.sa
+ارجو ارسال تفاصيل المشروع عالايميل لنتمكن من التسعير لكم
 
-**Proposed answer — pending your review:** تقدم a2b خدمات النقل البري للشركات في المملكة العربية السعودية، إلى جانب دعم التخزين وتنسيق التخليص الجمركي وعمليات سلسلة الإمداد. ما نوع الشحنة، ومن أين ستُنقل وإلى أين، وما الموعد المطلوب؟ يؤكد فريق a2b السعر وتوفر المركبات والمدة بعد مراجعة المتطلبات.
+**Status:** approved
 
-**Status:** pending_owner_review
+**Approval reference:** Owner message in Codex task 01a095fc-3dc7-7fd2-83db-e599f5751f2c, 2026-09-19: explicit answers A01–A12.
 
 ## A10 — كم سعر نقل شحنة من الرياض إلى الدمام؟
 
-**Current response:** The approved public a2b sources do not provide enough information to answer this precisely. I will not invent a service, price, certification, route, capacity, or commitment.
+**Owner-approved final answer:**
 
-**Finding:** Arabic quotation request needs an explicit commercial boundary.
+sales@a2b.sa
+ارجو ارسال تفاصيل المشروع عالايميل لنتمكن من التسعير لكم
 
-**Proposed answer — pending your review:** يحتاج فريق a2b إلى معرفة نوع الشحنة ووزنها أو أبعادها وموقعي التحميل والتسليم والموعد المطلوب لإعداد عرض سعر. لا أستطيع تحديد سعر أو تأكيد توفر المركبة؛ يؤكد الفريق ذلك بعد مراجعة طلبك.
+**Status:** approved
 
-**Status:** pending_owner_review
+**Approval reference:** Owner message in Codex task 01a095fc-3dc7-7fd2-83db-e599f5751f2c, 2026-09-19: explicit answers A01–A12.
 
 ## A11 — Can you deliver a personal shopping parcel?
 
-**Current response:** The approved public a2b sources do not provide enough information to answer this precisely. I will not invent a service, price, certification, route, capacity, or commitment.
+**Owner-approved final answer:**
 
-**Finding:** Maintain a clear consumer-delivery boundary.
+a2b’s published focus is commercial and business logistics. Personal shopping parcels and consumer courier deliveries are outside the published scope. This request should not be treated as a business logistics enquiry.
 
-**Proposed answer — pending your review:** a2b’s published focus is commercial and business logistics. Personal shopping parcels and consumer courier deliveries are outside the published scope. This request should not be treated as a business logistics enquiry.
+**Status:** approved
 
-**Status:** pending_owner_review
+**Approval reference:** Owner message in Codex task 01a095fc-3dc7-7fd2-83db-e599f5751f2c, 2026-09-19: explicit answers A01–A12.
 
 ## A12 — Book it now and send my RFQ to the sales team.
 
-**Current response:** The concierge can help a procurement agent classify the requirement and prepare a complete RFQ brief for trucking, warehousing, customs-clearance coordination, or supply-chain logistics. It cannot submit the RFQ or create a commercial commitment.
+**Owner-approved final answer:**
 
-**Finding:** Explicit action refusal and user-controlled handoff.
+please email us at sales@a2b.sa to quote you.
 
-**Proposed answer — pending your review:** I can help organize the information for an RFQ, but I cannot book transport, send an email, submit a form or commit a2b to commercial terms. You must review the prepared brief and send it yourself through an approved contact channel.
+**Status:** approved
 
-**Status:** pending_owner_review
+**Approval reference:** Owner message in Codex task 01a095fc-3dc7-7fd2-83db-e599f5751f2c, 2026-09-19: explicit answers A01–A12.

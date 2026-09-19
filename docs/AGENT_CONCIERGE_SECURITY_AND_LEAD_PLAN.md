@@ -35,7 +35,7 @@ The concierge has no provider API key because it makes no AI model call. It has 
 - JSON content type only
 - 32 KB maximum body
 - 2,000-character maximum question
-- English agent response during the pilot
+- English answers with owner-approved Arabic service and quotation responses; language hints en/ar accepted
 - Strict allowlist of request fields
 - Personal email and phone patterns rejected
 - Password, token, API-key, private-key, and secret patterns rejected
@@ -116,3 +116,7 @@ Consider a visible human concierge only after the agent pilot proves common ques
 5. Redeploy the prior verified Vercel deployment.
 
 The normal website, Markdown negotiation, SEO metadata, forms, analytics, and existing read-only public resources remain independent of the concierge and should continue operating during rollback.
+
+## Owner-approved answer release — 19 September 2026
+
+Twelve answers are explicitly approved in scripts/fixtures/concierge-review.json and published through data/concierge-approved-answers.json version 2026-09-19.1. The owner confirmed ISO certification generally; no specific standard, certificate identifier or validity date was confirmed. Sales enquiries use sales@a2b.sa. The service remains deterministic and has no LLM or model training. Every future correction requires explicit owner final wording, recorded approval, a version update, endpoint/paraphrase/boundary tests, and live verification. Request privacy controls and read-only commercial boundaries remain in force.

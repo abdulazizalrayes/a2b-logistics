@@ -1,0 +1,78 @@
+{
+  "version": "2026-09-19.1",
+  "mode": "deterministic_owner_approved",
+  "items": [
+    {
+      "id": "A01",
+      "intent": "commercial_confirmation",
+      "question": "How much does trucking from Riyadh to Dammam cost?",
+      "answer": "a2b can review a commercial road-freight requirement from Riyadh to Dammam. Please specify cargo type, weight or dimensions, pickup and delivery locations, timing and shipment frequency. The team must confirm the quotation; I cannot provide or promise a price. please email us at sales@a2b.sa to quote you."
+    },
+    {
+      "id": "A02",
+      "intent": "commercial_confirmation",
+      "question": "Can you guarantee a reefer tomorrow?",
+      "answer": "Refrigerated vehicles are listed among a2b’s published fleet types, but I cannot check live availability or guarantee a vehicle for tomorrow. Please provide the route, cargo, required temperature and loading time for the team to confirm suitability and capacity. please email us at sales@a2b.sa to quote you."
+    },
+    {
+      "id": "A03",
+      "intent": "scope_clarification",
+      "question": "Do you offer warehousing in Dubai only?",
+      "answer": "a2b’s published warehousing scope is connected to logistics operations in Saudi Arabia. A Dubai-only requirement is not confirmed by the available information. Does this work include cargo moving to or from Saudi Arabia? please email us at sales@a2b.sa to quote you."
+    },
+    {
+      "id": "A04",
+      "intent": "compliance",
+      "question": "Do you have ISO certification for your fleet?",
+      "answer": "yes we do."
+    },
+    {
+      "id": "A05",
+      "intent": "shipment_tracking",
+      "question": "Where is my shipment?",
+      "answer": "I do not have access to live shipment records or tracking systems. Please contact your a2b representative through the established private channel for a shipment update. Avoid sharing personal details or shipment documents in this public concierge."
+    },
+    {
+      "id": "A06",
+      "intent": "customs_confirmation",
+      "question": "Can you clear these goods and tell me the customs duty?",
+      "answer": "a2b publishes customs-clearance coordination as a service. The applicable documents, classification, duties and clearance feasibility need case-specific review. I cannot determine the duty or guarantee clearance. Please describe the goods, origin and intended Saudi entry point without uploading sensitive documents here. please email us at sales@a2b.sa to quote you."
+    },
+    {
+      "id": "A07",
+      "intent": "careers",
+      "question": "Can I apply for a truck driver job?",
+      "answer": "Please use the a2b careers page at https://www.a2b.sa/careers. It prepares an email draft; review the email, attach your CV and send it from your email application. This concierge cannot submit an application or confirm receipt."
+    },
+    {
+      "id": "A08",
+      "intent": "vendor_registration",
+      "question": "I own trucks and want to work as a subcontractor.",
+      "answer": "Please use the vendor registration page at https://www.a2b.sa/vendors. Include your company details and the services or vehicle capabilities you can offer. Review and send the prepared email from your email application. Registration does not guarantee an agreement or work allocation."
+    },
+    {
+      "id": "A09",
+      "intent": "services_overview",
+      "question": "ما خدمات النقل التي تقدمونها؟",
+      "answer": "a2b خدمات النقل البري للشركات في المملكة العربية السعودية، إلى جانب دعم التخزين وتنسيق التخليص الجمركي وعمليات سلسلة الإمداد. ما نوع الشحنة، ومن أين ستُنقل وإلى أين، وما الموعد المطلوب؟\nsales@a2b.sa\nارجو ارسال تفاصيل المشروع عالايميل لنتمكن من التسعير لكم"
+    },
+    {
+      "id": "A10",
+      "intent": "commercial_confirmation",
+      "question": "كم سعر نقل شحنة من الرياض إلى الدمام؟",
+      "answer": "sales@a2b.sa\nارجو ارسال تفاصيل المشروع عالايميل لنتمكن من التسعير لكم"
+    },
+    {
+      "id": "A11",
+      "intent": "non_fit",
+      "question": "Can you deliver a personal shopping parcel?",
+      "answer": "a2b’s published focus is commercial and business logistics. Personal shopping parcels and consumer courier deliveries are outside the published scope. This request should not be treated as a business logistics enquiry."
+    },
+    {
+      "id": "A12",
+      "intent": "action_boundary",
+      "question": "Book it now and send my RFQ to the sales team.",
+      "answer": "please email us at sales@a2b.sa to quote you."
+    }
+  ]
+}

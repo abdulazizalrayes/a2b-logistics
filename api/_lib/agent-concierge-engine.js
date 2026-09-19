@@ -12,7 +12,8 @@ const resourceFiles = {
   routing: 'data/agent-routing.json',
   procurement: 'data/procurement-profile.json',
   compliance: 'data/compliance-profile.json',
-  rfq: 'data/rfq-preparation.json'
+  rfq: 'data/rfq-preparation.json',
+  approvedAnswers: 'data/concierge-approved-answers.json'
 };
 
 let knowledgePromise;
@@ -58,6 +59,34 @@ function serviceMatch(query, service) {
   return includesAny(query, terms) || query.includes(service.name.toLowerCase());
 }
 
+function approvedAnswerId(query, knowledge) {
+  const exact = knowledge.approvedAnswers.items.find(item => normalizeQuestion(item.question) === query);
+  if (exact) return exact.id;
+  // Specific intents precede service matching so a vehicle or city cannot hide the request.
+  if (includesAny(query, ['career', 'job', 'employment', 'hiring', 'internship', 'training'])) return 'A07';
+  if (includesAny(query, ['vendor', 'subcontractor', 'supplier', 'partner registration'])) return 'A08';
+  if (includesAny(query, ['personal parcel', 'personal shopping', 'consumer courier', 'food delivery', 'restaurant delivery', 'home moving', 'ride hailing', 'personal shipment', 'last mile consumer'])) return 'A11';
+  if (includesAny(query, ['where is my shipment', 'where is my cargo', 'track my shipment', 'track my cargo', 'track my parcel', 'shipment status', 'shipment update'])) return 'A05';
+  if (/^(?:do you have|are you|is a2b|does a2b have|is your fleet|does your fleet have) (?:an? )?iso (?:certified|certification|certificate)(?: for your fleet)?$/.test(query)) return 'A04';
+  if (/\b(?:book|reserve|send|submit)\b/.test(query) &&
+      includesAny(query, ['rfq', 'quote', 'quotation', 'booking', 'transport', 'truck', 'email', 'sales team'])) return 'A12';
+  if (includesAny(query, ['customs duty', 'customs duties', 'hs code', 'guarantee clearance']) ||
+      (includesAny(query, ['customs', 'clearance']) && includesAny(query, ['duty', 'duties', 'cost', 'price', 'guarantee', 'documents']))) return 'A06';
+  if (/\bdubai\b/.test(query) && /\bonly\b/.test(query) && includesAny(query, ['warehousing', 'warehouse', 'storage']) && !includesAny(query, ['saudi', 'ksa', 'riyadh', 'dammam', 'jeddah'])) return 'A03';
+  if (includesAny(query, ['reefer', 'refrigerated vehicle', 'refrigerated truck']) && includesAny(query, ['tomorrow']) && includesAny(query, ['guarantee', 'available', 'availability', 'can you', 'need'])) return 'A02';
+  if (includesAny(query, ['riyadh']) && includesAny(query, ['dammam']) && /riyadh\s+(?:to|[-–→])\s*dammam/.test(query) && includesAny(query, ['cost', 'price', 'rate', 'quote', 'quotation', 'how much'])) return 'A01';
+  if (/[\u0600-\u06ff]/.test(query)) {
+    const logistics = includesAny(query, ['نقل', 'شحن', 'تخزين', 'جمرك', 'جمركي', 'تخليص', 'مشروع']);
+    if (logistics && includesAny(query, ['سعر', 'تكلفة', 'تسعير', 'عرض', 'بكم'])) return 'A10';
+    if (includesAny(query, ['خدمات', 'تقدمون', 'تقدم', 'توفرون']) && includesAny(query, ['نقل', 'خدمات', 'لوجست'])) return 'A09';
+  }
+  return null;
+}
+
+function normalizeQuestion(value) {
+  return String(value || '').toLowerCase().replace(/\s+/g, ' ').trim().replace(/[?؟.!]+$/, '');
+}
+
 function answerResult({ intent, answer, evidence = [], fit = 'informational', nextStep = null, questions = [], answered = true }) {
   return {
     answered,
@@ -73,8 +102,44 @@ function answerResult({ intent, answer, evidence = [], fit = 'informational', ne
 
 export async function answerAgentQuestion(question) {
   const knowledge = await loadKnowledge();
-  const query = String(question || '').toLowerCase().replace(/\s+/g, ' ').trim();
+  const query = normalizeQuestion(question);
   const { company, services, capabilities, serviceAreas, routing, procurement, compliance, rfq } = knowledge;
+
+  const approvedId = approvedAnswerId(query, knowledge);
+  if (approvedId) {
+    const entry = knowledge.approvedAnswers.items.find(item => item.id === approvedId);
+    const separate = ['A07', 'A08'].includes(approvedId);
+    const fit = separate ? 'separate_flow' : approvedId === 'A11' ? 'not_fit' : ['A04', 'A05', 'A09'].includes(approvedId) ? 'informational' : 'needs_confirmation';
+    const nextStep = separate
+      ? { type: 'public_url', url: `${PUBLIC_BASE}/${approvedId === 'A07' ? 'careers' : 'vendors'}`, approvalRequired: false }
+      : approvedId === 'A11' ? null
+      : approvedId === 'A04' ? { type: 'request_official_documents', approvalRequiredBeforeContact: true }
+      : approvedId === 'A05' ? { type: 'manual_contact', approvalRequiredBeforeContact: true }
+      : { type: 'manual_contact', email: company.contact.salesEmail, approvalRequiredBeforeContact: true };
+    return {
+      ...answerResult({ intent: entry.intent, answer: entry.answer, fit, nextStep, evidence: [`${PUBLIC_BASE}/data/concierge-approved-answers.json`, ...(approvedId === 'A04' ? [`${PUBLIC_BASE}/data/compliance-profile.json`] : [])] }),
+      approvedAnswerId: approvedId,
+      answerVersion: knowledge.approvedAnswers.version
+    };
+  }
+
+  // These questions require confirmation even when they also name a service or city.
+  if (includesAny(query, ['iso', 'certification', 'certified', 'certificate', 'insurance', 'commercial registration', 'cr number', 'vat', 'compliance', 'due diligence'])) {
+    return answerResult({
+      intent: 'compliance',
+      answer: `The published identifiers are Commercial Registration ${compliance.verifiedPublicIdentifiers.commercialRegistration} and VAT ${compliance.verifiedPublicIdentifiers.vat}. a2b has confirmed ISO certification. Specific standards, certificate numbers, validity dates and insurance details require official documents; they must not be inferred.`,
+      evidence: [`${PUBLIC_BASE}/data/compliance-profile.json`],
+      nextStep: { type: 'request_official_documents', approvalRequiredBeforeContact: true }
+    });
+  }
+  if (includesAny(query, ['price', 'pricing', 'cost', 'rate', 'quote', 'quotation', 'capacity', 'available', 'availability', 'lead time', 'sla', 'guarantee'])) {
+    return answerResult({
+      intent: 'commercial_confirmation', fit: 'needs_confirmation',
+      answer: 'a2b does not publish automated prices, live capacity, availability, or service-level commitments. A useful RFQ can be prepared from the service, origin, destination, cargo, timing, frequency, and handling requirements, but a2b must confirm the commercial response. please email us at sales@a2b.sa to quote you.',
+      evidence: [`${PUBLIC_BASE}/data/procurement-profile.json`, `${PUBLIC_BASE}/data/rfq-preparation.json`],
+      nextStep: { type: 'manual_contact', email: company.contact.salesEmail, approvalRequiredBeforeContact: true }
+    });
+  }
 
   const careerRoute = routing.routes.find((route) => route.id === 'careers');
   if (includesAny(query, careerRoute.match.map((term) => term.toLowerCase()))) {
@@ -147,16 +212,6 @@ export async function answerAgentQuestion(question) {
     });
   }
 
-  if (includesAny(query, ['price', 'pricing', 'cost', 'rate', 'quote', 'quotation', 'capacity', 'available', 'availability', 'lead time', 'sla'])) {
-    return answerResult({
-      intent: 'commercial_confirmation',
-      fit: 'needs_confirmation',
-      answer: 'a2b does not publish automated prices, live capacity, availability, or service-level commitments. A useful RFQ can be prepared from the service, origin, destination, cargo, timing, frequency, and handling requirements, but a2b must confirm the commercial response.',
-      evidence: [`${PUBLIC_BASE}/data/procurement-profile.json`, `${PUBLIC_BASE}/data/rfq-preparation.json`],
-      nextStep: { type: 'prepare_rfq', requiredInputs: procurement.buyerInformationNeeded, approvalRequiredBeforeContact: true }
-    });
-  }
-
   if (includesAny(query, ['rfq', 'tender', 'procurement', 'buyer', 'government', 'b2g', 'proposal', 'inquiry', 'enquiry'])) {
     return answerResult({
       intent: 'procurement',
@@ -171,7 +226,7 @@ export async function answerAgentQuestion(question) {
     return answerResult({
       intent: 'compliance',
       fit: 'informational',
-      answer: `The published identifiers are Commercial Registration ${compliance.verifiedPublicIdentifiers.commercialRegistration} and VAT ${compliance.verifiedPublicIdentifiers.vat}. Certifications, insurance, pricing, availability, fleet counts, and contract terms are not published and must not be inferred.`,
+      answer: `The published identifiers are Commercial Registration ${compliance.verifiedPublicIdentifiers.commercialRegistration} and VAT ${compliance.verifiedPublicIdentifiers.vat}. a2b has confirmed ISO certification. Specific certification details, insurance, pricing, availability and contract terms require official confirmation.`,
       evidence: [`${PUBLIC_BASE}/data/compliance-profile.json`],
       nextStep: { type: 'request_official_documents', approvalRequiredBeforeContact: true }
     });

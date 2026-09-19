@@ -186,7 +186,11 @@
                   },
                   "language": {
                     "type": "string",
-                    "const": "en"
+                    "enum": [
+                      "en",
+                      "ar"
+                    ],
+                    "description": "Language hint. Approved Arabic wording covers service and quotation intents; other responses may be English."
                   },
                   "agent": {
                     "type": "string",

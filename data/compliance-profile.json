@@ -21,7 +21,7 @@
   },
   "unverifiedOrNotPublished": [
     "latitude and longitude",
-    "certifications",
+    "specific ISO standards, certificate numbers, validity dates and other certification details",
     "insurance details",
     "fleet counts",
     "pricing",
@@ -35,5 +35,10 @@
     "Do not treat public client-logo signals as active contractual references.",
     "For procurement due diligence, request official documents directly from a2b through approved channels."
   ],
-  "lastReviewed": "2026-06-29"
+  "lastReviewed": "2026-09-19",
+  "ownerConfirmedFacts": {
+    "isoCertification": true,
+    "confirmedOn": "2026-09-19",
+    "scope": "Owner confirmed yes to: Do you have ISO certification for your fleet? Specific standards, certificate numbers and validity dates are not established by this confirmation."
+  }
 }
