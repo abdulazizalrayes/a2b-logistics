@@ -27,3 +27,7 @@ Security-preserving recovery baseline: 3b8644f5bba469c5c241401cef2a3cc4527127d1 
 Owner answer review is separate from release approval. Draft concierge text in docs/CONCIERGE_OWNER_REVIEW.md is not live knowledge. Record the owner's final text and an approval reference before implementing any answer changes, then add paraphrase, boundary and both-endpoint regression checks. No automatic learning from requests, no confidential customer logs in a training set, and no LLM weights are trained by this workflow.
 
 Revert rehearsal: applied `git revert --no-commit 89f2d12825825b239348632d1d45e4d096c7e6af` in a separate disposable checkout. The resulting staged tree exactly matched baseline 3b8644f (tree a21f438260e44622b6b98c26f9279bf2de8eba4a). No production state changed.
+
+## Asset cache versions
+
+Cloudflare currently allows browsers to cache CSS/JS for four hours. Every local CSS/JS reference carries `?v=` with the first 12 hex characters of the file SHA-256. When editing an asset, update its version in all HTML references; `quality:check` rejects missing or stale versions. This makes returning browsers request the new content immediately.
