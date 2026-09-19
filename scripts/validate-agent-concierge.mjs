@@ -1,5 +1,6 @@
 import assert from 'node:assert/strict';
 import conciergeHandler from '../api/agent-concierge.js';
+import { requestBodySize, containsSensitiveInput, redactSensitive } from '../api/_lib/public-api-guard.js';
 import mcpHandler from '../api/mcp.js';
 
 function responseMock() {
@@ -43,6 +44,11 @@ async function request(handler, { method = 'POST', body = {}, headers = {}, ip =
   return res;
 }
 
+assert.ok(requestBodySize({ headers: { 'content-length': '1' }, body: { data: 'x'.repeat(40000) } }) > 32768);
+const syntheticSecret = 'sk-proj-' + 'a'.repeat(30);
+assert.equal(containsSensitiveInput(syntheticSecret), true);
+assert.equal(containsSensitiveInput('Bearer ' + 'b'.repeat(30)), true);
+assert.ok(!redactSensitive(syntheticSecret + ' ' + syntheticSecret).includes(syntheticSecret));
 const loggedEvents = [];
 const originalInfo = console.info;
 console.info = (line) => loggedEvents.push(JSON.parse(line));

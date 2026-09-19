@@ -1,5 +1,6 @@
 import { readFile } from 'node:fs/promises';
 
+import middleware from '../middleware.js';
 const errors = [];
 
 function fail(message) {
@@ -65,6 +66,12 @@ for (const required of [
   if (!globalHeaders.has(required)) fail(`vercel.json: missing ${required} security header`);
 }
 
+const ignored = await readFile('.vercelignore', 'utf8');
+for (const path of ['docs/', 'reports/', 'screenshots/', 'scripts/', 'CLAUDE.md', 'AGENTS.md']) {
+  if (!ignored.split(/\r?\n/).includes(path)) fail(`Private deployment exclusion missing: ${path}`);
+  const response = middleware(new Request(`https://www.a2b.sa/${path.endsWith('/') ? path + 'internal.md' : path}`));
+  if (response?.status !== 404) fail(`Private path is not denied: ${path}`);
+}
 if (errors.length) {
   console.error(errors.join('\n'));
   process.exit(1);

@@ -1,4 +1,10 @@
 .markdown/
-docs/architecture/
 node_modules/
+docs/
 reports/
+screenshots/
+scripts/
+CLAUDE.md
+AGENTS.md
+.github/
+docs/architecture/
