@@ -1,18 +1,138 @@
 {
   "schemaVersion": 1,
-  "policy": "Pending owner review. No entry may be loaded into production or represented as model training. Owner final wording and approval evidence must be recorded before implementation.",
+  "policy": "Only explicitly owner-approved final wording may be published. Preserve approval evidence and regression cases. Future changes require a new owner review. No LLM or automatic model training.",
   "items": [
-    {"id":"A01","question":"How much does trucking from Riyadh to Dammam cost?","issue":"Service keywords override commercial intent.","proposedAnswer":"a2b can review a commercial road-freight requirement from Riyadh to Dammam. Please specify cargo type, weight or dimensions, pickup and delivery locations, timing and shipment frequency. The team must confirm the quotation; I cannot provide or promise a price.","proposedIntent":"commercial_confirmation","status":"pending_owner_review","ownerFinalAnswer":null,"approvalReference":null},
-    {"id":"A02","question":"Can you guarantee a reefer tomorrow?","issue":"Vehicle matching labels an unconfirmed booking as a good fit.","proposedAnswer":"Refrigerated vehicles are listed among a2b’s published fleet types, but I cannot check live availability or guarantee a vehicle for tomorrow. Please provide the route, cargo, required temperature and loading time for the team to confirm suitability and capacity.","proposedIntent":"commercial_confirmation","status":"pending_owner_review","ownerFinalAnswer":null,"approvalReference":null},
-    {"id":"A03","question":"Do you offer warehousing in Dubai only?","issue":"Non-Saudi-only requirement is classified as a good fit.","proposedAnswer":"a2b’s published warehousing scope is connected to logistics operations in Saudi Arabia. A Dubai-only requirement is not confirmed by the available information. Does this work include cargo moving to or from Saudi Arabia?","proposedIntent":"scope_clarification","status":"pending_owner_review","ownerFinalAnswer":null,"approvalReference":null},
-    {"id":"A04","question":"Do you have ISO certification for your fleet?","issue":"Fleet matching overrides document questions; website certification claims and structured-data restrictions differ.","proposedAnswer":"The website mentions ISO management-system certifications. I cannot verify current certificates, validity dates or the scope covering a particular operation. Please request the current official documents from a2b before relying on them for qualification.","proposedIntent":"compliance","status":"pending_owner_review","ownerFinalAnswer":null,"approvalReference":null},
-    {"id":"A05","question":"Where is my shipment?","issue":"Generic fallback does not explain the lack of tracking access.","proposedAnswer":"I do not have access to live shipment records or tracking systems. Please contact your a2b representative through the established private channel for a shipment update. Avoid sharing personal details or shipment documents in this public concierge.","proposedIntent":"shipment_tracking","status":"pending_owner_review","ownerFinalAnswer":null,"approvalReference":null},
-    {"id":"A06","question":"Can you clear these goods and tell me the customs duty?","issue":"Generic customs answer could obscure case-specific requirements.","proposedAnswer":"a2b publishes customs-clearance coordination as a service. The applicable documents, classification, duties and clearance feasibility need case-specific review. I cannot determine the duty or guarantee clearance. Please describe the goods, origin and intended Saudi entry point without uploading sensitive documents here.","proposedIntent":"customs_confirmation","status":"pending_owner_review","ownerFinalAnswer":null,"approvalReference":null},
-    {"id":"A07","question":"Can I apply for a truck driver job?","issue":"Existing routing works; review the wording and email-draft expectation.","proposedAnswer":"Please use the a2b careers page at https://www.a2b.sa/careers. It prepares an email draft; review the email, attach your CV and send it from your email application. This concierge cannot submit an application or confirm receipt.","proposedIntent":"careers","status":"pending_owner_review","ownerFinalAnswer":null,"approvalReference":null},
-    {"id":"A08","question":"I own trucks and want to work as a subcontractor.","issue":"Keep vendor registration separate from buyer enquiries.","proposedAnswer":"Please use the vendor registration page at https://www.a2b.sa/vendors. Include your company details and the services or vehicle capabilities you can offer. Review and send the prepared email from your email application. Registration does not guarantee an agreement or work allocation.","proposedIntent":"vendor_registration","status":"pending_owner_review","ownerFinalAnswer":null,"approvalReference":null},
-    {"id":"A09","question":"ما خدمات النقل التي تقدمونها؟","issue":"Arabic service question is currently unanswered.","proposedAnswer":"تقدم a2b خدمات النقل البري للشركات في المملكة العربية السعودية، إلى جانب دعم التخزين وتنسيق التخليص الجمركي وعمليات سلسلة الإمداد. ما نوع الشحنة، ومن أين ستُنقل وإلى أين، وما الموعد المطلوب؟ يؤكد فريق a2b السعر وتوفر المركبات والمدة بعد مراجعة المتطلبات.","proposedIntent":"services_overview","status":"pending_owner_review","ownerFinalAnswer":null,"approvalReference":null},
-    {"id":"A10","question":"كم سعر نقل شحنة من الرياض إلى الدمام؟","issue":"Arabic quotation request needs an explicit commercial boundary.","proposedAnswer":"يحتاج فريق a2b إلى معرفة نوع الشحنة ووزنها أو أبعادها وموقعي التحميل والتسليم والموعد المطلوب لإعداد عرض سعر. لا أستطيع تحديد سعر أو تأكيد توفر المركبة؛ يؤكد الفريق ذلك بعد مراجعة طلبك.","proposedIntent":"commercial_confirmation","status":"pending_owner_review","ownerFinalAnswer":null,"approvalReference":null},
-    {"id":"A11","question":"Can you deliver a personal shopping parcel?","issue":"Maintain a clear consumer-delivery boundary.","proposedAnswer":"a2b’s published focus is commercial and business logistics. Personal shopping parcels and consumer courier deliveries are outside the published scope. This request should not be treated as a business logistics enquiry.","proposedIntent":"non_fit","status":"pending_owner_review","ownerFinalAnswer":null,"approvalReference":null},
-    {"id":"A12","question":"Book it now and send my RFQ to the sales team.","issue":"Explicit action refusal and user-controlled handoff.","proposedAnswer":"I can help organize the information for an RFQ, but I cannot book transport, send an email, submit a form or commit a2b to commercial terms. You must review the prepared brief and send it yourself through an approved contact channel.","proposedIntent":"action_boundary","status":"pending_owner_review","ownerFinalAnswer":null,"approvalReference":null}
+    {
+      "id": "A01",
+      "question": "How much does trucking from Riyadh to Dammam cost?",
+      "issue": "Service keywords override commercial intent.",
+      "proposedAnswer": "a2b can review a commercial road-freight requirement from Riyadh to Dammam. Please specify cargo type, weight or dimensions, pickup and delivery locations, timing and shipment frequency. The team must confirm the quotation; I cannot provide or promise a price.",
+      "proposedIntent": "commercial_confirmation",
+      "status": "approved",
+      "ownerFinalAnswer": "a2b can review a commercial road-freight requirement from Riyadh to Dammam. Please specify cargo type, weight or dimensions, pickup and delivery locations, timing and shipment frequency. The team must confirm the quotation; I cannot provide or promise a price. please email us at sales@a2b.sa to quote you.",
+      "approvalReference": "Owner message in Codex task 01a095fc-3dc7-7fd2-83db-e599f5751f2c, 2026-09-19: explicit answers A01–A12.",
+      "approvedAt": "2026-09-19"
+    },
+    {
+      "id": "A02",
+      "question": "Can you guarantee a reefer tomorrow?",
+      "issue": "Vehicle matching labels an unconfirmed booking as a good fit.",
+      "proposedAnswer": "Refrigerated vehicles are listed among a2b’s published fleet types, but I cannot check live availability or guarantee a vehicle for tomorrow. Please provide the route, cargo, required temperature and loading time for the team to confirm suitability and capacity.",
+      "proposedIntent": "commercial_confirmation",
+      "status": "approved",
+      "ownerFinalAnswer": "Refrigerated vehicles are listed among a2b’s published fleet types, but I cannot check live availability or guarantee a vehicle for tomorrow. Please provide the route, cargo, required temperature and loading time for the team to confirm suitability and capacity. please email us at sales@a2b.sa to quote you.",
+      "approvalReference": "Owner message in Codex task 01a095fc-3dc7-7fd2-83db-e599f5751f2c, 2026-09-19: explicit answers A01–A12.",
+      "approvedAt": "2026-09-19"
+    },
+    {
+      "id": "A03",
+      "question": "Do you offer warehousing in Dubai only?",
+      "issue": "Non-Saudi-only requirement is classified as a good fit.",
+      "proposedAnswer": "a2b’s published warehousing scope is connected to logistics operations in Saudi Arabia. A Dubai-only requirement is not confirmed by the available information. Does this work include cargo moving to or from Saudi Arabia?",
+      "proposedIntent": "scope_clarification",
+      "status": "approved",
+      "ownerFinalAnswer": "a2b’s published warehousing scope is connected to logistics operations in Saudi Arabia. A Dubai-only requirement is not confirmed by the available information. Does this work include cargo moving to or from Saudi Arabia? please email us at sales@a2b.sa to quote you.",
+      "approvalReference": "Owner message in Codex task 01a095fc-3dc7-7fd2-83db-e599f5751f2c, 2026-09-19: explicit answers A01–A12.",
+      "approvedAt": "2026-09-19"
+    },
+    {
+      "id": "A04",
+      "question": "Do you have ISO certification for your fleet?",
+      "issue": "Fleet matching overrides document questions; website certification claims and structured-data restrictions differ.",
+      "proposedAnswer": "The website mentions ISO management-system certifications. I cannot verify current certificates, validity dates or the scope covering a particular operation. Please request the current official documents from a2b before relying on them for qualification.",
+      "proposedIntent": "compliance",
+      "status": "approved",
+      "ownerFinalAnswer": "yes we do.",
+      "approvalReference": "Owner message in Codex task 01a095fc-3dc7-7fd2-83db-e599f5751f2c, 2026-09-19: explicit answers A01–A12.",
+      "approvedAt": "2026-09-19"
+    },
+    {
+      "id": "A05",
+      "question": "Where is my shipment?",
+      "issue": "Generic fallback does not explain the lack of tracking access.",
+      "proposedAnswer": "I do not have access to live shipment records or tracking systems. Please contact your a2b representative through the established private channel for a shipment update. Avoid sharing personal details or shipment documents in this public concierge.",
+      "proposedIntent": "shipment_tracking",
+      "status": "approved",
+      "ownerFinalAnswer": "I do not have access to live shipment records or tracking systems. Please contact your a2b representative through the established private channel for a shipment update. Avoid sharing personal details or shipment documents in this public concierge.",
+      "approvalReference": "Owner message in Codex task 01a095fc-3dc7-7fd2-83db-e599f5751f2c, 2026-09-19: explicit answers A01–A12.",
+      "approvedAt": "2026-09-19"
+    },
+    {
+      "id": "A06",
+      "question": "Can you clear these goods and tell me the customs duty?",
+      "issue": "Generic customs answer could obscure case-specific requirements.",
+      "proposedAnswer": "a2b publishes customs-clearance coordination as a service. The applicable documents, classification, duties and clearance feasibility need case-specific review. I cannot determine the duty or guarantee clearance. Please describe the goods, origin and intended Saudi entry point without uploading sensitive documents here.",
+      "proposedIntent": "customs_confirmation",
+      "status": "approved",
+      "ownerFinalAnswer": "a2b publishes customs-clearance coordination as a service. The applicable documents, classification, duties and clearance feasibility need case-specific review. I cannot determine the duty or guarantee clearance. Please describe the goods, origin and intended Saudi entry point without uploading sensitive documents here. please email us at sales@a2b.sa to quote you.",
+      "approvalReference": "Owner message in Codex task 01a095fc-3dc7-7fd2-83db-e599f5751f2c, 2026-09-19: explicit answers A01–A12.",
+      "approvedAt": "2026-09-19"
+    },
+    {
+      "id": "A07",
+      "question": "Can I apply for a truck driver job?",
+      "issue": "Existing routing works; review the wording and email-draft expectation.",
+      "proposedAnswer": "Please use the a2b careers page at https://www.a2b.sa/careers. It prepares an email draft; review the email, attach your CV and send it from your email application. This concierge cannot submit an application or confirm receipt.",
+      "proposedIntent": "careers",
+      "status": "approved",
+      "ownerFinalAnswer": "Please use the a2b careers page at https://www.a2b.sa/careers. It prepares an email draft; review the email, attach your CV and send it from your email application. This concierge cannot submit an application or confirm receipt.",
+      "approvalReference": "Owner message in Codex task 01a095fc-3dc7-7fd2-83db-e599f5751f2c, 2026-09-19: explicit answers A01–A12.",
+      "approvedAt": "2026-09-19"
+    },
+    {
+      "id": "A08",
+      "question": "I own trucks and want to work as a subcontractor.",
+      "issue": "Keep vendor registration separate from buyer enquiries.",
+      "proposedAnswer": "Please use the vendor registration page at https://www.a2b.sa/vendors. Include your company details and the services or vehicle capabilities you can offer. Review and send the prepared email from your email application. Registration does not guarantee an agreement or work allocation.",
+      "proposedIntent": "vendor_registration",
+      "status": "approved",
+      "ownerFinalAnswer": "Please use the vendor registration page at https://www.a2b.sa/vendors. Include your company details and the services or vehicle capabilities you can offer. Review and send the prepared email from your email application. Registration does not guarantee an agreement or work allocation.",
+      "approvalReference": "Owner message in Codex task 01a095fc-3dc7-7fd2-83db-e599f5751f2c, 2026-09-19: explicit answers A01–A12.",
+      "approvedAt": "2026-09-19"
+    },
+    {
+      "id": "A09",
+      "question": "ما خدمات النقل التي تقدمونها؟",
+      "issue": "Arabic service question is currently unanswered.",
+      "proposedAnswer": "تقدم a2b خدمات النقل البري للشركات في المملكة العربية السعودية، إلى جانب دعم التخزين وتنسيق التخليص الجمركي وعمليات سلسلة الإمداد. ما نوع الشحنة، ومن أين ستُنقل وإلى أين، وما الموعد المطلوب؟ يؤكد فريق a2b السعر وتوفر المركبات والمدة بعد مراجعة المتطلبات.",
+      "proposedIntent": "services_overview",
+      "status": "approved",
+      "ownerFinalAnswer": "a2b خدمات النقل البري للشركات في المملكة العربية السعودية، إلى جانب دعم التخزين وتنسيق التخليص الجمركي وعمليات سلسلة الإمداد. ما نوع الشحنة، ومن أين ستُنقل وإلى أين، وما الموعد المطلوب؟\nsales@a2b.sa\nارجو ارسال تفاصيل المشروع عالايميل لنتمكن من التسعير لكم",
+      "approvalReference": "Owner message in Codex task 01a095fc-3dc7-7fd2-83db-e599f5751f2c, 2026-09-19: explicit answers A01–A12.",
+      "approvedAt": "2026-09-19"
+    },
+    {
+      "id": "A10",
+      "question": "كم سعر نقل شحنة من الرياض إلى الدمام؟",
+      "issue": "Arabic quotation request needs an explicit commercial boundary.",
+      "proposedAnswer": "يحتاج فريق a2b إلى معرفة نوع الشحنة ووزنها أو أبعادها وموقعي التحميل والتسليم والموعد المطلوب لإعداد عرض سعر. لا أستطيع تحديد سعر أو تأكيد توفر المركبة؛ يؤكد الفريق ذلك بعد مراجعة طلبك.",
+      "proposedIntent": "commercial_confirmation",
+      "status": "approved",
+      "ownerFinalAnswer": "sales@a2b.sa\nارجو ارسال تفاصيل المشروع عالايميل لنتمكن من التسعير لكم",
+      "approvalReference": "Owner message in Codex task 01a095fc-3dc7-7fd2-83db-e599f5751f2c, 2026-09-19: explicit answers A01–A12.",
+      "approvedAt": "2026-09-19"
+    },
+    {
+      "id": "A11",
+      "question": "Can you deliver a personal shopping parcel?",
+      "issue": "Maintain a clear consumer-delivery boundary.",
+      "proposedAnswer": "a2b’s published focus is commercial and business logistics. Personal shopping parcels and consumer courier deliveries are outside the published scope. This request should not be treated as a business logistics enquiry.",
+      "proposedIntent": "non_fit",
+      "status": "approved",
+      "ownerFinalAnswer": "a2b’s published focus is commercial and business logistics. Personal shopping parcels and consumer courier deliveries are outside the published scope. This request should not be treated as a business logistics enquiry.",
+      "approvalReference": "Owner message in Codex task 01a095fc-3dc7-7fd2-83db-e599f5751f2c, 2026-09-19: explicit answers A01–A12.",
+      "approvedAt": "2026-09-19"
+    },
+    {
+      "id": "A12",
+      "question": "Book it now and send my RFQ to the sales team.",
+      "issue": "Explicit action refusal and user-controlled handoff.",
+      "proposedAnswer": "I can help organize the information for an RFQ, but I cannot book transport, send an email, submit a form or commit a2b to commercial terms. You must review the prepared brief and send it yourself through an approved contact channel.",
+      "proposedIntent": "action_boundary",
+      "status": "approved",
+      "ownerFinalAnswer": "please email us at sales@a2b.sa to quote you.",
+      "approvalReference": "Owner message in Codex task 01a095fc-3dc7-7fd2-83db-e599f5751f2c, 2026-09-19: explicit answers A01–A12.",
+      "approvedAt": "2026-09-19"
+    }
   ]
 }

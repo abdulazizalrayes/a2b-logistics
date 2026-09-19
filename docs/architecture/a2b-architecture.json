@@ -5,7 +5,7 @@
     "id": "a2b-logistics-architecture",
     "title": "a2b Logistics Website Architecture",
     "purpose": "Human and agent-readable map of the a2b website, its public agent interfaces, deployment path, external dependencies, controls, and change procedures.",
-    "generatedAt": "2026-09-19T13:24:21.959547+00:00",
+    "generatedAt": "2026-09-19T15:45:00Z",
     "sourceCommitAudited": "1214d0b59f9ba734cf9ea79134e548690d620dc7",
     "scope": "a2b only",
     "confidentiality": "Repository-internal. Excluded from Vercel deployment.",
@@ -78,7 +78,7 @@
       ],
       "qualityGate": "npm run quality:check covers 65 pages, local links/assets, labels, image dimensions and script syntax.",
       "releaseVerification": "Production workflow waits for Vercel success, compares all 65 canonical HTML responses against the checked-out source, checks private URL denials and runs seven health probes. Cancel obsolete runs; failures alert through GitHub Actions settings.",
-      "conciergeReview": "12 synthetic owner-review cases under scripts/fixtures; drafts and final-wording evidence remain outside runtime. No LLM or automatic training."
+      "conciergeReview": "12 owner-approved answers in data/concierge-approved-answers.json. Private approval evidence and original proposals remain under scripts/fixtures. Future changes require explicit owner final wording, version updates, endpoint/paraphrase/boundary tests and verified release. No LLM or automatic training."
     },
     "contentPolicy": {
       "visualFreeze": true,
@@ -689,7 +689,10 @@
         "data/agent-concierge.json",
         "scripts/validate-agent-concierge.mjs",
         "scripts/agent-concierge-report.mjs",
-        "api/_lib/concierge-observation.js"
+        "api/_lib/concierge-observation.js",
+        "data/concierge-approved-answers.json",
+        "scripts/test-approved-concierge-answers.mjs",
+        "scripts/fixtures/concierge-review.json"
       ],
       "routes": [
         "POST /api/agent-concierge",
@@ -698,7 +701,7 @@
       "interfaces": [
         "strict application/json",
         "32 KB body limit",
-        "English agent response",
+        "English responses and owner-approved Arabic service/quotation responses",
         "CORS",
         "X-Request-Id",
         "Retry-After"
@@ -712,7 +715,8 @@
         "No paid AI call, database, private tools, environment-secret read, outbound message, or commercial authority.",
         "Answered question content is not logged. New unanswered questions are logged once after redaction.",
         "Application controls remain effective on the origin, with a verified Cloudflare shared edge counter protecting both public agent API paths.",
-        "Direct concierge and MCP ask_agent_concierge share privacy-preserving event logging; duplicate suppression remains process-local. Request identifiers are server-generated."
+        "Direct concierge and MCP ask_agent_concierge share privacy-preserving event logging; duplicate suppression remains process-local. Request identifiers are server-generated.",
+        "Owner confirmed ISO certification generally on 2026-09-19. Specific standards, certificate identifiers and validity are not inferred. Commercial, tracking and action intents precede generic service matches; Arabic pricing and service answers use exact approved wording."
       ]
     },
     {

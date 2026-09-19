@@ -2,7 +2,7 @@
   "$schema": "https://www.a2b.sa/data/agent-concierge.schema.json",
   "name": "a2b Agent Concierge",
   "company": "a2b Logistics Company",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "status": "agent_only_pilot",
   "endpoint": "https://www.a2b.sa/api/agent-concierge",
   "audience": "AI agents and procurement assistants evaluating Saudi Arabia B2B logistics requirements",
@@ -37,9 +37,13 @@
       "language",
       "agent"
     ],
-    "acceptedLanguage": "en",
+    "acceptedLanguage": [
+      "en",
+      "ar"
+    ],
     "personalDataAccepted": false,
-    "credentialsAccepted": false
+    "credentialsAccepted": false,
+    "responseLanguagePolicy": "Question intent selects the owner-approved wording. Arabic service and quotation answers are available; other intents retain approved English wording."
   },
   "telemetryPolicy": {
     "answeredQuestions": "Log event metadata and a normalized fingerprint only. Do not log question content.",
@@ -49,5 +53,6 @@
   },
   "commercialBoundary": "The concierge can explain, classify, and prepare. Pricing, capacity, availability, lead times, and contractual terms require confirmation by a2b.",
   "contentSignal": "search=yes, ai-input=yes, ai-train=no",
-  "lastReviewed": "2026-08-31"
+  "lastReviewed": "2026-09-19",
+  "approvedAnswers": "https://www.a2b.sa/data/concierge-approved-answers.json"
 }

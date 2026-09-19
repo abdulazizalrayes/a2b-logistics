@@ -84,8 +84,8 @@ export default async function handler(req, res) {
     return;
   }
 
-  if (body.language !== undefined && !['en'].includes(body.language)) {
-    json(res, 400, { error: 'The pilot currently returns English agent responses only.', requestId });
+  if (body.language !== undefined && !['en', 'ar'].includes(body.language)) {
+    json(res, 400, { error: 'Supported language hints are en and ar; approved Arabic answers are available for service and quotation questions.', requestId });
     return;
   }
 
@@ -114,7 +114,7 @@ export default async function handler(req, res) {
       duplicate,
       requestId,
       service: 'a2b-agent-concierge',
-      version: '1.0.0',
+      version: '1.1.0',
       privacy: 'No personal data, credentials, or secrets are accepted. No question content is logged for answered requests. Unanswered questions are logged only after redaction for owner knowledge review.'
     });
   } catch {

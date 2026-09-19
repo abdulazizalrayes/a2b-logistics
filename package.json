@@ -27,7 +27,8 @@
     "quality:check": "node scripts/verify-experience-quality.mjs && node scripts/test-form-drafts.mjs",
     "release:verify": "node scripts/verify-live-release.mjs",
     "agent:answers:review": "node scripts/review-concierge-answers.mjs --write",
-    "agent:answers:check": "node scripts/review-concierge-answers.mjs"
+    "agent:answers:check": "node scripts/review-concierge-answers.mjs",
+    "agent:answers:test": "node scripts/test-approved-concierge-answers.mjs"
   },
   "devDependencies": {
     "parse5": "^8.0.1"
