@@ -482,8 +482,10 @@
     return LANGS.some(function (item) { return item.code === lang; }) ? lang : null;
   }
 
+  function readSavedLanguage() { try { return localStorage.getItem('a2b_lang'); } catch (_) { return null; } }
+
   function getCurrentLanguage() {
-    return languageFromUrl() || document.documentElement.getAttribute('data-default-lang') || localStorage.getItem('a2b_lang') || 'en';
+    return languageFromUrl() || document.documentElement.getAttribute('data-default-lang') || readSavedLanguage() || 'en';
   }
 
   function languageUrl(code, hash) {
@@ -632,13 +634,15 @@
     document.documentElement.dir = dir;
     document.body.classList.toggle('ar', lang === 'ar');
     document.body.classList.toggle('is-localized', lang !== 'en');
-    localStorage.setItem('a2b_lang', lang);
+    try { localStorage.setItem('a2b_lang', lang); } catch (_) { /* Preferences are optional. */ }
     document.querySelectorAll('#languageSelect, #mobileLanguageSelect').forEach(function (select) {
       select.value = lang;
     });
-    translateTextNodes(lang);
-    translateAttributes(lang);
-    updateMeta(lang);
+    if (document.documentElement.getAttribute('data-static-i18n') !== 'true') {
+      translateTextNodes(lang);
+      translateAttributes(lang);
+      updateMeta(lang);
+    }
     updateAlternateLinks(lang);
     updateInternalLinks(lang);
     if (updateUrl) window.history.replaceState({}, '', languageUrl(lang, window.location.hash));

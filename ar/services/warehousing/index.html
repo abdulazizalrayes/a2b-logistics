@@ -88,14 +88,13 @@
   ]
 }
 </script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap">
 <link rel="stylesheet" href="/assets/css/index.css">
 <link rel="stylesheet" href="/assets/css/service.css">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-909SV0D9FM"></script>
 <script src="/assets/js/analytics.js"></script>
 <script src="/assets/js/home.js" defer></script>
+<link rel="stylesheet" href="/assets/css/accessibility.css">
+<script src="/assets/js/accessibility.js" defer></script>
 </head>
 <body>
 <nav id="navbar">
@@ -111,11 +110,13 @@
     <a href="tel:+966553846446" class="nav-phone">M +966 55 384 6446</a>
     <a href="/ar#contact" class="btn-nav">تواصل معنا</a>
   </div>
-  <button class="hamburger" aria-label="Menu"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#333" stroke-width="2.5"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+  <button class="hamburger" aria-label="القائمة" aria-controls="mobileMenu" aria-expanded="false"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#333" stroke-width="2.5"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
 </nav>
 <div class="mobile-menu" id="mobileMenu">
   <a href="/ar#about">من نحن</a><a href="/ar#services">الخدمات</a><a href="/ar/fleet">الأسطول</a><a href="/ar#coverage">التغطية</a><a href="/ar#clients">عملاؤنا</a><a href="/ar/careers">الوظائف</a><a href="/ar/vendors">الموردون</a><a href="tel:+966553846446">M +966 55 384 6446</a><a href="/ar#contact" class="mobile-accent-link">تواصل معنا</a>
 </div>
+<a class="skip-link" href="#main-content">انتقل إلى المحتوى</a>
+<main id="main-content" tabindex="-1">
 <section class="service-hero">
   <div class="service-hero-inner">
     <div>
@@ -154,6 +155,7 @@
   <p>شارك متطلبات التخزين والتجهيز والإرسال والمسارات، وسيتم توجيه طلبك إلى الجهة المناسبة.</p>
   <a href="/ar#contact" class="btn-white">تواصل معنا</a>
 </div>
+</main>
 <footer>
   <div class="footer-brand-row"><p>&copy; 2026 a2b Logistics Company &nbsp;&middot;&nbsp; CR 1009007094 &nbsp;&middot;&nbsp; VAT 310317517800003</p></div>
   <div class="footer-links"><a href="/privacy-policy">سياسة الخصوصية</a><a href="/terms-and-conditions">الشروط والأحكام</a><a href="/index.md">Markdown</a><a href="/llms.txt">llms.txt</a></div>

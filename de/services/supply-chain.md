@@ -39,6 +39,8 @@ robots: "noindex, follow"
 
 ## Main Content
 
+[Zum Inhalt springen](#main-content)
+
 a2b Logistics Dienstleistungen
 
 # Supply-Chain-Logistikunterstützung in Saudi-Arabien

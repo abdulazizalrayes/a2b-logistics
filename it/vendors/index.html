@@ -72,7 +72,9 @@
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-909SV0D9FM"></script>
 <script src="/assets/js/analytics.js"></script>
 <script src="/assets/js/i18n.js" defer=""></script>
-<link rel="alternate" hreflang="en" href="https://www.a2b.sa/vendors"><link rel="alternate" hreflang="ar" href="https://www.a2b.sa/ar/vendors"><link rel="alternate" hreflang="de" href="https://www.a2b.sa/de/vendors"><link rel="alternate" hreflang="it" href="https://www.a2b.sa/it/vendors"><link rel="alternate" hreflang="es" href="https://www.a2b.sa/es/vendors"><link rel="alternate" hreflang="fr" href="https://www.a2b.sa/fr/vendors"><link rel="alternate" hreflang="zh-Hans" href="https://www.a2b.sa/zh-Hans/vendors"><link rel="alternate" hreflang="x-default" href="https://www.a2b.sa/vendors"></head>
+<link rel="alternate" hreflang="en" href="https://www.a2b.sa/vendors"><link rel="alternate" hreflang="ar" href="https://www.a2b.sa/ar/vendors"><link rel="alternate" hreflang="de" href="https://www.a2b.sa/de/vendors"><link rel="alternate" hreflang="it" href="https://www.a2b.sa/it/vendors"><link rel="alternate" hreflang="es" href="https://www.a2b.sa/es/vendors"><link rel="alternate" hreflang="fr" href="https://www.a2b.sa/fr/vendors"><link rel="alternate" hreflang="zh-Hans" href="https://www.a2b.sa/zh-Hans/vendors"><link rel="alternate" hreflang="x-default" href="https://www.a2b.sa/vendors"><link rel="stylesheet" href="/assets/css/accessibility.css">
+<script src="/assets/js/accessibility.js" defer></script>
+</head>
 <body class="is-localized">
 
 <nav id="navbar">
@@ -93,10 +95,10 @@
     <a href="tel:+966553846446" class="nav-phone">
       <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#E8192C" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 01.22 2.18 2 2 0 012.18 0h3a2 2 0 012 1.72c.127.96.362 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.18 6.18l1.27-.52a2 2 0 012.11.45c.907.338 1.85.573 2.81.7A2 2 0 0122 16.92z"></path></svg>
       M +966 55 384 6446
-    </a><select id="languageSelect" class="lang-toggle" aria-label="Language"><option value="en" aria-label="English">EN</option><option value="ar" aria-label="العربية">AR</option><option value="de" aria-label="Deutsch">DE</option><option value="it" aria-label="Italiano">IT</option><option value="es" aria-label="Español">ES</option><option value="fr" aria-label="Français">FR</option><option value="zh-Hans" aria-label="简体中文">中文</option></select>
+    </a><select id="languageSelect" class="lang-toggle" aria-label="Lingua"><option value="en" aria-label="English">EN</option><option value="ar" aria-label="العربية">AR</option><option value="de" aria-label="Deutsch">DE</option><option value="it" aria-label="Italiano">IT</option><option value="es" aria-label="Español">ES</option><option value="fr" aria-label="Français">FR</option><option value="zh-Hans" aria-label="简体中文">中文</option></select>
     <a href="/it#contact" class="btn-nav">Contattaci</a>
   </div>
-  <button class="hamburger" aria-label="Menu">
+  <button class="hamburger" aria-label="Menu" aria-controls="mobileMenu" aria-expanded="false">
     <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#333" stroke-width="2.5"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
   </button>
 </nav>
@@ -111,12 +113,14 @@
   <a href="/it/vendors" class="mobile-current-link">Fornitori</a>
   <a href="tel:+966553846446">M +966 55 384 6446</a>
   <a href="/it#contact" class="mobile-accent-link">Contattaci</a>
-<select id="mobileLanguageSelect" class="mobile-language-select" aria-label="Language"><option value="en" aria-label="English">EN</option><option value="ar" aria-label="العربية">AR</option><option value="de" aria-label="Deutsch">DE</option><option value="it" aria-label="Italiano">IT</option><option value="es" aria-label="Español">ES</option><option value="fr" aria-label="Français">FR</option><option value="zh-Hans" aria-label="简体中文">中文</option></select></div>
+<select id="mobileLanguageSelect" class="mobile-language-select" aria-label="Lingua"><option value="en" aria-label="English">EN</option><option value="ar" aria-label="العربية">AR</option><option value="de" aria-label="Deutsch">DE</option><option value="it" aria-label="Italiano">IT</option><option value="es" aria-label="Español">ES</option><option value="fr" aria-label="Français">FR</option><option value="zh-Hans" aria-label="简体中文">中文</option></select></div>
+<a class="skip-link" href="#main-content">Vai al contenuto</a>
+<main id="main-content" tabindex="-1">
 
 <section class="hero">
   <div class="hero-inner">
     <span class="page-label">Lavora con noi</span>
-    <h1>Become an a2b<br>fornitore registrato</h1>
+    <h1>Diventa un fornitore<br>registrato di a2b</h1>
     <p>Collaboriamo con una rete selezionata di fornitori e subappaltatori di alta qualità. Se la tua azienda soddisfa i nostri standard, vogliamo conoscerti.</p>
   </div>
 </section>
@@ -133,43 +137,43 @@
 
         <div class="form-row">
           <div class="form-group">
-            <label>Ragione sociale<span class="required">*</span></label>
-            <input type="text" name="company_name" placeholder="Registered company name" required="">
+            <label for="field-company_name">Ragione sociale<span class="required">*</span></label>
+            <input type="text" name="company_name" placeholder="Ragione sociale registrata" required="" id="field-company_name">
           </div>
           <div class="form-group">
-            <label>Numero registro commerciale (CR)<span class="required">*</span></label>
-            <input type="text" name="cr_number" placeholder="10-digit CR number" required="">
+            <label for="field-cr_number">Numero registro commerciale (CR)<span class="required">*</span></label>
+            <input type="text" name="cr_number" placeholder="Numero CR di 10 cifre" required="" id="field-cr_number">
           </div>
         </div>
         <div class="form-row">
           <div class="form-group">
-            <label>Partita IVA</label>
-            <input type="text" name="vat_number" placeholder="15-digit VAT number">
+            <label for="field-vat_number">Partita IVA</label>
+            <input type="text" name="vat_number" placeholder="Numero IVA di 15 cifre" id="field-vat_number">
           </div>
           <div class="form-group">
-            <label>Anni di attività<span class="required">*</span></label>
-            <select name="years_operation" required="">
+            <label for="field-years_operation">Anni di attività<span class="required">*</span></label>
+            <select name="years_operation" required="" id="field-years_operation">
               <option value="" disabled="" selected="">Seleziona intervallo</option>
-              <option>Less than 1 year</option>
-              <option>1 to 2 years</option>
-              <option>2 to 5 years</option>
-              <option>5 to 10 years</option>
-              <option>10+ years</option>
+              <option>Meno di 1 anno</option>
+              <option>Da 1 a 2 anni</option>
+              <option>Da 2 a 5 anni</option>
+              <option>Da 5 a 10 anni</option>
+              <option>Oltre 10 anni</option>
             </select>
           </div>
         </div>
         <div class="form-group">
-          <label>Categoria fornitore<span class="required">*</span></label>
-          <select name="vendor_category" required="">
-            <option value="" disabled="" selected="">Select primary category</option>
-            <option>Transportation and Trucking</option>
-            <option>Warehousing and Storage</option>
-            <option>Customs and Clearance</option>
-            <option>Freight and Forwarding</option>
-            <option>Maintenance and Repair</option>
-            <option>Technology and Software</option>
-            <option>Fuel and Consumables</option>
-            <option>Other</option>
+          <label for="field-vendor_category">Categoria fornitore<span class="required">*</span></label>
+          <select name="vendor_category" required="" id="field-vendor_category">
+            <option value="" disabled="" selected="">Seleziona la categoria principale</option>
+            <option>Trasporto e autotrasporto</option>
+            <option>Magazzinaggio e deposito</option>
+            <option>Dogana e sdoganamento</option>
+            <option>Trasporto merci e spedizioni</option>
+            <option>Manutenzione e riparazione</option>
+            <option>Tecnologia e software</option>
+            <option>Carburante e materiali di consumo</option>
+            <option>Altro</option>
           </select>
         </div>
 
@@ -178,22 +182,22 @@
 
         <div class="form-row">
           <div class="form-group">
-            <label>Nome completo<span class="required">*</span></label>
-            <input type="text" name="contact_name" placeholder="Contact person's name" required="">
+            <label for="field-contact_name">Nome completo<span class="required">*</span></label>
+            <input type="text" name="contact_name" placeholder="Nome del referente" required="" id="field-contact_name" autocomplete="name">
           </div>
           <div class="form-group">
-            <label>Qualifica</label>
-            <input type="text" name="contact_title" placeholder="e.g. General Manager, Sales Director">
+            <label for="field-contact_title">Qualifica</label>
+            <input type="text" name="contact_title" placeholder="Es. direttore generale, direttore commerciale" id="field-contact_title">
           </div>
         </div>
         <div class="form-row">
           <div class="form-group">
-            <label>Indirizzo email<span class="required">*</span></label>
-            <input type="email" name="email" placeholder="company@domain.com" required="">
+            <label for="field-email">Indirizzo email<span class="required">*</span></label>
+            <input type="email" name="email" placeholder="company@domain.com" required="" id="field-email" autocomplete="email">
           </div>
           <div class="form-group">
-            <label>Numero di telefono<span class="required">*</span></label>
-            <input type="tel" name="phone" placeholder="+966 5X XXX XXXX" required="">
+            <label for="field-phone">Numero di telefono<span class="required">*</span></label>
+            <input type="tel" name="phone" placeholder="+966 5X XXX XXXX" required="" id="field-phone" autocomplete="tel">
           </div>
         </div>
 
@@ -201,20 +205,21 @@
         <h3 class="section-heading">Servizi e capacità</h3>
 
         <div class="form-group">
-          <label>Describe Your Services and Capabilities <span class="required">*</span></label>
-          <textarea name="services" placeholder="Describe what your company does, your fleet or facility details, and any relevant certifications or licenses..." required=""></textarea>
+          <label for="field-services">Descrivi i tuoi servizi e le tue capacità <span class="required">*</span></label>
+          <textarea name="services" placeholder="Descrivi le attività, la flotta o le strutture della tua azienda e le certificazioni o licenze pertinenti." required="" id="field-services"></textarea>
         </div>
 
-        <p class="privacy-note">By submitting this form, you agree to our <a href="/privacy-policy">Informativa privacy</a>. Submission does not guarantee a vendor agreement or any business commitment from a2b Logistics Company.</p>
+        <p class="privacy-note">Inviando questo modulo, accetti la nostra <a href="/privacy-policy">Informativa privacy</a>. L’invio non garantisce un accordo di fornitura né alcun impegno commerciale da parte di a2b Logistics Company.</p>
         <button type="submit" class="btn-submit">Invia richiesta fornitore</button>
       </form>
-      <div class="success-msg" id="successMsg">
-        Thank you for registering your interest. Our procurement team will review your submission and contact you if there is a suitable opportunity. We appreciate your interest in working with a2b Logistics.
+      <div class="success-msg" id="successMsg" role="status" tabindex="-1">
+        Il programma di posta dovrebbe aprire una bozza. Controllala e inviala da lì: il sito non ha inoltrato la domanda. Se la bozza non si apre, scrivi direttamente a info@a2b.sa. Per le candidature, allega manualmente il CV.
       </div>
     </div>
   </div>
 </section>
 
+</main>
 <footer>
   <p>© 2026 a2b Logistics Company &nbsp;·&nbsp; <a href="/privacy-policy">Informativa privacy</a> &nbsp;·&nbsp; <a href="/terms-and-conditions">Termini e condizioni</a></p>
 </footer>

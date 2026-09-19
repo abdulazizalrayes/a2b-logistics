@@ -39,6 +39,8 @@ robots: "noindex, follow"
 
 ## Main Content
 
+[Saltar al contenido](#main-content)
+
 El socio logístico líder de Arabia Saudita
 
 # Tu logística hacia _Arabia Saudita_
@@ -47,7 +49,7 @@ a2b conecta empresas internacionales y fábricas con la red de logística terres
 
 [Contáctanos](https://www.a2b.sa/es#contact)
 
-[Explorar servicios](https://www.a2b.sa/es#about)
+[Explorar servicios](https://www.a2b.sa/es#services)
 
 NEOM
 
@@ -67,71 +69,71 @@ Acerca de a2b
 
 **a2b Logistics Company** es una empresa logística integral e independiente, creada para servir a la economía saudita en rápido crecimiento y a las empresas internacionales que entran al Reino.
 
-Today, a2b stands as one of the **top logistics service providers in the Kingdom** , operating a diverse fleet of trucks across every type and size, engineered to serve every industry at every scale of operation.
+a2b opera una flota diversa de camiones para distintos sectores y escalas de operación en el Reino.
 
-For **international companies entering the Saudi market** and factories requiring a reliable logistics partner, a2b provides the on-ground infrastructure, local expertise, and operational continuity you need from day one.
+Para empresas internacionales que entran en el mercado saudí y fábricas, a2b ofrece infraestructura local, experiencia y continuidad operativa.
 
-Certified
+Certificada
 
 9001
 
-Quality Management System
+Sistema de gestión de la calidad
 
 45001
 
-Occupational Health and Safety Management System
+Sistema de gestión de seguridad y salud en el trabajo
 
 14001
 
-Environmental Management System
+Sistema de gestión ambiental
 
 Por qué a2b
 
-## 9 Reasons International Businesses Choose a2b
+## 9 razones por las que las empresas internacionales Businesses Choose a2b
 
-Every capability built around the unique demands of operating in Saudi Arabia.
+Cada capacidad responde a las necesidades específicas de operar en Arabia Saudita.
 
-### Scalability
+### Escalabilidad
 
-Fast, proven scalability to meet your requirements, from a single trip to a full nationwide rollout.
+Escalabilidad rápida y probada, desde un viaje hasta una operación nacional.
 
-### 24/7 Availability
+### Disponibilidad 24/7
 
-Round-the-clock availability to answer calls and mobilize trucks. No downtime in your supply chain.
+Disponibilidad continua para atender llamadas y movilizar camiones.
 
-### Fast Response
+### Respuesta rápida
 
-We act fast, identifying and allocating the right equipment for your project with minimal lead time.
+Identificamos y asignamos rápidamente los equipos adecuados para tu proyecto.
 
-### Transparency
+### Transparencia
 
-Full visibility across every request, streamlined tracking and clear communication at all stages.
+Visibilidad de las solicitudes, seguimiento sencillo y comunicación clara en cada etapa.
 
-### Planning
+### Planificación
 
-We plan ahead for your projects, aligning logistics timelines precisely with your business objectives.
+Planificamos con antelación y coordinamos los plazos logísticos con tus objetivos empresariales.
 
-### Rushed Projects
+### Proyectos urgentes
 
-Successfully delivered under the tightest deadlines, including complex, time-critical mega-projects.
+Entregas realizadas en plazos exigentes, incluidos grandes proyectos complejos y urgentes.
 
-### Experience
+### Experiencia
 
-An impeccable track record in sensitive, high-stakes projects, with a team averaging 20+ years of experience.
+Experiencia en proyectos exigentes y delicados, con un equipo que acumula una media de más de 20 años de experiencia.
 
 ### Cobertura completa en Arabia Saudita
 
 Operaciones en todo el Reino, en las principales ciudades, rutas nacionales y servicios de puertos marítimos y aeropuertos.
 
-### Automation
+### Automatización
 
-Paperless, automated workflows and documentation. Less friction, faster execution, full control.
+Procesos y documentación digitales y automatizados para una ejecución más eficiente.
 
 Servicios
 
 ## Una flota para cada sector. Un modelo para cada empresa.
 
-12 truck types in multiple sizes. Flexible booking models. End-to-end support services.
+12 tipos de camiones en distintos tamaños. Modalidades de contratación flexibles y servicios de apoyo integrales.
 
 [Transporte por carretera](https://www.a2b.sa/es/services/trucking-road-freight)
 
@@ -143,73 +145,73 @@ Servicios
 
 [Tipos de flota y capacidad](https://www.a2b.sa/es/services/fleet-types)
 
-Closed Trucks
+Camiones cerrados
 
-High Side Trucks
+Camiones de laterales altos
 
-Shorter Side Trucks
+Camiones de laterales bajos
 
-Refrigerated / Freezer
+Camiones refrigerados y congeladores
 
-Flatbed Trucks
+Camiones de plataforma
 
-Curtained Trucks
+Camiones de lona
 
-Dump Trucks
+Camiones volquete
 
-Boom Trucks
+Camiones con grúa
 
-Cranes
+Grúas
 
-Pickups
+Camionetas
 
-Water Tankers
+Camiones cisterna de agua
 
-Lowbed Trailers
+Remolques de plataforma baja
 
-All types available in multiple sizes to accommodate your business requirements.
+Todos los tipos están disponibles en distintos tamaños para las necesidades de tu empresa.
 
 FLEXIBLE
 
-Per Trip
+Por viaje
 
-On-demand bookings. Scale up or down based on project volume and timing.
+Contratación bajo demanda, ajustable al volumen y al calendario del proyecto.
 
-CONTRACT
+CONTRATO
 
-Period Contracts
+Contratos por período
 
-Daily, weekly, monthly, or annual agreements for consistent, predictable operations.
+Acuerdos diarios, semanales, mensuales o anuales para operaciones constantes y previsibles.
 
-VOLUME
+VOLUMEN
 
-Unit Rate
+Tarifa unitaria
 
-Volume-based pricing for high-frequency logistics and bulk movement requirements.
+Precios basados en el volumen para transportes frecuentes y grandes cantidades.
 
-Cargo Insurance
+Seguro de carga
 
-Comprehensive protection for every shipment from origin to delivery.
+Protección integral de los envíos desde el origen hasta la entrega.
 
 Nuestros clientes
 
 ## Con la confianza de las principales organizaciones de Arabia Saudita
 
-![Ministry of Defense](https://www.a2b.sa/images/logo_2_clean.png)
+![Ministry of Defense](https://www.a2b.sa/images/logo_2_clean.webp)
 
-![Royal Commission for Riyadh City](https://www.a2b.sa/images/logo_3_clean.png)
+![Royal Commission for Riyadh City](https://www.a2b.sa/images/logo_3_clean.webp)
 
-![Royal Commission for AlUla](https://www.a2b.sa/images/logo_4_clean.png)
+![Royal Commission for AlUla](https://www.a2b.sa/images/logo_4_clean.webp)
 
-![Riyadh Airports](https://www.a2b.sa/images/logo_5_clean.png)
+![Riyadh Airports](https://www.a2b.sa/images/logo_5_clean.webp)
 
-![STC - Saudi Telecommunications Company](https://www.a2b.sa/images/logo_6_clean.png)
+![STC - Saudi Telecommunications Company](https://www.a2b.sa/images/logo_6_clean.webp)
 
-![Saudi Electricity Company](https://www.a2b.sa/images/logo_7_clean.png)
+![Saudi Electricity Company](https://www.a2b.sa/images/logo_7_clean.webp)
 
-![Diriyah Gate Development Authority (DGDA)](https://www.a2b.sa/images/logo_0_clean.png)
+![Diriyah Gate Development Authority (DGDA)](https://www.a2b.sa/images/logo_0_clean.webp)
 
-![Formula E](https://www.a2b.sa/images/logo_8_clean.png)
+![Formula E](https://www.a2b.sa/images/logo_8_clean.webp)
 
 FAQ
 
@@ -237,9 +239,9 @@ a2b ofrece múltiples tipos y tamaños de vehículos, incluidos camiones cerrado
 
 a2b ofrece soporte operativo 24/7 y trabaja para identificar y asignar el equipo adecuado con el menor tiempo posible según ruta, tipo de carga, calendario y requisitos del proyecto.
 
-## Ready to Establish Your Logistics Presence in Saudi Arabia?
+## ¿Listo para establecer tu presencia logística en Arabia Saudita?
 
-Let's build a partnership that supports your entry and growth in the Kingdom.
+Construyamos una alianza que apoye tu entrada y crecimiento en el Reino.
 
 [Contáctanos hoy](https://www.a2b.sa/es#contact)
 
@@ -247,7 +249,7 @@ Contacto
 
 ## Iniciar conversación
 
-Reach our team and we'll respond within 24 hours.
+Contacta con nuestro equipo; responderemos en un plazo de 24 horas.
 
 Consultas generales
 
@@ -286,7 +288,7 @@ Dr. Suhaib Ghunaim
 ## Extracted Public Links
 
 - [Contáctanos](https://www.a2b.sa/es#contact)
-- [Explorar servicios](https://www.a2b.sa/es#about)
+- [Explorar servicios](https://www.a2b.sa/es#services)
 - [Transporte por carretera](https://www.a2b.sa/es/services/trucking-road-freight)
 - [Soporte de almacenamiento](https://www.a2b.sa/es/services/warehousing)
 - [Coordinación de aduanas](https://www.a2b.sa/es/services/customs-clearance)
@@ -305,14 +307,14 @@ Dr. Suhaib Ghunaim
 
 - ![a2b logistics truck on Saudi highway](https://www.a2b.sa/images/truck_hero.jpg)
 - ![Camión MAN de a2b Logistics en un almacén de Riad](https://www.a2b.sa/images/a2b_man_warehouse_banner.jpg)
-- ![Ministry of Defense](https://www.a2b.sa/images/logo_2_clean.png)
-- ![Royal Commission for Riyadh City](https://www.a2b.sa/images/logo_3_clean.png)
-- ![Royal Commission for AlUla](https://www.a2b.sa/images/logo_4_clean.png)
-- ![Riyadh Airports](https://www.a2b.sa/images/logo_5_clean.png)
-- ![STC - Saudi Telecommunications Company](https://www.a2b.sa/images/logo_6_clean.png)
-- ![Saudi Electricity Company](https://www.a2b.sa/images/logo_7_clean.png)
-- ![Diriyah Gate Development Authority (DGDA)](https://www.a2b.sa/images/logo_0_clean.png)
-- ![Formula E](https://www.a2b.sa/images/logo_8_clean.png)
+- ![Ministry of Defense](https://www.a2b.sa/images/logo_2_clean.webp)
+- ![Royal Commission for Riyadh City](https://www.a2b.sa/images/logo_3_clean.webp)
+- ![Royal Commission for AlUla](https://www.a2b.sa/images/logo_4_clean.webp)
+- ![Riyadh Airports](https://www.a2b.sa/images/logo_5_clean.webp)
+- ![STC - Saudi Telecommunications Company](https://www.a2b.sa/images/logo_6_clean.webp)
+- ![Saudi Electricity Company](https://www.a2b.sa/images/logo_7_clean.webp)
+- ![Diriyah Gate Development Authority (DGDA)](https://www.a2b.sa/images/logo_0_clean.webp)
+- ![Formula E](https://www.a2b.sa/images/logo_8_clean.webp)
 
 ## Public Structured Data
 

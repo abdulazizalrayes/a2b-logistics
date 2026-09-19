@@ -39,6 +39,8 @@ robots: "noindex, follow"
 
 ## Main Content
 
+[Skip to content](#main-content)
+
 Saudi Arabia's Premier Logistics Partner
 
 # Your Logistics Gateway to _Saudi Arabia_
@@ -47,7 +49,7 @@ a2b connects international companies and factories to the Kingdom's most compreh
 
 [Get in Touch](#contact)
 
-[Explore Services](#about)
+[Explore Services](#services)
 
 NEOM
 
@@ -195,21 +197,21 @@ Our Clients
 
 ## Trusted by Saudi Arabia's Leading Organizations
 
-![Ministry of Defense](https://www.a2b.sa/images/logo_2_clean.png)
+![Ministry of Defense](https://www.a2b.sa/images/logo_2_clean.webp)
 
-![Royal Commission for Riyadh City](https://www.a2b.sa/images/logo_3_clean.png)
+![Royal Commission for Riyadh City](https://www.a2b.sa/images/logo_3_clean.webp)
 
-![Royal Commission for AlUla](https://www.a2b.sa/images/logo_4_clean.png)
+![Royal Commission for AlUla](https://www.a2b.sa/images/logo_4_clean.webp)
 
-![Riyadh Airports](https://www.a2b.sa/images/logo_5_clean.png)
+![Riyadh Airports](https://www.a2b.sa/images/logo_5_clean.webp)
 
-![STC - Saudi Telecommunications Company](https://www.a2b.sa/images/logo_6_clean.png)
+![STC - Saudi Telecommunications Company](https://www.a2b.sa/images/logo_6_clean.webp)
 
-![Saudi Electricity Company](https://www.a2b.sa/images/logo_7_clean.png)
+![Saudi Electricity Company](https://www.a2b.sa/images/logo_7_clean.webp)
 
-![Diriyah Gate Development Authority (DGDA)](https://www.a2b.sa/images/logo_0_clean.png)
+![Diriyah Gate Development Authority (DGDA)](https://www.a2b.sa/images/logo_0_clean.webp)
 
-![Formula E](https://www.a2b.sa/images/logo_8_clean.png)
+![Formula E](https://www.a2b.sa/images/logo_8_clean.webp)
 
 FAQ
 
@@ -302,14 +304,14 @@ Dr. Suhaib Ghunaim
 
 - ![a2b logistics truck on Saudi highway](https://www.a2b.sa/images/truck_hero.jpg)
 - ![a2b Logistics MAN truck at a Riyadh warehouse](https://www.a2b.sa/images/a2b_man_warehouse_banner.jpg)
-- ![Ministry of Defense](https://www.a2b.sa/images/logo_2_clean.png)
-- ![Royal Commission for Riyadh City](https://www.a2b.sa/images/logo_3_clean.png)
-- ![Royal Commission for AlUla](https://www.a2b.sa/images/logo_4_clean.png)
-- ![Riyadh Airports](https://www.a2b.sa/images/logo_5_clean.png)
-- ![STC - Saudi Telecommunications Company](https://www.a2b.sa/images/logo_6_clean.png)
-- ![Saudi Electricity Company](https://www.a2b.sa/images/logo_7_clean.png)
-- ![Diriyah Gate Development Authority (DGDA)](https://www.a2b.sa/images/logo_0_clean.png)
-- ![Formula E](https://www.a2b.sa/images/logo_8_clean.png)
+- ![Ministry of Defense](https://www.a2b.sa/images/logo_2_clean.webp)
+- ![Royal Commission for Riyadh City](https://www.a2b.sa/images/logo_3_clean.webp)
+- ![Royal Commission for AlUla](https://www.a2b.sa/images/logo_4_clean.webp)
+- ![Riyadh Airports](https://www.a2b.sa/images/logo_5_clean.webp)
+- ![STC - Saudi Telecommunications Company](https://www.a2b.sa/images/logo_6_clean.webp)
+- ![Saudi Electricity Company](https://www.a2b.sa/images/logo_7_clean.webp)
+- ![Diriyah Gate Development Authority (DGDA)](https://www.a2b.sa/images/logo_0_clean.webp)
+- ![Formula E](https://www.a2b.sa/images/logo_8_clean.webp)
 
 ## Public Structured Data
 

@@ -39,6 +39,8 @@ robots: "noindex, follow"
 
 ## Main Content
 
+[Saltar al contenido](#main-content)
+
 Servicios de a2b Logistics
 
 # Transporte por carretera en toda Arabia Saudita

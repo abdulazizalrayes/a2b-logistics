@@ -300,7 +300,6 @@
 
 <!-- Preload critical assets for LCP -->
 <link rel="preload" href="/images/a2b_logo.webp" as="image" type="image/webp">
-<link rel="preload" href="/images/truck_hero.webp" as="image" type="image/webp">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;display=swap">
@@ -314,7 +313,9 @@
 <script src="/assets/js/i18n.js" defer=""></script>
 <script src="/webmcp.js" defer=""></script>
 <link rel="alternate" hreflang="en" href="https://www.a2b.sa/"><link rel="alternate" hreflang="ar" href="https://www.a2b.sa/ar">
-<link rel="alternate" hreflang="ar-SA" href="https://www.a2b.sa/ar"><link rel="alternate" hreflang="de" href="https://www.a2b.sa/de"><link rel="alternate" hreflang="it" href="https://www.a2b.sa/it"><link rel="alternate" hreflang="es" href="https://www.a2b.sa/es"><link rel="alternate" hreflang="fr" href="https://www.a2b.sa/fr"><link rel="alternate" hreflang="zh-Hans" href="https://www.a2b.sa/zh-Hans"><link rel="alternate" hreflang="x-default" href="https://www.a2b.sa/"></head>
+<link rel="alternate" hreflang="ar-SA" href="https://www.a2b.sa/ar"><link rel="alternate" hreflang="de" href="https://www.a2b.sa/de"><link rel="alternate" hreflang="it" href="https://www.a2b.sa/it"><link rel="alternate" hreflang="es" href="https://www.a2b.sa/es"><link rel="alternate" hreflang="fr" href="https://www.a2b.sa/fr"><link rel="alternate" hreflang="zh-Hans" href="https://www.a2b.sa/zh-Hans"><link rel="alternate" hreflang="x-default" href="https://www.a2b.sa/"><link rel="stylesheet" href="/assets/css/accessibility.css">
+<script src="/assets/js/accessibility.js" defer></script>
+</head>
 <body class="is-localized">
 
 
@@ -338,10 +339,10 @@
       <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#E8192C" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 01.22 2.18 2 2 0 012.18 0h3a2 2 0 012 1.72c.127.96.362 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.18 6.18l1.27-.52a2 2 0 012.11.45c.907.338 1.85.573 2.81.7A2 2 0 0122 16.92z"></path></svg>
       M +966 55 384 6446
     </a>
-    <select id="languageSelect" class="lang-toggle" aria-label="Language"><option value="en" aria-label="English">EN</option><option value="ar" aria-label="العربية">AR</option><option value="de" aria-label="Deutsch">DE</option><option value="it" aria-label="Italiano">IT</option><option value="es" aria-label="Español">ES</option><option value="fr" aria-label="Français">FR</option><option value="zh-Hans" aria-label="简体中文">中文</option></select>
+    <select id="languageSelect" class="lang-toggle" aria-label="Idioma"><option value="en" aria-label="English">EN</option><option value="ar" aria-label="العربية">AR</option><option value="de" aria-label="Deutsch">DE</option><option value="it" aria-label="Italiano">IT</option><option value="es" aria-label="Español">ES</option><option value="fr" aria-label="Français">FR</option><option value="zh-Hans" aria-label="简体中文">中文</option></select>
     <a href="/es#contact" class="btn-nav">Contáctanos</a>
   </div>
-  <button class="hamburger" aria-label="Menu">
+  <button class="hamburger" aria-label="Menú" aria-controls="mobileMenu" aria-expanded="false">
     <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#333" stroke-width="2.5"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
   </button>
 </nav>
@@ -357,7 +358,9 @@
   <a href="/es/vendors">Proveedores</a>
   <a href="tel:+966553846446">M +966 55 384 6446</a>
   <a href="/es#contact" class="mobile-accent-link">Contáctanos</a>
-<select id="mobileLanguageSelect" class="mobile-language-select" aria-label="Language"><option value="en" aria-label="English">EN</option><option value="ar" aria-label="العربية">AR</option><option value="de" aria-label="Deutsch">DE</option><option value="it" aria-label="Italiano">IT</option><option value="es" aria-label="Español">ES</option><option value="fr" aria-label="Français">FR</option><option value="zh-Hans" aria-label="简体中文">中文</option></select></div>
+<select id="mobileLanguageSelect" class="mobile-language-select" aria-label="Idioma"><option value="en" aria-label="English">EN</option><option value="ar" aria-label="العربية">AR</option><option value="de" aria-label="Deutsch">DE</option><option value="it" aria-label="Italiano">IT</option><option value="es" aria-label="Español">ES</option><option value="fr" aria-label="Français">FR</option><option value="zh-Hans" aria-label="简体中文">中文</option></select></div>
+<a class="skip-link" href="#main-content">Saltar al contenido</a>
+<main id="main-content" tabindex="-1">
 
 <!-- HERO -->
 <section class="hero" id="home">
@@ -375,7 +378,7 @@
       <a href="/es#contact" class="btn-primary">
         Contáctanos
       </a>
-      <a href="/es#about" class="btn-outline">
+      <a href="/es#services" class="btn-outline">
         Explorar servicios
       </a>
     </div>
@@ -384,25 +387,25 @@
     <div class="hero-stat-row">
       <div class="hero-card red-card">
         <span class="hero-card-n">90%</span>
-        <span class="hero-card-l">Client Retention Rate</span>
+        <span class="hero-card-l">Tasa de retención de clientes</span>
       </div>
       <div class="hero-card">
         <span class="hero-card-n accent">24/7</span>
-        <span class="hero-card-l">Operations Support</span>
+        <span class="hero-card-l">Soporte operativo</span>
       </div>
     </div>
     <div class="hero-card">
-      <span class="hero-card-n hero-card-wide">KSA-Wide</span>
-      <span class="hero-card-l">Full Kingdom coverage. All major cities, domestic routes and ports.</span>
+      <span class="hero-card-n hero-card-wide">En toda Arabia Saudita</span>
+      <span class="hero-card-l">Cobertura de las principales ciudades, rutas nacionales y puertos del Reino.</span>
     </div>
     <div class="hero-stat-row">
       <div class="hero-card">
         <span class="hero-card-n hero-card-iso">ISO 9001</span>
-        <span class="hero-card-l">Quality Certified</span>
+        <span class="hero-card-l">Calidad certificada</span>
       </div>
       <div class="hero-card">
-        <span class="hero-card-n hero-card-years">20+ Yrs</span>
-        <span class="hero-card-l">Team Experience</span>
+        <span class="hero-card-n hero-card-years">Más de 20 años</span>
+        <span class="hero-card-l">Experiencia del equipo</span>
       </div>
     </div>
   </div>
@@ -432,20 +435,20 @@
         <div class="about-img">
           <picture>
             <source srcset="/images/truck_hero.webp" type="image/webp">
-            <img src="/images/truck_hero.jpg" alt="a2b logistics truck on Saudi highway" width="600" height="380" loading="eager" fetchpriority="high">
+            <img src="/images/truck_hero.jpg" alt="a2b logistics truck on Saudi highway" width="600" height="380" loading="lazy" decoding="async">
           </picture>
-          <div class="about-img-overlay"><span>Kingdom-wide fleet operations</span></div>
+          <div class="about-img-overlay"><span>Operaciones de flota en todo el Reino</span></div>
         </div>
       </div>
       <div class="about-text">
         <p><strong>a2b Logistics Company</strong> es una empresa logística integral e independiente, creada para servir a la economía saudita en rápido crecimiento y a las empresas internacionales que entran al Reino.</p>
-        <p>Today, a2b stands as one of the <strong>top logistics service providers in the Kingdom</strong>, operating a diverse fleet of trucks across every type and size, engineered to serve every industry at every scale of operation.</p>
-        <p>For <strong>international companies entering the Saudi market</strong> and factories requiring a reliable logistics partner, a2b provides the on-ground infrastructure, local expertise, and operational continuity you need from day one.</p>
+        <p>a2b opera una flota diversa de camiones para distintos sectores y escalas de operación en el Reino.</p>
+        <p>Para empresas internacionales que entran en el mercado saudí y fábricas, a2b ofrece infraestructura local, experiencia y continuidad operativa.</p>
         <div class="cert-panel">
-          <div class="cert-panel-title">Certified <span>ISO</span></div>
-          <div class="cert-row"><div class="cert-num">9001</div><div class="cert-desc">Quality Management System</div></div>
-          <div class="cert-row"><div class="cert-num">45001</div><div class="cert-desc">Occupational Health and Safety Management System</div></div>
-          <div class="cert-row"><div class="cert-num">14001</div><div class="cert-desc">Environmental Management System</div></div>
+          <div class="cert-panel-title">Certificada <span>ISO</span></div>
+          <div class="cert-row"><div class="cert-num">9001</div><div class="cert-desc">Sistema de gestión de la calidad</div></div>
+          <div class="cert-row"><div class="cert-num">45001</div><div class="cert-desc">Sistema de gestión de seguridad y salud en el trabajo</div></div>
+          <div class="cert-row"><div class="cert-num">14001</div><div class="cert-desc">Sistema de gestión ambiental</div></div>
         </div>
       </div>
     </div>
@@ -459,21 +462,21 @@
       Por qué a2b
     </div>
     <h2 class="section-title">
-      9 Reasons International<br>Businesses Choose a2b
+      9 razones por las que las empresas internacionales<br>Businesses Choose a2b
     </h2>
     <p class="section-sub">
-      Every capability built around the unique demands of operating in Saudi Arabia.
+      Cada capacidad responde a las necesidades específicas de operar en Arabia Saudita.
     </p>
     <div class="why-grid">
-      <div class="why-card"><div class="why-icon">⚡</div><h3 class="why-title">Scalability</h3><div class="why-desc">Fast, proven scalability to meet your requirements, from a single trip to a full nationwide rollout.</div></div>
-      <div class="why-card"><div class="why-icon">🕐</div><h3 class="why-title">24/7 Availability</h3><div class="why-desc">Round-the-clock availability to answer calls and mobilize trucks. No downtime in your supply chain.</div></div>
-      <div class="why-card"><div class="why-icon">🚀</div><h3 class="why-title">Fast Response</h3><div class="why-desc">We act fast, identifying and allocating the right equipment for your project with minimal lead time.</div></div>
-      <div class="why-card"><div class="why-icon">📊</div><h3 class="why-title">Transparency</h3><div class="why-desc">Full visibility across every request, streamlined tracking and clear communication at all stages.</div></div>
-      <div class="why-card"><div class="why-icon">📋</div><h3 class="why-title">Planning</h3><div class="why-desc">We plan ahead for your projects, aligning logistics timelines precisely with your business objectives.</div></div>
-      <div class="why-card"><div class="why-icon">⏱</div><h3 class="why-title">Rushed Projects</h3><div class="why-desc">Successfully delivered under the tightest deadlines, including complex, time-critical mega-projects.</div></div>
-      <div class="why-card"><div class="why-icon">🏆</div><h3 class="why-title">Experience</h3><div class="why-desc">An impeccable track record in sensitive, high-stakes projects, with a team averaging 20+ years of experience.</div></div>
-      <div class="why-card"><div class="why-icon">🗺</div><h3 class="why-title">Cobertura completa en Arabia Saudita</h3><div class="why-desc">Operaciones en todo el Reino, en las principales ciudades, rutas nacionales y servicios de puertos marítimos y aeropuertos.</div></div>
-      <div class="why-card"><div class="why-icon">🤖</div><h3 class="why-title">Automation</h3><div class="why-desc">Paperless, automated workflows and documentation. Less friction, faster execution, full control.</div></div>
+      <div class="why-card"><div class="why-icon">⚡</div><h3 class="why-title">Escalabilidad</h3><div class="why-desc">Escalabilidad rápida y probada, desde un viaje hasta una operación nacional.</div></div>
+      <div class="why-card"><div class="why-icon">🕐</div><h3 class="why-title">Disponibilidad 24/7</h3><div class="why-desc">Disponibilidad continua para atender llamadas y movilizar camiones.</div></div>
+      <div class="why-card"><div class="why-icon">🚀</div><h3 class="why-title">Respuesta rápida</h3><div class="why-desc">Identificamos y asignamos rápidamente los equipos adecuados para tu proyecto.</div></div>
+      <div class="why-card"><div class="why-icon">📊</div><h3 class="why-title">Transparencia</h3><div class="why-desc">Visibilidad de las solicitudes, seguimiento sencillo y comunicación clara en cada etapa.</div></div>
+      <div class="why-card"><div class="why-icon">📋</div><h3 class="why-title">Planificación</h3><div class="why-desc">Planificamos con antelación y coordinamos los plazos logísticos con tus objetivos empresariales.</div></div>
+      <div class="why-card"><div class="why-icon">⏱</div><h3 class="why-title">Proyectos urgentes</h3><div class="why-desc">Entregas realizadas en plazos exigentes, incluidos grandes proyectos complejos y urgentes.</div></div>
+      <div class="why-card"><div class="why-icon">🏆</div><h3 class="why-title">Experiencia</h3><div class="why-desc">Experiencia en proyectos exigentes y delicados, con un equipo que acumula una media de más de 20 años de experiencia.</div></div>
+      <div class="why-card" id="coverage"><div class="why-icon">🗺</div><h3 class="why-title">Cobertura completa en Arabia Saudita</h3><div class="why-desc">Operaciones en todo el Reino, en las principales ciudades, rutas nacionales y servicios de puertos marítimos y aeropuertos.</div></div>
+      <div class="why-card"><div class="why-icon">🤖</div><h3 class="why-title">Automatización</h3><div class="why-desc">Procesos y documentación digitales y automatizados para una ejecución más eficiente.</div></div>
     </div>
   </div>
 </div>
@@ -488,7 +491,7 @@
       Una flota para cada sector.<br>Un modelo para cada empresa.
     </h2>
     <p class="section-sub">
-      12 truck types in multiple sizes. Flexible booking models. End-to-end support services.
+      12 tipos de camiones en distintos tamaños. Modalidades de contratación flexibles y servicios de apoyo integrales.
     </p>
       <div class="service-link-grid">
         <a href="/es/services/trucking-road-freight">Transporte por carretera</a>
@@ -501,34 +504,34 @@
       <div>
         <div class="services-img">
           <picture>
-            <img src="/images/a2b_man_warehouse_banner.jpg" alt="Camión MAN de a2b Logistics en un almacén de Riad" width="600" height="380" loading="lazy">
+            <img src="/images/a2b_man_warehouse_banner.jpg" alt="Camión MAN de a2b Logistics en un almacén de Riad" width="600" height="380" loading="lazy" decoding="async">
           </picture>
         </div>
         <br>
         <span class="fleet-label">Nuestra flota</span>
         <div class="fleet-grid">
-          <div class="fleet-item"><span class="fleet-dot"></span>Closed Trucks</div>
-          <div class="fleet-item"><span class="fleet-dot"></span>High Side Trucks</div>
-          <div class="fleet-item"><span class="fleet-dot"></span>Shorter Side Trucks</div>
-          <div class="fleet-item"><span class="fleet-dot"></span>Refrigerated / Freezer</div>
-          <div class="fleet-item"><span class="fleet-dot"></span>Flatbed Trucks</div>
-          <div class="fleet-item"><span class="fleet-dot"></span>Curtained Trucks</div>
-          <div class="fleet-item"><span class="fleet-dot"></span>Dump Trucks</div>
-          <div class="fleet-item"><span class="fleet-dot"></span>Boom Trucks</div>
-          <div class="fleet-item"><span class="fleet-dot"></span>Cranes</div>
-          <div class="fleet-item"><span class="fleet-dot"></span>Pickups</div>
-          <div class="fleet-item"><span class="fleet-dot"></span>Water Tankers</div>
-          <div class="fleet-item"><span class="fleet-dot"></span>Lowbed Trailers</div>
+          <div class="fleet-item"><span class="fleet-dot"></span>Camiones cerrados</div>
+          <div class="fleet-item"><span class="fleet-dot"></span>Camiones de laterales altos</div>
+          <div class="fleet-item"><span class="fleet-dot"></span>Camiones de laterales bajos</div>
+          <div class="fleet-item"><span class="fleet-dot"></span>Camiones refrigerados y congeladores</div>
+          <div class="fleet-item"><span class="fleet-dot"></span>Camiones de plataforma</div>
+          <div class="fleet-item"><span class="fleet-dot"></span>Camiones de lona</div>
+          <div class="fleet-item"><span class="fleet-dot"></span>Camiones volquete</div>
+          <div class="fleet-item"><span class="fleet-dot"></span>Camiones con grúa</div>
+          <div class="fleet-item"><span class="fleet-dot"></span>Grúas</div>
+          <div class="fleet-item"><span class="fleet-dot"></span>Camionetas</div>
+          <div class="fleet-item"><span class="fleet-dot"></span>Camiones cisterna de agua</div>
+          <div class="fleet-item"><span class="fleet-dot"></span>Remolques de plataforma baja</div>
         </div>
-        <p class="fleet-note">All types available in multiple sizes to accommodate your business requirements.</p>
+        <p class="fleet-note">Todos los tipos están disponibles en distintos tamaños para las necesidades de tu empresa.</p>
       </div>
       <div>
-        <span class="fleet-label">Booking Models</span>
-        <div class="booking-card"><div class="booking-tag">FLEXIBLE</div><div class="booking-title">Per Trip</div><div class="booking-desc">On-demand bookings. Scale up or down based on project volume and timing.</div></div>
-        <div class="booking-card"><div class="booking-tag">CONTRACT</div><div class="booking-title">Period Contracts</div><div class="booking-desc">Daily, weekly, monthly, or annual agreements for consistent, predictable operations.</div></div>
-        <div class="booking-card"><div class="booking-tag">VOLUME</div><div class="booking-title">Unit Rate</div><div class="booking-desc">Volume-based pricing for high-frequency logistics and bulk movement requirements.</div></div>
+        <span class="fleet-label">Modalidades de contratación</span>
+        <div class="booking-card"><div class="booking-tag">FLEXIBLE</div><div class="booking-title">Por viaje</div><div class="booking-desc">Contratación bajo demanda, ajustable al volumen y al calendario del proyecto.</div></div>
+        <div class="booking-card"><div class="booking-tag">CONTRATO</div><div class="booking-title">Contratos por período</div><div class="booking-desc">Acuerdos diarios, semanales, mensuales o anuales para operaciones constantes y previsibles.</div></div>
+        <div class="booking-card"><div class="booking-tag">VOLUMEN</div><div class="booking-title">Tarifa unitaria</div><div class="booking-desc">Precios basados en el volumen para transportes frecuentes y grandes cantidades.</div></div>
         <span class="fleet-label additional-services-label">Servicios adicionales</span>
-        <div class="booking-card"><div class="booking-title">Cargo Insurance</div><div class="booking-desc">Comprehensive protection for every shipment from origin to delivery.</div></div>
+        <div class="booking-card"><div class="booking-title">Seguro de carga</div><div class="booking-desc">Protección integral de los envíos desde el origen hasta la entrega.</div></div>
     </div>
   </div>
 </div>
@@ -543,14 +546,14 @@
       Con la confianza de las principales<br>organizaciones de Arabia Saudita
     </h2>
     <div class="clients-grid">
-      <div class="client-logo-card"><img src="/images/logo_2_clean.png" alt="Ministry of Defense" loading="lazy"></div>
-      <div class="client-logo-card"><img src="/images/logo_3_clean.png" alt="Royal Commission for Riyadh City" loading="lazy"></div>
-      <div class="client-logo-card"><img src="/images/logo_4_clean.png" alt="Royal Commission for AlUla" loading="lazy"></div>
-      <div class="client-logo-card"><img src="/images/logo_5_clean.png" alt="Riyadh Airports" loading="lazy"></div>
-      <div class="client-logo-card"><img src="/images/logo_6_clean.png" alt="STC - Saudi Telecommunications Company" loading="lazy"></div>
-      <div class="client-logo-card"><img src="/images/logo_7_clean.png" alt="Saudi Electricity Company" loading="lazy"></div>
-      <div class="client-logo-card"><img src="/images/logo_0_clean.png" alt="Diriyah Gate Development Authority (DGDA)" loading="lazy"></div>
-      <div class="client-logo-card"><img src="/images/logo_8_clean.png" alt="Formula E" loading="lazy"></div>
+      <div class="client-logo-card"><img src="/images/logo_2_clean.webp" alt="Ministry of Defense" loading="lazy" width="382" height="262" decoding="async"></div>
+      <div class="client-logo-card"><img src="/images/logo_3_clean.webp" alt="Royal Commission for Riyadh City" loading="lazy" width="217" height="203" decoding="async"></div>
+      <div class="client-logo-card"><img src="/images/logo_4_clean.webp" alt="Royal Commission for AlUla" loading="lazy" width="200" height="200" decoding="async"></div>
+      <div class="client-logo-card"><img src="/images/logo_5_clean.webp" alt="Riyadh Airports" loading="lazy" width="350" height="327" decoding="async"></div>
+      <div class="client-logo-card"><img src="/images/logo_6_clean.webp" alt="STC - Saudi Telecommunications Company" loading="lazy" width="274" height="178" decoding="async"></div>
+      <div class="client-logo-card"><img src="/images/logo_7_clean.webp" alt="Saudi Electricity Company" loading="lazy" width="410" height="242" decoding="async"></div>
+      <div class="client-logo-card"><img src="/images/logo_0_clean.webp" alt="Diriyah Gate Development Authority (DGDA)" loading="lazy" width="200" height="200" decoding="async"></div>
+      <div class="client-logo-card"><img src="/images/logo_8_clean.webp" alt="Formula E" loading="lazy" width="326" height="246" decoding="async"></div>
     </div>
   </div>
 </div>
@@ -589,10 +592,10 @@
 <!-- CTA -->
 <div class="cta-banner">
   <h2>
-    Ready to Establish Your<br>Logistics Presence in Saudi Arabia?
+    ¿Listo para establecer tu<br>presencia logística en Arabia Saudita?
   </h2>
   <p>
-    Let's build a partnership that supports your entry and growth in the Kingdom.
+    Construyamos una alianza que apoye tu entrada y crecimiento en el Reino.
   </p>
   <a href="/es#contact" class="btn-white">
     Contáctanos hoy
@@ -609,7 +612,7 @@
       Iniciar conversación
     </h2>
     <p class="section-sub">
-      Reach our team and we'll respond within 24 hours.
+      Contacta con nuestro equipo; responderemos en un plazo de 24 horas.
     </p>
     <div class="contact-grid">
       <div class="contact-card">
@@ -653,6 +656,7 @@
 </div>
 
 <!-- FOOTER -->
+</main>
 <footer>
   <div class="footer-brand-row">
     <img src="/images/a2b_logo.png" alt="a2b Logistics" class="footer-logo" width="52" height="39">

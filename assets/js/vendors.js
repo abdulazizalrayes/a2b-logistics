@@ -13,20 +13,6 @@
     window.addEventListener('scroll', function () {
       if (navbar) navbar.classList.toggle('scrolled', window.scrollY > 20);
     }, { passive: true });
-
-    var menu = byId('mobileMenu');
-    var hamburger = document.querySelector('.hamburger');
-    if (hamburger && menu) {
-      hamburger.addEventListener('click', function () {
-        menu.classList.toggle('open');
-      });
-    }
-
-    document.querySelectorAll('#mobileMenu a[href^="/#"]').forEach(function (link) {
-      link.addEventListener('click', function () {
-        if (menu) menu.classList.remove('open');
-      });
-    });
   }
 
   function setupForm() {
@@ -52,12 +38,9 @@
       var mailtoLink = 'mailto:' + 'info' + '@' + 'a2b.sa?subject=vendors - ' + encodeURIComponent(companyName) + '&body=' + encodeURIComponent(body);
       window.location.href = mailtoLink;
 
-      form.style.display = 'none';
       var successMsg = byId('successMsg');
       if (successMsg) successMsg.style.display = 'block';
-      window.setTimeout(function () {
-        window.location.href = 'thankyou.html?from=vendors';
-      }, 1500);
+      if (successMsg) { successMsg.hidden = false; successMsg.focus(); }
     });
   }
 

@@ -72,7 +72,9 @@
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-909SV0D9FM"></script>
 <script src="/assets/js/analytics.js"></script>
 <script src="/assets/js/i18n.js" defer=""></script>
-<link rel="alternate" hreflang="en" href="https://www.a2b.sa/vendors"><link rel="alternate" hreflang="ar" href="https://www.a2b.sa/ar/vendors"><link rel="alternate" hreflang="de" href="https://www.a2b.sa/de/vendors"><link rel="alternate" hreflang="it" href="https://www.a2b.sa/it/vendors"><link rel="alternate" hreflang="es" href="https://www.a2b.sa/es/vendors"><link rel="alternate" hreflang="fr" href="https://www.a2b.sa/fr/vendors"><link rel="alternate" hreflang="zh-Hans" href="https://www.a2b.sa/zh-Hans/vendors"><link rel="alternate" hreflang="x-default" href="https://www.a2b.sa/vendors"></head>
+<link rel="alternate" hreflang="en" href="https://www.a2b.sa/vendors"><link rel="alternate" hreflang="ar" href="https://www.a2b.sa/ar/vendors"><link rel="alternate" hreflang="de" href="https://www.a2b.sa/de/vendors"><link rel="alternate" hreflang="it" href="https://www.a2b.sa/it/vendors"><link rel="alternate" hreflang="es" href="https://www.a2b.sa/es/vendors"><link rel="alternate" hreflang="fr" href="https://www.a2b.sa/fr/vendors"><link rel="alternate" hreflang="zh-Hans" href="https://www.a2b.sa/zh-Hans/vendors"><link rel="alternate" hreflang="x-default" href="https://www.a2b.sa/vendors"><link rel="stylesheet" href="/assets/css/accessibility.css">
+<script src="/assets/js/accessibility.js" defer></script>
+</head>
 <body class="is-localized">
 
 <nav id="navbar">
@@ -93,10 +95,10 @@
     <a href="tel:+966553846446" class="nav-phone">
       <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#E8192C" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 01.22 2.18 2 2 0 012.18 0h3a2 2 0 012 1.72c.127.96.362 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.18 6.18l1.27-.52a2 2 0 012.11.45c.907.338 1.85.573 2.81.7A2 2 0 0122 16.92z"></path></svg>
       M +966 55 384 6446
-    </a><select id="languageSelect" class="lang-toggle" aria-label="Language"><option value="en" aria-label="English">EN</option><option value="ar" aria-label="العربية">AR</option><option value="de" aria-label="Deutsch">DE</option><option value="it" aria-label="Italiano">IT</option><option value="es" aria-label="Español">ES</option><option value="fr" aria-label="Français">FR</option><option value="zh-Hans" aria-label="简体中文">中文</option></select>
+    </a><select id="languageSelect" class="lang-toggle" aria-label="语言"><option value="en" aria-label="English">EN</option><option value="ar" aria-label="العربية">AR</option><option value="de" aria-label="Deutsch">DE</option><option value="it" aria-label="Italiano">IT</option><option value="es" aria-label="Español">ES</option><option value="fr" aria-label="Français">FR</option><option value="zh-Hans" aria-label="简体中文">中文</option></select>
     <a href="/zh-Hans#contact" class="btn-nav">联系我们</a>
   </div>
-  <button class="hamburger" aria-label="Menu">
+  <button class="hamburger" aria-label="菜单" aria-controls="mobileMenu" aria-expanded="false">
     <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#333" stroke-width="2.5"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
   </button>
 </nav>
@@ -111,7 +113,9 @@
   <a href="/zh-Hans/vendors" class="mobile-current-link">供应商</a>
   <a href="tel:+966553846446">M +966 55 384 6446</a>
   <a href="/zh-Hans#contact" class="mobile-accent-link">联系我们</a>
-<select id="mobileLanguageSelect" class="mobile-language-select" aria-label="Language"><option value="en" aria-label="English">EN</option><option value="ar" aria-label="العربية">AR</option><option value="de" aria-label="Deutsch">DE</option><option value="it" aria-label="Italiano">IT</option><option value="es" aria-label="Español">ES</option><option value="fr" aria-label="Français">FR</option><option value="zh-Hans" aria-label="简体中文">中文</option></select></div>
+<select id="mobileLanguageSelect" class="mobile-language-select" aria-label="语言"><option value="en" aria-label="English">EN</option><option value="ar" aria-label="العربية">AR</option><option value="de" aria-label="Deutsch">DE</option><option value="it" aria-label="Italiano">IT</option><option value="es" aria-label="Español">ES</option><option value="fr" aria-label="Français">FR</option><option value="zh-Hans" aria-label="简体中文">中文</option></select></div>
+<a class="skip-link" href="#main-content">跳至正文</a>
+<main id="main-content" tabindex="-1">
 
 <section class="hero">
   <div class="hero-inner">
@@ -133,43 +137,43 @@
 
         <div class="form-row">
           <div class="form-group">
-            <label>公司名称<span class="required">*</span></label>
-            <input type="text" name="company_name" placeholder="Registered company name" required="">
+            <label for="field-company_name">公司名称<span class="required">*</span></label>
+            <input type="text" name="company_name" placeholder="注册公司名称" required="" id="field-company_name">
           </div>
           <div class="form-group">
-            <label>商业注册号 (CR)<span class="required">*</span></label>
-            <input type="text" name="cr_number" placeholder="10-digit CR number" required="">
+            <label for="field-cr_number">商业注册号 (CR)<span class="required">*</span></label>
+            <input type="text" name="cr_number" placeholder="10 位商业注册号" required="" id="field-cr_number">
           </div>
         </div>
         <div class="form-row">
           <div class="form-group">
-            <label>增值税注册号</label>
-            <input type="text" name="vat_number" placeholder="15-digit VAT number">
+            <label for="field-vat_number">增值税注册号</label>
+            <input type="text" name="vat_number" placeholder="15 位增值税注册号" id="field-vat_number">
           </div>
           <div class="form-group">
-            <label>运营年限<span class="required">*</span></label>
-            <select name="years_operation" required="">
+            <label for="field-years_operation">运营年限<span class="required">*</span></label>
+            <select name="years_operation" required="" id="field-years_operation">
               <option value="" disabled="" selected="">选择范围</option>
-              <option>Less than 1 year</option>
-              <option>1 to 2 years</option>
-              <option>2 to 5 years</option>
-              <option>5 to 10 years</option>
-              <option>10+ years</option>
+              <option>不到 1 年</option>
+              <option>1 至 2 年</option>
+              <option>2 至 5 年</option>
+              <option>5 至 10 年</option>
+              <option>10 年以上</option>
             </select>
           </div>
         </div>
         <div class="form-group">
-          <label>供应商类别<span class="required">*</span></label>
-          <select name="vendor_category" required="">
-            <option value="" disabled="" selected="">Select primary category</option>
-            <option>Transportation and Trucking</option>
-            <option>Warehousing and Storage</option>
-            <option>Customs and Clearance</option>
-            <option>Freight and Forwarding</option>
-            <option>Maintenance and Repair</option>
-            <option>Technology and Software</option>
-            <option>Fuel and Consumables</option>
-            <option>Other</option>
+          <label for="field-vendor_category">供应商类别<span class="required">*</span></label>
+          <select name="vendor_category" required="" id="field-vendor_category">
+            <option value="" disabled="" selected="">选择主要类别</option>
+            <option>公路运输</option>
+            <option>仓储服务</option>
+            <option>报关与清关</option>
+            <option>货运与货运代理</option>
+            <option>维护与维修</option>
+            <option>技术与软件</option>
+            <option>燃油与耗材</option>
+            <option>其他</option>
           </select>
         </div>
 
@@ -178,22 +182,22 @@
 
         <div class="form-row">
           <div class="form-group">
-            <label>全名<span class="required">*</span></label>
-            <input type="text" name="contact_name" placeholder="Contact person's name" required="">
+            <label for="field-contact_name">全名<span class="required">*</span></label>
+            <input type="text" name="contact_name" placeholder="联系人姓名" required="" id="field-contact_name" autocomplete="name">
           </div>
           <div class="form-group">
-            <label>职位</label>
-            <input type="text" name="contact_title" placeholder="e.g. General Manager, Sales Director">
+            <label for="field-contact_title">职位</label>
+            <input type="text" name="contact_title" placeholder="例如：总经理、销售总监" id="field-contact_title">
           </div>
         </div>
         <div class="form-row">
           <div class="form-group">
-            <label>电子邮箱<span class="required">*</span></label>
-            <input type="email" name="email" placeholder="company@domain.com" required="">
+            <label for="field-email">电子邮箱<span class="required">*</span></label>
+            <input type="email" name="email" placeholder="company@domain.com" required="" id="field-email" autocomplete="email">
           </div>
           <div class="form-group">
-            <label>电话号码<span class="required">*</span></label>
-            <input type="tel" name="phone" placeholder="+966 5X XXX XXXX" required="">
+            <label for="field-phone">电话号码<span class="required">*</span></label>
+            <input type="tel" name="phone" placeholder="+966 5X XXX XXXX" required="" id="field-phone" autocomplete="tel">
           </div>
         </div>
 
@@ -201,20 +205,21 @@
         <h3 class="section-heading">服务与能力</h3>
 
         <div class="form-group">
-          <label>Describe Your Services and Capabilities <span class="required">*</span></label>
-          <textarea name="services" placeholder="Describe what your company does, your fleet or facility details, and any relevant certifications or licenses..." required=""></textarea>
+          <label for="field-services">描述您的服务与能力 <span class="required">*</span></label>
+          <textarea name="services" placeholder="请描述公司业务、车队或设施，以及相关认证或许可证。" required="" id="field-services"></textarea>
         </div>
 
-        <p class="privacy-note">By submitting this form, you agree to our <a href="/privacy-policy">隐私政策</a>. Submission does not guarantee a vendor agreement or any business commitment from a2b Logistics Company.</p>
+        <p class="privacy-note">提交此表单即表示您同意我们的 <a href="/privacy-policy">隐私政策</a>。提交申请并不保证与 a2b Logistics Company 达成供应商协议或任何商业承诺。</p>
         <button type="submit" class="btn-submit">提交供应商申请</button>
       </form>
-      <div class="success-msg" id="successMsg">
-        Thank you for registering your interest. Our procurement team will review your submission and contact you if there is a suitable opportunity. We appreciate your interest in working with a2b Logistics.
+      <div class="success-msg" id="successMsg" role="status" tabindex="-1">
+        您的邮件应用应打开一封草稿。请核对后在邮件应用中点击发送；本网站尚未提交您的申请。如果草稿未打开，请直接发送邮件至 info@a2b.sa。求职申请请手动附上简历。
       </div>
     </div>
   </div>
 </section>
 
+</main>
 <footer>
   <p>© 2026 a2b Logistics Company &nbsp;·&nbsp; <a href="/privacy-policy">隐私政策</a> &nbsp;·&nbsp; <a href="/terms-and-conditions">条款和条件</a></p>
 </footer>

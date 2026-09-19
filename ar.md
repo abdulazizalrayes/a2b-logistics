@@ -39,6 +39,8 @@ robots: "noindex, follow"
 
 ## Main Content
 
+[انتقل إلى المحتوى](#main-content)
+
 الشريك اللوجستي الأول في المملكة العربية السعودية
 
 # بوابتك اللوجستية إلى _المملكة العربية السعودية_
@@ -47,7 +49,7 @@ a2b تربط الشركات الدولية والمصانع بشبكة الخد�
 
 [تواصل معنا](https://www.a2b.sa/ar#contact)
 
-[استكشف الخدمات](https://www.a2b.sa/ar#about)
+[استكشف الخدمات](https://www.a2b.sa/ar#services)
 
 NEOM
 
@@ -195,21 +197,21 @@ STC
 
 ## موثوق به من كبرى المؤسسات في المملكة العربية السعودية
 
-![وزارة الدفاع](https://www.a2b.sa/images/logo_2_clean.png)
+![وزارة الدفاع](https://www.a2b.sa/images/logo_2_clean.webp)
 
-![الهيئة الملكية لمدينة الرياض City](https://www.a2b.sa/images/logo_3_clean.png)
+![الهيئة الملكية لمدينة الرياض](https://www.a2b.sa/images/logo_3_clean.webp)
 
-![الهيئة الملكية لمحافظة العلا](https://www.a2b.sa/images/logo_4_clean.png)
+![الهيئة الملكية لمحافظة العلا](https://www.a2b.sa/images/logo_4_clean.webp)
 
-![مطارات الرياض](https://www.a2b.sa/images/logo_5_clean.png)
+![مطارات الرياض](https://www.a2b.sa/images/logo_5_clean.webp)
 
-![STC - شركة الاتصالات السعودية](https://www.a2b.sa/images/logo_6_clean.png)
+![STC - شركة الاتصالات السعودية](https://www.a2b.sa/images/logo_6_clean.webp)
 
-![الشركة السعودية للكهرباء](https://www.a2b.sa/images/logo_7_clean.png)
+![الشركة السعودية للكهرباء](https://www.a2b.sa/images/logo_7_clean.webp)
 
-![هيئة تطوير بوابة الدرعية](https://www.a2b.sa/images/logo_0_clean.png)
+![هيئة تطوير بوابة الدرعية](https://www.a2b.sa/images/logo_0_clean.webp)
 
-![فورمولا إي](https://www.a2b.sa/images/logo_8_clean.png)
+![فورمولا إي](https://www.a2b.sa/images/logo_8_clean.webp)
 
 الأسئلة الشائعة
 
@@ -269,15 +271,15 @@ STC
 
 عنواننا
 
-3168 Tahliyah St., Ground Floor, Offices #2
+3168 شارع التحلية، الدور الأرضي، مكتب رقم 2
 
-Olaya District
+حي العليا
 
-Riyadh, Saudi Arabia
+الرياض، المملكة العربية السعودية
 
 [www.a2b.sa](https://www.a2b.sa/)
 
-CEO
+الرئيس التنفيذي
 
 Dr. Suhaib Ghunaim
 
@@ -286,7 +288,7 @@ Dr. Suhaib Ghunaim
 ## Extracted Public Links
 
 - [تواصل معنا](https://www.a2b.sa/ar#contact)
-- [استكشف الخدمات](https://www.a2b.sa/ar#about)
+- [استكشف الخدمات](https://www.a2b.sa/ar#services)
 - [النقل البري بالشاحنات](https://www.a2b.sa/ar/services/trucking-road-freight)
 - [دعم التخزين](https://www.a2b.sa/ar/services/warehousing)
 - [تنسيق التخليص الجمركي](https://www.a2b.sa/ar/services/customs-clearance)
@@ -305,14 +307,14 @@ Dr. Suhaib Ghunaim
 
 - ![شاحنة a2b Logistics على طريق سعودي](https://www.a2b.sa/images/truck_hero.jpg)
 - ![شاحنة مان تابعة لشركة a2b Logistics في مستودع بالرياض](https://www.a2b.sa/images/a2b_man_warehouse_banner.jpg)
-- ![وزارة الدفاع](https://www.a2b.sa/images/logo_2_clean.png)
-- ![الهيئة الملكية لمدينة الرياض City](https://www.a2b.sa/images/logo_3_clean.png)
-- ![الهيئة الملكية لمحافظة العلا](https://www.a2b.sa/images/logo_4_clean.png)
-- ![مطارات الرياض](https://www.a2b.sa/images/logo_5_clean.png)
-- ![STC - شركة الاتصالات السعودية](https://www.a2b.sa/images/logo_6_clean.png)
-- ![الشركة السعودية للكهرباء](https://www.a2b.sa/images/logo_7_clean.png)
-- ![هيئة تطوير بوابة الدرعية](https://www.a2b.sa/images/logo_0_clean.png)
-- ![فورمولا إي](https://www.a2b.sa/images/logo_8_clean.png)
+- ![وزارة الدفاع](https://www.a2b.sa/images/logo_2_clean.webp)
+- ![الهيئة الملكية لمدينة الرياض](https://www.a2b.sa/images/logo_3_clean.webp)
+- ![الهيئة الملكية لمحافظة العلا](https://www.a2b.sa/images/logo_4_clean.webp)
+- ![مطارات الرياض](https://www.a2b.sa/images/logo_5_clean.webp)
+- ![STC - شركة الاتصالات السعودية](https://www.a2b.sa/images/logo_6_clean.webp)
+- ![الشركة السعودية للكهرباء](https://www.a2b.sa/images/logo_7_clean.webp)
+- ![هيئة تطوير بوابة الدرعية](https://www.a2b.sa/images/logo_0_clean.webp)
+- ![فورمولا إي](https://www.a2b.sa/images/logo_8_clean.webp)
 
 ## Public Structured Data
 
@@ -334,8 +336,8 @@ Dr. Suhaib Ghunaim
   "telephone": "M +966 55 384 6446",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "3168 Tahliyah St., Ground Floor, Offices #2",
-    "addressLocality": "Olaya District, Riyadh",
+    "streetAddress": "3168 شارع التحلية، الدور الأرضي، مكتب رقم 2",
+    "addressLocality": "حي العليا, Riyadh",
     "addressCountry": "SA"
   },
   "geo": {

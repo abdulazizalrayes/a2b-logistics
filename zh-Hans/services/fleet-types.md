@@ -39,6 +39,8 @@ robots: "noindex, follow"
 
 ## Main Content
 
+[跳至正文](#main-content)
+
 a2b Logistics 服务
 
 # 车队类型和卡车能力

@@ -39,6 +39,8 @@ robots: "noindex, follow"
 
 ## Main Content
 
+[انتقل إلى المحتوى](#main-content)
+
 الأسطول والقدرات
 
 # أكثر من 948 مركبة. لكل حمولة. في كل مدينة.

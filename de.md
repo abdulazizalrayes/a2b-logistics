@@ -39,6 +39,8 @@ robots: "noindex, follow"
 
 ## Main Content
 
+[Zum Inhalt springen](#main-content)
+
 Saudi-Arabiens führender Logistikpartner
 
 # Ihr Logistik-Gateway nach _Saudi-Arabien_
@@ -47,7 +49,7 @@ a2b verbindet internationale Unternehmen und Fabriken zuverlässig, skalierbar u
 
 [Kontakt aufnehmen](https://www.a2b.sa/de#contact)
 
-[Dienstleistungen ansehen](https://www.a2b.sa/de#about)
+[Dienstleistungen ansehen](https://www.a2b.sa/de#services)
 
 NEOM
 
@@ -67,9 +69,9 @@ Royal Commission for Riyadh
 
 **a2b Logistics Company** ist ein vollständig unabhängiges Turnkey-Logistikunternehmen, das gezielt für die schnell wachsende Wirtschaft Saudi-Arabiens und internationale Unternehmen im Königreich aufgebaut wurde.
 
-Today, a2b stands as one of the **führenden Logistikdienstleister im Königreich** , operating a diverse fleet of trucks across every type and size, engineered to serve every industry at every scale of operation.
+a2b betreibt eine vielfältige Lkw-Flotte für unterschiedliche Branchen und Betriebsgrößen im Königreich.
 
-For **international companies entering the Saudi market** and factories requiring a reliable logistics partner, a2b provides the on-ground infrastructure, local expertise, and operational continuity you need from day one.
+Für internationale Unternehmen beim Eintritt in den saudischen Markt und für Fabriken bietet a2b lokale Infrastruktur, Fachkenntnis und operative Kontinuität.
 
 Zertifiziert
 
@@ -195,21 +197,21 @@ Unsere Kunden
 
 ## Vertraut von Saudi-Arabiens führenden Organisationen
 
-![Ministry of Defense](https://www.a2b.sa/images/logo_2_clean.png)
+![Ministry of Defense](https://www.a2b.sa/images/logo_2_clean.webp)
 
-![Royal Commission for Riyadh City](https://www.a2b.sa/images/logo_3_clean.png)
+![Royal Commission for Riyadh City](https://www.a2b.sa/images/logo_3_clean.webp)
 
-![Royal Commission for AlUla](https://www.a2b.sa/images/logo_4_clean.png)
+![Royal Commission for AlUla](https://www.a2b.sa/images/logo_4_clean.webp)
 
-![Riyadh Airports](https://www.a2b.sa/images/logo_5_clean.png)
+![Riyadh Airports](https://www.a2b.sa/images/logo_5_clean.webp)
 
-![STC - Saudi Telecommunications Company](https://www.a2b.sa/images/logo_6_clean.png)
+![STC - Saudi Telecommunications Company](https://www.a2b.sa/images/logo_6_clean.webp)
 
-![Saudi Electricity Company](https://www.a2b.sa/images/logo_7_clean.png)
+![Saudi Electricity Company](https://www.a2b.sa/images/logo_7_clean.webp)
 
-![Diriyah Gate Development Authority (DGDA)](https://www.a2b.sa/images/logo_0_clean.png)
+![Diriyah Gate Development Authority (DGDA)](https://www.a2b.sa/images/logo_0_clean.webp)
 
-![Formula E](https://www.a2b.sa/images/logo_8_clean.png)
+![Formula E](https://www.a2b.sa/images/logo_8_clean.webp)
 
 FAQ
 
@@ -286,7 +288,7 @@ Dr. Suhaib Ghunaim
 ## Extracted Public Links
 
 - [Kontakt aufnehmen](https://www.a2b.sa/de#contact)
-- [Dienstleistungen ansehen](https://www.a2b.sa/de#about)
+- [Dienstleistungen ansehen](https://www.a2b.sa/de#services)
 - [Straßengüterverkehr](https://www.a2b.sa/de/services/trucking-road-freight)
 - [Lagerunterstützung](https://www.a2b.sa/de/services/warehousing)
 - [Zollabfertigungskoordination](https://www.a2b.sa/de/services/customs-clearance)
@@ -305,14 +307,14 @@ Dr. Suhaib Ghunaim
 
 - ![a2b logistics truck on Saudi highway](https://www.a2b.sa/images/truck_hero.jpg)
 - ![MAN-Lkw von a2b Logistics an einem Lagerhaus in Riad](https://www.a2b.sa/images/a2b_man_warehouse_banner.jpg)
-- ![Ministry of Defense](https://www.a2b.sa/images/logo_2_clean.png)
-- ![Royal Commission for Riyadh City](https://www.a2b.sa/images/logo_3_clean.png)
-- ![Royal Commission for AlUla](https://www.a2b.sa/images/logo_4_clean.png)
-- ![Riyadh Airports](https://www.a2b.sa/images/logo_5_clean.png)
-- ![STC - Saudi Telecommunications Company](https://www.a2b.sa/images/logo_6_clean.png)
-- ![Saudi Electricity Company](https://www.a2b.sa/images/logo_7_clean.png)
-- ![Diriyah Gate Development Authority (DGDA)](https://www.a2b.sa/images/logo_0_clean.png)
-- ![Formula E](https://www.a2b.sa/images/logo_8_clean.png)
+- ![Ministry of Defense](https://www.a2b.sa/images/logo_2_clean.webp)
+- ![Royal Commission for Riyadh City](https://www.a2b.sa/images/logo_3_clean.webp)
+- ![Royal Commission for AlUla](https://www.a2b.sa/images/logo_4_clean.webp)
+- ![Riyadh Airports](https://www.a2b.sa/images/logo_5_clean.webp)
+- ![STC - Saudi Telecommunications Company](https://www.a2b.sa/images/logo_6_clean.webp)
+- ![Saudi Electricity Company](https://www.a2b.sa/images/logo_7_clean.webp)
+- ![Diriyah Gate Development Authority (DGDA)](https://www.a2b.sa/images/logo_0_clean.webp)
+- ![Formula E](https://www.a2b.sa/images/logo_8_clean.webp)
 
 ## Public Structured Data
 

@@ -39,6 +39,8 @@ robots: "noindex, follow"
 
 ## Main Content
 
+[Aller au contenu](#main-content)
+
 Services a2b Logistics
 
 # Coordination du dédouanement pour l'Arabie saoudite

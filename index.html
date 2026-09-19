@@ -304,7 +304,6 @@
 
 <!-- Preload critical assets for LCP -->
 <link rel="preload" href="images/a2b_logo.webp" as="image" type="image/webp">
-<link rel="preload" href="images/truck_hero.webp" as="image" type="image/webp">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap">
@@ -317,6 +316,8 @@
 <script src="/assets/js/analytics.js"></script>
 <script src="/assets/js/i18n.js" defer></script>
 <script src="/webmcp.js" defer></script>
+<link rel="stylesheet" href="/assets/css/accessibility.css">
+<script src="/assets/js/accessibility.js" defer></script>
 </head>
 <body>
 
@@ -344,7 +345,7 @@
     <button class="lang-toggle" id="langBtn">AR</button>
     <a href="#contact" class="btn-nav">Get in Touch</a>
   </div>
-  <button class="hamburger" aria-label="Menu">
+  <button class="hamburger" aria-label="Menu" aria-controls="mobileMenu" aria-expanded="false">
     <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#333" stroke-width="2.5"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
   </button>
 </nav>
@@ -361,6 +362,8 @@
   <a href="tel:+966553846446">M +966 55 384 6446</a>
   <a href="#contact" class="mobile-accent-link">Get in Touch</a>
 </div>
+<a class="skip-link" href="#main-content">Skip to content</a>
+<main id="main-content" tabindex="-1">
 
 <!-- HERO -->
 <section class="hero" id="home">
@@ -378,7 +381,7 @@
       <a href="#contact" class="btn-primary">
         Get in Touch
       </a>
-      <a href="#about" class="btn-outline">
+      <a href="#services" class="btn-outline">
         Explore Services
       </a>
     </div>
@@ -435,7 +438,7 @@
         <div class="about-img">
           <picture>
             <source srcset="images/truck_hero.webp" type="image/webp">
-            <img src="images/truck_hero.jpg" alt="a2b logistics truck on Saudi highway" width="600" height="380" loading="eager" fetchpriority="high">
+            <img src="images/truck_hero.jpg" alt="a2b logistics truck on Saudi highway" width="600" height="380" loading="lazy" decoding="async">
           </picture>
           <div class="about-img-overlay"><span>Kingdom-wide fleet operations</span></div>
         </div>
@@ -475,7 +478,7 @@
       <div class="why-card"><div class="why-icon">&#x1F4CB;</div><h3 class="why-title">Planning</h3><div class="why-desc">We plan ahead for your projects, aligning logistics timelines precisely with your business objectives.</div></div>
       <div class="why-card"><div class="why-icon">&#x23F1;</div><h3 class="why-title">Rushed Projects</h3><div class="why-desc">Successfully delivered under the tightest deadlines, including complex, time-critical mega-projects.</div></div>
       <div class="why-card"><div class="why-icon">&#x1F3C6;</div><h3 class="why-title">Experience</h3><div class="why-desc">An impeccable track record in sensitive, high-stakes projects, with a team averaging 20+ years of experience.</div></div>
-      <div class="why-card"><div class="why-icon">&#x1F5FA;</div><h3 class="why-title">Full KSA Coverage</h3><div class="why-desc">Kingdom-wide operations across all major cities, domestic routes, and sea and air port services.</div></div>
+      <div class="why-card" id="coverage"><div class="why-icon">&#x1F5FA;</div><h3 class="why-title">Full KSA Coverage</h3><div class="why-desc">Kingdom-wide operations across all major cities, domestic routes, and sea and air port services.</div></div>
       <div class="why-card"><div class="why-icon">&#x1F916;</div><h3 class="why-title">Automation</h3><div class="why-desc">Paperless, automated workflows and documentation. Less friction, faster execution, full control.</div></div>
     </div>
   </div>
@@ -504,7 +507,7 @@
       <div>
         <div class="services-img">
           <picture>
-            <img src="images/a2b_man_warehouse_banner.jpg" alt="a2b Logistics MAN truck at a Riyadh warehouse" width="600" height="380" loading="lazy">
+            <img src="images/a2b_man_warehouse_banner.jpg" alt="a2b Logistics MAN truck at a Riyadh warehouse" width="600" height="380" loading="lazy" decoding="async">
           </picture>
         </div>
         <br>
@@ -546,14 +549,14 @@
       Trusted by Saudi Arabia's<br>Leading Organizations
     </h2>
     <div class="clients-grid">
-      <div class="client-logo-card"><img src="images/logo_2_clean.png" alt="Ministry of Defense" loading="lazy"></div>
-      <div class="client-logo-card"><img src="images/logo_3_clean.png" alt="Royal Commission for Riyadh City" loading="lazy"></div>
-      <div class="client-logo-card"><img src="images/logo_4_clean.png" alt="Royal Commission for AlUla" loading="lazy"></div>
-      <div class="client-logo-card"><img src="images/logo_5_clean.png" alt="Riyadh Airports" loading="lazy"></div>
-      <div class="client-logo-card"><img src="images/logo_6_clean.png" alt="STC - Saudi Telecommunications Company" loading="lazy"></div>
-      <div class="client-logo-card"><img src="images/logo_7_clean.png" alt="Saudi Electricity Company" loading="lazy"></div>
-      <div class="client-logo-card"><img src="images/logo_0_clean.png" alt="Diriyah Gate Development Authority (DGDA)" loading="lazy"></div>
-      <div class="client-logo-card"><img src="images/logo_8_clean.png" alt="Formula E" loading="lazy"></div>
+      <div class="client-logo-card"><img src="images/logo_2_clean.webp" alt="Ministry of Defense" loading="lazy" width="382" height="262" decoding="async"></div>
+      <div class="client-logo-card"><img src="images/logo_3_clean.webp" alt="Royal Commission for Riyadh City" loading="lazy" width="217" height="203" decoding="async"></div>
+      <div class="client-logo-card"><img src="images/logo_4_clean.webp" alt="Royal Commission for AlUla" loading="lazy" width="200" height="200" decoding="async"></div>
+      <div class="client-logo-card"><img src="images/logo_5_clean.webp" alt="Riyadh Airports" loading="lazy" width="350" height="327" decoding="async"></div>
+      <div class="client-logo-card"><img src="images/logo_6_clean.webp" alt="STC - Saudi Telecommunications Company" loading="lazy" width="274" height="178" decoding="async"></div>
+      <div class="client-logo-card"><img src="images/logo_7_clean.webp" alt="Saudi Electricity Company" loading="lazy" width="410" height="242" decoding="async"></div>
+      <div class="client-logo-card"><img src="images/logo_0_clean.webp" alt="Diriyah Gate Development Authority (DGDA)" loading="lazy" width="200" height="200" decoding="async"></div>
+      <div class="client-logo-card"><img src="images/logo_8_clean.webp" alt="Formula E" loading="lazy" width="326" height="246" decoding="async"></div>
     </div>
   </div>
 </div>
@@ -656,6 +659,7 @@
 </div>
 
 <!-- FOOTER -->
+</main>
 <footer>
   <div class="footer-brand-row">
     <img src="/images/a2b_logo.png" alt="a2b Logistics" class="footer-logo" width="52" height="39">

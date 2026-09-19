@@ -38,6 +38,8 @@ robots: "noindex, follow"
 
 ## Main Content
 
+[Saltar al contenido](#main-content)
+
 # Construye tu carrera en la logística saudí
 
 a2b está creciendo rápidamente. Buscamos profesionales motivados que quieran formar parte de algo importante y ayudar a impulsar Arabia Saudita.
@@ -46,7 +48,7 @@ a2b está creciendo rápidamente. Buscamos profesionales motivados que quieran f
 
 Envíanos tus datos y tu CV. Nuestro equipo revisará tu solicitud y se pondrá en contacto si hay una oportunidad adecuada.
 
-Thank you for applying. We have received your application and will be in touch if there is a suitable opportunity.
+Tu aplicación de correo debería abrir un borrador. Revísalo y envíalo desde allí; este sitio no ha enviado tu solicitud. Si no se abre, escribe directamente a info@a2b.sa. Para candidaturas, adjunta tu CV manualmente.
 
 ## Public Structured Data
 

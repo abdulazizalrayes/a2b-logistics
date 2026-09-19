@@ -38,15 +38,17 @@ robots: "noindex, follow"
 
 ## Main Content
 
-# Become an a2b fournisseur enregistré
+[Aller au contenu](#main-content)
+
+# Devenez fournisseur référencé de a2b
 
 Nous travaillons avec un réseau sélectionné de fournisseurs et sous-traitants de haute qualité. Si votre entreprise répond à nos standards, nous souhaitons vous connaître.
 
 ## Formulaire fournisseur
 
-Soumettez les informations de votre entreprise ci-dessous. Notre équipe achats les examinera et vous contactera s il existe une opportunité potentielle.
+Soumettez les informations de votre entreprise ci-dessous. Notre équipe achats les examinera et vous contactera s’il existe une opportunité potentielle.
 
-Thank you for registering your interest. Our procurement team will review your submission and contact you if there is a suitable opportunity. We appreciate your interest in working with a2b Logistics.
+Votre messagerie devrait ouvrir un brouillon. Vérifiez-le et envoyez-le depuis votre messagerie : le site n’a pas transmis votre demande. Si aucun brouillon ne s’ouvre, écrivez directement à info@a2b.sa. Pour une candidature, joignez votre CV manuellement.
 
 ## Public Structured Data
 

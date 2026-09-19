@@ -38,6 +38,8 @@ robots: "noindex, follow"
 
 ## Main Content
 
+[跳至正文](#main-content)
+
 # 成为 a2b 注册供应商
 
 我们与精选的高质量供应商和分包商网络合作。如果您的企业符合我们的标准，我们希望听到您的消息。
@@ -46,7 +48,7 @@ robots: "noindex, follow"
 
 请在下方提交公司信息。我们的采购团队将审核您的提交内容，如与我们的运营需求匹配，将与您联系。
 
-Thank you for registering your interest. Our procurement team will review your submission and contact you if there is a suitable opportunity. We appreciate your interest in working with a2b Logistics.
+您的邮件应用应打开一封草稿。请核对后在邮件应用中点击发送；本网站尚未提交您的申请。如果草稿未打开，请直接发送邮件至 info@a2b.sa。求职申请请手动附上简历。
 
 ## Public Structured Data
 

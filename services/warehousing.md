@@ -39,6 +39,8 @@ robots: "noindex, follow"
 
 ## Main Content
 
+[Skip to content](#main-content)
+
 a2b Logistics Services
 
 # Warehousing Support for Saudi Supply Chains

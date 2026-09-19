@@ -5,7 +5,7 @@
     "id": "a2b-logistics-architecture",
     "title": "a2b Logistics Website Architecture",
     "purpose": "Human and agent-readable map of the a2b website, its public agent interfaces, deployment path, external dependencies, controls, and change procedures.",
-    "generatedAt": "2026-09-19T13:04:40.205983+00:00",
+    "generatedAt": "2026-09-19T13:18:21.083230+00:00",
     "sourceCommitAudited": "1214d0b59f9ba734cf9ea79134e548690d620dc7",
     "scope": "a2b only",
     "confidentiality": "Repository-internal. Excluded from Vercel deployment.",
@@ -71,7 +71,12 @@
         "scripts/",
         "CLAUDE.md",
         "AGENTS.md"
-      ]
+      ],
+      "sharedUsabilityAssets": [
+        "assets/js/accessibility.js",
+        "assets/css/accessibility.css"
+      ],
+      "qualityGate": "npm run quality:check covers 65 pages, local links/assets, labels, image dimensions and script syntax."
     },
     "contentPolicy": {
       "visualFreeze": true,
@@ -97,7 +102,8 @@
         "personal delivery",
         "spam",
         "unrelated solicitations"
-      ]
+      ],
+      "qualityApproval": "Owner authorized speed, accessibility, multilingual corrections and error prevention on 2026-09-19; core layout retained."
     }
   },
   "inventory": {
