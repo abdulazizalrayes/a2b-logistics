@@ -56,3 +56,6 @@ jobs:
 
       - name: Verify multilingual links, controls and browser scripts
         run: npm run quality:check && npm run test:whatsapp
+
+      - name: Validate owner answer review boundary
+        run: npm run agent:answers:check

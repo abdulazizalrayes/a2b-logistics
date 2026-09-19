@@ -1,12 +1,9 @@
 import { readFile, stat } from 'node:fs/promises';
-import { resolve, dirname } from 'node:path';
 import { spawnSync } from 'node:child_process';
 import { parse } from 'parse5';
-const root = process.cwd();
 const routes = JSON.parse(await readFile('data/markdown-companions.json')).routes;
 const errors = [], pages = new Map();
 const attributes = n => Object.fromEntries((n.attrs || []).map(a => [a.name, a.value]));
-const text = n => n.nodeName === '#text' ? n.value : (n.childNodes || []).map(text).join('');
 async function exists(path) { try { return (await stat(path)).isFile(); } catch { return false; } }
 async function resolvePage(path) {
   const stem = path.replace(/^\//, '');
