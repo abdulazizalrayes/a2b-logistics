@@ -1,19 +1,45 @@
-import { readFile, stat, readdir } from 'node:fs/promises';
+import { readFile, readdir } from 'node:fs/promises';
+import { parse, serialize } from 'parse5';
 import { createHash } from 'node:crypto';
 import { checkProductionHealth } from './check-production-health.mjs';
 const base = 'https://www.a2b.sa';
-const routes = JSON.parse(await readFile('data/markdown-companions.json')).routes;
-// Cloudflare injects this monitoring tag at the edge; compare all other HTML bytes exactly.
-const normalizeHtml = value => value.replace(/<script\b(?=[^>]*\bsrc="https:\/\/static\.cloudflareinsights\.com\/beacon\.min\.js(?:\/[^"]*)?")[^>]*><\/script>\s*/g, '');
+const locales = ['', '/ar', '/de', '/it', '/es', '/fr', '/zh-Hans'];
+const pagePaths = ['', '/fleet', '/careers', '/vendors', '/services/trucking-road-freight', '/services/warehousing', '/services/customs-clearance', '/services/supply-chain', '/services/fleet-types'];
+const routes = locales.flatMap(locale => pagePaths.map(path => ({ route: locale + path || '/' }))).concat([{ route: '/privacy-policy' }, { route: '/terms-and-conditions' }]);
+const manifest = JSON.parse(await readFile('data/markdown-companions.json')).routes;
+if (JSON.stringify(routes.map(r => r.route).sort()) !== JSON.stringify(manifest.map(r => r.route).sort())) throw new Error('Release verifier route inventory must match the public manifest.');
+// Compare parsed HTML, excluding only Cloudflare's known edge-added monitoring node.
+function normalizeHtml(value) {
+  const tree = parse(value);
+  function visit(node) {
+    const children = node.childNodes || [];
+    for (let index = children.length - 1; index >= 0; index--) {
+      const child = children[index];
+      const source = child.attrs?.find(attr => attr.name === 'src')?.value;
+      if (child.tagName === 'script' && source && /^https:\/\/static\.cloudflareinsights\.com\/beacon\.min\.js(?:\/[^?#]+)?$/.test(source)) {
+        if (children[index + 1]?.nodeName === '#text' && !children[index + 1].value.trim()) children.splice(index + 1, 1);
+        children.splice(index, 1);
+      } else visit(child);
+    }
+    if (node.tagName === 'body' && children.at(-1)?.nodeName === '#text') children.at(-1).value = children.at(-1).value.trimEnd();
+  }
+  visit(tree);
+  return serialize(tree);
+}
 const hash = value => createHash('sha256').update(value).digest('hex');
 const results = [];
 for (const route of routes) {
   const stem = route.route.slice(1);
   let file = route.route === '/' ? 'index.html' : stem + '.html';
-  try { await stat(file); } catch { file = stem + '/index.html'; }
+  let source;
+  try { source = await readFile(file, 'utf8'); } catch (error) {
+    if (error.code !== 'ENOENT') throw error;
+    file = stem + '/index.html';
+    source = await readFile(file, 'utf8');
+  }
   try {
     const response = await fetch(base + route.route, { redirect: 'error', signal: AbortSignal.timeout(15000), headers: { 'User-Agent': 'A2B-Release-Verification/1.0', Accept: 'text/html' } });
-    results.push({ route: route.route, status: response.status, matchesCheckout: response.status === 200 && hash(normalizeHtml(await response.text())) === hash(await readFile(file, 'utf8')) });
+    results.push({ route: route.route, status: response.status, matchesCheckout: response.status === 200 && hash(normalizeHtml(await response.text())) === hash(normalizeHtml(source)) });
   } catch { results.push({ route: route.route, status: null, matchesCheckout: false }); }
 }
 const assets = ['webmcp.js'];
