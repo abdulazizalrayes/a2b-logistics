@@ -351,7 +351,9 @@ requireIncludes(mcpApi, 'api/mcp.js', 'requestBodySize', 'MCP request body limit
 requireIncludes(conciergeApi, 'api/agent-concierge.js', 'MAX_BODY_BYTES', 'concierge request body limit');
 requireIncludes(conciergeApi, 'api/agent-concierge.js', 'containsSensitiveInput', 'concierge sensitive-input rejection');
 requireIncludes(conciergeApi, 'api/agent-concierge.js', 'isPromptInjection', 'concierge prompt-injection rejection');
-requireIncludes(conciergeApi, 'api/agent-concierge.js', 'agent_concierge_question', 'concierge question telemetry');
+requireIncludes(conciergeApi, 'api/agent-concierge.js', 'logConciergeAnswer', 'concierge question telemetry');
+requireIncludes(mcpApi, 'api/mcp.js', 'logConciergeAnswer', 'MCP concierge question telemetry');
+requireIncludes(await readFile(join(root, 'api/_lib/concierge-observation.js'), 'utf8'), 'api/_lib/concierge-observation.js', 'agent_concierge_question', 'shared concierge telemetry event');
 if (webmcp.includes('request_quote')) fail('webmcp.js: request_quote should not be exposed');
 if (JSON.stringify(agentCard).includes('request_quote')) fail('.well-known/agent-card.json: request_quote should not be exposed');
 

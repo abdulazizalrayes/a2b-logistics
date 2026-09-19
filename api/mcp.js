@@ -1,6 +1,7 @@
 import { readFile } from 'node:fs/promises';
 import { createHash, randomUUID } from 'node:crypto';
 import { join } from 'node:path';
+import { logConciergeAnswer } from './_lib/concierge-observation.js';
 import { answerAgentQuestion } from './_lib/agent-concierge-engine.js';
 import {
   applyPublicApiHeaders,
@@ -334,7 +335,7 @@ async function callTool(name, args = {}) {
 }
 
 export default async function handler(req, res) {
-  const requestId = req.headers?.['x-request-id'] || randomUUID();
+  const requestId = randomUUID();
   applyPublicApiHeaders(res, requestId);
 
   if (req.method === 'OPTIONS') {
@@ -402,6 +403,9 @@ export default async function handler(req, res) {
       const name = body.params?.name;
       const args = validateArgs(body.params?.arguments || {});
       const result = await callTool(name, args);
+      if (name === 'ask_agent_concierge') {
+        logConciergeAnswer({ requestId, question: args.question.trim(), result, source: 'mcp' });
+      }
       console.log(JSON.stringify({ event: 'mcp_tool_call', requestId, tool: name, route: result.route?.route || result.route || null, ts: new Date().toISOString() }));
       res.status(200).json(ok(id, { content: [{ type: 'text', text: JSON.stringify(result, null, 2) }] }, requestId));
       return;

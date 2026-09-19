@@ -1,5 +1,5 @@
 ---
-title: "Trucking and Road Freight Saudi Arabia"
+title: "Trucking & Road Freight in Saudi Arabia | a2b Logistics"
 description: "Kingdom-wide B2B road freight for factories, importers, procurement teams, and project operators that need reliable cargo movement across Saudi Arabia."
 canonical: "https://www.a2b.sa/services/trucking-road-freight"
 language: "en"
@@ -10,7 +10,7 @@ content_signal: "search=yes, ai-input=yes, ai-train=no"
 robots: "noindex, follow"
 ---
 
-# Trucking and Road Freight Saudi Arabia
+# Trucking & Road Freight in Saudi Arabia | a2b Logistics
 
 > Kingdom-wide B2B road freight for factories, importers, procurement teams, and project operators that need reliable cargo movement across Saudi Arabia.
 
@@ -60,23 +60,23 @@ Operational Scope
 
 ## Built for B2B logistics buyers in Saudi Arabia
 
-Dedicated, crawlable service information for buyers and AI systems, aligned with a2b's Saudi Arabia logistics operations.
+Plan commercial cargo movements across Saudi Arabia with clear pickup, delivery, vehicle and handling requirements.
 
-### Built for B2B operations
+### Commercial trucking requirements
 
-a2b supports commercial cargo movement for organizations that need predictable trucking capacity, operational continuity, and local Saudi logistics knowledge.
+For a movement originating in or delivering to Riyadh or another Saudi location, share the origin, destination, cargo description, weight or dimensions, pickup window and delivery timeline.
 
-### Flexible booking models
+### One-time and recurring transport
 
-Use per-trip movement, period contracts, or volume-based unit-rate models depending on project timing and shipment frequency.
+Discuss per-trip movements, period contracts or volume-based unit-rate models. For recurring work, include shipment frequency and expected volume so the team can review the requirement.
 
-### Route coordination
+### Routes and connected services
 
-Operations support can coordinate domestic routes, major city deliveries, and cargo handoff points across the Kingdom.
+a2b supports road freight across Saudi Arabia and selected GCC cross-border routes. Exact lane feasibility and documentation requirements need confirmation. Port-related movements can be coordinated with [customs-clearance support](https://www.a2b.sa/services/customs-clearance) and [warehousing support](https://www.a2b.sa/services/warehousing) .
 
-### Fleet-backed execution
+### Vehicle and handling requirements
 
-Truck capacity is supported by a wider fleet and partner network for different cargo types and operational requirements.
+Review the published [fleet types](https://www.a2b.sa/services/fleet-types) and specify special handling or loading requirements. a2b uses a fleet and partner network; vehicle availability, capacity, pricing and transit commitments are confirmed for each requirement.
 
 Related Services
 
@@ -100,6 +100,9 @@ Share your cargo type, route, timing, and operational requirements. The a2b team
 
 - [Request Support](https://www.a2b.sa/#contact)
 - [View Fleet](https://www.a2b.sa/fleet)
+- [customs-clearance support](https://www.a2b.sa/services/customs-clearance)
+- [warehousing support](https://www.a2b.sa/services/warehousing)
+- [fleet types](https://www.a2b.sa/services/fleet-types)
 - [Trucking and road freight](https://www.a2b.sa/services/trucking-road-freight)
 - [Warehousing support](https://www.a2b.sa/services/warehousing)
 - [Customs-clearance coordination](https://www.a2b.sa/services/customs-clearance)

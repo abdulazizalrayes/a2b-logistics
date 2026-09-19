@@ -38,6 +38,66 @@
       "source": "/types-of-cargo-shipments",
       "destination": "/services/fleet-types",
       "permanent": true
+    },
+    {
+      "source": "/ar/privacy-policy",
+      "destination": "/privacy-policy",
+      "permanent": true
+    },
+    {
+      "source": "/ar/terms-and-conditions",
+      "destination": "/terms-and-conditions",
+      "permanent": true
+    },
+    {
+      "source": "/de/privacy-policy",
+      "destination": "/privacy-policy",
+      "permanent": true
+    },
+    {
+      "source": "/de/terms-and-conditions",
+      "destination": "/terms-and-conditions",
+      "permanent": true
+    },
+    {
+      "source": "/es/privacy-policy",
+      "destination": "/privacy-policy",
+      "permanent": true
+    },
+    {
+      "source": "/es/terms-and-conditions",
+      "destination": "/terms-and-conditions",
+      "permanent": true
+    },
+    {
+      "source": "/fr/privacy-policy",
+      "destination": "/privacy-policy",
+      "permanent": true
+    },
+    {
+      "source": "/fr/terms-and-conditions",
+      "destination": "/terms-and-conditions",
+      "permanent": true
+    },
+    {
+      "source": "/it/privacy-policy",
+      "destination": "/privacy-policy",
+      "permanent": true
+    },
+    {
+      "source": "/it/terms-and-conditions",
+      "destination": "/terms-and-conditions",
+      "permanent": true
+    },
+    {
+      "source": "/zh-Hans/privacy-policy",
+      "destination": "/privacy-policy",
+      "permanent": true
+    },
+    {
+      "source": "/zh-Hans/terms-and-conditions",
+      "destination": "/terms-and-conditions",
+      "permanent": true
     }
   ],
   "headers": [

@@ -50,3 +50,6 @@ jobs:
 
       - name: Verify agent concierge safeguards
         run: npm run agent:concierge:test
+
+      - name: Verify monitoring failure, recovery and privacy safeguards
+        run: npm run health:test && npm run agent:metrics:test
