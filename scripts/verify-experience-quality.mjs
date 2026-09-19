@@ -1,6 +1,7 @@
 import { readFile, stat } from 'node:fs/promises';
 import { spawnSync } from 'node:child_process';
 import { parse } from 'parse5';
+import { createHash } from 'node:crypto';
 const routes = JSON.parse(await readFile('data/markdown-companions.json')).routes;
 const errors = [], pages = new Map();
 const attributes = n => Object.fromEntries((n.attrs || []).map(a => [a.name, a.value]));
@@ -43,6 +44,10 @@ for (const [path, page] of pages) {
       if (/^(mailto:|tel:|data:|https?:\/\/)/.test(value) && !value.startsWith('https://www.a2b.sa/')) continue;
       const url = new URL(value, 'https://www.a2b.sa' + path);
       if (url.origin !== 'https://www.a2b.sa') continue;
+      if (/^\/assets\/(css|js)\/.+\.(css|js)$/.test(url.pathname)) {
+        const expected = createHash('sha256').update(await readFile(url.pathname.slice(1))).digest('hex').slice(0, 12);
+        if (url.searchParams.get('v') !== expected) fail(`asset version must match content: ${value}`);
+      }
       links++;
       const targetPath = url.pathname.replace(/\/$/, '') || '/';
       const target = pages.get(targetPath);
