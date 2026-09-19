@@ -1,5 +1,5 @@
 ---
-title: "a2b Logistics | Saudi Arabia's Premier Logistics Partner"
+title: "a2b Logistics | B2B Logistics Company in Riyadh, Saudi Arabia"
 description: "a2b Logistics provides trucking, warehousing, customs clearance, and supply chain solutions across Saudi Arabia with KSA-wide coverage and 24/7 support."
 canonical: "https://www.a2b.sa/"
 language: "en"
@@ -10,7 +10,7 @@ content_signal: "search=yes, ai-input=yes, ai-train=no"
 robots: "noindex, follow"
 ---
 
-# a2b Logistics | Saudi Arabia's Premier Logistics Partner
+# a2b Logistics | B2B Logistics Company in Riyadh, Saudi Arabia
 
 > a2b Logistics provides trucking, warehousing, customs clearance, and supply chain solutions across Saudi Arabia with KSA-wide coverage and 24/7 support.
 

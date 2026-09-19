@@ -1,14 +1,13 @@
 import { randomUUID } from 'node:crypto';
+import { logConciergeAnswer } from './_lib/concierge-observation.js';
 import { answerAgentQuestion } from './_lib/agent-concierge-engine.js';
 import {
   applyPublicApiHeaders,
   containsSensitiveInput,
   currentAbuseBlock,
-  fingerprint,
   isCanonicalProductionHost,
   isJsonRequest,
   isPromptInjection,
-  redactSensitive,
   registerAbuse,
   requestBodySize,
   takeRateLimit
@@ -18,41 +17,13 @@ const MAX_BODY_BYTES = 32 * 1024;
 const MAX_QUESTION_LENGTH = 2_000;
 const RATE_LIMIT = 5;
 const RATE_WINDOW_MS = 60_000;
-const duplicateQuestions = new Map();
 
 function json(res, status, payload) {
   res.status(status).json(payload);
 }
 
-function logQuestion({ requestId, question, result, duplicate }) {
-  const event = {
-    event: 'agent_concierge_question',
-    requestId,
-    fingerprint: fingerprint(question),
-    intent: result.intent,
-    answered: result.answered,
-    fit: result.fit,
-    duplicate,
-    requiresReview: !result.answered,
-    ts: new Date().toISOString()
-  };
-  if (!result.answered && !duplicate) event.questionRedacted = redactSensitive(question);
-  console.info(JSON.stringify(event));
-}
-
-function isDuplicate(question) {
-  const now = Date.now();
-  const id = fingerprint(question);
-  for (const [key, seenAt] of duplicateQuestions) {
-    if (now - seenAt > 86_400_000) duplicateQuestions.delete(key);
-  }
-  const duplicate = duplicateQuestions.has(id);
-  duplicateQuestions.set(id, now);
-  return duplicate;
-}
-
 export default async function handler(req, res) {
-  const requestId = String(req.headers?.['x-request-id'] || randomUUID()).slice(0, 128);
+  const requestId = randomUUID();
   applyPublicApiHeaders(res, requestId);
 
   if (req.method === 'OPTIONS') {
@@ -137,8 +108,7 @@ export default async function handler(req, res) {
 
   try {
     const result = await answerAgentQuestion(question);
-    const duplicate = isDuplicate(question);
-    logQuestion({ requestId, question, result, duplicate });
+    const duplicate = logConciergeAnswer({ requestId, question, result, source: 'concierge' });
     json(res, 200, {
       ...result,
       duplicate,

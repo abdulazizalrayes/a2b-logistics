@@ -19,7 +19,11 @@
     "ai:benchmark": "node scripts/ai-visibility-benchmark.mjs",
     "agent:report": "node scripts/agent-analytics-report.mjs",
     "agent:concierge:test": "node scripts/validate-agent-concierge.mjs",
-    "agent:concierge:report": "node scripts/agent-concierge-report.mjs"
+    "agent:concierge:report": "node scripts/agent-concierge-report.mjs",
+    "health:check": "node scripts/check-production-health.mjs",
+    "health:test": "node scripts/validate-production-health.mjs",
+    "agent:metrics:retain": "node scripts/retain-concierge-metrics.mjs",
+    "agent:metrics:test": "node scripts/validate-concierge-metrics.mjs"
   },
   "devDependencies": {
     "parse5": "^8.0.1"

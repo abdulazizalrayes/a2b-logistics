@@ -1,5 +1,5 @@
 ---
-title: "Supply Chain Logistics Saudi Arabia | a2b Logistics"
+title: "Supply Chain Services in Saudi Arabia | a2b Logistics"
 description: "Operational supply-chain support for companies, factories, procurement teams, and logistics buyers working across Saudi Arabia."
 canonical: "https://www.a2b.sa/services/supply-chain"
 language: "en"
@@ -10,7 +10,7 @@ content_signal: "search=yes, ai-input=yes, ai-train=no"
 robots: "noindex, follow"
 ---
 
-# Supply Chain Logistics Saudi Arabia | a2b Logistics
+# Supply Chain Services in Saudi Arabia | a2b Logistics
 
 > Operational supply-chain support for companies, factories, procurement teams, and logistics buyers working across Saudi Arabia.
 
@@ -60,23 +60,23 @@ Operational Scope
 
 ## Built for B2B logistics buyers in Saudi Arabia
 
-Dedicated, crawlable service information for buyers and AI systems, aligned with a2b's Saudi Arabia logistics operations.
+Coordinate trucking, warehousing and delivery around your Saudi business operations, with the scope and handoffs agreed before work begins.
 
 ### Operational planning
 
-a2b helps align logistics timing, capacity, and movement requirements.
+Share the business goal, locations, expected volume, timeline and operating constraints. These inputs help define the logistics stages and responsibilities for your Saudi operation.
 
-### Execution support
+### Connected logistics services
 
-Support can connect trucking, warehousing, and delivery workflows.
+Combine [road freight](https://www.a2b.sa/services/trucking-road-freight) , [warehousing support](https://www.a2b.sa/services/warehousing) and delivery coordination when the requirement spans more than one stage. Import-related work can also include [customs-clearance coordination](https://www.a2b.sa/services/customs-clearance) .
 
-### Saudi coverage
+### Saudi operations and locations
 
-Operations can be coordinated across major cities and domestic routes.
+Based in Riyadh, a2b supports logistics operations across Saudi Arabia. Identify the cities, facilities and cargo handoff points involved so the team can confirm the operating scope.
 
-### Business continuity
+### Scope and commercial confirmation
 
-Designed for companies that need reliable logistics execution rather than isolated shipments.
+This service concerns logistics execution and coordination. Pricing, available capacity, exact routes, timing and contractual commitments are confirmed by a2b after reviewing the requirement.
 
 Related Services
 
@@ -100,6 +100,9 @@ Share your operational flow, timing, route, and capacity requirements.
 
 - [Request Support](https://www.a2b.sa/#contact)
 - [View Fleet](https://www.a2b.sa/fleet)
+- [road freight](https://www.a2b.sa/services/trucking-road-freight)
+- [warehousing support](https://www.a2b.sa/services/warehousing)
+- [customs-clearance coordination](https://www.a2b.sa/services/customs-clearance)
 - [Trucking and road freight](https://www.a2b.sa/services/trucking-road-freight)
 - [Warehousing support](https://www.a2b.sa/services/warehousing)
 - [Customs-clearance coordination](https://www.a2b.sa/services/customs-clearance)

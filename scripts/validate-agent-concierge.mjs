@@ -116,6 +116,22 @@ try {
   });
   assert.equal(mcpConcierge.statusCode, 200);
   assert.ok(mcpConcierge.body.result.content[0].text.includes('a2b Logistics Company'));
+  const mcpAnswered = loggedEvents.find(event => event.source === 'mcp' && event.answered === true);
+  assert.ok(mcpAnswered, 'MCP concierge answers must be observable');
+  assert.equal(mcpAnswered.questionRedacted, undefined);
+  const mcpUnknown = 'Can a2b operate an orbital cargo base?';
+  await request(mcpHandler, {
+    body: { jsonrpc: '2.0', id: 4, method: 'tools/call', params: { name: 'ask_agent_concierge', arguments: { question: mcpUnknown } } },
+    headers: { 'x-request-id': 'caller-supplied-secret-must-not-be-logged' }, ip: '203.0.113.23'
+  });
+  const mcpUnanswered = loggedEvents.find(event => event.source === 'mcp' && event.answered === false);
+  assert.equal(mcpUnanswered.questionRedacted, mcpUnknown);
+  assert.ok(!JSON.stringify(loggedEvents).includes('caller-supplied-secret'));
+  await request(conciergeHandler, { body: { question: mcpUnknown }, ip: '203.0.113.24' });
+  const duplicateAcrossEndpoints = loggedEvents.at(-1);
+  assert.equal(duplicateAcrossEndpoints.duplicate, true);
+  assert.equal(duplicateAcrossEndpoints.questionRedacted, undefined);
+
 
   console.log('a2b agent concierge validation passed: method, schema, size, privacy, injection, grounding, logging, duplicate, rate-limit, and MCP checks.');
 } finally {

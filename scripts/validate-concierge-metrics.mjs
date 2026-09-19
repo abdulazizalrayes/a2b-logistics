@@ -1,0 +1,13 @@
+import assert from 'node:assert/strict';
+import { validateSnapshot, retainSnapshots } from './retain-concierge-metrics.mjs';
+const input = { company: 'a2b', project: 'a2b-logistics', environment: 'production', windowStart: '2026-09-18T12:27:00Z', windowEnd: '2026-09-19T12:27:00Z', coverage: 'partial', sourceCoverage: 'direct-only', answered: 0, unanswered: 0, duplicates: 0, excludedSynthetic: null, rateLimited: null, serverErrors: null };
+assert.deepEqual(validateSnapshot(input), input);
+for (const key of ['questionRedacted', 'question', 'ip', 'requestId', 'fingerprint', 'cookie', 'token']) assert.throws(() => validateSnapshot({ ...input, [key]: 'never-retain' }));
+assert.throws(() => validateSnapshot({ ...input, company: 'another-company' }));
+assert.throws(() => validateSnapshot({ ...input, answered: -1 }));
+assert.throws(() => validateSnapshot({ ...input, coverage: 'unavailable' }));
+const now = Date.parse(input.windowEnd);
+const one = retainSnapshots([], input, now);
+assert.equal(retainSnapshots(one, input, now).length, 1, 'same snapshot must be idempotent');
+assert.equal(retainSnapshots(one, { ...input, answered: 2 }, now)[0].answered, 2, 'correction replaces the same window');
+console.log('Aggregate retention: identity, privacy, unknown coverage and idempotency checks passed.');

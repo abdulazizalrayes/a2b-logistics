@@ -5,7 +5,7 @@
     "id": "a2b-logistics-architecture",
     "title": "a2b Logistics Website Architecture",
     "purpose": "Human and agent-readable map of the a2b website, its public agent interfaces, deployment path, external dependencies, controls, and change procedures.",
-    "generatedAt": "2026-09-09T08:40:00Z",
+    "generatedAt": "2026-09-19T12:35:00Z",
     "sourceCommitAudited": "1214d0b59f9ba734cf9ea79134e548690d620dc7",
     "scope": "a2b only",
     "confidentiality": "Repository-internal. Excluded from Vercel deployment.",
@@ -329,7 +329,10 @@
         "agent-concierge-api",
         "security-headers"
       ],
-      "status": "active"
+      "status": "active",
+      "notes": [
+        "Twelve legacy locale-prefixed legal URLs permanently redirect to the two existing English legal pages; translated legal pages are not claimed."
+      ]
     },
     {
       "id": "edge-middleware",
@@ -652,7 +655,8 @@
       "notes": [
         "Reads repository files first and falls back to the production URL if local reads fail.",
         "Rejects non-JSON and oversized bodies, rate limits per transient client key, and accepts only canonical production hosts.",
-        "Returns no-store responses and never sends email, submits forms, quotes prices, or creates commitments."
+        "Returns no-store responses and never sends email, submits forms, quotes prices, or creates commitments.",
+        "ask_agent_concierge emits the same agent_concierge_question event as the direct endpoint, without logging answered question text."
       ]
     },
     {
@@ -668,7 +672,8 @@
         "api/_lib/public-api-guard.js",
         "data/agent-concierge.json",
         "scripts/validate-agent-concierge.mjs",
-        "scripts/agent-concierge-report.mjs"
+        "scripts/agent-concierge-report.mjs",
+        "api/_lib/concierge-observation.js"
       ],
       "routes": [
         "POST /api/agent-concierge",
@@ -690,7 +695,8 @@
       "notes": [
         "No paid AI call, database, private tools, environment-secret read, outbound message, or commercial authority.",
         "Answered question content is not logged. New unanswered questions are logged once after redaction.",
-        "Application controls remain effective on the origin, with a verified Cloudflare shared edge counter protecting both public agent API paths."
+        "Application controls remain effective on the origin, with a verified Cloudflare shared edge counter protecting both public agent API paths.",
+        "Direct concierge and MCP ask_agent_concierge share privacy-preserving event logging; duplicate suppression remains process-local. Request identifiers are server-generated."
       ]
     },
     {
@@ -1571,6 +1577,14 @@
       {
         "command": "npm run architecture:check",
         "purpose": "Validate JSON references, identity, inventory, flows, file evidence, and generated HTML synchronization."
+      },
+      {
+        "command": "npm run health:check -- PRIVATE_OUTPUT.json",
+        "purpose": "Sequential public synthetic checks with metadata-only output. No concierge questions or contact submissions."
+      },
+      {
+        "command": "npm run agent:metrics:retain -- SNAPSHOT.json PRIVATE_ARCHIVE.json",
+        "purpose": "Retain allowlisted A2B production aggregate window snapshots for 90 days; never sum overlapping windows or treat unknown coverage as zero."
       }
     ],
     "deployment": {
@@ -1616,7 +1630,7 @@
       "id": "concierge-observability-retention",
       "severity": "medium",
       "risk": "Vercel log retention and serverless process-local duplicate or abuse counters are not durable global stores.",
-      "control": "Keep application limits and the active Cloudflare shared edge counter in place, review false positives and blocked events, and export only redacted unanswered-question events into the a2b review report."
+      "control": "Preserve endpoint database-free behavior. Review production logs before provider retention expires and retain only allowlisted aggregate window snapshots outside the deployed site. Record coverage gaps and synthetic traffic explicitly; keep redacted unanswered-question review separate. Twice-daily reviews still depend on host availability."
     },
     {
       "id": "generated-discovery-hashes",
