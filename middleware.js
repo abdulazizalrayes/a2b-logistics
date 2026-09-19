@@ -92,6 +92,10 @@ function htmlHeaders(route) {
 
 export default function middleware(request) {
   const url = new URL(request.url);
+  // Repository-only material must never be served as public site content.
+  if (/^\/(?:docs|reports|screenshots|scripts)(?:\/|$)/i.test(url.pathname) || /^\/(?:CLAUDE|AGENTS)\.md$/i.test(url.pathname)) {
+    return new Response('Not found', { status: 404, headers: { 'Cache-Control': 'no-store', 'X-Robots-Tag': 'noindex' } });
+  }
   const languageRoutes = {
     ar: '/ar',
     de: '/de',

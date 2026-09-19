@@ -4,6 +4,8 @@ const rateBuckets = new Map();
 const abuseBuckets = new Map();
 
 const SECRET_PATTERNS = [
+  /\bsk-(?:proj-|svcacct-)?[a-z0-9_-]{20,}\b/i,
+  /\bBearer\s+[a-z0-9._~-]{12,}/i,
   /\b(?:password|passwd|passcode|api[_ -]?key|access[_ -]?token|refresh[_ -]?token|private[_ -]?key|client[_ -]?secret)\b\s*[:=]\s*\S+/i,
   /\b(?:sk|pk)_(?:live|test)_[a-z0-9_-]{12,}\b/i,
   /\bgh[pousr]_[a-z0-9]{20,}\b/i,
@@ -51,9 +53,8 @@ export function isJsonRequest(req) {
 
 export function requestBodySize(req) {
   const declared = Number.parseInt(String(req.headers?.['content-length'] || ''), 10);
-  if (Number.isFinite(declared) && declared >= 0) return declared;
   try {
-    return Buffer.byteLength(JSON.stringify(req.body ?? {}), 'utf8');
+    return Math.max(Number.isFinite(declared) && declared >= 0 ? declared : 0, Buffer.byteLength(JSON.stringify(req.body ?? {}), 'utf8'));
   } catch {
     return Number.POSITIVE_INFINITY;
   }
@@ -112,7 +113,7 @@ export function isPromptInjection(value) {
 
 export function redactSensitive(value, maxLength = 500) {
   let output = String(value || '').replace(/[\u0000-\u001f\u007f]/g, ' ').trim();
-  for (const pattern of SECRET_PATTERNS) output = output.replace(pattern, '[REDACTED_SECRET]');
+  for (const pattern of SECRET_PATTERNS) output = output.replace(new RegExp(pattern.source, pattern.flags.includes('g') ? pattern.flags : pattern.flags + 'g'), '[REDACTED_SECRET]');
   output = output
     .replace(/\b[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}\b/gi, '[REDACTED_EMAIL]')
     .replace(/(?:\+?\d[\d\s().-]{7,}\d)/g, '[REDACTED_PHONE]');
