@@ -2,6 +2,8 @@ import assert from 'node:assert/strict';
 import { readFile } from 'node:fs/promises';
 import { selectApprovedAnswer, selectionPrompt, MODEL } from '../api/_lib/concierge-llm.js';
 import { answerAgentQuestion } from '../api/_lib/agent-concierge-engine.js';
+import concierge from '../api/agent-concierge.js';
+import mcp from '../api/mcp.js';
 const approved = JSON.parse(await readFile('data/concierge-approved-answers.json'));
 let calls = 0;
 const options = { enabled: true, token: 'synthetic-provider-credential', fetcher: async (url, init) => {
@@ -37,6 +39,30 @@ assert.equal(fallback.nextStep.reviewRequired, true);
 const guardedCalls = calls;
 assert.equal((await answerAgentQuestion('Do you have ISO 27001 certification?', { llm: options })).intent, 'compliance');
 assert.equal(calls, guardedCalls);
+assert.equal((await selectApprovedAnswer('Do your trucks support GPS?', approved, options)).answerId, null);
+assert.equal(calls, guardedCalls, 'Fleet technology questions never consume model allowance');
+const previous = { fetch: globalThis.fetch, enabled: process.env.A2B_CONCIERGE_LLM_ENABLED, token: process.env.A2B_CLOUDFLARE_AI_TOKEN, info: console.info };
+try {
+  globalThis.fetch = options.fetcher;
+  process.env.A2B_CONCIERGE_LLM_ENABLED = 'true';
+  process.env.A2B_CLOUDFLARE_AI_TOKEN = options.token;
+  console.info = () => {};
+  for (const handler of [concierge, mcp]) {
+    const question = 'Could I join your team as a driver?';
+    const body = handler === concierge ? { question } : { jsonrpc: '2.0', id: 1, method: 'tools/call', params: { name: 'ask_agent_concierge', arguments: { question } } };
+    const res = { setHeader() {}, status(n) { this.statusCode = n; return this; }, json(value) { this.body = value; }, end() {} };
+    await handler({ method: 'POST', body, headers: { host: 'www.a2b.sa', 'content-type': 'application/json', 'cf-connecting-ip': '192.0.2.231' } }, res);
+    assert.equal(res.statusCode, 200);
+    const result = handler === concierge ? res.body : JSON.parse(res.body.result.content[0].text);
+    assert.equal(result.answerMode, 'llm_selected_approved_answer');
+    assert.equal(result.answer, reply.answer);
+  }
+} finally {
+  globalThis.fetch = previous.fetch; console.info = previous.info;
+  for (const [key, value] of [['A2B_CONCIERGE_LLM_ENABLED', previous.enabled], ['A2B_CLOUDFLARE_AI_TOKEN', previous.token]]) {
+    if (value === undefined) delete process.env[key]; else process.env[key] = value;
+  }
+}
 assert.ok(selectionPrompt(approved).includes('null means owner review'));
 assert.ok(!selectionPrompt(approved).includes('approvalReference'));
 console.log('LLM adapter checks passed: fixed account/model, approved-only outputs, input privacy, protected scopes, provider errors and deterministic fallback.');

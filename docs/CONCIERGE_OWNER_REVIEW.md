@@ -1,6 +1,6 @@
 # A2B concierge — owner-approved answers
 
-The service is deterministic and available through HTTP/MCP; it is not an LLM and does not learn automatically. These are synthetic regression questions, not customer messages. Owner approval was received on 19 September 2026. Only approved final wording is eligible for release.
+The service is available through HTTP/MCP and combines deterministic public-fact rules with an optional LLM that selects approved answers. It does not learn or publish corrections automatically. These are synthetic regression questions, not customer messages. Owner approval was received on 19 September 2026. Only approved final wording is eligible for release.
 
 For every future correction: draft an answer, obtain the owner’s explicit final wording, preserve the approval reference, update the public answer version, run paraphrase and boundary tests through both endpoints, then release and verify. No unreviewed feedback is automatically published or used for model training.
 

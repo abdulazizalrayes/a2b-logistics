@@ -1,6 +1,6 @@
-# Optional concierge LLM — prepared, not activated
+# Concierge LLM — free-only activation
 
-The production service currently uses deterministic rules and the 12 owner-approved answers. This branch adds an optional Cloudflare Workers AI classifier. It has not yet passed a real-provider evaluation and must remain disabled until that evaluation succeeds.
+The service combines deterministic rules and the 12 owner-approved answers with an optional Cloudflare Workers AI classifier. On 19 September 2026, all 20 real-provider evaluation cases passed after disabling unnecessary model reasoning and protecting fleet technology questions. Owner authorization to create the dedicated credential and activate free-only inference was received in the current Codex task. Production activation still requires the release and live checks below.
 
 ## Behavior
 
@@ -16,10 +16,14 @@ Keep new proposals in the private review fixture. Only after owner approval, pub
 
 1. Create a dedicated A2B Workers AI inference credential for account `58215c600a9049d0d99d21bfae18cd64`, with no DNS or other unrelated access. Browser credential creation requires owner confirmation at action time.
 2. Store it only as encrypted server-side `A2B_CLOUDFLARE_AI_TOKEN` in the A2B Vercel project. Never use a public frontend environment variable or commit the credential.
-3. Set `A2B_CONCIERGE_LLM_ENABLED=true` only in an evaluation environment and run `npm run agent:llm:eval`. All 20 synthetic English/Arabic cases must pass. Invalid JSON and provider unavailability count as failures even for null cases. Evaluate model latency and JSON behavior; the selected Qwen model is provisional until proven.
+3. Set `A2B_CONCIERGE_LLM_ENABLED=true` only in an evaluation environment and run `npm run agent:llm:eval`. All 20 synthetic English/Arabic cases must pass. Invalid JSON and provider unavailability count as failures even for null cases. Evaluate model latency and JSON behavior; the selected Qwen model was evaluated with reasoning disabled using `/no_think`.
 4. Run CI and a preview API/MCP smoke check. Then enable in production and redeploy. Verify both interfaces on a novel paraphrase and repeat the 12 approved-answer checks.
 5. Keep the account on Workers Free; no paid plan upgrade is authorized. If free inference is unavailable, fall back to deterministic answers.
 
 Rollback: remove/set `A2B_CONCIERGE_LLM_ENABLED=false` and redeploy. The prior deterministic path requires no provider credential. Revoke a compromised credential separately.
 
 Local mocked tests verify contract enforcement, privacy rejection, exact approved text, protected scopes and provider-error fallback. They do not establish real-model accuracy.
+
+## Free-only operating constraint
+
+Workers Free was verified in the Cloudflare dashboard on 19 September 2026. Keep that account on Free: its daily inference allowance stops requests rather than enabling paid overage. The application has no paid-provider fallback, subscription creation or plan-upgrade path. A future account upgrade would invalidate this cost boundary and must not be made for this concierge. Existing Vercel hosting remains unchanged.

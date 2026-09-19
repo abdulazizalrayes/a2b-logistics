@@ -258,7 +258,8 @@ if (highIntentContentPlan.status !== 'cancelled_by_owner') fail('data/high-inten
 if (highIntentContentPlan.draftPages?.length) fail('data/high-intent-content-plan.json: cancelled high-intent plan must not contain draft pages');
 if (agentConcierge.company !== 'a2b Logistics Company') fail('data/agent-concierge.json: wrong company');
 if (agentConcierge.endpoint !== 'https://www.a2b.sa/api/agent-concierge') fail('data/agent-concierge.json: wrong endpoint');
-if (agentConcierge.mode !== 'deterministic_public_facts_only') fail('data/agent-concierge.json: concierge must remain deterministic and public-facts-only');
+if (agentConcierge.mode !== 'approved_answers_with_optional_llm_routing') fail('data/agent-concierge.json: concierge must use approved-answer routing');
+if (!agentConcierge.inferencePolicy?.billing?.includes('Workers Free only') || !agentConcierge.inferencePolicy?.output?.includes('verbatim')) fail('data/agent-concierge.json: free-only and approved-wording boundaries are required');
 if (agentConcierge.requestPolicy?.personalDataAccepted !== false || agentConcierge.requestPolicy?.credentialsAccepted !== false) fail('data/agent-concierge.json: personal data and credentials must be rejected');
 if (agentConcierge.requestPolicy?.maximumBodyBytes !== 32768) fail('data/agent-concierge.json: expected 32 KB request limit');
 if (markdownCompanions.routes?.length !== sitemapUrlCount) fail('data/markdown-companions.json: route count must match sitemap URL count');
