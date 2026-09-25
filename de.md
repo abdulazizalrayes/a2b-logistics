@@ -279,12 +279,6 @@ Riad, Saudi-Arabien
 
 [www.a2b.sa](https://www.a2b.sa/)
 
-CEO
-
-Dr. Suhaib Ghunaim
-
-[M +966 55 384 6446](tel:+966553846446)
-
 ## Extracted Public Links
 
 - [Kontakt aufnehmen](https://www.a2b.sa/de#contact)

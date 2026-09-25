@@ -279,12 +279,6 @@ STC
 
 [www.a2b.sa](https://www.a2b.sa/)
 
-الرئيس التنفيذي
-
-Dr. Suhaib Ghunaim
-
-[M +966 55 384 6446](tel:+966553846446)
-
 ## Extracted Public Links
 
 - [تواصل معنا](https://www.a2b.sa/ar#contact)
