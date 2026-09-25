@@ -279,12 +279,6 @@ Riyadh, Saudi Arabia
 
 [www.a2b.sa](https://www.a2b.sa/)
 
-CEO
-
-Dr. Suhaib Ghunaim
-
-[M +966 55 384 6446](tel:+966553846446)
-
 ## Extracted Public Links
 
 - [Trucking and road freight](https://www.a2b.sa/services/trucking-road-freight)
