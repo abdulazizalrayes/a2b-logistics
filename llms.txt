@@ -11,6 +11,8 @@
 - OpenAPI: https://www.a2b.sa/openapi.json
 - MCP discovery: https://www.a2b.sa/.well-known/mcp.json
 - Public MCP endpoint: https://www.a2b.sa/api/mcp
+- Public CLI: https://www.a2b.sa/cli/a2b.mjs
+- CLI guide: https://www.a2b.sa/cli/README.md
 - Agent concierge endpoint: https://www.a2b.sa/api/agent-concierge
 - Agent concierge contract: https://www.a2b.sa/data/agent-concierge.json
 - Markdown companion manifest: https://www.a2b.sa/data/markdown-companions.json
@@ -104,11 +106,17 @@ Agents may use the public read-only MCP-style endpoint at https://www.a2b.sa/api
 
 These tools prepare and route only. They do not submit forms, send email, call phone numbers, quote pricing, confirm availability, or create commitments.
 
+## Public Command-Line Interface
+
+The zero-dependency Node.js CLI at https://www.a2b.sa/cli/a2b.mjs exposes the
+same public read-only tools and approval boundaries as the MCP endpoint. Download
+it and run `node a2b.mjs --help`. The CLI does not submit or contact a2b.
+
 ## Agent-Only Concierge
 
 Agents may POST a public question to https://www.a2b.sa/api/agent-concierge using `Content-Type: application/json` and a body such as `{"question":"Can a2b support commercial road freight in Saudi Arabia?","language":"en"}`.
 
-The concierge is deterministic and uses approved public a2b facts only. It has no model call, database, customer records, credentials, private-system access, outbound messaging, or commercial authority. Do not send personal data, passwords, API keys, tokens, or secrets. New unanswered questions may be retained only after redaction for owner knowledge review; answered question content is not logged.
+The concierge uses approved public a2b facts only. It may use an optional free-plan model to select an approved answer, with deterministic fallback; it does not train model weights or publish corrections automatically. It has no database, customer records, private-system access, outbound messaging, or commercial authority. Do not send personal data, passwords, API keys, tokens, or secrets. New unanswered questions may be retained only after redaction for owner knowledge review; answered question content is not logged.
 
 ## Public Pages
 

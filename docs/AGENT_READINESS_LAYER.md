@@ -74,6 +74,19 @@ The endpoint logs privacy-safe operational events to server logs:
 It does not store personal information. Inquiry preparation returns a draft and routing decision only.
 RFQ preparation is also draft-only. It helps procurement agents collect missing inputs, but it does not submit a quote request, send email, call a phone number, or commit a2b to price, capacity, schedule, or terms.
 
+## Public CLI
+
+The zero-dependency Node.js CLI is published at `/cli/a2b.mjs`, with usage at
+`/cli/README.md`. It calls `/api/mcp` and preserves the same public-data,
+routing, input, and no-submission boundaries. Commands include `overview`,
+`services`, `areas`, `procurement`, `tools`, `match`, `ask`, and `resource`.
+
+```sh
+curl -fsSLo a2b.mjs https://www.a2b.sa/cli/a2b.mjs
+node a2b.mjs overview
+node a2b.mjs match "commercial road freight from Dubai to Riyadh"
+```
+
 ## Routing Rules
 
 Project inquiry fit:

@@ -3,7 +3,7 @@
   "info": {
     "title": "a2b Logistics Public Agent Readiness API",
     "version": "1.1.0",
-    "description": "Read-only public data, deterministic agent concierge, and MCP-style inquiry-preparation API for a2b Logistics. No endpoint submits forms, sends email, reads private systems, or creates commercial commitments."
+    "description": "Read-only public data, approved-public-facts agent concierge, public CLI, and MCP-style inquiry-preparation API for a2b Logistics. No endpoint submits forms, sends email, reads private systems, or creates commercial commitments."
   },
   "servers": [
     {
@@ -11,6 +11,17 @@
     }
   ],
   "paths": {
+    "/cli/a2b.mjs": {
+      "get": {
+        "summary": "Download the public read-only a2b CLI",
+        "description": "Zero-dependency Node.js CLI backed by the same public MCP tools and approval boundaries as /api/mcp.",
+        "responses": {
+          "200": {
+            "description": "JavaScript CLI source"
+          }
+        }
+      }
+    },
     "/data/company.json": {
       "get": {
         "summary": "Get public company profile",

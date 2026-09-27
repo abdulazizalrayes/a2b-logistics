@@ -24,6 +24,8 @@ const requiredAgentFiles = [
   'data/markdown-companions.json',
   'llms.txt',
   'llms-full.txt',
+  'cli/a2b.mjs',
+  'cli/README.md',
   '.well-known/agent-card.json',
   '.well-known/ai-catalog.json',
   '.well-known/api-catalog',
@@ -310,6 +312,7 @@ for (const path of [
 
 const llms = await readRequired('llms.txt');
 const llmsFull = await readRequired('llms-full.txt');
+const publicCli = await readRequired('cli/a2b.mjs');
 const robots = await readRequired('robots.txt');
 const webmcp = await readRequired('webmcp.js');
 const mcpApi = await readRequired('api/mcp.js');
@@ -334,6 +337,10 @@ for (const needle of [
 }
 requireIncludes(llms, 'llms.txt', 'cancelled', 'cancelled high-intent page warning');
 requireIncludes(llmsFull, 'llms-full.txt', 'cancelled', 'cancelled high-intent page warning');
+requireIncludes(llms, 'llms.txt', '/cli/a2b.mjs', 'public CLI discovery');
+requireIncludes(llmsFull, 'llms-full.txt', '/cli/a2b.mjs', 'public CLI discovery');
+requireIncludes(publicCli, 'cli/a2b.mjs', '/api/mcp', 'CLI MCP endpoint');
+requireIncludes(publicCli, 'cli/a2b.mjs', 'This CLI is read-only', 'CLI approval boundary');
 requireIncludes(robots, 'robots.txt', 'Disallow: /admin/', 'admin block');
 requireIncludes(robots, 'robots.txt', 'Allow: /data/', 'data allow');
 requireIncludes(webmcp, 'webmcp.js', 'prepare_project_inquiry', 'safe inquiry tool');

@@ -7,6 +7,8 @@
         { "href": "https://www.a2b.sa/llms-full.txt", "type": "text/plain" },
         { "href": "https://www.a2b.sa/index.md", "type": "text/markdown" },
         { "href": "https://www.a2b.sa/docs/AGENT_READINESS_LAYER.md", "type": "text/markdown" },
+        { "href": "https://www.a2b.sa/cli/README.md", "type": "text/markdown", "title": "Public agent CLI guide" },
+        { "href": "https://www.a2b.sa/cli/a2b.mjs", "type": "text/javascript", "title": "Zero-dependency public agent CLI" },
         { "href": "https://www.a2b.sa/data/agent-concierge.json", "type": "application/json", "title": "Agent-only concierge contract" },
         { "href": "https://www.a2b.sa/data/markdown-companions.json", "type": "application/json", "title": "Markdown companion coverage manifest" }
       ],

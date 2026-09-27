@@ -57,7 +57,7 @@
         "agent-concierge",
         "read-only-mcp"
       ],
-      "description": "OpenAPI description for a2b Logistics public structured resources, deterministic agent concierge, and read-only MCP endpoint.",
+      "description": "OpenAPI description for a2b Logistics public structured resources, approved-public-facts agent concierge, and read-only MCP endpoint.",
       "representativeQueries": [
         "List the public a2b logistics data endpoints.",
         "Read a2b service areas in machine-readable form."
