@@ -1,6 +1,6 @@
 {
   "name": "a2b Logistics Agent",
-  "description": "Public discovery card for a2b Logistics services, company information, deterministic agent concierge, routing, and read-only inquiry preparation.",
+  "description": "Public discovery card for a2b Logistics services, company information, approved-public-facts agent concierge, routing, and read-only inquiry preparation.",
   "url": "https://www.a2b.sa",
   "version": "1.2.0",
   "provider": {
@@ -147,7 +147,7 @@
     {
       "id": "ask_agent_concierge",
       "name": "Ask Agent Concierge",
-      "description": "Ask a deterministic, public-facts-only question about a2b services, fit, procurement, service areas, compliance, or next steps. Personal data, credentials, and secrets are not accepted.",
+      "description": "Ask an approved-public-facts-only question about a2b services, fit, procurement, service areas, compliance, or next steps. Personal data, credentials, and secrets are not accepted.",
       "tags": [
         "agent-concierge",
         "procurement",
