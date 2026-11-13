@@ -37,6 +37,6 @@
     "agent:cli:test": "node scripts/test-public-cli.mjs"
   },
   "devDependencies": {
-    "parse5": "^8.0.1"
+    "parse5": "^8.1.1"
   }
 }
