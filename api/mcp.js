@@ -49,6 +49,30 @@ const toolNames = new Set([
   'read_public_resource'
 ]);
 
+const endpointGuide = `<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>a2b Logistics MCP endpoint</title>
+</head>
+<body>
+  <main>
+    <h1>a2b Logistics MCP endpoint</h1>
+    <p>This is a stateless, read-only MCP endpoint. Send JSON-RPC requests using HTTP POST with an application/json content type.</p>
+    <p>Standalone GET event streams are not enabled. This page is for browser and search-crawler discovery only; it does not execute tools or submit inquiries.</p>
+    <p><a href="https://www.a2b.sa/.well-known/mcp/server-card.json">MCP server card</a> · <a href="https://www.a2b.sa/llms.txt">Agent documentation</a></p>
+  </main>
+</body>
+</html>`;
+
+function acceptsHtml(req) {
+  const accept = String(req.headers?.accept || '').toLowerCase();
+  return /(?:^|,)\s*(?:text\/html|application\/xhtml\+xml)(?:\s*;|\s*(?:,|$))/.test(accept)
+    && !accept.includes('text/event-stream');
+}
+
 async function readText(resourceId) {
   const file = publicResources[resourceId];
   if (!file) {
@@ -345,6 +369,16 @@ export default async function handler(req, res) {
 
   if (!isCanonicalProductionHost(req)) {
     res.status(421).json(err(null, -32021, 'Use the canonical a2b endpoint at https://www.a2b.sa/api/mcp', requestId));
+    return;
+  }
+
+  if ((req.method === 'GET' || req.method === 'HEAD') && acceptsHtml(req)) {
+    res.setHeader('Allow', 'GET, HEAD, POST, OPTIONS');
+    res.setHeader('Cache-Control', 'public, max-age=3600, s-maxage=3600');
+    res.setHeader('Content-Type', 'text/html; charset=utf-8');
+    res.setHeader('Vary', 'Accept');
+    res.setHeader('X-Robots-Tag', 'noindex, nofollow');
+    res.status(200).end(req.method === 'HEAD' ? undefined : endpointGuide);
     return;
   }
 
