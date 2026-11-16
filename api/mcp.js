@@ -67,10 +67,9 @@ const endpointGuide = `<!doctype html>
 </body>
 </html>`;
 
-function acceptsHtml(req) {
+function shouldServeEndpointGuide(req) {
   const accept = String(req.headers?.accept || '').toLowerCase();
-  return /(?:^|,)\s*(?:text\/html|application\/xhtml\+xml)(?:\s*;|\s*(?:,|$))/.test(accept)
-    && !accept.includes('text/event-stream');
+  return !accept.includes('text/event-stream');
 }
 
 async function readText(resourceId) {
@@ -372,7 +371,7 @@ export default async function handler(req, res) {
     return;
   }
 
-  if ((req.method === 'GET' || req.method === 'HEAD') && acceptsHtml(req)) {
+  if ((req.method === 'GET' || req.method === 'HEAD') && shouldServeEndpointGuide(req)) {
     res.setHeader('Allow', 'GET, HEAD, POST, OPTIONS');
     res.setHeader('Cache-Control', 'public, max-age=3600, s-maxage=3600');
     res.setHeader('Content-Type', 'text/html; charset=utf-8');
