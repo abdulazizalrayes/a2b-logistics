@@ -21,7 +21,8 @@ function responseMock() {
       this.ended = true;
       return this;
     },
-    end() {
+    end(body) {
+      this.body = body;
       this.ended = true;
       return this;
     }
@@ -111,6 +112,24 @@ try {
 
   const mcpWrongType = await request(mcpHandler, { body: { jsonrpc: '2.0', id: 1, method: 'tools/list' }, headers: { 'content-type': 'text/plain' }, ip: '203.0.113.20' });
   assert.equal(mcpWrongType.statusCode, 415);
+
+  const mcpHtmlGuide = await request(mcpHandler, { method: 'GET', headers: { accept: 'text/html,application/xhtml+xml' }, ip: '203.0.113.25' });
+  assert.equal(mcpHtmlGuide.statusCode, 200);
+  assert.equal(mcpHtmlGuide.headers['x-robots-tag'], 'noindex, nofollow');
+  assert.match(mcpHtmlGuide.headers['content-type'], /text\/html/);
+  assert.match(mcpHtmlGuide.body, /does not execute tools or submit inquiries/);
+
+  const mcpHeadGuide = await request(mcpHandler, { method: 'HEAD', headers: { accept: 'text/html' }, ip: '203.0.113.26' });
+  assert.equal(mcpHeadGuide.statusCode, 200);
+  assert.equal(mcpHeadGuide.headers['x-robots-tag'], 'noindex, nofollow');
+  assert.equal(mcpHeadGuide.body, undefined);
+
+  const mcpEventStream = await request(mcpHandler, { method: 'GET', headers: { accept: 'text/event-stream' }, ip: '203.0.113.27' });
+  assert.equal(mcpEventStream.statusCode, 405);
+  assert.equal(mcpEventStream.headers.allow, 'POST, OPTIONS');
+
+  const mcpGenericGet = await request(mcpHandler, { method: 'GET', headers: { accept: '*/*' }, ip: '203.0.113.28' });
+  assert.equal(mcpGenericGet.statusCode, 405);
 
   const mcpTools = await request(mcpHandler, { body: { jsonrpc: '2.0', id: 2, method: 'tools/list' }, ip: '203.0.113.21' });
   assert.equal(mcpTools.statusCode, 200);
