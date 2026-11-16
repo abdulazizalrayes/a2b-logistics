@@ -129,7 +129,12 @@ try {
   assert.equal(mcpEventStream.headers.allow, 'POST, OPTIONS');
 
   const mcpGenericGet = await request(mcpHandler, { method: 'GET', headers: { accept: '*/*' }, ip: '203.0.113.28' });
-  assert.equal(mcpGenericGet.statusCode, 405);
+  assert.equal(mcpGenericGet.statusCode, 200);
+  assert.equal(mcpGenericGet.headers['x-robots-tag'], 'noindex, nofollow');
+
+  const mcpJsonGet = await request(mcpHandler, { method: 'GET', headers: { accept: 'application/json' }, ip: '203.0.113.29' });
+  assert.equal(mcpJsonGet.statusCode, 200);
+  assert.equal(mcpJsonGet.headers['x-robots-tag'], 'noindex, nofollow');
 
   const mcpTools = await request(mcpHandler, { body: { jsonrpc: '2.0', id: 2, method: 'tools/list' }, ip: '203.0.113.21' });
   assert.equal(mcpTools.statusCode, 200);
